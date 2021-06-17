@@ -1,30 +1,39 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Food', {
+    await queryInterface.createTable('diet_logs', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
-      },
-      calories: {
+      trainee_id: {
         type: Sequelize.INTEGER
       },
-      protein: {
+      total_calories: {
         type: Sequelize.INTEGER
       },
-      carbs: {
+      used_calories: {
         type: Sequelize.INTEGER
       },
-      fats: {
+      total_protein: {
         type: Sequelize.INTEGER
       },
-      image: {
-        type: Sequelize.STRING
+      used_protein: {
+        type: Sequelize.INTEGER
+      },
+      total_carbs: {
+        type: Sequelize.INTEGER
+      },
+      used_carbs: {
+        type: Sequelize.INTEGER
+      },
+      total_fat: {
+        type: Sequelize.INTEGER
+      },
+      used_fat: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -37,6 +46,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Food');
+    await queryInterface.dropTable('diet_logs');
   }
 };
