@@ -1,32 +1,26 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('measure_logs', {
+    await queryInterface.createTable('coaches', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      trainee_id: {
-        type: Sequelize.INTEGER
+      name: {
+        type: Sequelize.STRING
       },
-      weight: {
-        type: Sequelize.FLOAT
+      email: {
+        type: Sequelize.STRING
       },
-      chest_perimeter: {
-        type: Sequelize.FLOAT
+      address: {
+        type: Sequelize.STRING
       },
-      hip_perimeter: {
-        type: Sequelize.FLOAT
+      phone_number: {
+        type: Sequelize.STRING
       },
-      bicep_perimeter: {
-        type: Sequelize.FLOAT
-      },
-      thigh_perimeter: {
-        type: Sequelize.FLOAT
-      },
-      waist_perimeter: {
+      rating: {
         type: Sequelize.FLOAT
       },
       createdAt: {
@@ -40,6 +34,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('measure_logs');
+    await queryInterface.dropTable('coaches');
   }
 };
