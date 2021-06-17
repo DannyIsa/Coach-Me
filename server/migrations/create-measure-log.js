@@ -1,45 +1,45 @@
-'use strict';
+"use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('measure_logs', {
+    await queryInterface.createTable("measure_logs", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       trainee_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       weight: {
-        type: Sequelize.FLOAT
+        type: Sequelize.FLOAT,
       },
       chest_perimeter: {
-        type: Sequelize.FLOAT
+        type: Sequelize.FLOAT,
       },
       hip_perimeter: {
-        type: Sequelize.FLOAT
+        type: Sequelize.FLOAT,
       },
       bicep_perimeter: {
-        type: Sequelize.FLOAT
+        type: Sequelize.FLOAT,
       },
       thigh_perimeter: {
-        type: Sequelize.FLOAT
+        type: Sequelize.FLOAT,
       },
       waist_perimeter: {
-        type: Sequelize.FLOAT
+        type: Sequelize.FLOAT,
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('measure_logs');
-  }
+    await queryInterface.dropTable("measure_logs");
+  },
 };

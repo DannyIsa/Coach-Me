@@ -1,51 +1,51 @@
-'use strict';
+"use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('diet_logs', {
+    await queryInterface.createTable("diet_logs", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       trainee_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       total_calories: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       used_calories: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       total_protein: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       used_protein: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       total_carbs: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       used_carbs: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       total_fat: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       used_fat: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('diet_logs');
-  }
+    await queryInterface.dropTable("diet_logs");
+  },
 };
