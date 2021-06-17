@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   exercise_set.init(
     {
-      exercise: DataTypes.STRING,
+      name: DataTypes.STRING,
       min_reps: DataTypes.INTEGER,
       max_reps: DataTypes.INTEGER,
       sets: DataTypes.INTEGER,
