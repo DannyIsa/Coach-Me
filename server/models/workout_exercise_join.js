@@ -19,6 +19,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "workout_exercise_join",
+      tableName: "workout_exercise_joins",
+      underscored: true,
     }
   );
   return workout_exercise_join;

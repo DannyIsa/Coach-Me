@@ -24,6 +24,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "measure_log",
+      tableName: "measure_logs",
+      underscored: true,
     }
   );
   return measure_log;
