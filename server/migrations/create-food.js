@@ -2,6 +2,10 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable("food", {
+      id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+      },
       name: {
         allowNull: false,
         primaryKey: true,
