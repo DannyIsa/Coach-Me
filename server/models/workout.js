@@ -8,13 +8,17 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.Workout_exercise_join, {
-        foreignKey: "id",
-        targetKey: "Workout_id",
+      this.hasMany(models.WorkoutExerciseJoin, {
+        foreignKey: "workout_id",
+        sourceKey: "id",
       });
-      this.belongsTo(models.coach, {
+      this.belongsTo(models.Coach, {
         foreignKey: "coach_id",
         targetKey: "id",
+      });
+      this.hasMany(models.WorkoutLog, {
+        foreignKey: "id",
+        sourceKey: "id",
       });
     }
   }
@@ -27,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Workout",
-      tableName: "workout",
+      tableName: "workouts",
       underscored: true,
     }
   );

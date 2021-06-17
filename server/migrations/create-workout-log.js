@@ -13,6 +13,11 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
+      workout_id: {
+        primaryKey: true,
+        allowNull: false,
+        type: Sequelize.INTEGER,
+      },
       time: {
         type: Sequelize.TIME,
       },
