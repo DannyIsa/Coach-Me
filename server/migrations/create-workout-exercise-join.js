@@ -8,13 +8,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      set_id: {
-        type: Sequelize.INTEGER,
-      },
       exercise_id: {
+        primaryKey: true,
+        allowNull: false,
         type: Sequelize.INTEGER,
       },
       workout_id: {
+        primaryKey: true,
+        allowNull: false,
         type: Sequelize.INTEGER,
       },
       created_at: {

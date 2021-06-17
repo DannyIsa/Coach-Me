@@ -9,6 +9,8 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       exercise: {
+        primaryKey: true,
+        allowNull: false,
         type: Sequelize.STRING,
       },
       min_reps: {
