@@ -12,6 +12,8 @@ module.exports = {
         type: Sequelize.STRING,
       },
       coach_id: {
+        primaryKey: true,
+        allowNull: false,
         type: Sequelize.INTEGER,
       },
       sets: {

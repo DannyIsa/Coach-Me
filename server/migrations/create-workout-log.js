@@ -9,6 +9,8 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       trainee_id: {
+        primaryKey: true,
+        allowNull: false,
         type: Sequelize.INTEGER,
       },
       added_weight: {
