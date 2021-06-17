@@ -1,7 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class workout_exercise_join extends Model {
+  class WorkoutExerciseJoin extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -18,17 +18,17 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  workout_exercise_join.init(
+  WorkoutExerciseJoin.init(
     {
       exercise_id: DataTypes.INTEGER,
       workout_id: DataTypes.INTEGER,
     },
     {
       sequelize,
-      modelName: "workout_exercise_join",
+      modelName: "WorkoutExerciseJoin",
       tableName: "workout_exercise_joins",
       underscored: true,
     }
   );
-  return workout_exercise_join;
+  return WorkoutExerciseJoin;
 };

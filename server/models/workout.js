@@ -1,16 +1,16 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class workout extends Model {
+  class Workout extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.workout_exercise_join, {
+      this.belongsTo(models.Workout_exercise_join, {
         foreignKey: "id",
-        targetKey: "workout_id",
+        targetKey: "Workout_id",
       });
       this.belongsTo(models.coach, {
         foreignKey: "coach_id",
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  workout.init(
+  Workout.init(
     {
       name: DataTypes.STRING,
       coach_id: DataTypes.INTEGER,
@@ -26,10 +26,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "workout",
-      tableName: "workouts",
+      modelName: "Workout",
+      tableName: "workout",
       underscored: true,
     }
   );
-  return workout;
+  return Workout;
 };

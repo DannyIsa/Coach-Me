@@ -12,7 +12,14 @@ const sequelize = new Sequelize(
   }
 );
 
-models.exercise_set.findAll().then(async (res) => {
-  const exercises = await res[0].getExercises();
-  console.log(exercises);
+// models.exercise_set.findAll().then(async (res) => {
+//   console.log(res[0].toJSON());
+//   const exercises = await res[0].getExercises();
+//   console.log(exercises[0].toJSON());
+// });
+
+models.workout_exercise_join.findOne().then(async (res) => {
+  console.log(res.exercise_sets[0].toJSON());
+  const exercise = await res.getExercise_sets();
+  console.log(exercise);
 });

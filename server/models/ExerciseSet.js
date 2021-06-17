@@ -1,7 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class exercise_set extends Model {
+  class ExerciseSet extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -18,20 +18,21 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  exercise_set.init(
+  ExerciseSet.init(
     {
       name: DataTypes.STRING,
       min_reps: DataTypes.INTEGER,
       max_reps: DataTypes.INTEGER,
       sets: DataTypes.INTEGER,
+      added_weight: DataTypes.INTEGER,
       rest: DataTypes.INTEGER,
     },
     {
       sequelize,
-      modelName: "exercise_set",
+      modelName: "ExerciseSet",
       tableName: "exercise_sets",
       underscored: true,
     }
   );
-  return exercise_set;
+  return ExerciseSet;
 };

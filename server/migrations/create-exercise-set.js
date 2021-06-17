@@ -22,6 +22,9 @@ module.exports = {
       sets: {
         type: Sequelize.INTEGER,
       },
+      added_weight: {
+        type: Sequelize.INTEGER,
+      },
       rest: {
         type: Sequelize.INTEGER,
       },

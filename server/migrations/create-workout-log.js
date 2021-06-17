@@ -13,9 +13,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
-      added_weight: {
-        type: Sequelize.INTEGER,
-      },
       time: {
         type: Sequelize.TIME,
       },

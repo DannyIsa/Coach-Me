@@ -1,20 +1,20 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class exercise extends Model {
+  class Exercise extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.exercise_set, {
+      this.belongsTo(models.Exercise_set, {
         foreignKey: "name",
         targetKey: "name",
       });
     }
   }
-  exercise.init(
+  Exercise.init(
     {
       name: DataTypes.STRING,
       muscle: DataTypes.STRING,
@@ -26,10 +26,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "exercise",
+      modelName: "Exercise",
       tableName: "exercises",
       underscored: true,
     }
   );
-  return exercise;
+  return Exercise;
 };

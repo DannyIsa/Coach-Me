@@ -4,6 +4,8 @@ module.exports = {
     await queryInterface.createTable("food", {
       id: {
         allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
         type: Sequelize.INTEGER,
       },
       name: {
