@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class exercise_set extends Model {
     /**
@@ -10,18 +8,28 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.hasMany(models.exercise, {
+        sourceKey: "exercise",
+        foreignKey: "name",
+      });
+      this.belongsTo(models.workout_exercise_join, {
+        foreignKey: "id",
+        targetKey: "exercise_id",
+      });
     }
-  };
-  exercise_set.init({
-    exercise: DataTypes.STRING,
-    min_reps: DataTypes.INTEGER,
-    max_reps: DataTypes.INTEGER,
-    sets: DataTypes.INTEGER,
-    rest: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'exercise_set',
-  });
+  }
+  exercise_set.init(
+    {
+      exercise: DataTypes.STRING,
+      min_reps: DataTypes.INTEGER,
+      max_reps: DataTypes.INTEGER,
+      sets: DataTypes.INTEGER,
+      rest: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: "exercise_set",
+    }
+  );
   return exercise_set;
 };
