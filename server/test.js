@@ -12,4 +12,7 @@ const sequelize = new Sequelize(
   }
 );
 
-models.exercise.findAll().then((res) => console.log(res));
+models.exercise_set.findAll().then(async (res) => {
+  const exercises = await res[0].getExercises();
+  console.log(exercises);
+});

@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsTo(models.exercise_set, {
         foreignKey: "name",
-        targetKey: "exercise",
+        targetKey: "name",
       });
     }
   }

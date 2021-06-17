@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.hasMany(models.exercise, {
-        sourceKey: "exercise",
+        sourceKey: "name",
         foreignKey: "name",
       });
       this.belongsTo(models.workout_exercise_join, {
