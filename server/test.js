@@ -12,7 +12,7 @@ const sequelize = new Sequelize(
   }
 );
 
-// Exercise => ExerciseSet <= WorkoutExerciseJoin
+// // Exercise => ExerciseSet <= WorkoutExerciseJoin
 
 // models.ExerciseSet.findAll().then(async (res) => {
 //   console.log(res[0].toJSON());
@@ -22,7 +22,7 @@ const sequelize = new Sequelize(
 //   console.log(joins[0].toJSON());
 // });
 
-// Workout => Coach <= Trainee;
+// // Workout => Coach <= Trainee;
 
 // models.Coach.findOne().then(async (res) => {
 //   console.log(res.toJSON());
@@ -32,7 +32,7 @@ const sequelize = new Sequelize(
 //   console.log(trainees[0].toJSON());
 // });
 
-//Logs => Trainee
+// //Logs => Trainee
 
 // models.Trainee.findOne().then(async (res) => {
 //   console.log(res.toJSON());
@@ -44,7 +44,7 @@ const sequelize = new Sequelize(
 //   console.log(dLogs[0].toJSON());
 // });
 
-//WorkoutLog => Workout <= WorkoutExerciseJoin
+// //WorkoutLog => Workout <= WorkoutExerciseJoin
 
 // models.Workout.findOne().then(async (res) => {
 //   console.log(res.toJSON());
@@ -54,7 +54,7 @@ const sequelize = new Sequelize(
 //   console.log(join[0].toJSON());
 // });
 
-// FoodMealJoin => Meal
+// //FoodMealJoin => Meal
 
 // models.Meal.findAll().then(async (res) => {
 //   console.log(res[0].toJSON());
@@ -62,10 +62,10 @@ const sequelize = new Sequelize(
 //   console.log(joins[0].toJSON());
 // });
 
-//FoodMealJoin => Food
+// //FoodMealJoin => Food
 
-models.Food.findOne().then(async (res) => {
-  console.log(res.toJSON());
-  const joins = await res.getFoodMealJoins();
-  console.log(joins[0].toJSON());
-});
+// models.Food.findOne().then(async (res) => {
+//   console.log(res.toJSON());
+//   const joins = await res.getFoodMealJoins();
+//   console.log(joins[0].toJSON());
+// });
