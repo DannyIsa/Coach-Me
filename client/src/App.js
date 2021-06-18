@@ -1,6 +1,7 @@
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import Home from "./components/Home";
+import Food from "./components/Food";
 import "./styles/App.css";
 
 import { Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -34,6 +35,9 @@ function App() {
               </Route>
               <Route exact path="/sign-up">
                 <SignUp auth={auth} />
+              </Route>
+              <Route exact path="/food">
+                <Food />
               </Route>
             </>
           )}
