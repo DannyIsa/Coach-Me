@@ -18,8 +18,7 @@ user.use(express.json());
 
 function checkValid(client) {
   let valid = true;
-  const values = Object.values(client.toJSON());
-  console.log(values);
+  const values = Object.values(client);
   if (values === []) return false;
   values.map((value) => {
     if (!value && value !== 0) {
@@ -49,21 +48,23 @@ user.post("/register", (req, res) => {
 user.get("/check/:email", async (req, res) => {
   const { email } = req.params;
   const coach = await models.Coach.findOne({ where: { email } });
-  if (coach) return res.send({ valid: checkValid(coach), type: "coach" });
+  if (coach)
+    return res.send({ valid: checkValid(coach.toJSON()), type: "coach" });
   const trainee = await models.Trainee.findOne({ where: { email } });
-  if (trainee) return res.send({ valid: checkValid(trainee), type: "trainee" });
+  if (trainee)
+    return res.send({ valid: checkValid(trainee.toJSON()), type: "trainee" });
   res.status(404).send("No Client With That Email");
 });
 
 user.post("/details/:email", (req, res) => {
   const { email } = req.params;
+  console.log(email);
   const { type, obj } = req.body;
   let query;
-  console.log(type !== "Coach" && type !== "Trainee");
 
-  if ((type !== "Coach" && type !== "Trainee") || !obj) {
+  if ((type !== "Coach" && type !== "Trainee") || !obj)
     return res.status(400).send("Invalid Client");
-  }
+
   if (type === "Coach")
     query = {
       name: obj.name,
@@ -71,7 +72,7 @@ user.post("/details/:email", (req, res) => {
       phone_number: obj.phone_number,
       rating: 0,
     };
-  else if (type === "Coach")
+  else if (type === "Trainee")
     query = {
       name: obj.name,
       birthdate: obj.birthdate,
@@ -79,12 +80,15 @@ user.post("/details/:email", (req, res) => {
       height: obj.height,
       weight: obj.weight,
     };
+  if (!checkValid(query)) return res.status(400).send("Invalid Details");
   models[type]
     .update(query, { where: { email } })
-    .then(() => {
+    .then((data) => {
+      if (!data[0])
+        return res.status(404).send(`No Client With Email ${email}`);
       res.status(201).send(`${type} ${query.name} Updated`);
     })
-    .catch((err) => res.send(err));
+    .catch((err) => res.status(400).send(err.message));
 });
 
 module.exports = user;
