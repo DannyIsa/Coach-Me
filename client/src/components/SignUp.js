@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import firebase from "firebase";
 import { useHistory, Link } from "react-router-dom";
+
 function SignUp() {
   const history = useHistory();
   const [emailInput, setEmailInput] = useState("");
@@ -94,6 +95,13 @@ function SignUp() {
         👁
       </button>
       <br />
+
+      <form>
+        <div> Coach or Trainee?</div>
+        <input type="radio" name="choice" value="coach" />
+        <input type="radio" name="choice" value="trainee" />
+      </form>
+
       <button name="submit" onClick={SignUpWithPassword}>
         Register
       </button>
