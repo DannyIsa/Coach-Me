@@ -1,14 +1,17 @@
 import React, { useState, useRef } from "react";
+import { useHistory } from "react-router-dom";
 import firebase from "firebase";
-import { useHistory, Link } from "react-router-dom";
+import axios from "axios";
+import "./SignUp.css";
 
 function SignUp() {
-  const history = useHistory();
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [errorMessage, setError] = useState();
+  const [coachOrTrainee, setCoachOrTrainee] = useState("");
   const passwordRef = useRef();
-  const db = firebase.firestore();
+  const history = useHistory();
+
   const SignUpWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase
@@ -17,10 +20,8 @@ function SignUp() {
       .then(async (data) => {
         const emailData = data.user.email;
         const userData = data.user.displayName;
-        const users = await db.collection("Users");
-        users
-          .doc(emailData)
-          .set({ email: emailData }, { merge: true })
+        axios
+          .post(`/api/user/register?type=${coachOrTrainee}`)
           .then(() => {
             history.push("/");
           })
@@ -29,41 +30,33 @@ function SignUp() {
           });
       });
   };
+
   const SignUpWithPassword = () => {
     const provider = firebase
       .auth()
-      .createUserWithEmailAndPassword(emailInput, passwordInput)
-      .then((user) => {
-        const currentUser = firebase.auth().currentUser;
-        currentUser
-          .updateProfile({
-            displayName: "user" + currentUser.uid,
-            photoURL:
-              "https://firebasestorage.googleapis.com/v0/b/chat-service-d13a1.appspot.com/o/user-icon.png?alt=media&token=d7d79030-4cde-4d4a-b4bb-73684808bd66",
-          })
-          .then(async () => {
-            const users = await db.collection("Users");
-            users
-              .doc(user.user.email)
-              .set({ email: user.user.email, chats: [] });
-            history.push("/");
-          })
-          .catch((err) => {
-            setError(err.message);
-          });
+      .createUserWithEmailAndPassword(emailInput, passwordInput);
+    axios
+      .post(`/api/user/register?type=${coachOrTrainee}`)
+
+      .then(async () => {
+        history.push("/");
       })
-      .catch((err) => setError(err.message));
+      .catch((err) => {
+        setError(err.message);
+      });
   };
+
+  const onChangeValue = (event) => {
+    setCoachOrTrainee(event.target.value);
+    console.log(event.target.value);
+  };
+
   return (
-    <div className="sign-up">
-      <h1 className="headline">Sign Up</h1>
-      <button name="google" onClick={SignUpWithGoogle} className="google">
-        <img src="https://firebasestorage.googleapis.com/v0/b/chat-service-d13a1.appspot.com/o/google-logo.png?alt=media&token=47d2d019-037d-418c-abef-230317fe1393" />
-        Sign up with google
-      </button>
-      <br />
+    <div>
+      {" "}
       <input
         name="text"
+        type="email"
         placeholder="enter your email"
         onChange={(e) => {
           setEmailInput(e.target.value);
@@ -94,22 +87,30 @@ function SignUp() {
       >
         👁
       </button>
-      <br />
-
-      <form>
-        <div> Coach or Trainee?</div>
-        <input type="radio" name="choice" value="coach" />
-        <input type="radio" name="choice" value="trainee" />
-      </form>
-
-      <button name="submit" onClick={SignUpWithPassword}>
-        Register
-      </button>
-      <div className="change">
-        Already have a user?
-        <br />
-        <Link to="/sign-in">Sign In!</Link>
+      <div
+        value="Trainee"
+        onClick={() => setCoachOrTrainee("Trainee")}
+        className={coachOrTrainee === "Trainee" ? "chosen" : "not-chosen"}
+      >
+        Trainee
       </div>
+      <div
+        value="Coach"
+        onClick={() => setCoachOrTrainee("Coach")}
+        className={coachOrTrainee === "Coach" ? "chosen" : "not-chosen"}
+      >
+        Coach
+      </div>
+      <button onClick={SignUpWithPassword}>Sign Up</button>
+      <button name="google" onClick={SignUpWithGoogle} className="google">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/chat-service-d13a1.appspot.com/o/google-logo.png?alt=media&token=47d2d019-037d-418c-abef-230317fe1393"
+          width="20px"
+          height="20px"
+        />
+        Sign up with google
+      </button>
+      <button onClick={() => history.push("/")}>Already Signed Up</button>
       <h2 className="error-message">{errorMessage}</h2>
     </div>
   );
