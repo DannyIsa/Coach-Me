@@ -7,7 +7,7 @@ function SignUp() {
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [errorMessage, setError] = useState();
-  const [coachOrTrainee, setCoachOrTrainee] = useState("");
+  const [type, setType] = useState("");
   const passwordRef = useRef();
   const history = useHistory();
 
@@ -20,7 +20,7 @@ function SignUp() {
         const emailData = data.user.email;
         const userData = data.user.displayName;
         axios
-          .post(`/api/user/register?type=${coachOrTrainee}`)
+          .post(`/api/user/register?type=${type}`)
           .then(() => {
             history.push("/");
           })
@@ -33,26 +33,24 @@ function SignUp() {
   const SignUpWithPassword = () => {
     const provider = firebase
       .auth()
-      .createUserWithEmailAndPassword(emailInput, passwordInput);
-    axios
-      .post(`/api/user/register?type=${coachOrTrainee}`)
-
-      .then(async () => {
-        history.push("/");
+      .createUserWithEmailAndPassword(emailInput, passwordInput)
+      .then(() => {
+        axios
+          .post(`/api/user/register?type=${type}`, { email: emailInput })
+          .then(async () => {
+            history.push("/");
+          })
+          .catch((err) => {
+            setError(err.message);
+          });
       })
       .catch((err) => {
         setError(err.message);
       });
   };
 
-  const onChangeValue = (event) => {
-    setCoachOrTrainee(event.target.value);
-    console.log(event.target.value);
-  };
-
   return (
     <div className="sign-up">
-      {" "}
       <input
         name="text"
         type="email"
@@ -88,15 +86,15 @@ function SignUp() {
       </button>
       <div
         value="Trainee"
-        onClick={() => setCoachOrTrainee("Trainee")}
-        className={coachOrTrainee === "Trainee" ? "chosen" : "not-chosen"}
+        onClick={() => setType("Trainee")}
+        className={type === "Trainee" ? "chosen" : "not-chosen"}
       >
         Trainee
       </div>
       <div
         value="Coach"
-        onClick={() => setCoachOrTrainee("Coach")}
-        className={coachOrTrainee === "Coach" ? "chosen" : "not-chosen"}
+        onClick={() => setType("Coach")}
+        className={type === "Coach" ? "chosen" : "not-chosen"}
       >
         Coach
       </div>

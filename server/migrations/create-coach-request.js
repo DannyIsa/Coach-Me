@@ -15,6 +15,7 @@ module.exports = {
       },
       trainee_id: {
         primaryKey: true,
+        unique: true,
         allowNull: false,
         type: Sequelize.INTEGER,
       },
