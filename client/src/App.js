@@ -1,11 +1,9 @@
-import "./App.css";
-
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import Home from "./components/Home";
+import "./styles/App.css";
 
 import { Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import firebase from "firebase/app";
 import "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";

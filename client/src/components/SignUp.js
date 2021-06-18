@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import firebase from "firebase";
 import axios from "axios";
-import "./SignUp.css";
 
 function SignUp() {
   const [emailInput, setEmailInput] = useState("");
@@ -52,7 +51,7 @@ function SignUp() {
   };
 
   return (
-    <div>
+    <div className="sign-up">
       {" "}
       <input
         name="text"

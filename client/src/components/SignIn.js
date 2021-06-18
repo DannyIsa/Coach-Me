@@ -16,9 +16,10 @@ function SignIn({ auth }) {
   const signIn = () => {};
 
   return (
-    <div>
+    <div className="sign-in">
       {" "}
       <input
+        type="email"
         name="text"
         placeholder="enter your email"
         onChange={(e) => {
