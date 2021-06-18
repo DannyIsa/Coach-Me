@@ -12,6 +12,9 @@ module.exports = {
         type: Sequelize.STRING,
       },
       email: {
+        allowNull: false,
+        primaryKey: true,
+        unique: true,
         type: Sequelize.STRING,
       },
       coach_id: {
