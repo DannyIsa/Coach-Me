@@ -43,4 +43,20 @@ trainee.post("/send-request/:traineeId", (req, res) => {
     });
 });
 
+trainee.post("/log/workout/add:clientId", (req, res) => {});
+
+trainee.post("/log/measure/add:clientId", (req, res) => {});
+
+trainee.post("/log/diet/add:clientId", (req, res) => {});
+
+trainee.get("/log/workout/show:clientId", (req, res) => {});
+
+trainee.get("/log/measure/show:clientId", (req, res) => {});
+
+trainee.get("/log/diet/show:clientId", (req, res) => {});
+
+trainee.post("/meal/add/:clientId", (req, res) => {});
+
+trainee.get("/meal/show/:clientId", (req, res) => {});
+
 module.exports = trainee;

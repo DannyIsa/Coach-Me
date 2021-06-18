@@ -50,4 +50,12 @@ coach.delete("/request/decline/:coachId", (req, res) => {
     })
     .catch((err) => res.status(400).send(err.message));
 });
+coach.post("/exercise-set/new/:coachId", (req, res) => {});
+
+coach.put("/exercise-set/append/:coachId", (req, res) => {});
+
+coach.post("/workout/new/:coachId", (req, res) => {});
+
+coach.put("/workout/append/:coachId", (req, res) => {});
+
 module.exports = coach;
