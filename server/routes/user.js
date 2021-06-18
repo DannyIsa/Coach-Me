@@ -18,8 +18,13 @@ user.use(express.json());
 
 function checkValid(client) {
   let valid = true;
-  Object.values(client.toJSON()).map((value) => {
-    if (!value && value !== 0) valid = false;
+  const values = Object.values(client.toJSON());
+  console.log(values);
+  if (values === []) return false;
+  values.map((value) => {
+    if (!value && value !== 0) {
+      valid = false;
+    }
   });
   return valid;
 }
@@ -47,8 +52,39 @@ user.get("/check/:email", async (req, res) => {
   if (coach) return res.send({ valid: checkValid(coach), type: "coach" });
   const trainee = await models.Trainee.findOne({ where: { email } });
   if (trainee) return res.send({ valid: checkValid(trainee), type: "trainee" });
-  res.status(404).send("No client with that email");
+  res.status(404).send("No Client With That Email");
 });
 
-user.post("/details/:email", (req, res) => {});
+user.post("/details/:email", (req, res) => {
+  const { email } = req.params;
+  const { type, obj } = req.body;
+  let query;
+  console.log(type !== "Coach" && type !== "Trainee");
+
+  if ((type !== "Coach" && type !== "Trainee") || !obj) {
+    return res.status(400).send("Invalid Client");
+  }
+  if (type === "Coach")
+    query = {
+      name: obj.name,
+      address: obj.address,
+      phone_number: obj.phone_number,
+      rating: 0,
+    };
+  else if (type === "Coach")
+    query = {
+      name: obj.name,
+      birthdate: obj.birthdate,
+      gender: obj.gender,
+      height: obj.height,
+      weight: obj.weight,
+    };
+  models[type]
+    .update(query, { where: { email } })
+    .then(() => {
+      res.status(201).send(`${type} ${query.name} Updated`);
+    })
+    .catch((err) => res.send(err));
+});
+
 module.exports = user;
