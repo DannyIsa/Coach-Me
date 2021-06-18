@@ -70,7 +70,8 @@ user.post("/details/:email", (req, res) => {
       name: obj.name,
       address: obj.address,
       phone_number: obj.phone_number,
-      rating: 0,
+      avg_rating: 0,
+      rating_count: 0,
     };
   else if (type === "Trainee")
     query = {

@@ -24,7 +24,8 @@ module.exports = (sequelize, DataTypes) => {
       email: DataTypes.STRING,
       address: DataTypes.STRING,
       phone_number: DataTypes.STRING,
-      rating: DataTypes.FLOAT,
+      avg_rating: DataTypes.FLOAT,
+      rating_count: DataTypes.INTEGER,
     },
     {
       sequelize,

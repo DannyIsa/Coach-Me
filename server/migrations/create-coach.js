@@ -23,8 +23,11 @@ module.exports = {
       phone_number: {
         type: Sequelize.STRING,
       },
-      rating: {
+      avg_rating: {
         type: Sequelize.FLOAT,
+      },
+      rating_count: {
+        type: Sequelize.INTEGER,
       },
       created_at: {
         allowNull: false,
