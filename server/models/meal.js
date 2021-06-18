@@ -12,6 +12,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "meal_id",
         sourceKey: "id",
       });
+      this.hasMany(models.TraineeMealJoin, {
+        foreignKey: "meal_id",
+        sourceKey: "id",
+      });
     }
   }
   Meal.init(

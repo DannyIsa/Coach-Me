@@ -47,7 +47,7 @@ user.post("/register", (req, res) => {
 
 user.get("/check/:email", async (req, res) => {
   const { email } = req.params;
-  const coach = await models.Coach.findOne({ where: { email } });
+  const coach = await models.Coach.findOne({ where: { email: email } });
   if (coach)
     return res.send({ valid: checkValid(coach.toJSON()), type: "coach" });
   const trainee = await models.Trainee.findOne({ where: { email } });

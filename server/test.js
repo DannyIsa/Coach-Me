@@ -54,12 +54,14 @@ const sequelize = new Sequelize(
 //   console.log(join[0].toJSON());
 // });
 
-// //FoodMealJoin => Meal
+// //FoodMealJoin => Meal <= TraineeMealJoin
 
 // models.Meal.findAll().then(async (res) => {
 //   console.log(res[0].toJSON());
-//   const joins = await res[0].getFoodMealJoins();
-//   console.log(joins[0].toJSON());
+//   const foodJoins = await res[0].getFoodMealJoins();
+//   console.log(foodJoins[0].toJSON());
+//   const traineeJoins = await res[0].getTraineeMealJoins();
+//   console.log(traineeJoins[0].toJSON());
 // });
 
 // //FoodMealJoin => Food
@@ -68,4 +70,23 @@ const sequelize = new Sequelize(
 //   console.log(res.toJSON());
 //   const joins = await res.getFoodMealJoins();
 //   console.log(joins[0].toJSON());
+// });
+
+// //CoachRequest => Trainee <= TraineeMealJoin
+
+// models.Trainee.findOne().then(async (res) => {
+//   console.log(res.toJSON());
+//   const request = await res.getCoachRequest();
+//   console.log(request.toJSON());
+
+//   const join = await res.getTraineeMealJoins();
+//   console.log(join[0].toJSON());
+// });
+
+// // CoachRequest => Coach
+
+// models.Coach.findOne().then(async (res) => {
+//   console.log(res.toJSON());
+//   const requests = await res.getCoachRequests();
+//   console.log(requests[0].toJSON());
 // });

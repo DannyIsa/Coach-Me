@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "id",
         foreignKey: "coach_id",
       });
+      this.hasMany(models.CoachRequest, {
+        foreignKey: "coach_id",
+        sourceKey: "id",
+      });
     }
   }
   Coach.init(

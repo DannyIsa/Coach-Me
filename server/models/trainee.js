@@ -24,6 +24,14 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "id",
         foreignKey: "id",
       });
+      this.hasOne(models.CoachRequest, {
+        foreignKey: "trainee_id",
+        sourceKey: "id",
+      });
+      this.hasMany(models.TraineeMealJoin, {
+        foreignKey: "trainee_id",
+        sourceKey: "id",
+      });
     }
   }
   Trainee.init(
