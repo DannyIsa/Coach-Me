@@ -71,9 +71,24 @@ trainee.get("/meal/show/:traineeId", async (req, res) => {
   const { traineeId } = req.params;
   let { sort } = req.query;
   let { order } = req.query;
-  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
-  const meals = await trainee.getMeals();
-  res.send(meals);
+  if (
+    !sort ||
+    (sort !== "name" &&
+      sort !== "calories" &&
+      sort !== "carbs" &&
+      sort !== "protein" &&
+      sort !== "fats" &&
+      sort !== "created_at")
+  )
+    sort = "name";
+  if (!order || (order !== "DESC" && order !== "ASC")) order = "DESC";
+  const trainee = await models.Trainee.findOne(
+    { include: { model: models.Meal } },
+    { where: { id: traineeId } }
+  );
+  const { Meals } = trainee;
+  // if (meals === [] || !meals) return res.status(404).send("No Meals Found");
+  res.send(Meals);
 });
 
 module.exports = trainee;
