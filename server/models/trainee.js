@@ -28,10 +28,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "trainee_id",
         sourceKey: "id",
       });
-      this.hasMany(models.TraineeMealJoin, {
-        foreignKey: "trainee_id",
-        sourceKey: "id",
-      });
+      this.belongsToMany(models.Meal, { through: "trainee_meal_joins" });
     }
   }
   Trainee.init(

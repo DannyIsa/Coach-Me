@@ -1,6 +1,7 @@
 const models = require("./models");
 const { Op } = require("sequelize");
 const Sequelize = require("sequelize");
+const Meal = require("./models/Meal");
 require("dotenv").config();
 const sequelize = new Sequelize(
   process.env.SQL_DATA_BASE,
@@ -12,14 +13,12 @@ const sequelize = new Sequelize(
   }
 );
 
-// // Exercise => ExerciseSet <= WorkoutExerciseJoin
+// // Exercise => ExerciseSet
 
 // models.ExerciseSet.findAll().then(async (res) => {
 //   console.log(res[0].toJSON());
 //   const exercises = await res[0].getExercises();
 //   console.log(exercises[0].toJSON());
-//   const joins = await res[0].getWorkoutExerciseJoins();
-//   console.log(joins[0].toJSON());
 // });
 
 // // Workout => Coach <= Trainee;
@@ -44,43 +43,20 @@ const sequelize = new Sequelize(
 //   console.log(dLogs[0].toJSON());
 // });
 
-// //WorkoutLog => Workout <= WorkoutExerciseJoin
+// //WorkoutLog => Workout
 
 // models.Workout.findOne().then(async (res) => {
 //   console.log(res.toJSON());
 //   // const logs = await res.getWorkoutLogs();
 //   // console.log(logs[0].toJSON());
-//   const join = await res.getWorkoutExerciseJoins();
-//   console.log(join[0].toJSON());
 // });
 
-// //FoodMealJoin => Meal <= TraineeMealJoin
-
-// models.Meal.findAll().then(async (res) => {
-//   console.log(res[0].toJSON());
-//   const foodJoins = await res[0].getFoodMealJoins();
-//   console.log(foodJoins[0].toJSON());
-//   const traineeJoins = await res[0].getTraineeMealJoins();
-//   console.log(traineeJoins[0].toJSON());
-// });
-
-// //FoodMealJoin => Food
-
-// models.Food.findOne().then(async (res) => {
-//   console.log(res.toJSON());
-//   const joins = await res.getFoodMealJoins();
-//   console.log(joins[0].toJSON());
-// });
-
-// //CoachRequest => Trainee <= TraineeMealJoin
+// //CoachRequest => Trainee
 
 // models.Trainee.findOne().then(async (res) => {
 //   console.log(res.toJSON());
 //   const request = await res.getCoachRequest();
 //   console.log(request.toJSON());
-
-//   const join = await res.getTraineeMealJoins();
-//   console.log(join[0].toJSON());
 // });
 
 // // CoachRequest => Coach
@@ -89,4 +65,42 @@ const sequelize = new Sequelize(
 //   console.log(res.toJSON());
 //   const requests = await res.getCoachRequests();
 //   console.log(requests[0].toJSON());
+// });
+
+//Trainee + Meal
+
+// models.Trainee.findOne().then(async (res) => {
+//   console.log(res.toJSON());
+//   const meal = await res.getMeals();
+//   console.log(meal[0].toJSON());
+// });
+// models.Meal.findOne().then(async (res) => {
+//   console.log(res.toJSON());
+//   const trainee = await res.getTrainees();
+//   console.log(trainee[0].toJSON());
+// });
+
+// //Food + Meal
+
+// models.Food.findOne().then(async (res) => {
+//   console.log(res.toJSON());
+//   const meals = await res.getMeals();
+//   meals.map((item) => console.log(item.toJSON()));
+// });
+// models.Meal.findOne({ where: { id: 6 } }).then(async (res) => {
+//   console.log(res.toJSON());
+//   const food = await res.getFood();
+//   food.map((item) => console.log(item.toJSON()));
+// });
+
+// //Workout + ExerciseSet
+// models.Workout.findOne().then(async (res) => {
+//   console.log(res.toJSON());
+//   const set = await res.getExerciseSets();
+//   set.map((item) => console.log(item.toJSON()));
+// });
+// models.ExerciseSet.findOne({ where: { id: 2 } }).then(async (res) => {
+//   console.log(res.toJSON());
+//   const Workout = await res.getWorkouts();
+//   Workout.map((item) => console.log(item.toJSON()));
 // });

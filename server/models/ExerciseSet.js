@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "name",
         foreignKey: "name",
       });
-      this.hasMany(models.WorkoutExerciseJoin, {
+      this.belongsToMany(models.Workout, {
+        through: "workout_exercise_joins",
         foreignKey: "exercise_id",
         sourceKey: "id",
       });

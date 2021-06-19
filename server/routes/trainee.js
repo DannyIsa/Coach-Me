@@ -43,20 +43,36 @@ trainee.post("/send-request/:traineeId", (req, res) => {
     });
 });
 
-trainee.post("/log/workout/add:clientId", (req, res) => {});
+trainee.post("/log/workout/add", (req, res) => {});
 
-trainee.post("/log/measure/add:clientId", (req, res) => {});
+trainee.post("/log/measure/add", (req, res) => {});
 
-trainee.post("/log/diet/add:clientId", (req, res) => {});
+trainee.post("/log/diet/add", (req, res) => {});
 
-trainee.get("/log/workout/show:clientId", (req, res) => {});
+trainee.get("/log/workout/show:traineeId", (req, res) => {});
 
-trainee.get("/log/measure/show:clientId", (req, res) => {});
+trainee.get("/log/measure/show:traineeId", (req, res) => {});
 
-trainee.get("/log/diet/show:clientId", (req, res) => {});
+trainee.get("/log/diet/show:traineeId", (req, res) => {});
 
-trainee.post("/meal/add/:clientId", (req, res) => {});
+trainee.post("/meal/add", (req, res) => {
+  const { traineeId, mealId } = req.body;
+  if (!Number(mealId) || !Number(traineeId))
+    return res.status(400).send("Invalid ID");
+  let query = { meal_id: mealId, trainee_id: traineeId };
 
-trainee.get("/meal/show/:clientId", (req, res) => {});
+  models.TraineeMealJoin.create(query)
+    .then(() => res.status(201).send("Meal Added To Trainee"))
+    .catch((err) => res.status(400).send(err.message));
+});
+
+trainee.get("/meal/show/:traineeId", async (req, res) => {
+  const { traineeId } = req.params;
+  let { sort } = req.query;
+  let { order } = req.query;
+  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
+  const joins = await trainee.getTraineeMealJoins();
+  res.send(joins);
+});
 
 module.exports = trainee;
