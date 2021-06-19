@@ -16,36 +16,33 @@ const { Router } = require("express");
 const meal = Router();
 meal.use(express.json());
 
-meal.post("/new", (req, res) => {
+meal.post("/new", async (req, res) => {
   const { name, description, ingredients } = req.body;
   let calories = 0;
   let protein = 0;
   let fats = 0;
   let carbs = 0;
-  bulkQuery = [];
-  ingredients.map((item) => {
+  ingredients.forEach((item) => {
     calories += item.calories;
     protein += item.protein;
     fats += item.fats;
     carbs += item.carbs;
-    bulkQuery.push({ food_name: item.name });
   });
-  models.Meal.create({
+  const meal = await models.Meal.create({
     name,
     description,
     calories,
     protein,
     fats,
     carbs,
-  })
-    .then((data) => {
-      const { id } = data.toJSON();
-      bulkQuery.forEach((item) => (item.meal_id = id));
-      models.FoodMealJoin.bulkCreate([...bulkQuery])
-        .then(() => {
-          res.status(201).send("Meal Created");
-        })
-        .catch((err) => res.status(400).send(err.message));
+  });
+  const Food = await models.Food.findAll({
+    where: { name: ingredients.map((item) => item.name) },
+  });
+  meal
+    .addFood(Food)
+    .then(() => {
+      res.status(201).send("Meal Created");
     })
     .catch((err) => res.status(400).send(err.message));
 });

@@ -55,13 +55,14 @@ trainee.get("/log/measure/show:traineeId", (req, res) => {});
 
 trainee.get("/log/diet/show:traineeId", (req, res) => {});
 
-trainee.post("/meal/add", (req, res) => {
+trainee.post("/meal/add", async (req, res) => {
   const { traineeId, mealId } = req.body;
   if (!Number(mealId) || !Number(traineeId))
     return res.status(400).send("Invalid ID");
-  let query = { meal_id: mealId, trainee_id: traineeId };
-
-  models.TraineeMealJoin.create(query)
+  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
+  const meal = await models.Meal.findOne({ where: { id: mealId } });
+  trainee
+    .addMeal(meal)
     .then(() => res.status(201).send("Meal Added To Trainee"))
     .catch((err) => res.status(400).send(err.message));
 });
@@ -71,8 +72,8 @@ trainee.get("/meal/show/:traineeId", async (req, res) => {
   let { sort } = req.query;
   let { order } = req.query;
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
-  const joins = await trainee.getTraineeMealJoins();
-  res.send(joins);
+  const meals = await trainee.getMeals();
+  res.send(meals);
 });
 
 module.exports = trainee;
