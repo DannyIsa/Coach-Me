@@ -5,7 +5,9 @@ import axios from "axios";
 
 function SignUp() {
   const [emailInput, setEmailInput] = useState("");
+
   const [passwordInput, setPasswordInput] = useState("");
+
   const [errorMessage, setError] = useState();
   const [type, setType] = useState("Trainee");
   const passwordRef = useRef();
@@ -98,6 +100,7 @@ function SignUp() {
       >
         Coach
       </div>
+
       <button onClick={SignUpWithPassword}>Sign Up</button>
       <br />
       <button name="google" onClick={SignUpWithGoogle} className="google">
