@@ -29,6 +29,7 @@ function App() {
   const [user, loading] = useAuthState(auth);
   const [registered, setRegistered] = useState();
   const [userType, setUserType] = useState();
+
   useEffect(() => {
     if (!user) return;
     const { email } = user;
