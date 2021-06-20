@@ -17,15 +17,20 @@ function SignUp() {
       .auth()
       .signInWithPopup(provider)
       .then(async (data) => {
-        const emailData = data.user.email;
-        const userData = data.user.displayName;
-        axios
-          .post(`/api/user/register?type=${type}`)
-          .then(() => {
-            history.push("/");
-          })
-          .catch((err) => {
-            setError(err.message);
+        const { email } = data.user;
+        axios("/api/user/check/" + email)
+          .then(() => history.push("/"))
+          .catch(() => {
+            axios
+              .post(`/api/user/register?type=${type ? type : "Trainee"}`, {
+                email,
+              })
+              .then(() => {
+                history.push("/");
+              })
+              .catch((err) => {
+                setError(err.message);
+              });
           });
       });
   };
@@ -36,7 +41,9 @@ function SignUp() {
       .createUserWithEmailAndPassword(emailInput, passwordInput)
       .then(() => {
         axios
-          .post(`/api/user/register?type=${type}`, { email: emailInput })
+          .post(`/api/user/register?type=${type ? type : "Trainee"}`, {
+            email: emailInput,
+          })
           .then(() => {
             history.push("/");
           })
@@ -99,6 +106,7 @@ function SignUp() {
         Coach
       </div>
       <button onClick={SignUpWithPassword}>Sign Up</button>
+      <br />
       <button name="google" onClick={SignUpWithGoogle} className="google">
         <img
           src="https://firebasestorage.googleapis.com/v0/b/chat-service-d13a1.appspot.com/o/google-logo.png?alt=media&token=47d2d019-037d-418c-abef-230317fe1393"
@@ -107,9 +115,11 @@ function SignUp() {
         />
         Sign up with google
       </button>
+      <br />
       <button onClick={() => history.push("/sign-in")}>
-        Already Registered
+        Already Registered?
       </button>
+      <br />
       <h2 className="error-message">{errorMessage}</h2>
     </div>
   );
