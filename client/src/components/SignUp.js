@@ -5,10 +5,9 @@ import axios from "axios";
 
 function SignUp() {
   const [emailInput, setEmailInput] = useState("");
-  const [fullNameInput, setFullNameInput] = useState("");
+
   const [passwordInput, setPasswordInput] = useState("");
-  const [addressInput, setAddressInput] = useState("");
-  const [phoneNumberInput, setPhoneNumberInput] = useState("");
+
   const [errorMessage, setError] = useState();
   const [type, setType] = useState("Trainee");
   const passwordRef = useRef();
@@ -22,33 +21,14 @@ function SignUp() {
       .then(async (data) => {
         const emailData = data.user.email;
         const userData = data.user.displayName;
-        if (type === "Coach") {
-          axios
-            .post(`/api/user/register?type=${type}`, {
-              email: emailData,
-              address: addressInput,
-              "phone-number": phoneNumberInput,
-              name: userData,
-            })
-            .then(() => {
-              history.push("/");
-            })
-            .catch((err) => {
-              setError(err.message);
-            });
-        } else {
-          axios
-            .post(`/api/user/register?type=${type}`, {
-              email: emailData,
-              name: userData,
-            })
-            .then(() => {
-              history.push("/");
-            })
-            .catch((err) => {
-              setError(err.message);
-            });
-        }
+        axios
+          .post(`/api/user/register?type=${type}`)
+          .then(() => {
+            history.push("/");
+          })
+          .catch((err) => {
+            setError(err.message);
+          });
       });
   };
 
@@ -57,33 +37,14 @@ function SignUp() {
       .auth()
       .createUserWithEmailAndPassword(emailInput, passwordInput)
       .then(() => {
-        if (type === "Coach") {
-          axios
-            .post(`/api/user/register?type=${type}`, {
-              email: emailInput,
-              address: addressInput,
-              "phone-number": phoneNumberInput,
-              name: fullNameInput,
-            })
-            .then(() => {
-              history.push("/");
-            })
-            .catch((err) => {
-              setError(err.message);
-            });
-        } else {
-          axios
-            .post(`/api/user/register?type=${type}`, {
-              email: emailInput,
-              name: fullNameInput,
-            })
-            .then(() => {
-              history.push("/");
-            })
-            .catch((err) => {
-              setError(err.message);
-            });
-        }
+        axios
+          .post(`/api/user/register?type=${type}`, { email: emailInput })
+          .then(() => {
+            history.push("/");
+          })
+          .catch((err) => {
+            setError(err.message);
+          });
       })
       .catch((err) => {
         setError(err.message);
@@ -98,15 +59,6 @@ function SignUp() {
         placeholder="enter your email"
         onChange={(e) => {
           setEmailInput(e.target.value);
-        }}
-      />
-      <br />
-      <input
-        name="text"
-        type="text"
-        placeholder="enter your Full Name"
-        onChange={(e) => {
-          setFullNameInput(e.target.value);
         }}
       />
       <br />
@@ -148,24 +100,7 @@ function SignUp() {
       >
         Coach
       </div>
-      {type === "Coach" && (
-        <div>
-          <input
-            type="text"
-            placeholder="enter your address"
-            onChange={(e) => {
-              setAddressInput(e.target.value);
-            }}
-          ></input>
-          <input
-            type="text"
-            placeholder="enter your phone number"
-            onChange={(e) => {
-              setPhoneNumberInput(e.target.value);
-            }}
-          ></input>
-        </div>
-      )}
+
       <button onClick={SignUpWithPassword}>Sign Up</button>
       <br />
       <button name="google" onClick={SignUpWithGoogle} className="google">
