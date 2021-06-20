@@ -18,7 +18,43 @@ logs.use(express.json());
 
 logs.post("/workout/add", (req, res) => {});
 
-logs.post("/measure/add", (req, res) => {});
+logs.post("/measure/add", async (req, res) => {
+  const {
+    id: traineeId,
+    weight,
+    chestPerimeter,
+    hipPerimeter,
+    bicepPerimeter,
+    thighPerimeter,
+    waistPerimeter,
+  } = req.body || null;
+  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
+  if (!traineeId || !trainee) {
+    return res.status(400).send("Invalid ID");
+  }
+  if (
+    !weight &&
+    !chestPerimeter &&
+    !hipPerimeter &&
+    !bicepPerimeter &&
+    !thighPerimeter &&
+    !waistPerimeter
+  ) {
+    return res.status(400).send("Must send measure logs");
+  }
+
+  models.MeasureLog.create({
+    id: traineeId,
+    weight,
+    "chest-perimeter": chestPerimeter,
+    "hip-perimeter": hipPerimeter,
+    "bicep-perimeter": bicepPerimeter,
+    "thigh-perimeter": thighPerimeter,
+    "waist-perimeter": waistPerimeter,
+  }).then(() => {
+    res.status(201).send(`${traineeId} measure logs added`);
+  });
+});
 
 logs.post("/diet/add", (req, res) => {});
 

@@ -17,10 +17,13 @@ module.exports = {
         unique: true,
         primaryKey: true,
       },
-      address: {
+      phone_number: {
         type: Sequelize.STRING,
       },
-      phone_number: {
+      birthdate: {
+        type: Sequelize.DATE,
+      },
+      gender: {
         type: Sequelize.STRING,
       },
       avg_rating: {
