@@ -8,10 +8,11 @@ import axios from "axios";
 
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
-import Home from "./components/Home";
 import Food from "./components/Food";
 import Check from "./components/Check";
 import Details from "./components/Details";
+import TraineeDashboard from "./components/TraineeDashboard";
+import CoachDashboard from "./components/CoachDashboard";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDXQY7ezPYUQoh3yJmWRZEalb9N-yieW-o",
@@ -35,8 +36,8 @@ function App() {
     axios
       .get("/api/user/check/" + email)
       .then(({ data }) => {
-        setRegistered(data.valid);
         setUserType(data.type);
+        setRegistered(data.valid);
       })
       .catch((err) => {
         console.log(err);
@@ -55,18 +56,25 @@ function App() {
               userType={userType}
             />
           </Route>
+          {/* user is logged in */}
           {user ? (
+            // user is registered
             registered ? (
-              <>
+              <Switch>
                 <Route exact path="/home">
-                  <Home auth={auth} user={user} />
+                  {userType === "Coach" ? (
+                    <CoachDashboard auth={auth} />
+                  ) : (
+                    <TraineeDashboard auth={auth} />
+                  )}
                 </Route>
                 <Route exact path="/food">
                   <Food />
                 </Route>
-              </>
+              </Switch>
             ) : (
-              <>
+              // user isn't registered
+              <Switch>
                 <Route exact path="/details">
                   <Details
                     user={user}
@@ -75,17 +83,18 @@ function App() {
                     setRegistered={setRegistered}
                   />
                 </Route>
-              </>
+              </Switch>
             )
           ) : (
-            <>
+            <Switch>
+              {/* user isn't logged in */}
               <Route exact path="/sign-in">
                 <SignIn auth={auth} />
               </Route>
               <Route exact path="/sign-up">
                 <SignUp auth={auth} />
               </Route>
-            </>
+            </Switch>
           )}
         </Switch>
       </Router>
