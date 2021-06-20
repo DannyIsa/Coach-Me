@@ -106,7 +106,7 @@ logs.get("/workout/show/:traineeId", async (req, res) => {
   res.status(201).send(traineeDietLog);
 });
 
-logs.get("/measure/show/:traineeId", (req, res) => {
+logs.get("/measure/show/:traineeId", async (req, res) => {
   const { traineeId } = req.params;
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
 
