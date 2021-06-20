@@ -20,6 +20,9 @@ module.exports = {
       coach_id: {
         type: Sequelize.INTEGER,
       },
+      phone_number: {
+        type: Sequelize.STRING,
+      },
       birthdate: {
         type: Sequelize.DATE,
       },
