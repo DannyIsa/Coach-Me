@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       protein: DataTypes.INTEGER,
       carbs: DataTypes.INTEGER,
       fats: DataTypes.INTEGER,
+      weight: DataTypes.INTEGER,
       image: DataTypes.STRING,
     },
     {
