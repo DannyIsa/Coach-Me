@@ -7,7 +7,7 @@ function SignUp() {
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [errorMessage, setError] = useState();
-  const [type, setType] = useState("");
+  const [type, setType] = useState("Trainee");
   const passwordRef = useRef();
   const history = useHistory();
 
@@ -37,7 +37,7 @@ function SignUp() {
       .then(() => {
         axios
           .post(`/api/user/register?type=${type}`, { email: emailInput })
-          .then(async () => {
+          .then(() => {
             history.push("/");
           })
           .catch((err) => {
@@ -107,7 +107,9 @@ function SignUp() {
         />
         Sign up with google
       </button>
-      <button onClick={() => history.push("/")}>Already Signed Up</button>
+      <button onClick={() => history.push("/sign-in")}>
+        Already Registered
+      </button>
       <h2 className="error-message">{errorMessage}</h2>
     </div>
   );

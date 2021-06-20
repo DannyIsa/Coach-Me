@@ -108,6 +108,8 @@ coach.post("/workout/new/:coachId", async (req, res) => {
     .catch((err) => res.status(400).send(err.message));
 });
 
+coach.get("/workout/show/:coachId", (req, res) => {});
+
 coach.put("/workout/append/:coachId", (req, res) => {});
 
 module.exports = coach;

@@ -1,13 +1,18 @@
-import SignUp from "./components/SignUp";
-import SignIn from "./components/SignIn";
-import Home from "./components/Home";
-import Food from "./components/Food";
 import "./styles/App.css";
-
+import React, { useState, useEffect } from "react";
 import { Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
+import axios from "axios";
+
+import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
+import Home from "./components/Home";
+import Food from "./components/Food";
+import Check from "./components/Check";
+import Details from "./components/Details";
+
 firebase.initializeApp({
   apiKey: "AIzaSyDXQY7ezPYUQoh3yJmWRZEalb9N-yieW-o",
   authDomain: "coach-me-7bdf4.firebaseapp.com",
@@ -21,23 +26,59 @@ firebase.initializeApp({
 const auth = firebase.auth();
 
 function App() {
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
+  const [registered, setRegistered] = useState();
+  const [userType, setUserType] = useState();
+  useEffect(() => {
+    if (!user) return;
+    const { email } = user;
+    axios
+      .get("/api/user/check/" + email)
+      .then(({ data }) => {
+        setRegistered(data.valid);
+        setUserType(data.type);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [user]);
+
   return (
     <div>
       <Router>
         <Switch>
+          <Route exact path="/">
+            <Check
+              user={user}
+              loading={loading}
+              registered={registered}
+              userType={userType}
+            />
+          </Route>
           {user ? (
-            <Home auth={auth} user={user} />
+            registered ? (
+              <>
+                <Route exact path="/home">
+                  <Home auth={auth} user={user} />
+                </Route>
+                <Route exact path="/food">
+                  <Food />
+                </Route>
+              </>
+            ) : (
+              <>
+                <Route exact path="/details">
+                  <Details user={user} auth={auth} userType={userType} />
+                </Route>
+              </>
+            )
           ) : (
             <>
-              <Route exact path="/">
+              <Route exact path="/sign-in">
                 <SignIn auth={auth} />
               </Route>
               <Route exact path="/sign-up">
                 <SignUp auth={auth} />
-              </Route>
-              <Route exact path="/food">
-                <Food />
               </Route>
             </>
           )}
