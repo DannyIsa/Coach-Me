@@ -4,13 +4,14 @@ import { useHistory } from "react-router-dom";
 function Check({ user, loading, registered, userType }) {
   const history = useHistory();
   useEffect(() => {
+    console.log(loading, user, registered);
     if (!loading) {
       if (user) {
         if (registered === true) history.push("/home");
         else if (registered === false) history.push("/details");
       } else history.push("/sign-up");
     }
-  }, [loading, registered]);
+  }, [user, registered]);
   return (
     <div className="home-page">
       <h1 className="headline">Loading...</h1>

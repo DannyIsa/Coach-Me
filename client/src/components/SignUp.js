@@ -167,6 +167,7 @@ function SignUp() {
         </div>
       )}
       <button onClick={SignUpWithPassword}>Sign Up</button>
+      <br />
       <button name="google" onClick={SignUpWithGoogle} className="google">
         <img
           src="https://firebasestorage.googleapis.com/v0/b/chat-service-d13a1.appspot.com/o/google-logo.png?alt=media&token=47d2d019-037d-418c-abef-230317fe1393"
@@ -175,9 +176,11 @@ function SignUp() {
         />
         Sign up with google
       </button>
+      <br />
       <button onClick={() => history.push("/sign-in")}>
-        Already Registered
+        Already Registered?
       </button>
+      <br />
       <h2 className="error-message">{errorMessage}</h2>
     </div>
   );

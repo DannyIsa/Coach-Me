@@ -1,0 +1,8642 @@
+[
+ {
+   "Food": "1000 Island, Salad Drsng,Local",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 25,
+   "Fats": 2,
+   "Carbs": 2,
+   "Protein": 0
+ },
+ {
+   "Food": "1000 Island, Salad Drsng,Reglr",
+   "Measure": "1 Tbsp",
+   "Weight": "16",
+   "kCal": 60,
+   "Fats": 6,
+   "Carbs": 2,
+   "Protein": 0
+ },
+ {
+   "Food": "40% Bran Flakes, Kellogg's",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 90,
+   "Fats": 1,
+   "Carbs": 22,
+   "Protein": 4
+ },
+ {
+   "Food": "40% Bran Flakes, Post",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 90,
+   "Fats": 0,
+   "Carbs": 22,
+   "Protein": 3
+ },
+ {
+   "Food": "Alfalfa Seeds, Sprouted, Raw",
+   "Measure": "1 Cup",
+   "Weight": "33",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 1
+ },
+ {
+   "Food": "All-Bran Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 70,
+   "Fats": 1,
+   "Carbs": 21,
+   "Protein": 4
+ },
+ {
+   "Food": "Almonds, Slivered",
+   "Measure": "1 Cup",
+   "Weight": "135",
+   "kCal": 795,
+   "Fats": 70,
+   "Carbs": 28,
+   "Protein": 27
+ },
+ {
+   "Food": "Almonds, Whole",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 165,
+   "Fats": 15,
+   "Carbs": 6,
+   "Protein": 6
+ },
+ {
+   "Food": "Angelfood Cake, From Mix",
+   "Measure": "1 Cake",
+   "Weight": "635",
+   "kCal": 1510,
+   "Fats": 2,
+   "Carbs": 342,
+   "Protein": 38
+ },
+ {
+   "Food": "Angelfood Cake, From Mix",
+   "Measure": "1 Piece",
+   "Weight": "53",
+   "kCal": 125,
+   "Fats": 0,
+   "Carbs": 29,
+   "Protein": 3
+ },
+ {
+   "Food": "Apple Juice, Canned",
+   "Measure": "1 Cup",
+   "Weight": "248",
+   "kCal": 115,
+   "Fats": 0,
+   "Carbs": 29,
+   "Protein": 0
+ },
+ {
+   "Food": "Apple Pie",
+   "Measure": "1 Pie",
+   "Weight": "945",
+   "kCal": 2420,
+   "Fats": 105,
+   "Carbs": 360,
+   "Protein": 21
+ },
+ {
+   "Food": "Apple Pie",
+   "Measure": "1 Piece",
+   "Weight": "158",
+   "kCal": 405,
+   "Fats": 18,
+   "Carbs": 60,
+   "Protein": 3
+ },
+ {
+   "Food": "Apples, Dried, Sulfured",
+   "Measure": "10 Rings",
+   "Weight": "64",
+   "kCal": 155,
+   "Fats": 0,
+   "Carbs": 42,
+   "Protein": 1
+ },
+ {
+   "Food": "Apples, Raw, Peeled, Sliced",
+   "Measure": "1 Cup",
+   "Weight": "110",
+   "kCal": 65,
+   "Fats": 0,
+   "Carbs": 16,
+   "Protein": 0
+ },
+ {
+   "Food": "Apples, Raw, Unpeeled,2 Per Lb",
+   "Measure": "1 Apple",
+   "Weight": "212",
+   "kCal": 125,
+   "Fats": 1,
+   "Carbs": 32,
+   "Protein": 0
+ },
+ {
+   "Food": "Apples, Raw, Unpeeled,3 Per Lb",
+   "Measure": "1 Apple",
+   "Weight": "138",
+   "kCal": 80,
+   "Fats": 0,
+   "Carbs": 21,
+   "Protein": 0
+ },
+ {
+   "Food": "Applesauce, Canned, Sweetened",
+   "Measure": "1 Cup",
+   "Weight": "255",
+   "kCal": 195,
+   "Fats": 0,
+   "Carbs": 51,
+   "Protein": 0
+ },
+ {
+   "Food": "Applesauce, Canned,Unsweetened",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 105,
+   "Fats": 0,
+   "Carbs": 28,
+   "Protein": 0
+ },
+ {
+   "Food": "Apricot Nectar, No Added Vit C",
+   "Measure": "1 Cup",
+   "Weight": "251",
+   "kCal": 140,
+   "Fats": 0,
+   "Carbs": 36,
+   "Protein": 1
+ },
+ {
+   "Food": "Apricot, Canned, Heavy Syrup",
+   "Measure": "1 Cup",
+   "Weight": "258",
+   "kCal": 215,
+   "Fats": 0,
+   "Carbs": 55,
+   "Protein": 1
+ },
+ {
+   "Food": "Apricot, Canned, Heavy Syrup",
+   "Measure": "3 Halves",
+   "Weight": "85",
+   "kCal": 70,
+   "Fats": 0,
+   "Carbs": 18,
+   "Protein": 0
+ },
+ {
+   "Food": "Apricots, Canned, Juice Pack",
+   "Measure": "1 Cup",
+   "Weight": "248",
+   "kCal": 120,
+   "Fats": 0,
+   "Carbs": 31,
+   "Protein": 2
+ },
+ {
+   "Food": "Apricots, Canned, Juice Pack",
+   "Measure": "3 Halves",
+   "Weight": "84",
+   "kCal": 40,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 1
+ },
+ {
+   "Food": "Apricots, Dried, Cooked,Unswtn",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 210,
+   "Fats": 0,
+   "Carbs": 55,
+   "Protein": 3
+ },
+ {
+   "Food": "Apricots, Dried, Uncooked",
+   "Measure": "1 Cup",
+   "Weight": "130",
+   "kCal": 310,
+   "Fats": 1,
+   "Carbs": 80,
+   "Protein": 5
+ },
+ {
+   "Food": "Apricots, Raw",
+   "Measure": "3 Aprcot",
+   "Weight": "106",
+   "kCal": 50,
+   "Fats": 0,
+   "Carbs": 12,
+   "Protein": 1
+ },
+ {
+   "Food": "Artichokes, Globe, Cooked, Drn",
+   "Measure": "1 Artchk",
+   "Weight": "120",
+   "kCal": 55,
+   "Fats": 0,
+   "Carbs": 12,
+   "Protein": 3
+ },
+ {
+   "Food": "Asparagus, Ckd Frm Frz,Dr,Sper",
+   "Measure": "4 Spears",
+   "Weight": "60",
+   "kCal": 15,
+   "Fats": 0,
+   "Carbs": 3,
+   "Protein": 2
+ },
+ {
+   "Food": "Asparagus, Ckd Frm Frz,Drn,Cut",
+   "Measure": "1 Cup",
+   "Weight": "180",
+   "kCal": 50,
+   "Fats": 1,
+   "Carbs": 9,
+   "Protein": 5
+ },
+ {
+   "Food": "Asparagus, Ckd Frm Raw, Dr,Cut",
+   "Measure": "1 Cup",
+   "Weight": "180",
+   "kCal": 45,
+   "Fats": 1,
+   "Carbs": 8,
+   "Protein": 5
+ },
+ {
+   "Food": "Asparagus, Ckd Frm Raw,Dr,Sper",
+   "Measure": "4 Spears",
+   "Weight": "60",
+   "kCal": 15,
+   "Fats": 0,
+   "Carbs": 3,
+   "Protein": 2
+ },
+ {
+   "Food": "Asparagus,Canned,Spears,Nosalt",
+   "Measure": "4 Spears",
+   "Weight": "80",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 1
+ },
+ {
+   "Food": "Asparagus,Canned,Spears,W/Salt",
+   "Measure": "4 Spears",
+   "Weight": "80",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 1
+ },
+ {
+   "Food": "Avocados, California",
+   "Measure": "1 Avocdo",
+   "Weight": "173",
+   "kCal": 305,
+   "Fats": 30,
+   "Carbs": 12,
+   "Protein": 4
+ },
+ {
+   "Food": "Avocados, Florida",
+   "Measure": "1 Avocdo",
+   "Weight": "304",
+   "kCal": 340,
+   "Fats": 27,
+   "Carbs": 27,
+   "Protein": 5
+ },
+ {
+   "Food": "Bagels, Egg",
+   "Measure": "1 Bagel",
+   "Weight": "68",
+   "kCal": 200,
+   "Fats": 2,
+   "Carbs": 38,
+   "Protein": 7
+ },
+ {
+   "Food": "Bagels, Plain",
+   "Measure": "1 Bagel",
+   "Weight": "68",
+   "kCal": 200,
+   "Fats": 2,
+   "Carbs": 38,
+   "Protein": 7
+ },
+ {
+   "Food": "Baking Powder, Low Sodium",
+   "Measure": "1 Tsp",
+   "Weight": "4,3",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Baking Powder, Strght Phosphat",
+   "Measure": "1 Tsp",
+   "Weight": "3,8",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Baking Powder,Sas, Ca Po4",
+   "Measure": "1 Tsp",
+   "Weight": "3",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Baking Powder,Sas,Capo4+Caso4",
+   "Measure": "1 Tsp",
+   "Weight": "2,9",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Baking Pwdr Biscuits,From Mix",
+   "Measure": "1 Biscut",
+   "Weight": "28",
+   "kCal": 95,
+   "Fats": 3,
+   "Carbs": 14,
+   "Protein": 2
+ },
+ {
+   "Food": "Baking Pwdr Biscuits,Homerecpe",
+   "Measure": "1 Biscut",
+   "Weight": "28",
+   "kCal": 100,
+   "Fats": 5,
+   "Carbs": 13,
+   "Protein": 2
+ },
+ {
+   "Food": "Baking Pwdr Biscuits,Refrgdogh",
+   "Measure": "1 Biscut",
+   "Weight": "20",
+   "kCal": 65,
+   "Fats": 2,
+   "Carbs": 10,
+   "Protein": 1
+ },
+ {
+   "Food": "Bamboo Shoots, Canned, Drained",
+   "Measure": "1 Cup",
+   "Weight": "131",
+   "kCal": 25,
+   "Fats": 1,
+   "Carbs": 4,
+   "Protein": 2
+ },
+ {
+   "Food": "Bananas",
+   "Measure": "1 Banana",
+   "Weight": "114",
+   "kCal": 105,
+   "Fats": 1,
+   "Carbs": 27,
+   "Protein": 1
+ },
+ {
+   "Food": "Bananas, Sliced",
+   "Measure": "1 Cup",
+   "Weight": "150",
+   "kCal": 140,
+   "Fats": 1,
+   "Carbs": 35,
+   "Protein": 2
+ },
+ {
+   "Food": "Barbecue Sauce",
+   "Measure": "1 Tbsp",
+   "Weight": "16",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 0
+ },
+ {
+   "Food": "Barley, Pearled,Light, Uncookd",
+   "Measure": "1 Cup",
+   "Weight": "200",
+   "kCal": 700,
+   "Fats": 2,
+   "Carbs": 158,
+   "Protein": 16
+ },
+ {
+   "Food": "Bean Sprouts, Mung, Cookd,Dran",
+   "Measure": "1 Cup",
+   "Weight": "124",
+   "kCal": 25,
+   "Fats": 0,
+   "Carbs": 5,
+   "Protein": 3
+ },
+ {
+   "Food": "Bean Sprouts, Mung, Raw",
+   "Measure": "1 Cup",
+   "Weight": "104",
+   "kCal": 30,
+   "Fats": 0,
+   "Carbs": 6,
+   "Protein": 3
+ },
+ {
+   "Food": "Bean With Bacon Soup, Canned",
+   "Measure": "1 Cup",
+   "Weight": "253",
+   "kCal": 170,
+   "Fats": 6,
+   "Carbs": 23,
+   "Protein": 8
+ },
+ {
+   "Food": "Beans,Dry,Canned,W/Frankfurter",
+   "Measure": "1 Cup",
+   "Weight": "255",
+   "kCal": 365,
+   "Fats": 18,
+   "Carbs": 32,
+   "Protein": 19
+ },
+ {
+   "Food": "Beans,Dry,Canned,W/Pork+Swtsce",
+   "Measure": "1 Cup",
+   "Weight": "255",
+   "kCal": 385,
+   "Fats": 12,
+   "Carbs": 54,
+   "Protein": 16
+ },
+ {
+   "Food": "Beans,Dry,Canned,W/Pork+Tomsce",
+   "Measure": "1 Cup",
+   "Weight": "255",
+   "kCal": 310,
+   "Fats": 7,
+   "Carbs": 48,
+   "Protein": 16
+ },
+ {
+   "Food": "Beef And Vegetable Stew,Hm Rcp",
+   "Measure": "1 Cup",
+   "Weight": "245",
+   "kCal": 220,
+   "Fats": 11,
+   "Carbs": 15,
+   "Protein": 16
+ },
+ {
+   "Food": "Beef Broth, Boulln, Consm,Cnnd",
+   "Measure": "1 Cup",
+   "Weight": "240",
+   "kCal": 15,
+   "Fats": 1,
+   "Carbs": 0,
+   "Protein": 3
+ },
+ {
+   "Food": "Beef Gravy, Canned",
+   "Measure": "1 Cup",
+   "Weight": "233",
+   "kCal": 125,
+   "Fats": 5,
+   "Carbs": 11,
+   "Protein": 9
+ },
+ {
+   "Food": "Beef Heart, Braised",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 150,
+   "Fats": 5,
+   "Carbs": 0,
+   "Protein": 24
+ },
+ {
+   "Food": "Beef Liver, Fried",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 185,
+   "Fats": 7,
+   "Carbs": 7,
+   "Protein": 23
+ },
+ {
+   "Food": "Beef Noodle Soup, Canned",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 85,
+   "Fats": 3,
+   "Carbs": 9,
+   "Protein": 5
+ },
+ {
+   "Food": "Beef Potpie, Home Recipe",
+   "Measure": "1 Piece",
+   "Weight": "210",
+   "kCal": 515,
+   "Fats": 30,
+   "Carbs": 39,
+   "Protein": 21
+ },
+ {
+   "Food": "Beef Roast, Eye O Rnd, Lean",
+   "Measure": "2.6 oz",
+   "Weight": "75",
+   "kCal": 135,
+   "Fats": 5,
+   "Carbs": 0,
+   "Protein": 22
+ },
+ {
+   "Food": "Beef Roast, Eye O Rnd,Lean+Fat",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 205,
+   "Fats": 12,
+   "Carbs": 0,
+   "Protein": 23
+ },
+ {
+   "Food": "Beef Roast, Rib, Lean + Fat",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 315,
+   "Fats": 26,
+   "Carbs": 0,
+   "Protein": 19
+ },
+ {
+   "Food": "Beef Roast, Rib, Lean Only",
+   "Measure": "2.2 oz",
+   "Weight": "61",
+   "kCal": 150,
+   "Fats": 9,
+   "Carbs": 0,
+   "Protein": 17
+ },
+ {
+   "Food": "Beef Steak,Sirloin,Broil,Lean",
+   "Measure": "2.5 oz",
+   "Weight": "72",
+   "kCal": 150,
+   "Fats": 6,
+   "Carbs": 0,
+   "Protein": 22
+ },
+ {
+   "Food": "Beef Steak,Sirloin,Broil,Ln+Ft",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 240,
+   "Fats": 15,
+   "Carbs": 0,
+   "Protein": 23
+ },
+ {
+   "Food": "Beef, Canned, Corned",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 185,
+   "Fats": 10,
+   "Carbs": 0,
+   "Protein": 22
+ },
+ {
+   "Food": "Beef, Ckd,Bttm Round,Lean Only",
+   "Measure": "2.8 oz",
+   "Weight": "78",
+   "kCal": 175,
+   "Fats": 8,
+   "Carbs": 0,
+   "Protein": 25
+ },
+ {
+   "Food": "Beef, Ckd,Bttm Round,Lean+ Fat",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 220,
+   "Fats": 13,
+   "Carbs": 0,
+   "Protein": 25
+ },
+ {
+   "Food": "Beef, Ckd,Chuck Blade,Lean+Fat",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 325,
+   "Fats": 26,
+   "Carbs": 0,
+   "Protein": 22
+ },
+ {
+   "Food": "Beef, Ckd,Chuck Blade,Leanonly",
+   "Measure": "2.2 oz",
+   "Weight": "62",
+   "kCal": 170,
+   "Fats": 9,
+   "Carbs": 0,
+   "Protein": 19
+ },
+ {
+   "Food": "Beef, Dried, Chipped",
+   "Measure": "2.5 oz",
+   "Weight": "72",
+   "kCal": 145,
+   "Fats": 4,
+   "Carbs": 0,
+   "Protein": 24
+ },
+ {
+   "Food": "Beer, Light",
+   "Measure": "12 fl oz",
+   "Weight": "355",
+   "kCal": 95,
+   "Fats": 0,
+   "Carbs": 5,
+   "Protein": 1
+ },
+ {
+   "Food": "Beer, Regular",
+   "Measure": "12 fl oz",
+   "Weight": "360",
+   "kCal": 150,
+   "Fats": 0,
+   "Carbs": 13,
+   "Protein": 1
+ },
+ {
+   "Food": "Beet Greens, Cooked, Drained",
+   "Measure": "1 Cup",
+   "Weight": "144",
+   "kCal": 40,
+   "Fats": 0,
+   "Carbs": 8,
+   "Protein": 4
+ },
+ {
+   "Food": "Beets, Canned, Drained,No Salt",
+   "Measure": "1 Cup",
+   "Weight": "170",
+   "kCal": 55,
+   "Fats": 0,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Beets, Canned, Drained,W/ Salt",
+   "Measure": "1 Cup",
+   "Weight": "170",
+   "kCal": 55,
+   "Fats": 0,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Beets, Cooked, Drained, Diced",
+   "Measure": "1 Cup",
+   "Weight": "170",
+   "kCal": 55,
+   "Fats": 0,
+   "Carbs": 11,
+   "Protein": 2
+ },
+ {
+   "Food": "Beets, Cooked, Drained, Whole",
+   "Measure": "2 Beets",
+   "Weight": "100",
+   "kCal": 30,
+   "Fats": 0,
+   "Carbs": 7,
+   "Protein": 1
+ },
+ {
+   "Food": "Black Beans, Dry, Cooked,Drand",
+   "Measure": "1 Cup",
+   "Weight": "171",
+   "kCal": 225,
+   "Fats": 1,
+   "Carbs": 41,
+   "Protein": 15
+ },
+ {
+   "Food": "Blackberries, Raw",
+   "Measure": "1 Cup",
+   "Weight": "144",
+   "kCal": 75,
+   "Fats": 1,
+   "Carbs": 18,
+   "Protein": 1
+ },
+ {
+   "Food": "Blackeye Peas, Immatr,Raw,Cked",
+   "Measure": "1 Cup",
+   "Weight": "165",
+   "kCal": 180,
+   "Fats": 1,
+   "Carbs": 30,
+   "Protein": 13
+ },
+ {
+   "Food": "Blackeye Peas,Immtr,Frzn,Cked",
+   "Measure": "1 Cup",
+   "Weight": "170",
+   "kCal": 225,
+   "Fats": 1,
+   "Carbs": 40,
+   "Protein": 14
+ },
+ {
+   "Food": "Black-Eyed Peas, Dry, Cooked",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 190,
+   "Fats": 1,
+   "Carbs": 35,
+   "Protein": 13
+ },
+ {
+   "Food": "Blue Cheese",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 100,
+   "Fats": 8,
+   "Carbs": 1,
+   "Protein": 6
+ },
+ {
+   "Food": "Blue Cheese Salad Dressing",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 75,
+   "Fats": 8,
+   "Carbs": 1,
+   "Protein": 1
+ },
+ {
+   "Food": "Blueberries, Frozen, Sweetened",
+   "Measure": "10 oz",
+   "Weight": "284",
+   "kCal": 230,
+   "Fats": 0,
+   "Carbs": 62,
+   "Protein": 1
+ },
+ {
+   "Food": "Blueberries, Frozen, Sweetened",
+   "Measure": "1 Cup",
+   "Weight": "230",
+   "kCal": 185,
+   "Fats": 0,
+   "Carbs": 50,
+   "Protein": 1
+ },
+ {
+   "Food": "Blueberries, Raw",
+   "Measure": "1 Cup",
+   "Weight": "145",
+   "kCal": 80,
+   "Fats": 1,
+   "Carbs": 20,
+   "Protein": 1
+ },
+ {
+   "Food": "Blueberry Muffins, Home Recipe",
+   "Measure": "1 Muffin",
+   "Weight": "45",
+   "kCal": 135,
+   "Fats": 5,
+   "Carbs": 20,
+   "Protein": 3
+ },
+ {
+   "Food": "Blueberry Muffins,From Com Mix",
+   "Measure": "1 Muffin",
+   "Weight": "45",
+   "kCal": 140,
+   "Fats": 5,
+   "Carbs": 22,
+   "Protein": 3
+ },
+ {
+   "Food": "Blueberry Pie",
+   "Measure": "1 Pie",
+   "Weight": "945",
+   "kCal": 2285,
+   "Fats": 102,
+   "Carbs": 330,
+   "Protein": 23
+ },
+ {
+   "Food": "Blueberry Pie",
+   "Measure": "1 Piece",
+   "Weight": "158",
+   "kCal": 380,
+   "Fats": 17,
+   "Carbs": 55,
+   "Protein": 4
+ },
+ {
+   "Food": "Bologna",
+   "Measure": "2 Slices",
+   "Weight": "57",
+   "kCal": 180,
+   "Fats": 16,
+   "Carbs": 2,
+   "Protein": 7
+ },
+ {
+   "Food": "Boston Brown Bread,W/Whtecrnm",
+   "Measure": "1 Slice",
+   "Weight": "45",
+   "kCal": 95,
+   "Fats": 1,
+   "Carbs": 21,
+   "Protein": 2
+ },
+ {
+   "Food": "Boston Brown Bread,W/Yllwcrnml",
+   "Measure": "1 Slice",
+   "Weight": "45",
+   "kCal": 95,
+   "Fats": 1,
+   "Carbs": 21,
+   "Protein": 2
+ },
+ {
+   "Food": "Bouillon, Dehydrtd, Unprepared",
+   "Measure": "1 Pkt",
+   "Weight": "6",
+   "kCal": 15,
+   "Fats": 1,
+   "Carbs": 1,
+   "Protein": 1
+ },
+ {
+   "Food": "Bran Muffins, From Commerl Mix",
+   "Measure": "1 Muffin",
+   "Weight": "45",
+   "kCal": 140,
+   "Fats": 4,
+   "Carbs": 24,
+   "Protein": 3
+ },
+ {
+   "Food": "Bran Muffins, Home Recipe",
+   "Measure": "1 Muffin",
+   "Weight": "45",
+   "kCal": 125,
+   "Fats": 6,
+   "Carbs": 19,
+   "Protein": 3
+ },
+ {
+   "Food": "Braunschweiger",
+   "Measure": "2 Slices",
+   "Weight": "57",
+   "kCal": 205,
+   "Fats": 18,
+   "Carbs": 2,
+   "Protein": 8
+ },
+ {
+   "Food": "Brazil Nuts",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 185,
+   "Fats": 19,
+   "Carbs": 4,
+   "Protein": 4
+ },
+ {
+   "Food": "Bread Stuffing,From Mx,Drytype",
+   "Measure": "1 Cup",
+   "Weight": "140",
+   "kCal": 500,
+   "Fats": 31,
+   "Carbs": 50,
+   "Protein": 9
+ },
+ {
+   "Food": "Bread Stuffing,From Mx,Moist",
+   "Measure": "1 Cup",
+   "Weight": "203",
+   "kCal": 420,
+   "Fats": 26,
+   "Carbs": 40,
+   "Protein": 9
+ },
+ {
+   "Food": "Breadcrumbs, Dry, Grated",
+   "Measure": "1 Cup",
+   "Weight": "100",
+   "kCal": 390,
+   "Fats": 5,
+   "Carbs": 73,
+   "Protein": 13
+ },
+ {
+   "Food": "Broccoli, Frzn, Cooked, Draned",
+   "Measure": "1 Piece",
+   "Weight": "30",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 1
+ },
+ {
+   "Food": "Broccoli, Frzn, Cooked, Draned",
+   "Measure": "1 Cup",
+   "Weight": "185",
+   "kCal": 50,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 6
+ },
+ {
+   "Food": "Broccoli, Raw",
+   "Measure": "1 Spear",
+   "Weight": "151",
+   "kCal": 40,
+   "Fats": 1,
+   "Carbs": 8,
+   "Protein": 4
+ },
+ {
+   "Food": "Broccoli, Raw, Cooked, Drained",
+   "Measure": "1 Spear",
+   "Weight": "180",
+   "kCal": 50,
+   "Fats": 1,
+   "Carbs": 10,
+   "Protein": 5
+ },
+ {
+   "Food": "Broccoli, Raw, Cooked, Drained",
+   "Measure": "1 Cup",
+   "Weight": "155",
+   "kCal": 45,
+   "Fats": 0,
+   "Carbs": 9,
+   "Protein": 5
+ },
+ {
+   "Food": "Brown And Serve Sausage,Brwnd",
+   "Measure": "1 Link",
+   "Weight": "13",
+   "kCal": 50,
+   "Fats": 5,
+   "Carbs": 0,
+   "Protein": 2
+ },
+ {
+   "Food": "Brown Gravy From Dry Mix",
+   "Measure": "1 Cup",
+   "Weight": "261",
+   "kCal": 80,
+   "Fats": 2,
+   "Carbs": 14,
+   "Protein": 3
+ },
+ {
+   "Food": "Brownies W/ Nuts,Frm Home Recp",
+   "Measure": "1 Browne",
+   "Weight": "20",
+   "kCal": 95,
+   "Fats": 6,
+   "Carbs": 11,
+   "Protein": 1
+ },
+ {
+   "Food": "Brownies W/ Nuts,Frstng,Cmmrcl",
+   "Measure": "1 Browne",
+   "Weight": "25",
+   "kCal": 100,
+   "Fats": 4,
+   "Carbs": 16,
+   "Protein": 1
+ },
+ {
+   "Food": "Brussels Sprouts, Frzn, Cooked",
+   "Measure": "1 Cup",
+   "Weight": "155",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 13,
+   "Protein": 6
+ },
+ {
+   "Food": "Brussels Sprouts, Raw, Cooked",
+   "Measure": "1 Cup",
+   "Weight": "155",
+   "kCal": 60,
+   "Fats": 1,
+   "Carbs": 13,
+   "Protein": 4
+ },
+ {
+   "Food": "Buckwheat Flour, Light, Sifted",
+   "Measure": "1 Cup",
+   "Weight": "98",
+   "kCal": 340,
+   "Fats": 1,
+   "Carbs": 78,
+   "Protein": 6
+ },
+ {
+   "Food": "Bulgur, Uncooked",
+   "Measure": "1 Cup",
+   "Weight": "170",
+   "kCal": 600,
+   "Fats": 3,
+   "Carbs": 129,
+   "Protein": 19
+ },
+ {
+   "Food": "Butter, Salted",
+   "Measure": "1/2 Cup",
+   "Weight": "113",
+   "kCal": 810,
+   "Fats": 92,
+   "Carbs": 0,
+   "Protein": 1
+ },
+ {
+   "Food": "Butter, Salted",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 100,
+   "Fats": 11,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Butter, Salted",
+   "Measure": "1 Pat",
+   "Weight": "5",
+   "kCal": 35,
+   "Fats": 4,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Butter, Unsalted",
+   "Measure": "1/2 Cup",
+   "Weight": "113",
+   "kCal": 810,
+   "Fats": 92,
+   "Carbs": 0,
+   "Protein": 1
+ },
+ {
+   "Food": "Butter, Unsalted",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 100,
+   "Fats": 11,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Butter, Unsalted",
+   "Measure": "1 Pat",
+   "Weight": "5",
+   "kCal": 35,
+   "Fats": 4,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Buttermilk, Dried",
+   "Measure": "1 Cup",
+   "Weight": "120",
+   "kCal": 465,
+   "Fats": 7,
+   "Carbs": 59,
+   "Protein": 41
+ },
+ {
+   "Food": "Buttermilk, Fluid",
+   "Measure": "1 Cup",
+   "Weight": "245",
+   "kCal": 100,
+   "Fats": 2,
+   "Carbs": 12,
+   "Protein": 8
+ },
+ {
+   "Food": "Cabbage, Chinese, Pak-Choi,Ckd",
+   "Measure": "1 Cup",
+   "Weight": "170",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 3,
+   "Protein": 3
+ },
+ {
+   "Food": "Cabbage, Chinese,Pe-Tsai, Raw",
+   "Measure": "1 Cup",
+   "Weight": "76",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 1
+ },
+ {
+   "Food": "Cabbage, Common, Cooked, Drned",
+   "Measure": "1 Cup",
+   "Weight": "150",
+   "kCal": 30,
+   "Fats": 0,
+   "Carbs": 7,
+   "Protein": 1
+ },
+ {
+   "Food": "Cabbage, Common, Raw",
+   "Measure": "1 Cup",
+   "Weight": "70",
+   "kCal": 15,
+   "Fats": 0,
+   "Carbs": 4,
+   "Protein": 1
+ },
+ {
+   "Food": "Cabbage, Red, Raw",
+   "Measure": "1 Cup",
+   "Weight": "70",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 4,
+   "Protein": 1
+ },
+ {
+   "Food": "Cabbage, Savoy, Raw",
+   "Measure": "1 Cup",
+   "Weight": "70",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 4,
+   "Protein": 1
+ },
+ {
+   "Food": "Cake Or Pastry Flour, Sifted",
+   "Measure": "1 Cup",
+   "Weight": "96",
+   "kCal": 350,
+   "Fats": 1,
+   "Carbs": 76,
+   "Protein": 7
+ },
+ {
+   "Food": "Camembert Cheese",
+   "Measure": "1 Wedge",
+   "Weight": "38",
+   "kCal": 115,
+   "Fats": 9,
+   "Carbs": 0,
+   "Protein": 8
+ },
+ {
+   "Food": "Cantaloup, Raw",
+   "Measure": "1/2 Meln",
+   "Weight": "267",
+   "kCal": 95,
+   "Fats": 1,
+   "Carbs": 22,
+   "Protein": 2
+ },
+ {
+   "Food": "Cap'n Crunch Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 120,
+   "Fats": 3,
+   "Carbs": 23,
+   "Protein": 1
+ },
+ {
+   "Food": "Caramels, Plain Or Chocolate",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 115,
+   "Fats": 3,
+   "Carbs": 22,
+   "Protein": 1
+ },
+ {
+   "Food": "Carob Flour",
+   "Measure": "1 Cup",
+   "Weight": "140",
+   "kCal": 255,
+   "Fats": 0,
+   "Carbs": 126,
+   "Protein": 6
+ },
+ {
+   "Food": "Carrot Cake,Cremchese Frst,Rec",
+   "Measure": "1 Cake",
+   "Weight": "1536",
+   "kCal": 6175,
+   "Fats": 328,
+   "Carbs": 775,
+   "Protein": 63
+ },
+ {
+   "Food": "Carrot Cake,Cremchese Frst,Rec",
+   "Measure": "1 Piece",
+   "Weight": "96",
+   "kCal": 385,
+   "Fats": 21,
+   "Carbs": 48,
+   "Protein": 4
+ },
+ {
+   "Food": "Carrots, Canned, Drn, W/ Salt",
+   "Measure": "1 Cup",
+   "Weight": "146",
+   "kCal": 35,
+   "Fats": 0,
+   "Carbs": 8,
+   "Protein": 1
+ },
+ {
+   "Food": "Carrots, Canned,Drnd, W/O Salt",
+   "Measure": "1 Cup",
+   "Weight": "146",
+   "kCal": 35,
+   "Fats": 0,
+   "Carbs": 8,
+   "Protein": 1
+ },
+ {
+   "Food": "Carrots, Cooked From Frozen",
+   "Measure": "1 Cup",
+   "Weight": "146",
+   "kCal": 55,
+   "Fats": 0,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Carrots, Cooked From Raw",
+   "Measure": "1 Cup",
+   "Weight": "156",
+   "kCal": 70,
+   "Fats": 0,
+   "Carbs": 16,
+   "Protein": 2
+ },
+ {
+   "Food": "Carrots, Raw, Grated",
+   "Measure": "1 Cup",
+   "Weight": "110",
+   "kCal": 45,
+   "Fats": 0,
+   "Carbs": 11,
+   "Protein": 1
+ },
+ {
+   "Food": "Carrots, Raw, Whole",
+   "Measure": "1 Carrot",
+   "Weight": "72",
+   "kCal": 30,
+   "Fats": 0,
+   "Carbs": 7,
+   "Protein": 1
+ },
+ {
+   "Food": "Cashew Nuts, Dry Roastd,Salted",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 165,
+   "Fats": 13,
+   "Carbs": 9,
+   "Protein": 4
+ },
+ {
+   "Food": "Cashew Nuts, Dry Roastd,Unsalt",
+   "Measure": "1 Cup",
+   "Weight": "137",
+   "kCal": 785,
+   "Fats": 63,
+   "Carbs": 45,
+   "Protein": 21
+ },
+ {
+   "Food": "Cashew Nuts, Dry Roastd,Unsalt",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 165,
+   "Fats": 13,
+   "Carbs": 9,
+   "Protein": 4
+ },
+ {
+   "Food": "Cashew Nuts, Dry Roasted,Saltd",
+   "Measure": "1 Cup",
+   "Weight": "137",
+   "kCal": 785,
+   "Fats": 63,
+   "Carbs": 45,
+   "Protein": 21
+ },
+ {
+   "Food": "Cashew Nuts, Oil Roastd,Salted",
+   "Measure": "1 Cup",
+   "Weight": "130",
+   "kCal": 750,
+   "Fats": 63,
+   "Carbs": 37,
+   "Protein": 21
+ },
+ {
+   "Food": "Cashew Nuts, Oil Roastd,Salted",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 165,
+   "Fats": 14,
+   "Carbs": 8,
+   "Protein": 5
+ },
+ {
+   "Food": "Cashew Nuts, Oil Roastd,Unsalt",
+   "Measure": "1 Cup",
+   "Weight": "130",
+   "kCal": 750,
+   "Fats": 63,
+   "Carbs": 37,
+   "Protein": 21
+ },
+ {
+   "Food": "Cashew Nuts, Oil Roastd,Unsalt",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 165,
+   "Fats": 14,
+   "Carbs": 8,
+   "Protein": 5
+ },
+ {
+   "Food": "Catsup",
+   "Measure": "1 Cup",
+   "Weight": "273",
+   "kCal": 290,
+   "Fats": 1,
+   "Carbs": 69,
+   "Protein": 5
+ },
+ {
+   "Food": "Catsup",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 15,
+   "Fats": 0,
+   "Carbs": 4,
+   "Protein": 0
+ },
+ {
+   "Food": "Cauliflower, Cooked From Frozn",
+   "Measure": "1 Cup",
+   "Weight": "180",
+   "kCal": 35,
+   "Fats": 0,
+   "Carbs": 7,
+   "Protein": 3
+ },
+ {
+   "Food": "Cauliflower, Cooked From Raw",
+   "Measure": "1 Cup",
+   "Weight": "125",
+   "kCal": 30,
+   "Fats": 0,
+   "Carbs": 6,
+   "Protein": 2
+ },
+ {
+   "Food": "Cauliflower, Raw",
+   "Measure": "1 Cup",
+   "Weight": "100",
+   "kCal": 25,
+   "Fats": 0,
+   "Carbs": 5,
+   "Protein": 2
+ },
+ {
+   "Food": "Celery Seed",
+   "Measure": "1 Tsp",
+   "Weight": "2",
+   "kCal": 10,
+   "Fats": 1,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Celery, Pascal Type, Raw,Piece",
+   "Measure": "1 Cup",
+   "Weight": "120",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 4,
+   "Protein": 1
+ },
+ {
+   "Food": "Celery, Pascal Type, Raw,Stalk",
+   "Measure": "1 Stalk",
+   "Weight": "40",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Cheddar Cheese",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 115,
+   "Fats": 9,
+   "Carbs": 0,
+   "Protein": 7
+ },
+ {
+   "Food": "Cheddar Cheese",
+   "Measure": "1 Cu In",
+   "Weight": "17",
+   "kCal": 70,
+   "Fats": 6,
+   "Carbs": 0,
+   "Protein": 4
+ },
+ {
+   "Food": "Chedddar Cheese, Shredded",
+   "Measure": "1 Cup",
+   "Weight": "113",
+   "kCal": 455,
+   "Fats": 37,
+   "Carbs": 1,
+   "Protein": 28
+ },
+ {
+   "Food": "Cheerios Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 110,
+   "Fats": 2,
+   "Carbs": 20,
+   "Protein": 4
+ },
+ {
+   "Food": "Cheese Crackers, Plain",
+   "Measure": "10 Crack",
+   "Weight": "10",
+   "kCal": 50,
+   "Fats": 3,
+   "Carbs": 6,
+   "Protein": 1
+ },
+ {
+   "Food": "Cheese Crackers, Sandwch,Peant",
+   "Measure": "1 Sandwh",
+   "Weight": "8",
+   "kCal": 40,
+   "Fats": 2,
+   "Carbs": 5,
+   "Protein": 1
+ },
+ {
+   "Food": "Cheese Sauce W/ Milk, Frm Mix",
+   "Measure": "1 Cup",
+   "Weight": "279",
+   "kCal": 305,
+   "Fats": 17,
+   "Carbs": 23,
+   "Protein": 16
+ },
+ {
+   "Food": "Cheeseburger, 4oz Patty",
+   "Measure": "1 Sandwh",
+   "Weight": "194",
+   "kCal": 525,
+   "Fats": 31,
+   "Carbs": 40,
+   "Protein": 30
+ },
+ {
+   "Food": "Cheeseburger, Regular",
+   "Measure": "1 Sandwh",
+   "Weight": "112",
+   "kCal": 300,
+   "Fats": 15,
+   "Carbs": 28,
+   "Protein": 15
+ },
+ {
+   "Food": "Cheesecake",
+   "Measure": "1 Cake",
+   "Weight": "1110",
+   "kCal": 3350,
+   "Fats": 213,
+   "Carbs": 317,
+   "Protein": 60
+ },
+ {
+   "Food": "Cheesecake",
+   "Measure": "1 Piece",
+   "Weight": "92",
+   "kCal": 280,
+   "Fats": 18,
+   "Carbs": 26,
+   "Protein": 5
+ },
+ {
+   "Food": "Cherries, Sour,Red,Cannd,Water",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 90,
+   "Fats": 0,
+   "Carbs": 22,
+   "Protein": 2
+ },
+ {
+   "Food": "Cherries, Sweet, Raw",
+   "Measure": "10 Chery",
+   "Weight": "68",
+   "kCal": 50,
+   "Fats": 1,
+   "Carbs": 11,
+   "Protein": 1
+ },
+ {
+   "Food": "Cherry Pie",
+   "Measure": "1 Pie",
+   "Weight": "945",
+   "kCal": 2465,
+   "Fats": 107,
+   "Carbs": 363,
+   "Protein": 25
+ },
+ {
+   "Food": "Cherry Pie",
+   "Measure": "1 Piece",
+   "Weight": "158",
+   "kCal": 410,
+   "Fats": 18,
+   "Carbs": 61,
+   "Protein": 4
+ },
+ {
+   "Food": "Chestnuts, European, Roasted",
+   "Measure": "1 Cup",
+   "Weight": "143",
+   "kCal": 350,
+   "Fats": 3,
+   "Carbs": 76,
+   "Protein": 5
+ },
+ {
+   "Food": "Chicken A La King, Home Recipe",
+   "Measure": "1 Cup",
+   "Weight": "245",
+   "kCal": 470,
+   "Fats": 34,
+   "Carbs": 12,
+   "Protein": 27
+ },
+ {
+   "Food": "Chicken And Noodles, Home Recp",
+   "Measure": "1 Cup",
+   "Weight": "240",
+   "kCal": 365,
+   "Fats": 18,
+   "Carbs": 26,
+   "Protein": 22
+ },
+ {
+   "Food": "Chicken Chow Mein, Canned",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 95,
+   "Fats": 0,
+   "Carbs": 18,
+   "Protein": 7
+ },
+ {
+   "Food": "Chicken Chow Mein, Home Recipe",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 255,
+   "Fats": 10,
+   "Carbs": 10,
+   "Protein": 31
+ },
+ {
+   "Food": "Chicken Frankfurter",
+   "Measure": "1 Frank",
+   "Weight": "45",
+   "kCal": 115,
+   "Fats": 9,
+   "Carbs": 3,
+   "Protein": 6
+ },
+ {
+   "Food": "Chicken Gravy From Dry Mix",
+   "Measure": "1 Cup",
+   "Weight": "260",
+   "kCal": 85,
+   "Fats": 2,
+   "Carbs": 14,
+   "Protein": 3
+ },
+ {
+   "Food": "Chicken Gravy, Canned",
+   "Measure": "1 Cup",
+   "Weight": "238",
+   "kCal": 190,
+   "Fats": 14,
+   "Carbs": 13,
+   "Protein": 5
+ },
+ {
+   "Food": "Chicken Liver, Cooked",
+   "Measure": "1 Liver",
+   "Weight": "20",
+   "kCal": 30,
+   "Fats": 1,
+   "Carbs": 0,
+   "Protein": 5
+ },
+ {
+   "Food": "Chicken Noodle Soup, Canned",
+   "Measure": "1 Cup",
+   "Weight": "241",
+   "kCal": 75,
+   "Fats": 2,
+   "Carbs": 9,
+   "Protein": 4
+ },
+ {
+   "Food": "Chicken Noodle Soup,Dehyd,Prpd",
+   "Measure": "1 Pkt",
+   "Weight": "188",
+   "kCal": 40,
+   "Fats": 1,
+   "Carbs": 6,
+   "Protein": 2
+ },
+ {
+   "Food": "Chicken Potpie, Home Recipe",
+   "Measure": "1 Piece",
+   "Weight": "232",
+   "kCal": 545,
+   "Fats": 31,
+   "Carbs": 42,
+   "Protein": 23
+ },
+ {
+   "Food": "Chicken Rice Soup, Canned",
+   "Measure": "1 Cup",
+   "Weight": "241",
+   "kCal": 60,
+   "Fats": 2,
+   "Carbs": 7,
+   "Protein": 4
+ },
+ {
+   "Food": "Chicken Roll, Light",
+   "Measure": "2 Slices",
+   "Weight": "57",
+   "kCal": 90,
+   "Fats": 4,
+   "Carbs": 1,
+   "Protein": 11
+ },
+ {
+   "Food": "Chicken, Canned, Boneless",
+   "Measure": "5 oz",
+   "Weight": "142",
+   "kCal": 235,
+   "Fats": 11,
+   "Carbs": 0,
+   "Protein": 31
+ },
+ {
+   "Food": "Chicken, Fried, Batter, Breast",
+   "Measure": "4.9 oz",
+   "Weight": "140",
+   "kCal": 365,
+   "Fats": 18,
+   "Carbs": 13,
+   "Protein": 35
+ },
+ {
+   "Food": "Chicken, Fried, Batter,Drmstck",
+   "Measure": "2.5 oz",
+   "Weight": "72",
+   "kCal": 195,
+   "Fats": 11,
+   "Carbs": 6,
+   "Protein": 16
+ },
+ {
+   "Food": "Chicken, Fried, Flour, Breast",
+   "Measure": "3.5 oz",
+   "Weight": "98",
+   "kCal": 220,
+   "Fats": 9,
+   "Carbs": 2,
+   "Protein": 31
+ },
+ {
+   "Food": "Chicken, Fried, Flour, Drmstck",
+   "Measure": "1.7 oz",
+   "Weight": "49",
+   "kCal": 120,
+   "Fats": 7,
+   "Carbs": 1,
+   "Protein": 13
+ },
+ {
+   "Food": "Chicken, Roasted, Breast",
+   "Measure": "3.0 oz",
+   "Weight": "86",
+   "kCal": 140,
+   "Fats": 3,
+   "Carbs": 0,
+   "Protein": 27
+ },
+ {
+   "Food": "Chicken, Roasted, Drumstick",
+   "Measure": "1.6 oz",
+   "Weight": "44",
+   "kCal": 75,
+   "Fats": 2,
+   "Carbs": 0,
+   "Protein": 12
+ },
+ {
+   "Food": "Chicken, Stewed, Light + Dark",
+   "Measure": "1 Cup",
+   "Weight": "140",
+   "kCal": 250,
+   "Fats": 9,
+   "Carbs": 0,
+   "Protein": 38
+ },
+ {
+   "Food": "Chickpeas, Cooked, Drained",
+   "Measure": "1 Cup",
+   "Weight": "163",
+   "kCal": 270,
+   "Fats": 4,
+   "Carbs": 45,
+   "Protein": 15
+ },
+ {
+   "Food": "Chili Con Carne W/ Beans, Cnnd",
+   "Measure": "1 Cup",
+   "Weight": "255",
+   "kCal": 340,
+   "Fats": 16,
+   "Carbs": 31,
+   "Protein": 19
+ },
+ {
+   "Food": "Chili Powder",
+   "Measure": "1 Tsp",
+   "Weight": "2,6",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Chocolate Chip Cookies,Commrcl",
+   "Measure": "4 Cookie",
+   "Weight": "42",
+   "kCal": 180,
+   "Fats": 9,
+   "Carbs": 28,
+   "Protein": 2
+ },
+ {
+   "Food": "Chocolate Chip Cookies,Hme Rcp",
+   "Measure": "4 Cookie",
+   "Weight": "40",
+   "kCal": 185,
+   "Fats": 11,
+   "Carbs": 26,
+   "Protein": 2
+ },
+ {
+   "Food": "Chocolate Chip Cookies,Refrig",
+   "Measure": "4 Cookie",
+   "Weight": "48",
+   "kCal": 225,
+   "Fats": 11,
+   "Carbs": 32,
+   "Protein": 2
+ },
+ {
+   "Food": "Chocolate Milk, Lowfat 1%",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 160,
+   "Fats": 3,
+   "Carbs": 26,
+   "Protein": 8
+ },
+ {
+   "Food": "Chocolate Milk, Lowfat 2%",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 180,
+   "Fats": 5,
+   "Carbs": 26,
+   "Protein": 8
+ },
+ {
+   "Food": "Chocolate Milk, Regular",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 210,
+   "Fats": 8,
+   "Carbs": 26,
+   "Protein": 8
+ },
+ {
+   "Food": "Chocolate, Bitter Ot Baking",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 145,
+   "Fats": 15,
+   "Carbs": 8,
+   "Protein": 3
+ },
+ {
+   "Food": "Chop Suey W/ Beef + Pork,Hmrcp",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 300,
+   "Fats": 17,
+   "Carbs": 13,
+   "Protein": 26
+ },
+ {
+   "Food": "Cinnamon",
+   "Measure": "1 Tsp",
+   "Weight": "2,3",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 0
+ },
+ {
+   "Food": "Clam Chowder, Manhattan, Cannd",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 80,
+   "Fats": 2,
+   "Carbs": 12,
+   "Protein": 4
+ },
+ {
+   "Food": "Clam Chowder, New Eng, W/ Milk",
+   "Measure": "1 Cup",
+   "Weight": "248",
+   "kCal": 165,
+   "Fats": 7,
+   "Carbs": 17,
+   "Protein": 9
+ },
+ {
+   "Food": "Clams, Canned, Drained",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 85,
+   "Fats": 2,
+   "Carbs": 2,
+   "Protein": 13
+ },
+ {
+   "Food": "Clams, Raw",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 2,
+   "Protein": 11
+ },
+ {
+   "Food": "Club Soda",
+   "Measure": "12 fl oz",
+   "Weight": "355",
+   "kCal": 0,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Coca Pwdr W/O Nofat Drymlk,Prd",
+   "Measure": "1 Servng",
+   "Weight": "265",
+   "kCal": 225,
+   "Fats": 9,
+   "Carbs": 30,
+   "Protein": 9
+ },
+ {
+   "Food": "Coca Pwdr W/O Nonfat Dry Milk",
+   "Measure": "3/4 oz",
+   "Weight": "21",
+   "kCal": 75,
+   "Fats": 1,
+   "Carbs": 19,
+   "Protein": 1
+ },
+ {
+   "Food": "Cocoa Pwdr W/ Nofat Drmlk,Prpd",
+   "Measure": "1 Servng",
+   "Weight": "206",
+   "kCal": 100,
+   "Fats": 1,
+   "Carbs": 22,
+   "Protein": 3
+ },
+ {
+   "Food": "Cocoa Pwdr With Nonfat Drymilk",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 100,
+   "Fats": 1,
+   "Carbs": 22,
+   "Protein": 3
+ },
+ {
+   "Food": "Coconut, Dried, Sweetnd,Shredd",
+   "Measure": "1 Cup",
+   "Weight": "93",
+   "kCal": 470,
+   "Fats": 33,
+   "Carbs": 44,
+   "Protein": 3
+ },
+ {
+   "Food": "Coconut, Raw, Piece",
+   "Measure": "1 Piece",
+   "Weight": "45",
+   "kCal": 160,
+   "Fats": 15,
+   "Carbs": 7,
+   "Protein": 1
+ },
+ {
+   "Food": "Coconut, Raw, Shredded",
+   "Measure": "1 Cup",
+   "Weight": "80",
+   "kCal": 285,
+   "Fats": 27,
+   "Carbs": 12,
+   "Protein": 3
+ },
+ {
+   "Food": "Coffee, Brewed",
+   "Measure": "6 fl oz",
+   "Weight": "180",
+   "kCal": 0,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Coffee, Instant, Prepared",
+   "Measure": "6 fl oz",
+   "Weight": "182",
+   "kCal": 0,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Coffeecake, Crumb, From Mix",
+   "Measure": "1 Cake",
+   "Weight": "430",
+   "kCal": 1385,
+   "Fats": 41,
+   "Carbs": 225,
+   "Protein": 27
+ },
+ {
+   "Food": "Coffeecake, Crumb, From Mix",
+   "Measure": "1 Piece",
+   "Weight": "72",
+   "kCal": 230,
+   "Fats": 7,
+   "Carbs": 38,
+   "Protein": 5
+ },
+ {
+   "Food": "Cola, Diet, Aspartame Only",
+   "Measure": "12 fl oz",
+   "Weight": "355",
+   "kCal": 0,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Cola, Diet, Asprtame + Sacchrn",
+   "Measure": "12 fl oz",
+   "Weight": "355",
+   "kCal": 0,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Cola, Diet, Saccharin Only",
+   "Measure": "12 fl oz",
+   "Weight": "355",
+   "kCal": 0,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Cola, Regular",
+   "Measure": "12 fl oz",
+   "Weight": "369",
+   "kCal": 160,
+   "Fats": 0,
+   "Carbs": 41,
+   "Protein": 0
+ },
+ {
+   "Food": "Collards, Cooked From Frozen",
+   "Measure": "1 Cup",
+   "Weight": "170",
+   "kCal": 60,
+   "Fats": 1,
+   "Carbs": 12,
+   "Protein": 5
+ },
+ {
+   "Food": "Collards, Cooked From Raw",
+   "Measure": "1 Cup",
+   "Weight": "190",
+   "kCal": 25,
+   "Fats": 0,
+   "Carbs": 5,
+   "Protein": 2
+ },
+ {
+   "Food": "Cooked Salad Drssing, Home Rcp",
+   "Measure": "1 Tbsp",
+   "Weight": "16",
+   "kCal": 25,
+   "Fats": 2,
+   "Carbs": 2,
+   "Protein": 1
+ },
+ {
+   "Food": "Corn Chips",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 155,
+   "Fats": 9,
+   "Carbs": 16,
+   "Protein": 2
+ },
+ {
+   "Food": "Corn Flakes, Kellogg's",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 110,
+   "Fats": 0,
+   "Carbs": 24,
+   "Protein": 2
+ },
+ {
+   "Food": "Corn Flakes, Toasties",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 110,
+   "Fats": 0,
+   "Carbs": 24,
+   "Protein": 2
+ },
+ {
+   "Food": "Corn Grits, Cooked, Instant",
+   "Measure": "1 Pkt",
+   "Weight": "137",
+   "kCal": 80,
+   "Fats": 0,
+   "Carbs": 18,
+   "Protein": 2
+ },
+ {
+   "Food": "Corn Grits,Ckd,Reg,Whte,Nosalt",
+   "Measure": "1 Cup",
+   "Weight": "242",
+   "kCal": 145,
+   "Fats": 0,
+   "Carbs": 31,
+   "Protein": 3
+ },
+ {
+   "Food": "Corn Grits,Ckd,Reg,Whte,W/Salt",
+   "Measure": "1 Cup",
+   "Weight": "242",
+   "kCal": 145,
+   "Fats": 0,
+   "Carbs": 31,
+   "Protein": 3
+ },
+ {
+   "Food": "Corn Grits,Ckd,Reg,Yllw,Nosalt",
+   "Measure": "1 Cup",
+   "Weight": "242",
+   "kCal": 145,
+   "Fats": 0,
+   "Carbs": 31,
+   "Protein": 3
+ },
+ {
+   "Food": "Corn Grits,Ckd,Reg,Yllw,W/Salt",
+   "Measure": "1 Cup",
+   "Weight": "242",
+   "kCal": 145,
+   "Fats": 0,
+   "Carbs": 31,
+   "Protein": 3
+ },
+ {
+   "Food": "Corn Muffins, From Commerl Mix",
+   "Measure": "1 Muffin",
+   "Weight": "45",
+   "kCal": 145,
+   "Fats": 6,
+   "Carbs": 22,
+   "Protein": 3
+ },
+ {
+   "Food": "Corn Muffins, Home Recipe",
+   "Measure": "1 Muffin",
+   "Weight": "45",
+   "kCal": 145,
+   "Fats": 5,
+   "Carbs": 21,
+   "Protein": 3
+ },
+ {
+   "Food": "Corn Oil",
+   "Measure": "1 Cup",
+   "Weight": "218",
+   "kCal": 1925,
+   "Fats": 218,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Corn Oil",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 125,
+   "Fats": 14,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Corn, Cnnd,Crm Stl,Whit,No Sal",
+   "Measure": "1 Cup",
+   "Weight": "256",
+   "kCal": 185,
+   "Fats": 1,
+   "Carbs": 46,
+   "Protein": 4
+ },
+ {
+   "Food": "Corn, Cnnd,Crm Stl,Whit,W/Salt",
+   "Measure": "1 Cup",
+   "Weight": "256",
+   "kCal": 185,
+   "Fats": 1,
+   "Carbs": 46,
+   "Protein": 4
+ },
+ {
+   "Food": "Corn, Cnnd,Crm Stl,Yllw,No Sal",
+   "Measure": "1 Cup",
+   "Weight": "256",
+   "kCal": 185,
+   "Fats": 1,
+   "Carbs": 46,
+   "Protein": 4
+ },
+ {
+   "Food": "Corn, Cnnd,Crm Stl,Yllw,W/Salt",
+   "Measure": "1 Cup",
+   "Weight": "256",
+   "kCal": 185,
+   "Fats": 1,
+   "Carbs": 46,
+   "Protein": 4
+ },
+ {
+   "Food": "Corn, Cooked Frm Frozn, White",
+   "Measure": "1 Ear",
+   "Weight": "63",
+   "kCal": 60,
+   "Fats": 0,
+   "Carbs": 14,
+   "Protein": 2
+ },
+ {
+   "Food": "Corn, Cooked Frm Frozn, White",
+   "Measure": "1 Cup",
+   "Weight": "165",
+   "kCal": 135,
+   "Fats": 0,
+   "Carbs": 34,
+   "Protein": 5
+ },
+ {
+   "Food": "Corn, Cooked Frm Frozn, Yellow",
+   "Measure": "1 Ear",
+   "Weight": "63",
+   "kCal": 60,
+   "Fats": 0,
+   "Carbs": 14,
+   "Protein": 2
+ },
+ {
+   "Food": "Corn, Cooked Frm Frozn, Yellow",
+   "Measure": "1 Cup",
+   "Weight": "165",
+   "kCal": 135,
+   "Fats": 0,
+   "Carbs": 34,
+   "Protein": 5
+ },
+ {
+   "Food": "Corn, Cooked From Raw, White",
+   "Measure": "1 Ear",
+   "Weight": "77",
+   "kCal": 85,
+   "Fats": 1,
+   "Carbs": 19,
+   "Protein": 3
+ },
+ {
+   "Food": "Corn, Cooked From Raw, Yellow",
+   "Measure": "1 Ear",
+   "Weight": "77",
+   "kCal": 85,
+   "Fats": 1,
+   "Carbs": 19,
+   "Protein": 3
+ },
+ {
+   "Food": "Corn,Cnnd,Whl Krnl,Whte,No Sal",
+   "Measure": "1 Cup",
+   "Weight": "210",
+   "kCal": 165,
+   "Fats": 1,
+   "Carbs": 41,
+   "Protein": 5
+ },
+ {
+   "Food": "Corn,Cnnd,Whl Krnl,Whte,W/Salt",
+   "Measure": "1 Cup",
+   "Weight": "210",
+   "kCal": 165,
+   "Fats": 1,
+   "Carbs": 41,
+   "Protein": 5
+ },
+ {
+   "Food": "Corn,Cnnd,Whl Krnl,Yllw,No Sal",
+   "Measure": "1 Cup",
+   "Weight": "210",
+   "kCal": 165,
+   "Fats": 1,
+   "Carbs": 41,
+   "Protein": 5
+ },
+ {
+   "Food": "Corn,Cnnd,Whl Krnl,Yllw,W/Salt",
+   "Measure": "1 Cup",
+   "Weight": "210",
+   "kCal": 165,
+   "Fats": 1,
+   "Carbs": 41,
+   "Protein": 5
+ },
+ {
+   "Food": "Cornmeal,Bolted,Dry Form",
+   "Measure": "1 Cup",
+   "Weight": "122",
+   "kCal": 440,
+   "Fats": 4,
+   "Carbs": 91,
+   "Protein": 11
+ },
+ {
+   "Food": "Cornmeal,Degermed,Enrched,Cook",
+   "Measure": "1 Cup",
+   "Weight": "240",
+   "kCal": 120,
+   "Fats": 0,
+   "Carbs": 26,
+   "Protein": 3
+ },
+ {
+   "Food": "Cornmeal,Degermed,Enriched,Dry",
+   "Measure": "1 Cup",
+   "Weight": "138",
+   "kCal": 500,
+   "Fats": 2,
+   "Carbs": 108,
+   "Protein": 11
+ },
+ {
+   "Food": "Cornmeal,Whole-Grnd,Unbolt,Dry",
+   "Measure": "1 Cup",
+   "Weight": "122",
+   "kCal": 435,
+   "Fats": 5,
+   "Carbs": 90,
+   "Protein": 11
+ },
+ {
+   "Food": "Cottage Cheese,Cremd,Lrge Curd",
+   "Measure": "1 Cup",
+   "Weight": "225",
+   "kCal": 235,
+   "Fats": 10,
+   "Carbs": 6,
+   "Protein": 28
+ },
+ {
+   "Food": "Cottage Cheese,Cremd,Smll Curd",
+   "Measure": "1 Cup",
+   "Weight": "210",
+   "kCal": 215,
+   "Fats": 9,
+   "Carbs": 6,
+   "Protein": 26
+ },
+ {
+   "Food": "Cottage Cheese,Cremd,W/Fruit",
+   "Measure": "1 Cup",
+   "Weight": "226",
+   "kCal": 280,
+   "Fats": 8,
+   "Carbs": 30,
+   "Protein": 22
+ },
+ {
+   "Food": "Cottage Cheese,Lowfat 2%",
+   "Measure": "1 Cup",
+   "Weight": "226",
+   "kCal": 205,
+   "Fats": 4,
+   "Carbs": 8,
+   "Protein": 31
+ },
+ {
+   "Food": "Cottage Cheese,Uncreamed",
+   "Measure": "1 Cup",
+   "Weight": "145",
+   "kCal": 125,
+   "Fats": 1,
+   "Carbs": 3,
+   "Protein": 25
+ },
+ {
+   "Food": "Cr Of Chicken Soup W/ H20,Cnnd",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 115,
+   "Fats": 7,
+   "Carbs": 9,
+   "Protein": 3
+ },
+ {
+   "Food": "Cr Of Chicken Soup W/ Mlk,Cnnd",
+   "Measure": "1 Cup",
+   "Weight": "248",
+   "kCal": 190,
+   "Fats": 11,
+   "Carbs": 15,
+   "Protein": 7
+ },
+ {
+   "Food": "Cr Of Mushrom Soup W/ H2o,Cnnd",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 130,
+   "Fats": 9,
+   "Carbs": 9,
+   "Protein": 2
+ },
+ {
+   "Food": "Cr Of Mushrom Soup W/ Mlk,Cnnd",
+   "Measure": "1 Cup",
+   "Weight": "248",
+   "kCal": 205,
+   "Fats": 14,
+   "Carbs": 15,
+   "Protein": 6
+ },
+ {
+   "Food": "Crabmeat, Canned",
+   "Measure": "1 Cup",
+   "Weight": "135",
+   "kCal": 135,
+   "Fats": 3,
+   "Carbs": 1,
+   "Protein": 23
+ },
+ {
+   "Food": "Cracked-Wheat Bread",
+   "Measure": "1 Loaf",
+   "Weight": "454",
+   "kCal": 1190,
+   "Fats": 16,
+   "Carbs": 227,
+   "Protein": 42
+ },
+ {
+   "Food": "Cracked-Wheat Bread",
+   "Measure": "1 Slice",
+   "Weight": "25",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Cracked-Wheat Bread, Toasted",
+   "Measure": "1 Slice",
+   "Weight": "21",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Cranberry Juice Cocktal W/Vitc",
+   "Measure": "1 Cup",
+   "Weight": "253",
+   "kCal": 145,
+   "Fats": 0,
+   "Carbs": 38,
+   "Protein": 0
+ },
+ {
+   "Food": "Cranberry Sauce, Canned,Swtnd",
+   "Measure": "1 Cup",
+   "Weight": "277",
+   "kCal": 420,
+   "Fats": 0,
+   "Carbs": 108,
+   "Protein": 1
+ },
+ {
+   "Food": "Cream Cheese",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 100,
+   "Fats": 10,
+   "Carbs": 1,
+   "Protein": 2
+ },
+ {
+   "Food": "Cream Of Wheat,Ckd,Mix N Eat",
+   "Measure": "1 Pkt",
+   "Weight": "142",
+   "kCal": 100,
+   "Fats": 0,
+   "Carbs": 21,
+   "Protein": 3
+ },
+ {
+   "Food": "Creme Pie",
+   "Measure": "1 Pie",
+   "Weight": "910",
+   "kCal": 2710,
+   "Fats": 139,
+   "Carbs": 351,
+   "Protein": 20
+ },
+ {
+   "Food": "Creme Pie",
+   "Measure": "1 Piece",
+   "Weight": "152",
+   "kCal": 455,
+   "Fats": 23,
+   "Carbs": 59,
+   "Protein": 3
+ },
+ {
+   "Food": "Crm Wheat,Ckd, Quick, No Salt",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 140,
+   "Fats": 0,
+   "Carbs": 29,
+   "Protein": 4
+ },
+ {
+   "Food": "Crm Wheat,Ckd,Quick, W/ Salt",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 140,
+   "Fats": 0,
+   "Carbs": 29,
+   "Protein": 4
+ },
+ {
+   "Food": "Crm Wheat,Ckd,Reg,Inst,No Salt",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 140,
+   "Fats": 0,
+   "Carbs": 29,
+   "Protein": 4
+ },
+ {
+   "Food": "Crm Wheat,Ckd,Reg,Inst,W/Salt",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 140,
+   "Fats": 0,
+   "Carbs": 29,
+   "Protein": 4
+ },
+ {
+   "Food": "Croissants",
+   "Measure": "1 Crosst",
+   "Weight": "57",
+   "kCal": 235,
+   "Fats": 12,
+   "Carbs": 27,
+   "Protein": 5
+ },
+ {
+   "Food": "Cucumber, W/ Peel",
+   "Measure": "6 Slices",
+   "Weight": "28",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Curry Powder",
+   "Measure": "1 Tsp",
+   "Weight": "2",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Custard Pie",
+   "Measure": "1 Pie",
+   "Weight": "910",
+   "kCal": 1985,
+   "Fats": 101,
+   "Carbs": 213,
+   "Protein": 56
+ },
+ {
+   "Food": "Custard Pie",
+   "Measure": "1 Piece",
+   "Weight": "152",
+   "kCal": 330,
+   "Fats": 17,
+   "Carbs": 36,
+   "Protein": 9
+ },
+ {
+   "Food": "Custard, Baked",
+   "Measure": "1 Cup",
+   "Weight": "265",
+   "kCal": 305,
+   "Fats": 15,
+   "Carbs": 29,
+   "Protein": 14
+ },
+ {
+   "Food": "Dandelion Greens, Cooked, Drnd",
+   "Measure": "1 Cup",
+   "Weight": "105",
+   "kCal": 35,
+   "Fats": 1,
+   "Carbs": 7,
+   "Protein": 2
+ },
+ {
+   "Food": "Danish Pastry, Fruit",
+   "Measure": "1 Pastry",
+   "Weight": "65",
+   "kCal": 235,
+   "Fats": 13,
+   "Carbs": 28,
+   "Protein": 4
+ },
+ {
+   "Food": "Danish Pastry, Plain, No Nuts",
+   "Measure": "1 Ring",
+   "Weight": "340",
+   "kCal": 1305,
+   "Fats": 71,
+   "Carbs": 152,
+   "Protein": 21
+ },
+ {
+   "Food": "Danish Pastry, Plain, No Nuts",
+   "Measure": "1 Pastry",
+   "Weight": "57",
+   "kCal": 220,
+   "Fats": 12,
+   "Carbs": 26,
+   "Protein": 4
+ },
+ {
+   "Food": "Danish Pastry, Plain, No Nuts",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 110,
+   "Fats": 6,
+   "Carbs": 13,
+   "Protein": 2
+ },
+ {
+   "Food": "Dates",
+   "Measure": "10 Dates",
+   "Weight": "83",
+   "kCal": 230,
+   "Fats": 0,
+   "Carbs": 61,
+   "Protein": 2
+ },
+ {
+   "Food": "Dates, Chopped",
+   "Measure": "1 Cup",
+   "Weight": "178",
+   "kCal": 490,
+   "Fats": 1,
+   "Carbs": 131,
+   "Protein": 4
+ },
+ {
+   "Food": "Devil's Food Cake,Chocfrst,Fmx",
+   "Measure": "1 Cake",
+   "Weight": "1107",
+   "kCal": 3755,
+   "Fats": 136,
+   "Carbs": 645,
+   "Protein": 49
+ },
+ {
+   "Food": "Devil's Food Cake,Chocfrst,Fmx",
+   "Measure": "1 Piece",
+   "Weight": "69",
+   "kCal": 235,
+   "Fats": 8,
+   "Carbs": 40,
+   "Protein": 3
+ },
+ {
+   "Food": "Devil's Food Cake,Chocfrst,Fmx",
+   "Measure": "1 Cupcak",
+   "Weight": "35",
+   "kCal": 120,
+   "Fats": 4,
+   "Carbs": 20,
+   "Protein": 2
+ },
+ {
+   "Food": "Doughnuts, Cake Type, Plain",
+   "Measure": "1 Donut",
+   "Weight": "50",
+   "kCal": 210,
+   "Fats": 12,
+   "Carbs": 24,
+   "Protein": 3
+ },
+ {
+   "Food": "Doughnuts, Yeast-Leavend,Glzed",
+   "Measure": "1 Donut",
+   "Weight": "60",
+   "kCal": 235,
+   "Fats": 13,
+   "Carbs": 26,
+   "Protein": 4
+ },
+ {
+   "Food": "Duck, Roasted, Flesh Only",
+   "Measure": "1/2 Duck",
+   "Weight": "221",
+   "kCal": 445,
+   "Fats": 25,
+   "Carbs": 0,
+   "Protein": 52
+ },
+ {
+   "Food": "Eggnog",
+   "Measure": "1 Cup",
+   "Weight": "254",
+   "kCal": 340,
+   "Fats": 19,
+   "Carbs": 34,
+   "Protein": 10
+ },
+ {
+   "Food": "Eggplant, Cooked, Steamed",
+   "Measure": "1 Cup",
+   "Weight": "96",
+   "kCal": 25,
+   "Fats": 0,
+   "Carbs": 6,
+   "Protein": 1
+ },
+ {
+   "Food": "Eggs, Cooked, Fried",
+   "Measure": "1 Egg",
+   "Weight": "46",
+   "kCal": 90,
+   "Fats": 7,
+   "Carbs": 1,
+   "Protein": 6
+ },
+ {
+   "Food": "Eggs, Cooked, Hard-Cooked",
+   "Measure": "1 Egg",
+   "Weight": "50",
+   "kCal": 75,
+   "Fats": 5,
+   "Carbs": 1,
+   "Protein": 6
+ },
+ {
+   "Food": "Eggs, Cooked, Poached",
+   "Measure": "1 Egg",
+   "Weight": "50",
+   "kCal": 75,
+   "Fats": 5,
+   "Carbs": 1,
+   "Protein": 6
+ },
+ {
+   "Food": "Eggs, Cooked, Scrambled/Omelet",
+   "Measure": "1 Egg",
+   "Weight": "61",
+   "kCal": 100,
+   "Fats": 7,
+   "Carbs": 1,
+   "Protein": 7
+ },
+ {
+   "Food": "Eggs, Raw, White",
+   "Measure": "1 White",
+   "Weight": "33",
+   "kCal": 15,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 4
+ },
+ {
+   "Food": "Eggs, Raw, Whole",
+   "Measure": "1 Egg",
+   "Weight": "50",
+   "kCal": 75,
+   "Fats": 5,
+   "Carbs": 1,
+   "Protein": 6
+ },
+ {
+   "Food": "Eggs, Raw, Yolk",
+   "Measure": "1 Yolk",
+   "Weight": "17",
+   "kCal": 60,
+   "Fats": 5,
+   "Carbs": 0,
+   "Protein": 3
+ },
+ {
+   "Food": "Enchilada",
+   "Measure": "1 Enchld",
+   "Weight": "230",
+   "kCal": 235,
+   "Fats": 16,
+   "Carbs": 24,
+   "Protein": 20
+ },
+ {
+   "Food": "Endive, Curly, Raw",
+   "Measure": "1 Cup",
+   "Weight": "50",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 1
+ },
+ {
+   "Food": "Eng Muffin, Egg, Cheese, Bacon",
+   "Measure": "1 Sandwh",
+   "Weight": "138",
+   "kCal": 360,
+   "Fats": 18,
+   "Carbs": 31,
+   "Protein": 18
+ },
+ {
+   "Food": "English Muffins, Plain",
+   "Measure": "1 Muffin",
+   "Weight": "57",
+   "kCal": 140,
+   "Fats": 1,
+   "Carbs": 27,
+   "Protein": 5
+ },
+ {
+   "Food": "English Muffins, Plain, Toastd",
+   "Measure": "1 Muffin",
+   "Weight": "50",
+   "kCal": 140,
+   "Fats": 1,
+   "Carbs": 27,
+   "Protein": 5
+ },
+ {
+   "Food": "Evaporated Milk, Skim, Canned",
+   "Measure": "1 Cup",
+   "Weight": "255",
+   "kCal": 200,
+   "Fats": 1,
+   "Carbs": 29,
+   "Protein": 19
+ },
+ {
+   "Food": "Evaporated Milk, Whole, Canned",
+   "Measure": "1 Cup",
+   "Weight": "252",
+   "kCal": 340,
+   "Fats": 19,
+   "Carbs": 25,
+   "Protein": 17
+ },
+ {
+   "Food": "Fats, Cooking/Vegetbl Shorteng",
+   "Measure": "1 Cup",
+   "Weight": "205",
+   "kCal": 1810,
+   "Fats": 205,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Fats, Cooking/Vegetbl Shorteng",
+   "Measure": "1 Tbsp",
+   "Weight": "13",
+   "kCal": 115,
+   "Fats": 13,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Feta Cheese",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 75,
+   "Fats": 6,
+   "Carbs": 1,
+   "Protein": 4
+ },
+ {
+   "Food": "Fig Bars",
+   "Measure": "4 Cookie",
+   "Weight": "56",
+   "kCal": 210,
+   "Fats": 4,
+   "Carbs": 42,
+   "Protein": 2
+ },
+ {
+   "Food": "Figs, Dried",
+   "Measure": "10 Figs",
+   "Weight": "187",
+   "kCal": 475,
+   "Fats": 2,
+   "Carbs": 122,
+   "Protein": 6
+ },
+ {
+   "Food": "Filberts, (Hazelnuts) Chopped",
+   "Measure": "1 Cup",
+   "Weight": "115",
+   "kCal": 725,
+   "Fats": 72,
+   "Carbs": 18,
+   "Protein": 15
+ },
+ {
+   "Food": "Filberts, (Hazelnuts) Chopped",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 180,
+   "Fats": 18,
+   "Carbs": 4,
+   "Protein": 4
+ },
+ {
+   "Food": "Fish Sandwich, Lge, W/O Cheese",
+   "Measure": "1 Sandwh",
+   "Weight": "170",
+   "kCal": 470,
+   "Fats": 27,
+   "Carbs": 41,
+   "Protein": 18
+ },
+ {
+   "Food": "Fish Sandwich, Reg, W/ Cheese",
+   "Measure": "1 Sandwh",
+   "Weight": "140",
+   "kCal": 420,
+   "Fats": 23,
+   "Carbs": 39,
+   "Protein": 16
+ },
+ {
+   "Food": "Fish Sticks, Frozen, Reheated",
+   "Measure": "1 Stick",
+   "Weight": "28",
+   "kCal": 70,
+   "Fats": 3,
+   "Carbs": 4,
+   "Protein": 6
+ },
+ {
+   "Food": "Flounder Or Sole, Baked, Buttr",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 120,
+   "Fats": 6,
+   "Carbs": 0,
+   "Protein": 16
+ },
+ {
+   "Food": "Flounder Or Sole, Baked,Margrn",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 120,
+   "Fats": 6,
+   "Carbs": 0,
+   "Protein": 16
+ },
+ {
+   "Food": "Flounder Or Sole, Baked,W/Ofat",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 80,
+   "Fats": 1,
+   "Carbs": 0,
+   "Protein": 17
+ },
+ {
+   "Food": "Fondant, Uncoated",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 105,
+   "Fats": 0,
+   "Carbs": 27,
+   "Protein": 0
+ },
+ {
+   "Food": "Frankfurter, Cooked",
+   "Measure": "1 Frank",
+   "Weight": "45",
+   "kCal": 145,
+   "Fats": 13,
+   "Carbs": 1,
+   "Protein": 5
+ },
+ {
+   "Food": "French Bread",
+   "Measure": "1 Slice",
+   "Weight": "35",
+   "kCal": 100,
+   "Fats": 1,
+   "Carbs": 18,
+   "Protein": 3
+ },
+ {
+   "Food": "French Or Vienna Bread",
+   "Measure": "1 Loaf",
+   "Weight": "454",
+   "kCal": 1270,
+   "Fats": 18,
+   "Carbs": 230,
+   "Protein": 43
+ },
+ {
+   "Food": "French Salad Dressing, Localor",
+   "Measure": "1 Tbsp",
+   "Weight": "16",
+   "kCal": 25,
+   "Fats": 2,
+   "Carbs": 2,
+   "Protein": 0
+ },
+ {
+   "Food": "French Salad Dressing, Regular",
+   "Measure": "1 Tbsp",
+   "Weight": "16",
+   "kCal": 85,
+   "Fats": 9,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "French Toast, Home Recipe",
+   "Measure": "1 Slice",
+   "Weight": "65",
+   "kCal": 155,
+   "Fats": 7,
+   "Carbs": 17,
+   "Protein": 6
+ },
+ {
+   "Food": "Fried Pie, Apple",
+   "Measure": "1 Pie",
+   "Weight": "85",
+   "kCal": 255,
+   "Fats": 14,
+   "Carbs": 31,
+   "Protein": 2
+ },
+ {
+   "Food": "Fried Pie, Cherry",
+   "Measure": "1 Pie",
+   "Weight": "85",
+   "kCal": 250,
+   "Fats": 14,
+   "Carbs": 32,
+   "Protein": 2
+ },
+ {
+   "Food": "Froot Loops Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 110,
+   "Fats": 1,
+   "Carbs": 25,
+   "Protein": 2
+ },
+ {
+   "Food": "Fruit Cocktail,Cnnd,Heavysyrup",
+   "Measure": "1 Cup",
+   "Weight": "255",
+   "kCal": 185,
+   "Fats": 0,
+   "Carbs": 48,
+   "Protein": 1
+ },
+ {
+   "Food": "Fruit Cocktail,Cnnd,Juice Pack",
+   "Measure": "1 Cup",
+   "Weight": "248",
+   "kCal": 115,
+   "Fats": 0,
+   "Carbs": 29,
+   "Protein": 1
+ },
+ {
+   "Food": "Fruit Punch Drink, Canned",
+   "Measure": "6 fl oz",
+   "Weight": "190",
+   "kCal": 85,
+   "Fats": 0,
+   "Carbs": 22,
+   "Protein": 0
+ },
+ {
+   "Food": "Fruitcake,Dark, From recipe",
+   "Measure": "1 Cake",
+   "Weight": "1361",
+   "kCal": 5185,
+   "Fats": 228,
+   "Carbs": 783,
+   "Protein": 74
+ },
+ {
+   "Food": "Fruitcake,Dark, From recipe",
+   "Measure": "1 Piece",
+   "Weight": "43",
+   "kCal": 165,
+   "Fats": 7,
+   "Carbs": 25,
+   "Protein": 2
+ },
+ {
+   "Food": "Fudge, Chocolate, Plain",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 115,
+   "Fats": 3,
+   "Carbs": 21,
+   "Protein": 1
+ },
+ {
+   "Food": "Garlic Powder",
+   "Measure": "1 Tsp",
+   "Weight": "2,8",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 0
+ },
+ {
+   "Food": "Gelatin Dessert, Prepared",
+   "Measure": "1/2 Cup",
+   "Weight": "120",
+   "kCal": 70,
+   "Fats": 0,
+   "Carbs": 17,
+   "Protein": 2
+ },
+ {
+   "Food": "Gelatin, Dry",
+   "Measure": "1 Envelp",
+   "Weight": "7",
+   "kCal": 25,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 6
+ },
+ {
+   "Food": "Gin,Rum,Vodka,Whisky 80-Proof",
+   "Measure": "1.5 fl oz",
+   "Weight": "42",
+   "kCal": 95,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Gin,Rum,Vodka,Whisky 86-Proof",
+   "Measure": "1.5 fl oz",
+   "Weight": "42",
+   "kCal": 105,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Gin,Rum,Vodka,Whisky 90-Proof",
+   "Measure": "1.5 fl oz",
+   "Weight": "42",
+   "kCal": 110,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Ginger Ale",
+   "Measure": "12 fl oz",
+   "Weight": "366",
+   "kCal": 125,
+   "Fats": 0,
+   "Carbs": 32,
+   "Protein": 0
+ },
+ {
+   "Food": "Gingerbread Cake, From Mix",
+   "Measure": "1 Cake",
+   "Weight": "570",
+   "kCal": 1575,
+   "Fats": 39,
+   "Carbs": 291,
+   "Protein": 18
+ },
+ {
+   "Food": "Gingerbread Cake, From Mix",
+   "Measure": "1 Piece",
+   "Weight": "63",
+   "kCal": 175,
+   "Fats": 4,
+   "Carbs": 32,
+   "Protein": 2
+ },
+ {
+   "Food": "Golden Grahams Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 110,
+   "Fats": 1,
+   "Carbs": 24,
+   "Protein": 2
+ },
+ {
+   "Food": "Graham Cracker, Plain",
+   "Measure": "2 Crackr",
+   "Weight": "14",
+   "kCal": 60,
+   "Fats": 1,
+   "Carbs": 11,
+   "Protein": 1
+ },
+ {
+   "Food": "Grape Drink, Canned",
+   "Measure": "6 fl oz",
+   "Weight": "187",
+   "kCal": 100,
+   "Fats": 0,
+   "Carbs": 26,
+   "Protein": 0
+ },
+ {
+   "Food": "Grape Juice, Canned",
+   "Measure": "1 Cup",
+   "Weight": "253",
+   "kCal": 155,
+   "Fats": 0,
+   "Carbs": 38,
+   "Protein": 1
+ },
+ {
+   "Food": "Grape Soda",
+   "Measure": "12 fl oz",
+   "Weight": "372",
+   "kCal": 180,
+   "Fats": 0,
+   "Carbs": 46,
+   "Protein": 0
+ },
+ {
+   "Food": "Grapefrt Jce,Frzn,Cncn,Unswten",
+   "Measure": "6 fl oz",
+   "Weight": "207",
+   "kCal": 300,
+   "Fats": 1,
+   "Carbs": 72,
+   "Protein": 4
+ },
+ {
+   "Food": "Grapefrt Jce,Frzn,Dltd,Unswten",
+   "Measure": "1 Cup",
+   "Weight": "247",
+   "kCal": 100,
+   "Fats": 0,
+   "Carbs": 24,
+   "Protein": 1
+ },
+ {
+   "Food": "Grapefruit Juice, Canned,Swtnd",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 115,
+   "Fats": 0,
+   "Carbs": 28,
+   "Protein": 1
+ },
+ {
+   "Food": "Grapefruit Juice, Canned,Unswt",
+   "Measure": "1 Cup",
+   "Weight": "247",
+   "kCal": 95,
+   "Fats": 0,
+   "Carbs": 22,
+   "Protein": 1
+ },
+ {
+   "Food": "Grapefruit Juice, Raw",
+   "Measure": "1 Cup",
+   "Weight": "247",
+   "kCal": 95,
+   "Fats": 0,
+   "Carbs": 23,
+   "Protein": 1
+ },
+ {
+   "Food": "Grapefruit, Canned, Syrup Pack",
+   "Measure": "1 Cup",
+   "Weight": "254",
+   "kCal": 150,
+   "Fats": 0,
+   "Carbs": 39,
+   "Protein": 1
+ },
+ {
+   "Food": "Grapefruit, Raw, Pink",
+   "Measure": "1/2 Frut",
+   "Weight": "120",
+   "kCal": 40,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 1
+ },
+ {
+   "Food": "Grapefruit, Raw, White",
+   "Measure": "1/2 Frut",
+   "Weight": "120",
+   "kCal": 40,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 1
+ },
+ {
+   "Food": "Grapejce,Frzn,Concen,Swtnd,W/C",
+   "Measure": "6 fl oz",
+   "Weight": "216",
+   "kCal": 385,
+   "Fats": 1,
+   "Carbs": 96,
+   "Protein": 1
+ },
+ {
+   "Food": "Grapejce,Frzn,Dilutd,Swtnd,W/C",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 125,
+   "Fats": 0,
+   "Carbs": 32,
+   "Protein": 0
+ },
+ {
+   "Food": "Grape-Nuts Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 100,
+   "Fats": 0,
+   "Carbs": 23,
+   "Protein": 3
+ },
+ {
+   "Food": "Grapes, European, Raw, Thompsn",
+   "Measure": "10 Grape",
+   "Weight": "50",
+   "kCal": 35,
+   "Fats": 0,
+   "Carbs": 9,
+   "Protein": 0
+ },
+ {
+   "Food": "Grapes, European, Raw, Tokay",
+   "Measure": "10 Grape",
+   "Weight": "57",
+   "kCal": 40,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 0
+ },
+ {
+   "Food": "Gravy And Turkey, Frozen",
+   "Measure": "5 oz",
+   "Weight": "142",
+   "kCal": 95,
+   "Fats": 4,
+   "Carbs": 7,
+   "Protein": 8
+ },
+ {
+   "Food": "Great Northn Beans,Dry,Ckd,Drn",
+   "Measure": "1 Cup",
+   "Weight": "180",
+   "kCal": 210,
+   "Fats": 1,
+   "Carbs": 38,
+   "Protein": 14
+ },
+ {
+   "Food": "Ground Beef, Broiled, Lean",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 230,
+   "Fats": 16,
+   "Carbs": 0,
+   "Protein": 21
+ },
+ {
+   "Food": "Ground Beef, Broiled, Regular",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 245,
+   "Fats": 18,
+   "Carbs": 0,
+   "Protein": 20
+ },
+ {
+   "Food": "Gum Drops",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 100,
+   "Fats": 0,
+   "Carbs": 25,
+   "Protein": 0
+ },
+ {
+   "Food": "Haddock, Breaded, Fried",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 175,
+   "Fats": 9,
+   "Carbs": 7,
+   "Protein": 17
+ },
+ {
+   "Food": "Half And Half, Cream",
+   "Measure": "1 Cup",
+   "Weight": "242",
+   "kCal": 315,
+   "Fats": 28,
+   "Carbs": 10,
+   "Protein": 7
+ },
+ {
+   "Food": "Half And Half, Cream",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 20,
+   "Fats": 2,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Halibut, Broiled, Butter,Lemju",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 140,
+   "Fats": 6,
+   "Carbs": 0,
+   "Protein": 20
+ },
+ {
+   "Food": "Hamburger, 4oz Patty",
+   "Measure": "1 Sandwh",
+   "Weight": "174",
+   "kCal": 445,
+   "Fats": 21,
+   "Carbs": 38,
+   "Protein": 25
+ },
+ {
+   "Food": "Hamburger, Regular",
+   "Measure": "1 Sandwh",
+   "Weight": "98",
+   "kCal": 245,
+   "Fats": 11,
+   "Carbs": 28,
+   "Protein": 12
+ },
+ {
+   "Food": "Hard Candy",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 110,
+   "Fats": 0,
+   "Carbs": 28,
+   "Protein": 0
+ },
+ {
+   "Food": "Herring, Pickled",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 190,
+   "Fats": 13,
+   "Carbs": 0,
+   "Protein": 17
+ },
+ {
+   "Food": "Hollandaise Sce, W/ H2o,Frm Mx",
+   "Measure": "1 Cup",
+   "Weight": "259",
+   "kCal": 240,
+   "Fats": 20,
+   "Carbs": 14,
+   "Protein": 5
+ },
+ {
+   "Food": "Honey",
+   "Measure": "1 Cup",
+   "Weight": "339",
+   "kCal": 1030,
+   "Fats": 0,
+   "Carbs": 279,
+   "Protein": 1
+ },
+ {
+   "Food": "Honey",
+   "Measure": "1 Tbsp",
+   "Weight": "21",
+   "kCal": 65,
+   "Fats": 0,
+   "Carbs": 17,
+   "Protein": 0
+ },
+ {
+   "Food": "Honey Nut Cheerios Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 105,
+   "Fats": 1,
+   "Carbs": 23,
+   "Protein": 3
+ },
+ {
+   "Food": "Honeydew Melon, Raw",
+   "Measure": "1/10 Mel",
+   "Weight": "129",
+   "kCal": 45,
+   "Fats": 0,
+   "Carbs": 12,
+   "Protein": 1
+ },
+ {
+   "Food": "Ice Cream, Vanlla, Regulr 11%",
+   "Measure": "1/2 Galn",
+   "Weight": "1064",
+   "kCal": 2155,
+   "Fats": 115,
+   "Carbs": 254,
+   "Protein": 38
+ },
+ {
+   "Food": "Ice Cream, Vanlla, Regulr 11%",
+   "Measure": "1 Cup",
+   "Weight": "133",
+   "kCal": 270,
+   "Fats": 14,
+   "Carbs": 32,
+   "Protein": 5
+ },
+ {
+   "Food": "Ice Cream, Vanlla, Regulr 11%",
+   "Measure": "3 fl oz",
+   "Weight": "50",
+   "kCal": 100,
+   "Fats": 5,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Ice Cream, Vanlla, Rich 16% Ft",
+   "Measure": "1/2 Gal",
+   "Weight": "1188",
+   "kCal": 2805,
+   "Fats": 190,
+   "Carbs": 256,
+   "Protein": 33
+ },
+ {
+   "Food": "Ice Cream, Vanlla, Rich 16% Ft",
+   "Measure": "1 Cup",
+   "Weight": "148",
+   "kCal": 350,
+   "Fats": 24,
+   "Carbs": 32,
+   "Protein": 4
+ },
+ {
+   "Food": "Ice Cream, Vanlla, Soft Serve",
+   "Measure": "1 Cup",
+   "Weight": "173",
+   "kCal": 375,
+   "Fats": 23,
+   "Carbs": 38,
+   "Protein": 7
+ },
+ {
+   "Food": "Ice Milk, Vanilla, 4% Fat",
+   "Measure": "1/2 Gal",
+   "Weight": "1048",
+   "kCal": 1470,
+   "Fats": 45,
+   "Carbs": 232,
+   "Protein": 41
+ },
+ {
+   "Food": "Ice Milk, Vanilla, 4% Fat",
+   "Measure": "1 Cup",
+   "Weight": "131",
+   "kCal": 185,
+   "Fats": 6,
+   "Carbs": 29,
+   "Protein": 5
+ },
+ {
+   "Food": "Ice Milk, Vanilla,Softserv 3%",
+   "Measure": "1 Cup",
+   "Weight": "175",
+   "kCal": 225,
+   "Fats": 5,
+   "Carbs": 38,
+   "Protein": 8
+ },
+ {
+   "Food": "Imitation Creamers, Liquid Frz",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 20,
+   "Fats": 1,
+   "Carbs": 2,
+   "Protein": 0
+ },
+ {
+   "Food": "Imitation Creamers, Powdered",
+   "Measure": "1 Tsp",
+   "Weight": "2",
+   "kCal": 10,
+   "Fats": 1,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Imitation Whipped Topping,Frzn",
+   "Measure": "1 Cup",
+   "Weight": "75",
+   "kCal": 240,
+   "Fats": 19,
+   "Carbs": 17,
+   "Protein": 1
+ },
+ {
+   "Food": "Imitation Whipped Topping,Frzn",
+   "Measure": "1 Tbsp",
+   "Weight": "4",
+   "kCal": 15,
+   "Fats": 1,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Imitatn Sour Dressing",
+   "Measure": "1 Cup",
+   "Weight": "235",
+   "kCal": 415,
+   "Fats": 39,
+   "Carbs": 11,
+   "Protein": 8
+ },
+ {
+   "Food": "Imitatn Sour Dressing",
+   "Measure": "1 Tbsp",
+   "Weight": "12",
+   "kCal": 20,
+   "Fats": 2,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Imitatn Whipd Toping,Pressrzd",
+   "Measure": "1 Cup",
+   "Weight": "70",
+   "kCal": 185,
+   "Fats": 16,
+   "Carbs": 11,
+   "Protein": 1
+ },
+ {
+   "Food": "Imitatn Whipd Toping,Pressrzd",
+   "Measure": "1 Tbsp",
+   "Weight": "4",
+   "kCal": 10,
+   "Fats": 1,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Imitatn Whipd Toping,Pwdrd,Prp",
+   "Measure": "1 Cup",
+   "Weight": "80",
+   "kCal": 150,
+   "Fats": 10,
+   "Carbs": 13,
+   "Protein": 3
+ },
+ {
+   "Food": "Imitatn Whipd Toping,Pwdrd,Prp",
+   "Measure": "1 Tbsp",
+   "Weight": "4",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Italian Bread",
+   "Measure": "1 Loaf",
+   "Weight": "454",
+   "kCal": 1255,
+   "Fats": 4,
+   "Carbs": 256,
+   "Protein": 41
+ },
+ {
+   "Food": "Italian Bread",
+   "Measure": "1 Slice",
+   "Weight": "30",
+   "kCal": 85,
+   "Fats": 0,
+   "Carbs": 17,
+   "Protein": 3
+ },
+ {
+   "Food": "Italian Salad Dressing,Localor",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 0
+ },
+ {
+   "Food": "Italian Salad Dressing,Regular",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 80,
+   "Fats": 9,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Jams And Preserves",
+   "Measure": "1 Tbsp",
+   "Weight": "20",
+   "kCal": 55,
+   "Fats": 0,
+   "Carbs": 14,
+   "Protein": 0
+ },
+ {
+   "Food": "Jams And Preserves",
+   "Measure": "1 Pkt",
+   "Weight": "14",
+   "kCal": 40,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 0
+ },
+ {
+   "Food": "Jellies",
+   "Measure": "1 Tbsp",
+   "Weight": "18",
+   "kCal": 50,
+   "Fats": 0,
+   "Carbs": 13,
+   "Protein": 0
+ },
+ {
+   "Food": "Jellies",
+   "Measure": "1 Pkt",
+   "Weight": "14",
+   "kCal": 40,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 0
+ },
+ {
+   "Food": "Jelly Beans",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 105,
+   "Fats": 0,
+   "Carbs": 26,
+   "Protein": 0
+ },
+ {
+   "Food": "Jerusalem-Artichoke, Raw",
+   "Measure": "1 Cup",
+   "Weight": "150",
+   "kCal": 115,
+   "Fats": 0,
+   "Carbs": 26,
+   "Protein": 3
+ },
+ {
+   "Food": "Kale, Cooked From Frozen",
+   "Measure": "1 Cup",
+   "Weight": "130",
+   "kCal": 40,
+   "Fats": 1,
+   "Carbs": 7,
+   "Protein": 4
+ },
+ {
+   "Food": "Kale, Cooked From Raw",
+   "Measure": "1 Cup",
+   "Weight": "130",
+   "kCal": 40,
+   "Fats": 1,
+   "Carbs": 7,
+   "Protein": 2
+ },
+ {
+   "Food": "Kiwifruit, Raw",
+   "Measure": "1 Kiwi",
+   "Weight": "76",
+   "kCal": 45,
+   "Fats": 0,
+   "Carbs": 11,
+   "Protein": 1
+ },
+ {
+   "Food": "Kohlrabi, Cooked, Drained",
+   "Measure": "1 Cup",
+   "Weight": "165",
+   "kCal": 50,
+   "Fats": 0,
+   "Carbs": 11,
+   "Protein": 3
+ },
+ {
+   "Food": "Lamb, Rib, Roasted, Lean + Fat",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 315,
+   "Fats": 26,
+   "Carbs": 0,
+   "Protein": 18
+ },
+ {
+   "Food": "Lamb, Rib, Roasted, Lean Only",
+   "Measure": "2 oz",
+   "Weight": "57",
+   "kCal": 130,
+   "Fats": 7,
+   "Carbs": 0,
+   "Protein": 15
+ },
+ {
+   "Food": "Lamb,Chops,Arm,Braised,Lean",
+   "Measure": "1.7 oz",
+   "Weight": "48",
+   "kCal": 135,
+   "Fats": 7,
+   "Carbs": 0,
+   "Protein": 17
+ },
+ {
+   "Food": "Lamb,Chops,Arm,Braised,Lean+Ft",
+   "Measure": "2.2 oz",
+   "Weight": "63",
+   "kCal": 220,
+   "Fats": 15,
+   "Carbs": 0,
+   "Protein": 20
+ },
+ {
+   "Food": "Lamb,Chops,Loin,Broil,Lean",
+   "Measure": "2.3 oz",
+   "Weight": "64",
+   "kCal": 140,
+   "Fats": 6,
+   "Carbs": 0,
+   "Protein": 19
+ },
+ {
+   "Food": "Lamb,Chops,Loin,Broil,Lean+Fat",
+   "Measure": "2.8 oz",
+   "Weight": "80",
+   "kCal": 235,
+   "Fats": 16,
+   "Carbs": 0,
+   "Protein": 22
+ },
+ {
+   "Food": "Lamb,Leg,Roasted, Lean Only",
+   "Measure": "2.6 oz",
+   "Weight": "73",
+   "kCal": 140,
+   "Fats": 6,
+   "Carbs": 0,
+   "Protein": 20
+ },
+ {
+   "Food": "Lamb,Leg,Roasted, Lean+ Fat",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 205,
+   "Fats": 13,
+   "Carbs": 0,
+   "Protein": 22
+ },
+ {
+   "Food": "Lard",
+   "Measure": "1 Cup",
+   "Weight": "205",
+   "kCal": 1850,
+   "Fats": 205,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Lard",
+   "Measure": "1 Tbsp",
+   "Weight": "13",
+   "kCal": 115,
+   "Fats": 13,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Lemon Juice, Canned",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 50,
+   "Fats": 1,
+   "Carbs": 16,
+   "Protein": 1
+ },
+ {
+   "Food": "Lemon Juice, Canned",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Lemon Juice, Raw",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 60,
+   "Fats": 0,
+   "Carbs": 21,
+   "Protein": 1
+ },
+ {
+   "Food": "Lemon Juice,Frzn,Single-Strngh",
+   "Measure": "6 fl oz",
+   "Weight": "244",
+   "kCal": 55,
+   "Fats": 1,
+   "Carbs": 16,
+   "Protein": 1
+ },
+ {
+   "Food": "Lemon Meringue Pie",
+   "Measure": "1 Pie",
+   "Weight": "840",
+   "kCal": 2140,
+   "Fats": 86,
+   "Carbs": 317,
+   "Protein": 31
+ },
+ {
+   "Food": "Lemon Meringue Pie",
+   "Measure": "1 Piece",
+   "Weight": "140",
+   "kCal": 355,
+   "Fats": 14,
+   "Carbs": 53,
+   "Protein": 5
+ },
+ {
+   "Food": "Lemonade,Concen,Frzen,Diluted",
+   "Measure": "6 fl oz",
+   "Weight": "185",
+   "kCal": 80,
+   "Fats": 0,
+   "Carbs": 21,
+   "Protein": 0
+ },
+ {
+   "Food": "Lemonade,Concentrate,Frz,Undil",
+   "Measure": "6 fl oz",
+   "Weight": "219",
+   "kCal": 425,
+   "Fats": 0,
+   "Carbs": 112,
+   "Protein": 0
+ },
+ {
+   "Food": "Lemon-Lime Soda",
+   "Measure": "12 fl oz",
+   "Weight": "372",
+   "kCal": 155,
+   "Fats": 0,
+   "Carbs": 39,
+   "Protein": 0
+ },
+ {
+   "Food": "Lemons, Raw",
+   "Measure": "1 Lemon",
+   "Weight": "58",
+   "kCal": 15,
+   "Fats": 0,
+   "Carbs": 5,
+   "Protein": 1
+ },
+ {
+   "Food": "Lentils, Dry, Cooked",
+   "Measure": "1 Cup",
+   "Weight": "200",
+   "kCal": 215,
+   "Fats": 1,
+   "Carbs": 38,
+   "Protein": 16
+ },
+ {
+   "Food": "Lettuce, Butterhead, Raw,Head",
+   "Measure": "1 Head",
+   "Weight": "163",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 4,
+   "Protein": 2
+ },
+ {
+   "Food": "Lettuce, Butterhead, Raw,Leave",
+   "Measure": "1 Leaf",
+   "Weight": "15",
+   "kCal": 0,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Lettuce, Crisphead, Raw, Head",
+   "Measure": "1 Head",
+   "Weight": "539",
+   "kCal": 70,
+   "Fats": 1,
+   "Carbs": 11,
+   "Protein": 5
+ },
+ {
+   "Food": "Lettuce, Crisphead, Raw,Pieces",
+   "Measure": "1 Cup",
+   "Weight": "55",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 1
+ },
+ {
+   "Food": "Lettuce, Crisphead, Raw,Wedge",
+   "Measure": "1 Wedge",
+   "Weight": "135",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 3,
+   "Protein": 1
+ },
+ {
+   "Food": "Lettuce, Looseleaf",
+   "Measure": "1 Cup",
+   "Weight": "56",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 1
+ },
+ {
+   "Food": "Light, Coffee Or Table Cream",
+   "Measure": "1 Cup",
+   "Weight": "240",
+   "kCal": 470,
+   "Fats": 46,
+   "Carbs": 9,
+   "Protein": 6
+ },
+ {
+   "Food": "Light, Coffee Or Table Cream",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 30,
+   "Fats": 3,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Lima Beans, Dry, Cooked,Draned",
+   "Measure": "1 Cup",
+   "Weight": "190",
+   "kCal": 260,
+   "Fats": 1,
+   "Carbs": 49,
+   "Protein": 16
+ },
+ {
+   "Food": "Lima Beans,Baby, Frzn,Cked,Drn",
+   "Measure": "1 Cup",
+   "Weight": "180",
+   "kCal": 190,
+   "Fats": 1,
+   "Carbs": 35,
+   "Protein": 12
+ },
+ {
+   "Food": "Lima Beans,Thick Seed,Frzn,Ckd",
+   "Measure": "1 Cup",
+   "Weight": "170",
+   "kCal": 170,
+   "Fats": 1,
+   "Carbs": 32,
+   "Protein": 10
+ },
+ {
+   "Food": "Lime Juice, Raw",
+   "Measure": "1 Cup",
+   "Weight": "246",
+   "kCal": 65,
+   "Fats": 0,
+   "Carbs": 22,
+   "Protein": 1
+ },
+ {
+   "Food": "Lime Juice,Canned",
+   "Measure": "1 Cup",
+   "Weight": "246",
+   "kCal": 50,
+   "Fats": 1,
+   "Carbs": 16,
+   "Protein": 1
+ },
+ {
+   "Food": "Limeade,Concen,Frozen,Diluted",
+   "Measure": "6 fl oz",
+   "Weight": "185",
+   "kCal": 75,
+   "Fats": 0,
+   "Carbs": 20,
+   "Protein": 0
+ },
+ {
+   "Food": "Limeade,Concentrate,Frzn,Undil",
+   "Measure": "6 fl oz",
+   "Weight": "218",
+   "kCal": 410,
+   "Fats": 0,
+   "Carbs": 108,
+   "Protein": 0
+ },
+ {
+   "Food": "Lucky Charms Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 110,
+   "Fats": 1,
+   "Carbs": 23,
+   "Protein": 3
+ },
+ {
+   "Food": "Macadamia Nuts, Oilrstd,Salted",
+   "Measure": "1 Cup",
+   "Weight": "134",
+   "kCal": 960,
+   "Fats": 103,
+   "Carbs": 17,
+   "Protein": 10
+ },
+ {
+   "Food": "Macadamia Nuts, Oilrstd,Salted",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 205,
+   "Fats": 22,
+   "Carbs": 4,
+   "Protein": 2
+ },
+ {
+   "Food": "Macadamia Nuts, Oilrstd,Unsalt",
+   "Measure": "1 Cup",
+   "Weight": "134",
+   "kCal": 960,
+   "Fats": 103,
+   "Carbs": 17,
+   "Protein": 10
+ },
+ {
+   "Food": "Macadamia Nuts, Oilrstd,Unsalt",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 205,
+   "Fats": 22,
+   "Carbs": 4,
+   "Protein": 2
+ },
+ {
+   "Food": "Macaroni And Cheese, Canned",
+   "Measure": "1 Cup",
+   "Weight": "240",
+   "kCal": 230,
+   "Fats": 10,
+   "Carbs": 26,
+   "Protein": 9
+ },
+ {
+   "Food": "Macaroni And Cheese, Home Rcpe",
+   "Measure": "1 Cup",
+   "Weight": "200",
+   "kCal": 430,
+   "Fats": 22,
+   "Carbs": 40,
+   "Protein": 17
+ },
+ {
+   "Food": "Macaroni, Cooked, Firm",
+   "Measure": "1 Cup",
+   "Weight": "130",
+   "kCal": 190,
+   "Fats": 1,
+   "Carbs": 39,
+   "Protein": 7
+ },
+ {
+   "Food": "Macaroni, Cooked, Tender, Hot",
+   "Measure": "1 Cup",
+   "Weight": "140",
+   "kCal": 155,
+   "Fats": 1,
+   "Carbs": 32,
+   "Protein": 5
+ },
+ {
+   "Food": "Macaroni, Cooked, Tender,Cold",
+   "Measure": "1 Cup",
+   "Weight": "105",
+   "kCal": 115,
+   "Fats": 0,
+   "Carbs": 24,
+   "Protein": 4
+ },
+ {
+   "Food": "Malted Milk, Chocolate, Powder",
+   "Measure": "3/4 oz",
+   "Weight": "21",
+   "kCal": 85,
+   "Fats": 1,
+   "Carbs": 18,
+   "Protein": 1
+ },
+ {
+   "Food": "Malted Milk,Chocolate, Pwdrppd",
+   "Measure": "1 Servng",
+   "Weight": "265",
+   "kCal": 235,
+   "Fats": 9,
+   "Carbs": 29,
+   "Protein": 9
+ },
+ {
+   "Food": "Malted Milk,Natural, Powder",
+   "Measure": "3/4 oz",
+   "Weight": "21",
+   "kCal": 85,
+   "Fats": 2,
+   "Carbs": 15,
+   "Protein": 3
+ },
+ {
+   "Food": "Malted Milk,Natural, Pwdr Pprd",
+   "Measure": "1 Servng",
+   "Weight": "265",
+   "kCal": 235,
+   "Fats": 10,
+   "Carbs": 27,
+   "Protein": 11
+ },
+ {
+   "Food": "Malt-O-Meal, W/O Salt",
+   "Measure": "1 Cup",
+   "Weight": "240",
+   "kCal": 120,
+   "Fats": 0,
+   "Carbs": 26,
+   "Protein": 4
+ },
+ {
+   "Food": "Malt-O-Meal, With Salt",
+   "Measure": "1 Cup",
+   "Weight": "240",
+   "kCal": 120,
+   "Fats": 0,
+   "Carbs": 26,
+   "Protein": 4
+ },
+ {
+   "Food": "Mangos, Raw",
+   "Measure": "1 Mango",
+   "Weight": "207",
+   "kCal": 135,
+   "Fats": 1,
+   "Carbs": 35,
+   "Protein": 1
+ },
+ {
+   "Food": "Margarine, Imitation 40% Fat",
+   "Measure": "8 oz",
+   "Weight": "227",
+   "kCal": 785,
+   "Fats": 88,
+   "Carbs": 1,
+   "Protein": 1
+ },
+ {
+   "Food": "Margarine, Imitation 40% Fat",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 50,
+   "Fats": 5,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Margarine, Regulr,Hard,80% Fat",
+   "Measure": "1/2 Cup",
+   "Weight": "113",
+   "kCal": 810,
+   "Fats": 91,
+   "Carbs": 1,
+   "Protein": 1
+ },
+ {
+   "Food": "Margarine, Regulr,Hard,80% Fat",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 100,
+   "Fats": 11,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Margarine, Regulr,Hard,80% Fat",
+   "Measure": "1 Pat",
+   "Weight": "5",
+   "kCal": 35,
+   "Fats": 4,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Margarine, Regulr,Soft,80% Fat",
+   "Measure": "8 oz",
+   "Weight": "227",
+   "kCal": 1625,
+   "Fats": 183,
+   "Carbs": 1,
+   "Protein": 2
+ },
+ {
+   "Food": "Margarine, Regulr,Soft,80% Fat",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 100,
+   "Fats": 11,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Margarine, Spread,Hard,60% Fat",
+   "Measure": "1/2 Cup",
+   "Weight": "113",
+   "kCal": 610,
+   "Fats": 69,
+   "Carbs": 0,
+   "Protein": 1
+ },
+ {
+   "Food": "Margarine, Spread,Hard,60% Fat",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 75,
+   "Fats": 9,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Margarine, Spread,Hard,60% Fat",
+   "Measure": "1 Pat",
+   "Weight": "5",
+   "kCal": 25,
+   "Fats": 3,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Margarine, Spread,Soft,60% Fat",
+   "Measure": "8 oz",
+   "Weight": "227",
+   "kCal": 1225,
+   "Fats": 138,
+   "Carbs": 0,
+   "Protein": 1
+ },
+ {
+   "Food": "Margarine, Spread,Soft,60% Fat",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 75,
+   "Fats": 9,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Marshmallows",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 90,
+   "Fats": 0,
+   "Carbs": 23,
+   "Protein": 1
+ },
+ {
+   "Food": "Mayonnaise Type Salad Dressing",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 60,
+   "Fats": 5,
+   "Carbs": 4,
+   "Protein": 0
+ },
+ {
+   "Food": "Mayonnaise, Imitation",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 35,
+   "Fats": 3,
+   "Carbs": 2,
+   "Protein": 0
+ },
+ {
+   "Food": "Mayonnaise, Regular",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 100,
+   "Fats": 11,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Melba Toast, Plain",
+   "Measure": "1 Piece",
+   "Weight": "5",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 4,
+   "Protein": 1
+ },
+ {
+   "Food": "Milk Chocolate Candy, Plain",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 145,
+   "Fats": 9,
+   "Carbs": 16,
+   "Protein": 2
+ },
+ {
+   "Food": "Milk Chocolate Candy,W/ Almond",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 150,
+   "Fats": 10,
+   "Carbs": 15,
+   "Protein": 3
+ },
+ {
+   "Food": "Milk Chocolate Candy,W/ Penuts",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 155,
+   "Fats": 11,
+   "Carbs": 13,
+   "Protein": 4
+ },
+ {
+   "Food": "Milk Chocolate Candy,W/ Rice C",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 140,
+   "Fats": 7,
+   "Carbs": 18,
+   "Protein": 2
+ },
+ {
+   "Food": "Milk, Lofat, 1%, Added Solids",
+   "Measure": "1 Cup",
+   "Weight": "245",
+   "kCal": 105,
+   "Fats": 2,
+   "Carbs": 12,
+   "Protein": 9
+ },
+ {
+   "Food": "Milk, Lofat, 1%, No Addedsolid",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 100,
+   "Fats": 3,
+   "Carbs": 12,
+   "Protein": 8
+ },
+ {
+   "Food": "Milk, Lofat, 2%, Added Solids",
+   "Measure": "1 Cup",
+   "Weight": "245",
+   "kCal": 125,
+   "Fats": 5,
+   "Carbs": 12,
+   "Protein": 9
+ },
+ {
+   "Food": "Milk, Lofat, 2%, No Addedsolid",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 120,
+   "Fats": 5,
+   "Carbs": 12,
+   "Protein": 8
+ },
+ {
+   "Food": "Milk, Skim, Added Milk Solids",
+   "Measure": "1 Cup",
+   "Weight": "245",
+   "kCal": 90,
+   "Fats": 1,
+   "Carbs": 12,
+   "Protein": 9
+ },
+ {
+   "Food": "Milk, Skim, No Added Milksolid",
+   "Measure": "1 Cup",
+   "Weight": "245",
+   "kCal": 85,
+   "Fats": 0,
+   "Carbs": 12,
+   "Protein": 8
+ },
+ {
+   "Food": "Milk, Whole, 3.3% Fat",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 150,
+   "Fats": 8,
+   "Carbs": 11,
+   "Protein": 8
+ },
+ {
+   "Food": "Minestrone Soup, Canned",
+   "Measure": "1 Cup",
+   "Weight": "241",
+   "kCal": 80,
+   "Fats": 3,
+   "Carbs": 11,
+   "Protein": 4
+ },
+ {
+   "Food": "Miso",
+   "Measure": "1 Cup",
+   "Weight": "276",
+   "kCal": 470,
+   "Fats": 13,
+   "Carbs": 65,
+   "Protein": 29
+ },
+ {
+   "Food": "Mixed Grain Bread",
+   "Measure": "1 Loaf",
+   "Weight": "454",
+   "kCal": 1165,
+   "Fats": 17,
+   "Carbs": 212,
+   "Protein": 45
+ },
+ {
+   "Food": "Mixed Grain Bread",
+   "Measure": "1 Slice",
+   "Weight": "25",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Mixed Grain Bread, Toasted",
+   "Measure": "1 Slice",
+   "Weight": "23",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Mixed Nuts W/ Peants,Dry,Saltd",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 170,
+   "Fats": 15,
+   "Carbs": 7,
+   "Protein": 5
+ },
+ {
+   "Food": "Mixed Nuts W/ Peants,Dry,Unslt",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 170,
+   "Fats": 15,
+   "Carbs": 7,
+   "Protein": 5
+ },
+ {
+   "Food": "Mixed Nuts W/ Peants,Oil,Saltd",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 175,
+   "Fats": 16,
+   "Carbs": 6,
+   "Protein": 5
+ },
+ {
+   "Food": "Mixed Nuts W/ Peants,Oil,Unslt",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 175,
+   "Fats": 16,
+   "Carbs": 6,
+   "Protein": 5
+ },
+ {
+   "Food": "Molasses, Cane, Blackstrap",
+   "Measure": "2 Tbsp",
+   "Weight": "40",
+   "kCal": 85,
+   "Fats": 0,
+   "Carbs": 22,
+   "Protein": 0
+ },
+ {
+   "Food": "Mozzarella Cheese, Whole Milk",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 80,
+   "Fats": 6,
+   "Carbs": 1,
+   "Protein": 6
+ },
+ {
+   "Food": "Mozzarella Chese,Skim, Lomoist",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 80,
+   "Fats": 5,
+   "Carbs": 1,
+   "Protein": 8
+ },
+ {
+   "Food": "Muenster Cheese",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 105,
+   "Fats": 9,
+   "Carbs": 0,
+   "Protein": 7
+ },
+ {
+   "Food": "Mushroom Gravy, Canned",
+   "Measure": "1 Cup",
+   "Weight": "238",
+   "kCal": 120,
+   "Fats": 6,
+   "Carbs": 13,
+   "Protein": 3
+ },
+ {
+   "Food": "Mushrooms, Canned, Drnd,W/Salt",
+   "Measure": "1 Cup",
+   "Weight": "156",
+   "kCal": 35,
+   "Fats": 0,
+   "Carbs": 8,
+   "Protein": 3
+ },
+ {
+   "Food": "Mushrooms, Cooked, Drained",
+   "Measure": "1 Cup",
+   "Weight": "156",
+   "kCal": 40,
+   "Fats": 1,
+   "Carbs": 8,
+   "Protein": 3
+ },
+ {
+   "Food": "Mushrooms, Raw",
+   "Measure": "1 Cup",
+   "Weight": "70",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 3,
+   "Protein": 1
+ },
+ {
+   "Food": "Mustard Greens, Cooked, Draned",
+   "Measure": "1 Cup",
+   "Weight": "140",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 3,
+   "Protein": 3
+ },
+ {
+   "Food": "Mustard, Prepared, Yellow",
+   "Measure": "1 Tsp",
+   "Weight": "5",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Nature Valley Granola Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 125,
+   "Fats": 5,
+   "Carbs": 19,
+   "Protein": 3
+ },
+ {
+   "Food": "Nectarines, Raw",
+   "Measure": "1 Nectrn",
+   "Weight": "136",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 16,
+   "Protein": 1
+ },
+ {
+   "Food": "Nonfat Dry Milk, Instantized",
+   "Measure": "1 Envlpe",
+   "Weight": "91",
+   "kCal": 325,
+   "Fats": 1,
+   "Carbs": 47,
+   "Protein": 32
+ },
+ {
+   "Food": "Nonfat Dry Milk, Instantized",
+   "Measure": "1 Cup",
+   "Weight": "68",
+   "kCal": 245,
+   "Fats": 0,
+   "Carbs": 35,
+   "Protein": 24
+ },
+ {
+   "Food": "Noodles, Chow Mein, Canned",
+   "Measure": "1 Cup",
+   "Weight": "45",
+   "kCal": 220,
+   "Fats": 11,
+   "Carbs": 26,
+   "Protein": 6
+ },
+ {
+   "Food": "Noodles, Egg, Cooked",
+   "Measure": "1 Cup",
+   "Weight": "160",
+   "kCal": 200,
+   "Fats": 2,
+   "Carbs": 37,
+   "Protein": 7
+ },
+ {
+   "Food": "Oatmeal Bread",
+   "Measure": "1 Loaf",
+   "Weight": "454",
+   "kCal": 1145,
+   "Fats": 20,
+   "Carbs": 212,
+   "Protein": 38
+ },
+ {
+   "Food": "Oatmeal Bread",
+   "Measure": "1 Slice",
+   "Weight": "25",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Oatmeal Bread, Toasted",
+   "Measure": "1 Slice",
+   "Weight": "23",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Oatmeal W/ Raisins Cookies",
+   "Measure": "4 Cookie",
+   "Weight": "52",
+   "kCal": 245,
+   "Fats": 10,
+   "Carbs": 36,
+   "Protein": 3
+ },
+ {
+   "Food": "Oatmeal,Ckd,Instnt,Flvrd,Fortf",
+   "Measure": "1 Pkt",
+   "Weight": "164",
+   "kCal": 160,
+   "Fats": 2,
+   "Carbs": 31,
+   "Protein": 5
+ },
+ {
+   "Food": "Oatmeal,Ckd,Instnt,Plain,Fortf",
+   "Measure": "1 Pkt",
+   "Weight": "177",
+   "kCal": 105,
+   "Fats": 2,
+   "Carbs": 18,
+   "Protein": 4
+ },
+ {
+   "Food": "Oatmeal,Ckd,Rg,Qck,Inst,W/Osal",
+   "Measure": "1 Cup",
+   "Weight": "234",
+   "kCal": 145,
+   "Fats": 2,
+   "Carbs": 25,
+   "Protein": 6
+ },
+ {
+   "Food": "Oatmeal,Ckd,Rg,Qck,Inst,W/Salt",
+   "Measure": "1 Cup",
+   "Weight": "234",
+   "kCal": 145,
+   "Fats": 2,
+   "Carbs": 25,
+   "Protein": 6
+ },
+ {
+   "Food": "Ocean Perch, Breaded, Fried",
+   "Measure": "1 Fillet",
+   "Weight": "85",
+   "kCal": 185,
+   "Fats": 11,
+   "Carbs": 7,
+   "Protein": 16
+ },
+ {
+   "Food": "Okra Pods, Cooked",
+   "Measure": "8 Pods",
+   "Weight": "85",
+   "kCal": 25,
+   "Fats": 0,
+   "Carbs": 6,
+   "Protein": 2
+ },
+ {
+   "Food": "Olive Oil",
+   "Measure": "1 Cup",
+   "Weight": "216",
+   "kCal": 1910,
+   "Fats": 216,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Olive Oil",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 125,
+   "Fats": 14,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Olives, Canned, Green",
+   "Measure": "4 Medium",
+   "Weight": "13",
+   "kCal": 15,
+   "Fats": 2,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Olives, Canned, Ripe, Mission",
+   "Measure": "3 Small",
+   "Weight": "9",
+   "kCal": 15,
+   "Fats": 2,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Onion Powder",
+   "Measure": "1 Tsp",
+   "Weight": "2,1",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 0
+ },
+ {
+   "Food": "Onion Rings, Breaded,Frzn,Prpd",
+   "Measure": "2 Rings",
+   "Weight": "20",
+   "kCal": 80,
+   "Fats": 5,
+   "Carbs": 8,
+   "Protein": 1
+ },
+ {
+   "Food": "Onion Soup, Dehydratd, Prepred",
+   "Measure": "1 Pkt",
+   "Weight": "184",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 4,
+   "Protein": 1
+ },
+ {
+   "Food": "Onion Soup, Dehydrtd, Unprpred",
+   "Measure": "1 Pkt",
+   "Weight": "7",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 4,
+   "Protein": 1
+ },
+ {
+   "Food": "Onions, Raw, Chopped",
+   "Measure": "1 Cup",
+   "Weight": "160",
+   "kCal": 55,
+   "Fats": 0,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Onions, Raw, Cooked, Drained",
+   "Measure": "1 Cup",
+   "Weight": "210",
+   "kCal": 60,
+   "Fats": 0,
+   "Carbs": 13,
+   "Protein": 2
+ },
+ {
+   "Food": "Onions, Raw, Sliced",
+   "Measure": "1 Cup",
+   "Weight": "115",
+   "kCal": 40,
+   "Fats": 0,
+   "Carbs": 8,
+   "Protein": 1
+ },
+ {
+   "Food": "Onions, Spring, Raw",
+   "Measure": "6 Onion",
+   "Weight": "30",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 1
+ },
+ {
+   "Food": "Orange + Grapefruit Juce,Cannd",
+   "Measure": "1 Cup",
+   "Weight": "247",
+   "kCal": 105,
+   "Fats": 0,
+   "Carbs": 25,
+   "Protein": 1
+ },
+ {
+   "Food": "Orange Juice, Canned",
+   "Measure": "1 Cup",
+   "Weight": "249",
+   "kCal": 105,
+   "Fats": 0,
+   "Carbs": 25,
+   "Protein": 1
+ },
+ {
+   "Food": "Orange Juice, Chilled",
+   "Measure": "1 Cup",
+   "Weight": "249",
+   "kCal": 110,
+   "Fats": 1,
+   "Carbs": 25,
+   "Protein": 2
+ },
+ {
+   "Food": "Orange Juice, Raw",
+   "Measure": "1 Cup",
+   "Weight": "248",
+   "kCal": 110,
+   "Fats": 0,
+   "Carbs": 26,
+   "Protein": 2
+ },
+ {
+   "Food": "Orange Juice,Frozen Concentrte",
+   "Measure": "6 fl oz",
+   "Weight": "213",
+   "kCal": 340,
+   "Fats": 0,
+   "Carbs": 81,
+   "Protein": 5
+ },
+ {
+   "Food": "Orange Juice,Frzn,Cncn,Diluted",
+   "Measure": "1 Cup",
+   "Weight": "249",
+   "kCal": 110,
+   "Fats": 0,
+   "Carbs": 27,
+   "Protein": 2
+ },
+ {
+   "Food": "Orange Soda",
+   "Measure": "12 fl oz",
+   "Weight": "372",
+   "kCal": 180,
+   "Fats": 0,
+   "Carbs": 46,
+   "Protein": 0
+ },
+ {
+   "Food": "Oranges, Raw",
+   "Measure": "1 Orange",
+   "Weight": "131",
+   "kCal": 60,
+   "Fats": 0,
+   "Carbs": 15,
+   "Protein": 1
+ },
+ {
+   "Food": "Oranges, Raw, Sections",
+   "Measure": "1 Cup",
+   "Weight": "180",
+   "kCal": 85,
+   "Fats": 0,
+   "Carbs": 21,
+   "Protein": 2
+ },
+ {
+   "Food": "Oregano",
+   "Measure": "1 Tsp",
+   "Weight": "1,5",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Oysters, Breaded, Fried",
+   "Measure": "1 Oyster",
+   "Weight": "45",
+   "kCal": 90,
+   "Fats": 5,
+   "Carbs": 5,
+   "Protein": 5
+ },
+ {
+   "Food": "Oysters, Raw",
+   "Measure": "1 Cup",
+   "Weight": "240",
+   "kCal": 160,
+   "Fats": 4,
+   "Carbs": 8,
+   "Protein": 20
+ },
+ {
+   "Food": "Pancakes, Buckwheat, From Mix",
+   "Measure": "1 Pancak",
+   "Weight": "27",
+   "kCal": 55,
+   "Fats": 2,
+   "Carbs": 6,
+   "Protein": 2
+ },
+ {
+   "Food": "Pancakes, Plain, From Mix",
+   "Measure": "1 Pancak",
+   "Weight": "27",
+   "kCal": 60,
+   "Fats": 2,
+   "Carbs": 8,
+   "Protein": 2
+ },
+ {
+   "Food": "Pancakes, Plain, Home Recipe",
+   "Measure": "1 Pancak",
+   "Weight": "27",
+   "kCal": 60,
+   "Fats": 2,
+   "Carbs": 9,
+   "Protein": 2
+ },
+ {
+   "Food": "Papayas, Raw",
+   "Measure": "1 Cup",
+   "Weight": "140",
+   "kCal": 65,
+   "Fats": 0,
+   "Carbs": 17,
+   "Protein": 1
+ },
+ {
+   "Food": "Paprika",
+   "Measure": "1 Tsp",
+   "Weight": "2,1",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Parmesan Cheese, Grated",
+   "Measure": "1 Cup",
+   "Weight": "100",
+   "kCal": 455,
+   "Fats": 30,
+   "Carbs": 4,
+   "Protein": 42
+ },
+ {
+   "Food": "Parmesan Cheese, Grated",
+   "Measure": "1 Tbsp",
+   "Weight": "5",
+   "kCal": 25,
+   "Fats": 2,
+   "Carbs": 0,
+   "Protein": 2
+ },
+ {
+   "Food": "Parmesan Cheese, Grated",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 130,
+   "Fats": 9,
+   "Carbs": 1,
+   "Protein": 12
+ },
+ {
+   "Food": "Parsley, Freeze-Dried",
+   "Measure": "1 Tbsp",
+   "Weight": "0,4",
+   "kCal": 0,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Parsley, Raw",
+   "Measure": "10 Sprig",
+   "Weight": "10",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Parsnips, Cooked, Drained",
+   "Measure": "1 Cup",
+   "Weight": "156",
+   "kCal": 125,
+   "Fats": 0,
+   "Carbs": 30,
+   "Protein": 2
+ },
+ {
+   "Food": "Pasterzd Proces Cheese, Swiss",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 95,
+   "Fats": 7,
+   "Carbs": 1,
+   "Protein": 7
+ },
+ {
+   "Food": "Pasterzd Proces Cheese,Americn",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 105,
+   "Fats": 9,
+   "Carbs": 0,
+   "Protein": 6
+ },
+ {
+   "Food": "Pasterzd Proces Chese Food,Amr",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 95,
+   "Fats": 7,
+   "Carbs": 2,
+   "Protein": 6
+ },
+ {
+   "Food": "Pasterzd Proces Chese Spred,Am",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 80,
+   "Fats": 6,
+   "Carbs": 2,
+   "Protein": 5
+ },
+ {
+   "Food": "Pea Beans, Dry, Cooked,Drained",
+   "Measure": "1 Cup",
+   "Weight": "190",
+   "kCal": 225,
+   "Fats": 1,
+   "Carbs": 40,
+   "Protein": 15
+ },
+ {
+   "Food": "Pea, Green, Soup, Canned",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 165,
+   "Fats": 3,
+   "Carbs": 27,
+   "Protein": 9
+ },
+ {
+   "Food": "Peach Pie",
+   "Measure": "1 Pie",
+   "Weight": "945",
+   "kCal": 2410,
+   "Fats": 101,
+   "Carbs": 361,
+   "Protein": 24
+ },
+ {
+   "Food": "Peach Pie",
+   "Measure": "1 Piece",
+   "Weight": "158",
+   "kCal": 405,
+   "Fats": 17,
+   "Carbs": 60,
+   "Protein": 4
+ },
+ {
+   "Food": "Peaches, Canned, Heavy Syrup",
+   "Measure": "1 Cup",
+   "Weight": "256",
+   "kCal": 190,
+   "Fats": 0,
+   "Carbs": 51,
+   "Protein": 1
+ },
+ {
+   "Food": "Peaches, Canned, Heavy Syrup",
+   "Measure": "1 Half",
+   "Weight": "81",
+   "kCal": 60,
+   "Fats": 0,
+   "Carbs": 16,
+   "Protein": 0
+ },
+ {
+   "Food": "Peaches, Canned, Juice Pack",
+   "Measure": "1 Cup",
+   "Weight": "248",
+   "kCal": 110,
+   "Fats": 0,
+   "Carbs": 29,
+   "Protein": 2
+ },
+ {
+   "Food": "Peaches, Canned, Juice Pack",
+   "Measure": "1 Half",
+   "Weight": "77",
+   "kCal": 35,
+   "Fats": 0,
+   "Carbs": 9,
+   "Protein": 0
+ },
+ {
+   "Food": "Peaches, Dried",
+   "Measure": "1 Cup",
+   "Weight": "160",
+   "kCal": 380,
+   "Fats": 1,
+   "Carbs": 98,
+   "Protein": 6
+ },
+ {
+   "Food": "Peaches, Dried,Cooked,Unswetnd",
+   "Measure": "1 Cup",
+   "Weight": "258",
+   "kCal": 200,
+   "Fats": 1,
+   "Carbs": 51,
+   "Protein": 3
+ },
+ {
+   "Food": "Peaches, Frozen,Swetned,W/Vitc",
+   "Measure": "10 oz",
+   "Weight": "284",
+   "kCal": 265,
+   "Fats": 0,
+   "Carbs": 68,
+   "Protein": 2
+ },
+ {
+   "Food": "Peaches, Frozen,Swetned,W/Vitc",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 235,
+   "Fats": 0,
+   "Carbs": 60,
+   "Protein": 2
+ },
+ {
+   "Food": "Peaches, Raw",
+   "Measure": "1 Peach",
+   "Weight": "87",
+   "kCal": 35,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 1
+ },
+ {
+   "Food": "Peaches, Raw, Sliced",
+   "Measure": "1 Cup",
+   "Weight": "170",
+   "kCal": 75,
+   "Fats": 0,
+   "Carbs": 19,
+   "Protein": 1
+ },
+ {
+   "Food": "Peanut Butter",
+   "Measure": "1 Tbsp",
+   "Weight": "16",
+   "kCal": 95,
+   "Fats": 8,
+   "Carbs": 3,
+   "Protein": 5
+ },
+ {
+   "Food": "Peanut Butter Cookie,Home Recp",
+   "Measure": "4 Cookie",
+   "Weight": "48",
+   "kCal": 245,
+   "Fats": 14,
+   "Carbs": 28,
+   "Protein": 4
+ },
+ {
+   "Food": "Peanut Oil",
+   "Measure": "1 Cup",
+   "Weight": "216",
+   "kCal": 1910,
+   "Fats": 216,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Peanut Oil",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 125,
+   "Fats": 14,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Peanuts, Oil Roasted, Salted",
+   "Measure": "1 Cup",
+   "Weight": "145",
+   "kCal": 840,
+   "Fats": 71,
+   "Carbs": 27,
+   "Protein": 39
+ },
+ {
+   "Food": "Peanuts, Oil Roasted, Salted",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 165,
+   "Fats": 14,
+   "Carbs": 5,
+   "Protein": 8
+ },
+ {
+   "Food": "Peanuts, Oil Roasted, Unsalted",
+   "Measure": "1 Cup",
+   "Weight": "145",
+   "kCal": 840,
+   "Fats": 71,
+   "Carbs": 27,
+   "Protein": 39
+ },
+ {
+   "Food": "Peanuts, Oil Roasted, Unsalted",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 165,
+   "Fats": 14,
+   "Carbs": 5,
+   "Protein": 8
+ },
+ {
+   "Food": "Pears, Canned, Heavy Syrup",
+   "Measure": "1 Cup",
+   "Weight": "255",
+   "kCal": 190,
+   "Fats": 0,
+   "Carbs": 49,
+   "Protein": 1
+ },
+ {
+   "Food": "Pears, Canned, Heavy Syrup",
+   "Measure": "1 Half",
+   "Weight": "79",
+   "kCal": 60,
+   "Fats": 0,
+   "Carbs": 15,
+   "Protein": 0
+ },
+ {
+   "Food": "Pears, Canned, Juice Pack",
+   "Measure": "1 Cup",
+   "Weight": "248",
+   "kCal": 125,
+   "Fats": 0,
+   "Carbs": 32,
+   "Protein": 1
+ },
+ {
+   "Food": "Pears, Canned, Juice Pack",
+   "Measure": "1 Half",
+   "Weight": "77",
+   "kCal": 40,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 0
+ },
+ {
+   "Food": "Pears, Raw, Bartlett",
+   "Measure": "1 Pear",
+   "Weight": "166",
+   "kCal": 100,
+   "Fats": 1,
+   "Carbs": 25,
+   "Protein": 1
+ },
+ {
+   "Food": "Pears, Raw, Bosc",
+   "Measure": "1 Pear",
+   "Weight": "141",
+   "kCal": 85,
+   "Fats": 1,
+   "Carbs": 21,
+   "Protein": 1
+ },
+ {
+   "Food": "Pears, Raw, D'anjou",
+   "Measure": "1 Pear",
+   "Weight": "200",
+   "kCal": 120,
+   "Fats": 1,
+   "Carbs": 30,
+   "Protein": 1
+ },
+ {
+   "Food": "Peas, Edible Pod, Cooked,Drned",
+   "Measure": "1 Cup",
+   "Weight": "160",
+   "kCal": 65,
+   "Fats": 0,
+   "Carbs": 11,
+   "Protein": 5
+ },
+ {
+   "Food": "Peas, Green,Cnnd,Drnd, W/ Salt",
+   "Measure": "1 Cup",
+   "Weight": "170",
+   "kCal": 115,
+   "Fats": 1,
+   "Carbs": 21,
+   "Protein": 8
+ },
+ {
+   "Food": "Peas, Green,Cnnd,Drnd,W/O Salt",
+   "Measure": "1 Cup",
+   "Weight": "170",
+   "kCal": 115,
+   "Fats": 1,
+   "Carbs": 21,
+   "Protein": 8
+ },
+ {
+   "Food": "Peas, Split, Dry, Cooked",
+   "Measure": "1 Cup",
+   "Weight": "200",
+   "kCal": 230,
+   "Fats": 1,
+   "Carbs": 42,
+   "Protein": 16
+ },
+ {
+   "Food": "Peas,Grn, Frozen Cooked,Draned",
+   "Measure": "1 Cup",
+   "Weight": "160",
+   "kCal": 125,
+   "Fats": 0,
+   "Carbs": 23,
+   "Protein": 8
+ },
+ {
+   "Food": "Pecan Pie",
+   "Measure": "1 Pie",
+   "Weight": "825",
+   "kCal": 3450,
+   "Fats": 189,
+   "Carbs": 423,
+   "Protein": 42
+ },
+ {
+   "Food": "Pecan Pie",
+   "Measure": "1 Piece",
+   "Weight": "138",
+   "kCal": 575,
+   "Fats": 32,
+   "Carbs": 71,
+   "Protein": 7
+ },
+ {
+   "Food": "Pecans, Halves",
+   "Measure": "1 Cup",
+   "Weight": "108",
+   "kCal": 720,
+   "Fats": 73,
+   "Carbs": 20,
+   "Protein": 8
+ },
+ {
+   "Food": "Pecans, Halves",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 190,
+   "Fats": 19,
+   "Carbs": 5,
+   "Protein": 2
+ },
+ {
+   "Food": "Pepper, Black",
+   "Measure": "1 Tsp",
+   "Weight": "2,1",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Peppers, Hot Chili, Raw, Green",
+   "Measure": "1 Pepper",
+   "Weight": "45",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 4,
+   "Protein": 1
+ },
+ {
+   "Food": "Peppers, Hot Chili, Raw, Red",
+   "Measure": "1 Pepper",
+   "Weight": "45",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 4,
+   "Protein": 1
+ },
+ {
+   "Food": "Peppers, Sweet, Cooked, Green",
+   "Measure": "1 Pepper",
+   "Weight": "73",
+   "kCal": 15,
+   "Fats": 0,
+   "Carbs": 3,
+   "Protein": 0
+ },
+ {
+   "Food": "Peppers, Sweet, Cooked, Red",
+   "Measure": "1 Pepper",
+   "Weight": "73",
+   "kCal": 15,
+   "Fats": 0,
+   "Carbs": 3,
+   "Protein": 0
+ },
+ {
+   "Food": "Peppers, Sweet, Raw, Green",
+   "Measure": "1 Pepper",
+   "Weight": "74",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 4,
+   "Protein": 1
+ },
+ {
+   "Food": "Peppers, Sweet, Raw, Red",
+   "Measure": "1 Pepper",
+   "Weight": "74",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 4,
+   "Protein": 1
+ },
+ {
+   "Food": "Pepper-Type Soda",
+   "Measure": "12 fl oz",
+   "Weight": "369",
+   "kCal": 160,
+   "Fats": 0,
+   "Carbs": 41,
+   "Protein": 0
+ },
+ {
+   "Food": "Pickles, Cucumber, Dill",
+   "Measure": "1 Pickle",
+   "Weight": "65",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Pickles, Cucumber, Fresh Pack",
+   "Measure": "2 Slices",
+   "Weight": "15",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 3,
+   "Protein": 0
+ },
+ {
+   "Food": "Pickles, Cucumber, Swt Gherkin",
+   "Measure": "1 Pickle",
+   "Weight": "15",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 5,
+   "Protein": 0
+ },
+ {
+   "Food": "Piecrust, From Mix",
+   "Measure": "2 Crust",
+   "Weight": "320",
+   "kCal": 1485,
+   "Fats": 93,
+   "Carbs": 141,
+   "Protein": 20
+ },
+ {
+   "Food": "Piecrust,From Home Recipe",
+   "Measure": "1 Shell",
+   "Weight": "180",
+   "kCal": 900,
+   "Fats": 60,
+   "Carbs": 79,
+   "Protein": 11
+ },
+ {
+   "Food": "Pine Nuts",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 160,
+   "Fats": 17,
+   "Carbs": 5,
+   "Protein": 3
+ },
+ {
+   "Food": "Pineapple Juice, Canned,Unswtn",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 140,
+   "Fats": 0,
+   "Carbs": 34,
+   "Protein": 1
+ },
+ {
+   "Food": "Pineapple, Canned, Heavy Syrup",
+   "Measure": "1 Cup",
+   "Weight": "255",
+   "kCal": 200,
+   "Fats": 0,
+   "Carbs": 52,
+   "Protein": 1
+ },
+ {
+   "Food": "Pineapple, Canned, Heavy Syrup",
+   "Measure": "1 Slice",
+   "Weight": "58",
+   "kCal": 45,
+   "Fats": 0,
+   "Carbs": 12,
+   "Protein": 0
+ },
+ {
+   "Food": "Pineapple, Canned, Juice Pack",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 150,
+   "Fats": 0,
+   "Carbs": 39,
+   "Protein": 1
+ },
+ {
+   "Food": "Pineapple, Canned, Juice Pack",
+   "Measure": "1 Slice",
+   "Weight": "58",
+   "kCal": 35,
+   "Fats": 0,
+   "Carbs": 9,
+   "Protein": 0
+ },
+ {
+   "Food": "Pineapple, Raw, Diced",
+   "Measure": "1 Cup",
+   "Weight": "155",
+   "kCal": 75,
+   "Fats": 1,
+   "Carbs": 19,
+   "Protein": 1
+ },
+ {
+   "Food": "Pineapple-Grapefruit Juicedrnk",
+   "Measure": "6 fl oz",
+   "Weight": "187",
+   "kCal": 90,
+   "Fats": 0,
+   "Carbs": 23,
+   "Protein": 0
+ },
+ {
+   "Food": "Pinto Beans,Dry,Cooked,Drained",
+   "Measure": "1 Cup",
+   "Weight": "180",
+   "kCal": 265,
+   "Fats": 1,
+   "Carbs": 49,
+   "Protein": 15
+ },
+ {
+   "Food": "Pistachio Nuts",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 165,
+   "Fats": 14,
+   "Carbs": 7,
+   "Protein": 6
+ },
+ {
+   "Food": "Pita Bread",
+   "Measure": "1 Pita",
+   "Weight": "60",
+   "kCal": 165,
+   "Fats": 1,
+   "Carbs": 33,
+   "Protein": 6
+ },
+ {
+   "Food": "Pizza, Cheese",
+   "Measure": "1 Slice",
+   "Weight": "120",
+   "kCal": 290,
+   "Fats": 9,
+   "Carbs": 39,
+   "Protein": 15
+ },
+ {
+   "Food": "Plantains, Cooked",
+   "Measure": "1 Cup",
+   "Weight": "154",
+   "kCal": 180,
+   "Fats": 0,
+   "Carbs": 48,
+   "Protein": 1
+ },
+ {
+   "Food": "Plantains, Raw",
+   "Measure": "1 Plantn",
+   "Weight": "179",
+   "kCal": 220,
+   "Fats": 1,
+   "Carbs": 57,
+   "Protein": 2
+ },
+ {
+   "Food": "Plums, Canned, Heavy Syrup",
+   "Measure": "1 Cup",
+   "Weight": "258",
+   "kCal": 230,
+   "Fats": 0,
+   "Carbs": 60,
+   "Protein": 1
+ },
+ {
+   "Food": "Plums, Canned, Heavy Syrup",
+   "Measure": "3 Plums",
+   "Weight": "133",
+   "kCal": 120,
+   "Fats": 0,
+   "Carbs": 31,
+   "Protein": 0
+ },
+ {
+   "Food": "Plums, Canned, Juice Pack",
+   "Measure": "1 Cup",
+   "Weight": "252",
+   "kCal": 145,
+   "Fats": 0,
+   "Carbs": 38,
+   "Protein": 1
+ },
+ {
+   "Food": "Plums, Canned, Juice Pack",
+   "Measure": "3 Plums",
+   "Weight": "95",
+   "kCal": 55,
+   "Fats": 0,
+   "Carbs": 14,
+   "Protein": 0
+ },
+ {
+   "Food": "Plums, Raw, 1-1/2-In Diam",
+   "Measure": "1 Plum",
+   "Weight": "28",
+   "kCal": 15,
+   "Fats": 0,
+   "Carbs": 4,
+   "Protein": 0
+ },
+ {
+   "Food": "Plums, Raw, 2-1/8-In Diam",
+   "Measure": "1 Plum",
+   "Weight": "66",
+   "kCal": 35,
+   "Fats": 0,
+   "Carbs": 9,
+   "Protein": 1
+ },
+ {
+   "Food": "Popcorn, Air-Popped, Unsalted",
+   "Measure": "1 Cup",
+   "Weight": "8",
+   "kCal": 30,
+   "Fats": 0,
+   "Carbs": 6,
+   "Protein": 1
+ },
+ {
+   "Food": "Popcorn, Popped, Veg Oil,Saltd",
+   "Measure": "1 Cup",
+   "Weight": "11",
+   "kCal": 55,
+   "Fats": 3,
+   "Carbs": 6,
+   "Protein": 1
+ },
+ {
+   "Food": "Popcorn, Sugar Syrup Coated",
+   "Measure": "1 Cup",
+   "Weight": "35",
+   "kCal": 135,
+   "Fats": 1,
+   "Carbs": 30,
+   "Protein": 2
+ },
+ {
+   "Food": "Popsicle",
+   "Measure": "1 Popcle",
+   "Weight": "95",
+   "kCal": 70,
+   "Fats": 0,
+   "Carbs": 18,
+   "Protein": 0
+ },
+ {
+   "Food": "Pork Chop, Loin, Broil, Lean",
+   "Measure": "2.5 oz",
+   "Weight": "72",
+   "kCal": 165,
+   "Fats": 8,
+   "Carbs": 0,
+   "Protein": 23
+ },
+ {
+   "Food": "Pork Chop, Loin, Broil, Len+Ft",
+   "Measure": "3.1 oz",
+   "Weight": "87",
+   "kCal": 275,
+   "Fats": 19,
+   "Carbs": 0,
+   "Protein": 24
+ },
+ {
+   "Food": "Pork Chop, Loin,Panfry, Lean",
+   "Measure": "2.4 oz",
+   "Weight": "67",
+   "kCal": 180,
+   "Fats": 11,
+   "Carbs": 0,
+   "Protein": 19
+ },
+ {
+   "Food": "Pork Chop, Loin,Panfry,Lean+Ft",
+   "Measure": "3.1 oz",
+   "Weight": "89",
+   "kCal": 335,
+   "Fats": 27,
+   "Carbs": 0,
+   "Protein": 21
+ },
+ {
+   "Food": "Pork Fresh Ham, Roastd, Lean",
+   "Measure": "2.5 oz",
+   "Weight": "72",
+   "kCal": 160,
+   "Fats": 8,
+   "Carbs": 0,
+   "Protein": 20
+ },
+ {
+   "Food": "Pork Fresh Ham, Roastd,Lean+Ft",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 250,
+   "Fats": 18,
+   "Carbs": 0,
+   "Protein": 21
+ },
+ {
+   "Food": "Pork Fresh Rib, Roastd, Lean",
+   "Measure": "2.5 oz",
+   "Weight": "71",
+   "kCal": 175,
+   "Fats": 10,
+   "Carbs": 0,
+   "Protein": 20
+ },
+ {
+   "Food": "Pork Fresh Rib, Roastd,Lean+Ft",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 270,
+   "Fats": 20,
+   "Carbs": 0,
+   "Protein": 21
+ },
+ {
+   "Food": "Pork Shoulder, Braisd, Lean",
+   "Measure": "2.4 oz",
+   "Weight": "67",
+   "kCal": 165,
+   "Fats": 8,
+   "Carbs": 0,
+   "Protein": 22
+ },
+ {
+   "Food": "Pork Shoulder, Braisd,Lean+Fat",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 295,
+   "Fats": 22,
+   "Carbs": 0,
+   "Protein": 23
+ },
+ {
+   "Food": "Pork, Cured, Bacon, Regul,Cked",
+   "Measure": "3 Slice",
+   "Weight": "19",
+   "kCal": 110,
+   "Fats": 9,
+   "Carbs": 0,
+   "Protein": 6
+ },
+ {
+   "Food": "Pork, Cured, Bacon,Canadn,Cked",
+   "Measure": "2 Slice",
+   "Weight": "46",
+   "kCal": 85,
+   "Fats": 4,
+   "Carbs": 1,
+   "Protein": 11
+ },
+ {
+   "Food": "Pork, Cured, Ham, Canned,Roast",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 140,
+   "Fats": 7,
+   "Carbs": 0,
+   "Protein": 18
+ },
+ {
+   "Food": "Pork, Cured, Ham, Rosted,Lean",
+   "Measure": "2.4 oz",
+   "Weight": "68",
+   "kCal": 105,
+   "Fats": 4,
+   "Carbs": 0,
+   "Protein": 17
+ },
+ {
+   "Food": "Pork, Cured, Ham, Rosted,Ln+Ft",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 205,
+   "Fats": 14,
+   "Carbs": 0,
+   "Protein": 18
+ },
+ {
+   "Food": "Pork, Link, Cooked",
+   "Measure": "1 Link",
+   "Weight": "13",
+   "kCal": 50,
+   "Fats": 4,
+   "Carbs": 0,
+   "Protein": 3
+ },
+ {
+   "Food": "Pork, Luncheon Meat,Canned",
+   "Measure": "2 Slices",
+   "Weight": "42",
+   "kCal": 140,
+   "Fats": 13,
+   "Carbs": 1,
+   "Protein": 5
+ },
+ {
+   "Food": "Pork, Luncheon Meat,Choppd Ham",
+   "Measure": "2 Slices",
+   "Weight": "42",
+   "kCal": 95,
+   "Fats": 7,
+   "Carbs": 0,
+   "Protein": 7
+ },
+ {
+   "Food": "Pork, Luncheon Meat,Ckd Ham,Ln",
+   "Measure": "2 Slices",
+   "Weight": "57",
+   "kCal": 75,
+   "Fats": 3,
+   "Carbs": 1,
+   "Protein": 11
+ },
+ {
+   "Food": "Pork, Luncheon Meat,Ckd Ham,Rg",
+   "Measure": "2 Slices",
+   "Weight": "57",
+   "kCal": 105,
+   "Fats": 6,
+   "Carbs": 2,
+   "Protein": 10
+ },
+ {
+   "Food": "Potato Chips",
+   "Measure": "10 Chips",
+   "Weight": "20",
+   "kCal": 105,
+   "Fats": 7,
+   "Carbs": 10,
+   "Protein": 1
+ },
+ {
+   "Food": "Potato Salad Made W/ Mayonnais",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 360,
+   "Fats": 21,
+   "Carbs": 28,
+   "Protein": 7
+ },
+ {
+   "Food": "Potatoes, Au Gratin, From Mix",
+   "Measure": "1 Cup",
+   "Weight": "245",
+   "kCal": 230,
+   "Fats": 10,
+   "Carbs": 31,
+   "Protein": 6
+ },
+ {
+   "Food": "Potatoes, Au Gratin, Home Recp",
+   "Measure": "1 Cup",
+   "Weight": "245",
+   "kCal": 325,
+   "Fats": 19,
+   "Carbs": 28,
+   "Protein": 12
+ },
+ {
+   "Food": "Potatoes, Baked Flesh Only",
+   "Measure": "1 Potato",
+   "Weight": "156",
+   "kCal": 145,
+   "Fats": 0,
+   "Carbs": 34,
+   "Protein": 3
+ },
+ {
+   "Food": "Potatoes, Baked With Skin",
+   "Measure": "1 Potato",
+   "Weight": "202",
+   "kCal": 220,
+   "Fats": 0,
+   "Carbs": 51,
+   "Protein": 5
+ },
+ {
+   "Food": "Potatoes, Boiled, Peeled After",
+   "Measure": "1 Potato",
+   "Weight": "136",
+   "kCal": 120,
+   "Fats": 0,
+   "Carbs": 27,
+   "Protein": 3
+ },
+ {
+   "Food": "Potatoes, Boiled, Peeled Befor",
+   "Measure": "1 Potato",
+   "Weight": "135",
+   "kCal": 115,
+   "Fats": 0,
+   "Carbs": 27,
+   "Protein": 2
+ },
+ {
+   "Food": "Potatoes, Hashed Brown,Fr Frzn",
+   "Measure": "1 Cup",
+   "Weight": "156",
+   "kCal": 340,
+   "Fats": 18,
+   "Carbs": 44,
+   "Protein": 5
+ },
+ {
+   "Food": "Potatoes, Mashed,Frm Dehydrted",
+   "Measure": "1 Cup",
+   "Weight": "210",
+   "kCal": 235,
+   "Fats": 12,
+   "Carbs": 32,
+   "Protein": 4
+ },
+ {
+   "Food": "Potatoes, Mashed,Recpe,Mlk+Mar",
+   "Measure": "1 Cup",
+   "Weight": "210",
+   "kCal": 225,
+   "Fats": 9,
+   "Carbs": 35,
+   "Protein": 4
+ },
+ {
+   "Food": "Potatoes, Mashed,Recpe,W/ Milk",
+   "Measure": "1 Cup",
+   "Weight": "210",
+   "kCal": 160,
+   "Fats": 1,
+   "Carbs": 37,
+   "Protein": 4
+ },
+ {
+   "Food": "Potatoes, Scalloped, From Mix",
+   "Measure": "1 Cup",
+   "Weight": "245",
+   "kCal": 230,
+   "Fats": 11,
+   "Carbs": 31,
+   "Protein": 5
+ },
+ {
+   "Food": "Potatoes, Scalloped, Home Recp",
+   "Measure": "1 Cup",
+   "Weight": "245",
+   "kCal": 210,
+   "Fats": 9,
+   "Carbs": 26,
+   "Protein": 7
+ },
+ {
+   "Food": "Potatoes,French-Frd,Frzn,Fried",
+   "Measure": "10 Strip",
+   "Weight": "50",
+   "kCal": 160,
+   "Fats": 8,
+   "Carbs": 20,
+   "Protein": 2
+ },
+ {
+   "Food": "Potatoes,French-Frd,Frzn,Oven",
+   "Measure": "10 Strip",
+   "Weight": "50",
+   "kCal": 110,
+   "Fats": 4,
+   "Carbs": 17,
+   "Protein": 2
+ },
+ {
+   "Food": "Pound Cake, Commercial",
+   "Measure": "1 Loaf",
+   "Weight": "500",
+   "kCal": 1935,
+   "Fats": 94,
+   "Carbs": 257,
+   "Protein": 26
+ },
+ {
+   "Food": "Pound Cake, Commercial",
+   "Measure": "1 Slice",
+   "Weight": "29",
+   "kCal": 110,
+   "Fats": 5,
+   "Carbs": 15,
+   "Protein": 2
+ },
+ {
+   "Food": "Pound Cake, From Home Recipe",
+   "Measure": "1 Loaf",
+   "Weight": "514",
+   "kCal": 2025,
+   "Fats": 94,
+   "Carbs": 265,
+   "Protein": 33
+ },
+ {
+   "Food": "Pound Cake, From Home Recipe",
+   "Measure": "1 Slice",
+   "Weight": "30",
+   "kCal": 120,
+   "Fats": 5,
+   "Carbs": 15,
+   "Protein": 2
+ },
+ {
+   "Food": "Pretzels, Stick",
+   "Measure": "10 Pretz",
+   "Weight": "3",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 0
+ },
+ {
+   "Food": "Pretzels, Twisted, Dutch",
+   "Measure": "1 Pretz",
+   "Weight": "16",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 13,
+   "Protein": 2
+ },
+ {
+   "Food": "Pretzels, Twisted, Thin",
+   "Measure": "10 Pretz",
+   "Weight": "60",
+   "kCal": 240,
+   "Fats": 2,
+   "Carbs": 48,
+   "Protein": 6
+ },
+ {
+   "Food": "Product 19 Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 110,
+   "Fats": 0,
+   "Carbs": 24,
+   "Protein": 3
+ },
+ {
+   "Food": "Provolone Cheese",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 100,
+   "Fats": 8,
+   "Carbs": 1,
+   "Protein": 7
+ },
+ {
+   "Food": "Prune Juice, Canned",
+   "Measure": "1 Cup",
+   "Weight": "256",
+   "kCal": 180,
+   "Fats": 0,
+   "Carbs": 45,
+   "Protein": 2
+ },
+ {
+   "Food": "Prunes, Dried",
+   "Measure": "5 Large",
+   "Weight": "49",
+   "kCal": 115,
+   "Fats": 0,
+   "Carbs": 31,
+   "Protein": 1
+ },
+ {
+   "Food": "Prunes, Dried, Cooked,Unswtned",
+   "Measure": "1 Cup",
+   "Weight": "212",
+   "kCal": 225,
+   "Fats": 0,
+   "Carbs": 60,
+   "Protein": 2
+ },
+ {
+   "Food": "Pudding, Choc, Cooked From Mix",
+   "Measure": "1/2 Cup",
+   "Weight": "130",
+   "kCal": 150,
+   "Fats": 4,
+   "Carbs": 25,
+   "Protein": 4
+ },
+ {
+   "Food": "Pudding, Choc, Instant, Fr Mix",
+   "Measure": "1/2 Cup",
+   "Weight": "130",
+   "kCal": 155,
+   "Fats": 4,
+   "Carbs": 27,
+   "Protein": 4
+ },
+ {
+   "Food": "Pudding, Chocolate,Canned",
+   "Measure": "5 oz",
+   "Weight": "142",
+   "kCal": 205,
+   "Fats": 11,
+   "Carbs": 30,
+   "Protein": 3
+ },
+ {
+   "Food": "Pudding, Rice, From Mix",
+   "Measure": "1/2 Cup",
+   "Weight": "132",
+   "kCal": 155,
+   "Fats": 4,
+   "Carbs": 27,
+   "Protein": 4
+ },
+ {
+   "Food": "Pudding, Tapioca, Canned",
+   "Measure": "5 oz",
+   "Weight": "142",
+   "kCal": 160,
+   "Fats": 5,
+   "Carbs": 28,
+   "Protein": 3
+ },
+ {
+   "Food": "Pudding, Tapioca, From Mix",
+   "Measure": "1/2 Cup",
+   "Weight": "130",
+   "kCal": 145,
+   "Fats": 4,
+   "Carbs": 25,
+   "Protein": 4
+ },
+ {
+   "Food": "Pudding, Vanilla, Canned",
+   "Measure": "5 oz",
+   "Weight": "142",
+   "kCal": 220,
+   "Fats": 10,
+   "Carbs": 33,
+   "Protein": 2
+ },
+ {
+   "Food": "Pudding, Vnlla,Cooked From Mix",
+   "Measure": "1/2 Cup",
+   "Weight": "130",
+   "kCal": 145,
+   "Fats": 4,
+   "Carbs": 25,
+   "Protein": 4
+ },
+ {
+   "Food": "Pudding, Vnlla,Instant Frm Mix",
+   "Measure": "1/2 Cup",
+   "Weight": "130",
+   "kCal": 150,
+   "Fats": 4,
+   "Carbs": 27,
+   "Protein": 4
+ },
+ {
+   "Food": "Pumpernickel Bread",
+   "Measure": "1 Loaf",
+   "Weight": "454",
+   "kCal": 1160,
+   "Fats": 16,
+   "Carbs": 218,
+   "Protein": 42
+ },
+ {
+   "Food": "Pumpernickel Bread",
+   "Measure": "1 Slice",
+   "Weight": "32",
+   "kCal": 80,
+   "Fats": 1,
+   "Carbs": 16,
+   "Protein": 3
+ },
+ {
+   "Food": "Pumpernickel Bread, Toasted",
+   "Measure": "1 Slice",
+   "Weight": "29",
+   "kCal": 80,
+   "Fats": 1,
+   "Carbs": 16,
+   "Protein": 3
+ },
+ {
+   "Food": "Pumpkin And Squash Kernels",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 155,
+   "Fats": 13,
+   "Carbs": 5,
+   "Protein": 7
+ },
+ {
+   "Food": "Pumpkin Pie",
+   "Measure": "1 Pie",
+   "Weight": "910",
+   "kCal": 1920,
+   "Fats": 102,
+   "Carbs": 223,
+   "Protein": 36
+ },
+ {
+   "Food": "Pumpkin Pie",
+   "Measure": "1 Piece",
+   "Weight": "152",
+   "kCal": 320,
+   "Fats": 17,
+   "Carbs": 37,
+   "Protein": 6
+ },
+ {
+   "Food": "Pumpkin, Canned",
+   "Measure": "1 Cup",
+   "Weight": "245",
+   "kCal": 85,
+   "Fats": 1,
+   "Carbs": 20,
+   "Protein": 3
+ },
+ {
+   "Food": "Pumpkin, Cooked From Raw",
+   "Measure": "1 Cup",
+   "Weight": "245",
+   "kCal": 50,
+   "Fats": 0,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Quiche Lorraine",
+   "Measure": "1 Slice",
+   "Weight": "176",
+   "kCal": 600,
+   "Fats": 48,
+   "Carbs": 29,
+   "Protein": 13
+ },
+ {
+   "Food": "Radishes, Raw",
+   "Measure": "4 Radish",
+   "Weight": "18",
+   "kCal": 5,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Raisin Bran, Kellogg's",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 90,
+   "Fats": 1,
+   "Carbs": 21,
+   "Protein": 3
+ },
+ {
+   "Food": "Raisin Bran, Post",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 85,
+   "Fats": 1,
+   "Carbs": 21,
+   "Protein": 3
+ },
+ {
+   "Food": "Raisin Bread",
+   "Measure": "1 Loaf",
+   "Weight": "454",
+   "kCal": 1260,
+   "Fats": 18,
+   "Carbs": 239,
+   "Protein": 37
+ },
+ {
+   "Food": "Raisin Bread",
+   "Measure": "1 Slice",
+   "Weight": "25",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 13,
+   "Protein": 2
+ },
+ {
+   "Food": "Raisin Bread, Toasted",
+   "Measure": "1 Slice",
+   "Weight": "21",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 13,
+   "Protein": 2
+ },
+ {
+   "Food": "Raisins",
+   "Measure": "1 Cup",
+   "Weight": "145",
+   "kCal": 435,
+   "Fats": 1,
+   "Carbs": 115,
+   "Protein": 5
+ },
+ {
+   "Food": "Raisins",
+   "Measure": "1 Packet",
+   "Weight": "14",
+   "kCal": 40,
+   "Fats": 0,
+   "Carbs": 11,
+   "Protein": 0
+ },
+ {
+   "Food": "Raspberries, Frozen, Sweetened",
+   "Measure": "10 oz",
+   "Weight": "284",
+   "kCal": 295,
+   "Fats": 0,
+   "Carbs": 74,
+   "Protein": 2
+ },
+ {
+   "Food": "Raspberries, Frozen, Sweetened",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 255,
+   "Fats": 0,
+   "Carbs": 65,
+   "Protein": 2
+ },
+ {
+   "Food": "Raspberries, Raw",
+   "Measure": "1 Cup",
+   "Weight": "123",
+   "kCal": 60,
+   "Fats": 1,
+   "Carbs": 14,
+   "Protein": 1
+ },
+ {
+   "Food": "Red Kidney Beans, Dry, Canned",
+   "Measure": "1 Cup",
+   "Weight": "255",
+   "kCal": 230,
+   "Fats": 1,
+   "Carbs": 42,
+   "Protein": 15
+ },
+ {
+   "Food": "Refried Beans, Canned",
+   "Measure": "1 Cup",
+   "Weight": "290",
+   "kCal": 295,
+   "Fats": 3,
+   "Carbs": 51,
+   "Protein": 18
+ },
+ {
+   "Food": "Relish, Sweet",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 5,
+   "Protein": 0
+ },
+ {
+   "Food": "Rhubarb, Cooked, Added Sugar",
+   "Measure": "1 Cup",
+   "Weight": "240",
+   "kCal": 280,
+   "Fats": 0,
+   "Carbs": 75,
+   "Protein": 1
+ },
+ {
+   "Food": "Rice Krispies Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 110,
+   "Fats": 0,
+   "Carbs": 25,
+   "Protein": 2
+ },
+ {
+   "Food": "Rice, Brown, Cooked",
+   "Measure": "1 Cup",
+   "Weight": "195",
+   "kCal": 230,
+   "Fats": 1,
+   "Carbs": 50,
+   "Protein": 5
+ },
+ {
+   "Food": "Rice, White, Cooked",
+   "Measure": "1 Cup",
+   "Weight": "205",
+   "kCal": 225,
+   "Fats": 0,
+   "Carbs": 50,
+   "Protein": 4
+ },
+ {
+   "Food": "Rice, White, Instant, Cooked",
+   "Measure": "1 Cup",
+   "Weight": "165",
+   "kCal": 180,
+   "Fats": 0,
+   "Carbs": 40,
+   "Protein": 4
+ },
+ {
+   "Food": "Rice, White, Parboiled, Cooked",
+   "Measure": "1 Cup",
+   "Weight": "175",
+   "kCal": 185,
+   "Fats": 0,
+   "Carbs": 41,
+   "Protein": 4
+ },
+ {
+   "Food": "Rice, White, Parboiled, Raw",
+   "Measure": "1 Cup",
+   "Weight": "185",
+   "kCal": 685,
+   "Fats": 1,
+   "Carbs": 150,
+   "Protein": 14
+ },
+ {
+   "Food": "Rice, White, Raw",
+   "Measure": "1 Cup",
+   "Weight": "185",
+   "kCal": 670,
+   "Fats": 1,
+   "Carbs": 149,
+   "Protein": 12
+ },
+ {
+   "Food": "Ricotta Cheese, Part Skim Milk",
+   "Measure": "1 Cup",
+   "Weight": "246",
+   "kCal": 340,
+   "Fats": 19,
+   "Carbs": 13,
+   "Protein": 28
+ },
+ {
+   "Food": "Ricotta Cheese, Whole Milk",
+   "Measure": "1 Cup",
+   "Weight": "246",
+   "kCal": 430,
+   "Fats": 32,
+   "Carbs": 7,
+   "Protein": 28
+ },
+ {
+   "Food": "Roast Beef Sandwich",
+   "Measure": "1 Sandwh",
+   "Weight": "150",
+   "kCal": 345,
+   "Fats": 13,
+   "Carbs": 34,
+   "Protein": 22
+ },
+ {
+   "Food": "Rolls, Dinner, Commercial",
+   "Measure": "1 Roll",
+   "Weight": "28",
+   "kCal": 85,
+   "Fats": 2,
+   "Carbs": 14,
+   "Protein": 2
+ },
+ {
+   "Food": "Rolls, Dinner, Home Recipe",
+   "Measure": "1 Roll",
+   "Weight": "35",
+   "kCal": 120,
+   "Fats": 3,
+   "Carbs": 20,
+   "Protein": 3
+ },
+ {
+   "Food": "Rolls, Frankfurter + Hamburger",
+   "Measure": "1 Roll",
+   "Weight": "40",
+   "kCal": 115,
+   "Fats": 2,
+   "Carbs": 20,
+   "Protein": 3
+ },
+ {
+   "Food": "Rolls, Hard",
+   "Measure": "1 Roll",
+   "Weight": "50",
+   "kCal": 155,
+   "Fats": 2,
+   "Carbs": 30,
+   "Protein": 5
+ },
+ {
+   "Food": "Rolls, Hoagie Or Submarine",
+   "Measure": "1 Roll",
+   "Weight": "135",
+   "kCal": 400,
+   "Fats": 8,
+   "Carbs": 72,
+   "Protein": 11
+ },
+ {
+   "Food": "Root Beer",
+   "Measure": "12 fl oz",
+   "Weight": "370",
+   "kCal": 165,
+   "Fats": 0,
+   "Carbs": 42,
+   "Protein": 0
+ },
+ {
+   "Food": "Rye Bread, Light",
+   "Measure": "1 Loaf",
+   "Weight": "454",
+   "kCal": 1190,
+   "Fats": 17,
+   "Carbs": 218,
+   "Protein": 38
+ },
+ {
+   "Food": "Rye Bread, Light",
+   "Measure": "1 Slice",
+   "Weight": "25",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Rye Bread, Light, Toasted",
+   "Measure": "1 Slice",
+   "Weight": "22",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Rye Wafers, Whole-Grain",
+   "Measure": "2 Wafers",
+   "Weight": "14",
+   "kCal": 55,
+   "Fats": 1,
+   "Carbs": 10,
+   "Protein": 1
+ },
+ {
+   "Food": "Safflower Oil",
+   "Measure": "1 Cup",
+   "Weight": "218",
+   "kCal": 1925,
+   "Fats": 218,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Safflower Oil",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 125,
+   "Fats": 14,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Salami, Cooked Type",
+   "Measure": "2 Slices",
+   "Weight": "57",
+   "kCal": 145,
+   "Fats": 11,
+   "Carbs": 1,
+   "Protein": 8
+ },
+ {
+   "Food": "Salami, Dry Type",
+   "Measure": "2 Slices",
+   "Weight": "20",
+   "kCal": 85,
+   "Fats": 7,
+   "Carbs": 1,
+   "Protein": 5
+ },
+ {
+   "Food": "Salmon, Baked, Red",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 140,
+   "Fats": 5,
+   "Carbs": 0,
+   "Protein": 21
+ },
+ {
+   "Food": "Salmon, Canned, Pink, W/ Bones",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 120,
+   "Fats": 5,
+   "Carbs": 0,
+   "Protein": 17
+ },
+ {
+   "Food": "Salmon, Smoked",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 150,
+   "Fats": 8,
+   "Carbs": 0,
+   "Protein": 18
+ },
+ {
+   "Food": "Salt",
+   "Measure": "1 Tsp",
+   "Weight": "5,5",
+   "kCal": 0,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Saltines",
+   "Measure": "4 Crackr",
+   "Weight": "12",
+   "kCal": 50,
+   "Fats": 1,
+   "Carbs": 9,
+   "Protein": 1
+ },
+ {
+   "Food": "Sandwich Spread, Pork, Beef",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 35,
+   "Fats": 3,
+   "Carbs": 2,
+   "Protein": 1
+ },
+ {
+   "Food": "Sandwich Type Cookie",
+   "Measure": "4 Cookie",
+   "Weight": "40",
+   "kCal": 195,
+   "Fats": 8,
+   "Carbs": 29,
+   "Protein": 2
+ },
+ {
+   "Food": "Sardines, Atlntc,Cnned,Oil,Drn",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 175,
+   "Fats": 9,
+   "Carbs": 0,
+   "Protein": 20
+ },
+ {
+   "Food": "Sauerkraut, Canned",
+   "Measure": "1 Cup",
+   "Weight": "236",
+   "kCal": 45,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 2
+ },
+ {
+   "Food": "Scallops, Breaded, Frzn,Reheat",
+   "Measure": "6 Scalop",
+   "Weight": "90",
+   "kCal": 195,
+   "Fats": 10,
+   "Carbs": 10,
+   "Protein": 15
+ },
+ {
+   "Food": "Seaweed, Kelp, Raw",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 3,
+   "Protein": 0
+ },
+ {
+   "Food": "Seaweed, Spirulina, Dried",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 80,
+   "Fats": 2,
+   "Carbs": 7,
+   "Protein": 16
+ },
+ {
+   "Food": "Self-Rising Flour, Unsifted",
+   "Measure": "1 Cup",
+   "Weight": "125",
+   "kCal": 440,
+   "Fats": 1,
+   "Carbs": 93,
+   "Protein": 12
+ },
+ {
+   "Food": "Semisweet Chocolate",
+   "Measure": "1 Cup",
+   "Weight": "170",
+   "kCal": 860,
+   "Fats": 61,
+   "Carbs": 97,
+   "Protein": 7
+ },
+ {
+   "Food": "Sesame Seeds",
+   "Measure": "1 Tbsp",
+   "Weight": "8",
+   "kCal": 45,
+   "Fats": 4,
+   "Carbs": 1,
+   "Protein": 2
+ },
+ {
+   "Food": "Shakes, Thick, Chocolate",
+   "Measure": "10 oz",
+   "Weight": "283",
+   "kCal": 335,
+   "Fats": 8,
+   "Carbs": 60,
+   "Protein": 9
+ },
+ {
+   "Food": "Shakes, Thick, Vanilla",
+   "Measure": "10 oz",
+   "Weight": "283",
+   "kCal": 315,
+   "Fats": 9,
+   "Carbs": 50,
+   "Protein": 11
+ },
+ {
+   "Food": "Sheetcake W/O Frstng,recipe",
+   "Measure": "1 Cake",
+   "Weight": "777",
+   "kCal": 2830,
+   "Fats": 108,
+   "Carbs": 434,
+   "Protein": 35
+ },
+ {
+   "Food": "Sheetcake,W/ Whfrstng,recipe",
+   "Measure": "1 Cake",
+   "Weight": "1096",
+   "kCal": 4020,
+   "Fats": 129,
+   "Carbs": 694,
+   "Protein": 37
+ },
+ {
+   "Food": "Sheetcake,W/ Whfrstng,recipe",
+   "Measure": "1 Piece",
+   "Weight": "121",
+   "kCal": 445,
+   "Fats": 14,
+   "Carbs": 77,
+   "Protein": 4
+ },
+ {
+   "Food": "Sheetcake,W/O Frstng,recipe",
+   "Measure": "1 Piece",
+   "Weight": "86",
+   "kCal": 315,
+   "Fats": 12,
+   "Carbs": 48,
+   "Protein": 4
+ },
+ {
+   "Food": "Sherbet, 2% Fat",
+   "Measure": "1/2 Gal",
+   "Weight": "1542",
+   "kCal": 2160,
+   "Fats": 31,
+   "Carbs": 469,
+   "Protein": 17
+ },
+ {
+   "Food": "Sherbet, 2% Fat",
+   "Measure": "1 Cup",
+   "Weight": "193",
+   "kCal": 270,
+   "Fats": 4,
+   "Carbs": 59,
+   "Protein": 2
+ },
+ {
+   "Food": "Shortbread Cookie, Commercial",
+   "Measure": "4 Cookie",
+   "Weight": "32",
+   "kCal": 155,
+   "Fats": 8,
+   "Carbs": 20,
+   "Protein": 2
+ },
+ {
+   "Food": "Shortbread Cookie, Home Recipe",
+   "Measure": "2 Cookie",
+   "Weight": "28",
+   "kCal": 145,
+   "Fats": 8,
+   "Carbs": 17,
+   "Protein": 2
+ },
+ {
+   "Food": "Shredded Wheat Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 100,
+   "Fats": 1,
+   "Carbs": 23,
+   "Protein": 3
+ },
+ {
+   "Food": "Shrimp, Canned, Drained",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 100,
+   "Fats": 1,
+   "Carbs": 1,
+   "Protein": 21
+ },
+ {
+   "Food": "Shrimp, French Fried",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 200,
+   "Fats": 10,
+   "Carbs": 11,
+   "Protein": 16
+ },
+ {
+   "Food": "Snack Cakes,Devils Food,Cremfl",
+   "Measure": "Sm Cake",
+   "Weight": "28",
+   "kCal": 105,
+   "Fats": 4,
+   "Carbs": 17,
+   "Protein": 1
+ },
+ {
+   "Food": "Snack Cakes,Sponge Creme Fllng",
+   "Measure": "Sm Cake",
+   "Weight": "42",
+   "kCal": 155,
+   "Fats": 5,
+   "Carbs": 27,
+   "Protein": 1
+ },
+ {
+   "Food": "Snack Type Crackers",
+   "Measure": "1 Crackr",
+   "Weight": "3",
+   "kCal": 15,
+   "Fats": 1,
+   "Carbs": 2,
+   "Protein": 0
+ },
+ {
+   "Food": "Snap Bean,Cnnd,Drnd,Green,Salt",
+   "Measure": "1 Cup",
+   "Weight": "135",
+   "kCal": 25,
+   "Fats": 0,
+   "Carbs": 6,
+   "Protein": 2
+ },
+ {
+   "Food": "Snap Bean,Cnnd,Drnd,Grn,Nosalt",
+   "Measure": "1 Cup",
+   "Weight": "135",
+   "kCal": 25,
+   "Fats": 0,
+   "Carbs": 6,
+   "Protein": 2
+ },
+ {
+   "Food": "Snap Bean,Cnnd,Drnd,Yllw, Salt",
+   "Measure": "1 Cup",
+   "Weight": "135",
+   "kCal": 25,
+   "Fats": 0,
+   "Carbs": 6,
+   "Protein": 2
+ },
+ {
+   "Food": "Snap Bean,Cnnd,Drnd,Yllw,Nosal",
+   "Measure": "1 Cup",
+   "Weight": "135",
+   "kCal": 25,
+   "Fats": 0,
+   "Carbs": 6,
+   "Protein": 2
+ },
+ {
+   "Food": "Snap Bean,Frz,Ckd,Drnd,Green",
+   "Measure": "1 Cup",
+   "Weight": "135",
+   "kCal": 35,
+   "Fats": 0,
+   "Carbs": 8,
+   "Protein": 2
+ },
+ {
+   "Food": "Snap Bean,Frz,Ckd,Drnd,Yellow",
+   "Measure": "1 Cup",
+   "Weight": "135",
+   "kCal": 35,
+   "Fats": 0,
+   "Carbs": 8,
+   "Protein": 2
+ },
+ {
+   "Food": "Snap Bean,Raw,Ckd,Drnd,Green",
+   "Measure": "1 Cup",
+   "Weight": "125",
+   "kCal": 45,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 2
+ },
+ {
+   "Food": "Snap Bean,Raw,Ckd,Drnd,Yellow",
+   "Measure": "1 Cup",
+   "Weight": "125",
+   "kCal": 45,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 2
+ },
+ {
+   "Food": "Sour Cream",
+   "Measure": "1 Cup",
+   "Weight": "230",
+   "kCal": 495,
+   "Fats": 48,
+   "Carbs": 10,
+   "Protein": 7
+ },
+ {
+   "Food": "Sour Cream",
+   "Measure": "1 Tbsp",
+   "Weight": "12",
+   "kCal": 25,
+   "Fats": 3,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Soy Sauce",
+   "Measure": "1 Tbsp",
+   "Weight": "18",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 2
+ },
+ {
+   "Food": "Soybean Oil, Hydrogenated",
+   "Measure": "1 Cup",
+   "Weight": "218",
+   "kCal": 1925,
+   "Fats": 218,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Soybean Oil, Hydrogenated",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 125,
+   "Fats": 14,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Soybean-Cottonseed Oil, Hydrgn",
+   "Measure": "1 Cup",
+   "Weight": "218",
+   "kCal": 1925,
+   "Fats": 218,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Soybean-Cottonseed Oil, Hydrgn",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 125,
+   "Fats": 14,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Soybeans, Dry, Cooked, Drained",
+   "Measure": "1 Cup",
+   "Weight": "180",
+   "kCal": 235,
+   "Fats": 10,
+   "Carbs": 19,
+   "Protein": 20
+ },
+ {
+   "Food": "Spaghetti, Cooked, Firm",
+   "Measure": "1 Cup",
+   "Weight": "130",
+   "kCal": 190,
+   "Fats": 1,
+   "Carbs": 39,
+   "Protein": 7
+ },
+ {
+   "Food": "Spaghetti, Cooked, Tender",
+   "Measure": "1 Cup",
+   "Weight": "140",
+   "kCal": 155,
+   "Fats": 1,
+   "Carbs": 32,
+   "Protein": 5
+ },
+ {
+   "Food": "Spaghetti, Tom Sauce Chee,Hmrp",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 260,
+   "Fats": 9,
+   "Carbs": 37,
+   "Protein": 9
+ },
+ {
+   "Food": "Spaghetti, Tom Sauce Chees,Cnd",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 190,
+   "Fats": 2,
+   "Carbs": 39,
+   "Protein": 6
+ },
+ {
+   "Food": "Spaghetti,Meatballs,Tomsa,Hmrp",
+   "Measure": "1 Cup",
+   "Weight": "248",
+   "kCal": 330,
+   "Fats": 12,
+   "Carbs": 39,
+   "Protein": 19
+ },
+ {
+   "Food": "Spaghetti,Meatballs,Tomsac,Cnd",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 260,
+   "Fats": 10,
+   "Carbs": 29,
+   "Protein": 12
+ },
+ {
+   "Food": "Special K Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 110,
+   "Fats": 0,
+   "Carbs": 21,
+   "Protein": 6
+ },
+ {
+   "Food": "Spinach Souffle",
+   "Measure": "1 Cup",
+   "Weight": "136",
+   "kCal": 220,
+   "Fats": 18,
+   "Carbs": 3,
+   "Protein": 11
+ },
+ {
+   "Food": "Spinach, Canned, Drnd,W/ Salt",
+   "Measure": "1 Cup",
+   "Weight": "214",
+   "kCal": 50,
+   "Fats": 1,
+   "Carbs": 7,
+   "Protein": 6
+ },
+ {
+   "Food": "Spinach, Canned, Drnd,W/O Salt",
+   "Measure": "1 Cup",
+   "Weight": "214",
+   "kCal": 50,
+   "Fats": 1,
+   "Carbs": 7,
+   "Protein": 6
+ },
+ {
+   "Food": "Spinach, Cooked Fr Frzen, Drnd",
+   "Measure": "1 Cup",
+   "Weight": "190",
+   "kCal": 55,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 6
+ },
+ {
+   "Food": "Spinach, Cooked From Raw, Drnd",
+   "Measure": "1 Cup",
+   "Weight": "180",
+   "kCal": 40,
+   "Fats": 0,
+   "Carbs": 7,
+   "Protein": 5
+ },
+ {
+   "Food": "Spinach, Raw",
+   "Measure": "1 Cup",
+   "Weight": "55",
+   "kCal": 10,
+   "Fats": 0,
+   "Carbs": 2,
+   "Protein": 2
+ },
+ {
+   "Food": "Squash, Summer, Cooked, Draind",
+   "Measure": "1 Cup",
+   "Weight": "180",
+   "kCal": 35,
+   "Fats": 1,
+   "Carbs": 8,
+   "Protein": 2
+ },
+ {
+   "Food": "Squash, Winter, Baked",
+   "Measure": "1 Cup",
+   "Weight": "205",
+   "kCal": 80,
+   "Fats": 1,
+   "Carbs": 18,
+   "Protein": 2
+ },
+ {
+   "Food": "Strawberries, Frozen, Sweetend",
+   "Measure": "10 oz",
+   "Weight": "284",
+   "kCal": 275,
+   "Fats": 0,
+   "Carbs": 74,
+   "Protein": 2
+ },
+ {
+   "Food": "Strawberries, Frozen, Sweetend",
+   "Measure": "1 Cup",
+   "Weight": "255",
+   "kCal": 245,
+   "Fats": 0,
+   "Carbs": 66,
+   "Protein": 1
+ },
+ {
+   "Food": "Strawberries, Raw",
+   "Measure": "1 Cup",
+   "Weight": "149",
+   "kCal": 45,
+   "Fats": 1,
+   "Carbs": 10,
+   "Protein": 1
+ },
+ {
+   "Food": "Sugar Cookie, From Refrig Dogh",
+   "Measure": "4 Cookie",
+   "Weight": "48",
+   "kCal": 235,
+   "Fats": 12,
+   "Carbs": 31,
+   "Protein": 2
+ },
+ {
+   "Food": "Sugar Frosted Flakes, Kellogg",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 110,
+   "Fats": 0,
+   "Carbs": 26,
+   "Protein": 1
+ },
+ {
+   "Food": "Sugar Smacks Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 105,
+   "Fats": 1,
+   "Carbs": 25,
+   "Protein": 2
+ },
+ {
+   "Food": "Sugar, Brown, Pressed Down",
+   "Measure": "1 Cup",
+   "Weight": "220",
+   "kCal": 820,
+   "Fats": 0,
+   "Carbs": 212,
+   "Protein": 0
+ },
+ {
+   "Food": "Sugar, Powdered, Sifted",
+   "Measure": "1 Cup",
+   "Weight": "100",
+   "kCal": 385,
+   "Fats": 0,
+   "Carbs": 100,
+   "Protein": 0
+ },
+ {
+   "Food": "Sugar, White, Granulated",
+   "Measure": "1 Cup",
+   "Weight": "200",
+   "kCal": 770,
+   "Fats": 0,
+   "Carbs": 199,
+   "Protein": 0
+ },
+ {
+   "Food": "Sugar, White, Granulated",
+   "Measure": "1 Tbsp",
+   "Weight": "12",
+   "kCal": 45,
+   "Fats": 0,
+   "Carbs": 12,
+   "Protein": 0
+ },
+ {
+   "Food": "Sugar, White, Granulated",
+   "Measure": "1 Pkt",
+   "Weight": "6",
+   "kCal": 25,
+   "Fats": 0,
+   "Carbs": 6,
+   "Protein": 0
+ },
+ {
+   "Food": "Sunflower Oil",
+   "Measure": "1 Cup",
+   "Weight": "218",
+   "kCal": 1925,
+   "Fats": 218,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Sunflower Oil",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 125,
+   "Fats": 14,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Sunflower Seeds",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 160,
+   "Fats": 14,
+   "Carbs": 5,
+   "Protein": 6
+ },
+ {
+   "Food": "Super Sugar Crisp Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 105,
+   "Fats": 0,
+   "Carbs": 26,
+   "Protein": 2
+ },
+ {
+   "Food": "Sweet (Dark) Chocolate",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 150,
+   "Fats": 10,
+   "Carbs": 16,
+   "Protein": 1
+ },
+ {
+   "Food": "Sweetened Condensed Milk Cnnd",
+   "Measure": "1 Cup",
+   "Weight": "306",
+   "kCal": 980,
+   "Fats": 27,
+   "Carbs": 166,
+   "Protein": 24
+ },
+ {
+   "Food": "Sweetpotatoes, Baked, Peeled",
+   "Measure": "1 Potato",
+   "Weight": "114",
+   "kCal": 115,
+   "Fats": 0,
+   "Carbs": 28,
+   "Protein": 2
+ },
+ {
+   "Food": "Sweetpotatoes, Boiled W/O Peel",
+   "Measure": "1 Potato",
+   "Weight": "151",
+   "kCal": 160,
+   "Fats": 0,
+   "Carbs": 37,
+   "Protein": 2
+ },
+ {
+   "Food": "Sweetpotatoes, Candied",
+   "Measure": "1 Piece",
+   "Weight": "105",
+   "kCal": 145,
+   "Fats": 3,
+   "Carbs": 29,
+   "Protein": 1
+ },
+ {
+   "Food": "Sweetpotatoes, Canned, Mashed",
+   "Measure": "1 Cup",
+   "Weight": "255",
+   "kCal": 260,
+   "Fats": 1,
+   "Carbs": 59,
+   "Protein": 5
+ },
+ {
+   "Food": "Sweetpotatoes, Cnned, Vac Pack",
+   "Measure": "1 Piece",
+   "Weight": "40",
+   "kCal": 35,
+   "Fats": 0,
+   "Carbs": 8,
+   "Protein": 1
+ },
+ {
+   "Food": "Swiss Cheese",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 105,
+   "Fats": 8,
+   "Carbs": 1,
+   "Protein": 8
+ },
+ {
+   "Food": "Syrup, Chocolate Flavored Thin",
+   "Measure": "2 Tbsp",
+   "Weight": "38",
+   "kCal": 85,
+   "Fats": 0,
+   "Carbs": 22,
+   "Protein": 1
+ },
+ {
+   "Food": "Syrup, Chocolate Flvred, Fudge",
+   "Measure": "2 Tbsp",
+   "Weight": "38",
+   "kCal": 125,
+   "Fats": 5,
+   "Carbs": 21,
+   "Protein": 2
+ },
+ {
+   "Food": "Table Syrup (Corn And Maple)",
+   "Measure": "2 Tbsp",
+   "Weight": "42",
+   "kCal": 122,
+   "Fats": 0,
+   "Carbs": 32,
+   "Protein": 0
+ },
+ {
+   "Food": "Taco",
+   "Measure": "1 Taco",
+   "Weight": "81",
+   "kCal": 195,
+   "Fats": 11,
+   "Carbs": 15,
+   "Protein": 9
+ },
+ {
+   "Food": "Tahini",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 90,
+   "Fats": 8,
+   "Carbs": 3,
+   "Protein": 3
+ },
+ {
+   "Food": "Tangerine Juice, Canned,Swtned",
+   "Measure": "1 Cup",
+   "Weight": "249",
+   "kCal": 125,
+   "Fats": 0,
+   "Carbs": 30,
+   "Protein": 1
+ },
+ {
+   "Food": "Tangerines, Canned, Light Syrp",
+   "Measure": "1 Cup",
+   "Weight": "252",
+   "kCal": 155,
+   "Fats": 0,
+   "Carbs": 41,
+   "Protein": 1
+ },
+ {
+   "Food": "Tangerines, Raw",
+   "Measure": "1 Tangrn",
+   "Weight": "84",
+   "kCal": 35,
+   "Fats": 0,
+   "Carbs": 9,
+   "Protein": 1
+ },
+ {
+   "Food": "Tartar Sauce",
+   "Measure": "1 Tbsp",
+   "Weight": "14",
+   "kCal": 75,
+   "Fats": 8,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Tea, Brewed",
+   "Measure": "8 fl oz",
+   "Weight": "240",
+   "kCal": 0,
+   "Fats": 0,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Tea, Instant,Preprd,Unsweetend",
+   "Measure": "8 fl oz",
+   "Weight": "241",
+   "kCal": 0,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Tea,Instant,Prepard,Sweetened",
+   "Measure": "8 fl oz",
+   "Weight": "262",
+   "kCal": 85,
+   "Fats": 0,
+   "Carbs": 22,
+   "Protein": 0
+ },
+ {
+   "Food": "Toaster Pastries",
+   "Measure": "1 Pastry",
+   "Weight": "54",
+   "kCal": 210,
+   "Fats": 6,
+   "Carbs": 38,
+   "Protein": 2
+ },
+ {
+   "Food": "Tofu",
+   "Measure": "1 Piece",
+   "Weight": "120",
+   "kCal": 85,
+   "Fats": 5,
+   "Carbs": 3,
+   "Protein": 9
+ },
+ {
+   "Food": "Tomato Juice, Canned W/O Salt",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 40,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 2
+ },
+ {
+   "Food": "Tomato Juice, Canned With Salt",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 40,
+   "Fats": 0,
+   "Carbs": 10,
+   "Protein": 2
+ },
+ {
+   "Food": "Tomato Paste, Canned W/O Salt",
+   "Measure": "1 Cup",
+   "Weight": "262",
+   "kCal": 220,
+   "Fats": 2,
+   "Carbs": 49,
+   "Protein": 10
+ },
+ {
+   "Food": "Tomato Paste, Canned With Salt",
+   "Measure": "1 Cup",
+   "Weight": "262",
+   "kCal": 220,
+   "Fats": 2,
+   "Carbs": 49,
+   "Protein": 10
+ },
+ {
+   "Food": "Tomato Puree, Canned W/O Salt",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 105,
+   "Fats": 0,
+   "Carbs": 25,
+   "Protein": 4
+ },
+ {
+   "Food": "Tomato Puree, Canned With Salt",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 105,
+   "Fats": 0,
+   "Carbs": 25,
+   "Protein": 4
+ },
+ {
+   "Food": "Tomato Sauce, Canned With Salt",
+   "Measure": "1 Cup",
+   "Weight": "245",
+   "kCal": 75,
+   "Fats": 0,
+   "Carbs": 18,
+   "Protein": 3
+ },
+ {
+   "Food": "Tomato Soup W/ Water, Canned",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 85,
+   "Fats": 2,
+   "Carbs": 17,
+   "Protein": 2
+ },
+ {
+   "Food": "Tomato Soup With Milk, Canned",
+   "Measure": "1 Cup",
+   "Weight": "248",
+   "kCal": 160,
+   "Fats": 6,
+   "Carbs": 22,
+   "Protein": 6
+ },
+ {
+   "Food": "Tomato Veg Soup, Dehyd,Prepred",
+   "Measure": "1 Pkt",
+   "Weight": "189",
+   "kCal": 40,
+   "Fats": 1,
+   "Carbs": 8,
+   "Protein": 1
+ },
+ {
+   "Food": "Tomatoes, Canned, S+L, W/ Salt",
+   "Measure": "1 Cup",
+   "Weight": "240",
+   "kCal": 50,
+   "Fats": 1,
+   "Carbs": 10,
+   "Protein": 2
+ },
+ {
+   "Food": "Tomatoes, Canned, S+L,W/O Salt",
+   "Measure": "1 Cup",
+   "Weight": "240",
+   "kCal": 50,
+   "Fats": 1,
+   "Carbs": 10,
+   "Protein": 2
+ },
+ {
+   "Food": "Tomatoes, Raw",
+   "Measure": "1 Tomato",
+   "Weight": "123",
+   "kCal": 25,
+   "Fats": 0,
+   "Carbs": 5,
+   "Protein": 1
+ },
+ {
+   "Food": "Tortillas, Corn",
+   "Measure": "1 Tortla",
+   "Weight": "30",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 13,
+   "Protein": 2
+ },
+ {
+   "Food": "Total Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 100,
+   "Fats": 1,
+   "Carbs": 22,
+   "Protein": 3
+ },
+ {
+   "Food": "Trix Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 110,
+   "Fats": 0,
+   "Carbs": 25,
+   "Protein": 2
+ },
+ {
+   "Food": "Trout, Broiled, W/ Buttr,Lemju",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 175,
+   "Fats": 9,
+   "Carbs": 0,
+   "Protein": 21
+ },
+ {
+   "Food": "Tuna Salad",
+   "Measure": "1 Cup",
+   "Weight": "205",
+   "kCal": 375,
+   "Fats": 19,
+   "Carbs": 19,
+   "Protein": 33
+ },
+ {
+   "Food": "Tuna, Cannd, Drnd,Oil,Chk,Lght",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 165,
+   "Fats": 7,
+   "Carbs": 0,
+   "Protein": 24
+ },
+ {
+   "Food": "Tuna, Cannd, Drnd,Watr, White",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 135,
+   "Fats": 1,
+   "Carbs": 0,
+   "Protein": 30
+ },
+ {
+   "Food": "Turkey Ham, Cured Turkey Thigh",
+   "Measure": "2 Slices",
+   "Weight": "57",
+   "kCal": 75,
+   "Fats": 3,
+   "Carbs": 0,
+   "Protein": 11
+ },
+ {
+   "Food": "Turkey Loaf, Breast Meat W/O C",
+   "Measure": "2 Slices",
+   "Weight": "42",
+   "kCal": 45,
+   "Fats": 1,
+   "Carbs": 0,
+   "Protein": 10
+ },
+ {
+   "Food": "Turkey Loaf, Breast Meat, W/ C",
+   "Measure": "2 Slices",
+   "Weight": "42",
+   "kCal": 45,
+   "Fats": 1,
+   "Carbs": 0,
+   "Protein": 10
+ },
+ {
+   "Food": "Turkey Patties, Brd,Battd,Frid",
+   "Measure": "1 Patty",
+   "Weight": "64",
+   "kCal": 180,
+   "Fats": 12,
+   "Carbs": 10,
+   "Protein": 9
+ },
+ {
+   "Food": "Turkey Roast, Frzn,Lght+Drk,Ck",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 130,
+   "Fats": 5,
+   "Carbs": 3,
+   "Protein": 18
+ },
+ {
+   "Food": "Turkey, Roasted, Dark Meat",
+   "Measure": "4 Pieces",
+   "Weight": "85",
+   "kCal": 160,
+   "Fats": 6,
+   "Carbs": 0,
+   "Protein": 24
+ },
+ {
+   "Food": "Turkey, Roasted, Light + Dark",
+   "Measure": "1 Cup",
+   "Weight": "140",
+   "kCal": 240,
+   "Fats": 7,
+   "Carbs": 0,
+   "Protein": 41
+ },
+ {
+   "Food": "Turkey, Roasted, Light + Dark",
+   "Measure": "3 Pieces",
+   "Weight": "85",
+   "kCal": 145,
+   "Fats": 4,
+   "Carbs": 0,
+   "Protein": 25
+ },
+ {
+   "Food": "Turkey, Roasted, Light Meat",
+   "Measure": "2 Pieces",
+   "Weight": "85",
+   "kCal": 135,
+   "Fats": 3,
+   "Carbs": 0,
+   "Protein": 25
+ },
+ {
+   "Food": "Turnip Greens, Cked Frm Frozen",
+   "Measure": "1 Cup",
+   "Weight": "164",
+   "kCal": 50,
+   "Fats": 1,
+   "Carbs": 8,
+   "Protein": 5
+ },
+ {
+   "Food": "Turnip Greens, Cooked From Raw",
+   "Measure": "1 Cup",
+   "Weight": "144",
+   "kCal": 30,
+   "Fats": 0,
+   "Carbs": 6,
+   "Protein": 2
+ },
+ {
+   "Food": "Turnips, Cooked, Diced",
+   "Measure": "1 Cup",
+   "Weight": "156",
+   "kCal": 30,
+   "Fats": 0,
+   "Carbs": 8,
+   "Protein": 1
+ },
+ {
+   "Food": "Vanilla Wafers",
+   "Measure": "10 Cooke",
+   "Weight": "40",
+   "kCal": 185,
+   "Fats": 7,
+   "Carbs": 29,
+   "Protein": 2
+ },
+ {
+   "Food": "Veal Cutlet, Med Fat,Brsd,Brld",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 185,
+   "Fats": 9,
+   "Carbs": 0,
+   "Protein": 23
+ },
+ {
+   "Food": "Veal Rib, Med Fat, Roasted",
+   "Measure": "3 oz",
+   "Weight": "85",
+   "kCal": 230,
+   "Fats": 14,
+   "Carbs": 0,
+   "Protein": 23
+ },
+ {
+   "Food": "Vegetable Beef Soup, Canned",
+   "Measure": "1 Cup",
+   "Weight": "244",
+   "kCal": 80,
+   "Fats": 2,
+   "Carbs": 10,
+   "Protein": 6
+ },
+ {
+   "Food": "Vegetable Juice Cocktail, Cnnd",
+   "Measure": "1 Cup",
+   "Weight": "242",
+   "kCal": 45,
+   "Fats": 0,
+   "Carbs": 11,
+   "Protein": 2
+ },
+ {
+   "Food": "Vegetables, Mixed, Canned",
+   "Measure": "1 Cup",
+   "Weight": "163",
+   "kCal": 75,
+   "Fats": 0,
+   "Carbs": 15,
+   "Protein": 4
+ },
+ {
+   "Food": "Vegetables, Mixed, Cked Fr Frz",
+   "Measure": "1 Cup",
+   "Weight": "182",
+   "kCal": 105,
+   "Fats": 0,
+   "Carbs": 24,
+   "Protein": 5
+ },
+ {
+   "Food": "Vegetarian Soup, Canned",
+   "Measure": "1 Cup",
+   "Weight": "241",
+   "kCal": 70,
+   "Fats": 2,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Vienna Bread",
+   "Measure": "1 Slice",
+   "Weight": "25",
+   "kCal": 70,
+   "Fats": 1,
+   "Carbs": 13,
+   "Protein": 2
+ },
+ {
+   "Food": "Vienna Sausage",
+   "Measure": "1 Sausag",
+   "Weight": "16",
+   "kCal": 45,
+   "Fats": 4,
+   "Carbs": 0,
+   "Protein": 2
+ },
+ {
+   "Food": "Vinegar And Oil Salad Dressing",
+   "Measure": "1 Tbsp",
+   "Weight": "16",
+   "kCal": 70,
+   "Fats": 8,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Vinegar, Cider",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 0,
+   "Fats": 0,
+   "Carbs": 1,
+   "Protein": 0
+ },
+ {
+   "Food": "Waffles, From Home Recipe",
+   "Measure": "1 Waffle",
+   "Weight": "75",
+   "kCal": 245,
+   "Fats": 13,
+   "Carbs": 26,
+   "Protein": 7
+ },
+ {
+   "Food": "Waffles, From Mix",
+   "Measure": "1 Waffle",
+   "Weight": "75",
+   "kCal": 205,
+   "Fats": 8,
+   "Carbs": 27,
+   "Protein": 7
+ },
+ {
+   "Food": "Walnuts, Black, Chopped",
+   "Measure": "1 Cup",
+   "Weight": "125",
+   "kCal": 760,
+   "Fats": 71,
+   "Carbs": 15,
+   "Protein": 30
+ },
+ {
+   "Food": "Walnuts, Black, Chopped",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 170,
+   "Fats": 16,
+   "Carbs": 3,
+   "Protein": 7
+ },
+ {
+   "Food": "Walnuts, English, Pieces",
+   "Measure": "1 Cup",
+   "Weight": "120",
+   "kCal": 770,
+   "Fats": 74,
+   "Carbs": 22,
+   "Protein": 17
+ },
+ {
+   "Food": "Walnuts, English, Pieces",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 180,
+   "Fats": 18,
+   "Carbs": 5,
+   "Protein": 4
+ },
+ {
+   "Food": "Water Chestnuts, Canned",
+   "Measure": "1 Cup",
+   "Weight": "140",
+   "kCal": 70,
+   "Fats": 0,
+   "Carbs": 17,
+   "Protein": 1
+ },
+ {
+   "Food": "Watermelon, Raw",
+   "Measure": "1 Piece",
+   "Weight": "482",
+   "kCal": 155,
+   "Fats": 2,
+   "Carbs": 35,
+   "Protein": 3
+ },
+ {
+   "Food": "Watermelon, Raw, Diced",
+   "Measure": "1 Cup",
+   "Weight": "160",
+   "kCal": 50,
+   "Fats": 1,
+   "Carbs": 11,
+   "Protein": 1
+ },
+ {
+   "Food": "Wheat Bread",
+   "Measure": "1 Loaf",
+   "Weight": "454",
+   "kCal": 1160,
+   "Fats": 19,
+   "Carbs": 213,
+   "Protein": 43
+ },
+ {
+   "Food": "Wheat Bread",
+   "Measure": "1 Slice",
+   "Weight": "25",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "Wheat Bread, Toasted",
+   "Measure": "1 Slice",
+   "Weight": "23",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 12,
+   "Protein": 3
+ },
+ {
+   "Food": "Wheat Flour, All-Purpose,Siftd",
+   "Measure": "1 Cup",
+   "Weight": "115",
+   "kCal": 420,
+   "Fats": 1,
+   "Carbs": 88,
+   "Protein": 12
+ },
+ {
+   "Food": "Wheat Flour, All-Purpose,Unsif",
+   "Measure": "1 Cup",
+   "Weight": "125",
+   "kCal": 455,
+   "Fats": 1,
+   "Carbs": 95,
+   "Protein": 13
+ },
+ {
+   "Food": "Wheat, Thin Crackers",
+   "Measure": "4 Crackr",
+   "Weight": "8",
+   "kCal": 35,
+   "Fats": 1,
+   "Carbs": 5,
+   "Protein": 1
+ },
+ {
+   "Food": "Wheaties Cereal",
+   "Measure": "1 oz",
+   "Weight": "28,35",
+   "kCal": 100,
+   "Fats": 0,
+   "Carbs": 23,
+   "Protein": 3
+ },
+ {
+   "Food": "Whipped Topping, Pressurized",
+   "Measure": "1 Cup",
+   "Weight": "60",
+   "kCal": 155,
+   "Fats": 13,
+   "Carbs": 7,
+   "Protein": 2
+ },
+ {
+   "Food": "Whipped Topping, Pressurized",
+   "Measure": "1 Tbsp",
+   "Weight": "3",
+   "kCal": 10,
+   "Fats": 1,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Whipping Cream, Unwhiped,Heavy",
+   "Measure": "1 Cup",
+   "Weight": "238",
+   "kCal": 820,
+   "Fats": 88,
+   "Carbs": 7,
+   "Protein": 5
+ },
+ {
+   "Food": "Whipping Cream, Unwhiped,Heavy",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 50,
+   "Fats": 6,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "Whipping Cream, Unwhiped,Light",
+   "Measure": "1 Cup",
+   "Weight": "239",
+   "kCal": 700,
+   "Fats": 74,
+   "Carbs": 7,
+   "Protein": 5
+ },
+ {
+   "Food": "Whipping Cream, Unwhiped,Light",
+   "Measure": "1 Tbsp",
+   "Weight": "15",
+   "kCal": 45,
+   "Fats": 5,
+   "Carbs": 0,
+   "Protein": 0
+ },
+ {
+   "Food": "White Bread",
+   "Measure": "1 Loaf",
+   "Weight": "454",
+   "kCal": 1210,
+   "Fats": 18,
+   "Carbs": 222,
+   "Protein": 38
+ },
+ {
+   "Food": "White Bread Crumbs, Soft",
+   "Measure": "1 Cup",
+   "Weight": "45",
+   "kCal": 120,
+   "Fats": 2,
+   "Carbs": 22,
+   "Protein": 4
+ },
+ {
+   "Food": "White Bread Cubes",
+   "Measure": "1 Cup",
+   "Weight": "30",
+   "kCal": 80,
+   "Fats": 1,
+   "Carbs": 15,
+   "Protein": 2
+ },
+ {
+   "Food": "White Bread, Slice 18 Per Loaf",
+   "Measure": "1 Slice",
+   "Weight": "25",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "White Bread, Slice 22 Per Loaf",
+   "Measure": "1 Slice",
+   "Weight": "20",
+   "kCal": 55,
+   "Fats": 1,
+   "Carbs": 10,
+   "Protein": 2
+ },
+ {
+   "Food": "White Bread, Toasted 18 Per",
+   "Measure": "1 Slice",
+   "Weight": "22",
+   "kCal": 65,
+   "Fats": 1,
+   "Carbs": 12,
+   "Protein": 2
+ },
+ {
+   "Food": "White Bread, Toasted 22 Per",
+   "Measure": "1 Slice",
+   "Weight": "17",
+   "kCal": 55,
+   "Fats": 1,
+   "Carbs": 10,
+   "Protein": 2
+ },
+ {
+   "Food": "White Cake W/ Wht Frstng,Comml",
+   "Measure": "1 Cake",
+   "Weight": "1140",
+   "kCal": 4170,
+   "Fats": 148,
+   "Carbs": 670,
+   "Protein": 43
+ },
+ {
+   "Food": "White Cake W/ Wht Frstng,Comml",
+   "Measure": "1 Piece",
+   "Weight": "71",
+   "kCal": 260,
+   "Fats": 9,
+   "Carbs": 42,
+   "Protein": 3
+ },
+ {
+   "Food": "White Sauce W/ Milk From Mix",
+   "Measure": "1 Cup",
+   "Weight": "264",
+   "kCal": 240,
+   "Fats": 13,
+   "Carbs": 21,
+   "Protein": 10
+ },
+ {
+   "Food": "White Sauce, Medium, Home Recp",
+   "Measure": "1 Cup",
+   "Weight": "250",
+   "kCal": 395,
+   "Fats": 30,
+   "Carbs": 24,
+   "Protein": 10
+ },
+ {
+   "Food": "Whole-Wheat Bread",
+   "Measure": "1 Loaf",
+   "Weight": "454",
+   "kCal": 1110,
+   "Fats": 20,
+   "Carbs": 206,
+   "Protein": 44
+ },
+ {
+   "Food": "Whole-Wheat Bread",
+   "Measure": "1 Slice",
+   "Weight": "28",
+   "kCal": 70,
+   "Fats": 1,
+   "Carbs": 13,
+   "Protein": 3
+ },
+ {
+   "Food": "Whole-Wheat Bread, Toasted",
+   "Measure": "1 Slice",
+   "Weight": "25",
+   "kCal": 70,
+   "Fats": 1,
+   "Carbs": 13,
+   "Protein": 3
+ },
+ {
+   "Food": "Whole-Wheat Flour,Hrd Wht,Stir",
+   "Measure": "1 Cup",
+   "Weight": "120",
+   "kCal": 400,
+   "Fats": 2,
+   "Carbs": 85,
+   "Protein": 16
+ },
+ {
+   "Food": "Whole-Wheat Wafers, Crackers",
+   "Measure": "2 Crackr",
+   "Weight": "8",
+   "kCal": 35,
+   "Fats": 2,
+   "Carbs": 5,
+   "Protein": 1
+ },
+ {
+   "Food": "Wine, Dessert",
+   "Measure": "3.5 fl oz",
+   "Weight": "103",
+   "kCal": 140,
+   "Fats": 0,
+   "Carbs": 8,
+   "Protein": 0
+ },
+ {
+   "Food": "Wine, Table, Red",
+   "Measure": "3.5 fl oz",
+   "Weight": "102",
+   "kCal": 75,
+   "Fats": 0,
+   "Carbs": 3,
+   "Protein": 0
+ },
+ {
+   "Food": "Wine, Table, White",
+   "Measure": "3.5 fl oz",
+   "Weight": "102",
+   "kCal": 80,
+   "Fats": 0,
+   "Carbs": 3,
+   "Protein": 0
+ },
+ {
+   "Food": "Yeast, Bakers, Dry, Active",
+   "Measure": "1 Pkg",
+   "Weight": "7",
+   "kCal": 20,
+   "Fats": 0,
+   "Carbs": 3,
+   "Protein": 3
+ },
+ {
+   "Food": "Yeast, Brewers, Dry",
+   "Measure": "1 Tbsp",
+   "Weight": "8",
+   "kCal": 25,
+   "Fats": 0,
+   "Carbs": 3,
+   "Protein": 3
+ },
+ {
+   "Food": "Yellow Cake W/ Choc Frst,Frmix",
+   "Measure": "1 Cake",
+   "Weight": "1108",
+   "kCal": 3735,
+   "Fats": 125,
+   "Carbs": 638,
+   "Protein": 45
+ },
+ {
+   "Food": "Yellow Cake W/ Choc Frst,Frmix",
+   "Measure": "1 Piece",
+   "Weight": "69",
+   "kCal": 235,
+   "Fats": 8,
+   "Carbs": 40,
+   "Protein": 3
+ },
+ {
+   "Food": "Yellowcake W/ Chocfrstng,Comml",
+   "Measure": "1 Cake",
+   "Weight": "1108",
+   "kCal": 3895,
+   "Fats": 175,
+   "Carbs": 620,
+   "Protein": 40
+ },
+ {
+   "Food": "Yellowcake W/ Chocfrstng,Comml",
+   "Measure": "1 Piece",
+   "Weight": "69",
+   "kCal": 245,
+   "Fats": 11,
+   "Carbs": 39,
+   "Protein": 2
+ },
+ {
+   "Food": "Yogurt, W/ Lofat Milk, Plain",
+   "Measure": "8 oz",
+   "Weight": "227",
+   "kCal": 145,
+   "Fats": 4,
+   "Carbs": 16,
+   "Protein": 12
+ },
+ {
+   "Food": "Yogurt, W/ Lofat Milk,Fruitflv",
+   "Measure": "8 oz",
+   "Weight": "227",
+   "kCal": 230,
+   "Fats": 2,
+   "Carbs": 43,
+   "Protein": 10
+ },
+ {
+   "Food": "Yogurt, W/ Nonfat Milk",
+   "Measure": "8 oz",
+   "Weight": "227",
+   "kCal": 125,
+   "Fats": 0,
+   "Carbs": 17,
+   "Protein": 13
+ },
+ {
+   "Food": "Yogurt, W/ Whole Milk",
+   "Measure": "8 oz",
+   "Weight": "227",
+   "kCal": 140,
+   "Fats": 7,
+   "Carbs": 11,
+   "Protein": 8
+ }
+]
