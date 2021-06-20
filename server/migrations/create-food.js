@@ -25,6 +25,9 @@ module.exports = {
       fats: {
         type: Sequelize.INTEGER,
       },
+      weight: {
+        type: Sequelize.INTEGER,
+      },
       image: {
         type: Sequelize.STRING,
       },
