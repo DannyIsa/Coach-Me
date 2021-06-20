@@ -19,15 +19,25 @@ function SignUp() {
       .auth()
       .signInWithPopup(provider)
       .then(async (data) => {
-        const emailData = data.user.email;
-        const userData = data.user.displayName;
+        const { email } = data.user;
         axios
-          .post(`/api/user/register?type=${type}`)
+          .get("/api/user/check/" + email)
           .then(() => {
-            history.push("/");
+            firebase.auth().onAuthStateChanged(() => {
+              history.push("/");
+            });
           })
-          .catch((err) => {
-            setError(err.message);
+          .catch(() => {
+            axios
+              .post(`/api/user/register?type=${type}`, { email })
+              .then(() => {
+                firebase.auth().onAuthStateChanged(() => {
+                  history.push("/");
+                });
+              })
+              .catch((err) => {
+                setError(err.message);
+              });
           });
       });
   };
@@ -40,7 +50,9 @@ function SignUp() {
         axios
           .post(`/api/user/register?type=${type}`, { email: emailInput })
           .then(() => {
-            history.push("/");
+            firebase.auth().onAuthStateChanged(() => {
+              history.push("/");
+            });
           })
           .catch((err) => {
             setError(err.message);

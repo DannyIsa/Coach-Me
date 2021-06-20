@@ -68,7 +68,12 @@ function App() {
             ) : (
               <>
                 <Route exact path="/details">
-                  <Details user={user} auth={auth} userType={userType} />
+                  <Details
+                    user={user}
+                    auth={auth}
+                    userType={userType}
+                    setRegistered={setRegistered}
+                  />
                 </Route>
               </>
             )

@@ -49,26 +49,25 @@ user.get("/check/:email", async (req, res) => {
   const { email } = req.params;
   const coach = await models.Coach.findOne({ where: { email: email } });
   if (coach)
-    return res.send({ valid: checkValid(coach.toJSON()), type: "coach" });
+    return res.send({ valid: checkValid(coach.toJSON()), type: "Coach" });
   const trainee = await models.Trainee.findOne({ where: { email } });
   if (trainee)
-    return res.send({ valid: checkValid(trainee.toJSON()), type: "trainee" });
+    return res.send({ valid: checkValid(trainee.toJSON()), type: "Trainee" });
   res.status(404).send("No Client With That Email");
 });
 
-user.post("/details/:email", (req, res) => {
+user.put("/details/:email", (req, res) => {
   const { email } = req.params;
-  console.log(email);
   const { type, obj } = req.body;
   let query;
-
   if ((type !== "Coach" && type !== "Trainee") || !obj)
     return res.status(400).send("Invalid Client");
 
   if (type === "Coach")
     query = {
       name: obj.name,
-      address: obj.address,
+      birthdate: obj.birthdate,
+      gender: obj.gender,
       phone_number: obj.phone_number,
       avg_rating: 0,
       rating_count: 0,
@@ -77,6 +76,7 @@ user.post("/details/:email", (req, res) => {
     query = {
       name: obj.name,
       birthdate: obj.birthdate,
+      phone_number: obj.phone_number,
       gender: obj.gender,
       height: obj.height,
       weight: obj.weight,
