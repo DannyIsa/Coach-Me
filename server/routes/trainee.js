@@ -13,9 +13,11 @@ const sequelize = new Sequelize(
 );
 const express = require("express");
 const { Router } = require("express");
+const logs = require("./logs");
 const trainee = Router();
-trainee.use(express.json());
 
+trainee.use(express.json());
+trainee.use("/logs", logs);
 trainee.post("/send-request/:traineeId", (req, res) => {
   const { coachId } = req.query;
   const { traineeId } = req.params;
@@ -43,24 +45,15 @@ trainee.post("/send-request/:traineeId", (req, res) => {
     });
 });
 
-trainee.post("/log/workout/add", (req, res) => {});
-
-trainee.post("/log/measure/add", (req, res) => {});
-
-trainee.post("/log/diet/add", (req, res) => {});
-
-trainee.get("/log/workout/show:traineeId", (req, res) => {});
-
-trainee.get("/log/measure/show:traineeId", (req, res) => {});
-
-trainee.get("/log/diet/show:traineeId", (req, res) => {});
-
 trainee.post("/meal/add", async (req, res) => {
   const { traineeId, mealId } = req.body;
   if (!Number(mealId) || !Number(traineeId))
     return res.status(400).send("Invalid ID");
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
+  if (!trainee) return res.status(404).send("No Trainee Found");
   const meal = await models.Meal.findOne({ where: { id: mealId } });
+  if (!meal) return res.status(404).send("No Meals Found");
+
   trainee
     .addMeal(meal)
     .then(() => res.status(201).send("Meal Added To Trainee"))
