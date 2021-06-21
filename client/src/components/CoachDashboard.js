@@ -1,11 +1,22 @@
-import React from 'react'
+import React from "react";
+import { useHistory } from "react-router-dom";
 
-function CoachDashboard() {
-    return (
-        <div>
-            
-        </div>
-    )
+function CoachDashboard({ auth }) {
+  const history = useHistory();
+
+  return (
+    <div>
+      <h1>Coach Dashboard</h1>
+      <button
+        onClick={() => {
+          auth.signOut();
+          history.push("/sign-up");
+        }}
+      >
+        Sign Out
+      </button>
+    </div>
+  );
 }
 
-export default CoachDashboard
+export default CoachDashboard;

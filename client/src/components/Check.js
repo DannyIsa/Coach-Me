@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 function Check({ user, loading, registered, userType }) {
   const history = useHistory();
   useEffect(() => {
-    console.log(loading, user, registered);
     if (!loading) {
       if (user) {
         if (registered === true) history.push("/home");
