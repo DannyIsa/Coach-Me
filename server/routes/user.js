@@ -75,7 +75,6 @@ user.put("/details/:id", (req, res) => {
   let query;
   if ((type !== "Coach" && type !== "Trainee") || !obj)
     return res.status(400).send("Invalid Client");
-
   if (type === "Coach")
     query = {
       name: obj.name,
@@ -93,9 +92,13 @@ user.put("/details/:id", (req, res) => {
       gender: obj.gender,
       height: obj.height,
       weight: obj.weight,
-      daily_calorie_goal: obj.daily_calorie_goal,
+      //calculate with weight and height
+      daily_calorie_goal: 0,
     };
+  console.log(query);
+
   if (!checkValid(query)) return res.status(400).send("Invalid Details");
+
   models[type]
     .update(query, { where: { id } })
     .then((data) => {

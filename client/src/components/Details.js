@@ -28,7 +28,8 @@ function Details({ userId, signOut, userType, setRegistered }) {
             .then(() => {
               setRegistered(true);
               history.push("/");
-            });
+            })
+            .catch((err) => console.log(err));
         }}
       >
         <input name="name" placeholder="Enter Your Full Name" required />
