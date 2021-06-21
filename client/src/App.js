@@ -17,8 +17,10 @@ import SignIn from "./components/SignIn";
 import Food from "./components/Food";
 import Check from "./components/Check";
 import Details from "./components/Details";
-import TraineeDashboard from "./components/TraineeDashboard";
-import CoachDashboard from "./components/CoachDashboard";
+import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
+
+import CoachDashboard from "./components/coach-components/CoachDashboard";
+import CoachClients from "./components/coach-components/CoachClients";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDXQY7ezPYUQoh3yJmWRZEalb9N-yieW-o",
@@ -91,6 +93,11 @@ function App() {
                     />
                   )}
                 </Route>
+                {userType === "Coach" && (
+                  <Route exact path="/coach/clients">
+                    <CoachClients userId={userId} />
+                  </Route>
+                )}
                 <Route exact path="/food">
                   <Food user={user} />
                 </Route>
