@@ -35,7 +35,7 @@ module.exports = {
       weight: {
         type: Sequelize.INTEGER,
       },
-      dailyCalorieGoal: {
+      daily_calorie_goal: {
         type: Sequelize.INTEGER,
       },
       created_at: {

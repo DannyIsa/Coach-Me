@@ -59,10 +59,6 @@ function App() {
     }
   }, [user, loading]);
 
-  //
-  console.log(registered);
-  //
-
   return (
     <div>
       <Router>

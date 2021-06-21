@@ -48,7 +48,9 @@ function SignUp() {
       .createUserWithEmailAndPassword(emailInput, passwordInput)
       .then(() => {
         axios
-          .post(`/api/user/register?type=${type}`, { email: emailInput })
+          .post(`http://localhost:3001/api/user/register?type=${type}`, {
+            email: emailInput,
+          })
           .then(() => {
             firebase.auth().onAuthStateChanged(() => {
               history.push("/");
@@ -88,6 +90,7 @@ function SignUp() {
         className="show-password"
         onMouseDown={() => {
           passwordRef.current.type = "text";
+          console.log(passwordRef);
         }}
         onMouseUp={() => {
           passwordRef.current.type = "password";

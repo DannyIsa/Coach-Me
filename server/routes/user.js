@@ -33,6 +33,14 @@ user.post("/register", (req, res) => {
   const { email } = req.body;
   if (type !== "Coach" && type !== "Trainee")
     return res.status(400).send("Invalid");
+
+  // CHECKS IF USER EXISTS
+  //   const trainee = await models.Trainee.findOne({ where: { email } });
+  //   const coach = await models.Coach.findOne({ where: { email } });
+  //  if (trainee || coach){
+  //    return res.status(400).send("User already exists");
+  //  }
+
   let query = { email };
   if (type === "Trainee") query.coach_id = 0;
   models[type]
@@ -65,6 +73,7 @@ user.get("/check/:email", async (req, res) => {
 });
 
 user.put("/details/:email", (req, res) => {
+  //maybe use ID instead email
   const { email } = req.params;
   const { type, obj } = req.body;
   let query;
@@ -88,6 +97,7 @@ user.put("/details/:email", (req, res) => {
       gender: obj.gender,
       height: obj.height,
       weight: obj.weight,
+      daily_calorie_goal: obj.daily_calorie_goal,
     };
   if (!checkValid(query)) return res.status(400).send("Invalid Details");
   models[type]
