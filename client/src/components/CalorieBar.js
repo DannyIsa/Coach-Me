@@ -5,7 +5,7 @@ export default function CalorieBar({ totalCalories, usedCalories }) {
     <div>
       <progress id="file" value={usedCalories} max={totalCalories}>
         {" "}
-        {counter}%{" "}
+        {usedCalories}%{" "}
       </progress>
       <div>
         {totalCalories} - {usedCalories} = {totalCalories - usedCalories}

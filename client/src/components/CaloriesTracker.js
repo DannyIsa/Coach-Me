@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CalorieBar from "./CalorieBar";
 import { getCurrentDate } from "../utils";
 import axios from "axios";
 
@@ -33,6 +34,15 @@ export default function CaloriesTracker({ user }) {
   return (
     <div>
       <CalorieBar totalCalories={totalCalories} usedCalories={usedCalories} />
+      <table>
+        <tr>
+          <th></th>
+          <th>Calories</th>
+          <th>Protein</th>
+          <th>Carbs</th>
+          <th>Fats</th>
+        </tr>
+      </table>
     </div>
   );
 }
