@@ -92,7 +92,7 @@ function App() {
                   )}
                 </Route>
                 <Route exact path="/food">
-                  <Food />
+                  <Food user={user} />
                 </Route>
               </Switch>
             ) : (
