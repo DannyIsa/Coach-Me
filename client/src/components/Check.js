@@ -10,9 +10,9 @@ function Check({ user, loading, registered, userType }) {
         else if (registered === false) history.push("/details");
       } else history.push("/sign-up");
     }
-  }, [user, registered]);
+  }, [user, loading, registered]);
   return (
-    <div className="home-page">
+    <div className="loading-page">
       <h1 className="headline">Loading...</h1>
     </div>
   );

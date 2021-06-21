@@ -49,10 +49,18 @@ user.get("/check/:email", async (req, res) => {
   const { email } = req.params;
   const coach = await models.Coach.findOne({ where: { email: email } });
   if (coach)
-    return res.send({ valid: checkValid(coach.toJSON()), type: "Coach" });
+    return res.send({
+      id: coach.toJSON().id,
+      valid: checkValid(coach.toJSON()),
+      type: "Coach",
+    });
   const trainee = await models.Trainee.findOne({ where: { email } });
   if (trainee)
-    return res.send({ valid: checkValid(trainee.toJSON()), type: "Trainee" });
+    return res.send({
+      id: trainee.toJSON().id,
+      valid: checkValid(trainee.toJSON()),
+      type: "Trainee",
+    });
   res.status(404).send("No Client With That Email");
 });
 

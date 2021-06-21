@@ -16,6 +16,14 @@ const { Router } = require("express");
 const coach = Router();
 coach.use(express.json());
 
+coach.get("/details/:id", async (req, res) => {
+  const { id } = req.params;
+  if (!Number(id)) return res.status(400).send("Invalid ID");
+  const coach = await models.Coach.findOne({ where: { id } });
+  if (!coach) return res.status(404).send("No Matching Id");
+  return res.status(200).send(coach);
+});
+
 coach.put("/request/accept/:coachId", (req, res) => {
   const { coachId } = req.params;
   const { traineeId } = req.query;

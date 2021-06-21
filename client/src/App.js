@@ -1,6 +1,12 @@
 import "./styles/App.css";
 import React, { useState, useEffect } from "react";
-import { Link, BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  Link,
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useHistory,
+} from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -30,19 +36,28 @@ function App() {
   const [user, loading] = useAuthState(auth);
   const [registered, setRegistered] = useState();
   const [userType, setUserType] = useState();
+  const [userId, setUserId] = useState();
+  function signOut(history) {
+    auth.signOut();
+    setRegistered(false);
+    history.push("/");
+  }
+
   useEffect(() => {
-    if (!user) return;
-    const { email } = user;
-    axios
-      .get("/api/user/check/" + email)
-      .then(({ data }) => {
-        setUserType(data.type);
-        setRegistered(data.valid);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [user]);
+    if (user) {
+      const { email } = user;
+      axios
+        .get("/api/user/check/" + email)
+        .then(({ data }) => {
+          setUserType(data.type);
+          setRegistered(data.valid);
+          setUserId(data.id);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [user, loading]);
 
   return (
     <div>
@@ -63,9 +78,17 @@ function App() {
               <Switch>
                 <Route exact path="/home">
                   {userType === "Coach" ? (
-                    <CoachDashboard auth={auth} />
+                    <CoachDashboard
+                      user={user}
+                      userId={userId}
+                      signOut={signOut}
+                    />
                   ) : (
-                    <TraineeDashboard auth={auth} />
+                    <TraineeDashboard
+                      user={user}
+                      userId={userId}
+                      signOut={signOut}
+                    />
                   )}
                 </Route>
                 <Route exact path="/food">
@@ -78,7 +101,7 @@ function App() {
                 <Route exact path="/details">
                   <Details
                     user={user}
-                    auth={auth}
+                    signOut={signOut}
                     userType={userType}
                     setRegistered={setRegistered}
                   />
@@ -88,6 +111,7 @@ function App() {
           ) : (
             <Switch>
               {/* user isn't logged in */}
+
               <Route exact path="/sign-in">
                 <SignIn auth={auth} />
               </Route>

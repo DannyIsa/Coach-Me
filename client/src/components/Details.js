@@ -1,20 +1,13 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-function Details({ user, auth, userType, setRegistered }) {
+function Details({ user, signOut, userType, setRegistered }) {
   const history = useHistory();
   const [other, setOther] = useState(false);
   return (
     <div>
       <h1>Details</h1>
-      <button
-        onClick={() => {
-          auth.signOut();
-          history.push("/sign-up");
-        }}
-      >
-        Sign Out
-      </button>
+      <button onClick={() => signOut(history)}>Sign Out</button>
       <form
         className="details-form"
         onSubmit={(e) => {

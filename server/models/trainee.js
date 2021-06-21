@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
       email: DataTypes.STRING,
       coach_id: DataTypes.INTEGER,
       phone_number: DataTypes.STRING,
-      birthdate: DataTypes.DATE,
+      birthdate: DataTypes.DATEONLY,
       gender: DataTypes.STRING,
       height: DataTypes.FLOAT,
       weight: DataTypes.INTEGER,
