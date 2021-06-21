@@ -62,7 +62,7 @@ function App() {
                   <Home auth={auth} user={user} />
                 </Route>
                 <Route exact path="/food">
-                  <Food />
+                  <Food user={user} />
                 </Route>
               </>
             ) : (
