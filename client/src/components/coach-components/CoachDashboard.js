@@ -21,15 +21,22 @@ function CoachDashboard({ user, userId, signOut }) {
     console.log(details);
   }, [details]);
   return (
-    <div>
-      <h1>Coach Dashboard</h1>
-      <button onClick={() => signOut(history)}>Sign Out</button>
+    <div className="coach-dashboard">
+      {details ? (
+        <>
+          <h1>{`Hello Coach ${details.name}`}</h1>
 
-      <div className="dashboard-items">
-        <Link to="/coach/clients">
-          <div className="link-div">Your Trainees</div>
-        </Link>
-      </div>
+          <button onClick={() => signOut(history)}>Sign Out</button>
+
+          <div className="dashboard-items">
+            <Link to="/coach/clients">
+              <div className="link-div">Your Trainees</div>
+            </Link>
+          </div>
+        </>
+      ) : (
+        "Loading..."
+      )}
     </div>
   );
 }

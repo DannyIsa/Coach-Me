@@ -33,16 +33,20 @@ export default function CaloriesTracker({ user }) {
 
   return (
     <div>
-      <CalorieBar totalCalories={totalCalories} usedCalories={usedCalories} />
-      <table>
-        <tr>
-          <th></th>
-          <th>Calories</th>
-          <th>Protein</th>
-          <th>Carbs</th>
-          <th>Fats</th>
-        </tr>
-      </table>
+      {console.log(getCurrentDate())}
+      <div>Todays date is: {getCurrentDate()}</div>
+      {/* <meter min="0" value={totalCalories} max={dailyCalorieGoal}></meter> */}
+      <button>Add Food</button>
+      {/* <div className="diary">
+        <li>breakfast</li>
+        {breakfastItems}
+        <li>lunch</li>
+        {lunchItems}
+        <li>dinner</li>
+        {dinnerItems}
+        <li>snacks</li>
+        {snacksItems}
+      </div> */}
     </div>
   );
 }

@@ -116,6 +116,16 @@ coach.post("/workout/new/:coachId", async (req, res) => {
     .catch((err) => res.status(400).send(err.message));
 });
 
+coach.get("/clients/show/:userId", async (req, res) => {
+  const { userId } = req.params;
+  if (!Number(userId)) return res.status(400).send("Invalid ID");
+  const coach = await models.Coach.findOne({ where: { id: userId } });
+  if (!coach) return res.status(404).send("No Matching Coach");
+  const trainees = await coach.getTrainees();
+  if (!trainees || trainees.length === 0) return res.status(200).send([]);
+  res.status(200).send(trainees);
+});
+
 coach.get("/workout/show/:coachId", (req, res) => {});
 
 coach.put("/workout/append/:coachId", (req, res) => {});
