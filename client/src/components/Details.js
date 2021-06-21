@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-function Details({ user, signOut, userType, setRegistered }) {
+function Details({ userId, signOut, userType, setRegistered }) {
   const history = useHistory();
   const [other, setOther] = useState(false);
   return (
@@ -23,9 +23,8 @@ function Details({ user, signOut, userType, setRegistered }) {
             obj.height = data.get("height");
             obj.weight = data.get("weight");
           }
-          const { email } = user;
           axios
-            .put("/api/user/details/" + email, { obj, type: userType })
+            .put("/api/user/details/" + userId, { obj, type: userType })
             .then(() => {
               setRegistered(true);
               history.push("/");

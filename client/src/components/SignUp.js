@@ -14,30 +14,23 @@ function SignUp() {
   const history = useHistory();
 
   const SignUpWithGoogle = () => {
+    console.log("1");
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase
       .auth()
       .signInWithPopup(provider)
       .then(async (data) => {
+        console.log("2");
         const { email } = data.user;
         axios
-          .get("/api/user/check/" + email)
+          .post(`/api/user/register?type=${type}`, { email })
           .then(() => {
             firebase.auth().onAuthStateChanged(() => {
               history.push("/");
             });
           })
-          .catch(() => {
-            axios
-              .post(`/api/user/register?type=${type}`, { email })
-              .then(() => {
-                firebase.auth().onAuthStateChanged(() => {
-                  history.push("/");
-                });
-              })
-              .catch((err) => {
-                setError(err.message);
-              });
+          .catch((err) => {
+            setError(err.message);
           });
       });
   };
@@ -48,9 +41,7 @@ function SignUp() {
       .createUserWithEmailAndPassword(emailInput, passwordInput)
       .then(() => {
         axios
-          .post(`http://localhost:3001/api/user/register?type=${type}`, {
-            email: emailInput,
-          })
+          .post(`/api/user/register?type=${type}`, { email: emailInput })
           .then(() => {
             firebase.auth().onAuthStateChanged(() => {
               history.push("/");

@@ -28,18 +28,15 @@ function checkValid(client) {
   return valid;
 }
 
-user.post("/register", (req, res) => {
+user.post("/register", async (req, res) => {
   const { type } = req.query;
   const { email } = req.body;
   if (type !== "Coach" && type !== "Trainee")
     return res.status(400).send("Invalid");
 
-  // CHECKS IF USER EXISTS
-  //   const trainee = await models.Trainee.findOne({ where: { email } });
-  //   const coach = await models.Coach.findOne({ where: { email } });
-  //  if (trainee || coach){
-  //    return res.status(400).send("User already exists");
-  //  }
+  const trainee = await models.Trainee.findOne({ where: { email } });
+  const coach = await models.Coach.findOne({ where: { email } });
+  if (trainee || coach) return res.status(200).send("User already exists");
 
   let query = { email };
   if (type === "Trainee") query.coach_id = 0;
@@ -72,9 +69,8 @@ user.get("/check/:email", async (req, res) => {
   res.status(404).send("No Client With That Email");
 });
 
-user.put("/details/:email", (req, res) => {
-  //maybe use ID instead email
-  const { email } = req.params;
+user.put("/details/:id", (req, res) => {
+  const { id } = req.params;
   const { type, obj } = req.body;
   let query;
   if ((type !== "Coach" && type !== "Trainee") || !obj)
@@ -101,10 +97,9 @@ user.put("/details/:email", (req, res) => {
     };
   if (!checkValid(query)) return res.status(400).send("Invalid Details");
   models[type]
-    .update(query, { where: { email } })
+    .update(query, { where: { id } })
     .then((data) => {
-      if (!data[0])
-        return res.status(404).send(`No Client With Email ${email}`);
+      if (!data[0]) return res.status(404).send(`No Client With id ${id}`);
       res.status(201).send(`${type} ${query.name} Updated`);
     })
     .catch((err) => res.status(400).send(err.message));

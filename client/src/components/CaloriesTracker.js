@@ -37,7 +37,7 @@ export default function CaloriesTracker({ user }) {
       <div>Todays date is: {getCurrentDate()}</div>
       {/* <meter min="0" value={totalCalories} max={dailyCalorieGoal}></meter> */}
       <button>Add Food</button>
-      <div className="diary">
+      {/* <div className="diary">
         <li>breakfast</li>
         {breakfastItems}
         <li>lunch</li>
@@ -46,7 +46,7 @@ export default function CaloriesTracker({ user }) {
         {dinnerItems}
         <li>snacks</li>
         {snacksItems}
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -40,9 +40,12 @@ function App() {
   const [userType, setUserType] = useState();
   const [userId, setUserId] = useState();
   function signOut(history) {
-    auth.signOut();
-    setRegistered(false);
-    history.push("/");
+    auth.signOut().then(() => {
+      auth.onAuthStateChanged(() => {
+        setRegistered(false);
+        history.push("/");
+      });
+    });
   }
 
   useEffect(() => {
@@ -107,7 +110,7 @@ function App() {
               <Switch>
                 <Route exact path="/details">
                   <Details
-                    user={user}
+                    userId={userId}
                     signOut={signOut}
                     userType={userType}
                     setRegistered={setRegistered}
