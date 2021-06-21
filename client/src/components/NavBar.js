@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import "../styles/NavBar.css"
 
 function NavBar() {
     const [click, setClick] = useState(false);
@@ -9,7 +10,7 @@ function NavBar() {
         {
             title:"Home",
             link:"/",  
-            className: "nav-link"
+            className: "nav-item"
         },
         {
             title:"Workouts",
@@ -28,21 +29,20 @@ function NavBar() {
         },
         {
             title:"About Us",
-            link:"aboutus", 
+            link:"/about", 
             className: "nav-item"
         },
     ]
   return (
-    <nav>
-      <h1>COACH-ME</h1>
+    <nav className="navbar">
+         <div className="nav-container">
       <NavLink exact to="/" className="nav-logo">
             COACH-ME
-            {/* <i className="fas fa-code"></i> */}
           </NavLink>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           {navBarItams.map((item, index)=> {
               return (
-         <li className={item.className}>
+         <li key={index} className={item.className}>
               <NavLink
                 exact
                 to={item.link}
@@ -56,6 +56,10 @@ function NavBar() {
               )
           })}
       </ul>
+                <div className="nav-icon" onClick={handleClick}>
+            {/* <i className={click ? "fas fa-times" : "fas fa-bars"}></i> */}
+          </div>
+      </div>
     </nav>
   );
 }
