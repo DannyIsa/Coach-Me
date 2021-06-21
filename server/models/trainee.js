@@ -41,6 +41,7 @@ module.exports = (sequelize, DataTypes) => {
       gender: DataTypes.STRING,
       height: DataTypes.FLOAT,
       weight: DataTypes.INTEGER,
+      dailyCalorieGoal: DataTypes.INTEGER,
     },
     {
       sequelize,

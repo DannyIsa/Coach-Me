@@ -21,8 +21,9 @@ trainee.use("/logs", logs);
 trainee.post("/send-request/:traineeId", (req, res) => {
   const { coachId } = req.query;
   const { traineeId } = req.params;
-  if (!Number(coachId) || !Number(traineeId))
+  if (!Number(coachId) || !Number(traineeId)) {
     return res.status(400).send("Invalid ID");
+  }
   models.CoachRequest.create({ trainee_id: traineeId, coach_id: coachId })
     .then(() => {
       res.status(201).send("Request Sent");
