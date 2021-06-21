@@ -90,7 +90,6 @@ function SignUp() {
         className="show-password"
         onMouseDown={() => {
           passwordRef.current.type = "text";
-          console.log(passwordRef);
         }}
         onMouseUp={() => {
           passwordRef.current.type = "password";
