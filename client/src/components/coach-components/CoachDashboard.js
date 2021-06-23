@@ -15,9 +15,6 @@ function CoachDashboard({ user, userId }) {
     }
   }, [user, userId]);
 
-  useEffect(() => {
-    console.log(details);
-  }, [details]);
   return (
     <div className="coach-dashboard">
       {details ? (

@@ -90,9 +90,4 @@ trainee.get("/meal/show/:traineeId", async (req, res) => {
   res.status(200).send(Meals);
 });
 
-trainee.get("/coaches/show/all", async (req, res) => {
-  const coaches = await models.Coach.findAll();
-  if (!coaches || coaches.length === 0) return res.status(200).send([]);
-  res.status(200).send(coaches);
-});
 module.exports = trainee;

@@ -3,16 +3,17 @@ import React, { useEffect, useState } from "react";
 import {} from "react-router-dom";
 
 function CoachesList({ userId, signOut }) {
-  const [clients, setClients] = useState();
-  const [requests, setRequests] = useState();
+  const [coaches, setCoaches] = useState();
 
   useEffect(async () => {
     if (!userId) return;
-    const requests = await axios.get("/api/coach/requests/show/" + userId);
+    let { data } = await axios.get("/api/coach/show/all");
+    setCoaches(data);
   }, [userId]);
   return (
     <div>
       <h1>Coaches:</h1>
+      {coaches && coaches.map((item) => <h3>{item.email}</h3>)}
     </div>
   );
 }

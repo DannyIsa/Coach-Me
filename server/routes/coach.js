@@ -136,6 +136,12 @@ coach.get("/clients/show/:userId", async (req, res) => {
   res.status(200).send(trainees);
 });
 
+coach.get("/show/all", async (req, res) => {
+  const coaches = await models.Coach.findAll();
+  if (!coaches || coaches.length === 0) return res.status(200).send([]);
+  res.status(200).send(coaches);
+});
+
 coach.get("/workout/show/:coachId", (req, res) => {});
 
 coach.put("/workout/append/:coachId", (req, res) => {});
