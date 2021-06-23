@@ -1,35 +1,39 @@
 import axios from "axios";
-import React, { useEffect, useState, useHistory } from "react";
+import React, { useEffect, useState } from "react";
 
-function TraineeDashboard({ signOut, userId }) {
-  const history = useHistory();
-  const [previousWorkouts,setPreviousWorkouts] = useState([]);
-  
-  const getWorkoutsLog = () => axios.get("/workout/show/" + userId).then(({data}) => {
-    const workouts = data.map((workout, i) => {
-      console.log(workout);
-      setPreviousWorkouts(workouts)
-    })
-  } ).catch((err)=> {
-    console.log(err);
-  }) 
+function TraineeDashboard({ userDetails }) {
+  const [previousWorkouts, setPreviousWorkouts] = useState([]);
 
-useEffect(() => {
-    getWorkoutsLog();
-     }, [userId]);
+  const getWorkoutsLog = () =>
+    axios
+      .get("/api/log/workout/show/" + userDetails.id)
+      .then(({ data }) => {
+        const workouts = data.map((workout, i) => {
+          console.log(workout);
+          setPreviousWorkouts(workouts);
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+  useEffect(() => {
+    if (userDetails) getWorkoutsLog();
+  }, [userDetails]);
 
   return (
     <div>
       <h1>Trainee Dashboard</h1>
-      <h2>My previous workouts:
+      <h2>
+        My previous workouts:
         {previousWorkouts}
       </h2>
-      <button onClick={() => signOut(history)}>Sign Out</button>
     </div>
   );
 }
 
 export default TraineeDashboard;
 
-
-{/* <Link to="/trainee/coaches">Coaches</Link> */}
+{
+  /* <Link to="/trainee/coaches">Coaches</Link> */
+}

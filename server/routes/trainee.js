@@ -18,15 +18,16 @@ const trainee = Router();
 
 trainee.use(express.json());
 trainee.use("/logs", logs);
-trainee.post("/send-request/:traineeId", (req, res) => {
-  const { coachId } = req.query;
+
+trainee.post("/request/send/:traineeId", (req, res) => {
+  const { coachId } = req.body;
   const { traineeId } = req.params;
   if (!Number(coachId) || !Number(traineeId)) {
     return res.status(400).send("Invalid ID");
   }
   models.CoachRequest.create({ trainee_id: traineeId, coach_id: coachId })
-    .then(() => {
-      res.status(201).send("Request Sent");
+    .then((res) => {
+      res.status(201).send(res);
     })
     .catch((err) => {
       if (err.message === "Validation error") {
@@ -37,7 +38,7 @@ trainee.post("/send-request/:traineeId", (req, res) => {
           .then((data) => {
             if (!data[0])
               return res.status(404).send("No Trainee With That Id");
-            return res.status(201).send("Request Updated");
+            return res.status(201).send(data);
           })
           .catch((err) => {
             return res.status(400).send(err.message);
@@ -90,4 +91,12 @@ trainee.get("/meal/show/:traineeId", async (req, res) => {
   res.status(200).send(Meals);
 });
 
+trainee.get("/request/show/:traineeId", async (req, res) => {
+  const { traineeId } = req.params;
+  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
+  if (!trainee) return res.status(404).send("No Matching Id");
+  const request = await trainee.getCoachRequest();
+  if (!request) return res.status(200).send({ coach_id: 0 });
+  return res.status(200).send(request);
+});
 module.exports = trainee;
