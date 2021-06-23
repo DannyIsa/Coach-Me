@@ -1,12 +1,6 @@
 import "./styles/App.css";
 import React, { useState, useEffect } from "react";
-import {
-  Link,
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useHistory,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -17,10 +11,12 @@ import SignIn from "./components/SignIn";
 import Food from "./components/Food";
 import Check from "./components/Check";
 import Details from "./components/Details";
+import SignOutButton from "./components/SignOutButton";
 import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
+import CoachesList from "./components/trainee-components/CoachesList";
 
 import CoachDashboard from "./components/coach-components/CoachDashboard";
-import CoachClients from "./components/coach-components/CoachClients";
+import ClientsList from "./components/coach-components/ClientsList";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDXQY7ezPYUQoh3yJmWRZEalb9N-yieW-o",
@@ -82,6 +78,7 @@ function App() {
             // user is registered
             registered ? (
               <Switch>
+                <SignOutButton signOut={signOut} />
                 <Route exact path="/home">
                   {userType === "Coach" ? (
                     <CoachDashboard
@@ -99,7 +96,12 @@ function App() {
                 </Route>
                 {userType === "Coach" && (
                   <Route exact path="/coach/clients">
-                    <CoachClients userId={userId} />
+                    <ClientsList signOut={signOut} userId={userId} />
+                  </Route>
+                )}
+                {userType === "Trainee" && (
+                  <Route exact path="/trainee/coaches">
+                    <CoachesList signOut={signOut} userId={userId} />
                   </Route>
                 )}
                 <Route exact path="/food">
@@ -109,6 +111,7 @@ function App() {
             ) : (
               // user isn't registered
               <Switch>
+                <SignOutButton />
                 <Route exact path="/details">
                   <Details
                     userId={userId}
