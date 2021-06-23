@@ -100,7 +100,7 @@ logs.get("/workout/show/:traineeId", async (req, res) => {
   }
 
   const traineeWorkoutsLog = await models.WorkoutLog.findAll({
-    where: { id: traineeId },
+    where: { trainee_id: traineeId },
   });
 
   res.status(201).send(traineeWorkoutsLog);
@@ -115,7 +115,7 @@ logs.get("/measure/show/:traineeId", async (req, res) => {
   }
 
   const traineeMeasureLog = await models.MeasureLog.findAll({
-    where: { id: traineeId },
+    where: { trainee_id: traineeId },
   });
 
   res.status(201).send(traineeMeasureLog);
@@ -130,7 +130,7 @@ logs.get("/diet/show/:traineeId", async (req, res) => {
   }
 
   const traineeDietLog = await models.DietLog.findAll({
-    where: { id: traineeId },
+    where: { trainee_id: traineeId },
   });
 
   res.status(201).send(traineeDietLog);
