@@ -24,7 +24,10 @@ function Details({ userId, signOut, userType, setRegistered }) {
             obj.weight = data.get("weight");
           }
           axios
-            .put("/api/user/details/" + userId, { obj, type: userType })
+            .put("http://localhost:3001/api/user/details/" + userId, {
+              obj,
+              type: userType,
+            })
             .then(() => {
               setRegistered(true);
               history.push("/");

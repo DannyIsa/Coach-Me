@@ -23,7 +23,9 @@ function SignUp() {
         console.log("2");
         const { email } = data.user;
         axios
-          .post(`/api/user/register?type=${type}`, { email })
+          .post(`http://localhost:3001/api/user/register?type=${type}`, {
+            email,
+          })
           .then(() => {
             firebase.auth().onAuthStateChanged(() => {
               history.push("/");
@@ -41,7 +43,9 @@ function SignUp() {
       .createUserWithEmailAndPassword(emailInput, passwordInput)
       .then(() => {
         axios
-          .post(`/api/user/register?type=${type}`, { email: emailInput })
+          .post(`http://localhost:3001/api/user/register?type=${type}`, {
+            email: emailInput,
+          })
           .then(() => {
             firebase.auth().onAuthStateChanged(() => {
               history.push("/");

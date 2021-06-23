@@ -9,7 +9,7 @@ function CoachDashboard({ user, userId, signOut }) {
     if (userId) {
       console.log("yes");
       axios
-        .get("/api/coach/details/" + userId)
+        .get("http://localhost:3001/api/coach/details/" + userId)
         .then(({ data }) => {
           setDetails(data);
         })

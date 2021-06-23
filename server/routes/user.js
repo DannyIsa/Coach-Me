@@ -53,19 +53,22 @@ user.post("/register", async (req, res) => {
 user.get("/check/:email", async (req, res) => {
   const { email } = req.params;
   const coach = await models.Coach.findOne({ where: { email: email } });
-  if (coach)
+  if (coach) {
     return res.send({
       id: coach.toJSON().id,
       valid: checkValid(coach.toJSON()),
       type: "Coach",
     });
+  }
   const trainee = await models.Trainee.findOne({ where: { email } });
-  if (trainee)
+
+  if (trainee) {
     return res.send({
       id: trainee.toJSON().id,
       valid: checkValid(trainee.toJSON()),
       type: "Trainee",
     });
+  }
   res.status(404).send("No Client With That Email");
 });
 
@@ -73,9 +76,10 @@ user.put("/details/:id", (req, res) => {
   const { id } = req.params;
   const { type, obj } = req.body;
   let query;
-  if ((type !== "Coach" && type !== "Trainee") || !obj)
+  if ((type !== "Coach" && type !== "Trainee") || !obj) {
     return res.status(400).send("Invalid Client");
-  if (type === "Coach")
+  }
+  if (type === "Coach") {
     query = {
       name: obj.name,
       birthdate: obj.birthdate,
@@ -84,7 +88,7 @@ user.put("/details/:id", (req, res) => {
       avg_rating: 0,
       rating_count: 0,
     };
-  else if (type === "Trainee")
+  } else if (type === "Trainee") {
     query = {
       name: obj.name,
       birthdate: obj.birthdate,
@@ -95,6 +99,7 @@ user.put("/details/:id", (req, res) => {
       //calculate with weight and height
       daily_calorie_goal: 0,
     };
+  }
   console.log(query);
 
   if (!checkValid(query)) return res.status(400).send("Invalid Details");
