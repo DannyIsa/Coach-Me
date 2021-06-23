@@ -1,12 +1,11 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function TraineeDashboard({ signOut }) {
-  const history = useHistory();
+function TraineeDashboard() {
   return (
     <div>
       <h1>Trainee Dashboard</h1>
-      <button onClick={() => signOut(history)}>Sign Out</button>
+      <Link to="/trainee/coaches">Coaches</Link>
     </div>
   );
 }

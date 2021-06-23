@@ -1,13 +1,11 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function CoachDashboard({ user, userId, signOut }) {
-  const history = useHistory();
+function CoachDashboard({ user, userId }) {
   const [details, setDetails] = useState();
   useEffect(() => {
     if (userId) {
-      console.log("yes");
       axios
         .get("http://localhost:3001/api/coach/details/" + userId)
         .then(({ data }) => {
@@ -25,8 +23,6 @@ function CoachDashboard({ user, userId, signOut }) {
       {details ? (
         <>
           <h1>{`Hello Coach ${details.name}`}</h1>
-
-          <button onClick={() => signOut(history)}>Sign Out</button>
 
           <div className="dashboard-items">
             <Link to="/coach/clients">
