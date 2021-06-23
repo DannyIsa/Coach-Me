@@ -1,25 +1,50 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useHistory } from "react";
 
-function TraineeDashboard({ userDetails }) {
+function TraineeDashboard({ signOut, userId }) {
+  // const history = useHistory();
   const [previousWorkouts, setPreviousWorkouts] = useState([]);
+  const [dietLog, setDietLog] = useState([]);
 
   const getWorkoutsLog = () =>
     axios
-      .get("/api/log/workout/show/" + userDetails.id)
+      .get("http://localhost:3001/api/logs/workout/show/" + userId)
       .then(({ data }) => {
-        const workouts = data.map((workout, i) => {
-          console.log(workout);
-          setPreviousWorkouts(workouts);
-        });
+        if (data) {
+          console.log(data);
+          const workouts = data.map((workout, i) => {
+            console.log(workout);
+            setPreviousWorkouts(workouts);
+          });
+        }
       })
       .catch((err) => {
         console.log(err);
       });
 
   useEffect(() => {
-    if (userDetails) getWorkoutsLog();
-  }, [userDetails]);
+    getWorkoutsLog();
+  }, [userId]);
+
+  const getdietLog = () =>
+    axios
+      .get("http://localhost:3001/api/logs/diet/show/" + userId)
+      .then(({ data }) => {
+        if (data) {
+          console.log(data);
+          const dietLog = data.map((log, i) => {
+            console.log(log);
+            setDietLog(dietLog);
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+  useEffect(() => {
+    getdietLog();
+  }, [userId]);
 
   return (
     <div>
@@ -28,6 +53,7 @@ function TraineeDashboard({ userDetails }) {
         My previous workouts:
         {previousWorkouts}
       </h2>
+      {/* <button onClick={() => signOut(history)}>Sign Out</button> */}
     </div>
   );
 }
