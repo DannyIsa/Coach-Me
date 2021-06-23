@@ -23,7 +23,7 @@ function SignUp() {
         console.log("2");
         const { email } = data.user;
         axios
-          .post(`http://localhost:3001/api/user/register?type=${type}`, {
+          .post(`/api/user/register?type=${type}`, {
             email,
           })
           .then(() => {
@@ -43,7 +43,7 @@ function SignUp() {
       .createUserWithEmailAndPassword(emailInput, passwordInput)
       .then(() => {
         axios
-          .post(`http://localhost:3001/api/user/register?type=${type}`, {
+          .post(`/api/user/register?type=${type}`, {
             email: emailInput,
           })
           .then(() => {

@@ -5,7 +5,7 @@ function CoachClients({ userId }) {
   const [clients, setClients] = useState();
   useEffect(() => {
     if (!userId) return;
-    axios.get("http://localhost:3001/api/coach/");
+    axios.get("/api/coach/");
   }, [userId]);
   return (
     <div>

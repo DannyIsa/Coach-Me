@@ -52,7 +52,7 @@ function App() {
     if (user) {
       const { email } = user;
       axios
-        .get("http://localhost:3001/api/user/check/" + email)
+        .get("/api/user/check/" + email)
         .then(({ data }) => {
           console.log(data);
           setUserType(data.type);
