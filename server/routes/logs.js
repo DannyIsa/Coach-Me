@@ -99,11 +99,11 @@ logs.get("/workout/show/:traineeId", async (req, res) => {
     return res.status(404).send("Invalid ID");
   }
 
-  const traineeDietLog = await models.DietLog.findAll({
+  const traineeWorkoutsLog = await models.WorkoutLog.findAll({
     where: { id: traineeId },
   });
 
-  res.status(201).send(traineeDietLog);
+  res.status(201).send(traineeWorkoutsLog);
 });
 
 logs.get("/measure/show/:traineeId", async (req, res) => {
