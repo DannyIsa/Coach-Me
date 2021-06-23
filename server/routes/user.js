@@ -31,8 +31,10 @@ function checkValid(client) {
 user.post("/register", async (req, res) => {
   const { type } = req.query;
   const { email } = req.body;
-  if (type !== "Coach" && type !== "Trainee")
+  console.log(type);
+  if (type !== "Coach" && type !== "Trainee") {
     return res.status(400).send("Invalid");
+  }
 
   const trainee = await models.Trainee.findOne({ where: { email } });
   const coach = await models.Coach.findOne({ where: { email } });
@@ -50,25 +52,39 @@ user.post("/register", async (req, res) => {
     });
 });
 
+user.post("/login", async (req, res) => {
+  const { email } = req.body;
+  const trainee = await models.Trainee.findOne({ where: { email } });
+  if (trainer) {
+    return res.status(200).send(trainee);
+  }
+  const coach = await models.Coach.findOne({ where: { email } });
+  if (coach) {
+    return res.status(200).send(coach);
+  }
+  return res.status(400).send(`${email} is not registered`);
+});
+
 user.get("/check/:email", async (req, res) => {
   const { email } = req.params;
-  const coach = await models.Coach.findOne({ where: { email: email } });
-  if (coach) {
-    return res.send({
-      id: coach.toJSON().id,
-      valid: checkValid(coach.toJSON()),
-      type: "Coach",
-    });
-  }
-  const trainee = await models.Trainee.findOne({ where: { email } });
 
+  const trainee = await models.Trainee.findOne({ where: { email: email } });
   if (trainee) {
-    return res.send({
+    return res.status(200).send({
       id: trainee.toJSON().id,
       valid: checkValid(trainee.toJSON()),
       type: "Trainee",
     });
   }
+  const coach = await models.Coach.findOne({ where: { email: email } });
+  if (coach) {
+    return res.status(200).send({
+      id: coach.toJSON().id,
+      valid: checkValid(coach.toJSON()),
+      type: "Coach",
+    });
+  }
+
   res.status(404).send("No Client With That Email");
 });
 
@@ -100,7 +116,7 @@ user.put("/details/:id", (req, res) => {
       daily_calorie_goal: 0,
     };
   }
-  console.log(query);
+  // console.log(query);
 
   if (!checkValid(query)) return res.status(400).send("Invalid Details");
 

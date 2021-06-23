@@ -8,7 +8,7 @@ function ClientsList({ userId }) {
   useEffect(() => {
     if (!userId) return;
     axios
-      .get("/api/coach/requests/show/" + userId)
+      .get("http://localhost:3001/api/coach/requests/show/" + userId)
       .then(({ data }) => {
         console.log(data);
       })
