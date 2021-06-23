@@ -8,7 +8,9 @@ function CoachesList({ userId, signOut }) {
 
   useEffect(async () => {
     if (!userId) return;
-    const requests = await axios.get("/api/coach/requests/show/" + userId);
+    const requests = await axios.get(
+      "http://localhost:3001/api/coach/requests/show/" + userId
+    );
   }, [userId]);
   return (
     <div>

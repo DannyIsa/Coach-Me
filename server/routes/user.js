@@ -31,14 +31,14 @@ function checkValid(client) {
 user.post("/register", async (req, res) => {
   const { type } = req.query;
   const { email } = req.body;
-  // console.log(type);
+  console.log(type);
   if (type !== "Coach" && type !== "Trainee") {
     return res.status(400).send("Invalid");
   }
 
   const trainee = await models.Trainee.findOne({ where: { email } });
-  if (trainee || coach) return res.status(200).send("User already exists");
   const coach = await models.Coach.findOne({ where: { email } });
+  if (trainee || coach) return res.status(200).send("User already exists");
 
   let query = { email };
   if (type === "Trainee") query.coach_id = 0;
@@ -68,7 +68,7 @@ user.post("/login", async (req, res) => {
 user.get("/check/:email", async (req, res) => {
   const { email } = req.params;
 
-  const trainee = await models.Trainee.findOne({ where: { email } });
+  const trainee = await models.Trainee.findOne({ where: { email: email } });
   if (trainee) {
     return res.status(200).send({
       id: trainee.toJSON().id,

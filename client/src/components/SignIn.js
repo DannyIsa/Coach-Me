@@ -34,7 +34,7 @@ function SignIn() {
         console.log("2");
         const { email } = data.user;
         axios
-          .post("/api/user/login", {
+          .post("http://localhost:3001/api/user/login", {
             email,
           })
           .then((res) => {
