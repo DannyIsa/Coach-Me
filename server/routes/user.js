@@ -71,7 +71,7 @@ user.get("/check/:email", async (req, res) => {
   const trainee = await models.Trainee.findOne({ where: { email: email } });
   if (trainee) {
     return res.status(200).send({
-      id: trainee.toJSON().id,
+      details: trainee.toJSON(),
       valid: checkValid(trainee.toJSON()),
       type: "Trainee",
     });
@@ -79,7 +79,7 @@ user.get("/check/:email", async (req, res) => {
   const coach = await models.Coach.findOne({ where: { email: email } });
   if (coach) {
     return res.status(200).send({
-      id: coach.toJSON().id,
+      details: coach.toJSON(),
       valid: checkValid(coach.toJSON()),
       type: "Coach",
     });

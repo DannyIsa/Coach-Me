@@ -16,14 +16,6 @@ const { Router } = require("express");
 const coach = Router();
 coach.use(express.json());
 
-coach.get("/details/:id", async (req, res) => {
-  const { id } = req.params;
-  if (!Number(id)) return res.status(400).send("Invalid ID");
-  const coach = await models.Coach.findOne({ where: { id } });
-  if (!coach) return res.status(404).send("No Matching Id");
-  return res.status(200).send(coach);
-});
-
 coach.get("/requests/show/:coachId", async (req, res) => {
   const { coachId } = req.params;
   if (!Number(coachId)) return res.status(400).send("Invalid ID");
@@ -34,11 +26,15 @@ coach.get("/requests/show/:coachId", async (req, res) => {
   res.status(200).send(requests);
 });
 
-coach.put("/request/accept/:coachId", (req, res) => {
+coach.put("/request/accept/:coachId", async (req, res) => {
   const { coachId } = req.params;
   const { traineeId } = req.query;
   if (!Number(coachId) || !Number(traineeId))
     return res.status(400).send("Invalid ID");
+  const request = await models.CoachRequest.findOne({
+    where: { traineeId, coachId },
+  });
+  if (!request) return res.status(404).send("request not available");
   models.Trainee.update({ coach_id: coachId }, { where: { id: traineeId } })
     .then((data) => {
       if (!data[0]) return res.status(404).send("No Client With That Id");

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-function Details({ userId, userType, setRegistered }) {
+function Details({ userDetails, userType, setRegistered }) {
   const history = useHistory();
   const [other, setOther] = useState(false);
   return (
@@ -23,7 +23,7 @@ function Details({ userId, userType, setRegistered }) {
             obj.weight = data.get("weight");
           }
           axios
-            .put("http://localhost:3001/api/user/details/" + userId, {
+            .put("http://localhost:3001/api/user/details/" + userDetails.id, {
               obj,
               type: userType,
             })

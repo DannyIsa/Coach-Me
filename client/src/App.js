@@ -34,7 +34,7 @@ function App() {
   const [user, loading] = useAuthState(auth);
   const [registered, setRegistered] = useState();
   const [userType, setUserType] = useState();
-  const [userId, setUserId] = useState();
+  const [userDetails, setUserDetails] = useState();
   function signOut(history) {
     auth.signOut().then(() => {
       auth.onAuthStateChanged(() => {
@@ -53,7 +53,7 @@ function App() {
           console.log(data);
           setUserType(data.type);
           setRegistered(data.valid);
-          setUserId(data.id);
+          setUserDetails({ ...data.details });
         })
         .catch((err) => {
           console.log(err);
@@ -84,25 +84,25 @@ function App() {
                     {userType === "Coach" ? (
                       <CoachDashboard
                         user={user}
-                        userId={userId}
+                        userDetails={userDetails}
                         signOut={signOut}
                       />
                     ) : (
                       <TraineeDashboard
                         user={user}
-                        userId={userId}
+                        userDetails={userDetails}
                         signOut={signOut}
                       />
                     )}
                   </Route>
                   {userType === "Coach" && (
                     <Route exact path="/coach/clients">
-                      <ClientsList signOut={signOut} userId={userId} />
+                      <ClientsList signOut={signOut} userDetails={userDetails} />
                     </Route>
                   )}
                   {userType === "Trainee" && (
                     <Route exact path="/trainee/coaches">
-                      <CoachesList signOut={signOut} userId={userId} />
+                      <CoachesList signOut={signOut} userDetails={userDetails} />
                     </Route>
                   )}
                   <Route exact path="/food">
@@ -117,7 +117,7 @@ function App() {
                 <Switch>
                   <Route exact path="/details">
                     <Details
-                      userId={userId}
+                      userDetails={userDetails}
                       signOut={signOut}
                       userType={userType}
                       setRegistered={setRegistered}
