@@ -16,12 +16,18 @@ function CoachesList({ userDetails }) {
     if (requestData) setRequest(requestData);
   }, [userDetails]);
 
-  async function sendRequest(coachId, traineeId) {
-    //fix the api function for constant update
+  function sendRequest(coachId, traineeId, traineeName) {
+    const content = prompt("Enter Your Request Content");
+    if (!content) return;
     axios
-      .post(`/api/trainee/request/send/${traineeId}`, { coachId })
-      .then((res) => {
-        console.log(res);
+      .post(`/api/trainee/request/send/${traineeId}`, {
+        coachId,
+        traineeName,
+        content,
+      })
+      .then(({ data }) => {
+        console.log(data);
+        setRequest(data);
       })
       .catch((err) => console.log(err));
   }
@@ -38,7 +44,11 @@ function CoachesList({ userDetails }) {
             ) : item.id === request.coach_id ? (
               "Request Pending"
             ) : (
-              <button onClick={() => sendRequest(item.id, userDetails.id)}>
+              <button
+                onClick={() =>
+                  sendRequest(item.id, userDetails.id, userDetails.name)
+                }
+              >
                 Send Request
               </button>
             )}

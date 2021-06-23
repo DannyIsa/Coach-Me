@@ -19,6 +19,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
+      trainee_name: {
+        allowNull: false,
+        type: DataTypes.STRING,
+      },
       content: {
         type: Sequelize.STRING,
       },

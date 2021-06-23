@@ -20,25 +20,33 @@ trainee.use(express.json());
 trainee.use("/logs", logs);
 
 trainee.post("/request/send/:traineeId", (req, res) => {
-  const { coachId } = req.body;
+  const { coachId, traineeName, content } = req.body;
   const { traineeId } = req.params;
   if (!Number(coachId) || !Number(traineeId)) {
     return res.status(400).send("Invalid ID");
   }
-  models.CoachRequest.create({ trainee_id: traineeId, coach_id: coachId })
+  if (!content || !traineeName) {
+    return res.status(400).send("Invalid Content");
+  }
+  models.CoachRequest.create({
+    trainee_id: traineeId,
+    coach_id: coachId,
+    trainee_name: traineeName,
+    content,
+  })
     .then((res) => {
       res.status(201).send(res);
     })
-    .catch((err) => {
+    .catch(async (err) => {
       if (err.message === "Validation error") {
-        models.CoachRequest.update(
-          { coach_id: coachId },
-          { where: { trainee_id: traineeId } }
-        )
-          .then((data) => {
-            if (!data[0])
-              return res.status(404).send("No Trainee With That Id");
-            return res.status(201).send(data);
+        const request = await models.CoachRequest.findOne({
+          where: { trainee_id: traineeId },
+        });
+        if (!request) return res.status(404).send("No Trainee With That Id");
+        request
+          .update({ coach_id: coachId, content })
+          .then(() => {
+            return res.status(201).send(request);
           })
           .catch((err) => {
             return res.status(400).send(err.message);

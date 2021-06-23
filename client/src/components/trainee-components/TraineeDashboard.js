@@ -1,5 +1,6 @@
 import axios from "axios";
-import React, { useEffect, useState, useHistory } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function TraineeDashboard({ signOut, userId }) {
   // const history = useHistory();
@@ -53,7 +54,7 @@ function TraineeDashboard({ signOut, userId }) {
         My previous workouts:
         {previousWorkouts}
       </h2>
-      {/* <button onClick={() => signOut(history)}>Sign Out</button> */}
+      <Link to="/trainee/coaches">Coaches List</Link>
     </div>
   );
 }
