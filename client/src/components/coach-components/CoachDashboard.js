@@ -6,7 +6,6 @@ function CoachDashboard({ user, userId }) {
   const [details, setDetails] = useState();
   useEffect(() => {
     if (userId) {
-      console.log("yes");
       axios
         .get("http://localhost:3001/api/coach/details/" + userId)
         .then(({ data }) => {

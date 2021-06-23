@@ -6,18 +6,13 @@ function CoachesList({ userId, signOut }) {
   const [clients, setClients] = useState();
   const [requests, setRequests] = useState();
 
-  useEffect(() => {
+  useEffect(async () => {
     if (!userId) return;
-    axios
-      .get("/api/coach/requests/show/" + userId)
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch((err) => console.log(err));
+    const requests = await axios.get("/api/coach/requests/show/" + userId);
   }, [userId]);
   return (
     <div>
-      <h1>Your Clients:</h1>
+      <h1>Coaches:</h1>
     </div>
   );
 }

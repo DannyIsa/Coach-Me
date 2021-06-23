@@ -38,7 +38,7 @@ function App() {
   function signOut(history) {
     auth.signOut().then(() => {
       auth.onAuthStateChanged(() => {
-        setRegistered(false);
+        setRegistered(undefined);
         history.push("/");
       });
     });
@@ -77,50 +77,54 @@ function App() {
           {user ? (
             // user is registered
             registered ? (
-              <Switch>
+              <>
                 <SignOutButton signOut={signOut} />
-                <Route exact path="/home">
-                  {userType === "Coach" ? (
-                    <CoachDashboard
-                      user={user}
-                      userId={userId}
-                      signOut={signOut}
-                    />
-                  ) : (
-                    <TraineeDashboard
-                      user={user}
-                      userId={userId}
-                      signOut={signOut}
-                    />
+                <Switch>
+                  <Route exact path="/home">
+                    {userType === "Coach" ? (
+                      <CoachDashboard
+                        user={user}
+                        userId={userId}
+                        signOut={signOut}
+                      />
+                    ) : (
+                      <TraineeDashboard
+                        user={user}
+                        userId={userId}
+                        signOut={signOut}
+                      />
+                    )}
+                  </Route>
+                  {userType === "Coach" && (
+                    <Route exact path="/coach/clients">
+                      <ClientsList signOut={signOut} userId={userId} />
+                    </Route>
                   )}
-                </Route>
-                {userType === "Coach" && (
-                  <Route exact path="/coach/clients">
-                    <ClientsList signOut={signOut} userId={userId} />
+                  {userType === "Trainee" && (
+                    <Route exact path="/trainee/coaches">
+                      <CoachesList signOut={signOut} userId={userId} />
+                    </Route>
+                  )}
+                  <Route exact path="/food">
+                    <Food user={user} />
                   </Route>
-                )}
-                {userType === "Trainee" && (
-                  <Route exact path="/trainee/coaches">
-                    <CoachesList signOut={signOut} userId={userId} />
-                  </Route>
-                )}
-                <Route exact path="/food">
-                  <Food user={user} />
-                </Route>
-              </Switch>
+                </Switch>
+              </>
             ) : (
               // user isn't registered
-              <Switch>
-                <SignOutButton />
-                <Route exact path="/details">
-                  <Details
-                    userId={userId}
-                    signOut={signOut}
-                    userType={userType}
-                    setRegistered={setRegistered}
-                  />
-                </Route>
-              </Switch>
+              <>
+                <SignOutButton signOut={signOut} />
+                <Switch>
+                  <Route exact path="/details">
+                    <Details
+                      userId={userId}
+                      signOut={signOut}
+                      userType={userType}
+                      setRegistered={setRegistered}
+                    />
+                  </Route>
+                </Switch>
+              </>
             )
           ) : (
             <Switch>

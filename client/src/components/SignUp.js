@@ -14,13 +14,11 @@ function SignUp() {
   const history = useHistory();
 
   const SignUpWithGoogle = () => {
-    console.log("1");
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase
       .auth()
       .signInWithPopup(provider)
       .then(async (data) => {
-        console.log("2");
         const { email } = data.user;
         axios
           .post(`/api/user/register?type=${type}`, {
