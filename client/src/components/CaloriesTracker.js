@@ -12,7 +12,7 @@ export default function CaloriesTracker({ user }) {
     const traineesDailyCalorieGoal = user.dailyCalorieGoal;
     setTotalCalories(traineesDailyCalorieGoal);
     axios
-      .get(`/api/logs/diet/show/${user.id}`)
+      .get(`http://localhost:3001/api/logs/diet/show/${user.id}`)
       .then((res) => {
         const {
           total_calories,

@@ -52,7 +52,7 @@ coach.delete("/request/decline/:coachId", (req, res) => {
     where: { trainee_id: traineeId, coach_id: coachId },
   })
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       if (!data) return res.status(404).send("No Client With That Id");
       res.status(200).send("Request Declined");
     })
@@ -93,7 +93,7 @@ coach.post("/workout/new/:coachId", async (req, res) => {
   const { coachId } = req.params;
   const { name, sets, exercise_ids } = req.body;
   if (!Number(coachId)) return res.status(400).send("Invalid ID");
-  console.log(exercise_ids);
+  // console.log(exercise_ids);
   const exercises = await models.ExerciseSet.findAll({
     where: { id: exercise_ids },
   });
