@@ -26,28 +26,14 @@ function SignIn() {
   };
 
   const SignInWithGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then(async (data) => {
-        console.log("2");
-        const { email } = data.user;
-        axios
-          .post("http://localhost:3001/api/user/login", {
-            email,
-          })
-          .then((res) => {
-            console.log(res);
-            // if ()
-            // firebase.auth().onAuthStateChanged(() => {
-            //   history.push("/");
-            // });
-          })
-          .catch((err) => {
-            setError(err.message);
-          });
-      });
+    // const provider = new firebase.auth.GoogleAuthProvider();
+    // firebase
+    //   .auth()
+    //   .signInWithPopup(provider)
+    //   .then((res) => {
+    //     console.log(res);
+    //   });
+    console.log(firebase.auth());
   };
 
   return (
