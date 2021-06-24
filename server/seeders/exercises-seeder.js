@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert("exercises", [
+    return queryInterface.bulkInsert("exercises", [
       {
         name: "Arnold Press",
         equipment: "Dumbbells",
@@ -212,7 +212,7 @@ module.exports = {
         type: "Weight",
         muscle: "Legs",
         image:
-          "_KneelingGluteKickBackSelf2_1_10.gif (https://dl.airtable.com/I8w2TckURdenkD5E9hXl__KneelingGluteKickBackSelf2_1_10.gif),kickbacks_donkey_kicks_on_the_smith_machine_ifbb_bikini_pro_training_glutes.gif (https://dl.airtable.com/Od3Fpm51SjuPFoNp6QNh_kickbacks_donkey_kicks_on_the_smith_machine_ifbb_bikini_pro_training_glutes.gif)",
+          "kickbacks_donkey_kicks_on_the_smith_machine_ifbb_bikini_pro_training_glutes.gif (https://dl.airtable.com/Od3Fpm51SjuPFoNp6QNh_kickbacks_donkey_kicks_on_the_smith_machine_ifbb_bikini_pro_training_glutes.gif)",
         description: "",
         created_at: new Date(),
         updated_at: new Date(),
@@ -470,7 +470,7 @@ module.exports = {
         type: "Cardio",
         muscle: "Core,Full Body",
         image:
-          "mountain-climbers-gif-3.gif (https://dl.airtable.com/irHgy8wcTOaOoGUxhSxa_mountain-climbers-gif-3.gif),BOSU_Mountain_Climbers.gif (https://dl.airtable.com/7XTSRHViSDKTEcW1WqLg_BOSU_Mountain_Climbers.gif)",
+          "mountain-climbers-gif-3.gif (https://dl.airtable.com/irHgy8wcTOaOoGUxhSxa_mountain-climbers-gif-3.gif)",
         description: "",
         created_at: new Date(),
         updated_at: new Date(),
@@ -793,7 +793,7 @@ module.exports = {
         type: "Weight",
         muscle: "Legs",
         image:
-          "standing abduction.jpg (https://dl.airtable.com/5som2SlmRjmkjITXHWtQ_standing%20abduction.jpg),Athletic-woman-doing-side-kick-resistance-band-exercise-1024x954.jpg (https://dl.airtable.com/a1WhvoWCTpB8KuxQc1Up_Athletic-woman-doing-side-kick-resistance-band-exercise-1024x954.jpg)",
+          "standing abduction.jpg (https://dl.airtable.com/5som2SlmRjmkjITXHWtQ_standing%20abduction.jpg)",
         description: "",
         created_at: new Date(),
         updated_at: new Date(),
