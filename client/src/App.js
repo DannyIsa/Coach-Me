@@ -50,7 +50,7 @@ function App() {
       axios
         .get("http://localhost:3001/api/user/check/" + email)
         .then(({ data }) => {
-          console.log(data);
+          // console.log(data);
           setUserType(data.type);
           setRegistered(data.valid);
           setUserDetails({ ...data.details });
@@ -97,12 +97,18 @@ function App() {
                   </Route>
                   {userType === "Coach" && (
                     <Route exact path="/coach/clients">
-                      <ClientsList signOut={signOut} userDetails={userDetails} />
+                      <ClientsList
+                        signOut={signOut}
+                        userDetails={userDetails}
+                      />
                     </Route>
                   )}
                   {userType === "Trainee" && (
                     <Route exact path="/trainee/coaches">
-                      <CoachesList signOut={signOut} userDetails={userDetails} />
+                      <CoachesList
+                        signOut={signOut}
+                        userDetails={userDetails}
+                      />
                     </Route>
                   )}
                   <Route exact path="/food">
@@ -131,7 +137,7 @@ function App() {
               {/* user isn't logged in */}
 
               <Route exact path="/sign-in">
-                <SignIn auth={auth} />
+                <SignIn auth={auth} signOut={signOut} />
               </Route>
               <Route exact path="/sign-up">
                 <SignUp auth={auth} />
