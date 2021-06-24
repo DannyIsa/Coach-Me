@@ -34,8 +34,8 @@ trainee.post("/request/send/:traineeId", (req, res) => {
     trainee_name: traineeName,
     content,
   })
-    .then((res) => {
-      res.status(201).send(res);
+    .then((data) => {
+      res.status(201).send(data);
     })
     .catch(async (err) => {
       if (err.message === "Validation error") {

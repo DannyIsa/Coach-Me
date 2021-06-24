@@ -32,14 +32,14 @@ coach.put("/request/accept/:coachId", async (req, res) => {
   if (!Number(coachId) || !Number(traineeId))
     return res.status(400).send("Invalid ID");
   const request = await models.CoachRequest.findOne({
-    where: { traineeId, coachId },
+    where: { trainee_id: traineeId, coach_id: coachId },
   });
   if (!request) return res.status(404).send("request not available");
   models.Trainee.update({ coach_id: coachId }, { where: { id: traineeId } })
     .then((data) => {
       if (!data[0]) return res.status(404).send("No Client With That Id");
       models.CoachRequest.destroy({
-        where: { id: traineeId, coach_id: coachId },
+        where: { trainee_id: traineeId, coach_id: coachId },
       })
         .then(() => {
           res.status(200).send("Request Accepted");
@@ -49,7 +49,7 @@ coach.put("/request/accept/:coachId", async (req, res) => {
     .catch((err) => res.status(400).send(err.message));
 });
 
-coach.delete("/request/decline/:coachId", (req, res) => {
+coach.put("/request/decline/:coachId", (req, res) => {
   const { coachId } = req.params;
   const { traineeId } = req.query;
   if (!Number(coachId) || !Number(traineeId))
@@ -58,8 +58,9 @@ coach.delete("/request/decline/:coachId", (req, res) => {
     where: { trainee_id: traineeId, coach_id: coachId },
   })
     .then((data) => {
-      // console.log(data);
-      if (!data) return res.status(404).send("No Client With That Id");
+      if (!data) {
+        return res.status(404).send("No Client With That Id");
+      }
       res.status(200).send("Request Declined");
     })
     .catch((err) => res.status(400).send(err.message));

@@ -34,26 +34,26 @@ function CoachesList({ userDetails }) {
   return (
     <div>
       <h1>Coaches:</h1>
-      {coaches &&
-        request &&
-        coaches.map((item, index) => (
-          <div className="coaches-item" key={"C" + index}>
-            <h3>{item.email}</h3>
-            {item.id === userDetails.coach_id ? (
-              "Your Coach"
-            ) : item.id === request.coach_id ? (
-              "Request Pending"
-            ) : (
-              <button
-                onClick={() =>
-                  sendRequest(item.id, userDetails.id, userDetails.name)
-                }
-              >
-                Send Request
-              </button>
-            )}
-          </div>
-        ))}
+      {coaches && request
+        ? coaches.map((item, index) => (
+            <div className="coaches-item" key={"C" + index}>
+              <h3>{item.email}</h3>
+              {item.id === userDetails.coach_id ? (
+                "Your Coach"
+              ) : item.id === request.coach_id ? (
+                "Request Pending"
+              ) : (
+                <button
+                  onClick={() =>
+                    sendRequest(item.id, userDetails.id, userDetails.name)
+                  }
+                >
+                  Send Request
+                </button>
+              )}
+            </div>
+          ))
+        : "Loading..."}
     </div>
   );
 }
