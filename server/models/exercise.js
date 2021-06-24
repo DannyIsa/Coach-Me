@@ -20,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
       muscle: DataTypes.STRING,
       image: DataTypes.STRING,
       type: DataTypes.STRING,
-      videos: DataTypes.STRING,
       description: DataTypes.STRING,
       equipment: DataTypes.STRING,
     },

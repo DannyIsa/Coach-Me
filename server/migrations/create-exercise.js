@@ -22,9 +22,6 @@ module.exports = {
       type: {
         type: Sequelize.STRING,
       },
-      videos: {
-        type: Sequelize.STRING,
-      },
       description: {
         type: Sequelize.STRING,
       },
