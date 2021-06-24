@@ -52,13 +52,15 @@ user.post("/register", async (req, res) => {
     });
 });
 
-user.post("/login", async (req, res) => {
-  const { email } = req.body;
-  const trainee = await models.Trainee.findOne({ where: { email } });
-  if (trainer) {
+user.get("/login/:email", async (req, res) => {
+  const { email } = req.params;
+
+  const trainee = await models.Trainee.findOne({ where: { email: email } });
+
+  if (trainee) {
     return res.status(200).send(trainee);
   }
-  const coach = await models.Coach.findOne({ where: { email } });
+  const coach = await models.Coach.findOne({ where: { email: email } });
   if (coach) {
     return res.status(200).send(coach);
   }

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import firebase from "firebase";
 import axios from "axios";
 
-function SignIn() {
+function SignIn({ signOut }) {
   const history = useHistory();
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
@@ -22,31 +22,6 @@ function SignIn() {
       })
       .catch((err) => {
         setError(err.message);
-      });
-  };
-
-  const SignInWithGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then(async (data) => {
-        console.log("2");
-        const { email } = data.user;
-        axios
-          .post("http://localhost:3001/api/user/login", {
-            email,
-          })
-          .then((res) => {
-            console.log(res);
-            // if ()
-            // firebase.auth().onAuthStateChanged(() => {
-            //   history.push("/");
-            // });
-          })
-          .catch((err) => {
-            setError(err.message);
-          });
       });
   };
 
@@ -88,14 +63,7 @@ function SignIn() {
       <br />
       <button onClick={signInWithPassword}>Sign In</button>
       <br />
-      <button name="google" onClick={SignInWithGoogle} className="google">
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/chat-service-d13a1.appspot.com/o/google-logo.png?alt=media&token=47d2d019-037d-418c-abef-230317fe1393"
-          width="20px"
-          height="20px"
-        />
-        Sign In with google
-      </button>
+
       <br />
 
       <button onClick={() => history.push("/sign-up")}>Not Registered?</button>

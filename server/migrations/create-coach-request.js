@@ -21,7 +21,7 @@ module.exports = {
       },
       trainee_name: {
         allowNull: false,
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
       },
       content: {
         type: Sequelize.STRING,

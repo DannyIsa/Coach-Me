@@ -102,8 +102,13 @@ logs.get("/workout/show/:traineeId", async (req, res) => {
   const traineeWorkoutsLog = await models.WorkoutLog.findAll({
     where: { trainee_id: traineeId },
   });
+  const workoutId = traineeWorkoutsLog.workout_id;
+  const workoutOfThisLog = await models.Workout.findOne({
+    where: { id: workoutId },
+  });
+  workoutOfThisLog.time = traineeWorkoutsLog.time;
 
-  res.status(201).send(traineeWorkoutsLog);
+  res.status(201).send(workoutOfThisLog);
 });
 
 logs.get("/measure/show/:traineeId", async (req, res) => {
