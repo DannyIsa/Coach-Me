@@ -5,7 +5,7 @@ module.exports = {
     await queryInterface.bulkInsert("exercises", [
       {
         name: "Arnold Press",
-        Equipment: "Dumbbells",
+        equipment: "Dumbbells",
         type: "Weight",
         muscle: "Arms",
         image:
@@ -16,7 +16,7 @@ module.exports = {
       },
       {
         name: "Bicep Curl",
-        Equipment: "Bar,Dumbbells,Cable",
+        equipment: "Bar,Dumbbells,Cable",
         type: "Weight,Machine",
         muscle: "Arms",
         image:
@@ -28,7 +28,7 @@ module.exports = {
       },
       {
         name: "Bicycle Crunch",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Weight",
         muscle: "Core",
         image: "200.gif (https://dl.airtable.com/Y0JUbM2YTfe8uRz0jb5w_200.gif)",
@@ -39,7 +39,7 @@ module.exports = {
       },
       {
         name: "Bounds",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Cardio,Laps",
         muscle: "Full Body,Legs",
         image:
@@ -50,7 +50,7 @@ module.exports = {
       },
       {
         name: "Box Jumps",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Plyo",
         muscle: "Full Body",
         image:
@@ -62,7 +62,7 @@ module.exports = {
       },
       {
         name: "Box Toe Touch",
-        Equipment: "Platform",
+        equipment: "Platform",
         type: "Cardio",
         muscle: "Legs",
         image:
@@ -73,7 +73,7 @@ module.exports = {
       },
       {
         name: "Broad Jump",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Plyo,Laps,Cardio",
         muscle: "Legs",
         image:
@@ -85,7 +85,7 @@ module.exports = {
       },
       {
         name: "Bulgarian Split Squat",
-        Equipment: "Bar,Dumbbells",
+        equipment: "Bar,Dumbbells",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -96,7 +96,7 @@ module.exports = {
       },
       {
         name: "Burpee",
-        Equipment: "Body Weight,Bosu Ball",
+        equipment: "Body Weight,Bosu Ball",
         type: "Plyo",
         muscle: "Full Body",
         image:
@@ -108,7 +108,7 @@ module.exports = {
       },
       {
         name: "Burpee Broad Jump",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Plyo,Laps",
         muscle: "Full Body",
         image:
@@ -119,7 +119,7 @@ module.exports = {
       },
       {
         name: "Butt Kickers",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Cardio",
         muscle: "Legs",
         image:
@@ -131,7 +131,7 @@ module.exports = {
       },
       {
         name: "Calf Raise",
-        Equipment: "Dumbbells,Machine",
+        equipment: "Dumbbells,Machine",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -143,7 +143,7 @@ module.exports = {
       },
       {
         name: "Chest Press",
-        Equipment: "Dumbbells",
+        equipment: "Dumbbells",
         type: "Weight",
         muscle: "Arms",
         image:
@@ -154,7 +154,7 @@ module.exports = {
       },
       {
         name: "Close to Wide Grip Burnout",
-        Equipment: "Dumbbells",
+        equipment: "Dumbbells",
         type: "Weight",
         muscle: "Arms",
         image: "4.gif (https://dl.airtable.com/EKGDlplSbeSlC8mY2jqH_4.gif)",
@@ -164,7 +164,7 @@ module.exports = {
       },
       {
         name: "Compass Jump",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Cardio",
         muscle: "Full Body",
         image:
@@ -175,7 +175,7 @@ module.exports = {
       },
       {
         name: "Crab Crawl",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Cardio,Laps",
         muscle: "Full Body",
         image:
@@ -186,7 +186,7 @@ module.exports = {
       },
       {
         name: "Curtsey Lunges",
-        Equipment: "Dumbbells,Bar",
+        equipment: "Dumbbells,Bar",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -197,7 +197,7 @@ module.exports = {
       },
       {
         name: "Deficit Squat",
-        Equipment: "Platform",
+        equipment: "Platform",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -208,7 +208,7 @@ module.exports = {
       },
       {
         name: "Donkey Kick",
-        Equipment: "Dumbbells,Band,Body Weight",
+        equipment: "Dumbbells,Band,Body Weight",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -219,7 +219,7 @@ module.exports = {
       },
       {
         name: "Fire Hydrant",
-        Equipment: "Band,Body Weight",
+        equipment: "Band,Body Weight",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -230,7 +230,7 @@ module.exports = {
       },
       {
         name: "Flutter Kick",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Weight",
         muscle: "Core",
         image:
@@ -242,7 +242,7 @@ module.exports = {
       },
       {
         name: "Frogger",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Plyo",
         muscle: "Full Body",
         image:
@@ -253,7 +253,7 @@ module.exports = {
       },
       {
         name: "Glute Bridge",
-        Equipment: "Band,Dumbbells",
+        equipment: "Band,Dumbbells",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -264,7 +264,7 @@ module.exports = {
       },
       {
         name: "Glute Bridge March",
-        Equipment: "Band,Platform",
+        equipment: "Band,Platform",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -275,7 +275,7 @@ module.exports = {
       },
       {
         name: "Goblet Squat",
-        Equipment: "Kettlebells,Dumbbells",
+        equipment: "Kettlebells,Dumbbells",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -286,7 +286,7 @@ module.exports = {
       },
       {
         name: "Halo",
-        Equipment: "Kettlebells,Dumbbells",
+        equipment: "Kettlebells,Dumbbells",
         type: "Weight",
         muscle: "Arms",
         image:
@@ -297,7 +297,7 @@ module.exports = {
       },
       {
         name: "Heart Pump",
-        Equipment: "Kettlebells,Dumbbells",
+        equipment: "Kettlebells,Dumbbells",
         type: "Weight",
         muscle: "Arms",
         image:
@@ -308,7 +308,7 @@ module.exports = {
       },
       {
         name: "High Knees",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Cardio",
         muscle: "Full Body",
         image:
@@ -320,7 +320,7 @@ module.exports = {
       },
       {
         name: "Jump Lunges",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Plyo,Cardio",
         muscle: "Legs",
         image:
@@ -331,7 +331,7 @@ module.exports = {
       },
       {
         name: "Jump Rope",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Cardio",
         muscle: "Full Body",
         image:
@@ -342,7 +342,7 @@ module.exports = {
       },
       {
         name: "Jumping Jack Push Press",
-        Equipment: "Medicine Ball",
+        equipment: "Medicine Ball",
         type: "Plyo",
         muscle: "Full Body",
         image:
@@ -353,7 +353,7 @@ module.exports = {
       },
       {
         name: "Jumping Jacks",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Cardio",
         muscle: "Full Body",
         image:
@@ -365,7 +365,7 @@ module.exports = {
       },
       {
         name: "Kettlebell Swing",
-        Equipment: "Kettlebells,Dumbbells",
+        equipment: "Kettlebells,Dumbbells",
         type: "Cardio,Weight",
         muscle: "Full Body",
         image:
@@ -377,7 +377,7 @@ module.exports = {
       },
       {
         name: "Knee Drive",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Plyo",
         muscle: "Full Body",
         image:
@@ -388,7 +388,7 @@ module.exports = {
       },
       {
         name: "Lateral Band Walk",
-        Equipment: "Band",
+        equipment: "Band",
         type: "Cardio,Laps",
         muscle: "Legs",
         image:
@@ -399,7 +399,7 @@ module.exports = {
       },
       {
         name: "Leg Pull Apart",
-        Equipment: "Band",
+        equipment: "Band",
         type: "Weight",
         muscle: "Legs,Back",
         image:
@@ -410,7 +410,7 @@ module.exports = {
       },
       {
         name: "Leg Raise",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Weight",
         muscle: "Core",
         image:
@@ -421,7 +421,7 @@ module.exports = {
       },
       {
         name: "Literally Just Jumping",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Plyo",
         muscle: "Full Body",
         image:
@@ -433,7 +433,7 @@ module.exports = {
       },
       {
         name: "Lying Leg Raises",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Weight",
         muscle: "Core",
         image:
@@ -444,7 +444,7 @@ module.exports = {
       },
       {
         name: "Military Plank",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Plyo",
         muscle: "Full Body,Arms",
         image:
@@ -455,7 +455,7 @@ module.exports = {
       },
       {
         name: "Monkey Jump",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Plyo,Cardio",
         muscle: "Full Body",
         image:
@@ -466,7 +466,7 @@ module.exports = {
       },
       {
         name: "Mountain Climbers",
-        Equipment: "Body Weight,Bosu Ball",
+        equipment: "Body Weight,Bosu Ball",
         type: "Cardio",
         muscle: "Core,Full Body",
         image:
@@ -477,7 +477,7 @@ module.exports = {
       },
       {
         name: "Plank",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Weight",
         muscle: "Full Body,Core",
         image:
@@ -488,7 +488,7 @@ module.exports = {
       },
       {
         name: "Plank Jack",
-        Equipment: "Band,Body Weight",
+        equipment: "Band,Body Weight",
         type: "Cardio",
         muscle: "Full Body,Core",
         image:
@@ -499,7 +499,7 @@ module.exports = {
       },
       {
         name: "Plank Row",
-        Equipment: "Dumbbells",
+        equipment: "Dumbbells",
         type: "Weight",
         muscle: "Full Body,Back",
         image:
@@ -510,7 +510,7 @@ module.exports = {
       },
       {
         name: "Pushup",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Weight",
         muscle: "Arms",
         image:
@@ -522,7 +522,7 @@ module.exports = {
       },
       {
         name: "Pushup Walk",
-        Equipment: "Band",
+        equipment: "Band",
         type: "Weight",
         muscle: "Arms",
         image:
@@ -533,7 +533,7 @@ module.exports = {
       },
       {
         name: "Reverse Crunches",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Weight",
         muscle: "Core",
         image:
@@ -544,7 +544,7 @@ module.exports = {
       },
       {
         name: "Row",
-        Equipment: "Bar,Dumbbells,Landmine",
+        equipment: "Bar,Dumbbells,Landmine",
         type: "Weight",
         muscle: "Back",
         image:
@@ -555,7 +555,7 @@ module.exports = {
       },
       {
         name: "Russian Twist",
-        Equipment: "Kettlebells,Dumbbells",
+        equipment: "Kettlebells,Dumbbells",
         type: "Weight",
         muscle: "Core",
         image:
@@ -566,7 +566,7 @@ module.exports = {
       },
       {
         name: "Seal Jacks",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Cardio",
         muscle: "Full Body",
         image:
@@ -578,7 +578,7 @@ module.exports = {
       },
       {
         name: "Shoulder Press",
-        Equipment: "Bar,Dumbbells",
+        equipment: "Bar,Dumbbells",
         type: "Weight",
         muscle: "Arms",
         image:
@@ -589,7 +589,7 @@ module.exports = {
       },
       {
         name: "Side Arm / Lateral Raise",
-        Equipment: "Dumbbells",
+        equipment: "Dumbbells",
         type: "Weight",
         muscle: "Arms",
         image:
@@ -600,7 +600,7 @@ module.exports = {
       },
       {
         name: "Side Lunge",
-        Equipment: "Body Weight,Dumbbells",
+        equipment: "Body Weight,Dumbbells",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -611,7 +611,7 @@ module.exports = {
       },
       {
         name: "Side Plank",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Weight",
         muscle: "Full Body,Core",
         image:
@@ -622,7 +622,7 @@ module.exports = {
       },
       {
         name: "Side Plank Dips",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Weight",
         muscle: "Core",
         image:
@@ -633,7 +633,7 @@ module.exports = {
       },
       {
         name: "Side Plank with Leg Lift",
-        Equipment: "Band,Body Weight",
+        equipment: "Band,Body Weight",
         type: "Weight",
         muscle: "Core",
         image:
@@ -644,7 +644,7 @@ module.exports = {
       },
       {
         name: "Single Arm Clean and Press",
-        Equipment: "Kettlebells,Dumbbells",
+        equipment: "Kettlebells,Dumbbells",
         type: "Weight",
         muscle: "Full Body,Arms",
         image:
@@ -655,7 +655,7 @@ module.exports = {
       },
       {
         name: "Single Leg Hip Bridge",
-        Equipment: "Body Weight,Dumbbells,Bosu Ball",
+        equipment: "Body Weight,Dumbbells,Bosu Ball",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -667,7 +667,7 @@ module.exports = {
       },
       {
         name: "Single Leg Squat",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -678,7 +678,7 @@ module.exports = {
       },
       {
         name: "Situp and Throw",
-        Equipment: "Medicine Ball",
+        equipment: "Medicine Ball",
         type: "Weight",
         muscle: "Core",
         image:
@@ -689,7 +689,7 @@ module.exports = {
       },
       {
         name: "Skaters",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Cardio",
         muscle: "Legs",
         image:
@@ -701,7 +701,7 @@ module.exports = {
       },
       {
         name: "Skipping",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Cardio,Laps",
         muscle: "Full Body",
         image:
@@ -712,7 +712,7 @@ module.exports = {
       },
       {
         name: "Skull Crusher",
-        Equipment: "Dumbbells,Bar",
+        equipment: "Dumbbells,Bar",
         type: "Weight",
         muscle: "Arms",
         image: "14.gif (https://dl.airtable.com/h9v6LLAERqunzBJAdjeD_14.gif)",
@@ -722,7 +722,7 @@ module.exports = {
       },
       {
         name: "Spiderman Pushup",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Weight",
         muscle: "Arms,Core",
         image:
@@ -733,7 +733,7 @@ module.exports = {
       },
       {
         name: "Squat",
-        Equipment: "Bar,Dumbbells,Body Weight,Squat Rack,Band",
+        equipment: "Bar,Dumbbells,Body Weight,Squat Rack,Band",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -744,7 +744,7 @@ module.exports = {
       },
       {
         name: "Squat Jump",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Plyo,Cardio",
         muscle: "Legs",
         image:
@@ -756,7 +756,7 @@ module.exports = {
       },
       {
         name: "Squat Jumps 180",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Plyo",
         muscle: "Full Body",
         image:
@@ -767,7 +767,7 @@ module.exports = {
       },
       {
         name: "Squat to Lateral Leg Lift",
-        Equipment: "Band",
+        equipment: "Band",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -778,7 +778,7 @@ module.exports = {
       },
       {
         name: "Standing Glute Kickbaks",
-        Equipment: "Band",
+        equipment: "Band",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -789,7 +789,7 @@ module.exports = {
       },
       {
         name: "Standing Leg Lift",
-        Equipment: "Cable,Band",
+        equipment: "Cable,Band",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -800,7 +800,7 @@ module.exports = {
       },
       {
         name: "Standing Oblique Crunch",
-        Equipment: "Dumbbells",
+        equipment: "Dumbbells",
         type: "Weight",
         muscle: "Core",
         image:
@@ -811,7 +811,7 @@ module.exports = {
       },
       {
         name: "Star Jump",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Plyo",
         muscle: "Full Body",
         image:
@@ -822,7 +822,7 @@ module.exports = {
       },
       {
         name: "Step Up Lunges",
-        Equipment: "Platform,Dumbbells",
+        equipment: "Platform,Dumbbells",
         type: "Plyo",
         muscle: "Legs",
         image:
@@ -833,7 +833,7 @@ module.exports = {
       },
       {
         name: "Step-Back Lunge",
-        Equipment: "Bar,Body Weight,Dumbbells,Squat Rack",
+        equipment: "Bar,Body Weight,Dumbbells,Squat Rack",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -844,7 +844,7 @@ module.exports = {
       },
       {
         name: "Straightup Situp",
-        Equipment: "Dumbbells",
+        equipment: "Dumbbells",
         type: "Weight",
         muscle: "Core",
         image:
@@ -855,7 +855,7 @@ module.exports = {
       },
       {
         name: "Sumo Squat",
-        Equipment: "Bar,Dumbbells,Body Weight",
+        equipment: "Bar,Dumbbells,Body Weight",
         type: "Weight",
         muscle: "Legs",
         image:
@@ -867,7 +867,7 @@ module.exports = {
       },
       {
         name: "Superman",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Weight",
         muscle: "Back",
         image:
@@ -878,7 +878,7 @@ module.exports = {
       },
       {
         name: "Touchdown",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Plyo",
         muscle: "Full Body",
         image:
@@ -889,7 +889,7 @@ module.exports = {
       },
       {
         name: "Tricep Dip",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Weight",
         muscle: "Arms",
         image:
@@ -900,7 +900,7 @@ module.exports = {
       },
       {
         name: "Tricep Kick-Back",
-        Equipment: "Dumbbells",
+        equipment: "Dumbbells",
         type: "Weight",
         muscle: "Arms",
         image:
@@ -911,7 +911,7 @@ module.exports = {
       },
       {
         name: "Tricep Overhead Press",
-        Equipment: "Dumbbells",
+        equipment: "Dumbbells",
         type: "Weight",
         muscle: "Arms",
         image: "5.gif (https://dl.airtable.com/Pp7ftUMQe6qzCxJg7iXs_5.gif)",
@@ -921,7 +921,7 @@ module.exports = {
       },
       {
         name: "Tuck Jump",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Plyo",
         muscle: "Full Body",
         image:
@@ -932,7 +932,7 @@ module.exports = {
       },
       {
         name: "Twisted Mountain Climbers",
-        Equipment: "Body Weight,Bosu Ball",
+        equipment: "Body Weight,Bosu Ball",
         type: "Cardio",
         muscle: "Full Body,Core",
         image:
@@ -943,7 +943,7 @@ module.exports = {
       },
       {
         name: "Wall Ball",
-        Equipment: "Medicine Ball",
+        equipment: "Medicine Ball",
         type: "Cardio",
         muscle: "Full Body",
         image:
@@ -955,7 +955,7 @@ module.exports = {
       },
       {
         name: "Weighted Jumping Jacks",
-        Equipment: "Dumbbells",
+        equipment: "Dumbbells",
         type: "Cardio",
         muscle: "Full Body",
         image:
@@ -966,7 +966,7 @@ module.exports = {
       },
       {
         name: "Weighted Punches",
-        Equipment: "Dumbbells",
+        equipment: "Dumbbells",
         type: "Cardio",
         muscle: "Core",
         image:
@@ -977,7 +977,7 @@ module.exports = {
       },
       {
         name: "Deadbug",
-        Equipment: "Body Weight",
+        equipment: "Body Weight",
         type: "Weight",
         muscle: "Core",
         image:
