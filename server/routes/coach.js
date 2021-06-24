@@ -18,9 +18,9 @@ coach.use(express.json());
 
 coach.get("/requests/show/:coachId", async (req, res) => {
   const { coachId } = req.params;
-  if (!Number(coachId)) return res.status(400).send("Invalid ID");
+  if (!Number(coachId)) return res.status(400).send({ message: "Invalid ID" });
   const coach = await models.Coach.findOne({ where: { id: coachId } });
-  if (!coach) return res.status(404).send("No Matching Coach");
+  if (!coach) return res.status(404).send({ message: "No Matching Coach" });
   const requests = await coach.getCoachRequests();
   if (!requests || requests.length === 0) return res.status(200).send([]);
   res.status(200).send(requests);
@@ -30,14 +30,16 @@ coach.put("/request/accept/:coachId", async (req, res) => {
   const { coachId } = req.params;
   const { traineeId } = req.query;
   if (!Number(coachId) || !Number(traineeId))
-    return res.status(400).send("Invalid ID");
+    res.status(400).send({ message: "Invalid ID" });
   const request = await models.CoachRequest.findOne({
     where: { trainee_id: traineeId, coach_id: coachId },
   });
-  if (!request) return res.status(404).send("request not available");
+  if (!request)
+    return res.status(404).send({ message: "request not available" });
   models.Trainee.update({ coach_id: coachId }, { where: { id: traineeId } })
     .then((data) => {
-      if (!data[0]) return res.status(404).send("No Client With That Id");
+      if (!data[0])
+        return res.status(404).send({ message: "No Client With That Id" });
       models.CoachRequest.destroy({
         where: { trainee_id: traineeId, coach_id: coachId },
       })
@@ -53,13 +55,13 @@ coach.put("/request/decline/:coachId", (req, res) => {
   const { coachId } = req.params;
   const { traineeId } = req.query;
   if (!Number(coachId) || !Number(traineeId))
-    return res.status(400).send("Invalid ID");
+    return res.status(400).send({ message: "Invalid ID" });
   models.CoachRequest.destroy({
     where: { trainee_id: traineeId, coach_id: coachId },
   })
     .then((data) => {
       if (!data) {
-        return res.status(404).send("No Client With That Id");
+        return res.status(404).send({ message: "No Client With That Id" });
       }
       res.status(200).send("Request Declined");
     })
@@ -75,20 +77,20 @@ coach.post("/exercise-set/new", async (req, res) => {
     added_weight,
     rest,
   })
-    .then(() => res.status(201).send("Set Added"))
+    .then((data) => res.status(201).send({ id: data.id }))
     .catch((err) => res.status(400).send(err.message));
 });
 
 coach.post("/exercise-set/append", async (req, res) => {
   const { exercise_id, workout_id } = req.body;
   if (!Number(exercise_id) || !Number(workout_id))
-    return res.status(400).send("Invalid ID");
+    return res.status(400).send({ message: "Invalid ID" });
   const exercise = await models.ExerciseSet.findOne({
     where: { id: exercise_id },
   });
-  if (!exercise) return res.status(404).send("No Exercise Found");
+  if (!exercise) return res.status(404).send({ message: "No Exercise Found" });
   const workout = await models.Workout.findOne({ where: { id: workout_id } });
-  if (!workout) return res.status(404).send("No Workout Found");
+  if (!workout) return res.status(404).send({ message: "No Workout Found" });
 
   exercise
     .addWorkout(workout)
@@ -96,11 +98,11 @@ coach.post("/exercise-set/append", async (req, res) => {
     .catch((err) => res.status(400).send(err.message));
 });
 
-coach.post("/workout/new/:coachId", async (req, res) => {
+coach.post("/workouts/new/:coachId", async (req, res) => {
   const { coachId } = req.params;
   const { name, sets, exercise_ids } = req.body;
-  if (!Number(coachId)) return res.status(400).send("Invalid ID");
-  // console.log(exercise_ids);
+  if (!Number(coachId)) return res.status(400).send({ message: "Invalid ID" });
+
   const exercises = await models.ExerciseSet.findAll({
     where: { id: exercise_ids },
   });
@@ -108,7 +110,8 @@ coach.post("/workout/new/:coachId", async (req, res) => {
     return res.status(404).send("No Exercises Found");
   models.Workout.create({ name, sets, coach_id: coachId })
     .then((workout) => {
-      if (!workout) return res.status(400).send("Couldn't Create Workout");
+      if (!workout)
+        return res.status(400).send({ message: "Couldn't Create Workout" });
       workout
         .addExerciseSets(exercises)
         .then(() => {
@@ -117,7 +120,7 @@ coach.post("/workout/new/:coachId", async (req, res) => {
         .catch((err) => {
           return res
             .status(400)
-            .send(err.message, "Couldn't Append Exercises Sets");
+            .send({ message: "Couldn't Append Exercises Sets" });
         });
     })
     .catch((err) => res.status(400).send(err.message));
@@ -139,8 +142,31 @@ coach.get("/show/all", async (req, res) => {
   res.status(200).send(coaches);
 });
 
-coach.get("/workout/show/:coachId", (req, res) => {});
+coach.post("/exercise/add", async (req, res) => {
+  const { name, muscle, image, type, description, equipment } = req.body;
+  const exists = await models.Exercise.findOne({ where: { name } });
+  if (exists)
+    return res.status(400).send({ message: "Exercise already exists" });
+  models.Exercise.create({
+    name,
+    muscle,
+    image,
+    type,
+    description,
+    equipment,
+  })
+    .then(() => res.status(201).send("Exercise created"))
+    .catch((err) => res.status(400).send(err.message));
+});
+coach.get("/workouts/show/:coachId", async (req, res) => {
+  const { coachId } = req.params;
+  const coach = await models.Coach.findOne({ where: { id: coachId } });
+  if (!coach) return res.status(404).send({ message: "Coach Not Found" });
+  const workouts = await coach.getWorkouts();
+  if (!workouts) return res.status(200).send([]);
+  res.status(200).send(workouts);
+});
 
-coach.put("/workout/append/:coachId", (req, res) => {});
+coach.put("/workouts/append/:coachId", (req, res) => {});
 
 module.exports = coach;

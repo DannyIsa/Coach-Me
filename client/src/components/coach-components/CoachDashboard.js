@@ -13,6 +13,9 @@ function CoachDashboard({ user, userDetails }) {
             <Link to="/coach/clients">
               <div className="link-div">Your Trainees</div>
             </Link>
+            <Link to="/coach/workouts">
+              <div className="link-div">Your Workouts</div>
+            </Link>
           </div>
         </>
       ) : (

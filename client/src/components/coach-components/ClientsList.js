@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function ClientsList({ userDetails }) {
   const [clients, setClients] = useState();
@@ -48,6 +49,8 @@ function ClientsList({ userDetails }) {
 
   return (
     <div>
+      <Link to="/home">go back</Link>
+
       <div
         className="requests-alert"
         onClick={() => setHideAlerts(!hideAlerts)}

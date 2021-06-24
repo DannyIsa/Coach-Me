@@ -20,15 +20,19 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "id",
         foreignKey: "id",
       });
-      this.hasMany(models.DietLog, {
-        sourceKey: "id",
-        foreignKey: "id",
-      });
+
       this.hasOne(models.CoachRequest, {
         foreignKey: "trainee_id",
         sourceKey: "id",
       });
-      this.belongsToMany(models.Meal, { through: "trainee_meal_joins" });
+      this.hasMany(models.NeededFoodToEat, {
+        sourceKey: "id",
+        foreignKey: "trainee_id",
+      });
+      this.hasMany(models.EatenFood, {
+        sourceKey: "id",
+        foreignKey: "trainee_id",
+      });
     }
   }
   Trainee.init(
