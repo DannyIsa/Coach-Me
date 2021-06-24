@@ -136,7 +136,7 @@ logs.get("/diet/show/:traineeId", async (req, res) => {
     return res.status(404).send({ message: "Invalid ID" });
   }
 
-  const traineeDietLog = await models.DietLog.findAll({
+  const traineeDietLog = await models.DietLog.findOne({
     where: { trainee_id: traineeId },
   });
 
