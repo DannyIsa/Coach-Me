@@ -14,9 +14,11 @@ import Details from "./components/Details";
 import SignOutButton from "./components/SignOutButton";
 import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
 import CoachesList from "./components/trainee-components/CoachesList";
+import WorkoutsList from "./components/coach-components/WorkoutsList";
 
 import CoachDashboard from "./components/coach-components/CoachDashboard";
 import ClientsList from "./components/coach-components/ClientsList";
+import CreateWorkout from "./components/coach-components/CreateWorkout";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDXQY7ezPYUQoh3yJmWRZEalb9N-yieW-o",
@@ -82,33 +84,27 @@ function App() {
                 <Switch>
                   <Route exact path="/home">
                     {userType === "Coach" ? (
-                      <CoachDashboard
-                        user={user}
-                        userDetails={userDetails}
-                        signOut={signOut}
-                      />
+                      <CoachDashboard user={user} userDetails={userDetails} />
                     ) : (
-                      <TraineeDashboard
-                        user={user}
-                        userDetails={userDetails}
-                        signOut={signOut}
-                      />
+                      <TraineeDashboard user={user} userDetails={userDetails} />
                     )}
                   </Route>
                   {userType === "Coach" && (
-                    <Route exact path="/coach/clients">
-                      <ClientsList
-                        signOut={signOut}
-                        userDetails={userDetails}
-                      />
-                    </Route>
+                    <Switch>
+                      <Route exact path="/coach/clients">
+                        <ClientsList userDetails={userDetails} />
+                      </Route>
+                      <Route exact path="/coach/workouts">
+                        <WorkoutsList userDetails={userDetails} />
+                      </Route>
+                      <Route exact path="/coach/workouts/create">
+                        <CreateWorkout userDetails={userDetails} />
+                      </Route>
+                    </Switch>
                   )}
                   {userType === "Trainee" && (
                     <Route exact path="/trainee/coaches">
-                      <CoachesList
-                        signOut={signOut}
-                        userDetails={userDetails}
-                      />
+                      <CoachesList userDetails={userDetails} />
                     </Route>
                   )}
                   <Route exact path="/food">
@@ -124,7 +120,6 @@ function App() {
                   <Route exact path="/details">
                     <Details
                       userDetails={userDetails}
-                      signOut={signOut}
                       userType={userType}
                       setRegistered={setRegistered}
                     />
@@ -137,7 +132,7 @@ function App() {
               {/* user isn't logged in */}
 
               <Route exact path="/sign-in">
-                <SignIn auth={auth} signOut={signOut} />
+                <SignIn auth={auth} />
               </Route>
               <Route exact path="/sign-up">
                 <SignUp auth={auth} />
