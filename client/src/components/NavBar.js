@@ -6,7 +6,7 @@ function NavBar() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
-  const navBarItams = [
+  const navBarItems = [
     {
       title: "Home",
       link: "/",
@@ -40,7 +40,7 @@ function NavBar() {
           COACH-ME
         </NavLink>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
-          {navBarItams.map((item, index) => {
+          {navBarItems.map((item, index) => {
             return (
               <li key={index} className={item.className}>
                 <NavLink
