@@ -60,70 +60,72 @@ function SignUp() {
 
   return (
     <div className="sign-up">
-      <input
-        name="text"
-        type="email"
-        placeholder="enter your email"
-        onChange={(e) => {
-          setEmailInput(e.target.value);
-        }}
-      />
-      <br />
-      <input
-        name="password"
-        type="password"
-        placeholder="enter your password"
-        ref={passwordRef}
-        onChange={(e) => {
-          setPasswordInput(e.target.value);
-        }}
-      />
-      <button
-        name="show-password"
-        className="show-password"
-        onMouseDown={() => {
-          passwordRef.current.type = "text";
-        }}
-        onMouseUp={() => {
-          passwordRef.current.type = "password";
-        }}
-        onMouseOut={() => {
-          passwordRef.current.type = "password";
-        }}
-      >
-        👁
-      </button>
-      <div
-        value="Trainee"
-        onClick={() => setType("Trainee")}
-        className={type === "Trainee" ? "chosen" : "not-chosen"}
-      >
-        Trainee
-      </div>
-      <div
-        value="Coach"
-        onClick={() => setType("Coach")}
-        className={type === "Coach" ? "chosen" : "not-chosen"}
-      >
-        Coach
-      </div>
-
-      <button onClick={SignUpWithPassword}>Sign Up</button>
-      <br />
-      <button name="google" onClick={SignUpWithGoogle} className="google">
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/chat-service-d13a1.appspot.com/o/google-logo.png?alt=media&token=47d2d019-037d-418c-abef-230317fe1393"
-          width="20px"
-          height="20px"
+      <section className="main">
+        <input
+          name="text"
+          type="email"
+          placeholder="enter your email"
+          onChange={(e) => {
+            setEmailInput(e.target.value);
+          }}
         />
-        Sign up with google
-      </button>
-      <br />
-      <button onClick={() => history.push("/sign-in")}>
-        Already Registered?
-      </button>
-      <br />
-      <h2 className="error-message">{errorMessage}</h2>
+        <br />
+        <input
+          name="password"
+          type="password"
+          placeholder="enter your password"
+          ref={passwordRef}
+          onChange={(e) => {
+            setPasswordInput(e.target.value);
+          }}
+        />
+        <button
+          name="show-password"
+          className="show-password"
+          onMouseDown={() => {
+            passwordRef.current.type = "text";
+          }}
+          onMouseUp={() => {
+            passwordRef.current.type = "password";
+          }}
+          onMouseOut={() => {
+            passwordRef.current.type = "password";
+          }}
+        >
+          👁
+        </button>
+        <div
+          value="Trainee"
+          onClick={() => setType("Trainee")}
+          className={type === "Trainee" ? "chosen" : "not-chosen"}
+        >
+          Trainee
+        </div>
+        <div
+          value="Coach"
+          onClick={() => setType("Coach")}
+          className={type === "Coach" ? "chosen" : "not-chosen"}
+        >
+          Coach
+        </div>
+
+        <button onClick={SignUpWithPassword}>Sign Up</button>
+        <br />
+        <button name="google" onClick={SignUpWithGoogle} className="google">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/chat-service-d13a1.appspot.com/o/google-logo.png?alt=media&token=47d2d019-037d-418c-abef-230317fe1393"
+            width="20px"
+            height="20px"
+          />
+          Sign up with google
+        </button>
+        <br />
+        <button onClick={() => history.push("/sign-in")}>
+          Already Registered?
+        </button>
+        <br />
+        <h2 className="error-message">{errorMessage}</h2>
+      </section>
     </div>
   );
 }
