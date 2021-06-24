@@ -8,6 +8,7 @@ import axios from "axios";
 
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
+import NavBar from "./components/NavBar";
 import Food from "./components/Food";
 import Check from "./components/Check";
 import Details from "./components/Details";
@@ -79,6 +80,7 @@ function App() {
             registered ? (
               <>
                 <SignOutButton signOut={signOut} />
+                <NavBar />
                 <Switch>
                   <Route exact path="/home">
                     {userType === "Coach" ? (
@@ -112,7 +114,7 @@ function App() {
                     </Route>
                   )}
                   <Route exact path="/food">
-                    <Food user={user} />
+                    <Food userDetails={userDetails} />
                   </Route>
                 </Switch>
               </>
