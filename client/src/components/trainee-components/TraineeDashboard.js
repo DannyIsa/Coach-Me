@@ -8,9 +8,10 @@ function TraineeDashboard({ userDetails }) {
 
   const getWorkoutsLog = () =>
     axios
-      .get("http://localhost:3001/api/logs/workout/show/" + userDetails)
+      .get("http://localhost:3001/api/logs/workout/show/" + userDetails.id)
       .then(({ data }) => {
         if (data) {
+          console.log(data);
           const workouts = data.map((workout, i) => {
             const workoutName = workout.name;
             setPreviousWorkouts((previousWorkouts) => [
