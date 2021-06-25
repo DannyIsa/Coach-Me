@@ -7,22 +7,43 @@ import {
   useHistory,
 } from "react-router-dom";
 
+import "../styles/HomePage.css";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
-// import run from "../pics/video.mp4";
-// import logo from "../pics/logo.png";
-// import run from "../pics/run.mp4";
+// import run from "../pics/web.mp4";
+import run from "../pics/home.mp4";
+import logo from "../pics/logo.png";
 
 function HomePage({}) {
   return (
-    <div>
-      {/* <video autoPlay muted loop id="myVideo">
+    <div className="homepage">
+      <nav class="navigation">
+        <a href="#" class="navbar-logo">
+          <img src={logo} id="logo" />
+        </a>
+        <div class="navbar-right">
+          <a href="#">Home</a>
+          <a href="#">How It Works</a>
+          <a href="#">About</a>
+          <a href="#" className="login">
+            Login
+          </a>
+        </div>
+      </nav>
+
+      <video autoPlay muted loop id="myVideo">
         <source src={run} type="video/mp4" />
       </video>
-      <img src={logo} id="logo" /> */}
-      {/* <section id="welcome">{/* <h1>welcome to the family</h1> </section> */}
-      <h1>Welcome To Coach Me</h1>
-      <h2>Online coaching was never easier</h2>
+      {/* <div id="welcome">
+        <h1>Welcome To Coach Me</h1>
+        <h2>Online coaching was never easier</h2>
+      </div> */}
+      <div className="viewport-header">
+        <h1>
+          Explore
+          <span>Montana</span>
+        </h1>
+      </div>
     </div>
   );
 }
