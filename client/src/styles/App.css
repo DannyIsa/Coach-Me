@@ -1,12 +1,20 @@
-.sign-up,
-.sign-in {
-  margin: auto;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main {
   text-align: center;
 }
 
-.sign-up > button,
-.sign-in > button {
-  font-size: 25px;
+.main > button {
+  font-size: 20px;
   font-weight: bolder;
   background-color: #cef7f3;
   color: black;
@@ -15,16 +23,13 @@
   padding: 5px;
 }
 
-.sign-up > button:hover,
-.sign-in > button:hover {
+.main > button:hover {
   cursor: pointer;
   border: solid 2px black;
 }
 
-.sign-up > input[type="password"],
-.sign-up input[type="email"],
-.sign-in > input[type="password"],
-.sign-in input[type="email"] {
+.main > input[type="password"],
+.main input[type="email"] {
   width: 250px;
   height: 30px;
   padding: 5px;
@@ -37,56 +42,46 @@
   background-color: #cef7f3;
 }
 
-.sign-up > input[type="password"]::-webkit-input-placeholder,
-.sign-up input[type="email"]::-webkit-input-placeholder,
-.sign-in > input[type="password"]::-webkit-input-placeholder,
-.sign-in input[type="email"]::-webkit-input-placeholder {
+.main > input[type="password"]::-webkit-input-placeholder,
+.main input[type="email"]::-webkit-input-placeholder {
   font-size: 20px;
   font-weight: bold;
   color: black;
   opacity: 80%;
 }
 
-.sign-up > input[type="password"]:-ms-input-placeholder,
-.sign-up input[type="email"]:-ms-input-placeholder,
-.sign-in > input[type="password"]:-ms-input-placeholder,
-.sign-in input[type="email"]:-ms-input-placeholder {
+.main > input[type="password"]:-ms-input-placeholder,
+.main input[type="email"]:-ms-input-placeholder {
   font-size: 20px;
   font-weight: bold;
   color: black;
   opacity: 80%;
 }
 
-.sign-up > input[type="password"]::-ms-input-placeholder,
-.sign-up input[type="email"]::-ms-input-placeholder,
-.sign-in > input[type="password"]::-ms-input-placeholder,
-.sign-in input[type="email"]::-ms-input-placeholder {
+.main > input[type="password"]::-ms-input-placeholder,
+.main input[type="email"]::-ms-input-placeholder {
   font-size: 20px;
   font-weight: bold;
   color: black;
   opacity: 80%;
 }
 
-.sign-up > input[type="password"]::placeholder,
-.sign-up input[type="email"]::placeholder,
-.sign-in > input[type="password"]::placeholder,
-.sign-in input[type="email"]::placeholder {
+.main > input[type="password"]::placeholder,
+.main input[type="email"]::placeholder {
   font-size: 20px;
   font-weight: bold;
   color: black;
   opacity: 80%;
 }
 
-.sign-up > .show-password,
-.sign-in > .show-password {
+.main > .show-password {
   width: 40px;
   height: 40px;
   font-size: 20px;
   font-weight: normal;
 }
 
-.sign-up > .google,
-.sign-in > .google {
+.main > .google {
   margin: 30px;
   background-color: #0992c0;
   border: solid 2px #0992c0;
@@ -98,8 +93,7 @@
   text-transform: capitalize;
 }
 
-.sign-up > .google > img,
-.sign-in > .google > img {
+.main > .google > img {
   position: relative;
   top: 5px;
   width: 40px;
@@ -110,15 +104,13 @@
   margin-right: 20px;
 }
 
-.sign-up > .change,
-.sign-in > .change {
+.main > .change {
   margin: 20px;
   font-size: 30px;
   font-weight: bold;
 }
 
-.sign-up > .change > a,
-.sign-in > .change > a {
+.main > .change > a {
   text-decoration: none;
 }
 

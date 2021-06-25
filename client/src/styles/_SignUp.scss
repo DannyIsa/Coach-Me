@@ -1,15 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  // font-family: Impact;
+  // text-align: center;
+  // background-image: url(../pics/main7.jpeg);
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+}
 $NavColor: rgb(73, 184, 221);
 $borderColor: rgb(9, 146, 192);
-.sign-up,
-.sign-in {
-  margin: auto;
+
+// #myVideo {
+//   position: absolute;
+//   width: 100vw;
+//   z-index: -1;
+//   opacity: 0.6;
+// }
+
+// #logo {
+//   position: absolute;
+//   padding: 5px;
+//   width: 8rem;
+//   height: 6rem;
+//   top: 0;
+//   left: 0;
+// }
+.main {
+  // .sign-up,
+  // .sign-in {
+  // margin: auto;
   text-align: center;
   & > button {
     &:hover {
       cursor: pointer;
       border: solid 2px black;
     }
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bolder;
     background-color: rgb(206, 247, 243);
     color: black;
@@ -73,6 +105,8 @@ $borderColor: rgb(9, 146, 192);
     }
   }
 }
+
 .chosen {
   background-color: aqua;
 }
+// }
