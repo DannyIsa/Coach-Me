@@ -1,25 +1,25 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class NeededFoodToEat extends Model {
+  class NeededFood extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.hasOne(models.Trainee, {
+      this.belongsTo(models.Trainee, {
         foreignKey: "id",
-        sourceKey: "trainee_id",
+        targetKey: "trainee_id",
       });
       this.hasOne(models.Food, {
-        foreignKey: "id",
-        sourceKey: "food_id",
+        foreignKey: "name",
+        sourceKey: "food_name",
       });
     }
   }
 
-  NeededFoodToEat.init(
+  NeededFood.init(
     {
       trainee_id: DataTypes.INTEGER,
       food_id: DataTypes.INTEGER,
@@ -27,10 +27,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "NeededFoodToEat",
-      tableName: "needed_food_to_eat",
+      modelName: "NeededFood",
+      tableName: "needed_food",
       underscored: true,
     }
   );
-  return NeededFoodToEat;
+  return NeededFood;
 };

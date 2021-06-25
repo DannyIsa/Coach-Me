@@ -14,13 +14,16 @@ function CreateWorkout() {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div>
+    <div className="create-workout-page">
       <h1>Create a new workout</h1>
       <div className="exercises-list">
         {exercises.map((item, index) => (
           <div className="exercise-block" key={"exerciseItem" + index}>
-            <h4 className="exercise-name">{item.name}</h4>
+            <h2 className="exercise-name">{item.name}</h2>
             <img className="exercise-image" src={item.image} alt={item.name} />
+            <p className="exercise-description">
+              {item.description ? item.description : "no description"}
+            </p>
           </div>
         ))}
       </div>

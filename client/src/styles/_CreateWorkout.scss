@@ -1,0 +1,26 @@
+.create-workout-page {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  & > .exercises-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    & > .exercise-block {
+      border: solid 5px;
+      min-width: 300px;
+      min-height: 300px;
+      max-height: 500px;
+      max-height: 500px;
+      text-align: center;
+      width: 25%;
+      margin: 1%;
+      padding: 1%;
+      & > .exercise-image {
+        width: 70%;
+        height: 70%;
+      }
+    }
+  }
+}

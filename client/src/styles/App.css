@@ -6,8 +6,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .main {
@@ -117,5 +116,39 @@ body {
 
 .chosen {
   background-color: aqua;
+}
+
+.create-workout-page {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.create-workout-page > .exercises-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.create-workout-page > .exercises-list > .exercise-block {
+  border: solid 5px;
+  min-width: 300px;
+  min-height: 300px;
+  max-height: 500px;
+  max-height: 500px;
+  text-align: center;
+  width: 25%;
+  margin: 1%;
+  padding: 1%;
+}
+
+.create-workout-page > .exercises-list > .exercise-block > .exercise-image {
+  width: 70%;
+  height: 70%;
 }
 /*# sourceMappingURL=App.css.map */
