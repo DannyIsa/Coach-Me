@@ -13,10 +13,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
-      food_id: {
+      food_name: {
         primaryKey: true,
         allowNull: false,
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       meal_of_the_day: {
         type: Sequelize.STRING,

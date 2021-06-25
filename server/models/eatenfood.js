@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.Trainee, {
-        foreignKey: "id",
-        targetKey: "trainee_id",
+        foreignKey: "trainee_id",
+        targetKey: "id",
       });
       this.hasOne(models.Food, {
         foreignKey: "name",
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   EatenFood.init(
     {
       trainee_id: DataTypes.INTEGER,
-      food_id: DataTypes.INTEGER,
+      food_name: DataTypes.STRING,
       meal_of_the_day: DataTypes.STRING,
     },
     {

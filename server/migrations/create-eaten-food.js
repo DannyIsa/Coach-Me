@@ -9,10 +9,15 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       trainee_id: {
+        primaryKey: true,
+        allowNull: false,
+
         type: Sequelize.INTEGER,
       },
-      food_id: {
-        type: Sequelize.INTEGER,
+      food_name: {
+        primaryKey: true,
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       meal_of_the_day: {
         type: Sequelize.STRING,

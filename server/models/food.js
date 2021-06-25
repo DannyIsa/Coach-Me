@@ -9,12 +9,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.NeededFood, {
-        targetKey: "name",
-        foreignKey: "food_name",
+        targetKey: "food_name",
+        foreignKey: "name",
       });
       this.belongsTo(models.EatenFood, {
-        targetKey: "name",
-        foreignKey: "food_name",
+        targetKey: "food_name",
+        foreignKey: "name",
       });
     }
   }
