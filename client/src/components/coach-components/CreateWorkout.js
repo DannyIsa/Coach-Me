@@ -1,88 +1,29 @@
 import React, { useState, useEffect } from "react";
-
+import axios from "axios";
 function CreateWorkout() {
-  const [inputArray, setInputArray] = useState([0]);
+  const [exercises, setExercises] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+  const [sortValue, setSortValue] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log("yes");
-  };
-
+  useEffect(() => {
+    axios
+      .get(`/api/coach/exercises/show?input=${searchInput}&sort=${sortValue}`)
+      .then(({ data }) => {
+        setExercises(data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div>
       <h1>Create a new workout</h1>
-      <form className="workout-form" onSubmit={handleSubmit}>
-        {inputArray.map((value, index) => (
-          <div className="exercise-set-block" key={"exercise-set" + index}>
-            <input
-              name={`name${index}`}
-              placeholder="Enter Exercise Name"
-              required
-            />
-            <input
-              type="number"
-              name={`sets${index}`}
-              defaultValue={1}
-              min={0}
-              max={20}
-              required
-            />
-            <input
-              type="number"
-              name={`weight${index}`}
-              defaultValue={0}
-              min={0}
-              required
-            />
-            <input
-              type="number"
-              name={`min${index}`}
-              defaultValue={1}
-              min={0}
-              required
-            />
-            <input
-              type="number"
-              name={`max${index}`}
-              defaultValue={1}
-              min={0}
-              required
-            />
-            <input
-              type="number"
-              name={`rest${index}`}
-              defaultValue={1}
-              min={0}
-              required
-            />
+      <div className="exercises-list">
+        {exercises.map((item, index) => (
+          <div className="exercise-block" key={"exerciseItem" + index}>
+            <h4 className="exercise-name">{item.name}</h4>
+            <img className="exercise-image" src={item.image} alt={item.name} />
           </div>
         ))}
-
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            if (inputArray.length === 10) return;
-            let array = [...inputArray];
-            array.push(0);
-            setInputArray(array);
-          }}
-        >
-          +
-        </button>
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            if (inputArray.length === 1) return;
-            let array = [...inputArray];
-            array.pop();
-            setInputArray(array);
-          }}
-        >
-          -
-        </button>
-        <br />
-        <button type="submit">submit</button>
-      </form>
+      </div>
     </div>
   );
 }

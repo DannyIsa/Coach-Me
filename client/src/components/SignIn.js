@@ -12,6 +12,7 @@ function SignIn({ setReqDone }) {
   const passwordRef = useRef();
 
   const signInWithPassword = () => {
+    setReqDone(false);
     firebase
       .auth()
       .signInWithEmailAndPassword(emailInput, passwordInput)

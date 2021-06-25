@@ -167,6 +167,19 @@ coach.get("/workouts/show/:coachId", async (req, res) => {
   res.status(200).send(workouts);
 });
 
+coach.get("/exercises/show", async (req, res) => {
+  let { input, sort } = req.query;
+  let query = { order: [["name", "ASC"]] };
+  if (input.match(/^[ ]/i)) input = "";
+  if (input && input.match(/^[A-Za-z ]/i)) {
+    if (sort === "name" || sort === "muscle" || sort === "type")
+      query.where = { [sort]: { [Op.like]: "%" + input + "%" } };
+  }
+  const exercises = await models.Exercise.findAll(query);
+  if (!exercises) return res.status(200).send([]);
+  return res.status(200).send(exercises);
+});
+
 coach.put("/workouts/append/:coachId", (req, res) => {});
 
 module.exports = coach;

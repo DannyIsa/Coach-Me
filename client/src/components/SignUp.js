@@ -14,6 +14,7 @@ function SignUp({ setReqDone }) {
   const history = useHistory();
 
   const SignUpWithGoogle = () => {
+    setReqDone(false);
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase
       .auth()
@@ -24,7 +25,7 @@ function SignUp({ setReqDone }) {
           .post(`http://localhost:3001/api/user/register?type=${type}`, {
             email,
           })
-          .then((res) => {
+          .then(() => {
             setReqDone(true);
             firebase.auth().onAuthStateChanged(() => {
               history.push("/");
@@ -37,6 +38,7 @@ function SignUp({ setReqDone }) {
   };
 
   const SignUpWithPassword = () => {
+    setReqDone(false);
     const provider = firebase
       .auth()
       .createUserWithEmailAndPassword(emailInput, passwordInput)

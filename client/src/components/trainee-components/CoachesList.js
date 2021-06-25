@@ -37,7 +37,7 @@ function CoachesList({ userDetails }) {
       {coaches && request
         ? coaches.map((item, index) => (
             <div className="coaches-item" key={"C" + index}>
-              <h3>{item.email}</h3>
+              <h3>{item.name}</h3>
               {item.id === userDetails.coach_id ? (
                 "Your Coach"
               ) : item.id === request.coach_id ? (

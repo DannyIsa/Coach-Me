@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "../styles/NavBar.css";
 // import { useHistory } from "react-router-dom";
 
-function NavBar({ signOut }) {
+function NavBar({ signOut, userType }) {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   // const history = useHistory();
@@ -15,7 +15,7 @@ function NavBar({ signOut }) {
     },
     {
       title: "Workouts",
-      link: "/workouts",
+      link: `/${userType}/workouts`,
       className: "nav-item",
     },
     {

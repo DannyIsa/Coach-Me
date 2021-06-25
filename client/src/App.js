@@ -39,7 +39,7 @@ function App() {
   const [registered, setRegistered] = useState();
   const [userType, setUserType] = useState();
   const [userDetails, setUserDetails] = useState();
-  const [reqDone, setReqDone] = useState(false);
+  const [reqDone, setReqDone] = useState(true);
   function signOut(history) {
     auth.signOut().then(() => {
       auth.onAuthStateChanged(() => {
@@ -52,7 +52,6 @@ function App() {
 
   useEffect(() => {
     if (user && reqDone) {
-      console.log(user);
       const { email } = user;
       axios
         .get("http://localhost:3001/api/user/check/" + email)
@@ -85,7 +84,7 @@ function App() {
             registered ? (
               <>
                 <SignOutButton signOut={signOut} />
-                <NavBar signOut={signOut} />
+                <NavBar userType={userType} signOut={signOut} />
                 <Switch>
                   <Route exact path="/home">
                     {userType === "Coach" ? (

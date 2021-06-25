@@ -59,7 +59,7 @@ function ClientsList({ userDetails }) {
         {requests &&
           requests.map((item, index) => (
             <div className="alert" key={"alert" + index}>
-              {item.name}
+              {item.trainee_name}
               <br />
               {item.content}
               <br />
