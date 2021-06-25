@@ -8,6 +8,7 @@ import axios from "axios";
 
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
+import HomePage from "./components/HomePage";
 import NavBar from "./components/NavBar";
 import Food from "./components/Food";
 import Check from "./components/Check";
@@ -132,7 +133,9 @@ function App() {
           ) : (
             <Switch>
               {/* user isn't logged in */}
-
+              <Route exact path="/home">
+                <HomePage />
+              </Route>
               <Route exact path="/sign-in">
                 <SignIn auth={auth} />
               </Route>

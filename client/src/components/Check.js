@@ -8,7 +8,7 @@ function Check({ user, loading, registered, userType }) {
       if (user) {
         if (registered === true) history.push("/home");
         else if (registered === false) history.push("/details");
-      } else history.push("/sign-up");
+      } else history.push("/home");
     }
   }, [user, loading, registered]);
   return (
