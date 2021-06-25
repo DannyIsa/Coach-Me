@@ -39,22 +39,24 @@ function App() {
   const [registered, setRegistered] = useState();
   const [userType, setUserType] = useState();
   const [userDetails, setUserDetails] = useState();
+  const [reqDone, setReqDone] = useState(false);
   function signOut(history) {
     auth.signOut().then(() => {
       auth.onAuthStateChanged(() => {
         setRegistered(undefined);
+        setReqDone(false);
         history.push("/");
       });
     });
   }
 
   useEffect(() => {
-    if (user) {
+    if (user && reqDone) {
+      console.log(user);
       const { email } = user;
       axios
         .get("http://localhost:3001/api/user/check/" + email)
         .then(({ data }) => {
-          // console.log(data);
           setUserType(data.type);
           setRegistered(data.valid);
           setUserDetails({ ...data.details });
@@ -63,7 +65,7 @@ function App() {
           console.log(err);
         });
     }
-  }, [user, loading]);
+  }, [user, loading, reqDone]);
 
   return (
     <div>
@@ -137,10 +139,10 @@ function App() {
                 <HomePage />
               </Route>
               <Route exact path="/sign-in">
-                <SignIn auth={auth} />
+                <SignIn setReqDone={setReqDone} auth={auth} />
               </Route>
               <Route exact path="/sign-up">
-                <SignUp auth={auth} />
+                <SignUp setReqDone={setReqDone} auth={auth} />
               </Route>
             </Switch>
           )}

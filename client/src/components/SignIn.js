@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import firebase from "firebase";
 import axios from "axios";
 
-function SignIn({ signOut }) {
+function SignIn({ setReqDone }) {
   const history = useHistory();
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
@@ -16,6 +16,7 @@ function SignIn({ signOut }) {
       .auth()
       .signInWithEmailAndPassword(emailInput, passwordInput)
       .then(() => {
+        setReqDone(true);
         firebase.auth().onAuthStateChanged(() => {
           history.push("/");
         });

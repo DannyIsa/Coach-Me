@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import firebase from "firebase";
 import axios from "axios";
 
-function SignUp() {
+function SignUp({ setReqDone }) {
   const [emailInput, setEmailInput] = useState("");
 
   const [passwordInput, setPasswordInput] = useState("");
@@ -24,7 +24,8 @@ function SignUp() {
           .post(`http://localhost:3001/api/user/register?type=${type}`, {
             email,
           })
-          .then(() => {
+          .then((res) => {
+            setReqDone(true);
             firebase.auth().onAuthStateChanged(() => {
               history.push("/");
             });
@@ -46,6 +47,7 @@ function SignUp() {
           })
           .then(() => {
             firebase.auth().onAuthStateChanged(() => {
+              setReqDone(true);
               history.push("/");
             });
           })
