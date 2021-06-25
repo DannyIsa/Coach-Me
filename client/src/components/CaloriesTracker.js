@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { getCurrentDate } from "../utils";
 import axios from "axios";
 
@@ -12,36 +12,50 @@ export default function CaloriesTracker({ userDetails }) {
   const [totalFats, setTotalFats] = useState(0);
   const [usedFats, setUsedFats] = useState(0);
 
+  const foodSearchInput = useRef();
+
+  // useEffect(() => {
+  //   if (userDetails) {
+  //     const traineesDailyCalorieGoal = userDetails.daily_calorie_goal;
+  //     setTotalCalories(traineesDailyCalorieGoal);
+  //     axios
+  //       .get(`http://localhost:3001/api/logs/diet/show/${userDetails.id}`)
+  //       .then((res) => {
+  //         const {
+  //           total_calories,
+  //           used_calories,
+  //           total_protein,
+  //           used_protein,
+  //           total_carbs,
+  //           used_carbs,
+  //           total_fat,
+  //           used_fat,
+  //         } = res.data;
+  //         setUsedCalories(used_calories);
+  //         setTotalProtein(total_protein);
+  //         setUsedProtein(used_protein);
+  //         setTotalCarbs(total_carbs);
+  //         setUsedCarbs(used_carbs);
+  //         setTotalFats(total_fat);
+  //         setUsedFats(used_fat);
+  //       })
+  //       .catch((e) => {
+  //         console.log(e);
+  //       });
+  //   }
+  // }, [userDetails]);
+
   useEffect(() => {
-    if (userDetails) {
-      const traineesDailyCalorieGoal = userDetails.daily_calorie_goal;
-      setTotalCalories(traineesDailyCalorieGoal);
-      axios
-        .get(`http://localhost:3001/api/logs/diet/show/${userDetails.id}`)
-        .then((res) => {
-          const {
-            total_calories,
-            used_calories,
-            total_protein,
-            used_protein,
-            total_carbs,
-            used_carbs,
-            total_fat,
-            used_fat,
-          } = res.data;
-          setUsedCalories(used_calories);
-          setTotalProtein(total_protein);
-          setUsedProtein(used_protein);
-          setTotalCarbs(total_carbs);
-          setUsedCarbs(used_carbs);
-          setTotalFats(total_fat);
-          setUsedFats(used_fat);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    }
-  }, [userDetails]);
+    axios.get("http://localhost:3001/api/food").then(({ data }) => {
+      console.log(data);
+    });
+  }, []);
+
+  const searchFood = () => {
+    axios.get("http://localhost:3001/api/food").then(({ data }) => {
+      console.log(data);
+    });
+  };
 
   return (
     <div>
@@ -101,6 +115,11 @@ export default function CaloriesTracker({ userDetails }) {
           <td>{totalFats}</td>
         </tr>
       </table>
+      <input
+        ref={foodSearchInput}
+        onChange={searchFood}
+        placeholder="search food"
+      ></input>
     </div>
   );
 }
