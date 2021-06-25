@@ -82,7 +82,7 @@ function App() {
             registered ? (
               <>
                 <SignOutButton signOut={signOut} />
-                <NavBar />
+                <NavBar signOut={signOut} />
                 <Switch>
                   <Route exact path="/home">
                     {userType === "Coach" ? (

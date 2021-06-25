@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/NavBar.css";
+// import { useHistory } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ signOut }) {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
-
+  // const history = useHistory();
   const navBarItems = [
     {
       title: "Home",
@@ -36,6 +37,9 @@ function NavBar() {
   return (
     <nav className="navbar">
       <div className="nav-container">
+        {/* <button className="sign-out" onClick={() => signOut(history)}>
+          Sign Out
+        </button> */}
         <NavLink exact to="/" className="nav-logo">
           COACH-ME
         </NavLink>
