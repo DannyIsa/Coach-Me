@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import WorkoutPopup from "./WorkoutPopup";
-function CreateWorkout() {
+function CreateWorkout({ userDetails }) {
   const [exercises, setExercises] = useState([]);
   const [chosen, setChosen] = useState([]);
   const [searchInput, setSearchInput] = useState("");
@@ -48,11 +48,14 @@ function CreateWorkout() {
   return (
     <div className="create-workout-page">
       <h1>Create a new workout</h1>
-      <WorkoutPopup
-        trigger={popupTrigger}
-        setTrigger={setPopupTrigger}
-        exercises={chosen}
-      />
+      {userDetails && (
+        <WorkoutPopup
+          userDetails={userDetails}
+          trigger={popupTrigger}
+          setTrigger={setPopupTrigger}
+          exercises={chosen}
+        />
+      )}
       <div className="search-div">
         <input
           placeholder="Search for exercises"
@@ -99,7 +102,7 @@ function CreateWorkout() {
       <br />
       <h1>New Workout</h1>
       {chosen.map((item, index) => (
-        <div className="chosen-exercise">
+        <div className="chosen-exercise" key={"chosen" + index}>
           {item}
           <button
             onClick={() => {

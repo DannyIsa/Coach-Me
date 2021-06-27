@@ -98,22 +98,32 @@ coach.post("/exercise-set/append", async (req, res) => {
     .catch((err) => res.status(400).send(err.message));
 });
 
-coach.post("/workouts/new/:coachId", async (req, res) => {
-  const { coachId } = req.params;
+coach.get("/test", (req, res) => {
+  models.Workout.findAll({ include: models.ExerciseSet })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => res.send(err));
+});
+
+coach.post("/workouts/new/:coach_id", async (req, res) => {
+  const { coach_id } = req.params;
   const { name, sets, exercises } = req.body;
-  if (!Number(coachId)) return res.status(400).send({ message: "Invalid ID" });
+  if (!Number(coach_id)) return res.status(400).send({ message: "Invalid ID" });
   let exerciseSets = await models.ExerciseSet.bulkCreate([...exercises]);
   if (!exerciseSets) exerciseSets = [];
-  const workout = await models.Workout.create({ name, sets, coachId });
+  const workout = await models.Workout.create({ name, sets, coach_id });
   if (!workout)
     return res.status(400).send({ message: "Can't create workout" });
   workout
-    .addExerciseSets(exerciseSets)
-    .then((data) => res.status(201).send(data))
-    .catch((err) => res.status(400).send(err));
+    .addExerciseSets(exerciseSets, { through: { index: 5 } })
+    .then(() => res.status(201).send("workout created"))
+    .catch((err) => {
+      console.log(err.message);
+      res.status(400).send(err);
+    });
 });
 
-coach.post("/workouts/test", async (req, res) => {});
 coach.get("/clients/show/:userId", async (req, res) => {
   const { userId } = req.params;
   if (!Number(userId)) return res.status(400).send("Invalid ID");

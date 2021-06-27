@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-function WorkoutPopup({ exercises, trigger, setTrigger }) {
+function WorkoutPopup({ exercises, trigger, setTrigger, userDetails }) {
   const [sets, setSets] = useState([]);
 
   useEffect(() => {
@@ -121,7 +121,7 @@ function WorkoutPopup({ exercises, trigger, setTrigger }) {
         <button
           onClick={() => {
             axios
-              .post("/api/coach/workouts/test", {
+              .post("/api/coach/workouts/new/" + userDetails.id, {
                 name: "yes",
                 sets: 1,
                 exercises: sets,
