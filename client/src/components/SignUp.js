@@ -8,7 +8,6 @@ import {
   faGoogle,
   faGithub,
   faFacebookF,
-  // faExclamation,
 } from "@fortawesome/free-brands-svg-icons";
 
 function SignUp({ setReqDone }) {
