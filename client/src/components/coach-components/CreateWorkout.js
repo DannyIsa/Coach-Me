@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 function CreateWorkout() {
   const [exercises, setExercises] = useState([]);
-  const [visibleExercises, setVisibleExercises] = useState([]);
+  const [chosen, setChosen] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [sortValue, setSortValue] = useState("name");
   const [typeTags, setTypeTags] = useState([]);
@@ -23,7 +23,6 @@ function CreateWorkout() {
       .get(`/api/coach/exercises/show?input=${searchInput}&sort=${sortValue}`)
       .then(({ data }) => {
         setExercises(data);
-        setVisibleExercises(data);
         let typeArray = [];
         let muscleArray = [];
         data.map((item) => {
@@ -40,11 +39,10 @@ function CreateWorkout() {
     axios
       .get(`/api/coach/exercises/show?input=${searchInput}&sort=${sortValue}`)
       .then(({ data }) => {
-        setVisibleExercises(data);
+        setExercises(data);
       })
       .catch((err) => console.log(err));
   }, [searchInput, sortValue]);
-
   return (
     <div className="create-workout-page">
       <h1>Create a new workout</h1>
@@ -91,9 +89,71 @@ function CreateWorkout() {
           </div>
         </div>
       </div>
+      <br />
+      <form
+        className="chosen-exercises"
+        onSubmit={(e) => {
+          e.preventDefault();
+          const data = new FormData(e.target);
+          chosen.map((value) => {
+            console.log(data.get("min-reps" + value));
+          });
+        }}
+      >
+        <h1>New Workout</h1>
+        {chosen.map((item, index) => (
+          <div className="chosen-exercise">
+            {item}{" "}
+            <input
+              type="number"
+              name={"min-reps-" + item}
+              defaultValue={0}
+              min={0}
+              required
+            />
+            <input
+              type="number"
+              name={"max-reps-" + item}
+              defaultValue={0}
+              min={0}
+              required
+            />
+            <input
+              type="number"
+              name={"sets-" + item}
+              defaultValue={0}
+              min={0}
+              required
+            />
+            <input
+              type="number"
+              name={"rest-" + item}
+              defaultValue={0}
+              min={0}
+              required
+            />
+            <input
+              type="number"
+              name={"weight-" + item}
+              defaultValue={0}
+              min={0}
+            />
+            <button
+              onClick={() => {
+                let temp = [...chosen];
+                temp = temp.filter((value) => value !== item);
+                setChosen(temp);
+              }}
+            >
+              [X]
+            </button>
+          </div>
+        ))}
+        {chosen.length > 0 && <button>Create Workout</button>}
+      </form>
       <div className="exercises-list">
-        {visibleExercises.length > 0
-          ? visibleExercises.map((item, index) => (
+        {exercises.length > 0
+          ? exercises.map((item, index) => (
               <div className="exercise-block" key={"exerciseItem" + index}>
                 <h2 className="exercise-name">{item.name}</h2>
                 <img
@@ -108,6 +168,16 @@ function CreateWorkout() {
                 <p className="exercise-description">
                   {item.description ? item.description : "no description"}
                 </p>
+                <button
+                  onClick={() => {
+                    let temp = [...chosen];
+                    if (temp.includes(item.name) || temp.length === 10) return;
+                    temp.push(item.name);
+                    setChosen(temp);
+                  }}
+                >
+                  add exercise
+                </button>
               </div>
             ))
           : "No Exercises"}
