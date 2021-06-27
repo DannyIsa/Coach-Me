@@ -1,0 +1,26 @@
+.meal-container {
+  display: flex;
+  justify-content: space-around;
+}
+.meal {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: black solid 3px;
+  width: 150px;
+}
+
+.chosen-meal {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: red solid 3px;
+  width: 150px;
+}
+.add-food-button {
+  margin-bottom: 0 px;
+}
+
+.pop-up-selected-food {
+  border: black solid 3px;
+}

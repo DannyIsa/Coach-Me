@@ -26,6 +26,32 @@ food.get("/", async (req, res) => {
 
 food.get("/:searchedFood", async (req, res) => {
   const { searchedFood } = req.params;
+  if (!searchedFood) return res.status(400).send("Must send food name");
+  const searchedFoods = await models.Food.findAll({
+    where: { name: { [Op.substring]: searchedFood } },
+    limit: 15,
+  });
+  if (!searchedFoods) return res.status(404).send("No such food");
+  res.status(200).send(searchedFoods);
+});
+
+food.post("/add", async (req, res) => {
+  const { food, id, mealOfTheDay } = req.body;
+  if (!food) return res.status(400).send("Must Send food");
+  if (!id) return res.status(400).send("Must Send id");
+  if (!mealOfTheDay) return res.status(400).send("Must Send Meal");
+
+  await models.EatenFood.create({
+    trainee_id: id,
+    food_id: food.id,
+    food_name: food.name,
+    food_calories: food.calories,
+    food_protein: food.protein,
+    food_carbs: food.carbs,
+    food_fats: food.fats,
+    meal_of_the_day: mealOfTheDay,
+  });
+  res.status(200).send("item added successfully");
 });
 
 module.exports = food;

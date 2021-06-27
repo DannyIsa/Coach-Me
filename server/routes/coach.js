@@ -1,5 +1,5 @@
 const models = require("../models");
-const { Op } = require("sequelize");
+const { Op, Model } = require("sequelize");
 const Sequelize = require("sequelize");
 require("dotenv").config();
 const sequelize = new Sequelize(
@@ -98,32 +98,30 @@ coach.post("/exercise-set/append", async (req, res) => {
     .catch((err) => res.status(400).send(err.message));
 });
 
-coach.post("/workouts/new/:coachId", async (req, res) => {
-  const { coachId } = req.params;
-  const { name, sets, exercise_ids } = req.body;
-  if (!Number(coachId)) return res.status(400).send({ message: "Invalid ID" });
-
-  const exercises = await models.ExerciseSet.findAll({
-    where: { id: exercise_ids },
-  });
-  if (!exercises || exercises.length === 0)
-    return res.status(404).send("No Exercises Found");
-  models.Workout.create({ name, sets, coach_id: coachId })
-    .then((workout) => {
-      if (!workout)
-        return res.status(400).send({ message: "Couldn't Create Workout" });
-      workout
-        .addExerciseSets(exercises)
-        .then(() => {
-          return res.status(201).send("Workout Created");
-        })
-        .catch((err) => {
-          return res
-            .status(400)
-            .send({ message: "Couldn't Append Exercises Sets" });
-        });
+coach.get("/test", (req, res) => {
+  models.Workout.findAll({ include: models.ExerciseSet })
+    .then((data) => {
+      res.send(data);
     })
-    .catch((err) => res.status(400).send(err.message));
+    .catch((err) => res.send(err));
+});
+
+coach.post("/workouts/new/:coach_id", async (req, res) => {
+  const { coach_id } = req.params;
+  const { name, sets, exercises } = req.body;
+  if (!Number(coach_id)) return res.status(400).send({ message: "Invalid ID" });
+  let exerciseSets = await models.ExerciseSet.bulkCreate([...exercises]);
+  if (!exerciseSets) exerciseSets = [];
+  const workout = await models.Workout.create({ name, sets, coach_id });
+  if (!workout)
+    return res.status(400).send({ message: "Can't create workout" });
+  workout
+    .addExerciseSets(exerciseSets, { through: { index: 5 } })
+    .then(() => res.status(201).send("workout created"))
+    .catch((err) => {
+      console.log(err.message);
+      res.status(400).send(err);
+    });
 });
 
 coach.get("/clients/show/:userId", async (req, res) => {
