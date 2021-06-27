@@ -17,7 +17,8 @@ function SignUp({ setReqDone }) {
 
   const [errorMessage, setError] = useState();
   const [type, setType] = useState("Trainee");
-  const passwordRef = useRef();
+  const passwordRefUp = useRef();
+  const passwordRefIn = useRef();
   const history = useHistory();
 
   const SignUpWithGoogle = () => {
@@ -143,7 +144,7 @@ function SignUp({ setReqDone }) {
               <input
                 type="password"
                 placeholder="Password"
-                ref={passwordRef}
+                ref={passwordRefIn}
                 onChange={(e) => {
                   setPasswordInput(e.target.value);
                 }}
@@ -153,13 +154,13 @@ function SignUp({ setReqDone }) {
               name="show-password"
               className="show-password"
               onMouseDown={() => {
-                passwordRef.current.type = "text";
+                passwordRefIn.current.type = "text";
               }}
               onMouseUp={() => {
-                passwordRef.current.type = "password";
+                passwordRefIn.current.type = "password";
               }}
               onMouseOut={() => {
-                passwordRef.current.type = "password";
+                passwordRefIn.current.type = "password";
               }}
             >
               See before you go <FontAwesomeIcon icon={faEye} />
@@ -173,10 +174,10 @@ function SignUp({ setReqDone }) {
             />
             <p className="social-text">Or Sign in with social platforms</p>
             <div className="social-media">
-              <a href="#" className="social-icon">
+              <a href="#" className="social-icon" onClick={SignUpWithGoogle}>
                 <FontAwesomeIcon icon={faGoogle} />
               </a>
-              <a href="#" className="social-icon">
+              <a href="#" className="social-icon" onClick={SignUpWithFacebook}>
                 <FontAwesomeIcon icon={faFacebookF} />
               </a>
               <a href="#" className="social-icon">
@@ -212,7 +213,7 @@ function SignUp({ setReqDone }) {
               <input
                 type="password"
                 placeholder="Password"
-                ref={passwordRef}
+                ref={passwordRefUp}
                 onChange={(e) => {
                   setPasswordInput(e.target.value);
                 }}
@@ -222,13 +223,13 @@ function SignUp({ setReqDone }) {
               name="show-password"
               className="show-password"
               onMouseDown={() => {
-                passwordRef.current.type = "text";
+                passwordRefUp.current.type = "text";
               }}
               onMouseUp={() => {
-                passwordRef.current.type = "password";
+                passwordRefUp.current.type = "password";
               }}
               onMouseOut={() => {
-                passwordRef.current.type = "password";
+                passwordRefUp.current.type = "password";
               }}
             >
               See before you go <FontAwesomeIcon icon={faEye} />
