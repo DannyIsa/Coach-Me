@@ -66,6 +66,10 @@ function App() {
     }
   }, [user, loading, reqDone]);
 
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div>
       <Router>

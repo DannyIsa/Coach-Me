@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { ReactComponent as CloseMenu } from "../assets/x.svg";
 import { ReactComponent as MenuIcon } from "../assets/menu.svg";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
 import "../styles/HomePage.css";
 import run from "../pics/home.mp4";
 import logo from "../pics/logo.png";
@@ -12,6 +15,10 @@ function HomePage() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  // window.onbeforeunload = function () {
+  //   window.scrollTo(0, 0);
+  // };
 
   return (
     <div>
@@ -29,12 +36,12 @@ function HomePage() {
               </a>
             </li>
             <li className="option" onClick={closeMobileMenu}>
-              <a href="#" className="link">
+              <a href="#viewport1" className="link">
                 How It Works
               </a>
             </li>
             <li className="option" onClick={closeMobileMenu}>
-              <a href="#" className="link">
+              <a href="#viewport2" className="link">
                 About
               </a>
             </li>
@@ -74,6 +81,74 @@ function HomePage() {
           </Link>
         </div>
       </div>
+      <div id="viewport1">
+        <h1>How It Works</h1>
+        <p>khfddfuijbhvfgtuuyoijkbhvgchfdtuyukgjhgcfhxgrdytufyjhgvchdtfyjhvg</p>
+      </div>
+      <div id="viewport2">
+        <h1>About</h1>
+        <p>khfddfuijbhvfgtuuyoijkbhvgchfdtuyukgjhgcfhxgrdytufyjhgvchdtfyjhvg</p>
+      </div>
+      <footer>
+        <section id="contact">
+          <ul>
+            <li>
+              <p>Oren</p>
+              <a
+                href="https://github.com/orenb99"
+                target="_blank"
+                className="social-icon"
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+            </li>
+            <li>
+              <p>Moran</p>
+              <a
+                href="https://github.com/moran-aga"
+                target="_blank"
+                className="social-icon"
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+            </li>
+            <li>
+              <p>Daniel</p>
+              <a
+                href="https://github.com/DannyIsa"
+                target="_blank"
+                className="social-icon"
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+            </li>
+            <li>
+              <p>Amit</p>
+              <a
+                href="https://github.com/amitby98"
+                target="_blank"
+                className="social-icon"
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section id="terms">
+          <ul id="terms1">
+            <li>
+              <a href="#">Privacy</a>
+            </li>
+            <li>
+              <a href="#">Terms</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+          <span>© Copyright 2021, CoachMe Team</span>
+        </section>
+      </footer>
     </div>
   );
 }
