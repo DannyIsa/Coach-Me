@@ -65,7 +65,7 @@ function HomePage({}) {
       </video>
       <div className="viewport">
         <div className="welcome">
-          <h1 id="welcome-header"> Connect. Get fit. Enjoy. </h1>
+          <h1 id="welcome-header"> Find. Meet. Get fit. </h1>
           <span id="welcome-span">
             Personal training has never been so easy.
           </span>
