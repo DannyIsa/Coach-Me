@@ -6,8 +6,6 @@ function WorkoutsList({ userDetails }) {
   useEffect(() => {});
   return (
     <div>
-      <Link to="/home">go back</Link>
-      <br />
       <Link to="/coach/workouts/create">Create workout</Link>
       <h1>Your Workouts:</h1>
       <div className="workouts-list">

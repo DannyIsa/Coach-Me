@@ -49,8 +49,6 @@ function ClientsList({ userDetails }) {
 
   return (
     <div>
-      <Link to="/home">go back</Link>
-
       <div
         className="requests-alert"
         onClick={() => setHideAlerts(!hideAlerts)}
