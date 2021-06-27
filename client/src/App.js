@@ -7,7 +7,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import axios from "axios";
 
 import SignUp from "./components/SignUp";
-import SignIn from "./components/SignIn";
+// import SignIn from "./components/SignIn";
 import HomePage from "./components/HomePage";
 import NavBar from "./components/NavBar";
 import Food from "./components/Food";
@@ -137,9 +137,9 @@ function App() {
               <Route exact path="/home">
                 <HomePage />
               </Route>
-              <Route exact path="/sign-in">
+              {/* <Route exact path="/sign-in">
                 <SignIn setReqDone={setReqDone} auth={auth} />
-              </Route>
+              </Route> */}
               <Route exact path="/sign-up">
                 <SignUp setReqDone={setReqDone} auth={auth} />
               </Route>

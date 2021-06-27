@@ -1,37 +1,3 @@
-// colors to use
-// color: #698197- light blue
-// color: #264a7c-blue
-// color: #ffc719- yellow
-// color: #e9c46a- yellow
-//#c8c3cc- grey
-//#bd4b47- red
-//#292620- brown
-//#abcced
-//#76776e
-//#55523c
-//#c8c6cf
-//#6b92bd
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-body {
-  width: 100vw;
-  height: 100%;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
-  background-color: rgba(0, 0, 0, 0.3);
-  // height: 100vh;
-  // overflow: hidden;
-}
-
 #myVideo {
   position: absolute;
   width: 100vw;
@@ -45,30 +11,32 @@ body {
   height: 4rem;
 }
 
-a {
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 23px 20px;
-  color: rgba(255, 255, 255, 0.5);
-  // font-weight: 100;
-  box-sizing: border-box;
-  letter-spacing: 0.1025em;
-  font-size: 1.3em;
-  transition-timing-function: linear;
-  transition-duration: 0.5s;
-  transition-property: color;
-  border-bottom: 4px solid transparent;
-}
+// a {
+//   text-decoration: none;
+//   text-transform: uppercase;
+//   padding: 23px 20px;
+//   color: rgba(255, 255, 255, 0.5);
+//   // font-weight: 100;
+//   box-sizing: border-box;
+//   letter-spacing: 0.1025em;
+//   font-size: 1.3em;
+//   transition-timing-function: linear;
+//   transition-duration: 0.5s;
+//   transition-property: color;
+//   border-bottom: 4px solid transparent;
+// }
 
-a:hover {
-  color: #ffc719;
-}
+// a:hover {
+//   color: #ffc719;
+// }
 
 .link:hover {
+  // color: white;
   color: #ffc719;
   transition-timing-function: linear;
   transition-duration: 0.5s;
   transition-property: border;
+  // border-bottom: 4px solid white;
   border-bottom: 4px solid #ffc719;
 }
 
@@ -180,10 +148,11 @@ a:hover {
 .sign-in {
   padding-right: 50px;
   align-self: center;
+  &:hover {
+    color: rgb(59, 59, 226);
+  }
 }
-.sign-in:hover {
-  color: rgb(59, 59, 226);
-}
+
 .signIn-btn {
   padding: 10px 10px;
   border-radius: 3px;
@@ -191,6 +160,7 @@ a:hover {
   background: #2a9d8f;
   // background: #0d7e65;
   color: white;
+  // color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   align-items: center;
 }
@@ -198,27 +168,27 @@ a:hover {
   display: none;
 }
 
-#start {
-  opacity: 1;
-  transition: color 0.3s linear, border-color 0.3s linear;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.9);
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  outline: 0;
-  background: 0 0;
-  text-decoration: none;
-  padding: 2.2vmin 3.75vmin;
-  margin: 0 3px;
-  font-size: 2.2vmin;
-  letter-spacing: 0.14667vmin;
-  line-height: 1;
-  cursor: pointer;
-}
+// #start {
+//   opacity: 1;
+//   transition: color 0.3s linear, border-color 0.3s linear;
+//   text-transform: uppercase;
+//   color: rgba(255, 255, 255, 0.9);
+//   border: 2px solid rgba(255, 255, 255, 0.7);
+//   outline: 0;
+//   background: 0 0;
+//   text-decoration: none;
+//   padding: 2.2vmin 3.75vmin;
+//   margin: 0 3px;
+//   font-size: 2.2vmin;
+//   letter-spacing: 0.14667vmin;
+//   line-height: 1;
+//   cursor: pointer;
+// }
 
-#start:hover {
-  color: #ffc719;
-  border: 2px solid #ffc719;
-}
+// #start:hover {
+//   color: #ffc719;
+//   border: 2px solid #ffc719;
+// }
 
 ////////////////////////////////
 @media (max-width: 860px) {
@@ -237,15 +207,16 @@ a:hover {
     flex-direction: column;
     list-style-type: none;
     grid-gap: 0px;
-  }
-  .nav-options.active {
-    background: #9899d1;
-    left: 0;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
-    align-content: center;
-    padding-left: 0px;
+
+    &.active {
+      background: #9899d1;
+      left: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 1;
+      align-content: center;
+      padding-left: 0px;
+    }
   }
 
   .menu-icon {
