@@ -77,7 +77,7 @@ function SignUp({ setReqDone }) {
 
   const SignUpWithPassword = () => {
     setReqDone(false);
-    const provider = firebase
+    firebase
       .auth()
       .createUserWithEmailAndPassword(emailInput, passwordInput)
       .then(() => {

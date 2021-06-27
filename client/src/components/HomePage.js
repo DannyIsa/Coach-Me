@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { ReactComponent as CloseMenu } from "../assets/x.svg";
 import { ReactComponent as MenuIcon } from "../assets/menu.svg";
@@ -8,7 +8,7 @@ import "../styles/HomePage.css";
 import run from "../pics/home.mp4";
 import logo from "../pics/logo.png";
 
-function HomePage({}) {
+function HomePage() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -19,7 +19,7 @@ function HomePage({}) {
         <div className="logo-nav">
           <div className="logo-container">
             <a href="#">
-              <img src={logo} id="logo" />
+              <img src={logo} id="logo" alt="CoachMe Logo" />
             </a>
           </div>
           <ul className={click ? "nav-options active" : "nav-options"}>
@@ -39,15 +39,15 @@ function HomePage({}) {
               </a>
             </li>
             <li className="option mobile-option" onClick={closeMobileMenu}>
-              <a href="#" className="sign-in link">
+              <Link to="/sign-up" className="sign-in link">
                 Login
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         <ul className="signIn">
           <li onClick={closeMobileMenu}>
-            <Link to="/sign-in" className="signIn-btn">
+            <Link to="/sign-up" className="signIn-btn">
               Login
             </Link>
           </li>
