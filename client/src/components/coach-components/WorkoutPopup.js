@@ -12,6 +12,9 @@ function WorkoutPopup({
   const [draggedOver, setDraggedOver] = useState();
   const [draggedItem, setDraggedItem] = useState();
   const [tempNewOrder, setTempNewOrder] = useState([]);
+  const [workoutName, setWorkoutName] = useState("");
+  const [workoutSets, setWorkoutSets] = useState();
+
   useEffect(() => {
     let temp = [...exercises].map((val) => {
       const set = sets.find((item) => item.name === val);
@@ -49,7 +52,10 @@ function WorkoutPopup({
         <button className="close-button" onClick={() => setTrigger(false)}>
           close
         </button>
-        <h1>Your sets</h1>
+        <input
+          onChange={(e) => setWorkoutName(e.target.value)}
+          placeholder={"Enter Your Workout Name"}
+        />
         <table>
           <thead>
             <tr>
@@ -147,14 +153,22 @@ function WorkoutPopup({
                 </td>
               </tr>
             ))}
+            <br />
+            <strong>Sets: </strong>
+            <input
+              type="number"
+              min={1}
+              defaultValue={1}
+              onChange={(e) => setWorkoutSets(e.target.value)}
+            />
           </tbody>
         </table>
         <button
           onClick={() => {
             axios
               .post("/api/coach/workouts/new/" + userDetails.id, {
-                name: "yes",
-                sets: 1,
+                name: workoutName,
+                sets: setWorkoutSets,
                 exercises: sets,
               })
               .then(() => {

@@ -30,7 +30,7 @@ logs.post("/measure/add", async (req, res) => {
   } = req.body || null;
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
   if (!traineeId || !trainee) {
-    return res.status(404).send({ message: "Invalid ID" });
+    return res.status(404).send( "Invalid ID" );
   }
   if (
     !weight &&
@@ -40,7 +40,7 @@ logs.post("/measure/add", async (req, res) => {
     !thighPerimeter &&
     !waistPerimeter
   ) {
-    return res.status(404).send({ message: "Must send measure logs" });
+    return res.status(404).send( "Must send measure logs" );
   }
 
   models.MeasureLog.create({
@@ -70,12 +70,12 @@ logs.post("/diet/add", async (req, res) => {
   } = req.body || null;
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
   if (!traineeId || !trainee) {
-    return res.status(400).send({ message: "Invalid ID" });
+    return res.status(400).send( "Invalid ID" );
   }
   if (!totalCalories || !usedCalories) {
     return res
       .status(404)
-      .send({ message: "Must sand total and used caloriess" });
+      .send( "Must sand total and used caloriess" );
   }
 
   models.DietLog.create({
@@ -98,7 +98,7 @@ logs.get("/workout/show/:traineeId", async (req, res) => {
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
 
   if (!traineeId || !trainee) {
-    return res.status(400).send({ message: "Invalid ID" });
+    return res.status(400).send( "Invalid ID" );
   }
 
   const traineeWorkoutsLog = await models.WorkoutLog.findAll({
@@ -120,7 +120,7 @@ logs.get("/measure/show/:traineeId", async (req, res) => {
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
 
   if (!traineeId || !trainee) {
-    return res.status(404).send({ message: "Invalid ID" });
+    return res.status(404).send( "Invalid ID" );
   }
 
   const traineeMeasureLog = await models.MeasureLog.findAll({
@@ -135,7 +135,7 @@ logs.get("/diet/show/:traineeId", async (req, res) => {
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
 
   if (!traineeId || !trainee) {
-    return res.status(404).send({ message: "Invalid ID" });
+    return res.status(404).send( "Invalid ID" );
   }
 
   const traineeDietLog = await models.DietLog.findOne({
