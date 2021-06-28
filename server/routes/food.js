@@ -64,4 +64,22 @@ food.get("/eaten-food/:id", async (req, res) => {
   res.status(200).send(eatenFood);
 });
 
+food.delete("/eaten-food/:id", async (req, res) => {
+  const { id } = req.params;
+  if (!id) return res.status(400).send("Must send id");
+  const eatenFoodId = await models.EatenFood.findOne({
+    where: { id },
+  });
+  if (!eatenFoodId) return res.send(404).send("No food with that id");
+  const deletedFoodTraineeId = eatenFoodId.trainee_id;
+  await eatenFoodId.destroy();
+  const eatenFood = await models.EatenFood.findAll({
+    where: {
+      trainee_id: deletedFoodTraineeId,
+    },
+  });
+  if (!eatenFood) return res.send(404).send("No eaten food for this trainee");
+  res.status(200).send(eatenFood);
+});
+
 module.exports = food;
