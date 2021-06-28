@@ -44,9 +44,9 @@ coach.put("/request/accept/:coachId", async (req, res) => {
         .then(() => {
           res.status(200).send("Request Accepted");
         })
-        .catch((err) => res.status(400).send(err.message));
+        .catch((err) => res.status(400).send(err));
     })
-    .catch((err) => res.status(400).send(err.message));
+    .catch((err) => res.status(400).send(err));
 });
 
 coach.put("/request/decline/:coachId", (req, res) => {
@@ -63,7 +63,7 @@ coach.put("/request/decline/:coachId", (req, res) => {
       }
       res.status(200).send("Request Declined");
     })
-    .catch((err) => res.status(400).send(err.message));
+    .catch((err) => res.status(400).send(err));
 });
 coach.post("/exercise-set/new", async (req, res) => {
   const { name, min_reps, max_reps, sets, added_weight, rest } = req.body;
@@ -76,7 +76,7 @@ coach.post("/exercise-set/new", async (req, res) => {
     rest,
   })
     .then((data) => res.status(201).send({ id: data.id }))
-    .catch((err) => res.status(400).send(err.message));
+    .catch((err) => res.status(400).send(err));
 });
 
 coach.post("/exercise-set/append", async (req, res) => {
@@ -93,7 +93,7 @@ coach.post("/exercise-set/append", async (req, res) => {
   exercise
     .addWorkout(workout)
     .then(() => res.status(201).send("Exercise Added To Workout"))
-    .catch((err) => res.status(400).send(err.message));
+    .catch((err) => res.status(400).send(err));
 });
 
 coach.post("/workouts/new/:coach_id", async (req, res) => {
@@ -150,7 +150,7 @@ coach.post("/exercise/add", async (req, res) => {
     equipment,
   })
     .then(() => res.status(201).send("Exercise created"))
-    .catch((err) => res.status(400).send(err.message));
+    .catch((err) => res.status(400).send(err));
 });
 coach.get("/workouts/show/:coachId", async (req, res) => {
   const { coachId } = req.params;

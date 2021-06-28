@@ -29,7 +29,7 @@ function CoachesList({ userDetails }) {
         console.log(data);
         setRequest(data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err.response.data));
   }
   return (
     <div>

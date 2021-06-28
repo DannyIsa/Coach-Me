@@ -34,7 +34,7 @@ function CreateWorkout({ userDetails }) {
         setTypeTags(typeArray);
         setMuscleTags(muscleArray);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err.response.data));
   }, []);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ function CreateWorkout({ userDetails }) {
       .then(({ data }) => {
         setExercises(data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err.response.data));
   }, [searchInput, sortValue]);
   return (
     <div className="create-workout-page">

@@ -176,7 +176,7 @@ function WorkoutPopup({
                 setSets([]);
                 setTrigger(false);
               })
-              .catch((err) => console.log(err));
+              .catch((err) => console.log(err.response.data));
           }}
         >
           Create Workout

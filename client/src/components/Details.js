@@ -31,7 +31,7 @@ function Details({ userDetails, userType, setRegistered }) {
               setRegistered(true);
               history.push("/");
             })
-            .catch((err) => console.log(err));
+            .catch((err) => console.log(err.response.data));
         }}
       >
         <input name="name" placeholder="Enter Your Full Name" required />

@@ -38,7 +38,7 @@ trainee.post("/request/send/:traineeId", (req, res) => {
       res.status(201).send(data);
     })
     .catch(async (err) => {
-      if (err.message === "Validation error") {
+      if (err === "Validation error") {
         const request = await models.CoachRequest.findOne({
           where: { trainee_id: traineeId },
         });
@@ -50,9 +50,9 @@ trainee.post("/request/send/:traineeId", (req, res) => {
             return res.status(201).send(request);
           })
           .catch((err) => {
-            return res.status(400).send(err.message);
+            return res.status(400).send(err);
           });
-      } else res.status(400).send(err.message);
+      } else res.status(400).send(err);
     });
 });
 
@@ -68,7 +68,7 @@ trainee.post("/meal/add", async (req, res) => {
   trainee
     .addMeal(meal)
     .then(() => res.status(201).send("Meal Added To Trainee"))
-    .catch((err) => res.status(400).send(err.message));
+    .catch((err) => res.status(400).send(err));
 });
 
 trainee.get("/meal/show/:traineeId", async (req, res) => {

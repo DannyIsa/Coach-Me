@@ -48,7 +48,7 @@ user.post("/register", async (req, res) => {
       res.status(201).send(`${type} Registered`);
     })
     .catch((err) => {
-      res.status(400).send(err.message);
+      res.status(400).send(err);
     });
 });
 

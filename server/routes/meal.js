@@ -45,7 +45,7 @@ meal.post("/new", async (req, res) => {
     .then(() => {
       res.status(201).send("Meal Created");
     })
-    .catch((err) => res.status(400).send(err.message));
+    .catch((err) => res.status(400).send(err));
 });
 
 module.exports = meal;

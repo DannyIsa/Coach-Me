@@ -58,7 +58,7 @@ function App() {
           setUserDetails({ ...data.details });
         })
         .catch((err) => {
-          console.log(err);
+          console.log(err.response.data);
         });
     }
   }, [user, loading, reqDone]);
