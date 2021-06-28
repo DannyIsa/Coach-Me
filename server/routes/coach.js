@@ -108,7 +108,7 @@ coach.get("/test", (req, res) => {
 
 coach.post("/workouts/new/:coach_id", async (req, res) => {
   const { coach_id } = req.params;
-  const { name, sets, exercises } = req.body;
+  const { name, sets, exercises, } = req.body;
   if (!Number(coach_id)) return res.status(400).send({ message: "Invalid ID" });
   let exerciseSets = await models.ExerciseSet.bulkCreate([...exercises]);
   if (!exerciseSets) exerciseSets = [];

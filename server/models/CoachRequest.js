@@ -11,10 +11,14 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.Trainee, {
         foreignKey: "trainee_id",
         targetKey: "id",
+        onDelete: "cascade",
+
       });
       this.belongsTo(models.Coach, {
         foreignKey: "coach_id",
         targetKey: "id",
+        onDelete: "cascade",
+
       });
     }
   }
