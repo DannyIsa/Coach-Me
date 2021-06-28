@@ -11,8 +11,13 @@
   height: 4rem;
 }
 
-.link:hover {
+.link {
+  padding: 23px 20px;
+}
+
+.link .link:hover {
   color: #ffc719;
+  padding: 23px 20px;
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
   -webkit-transition-duration: 0.5s;
@@ -323,9 +328,13 @@ footer #contact ul {
     height: 10vw;
     padding: 30px 0px;
   }
-  .link:hover {
+  .link {
+    padding: 23px 20px;
+  }
+  .link .link:hover {
     color: #ffc719;
     border-bottom: none;
+    padding: 23px 20px;
   }
   .sign-in {
     border-radius: 3px;

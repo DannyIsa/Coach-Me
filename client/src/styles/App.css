@@ -639,7 +639,6 @@ button:hover {
 a {
   text-decoration: none;
   text-transform: uppercase;
-  padding: 23px 20px;
   color: rgba(255, 255, 255, 0.5);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

@@ -76,17 +76,9 @@ import { Link, useHistory } from "react-router-dom";
 import { ReactComponent as CloseMenu } from "../assets/x.svg";
 import { ReactComponent as MenuIcon } from "../assets/menu.svg";
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faGithub } from "@fortawesome/free-brands-svg-icons";
-
 import "../styles/NavBar.css";
-// import "../styles/HomePage.css";
 import SignOutButton from "./SignOutButton";
-
-// import run from "../pics/home.mp4";
 import logo from "../pics/logo.png";
-// import "../styles/NavBar.css";
-// // import { useHistory } from "react-router-dom";
 
 function NavBar({ signOut, userType }) {
   const [click, setClick] = useState(false);
@@ -95,7 +87,6 @@ function NavBar({ signOut, userType }) {
   const history = useHistory();
 
   return (
-    // <div>
     <div className="homeNav">
       <div className="logo-nav">
         <div className="logo-container">
@@ -103,14 +94,14 @@ function NavBar({ signOut, userType }) {
             <img src={logo} id="logo" alt="CoachMe Logo" />
           </a>
         </div>
-        <ul className={click ? "nav-options active" : "nav-options"}>
+        <ul className={click ? "nav-options active" : "nav-options-main"}>
           <li className="option" onClick={closeMobileMenu}>
             <a href="/" className="link">
               Home
             </a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="`/${userType}/workouts`" className="link">
+            <a href={`/${userType}/workouts`} className="link">
               Workouts
             </a>
           </li>
@@ -146,7 +137,6 @@ function NavBar({ signOut, userType }) {
         )}
       </div>
     </div>
-    // {/* </div> */}
   );
 }
 

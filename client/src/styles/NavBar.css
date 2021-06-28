@@ -54,7 +54,7 @@
           justify-content: center;
 }
 
-.nav-options {
+.nav-options-main {
   position: absolute;
   right: 12rem;
   display: -ms-grid;
@@ -109,7 +109,7 @@
   .header {
     height: 60px;
   }
-  .nav-options {
+  .nav-options-main {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -127,7 +127,7 @@
     list-style-type: none;
     grid-gap: 0px;
   }
-  .nav-options.active {
+  .nav-options-main.active {
     background: #9899d1;
     left: 0;
     opacity: 1;

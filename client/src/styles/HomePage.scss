@@ -11,14 +11,19 @@
   height: 4rem;
 }
 
-.link:hover {
-  // color: white;
-  color: #ffc719;
-  transition-timing-function: linear;
-  transition-duration: 0.5s;
-  transition-property: border;
-  // border-bottom: 4px solid white;
-  border-bottom: 4px solid #ffc719;
+.link {
+  padding: 23px 20px;
+
+  .link:hover {
+    // color: white;
+    color: #ffc719;
+    padding: 23px 20px;
+    transition-timing-function: linear;
+    transition-duration: 0.5s;
+    transition-property: border;
+    // border-bottom: 4px solid white;
+    border-bottom: 4px solid #ffc719;
+  }
 }
 
 // .link .active {
@@ -247,9 +252,14 @@ footer {
     padding: 30px 0px;
   }
 
-  .link:hover {
-    color: #ffc719;
-    border-bottom: none;
+  .link {
+    padding: 23px 20px;
+
+    .link:hover {
+      color: #ffc719;
+      border-bottom: none;
+      padding: 23px 20px;
+    }
   }
 
   .sign-in {
