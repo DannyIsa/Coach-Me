@@ -11,7 +11,6 @@ import HomePage from "./components/HomePage";
 import NavBar from "./components/NavBar";
 import Check from "./components/Check";
 import Details from "./components/Details";
-import SignOutButton from "./components/SignOutButton";
 import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
 import CoachesList from "./components/trainee-components/CoachesList";
 import WorkoutsList from "./components/coach-components/WorkoutsList";
@@ -86,7 +85,7 @@ function App() {
             // user is registered
             registered ? (
               <>
-                <SignOutButton signOut={signOut} />
+                {/* <SignOutButton signOut={signOut} /> */}
                 <NavBar userType={userType} signOut={signOut} />
                 <Switch>
                   <Route exact path="/profile">
@@ -122,7 +121,7 @@ function App() {
             ) : (
               // user isn't registered
               <>
-                <SignOutButton signOut={signOut} />
+                {/* <SignOutButton signOut={signOut} /> */}
                 <Switch>
                   <Route exact path="/details">
                     <Details
