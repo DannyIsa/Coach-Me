@@ -16,15 +16,7 @@ const { Router } = require("express");
 const food = Router();
 food.use(express.json());
 
-food.get("/", async (req, res) => {
-  const allFood = await models.Food.findAll({});
-  if (!allFood) {
-    return res.status(500).send({ message: "internal server error" });
-  }
-  res.status(200).send(allFood);
-});
-
-food.get("/:searchedFood", async (req, res) => {
+food.get("/get-food/:searchedFood", async (req, res) => {
   const { searchedFood } = req.params;
   if (!searchedFood) return res.status(400).send("Must send food name");
   const searchedFoods = await models.Food.findAll({
@@ -35,7 +27,7 @@ food.get("/:searchedFood", async (req, res) => {
   res.status(200).send(searchedFoods);
 });
 
-food.post("/add", async (req, res) => {
+food.post("/eaten-food", async (req, res) => {
   const { food, id, mealOfTheDay } = req.body;
   if (!food) return res.status(400).send("Must Send food");
   if (!id) return res.status(400).send("Must Send id");
@@ -51,7 +43,25 @@ food.post("/add", async (req, res) => {
     food_fats: food.fats,
     meal_of_the_day: mealOfTheDay,
   });
-  res.status(200).send("item added successfully");
+  const eatenFood = await models.EatenFood.findAll({
+    where: {
+      trainee_id: id,
+    },
+  });
+  if (!eatenFood) return res.send(404).send("No eaten food for this trainee");
+  res.status(200).send(eatenFood);
+});
+
+food.get("/eaten-food/:id", async (req, res) => {
+  const { id } = req.params;
+  if (!id) return res.status(400).send("Must send id");
+  const eatenFood = await models.EatenFood.findAll({
+    where: {
+      trainee_id: id,
+    },
+  });
+  if (!eatenFood) return res.send(404).send("No eaten food for this trainee");
+  res.status(200).send(eatenFood);
 });
 
 module.exports = food;
