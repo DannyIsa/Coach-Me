@@ -15,6 +15,7 @@ import Details from "./components/Details";
 import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
 import CoachesList from "./components/trainee-components/CoachesList";
 import WorkoutsList from "./components/coach-components/WorkoutsList";
+import Food from "./components/Food";
 
 import CoachDashboard from "./components/coach-components/CoachDashboard";
 import ClientsList from "./components/coach-components/ClientsList";
@@ -116,6 +117,9 @@ function App() {
                       <CoachesList userDetails={userDetails} />
                     </Route>
                   )}
+                  <Route exact path="/food">
+                    <Food userDetails={userDetails} />
+                  </Route>
                 </Switch>
               </>
             ) : (
