@@ -82,4 +82,17 @@ food.delete("/eaten-food/:id", async (req, res) => {
   res.status(200).send(eatenFood);
 });
 
+food.get("/need-to-eat/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  if (!id) return res.status(400).send("Must send id");
+  const traineesNeedToEatFood = await models.NeedToEat.findAll({
+    where: { trainee_id: id },
+  });
+  if (!traineesNeedToEatFood) {
+    return res.status(404).send("No need to eat food fo this trainee");
+  }
+  res.status(200).send(traineesNeedToEatFood);
+});
+
 module.exports = food;

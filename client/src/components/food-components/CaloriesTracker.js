@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import { getCurrentDate } from "../utils";
+
 import axios from "axios";
 import { debounce } from "lodash";
-import "../styles/CaloriesTracker.css";
+import "../../styles/CaloriesTracker.css";
 
 export default function CaloriesTracker({ userDetails }) {
   const [totalCalories, setTotalCalories] = useState(0);
@@ -88,7 +88,6 @@ export default function CaloriesTracker({ userDetails }) {
 
   return (
     <div>
-      <div>Todays date is: {getCurrentDate()}</div>
       <meter min="0" value={usedCalories} max={totalCalories}>
         {usedCalories}%
       </meter>
