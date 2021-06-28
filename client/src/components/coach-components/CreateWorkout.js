@@ -54,6 +54,7 @@ function CreateWorkout({ userDetails }) {
           trigger={popupTrigger}
           setTrigger={setPopupTrigger}
           exercises={chosen}
+          setExercises={setChosen}
         />
       )}
       <div className="search-div">

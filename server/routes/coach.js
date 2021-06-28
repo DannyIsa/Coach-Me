@@ -108,7 +108,13 @@ coach.get("/test", (req, res) => {
 
 coach.post("/workouts/new/:coach_id", async (req, res) => {
   const { coach_id } = req.params;
-  const { name, sets, exercises, } = req.body;
+  const { name, sets, exercises } = req.body;
+  exercises.forEach((item) => {
+    if (item.sets <= 0) item.sets = 1;
+    if (item.min_reps <= 0) item.min_reps = 1;
+    if (item.max_reps <= 0 || item.max_reps < item.min_reps)
+      item.max_reps = item.min_reps;
+  });
   if (!Number(coach_id)) return res.status(400).send({ message: "Invalid ID" });
   let exerciseSets = await models.ExerciseSet.bulkCreate([...exercises]);
   if (!exerciseSets) exerciseSets = [];
@@ -116,7 +122,7 @@ coach.post("/workouts/new/:coach_id", async (req, res) => {
   if (!workout)
     return res.status(400).send({ message: "Can't create workout" });
   workout
-    .addExerciseSets(exerciseSets, { through: { index: 5 } })
+    .addExerciseSets(exerciseSets, { through: { index: [5, 6] } })
     .then(() => res.status(201).send("workout created"))
     .catch((err) => {
       console.log(err.message);

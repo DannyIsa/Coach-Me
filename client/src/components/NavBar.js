@@ -110,7 +110,7 @@ function NavBar({ signOut, userType }) {
             </a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="`/${userType}/workouts`" className="link">
+            <a href={`/${userType}/workouts`} className="link">
               Workouts
             </a>
           </li>
