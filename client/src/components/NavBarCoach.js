@@ -1,9 +1,9 @@
 // import React, { useState } from "react";
 // import { NavLink } from "react-router-dom";
-// import "../styles/NavBar.css";
+// import "../styles/Nav.css";
 // // import { useHistory } from "react-router-dom";
 
-// function NavBar({ signOut, userType }) {
+// function NavBarCoach({ signOut, userType }) {
 //   const [click, setClick] = useState(false);
 //   const handleClick = () => setClick(!click);
 //   // const history = useHistory();
@@ -16,11 +16,6 @@
 //     {
 //       title: "Workouts",
 //       link: `/${userType}/workouts`,
-//       className: "nav-item",
-//     },
-//     {
-//       title: "Nutrition"/food,
-//       link: "/food",
 //       className: "nav-item",
 //     },
 //     {
@@ -68,7 +63,7 @@
 //   );
 // }
 
-// export default NavBar;
+// export default NavBarCoach;
 
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
@@ -80,7 +75,7 @@ import "../styles/NavBar.css";
 import SignOutButton from "./SignOutButton";
 import logo from "../pics/logo.png";
 
-function NavBar({ signOut, userType }) {
+function NavBarCoach({ signOut, userType }) {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -90,13 +85,13 @@ function NavBar({ signOut, userType }) {
     <div className="homeNav">
       <div className="logo-nav">
         <div className="logo-container">
-          <a href="/">
+          <a href="/profile">
             <img src={logo} id="logo" alt="CoachMe Logo" />
           </a>
         </div>
         <ul className={click ? "nav-options active" : "nav-options-main"}>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="/" className="link">
+            <a href="/profile" className="link">
               Home
             </a>
           </li>
@@ -106,13 +101,13 @@ function NavBar({ signOut, userType }) {
             </a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="/food" className="link">
-              Nutrition
+            <a href="/coach/clients" className="link">
+              Trainees
             </a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="/profile" className="link">
-              Profile
+            <a href="#" className="link">
+              Requests
             </a>
           </li>
           <li className="option mobile-option" onClick={closeMobileMenu}>
@@ -131,13 +126,13 @@ function NavBar({ signOut, userType }) {
       </ul>
       <div className="mobile-menu" onClick={handleClick}>
         {click ? (
-          <CloseMenu className="menu-icon" />
+          <CloseMenu className="menu-icon-main" />
         ) : (
-          <MenuIcon className="menu-icon" />
+          <MenuIcon className="menu-icon-main" />
         )}
       </div>
     </div>
   );
 }
 
-export default NavBar;
+export default NavBarCoach;

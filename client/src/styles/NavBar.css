@@ -105,7 +105,7 @@
   display: none;
 }
 
-@media (max-width: 1125px) {
+@media (max-width: 1200px) {
   .header {
     height: 60px;
   }
@@ -138,7 +138,7 @@
         align-content: center;
     padding-left: 0px;
   }
-  .menu-icon {
+  .menu-icon-main {
     width: 45px;
     height: 45px;
     color: white;

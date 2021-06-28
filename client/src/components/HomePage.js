@@ -146,7 +146,7 @@ function HomePage() {
               <a href="#">Contact</a>
             </li>
           </ul>
-          <span>© Copyright 2021, CoachMe Team</span>
+          <span>© 2021, CoachMe Team. All Rights Reserved.</span>
         </section>
       </footer>
     </div>
