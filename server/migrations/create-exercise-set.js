@@ -19,13 +19,13 @@ module.exports = {
       max_reps: {
         type: Sequelize.INTEGER,
       },
+      rest: {
+        type: Sequelize.INTEGER,
+      },
       sets: {
         type: Sequelize.INTEGER,
       },
       added_weight: {
-        type: Sequelize.INTEGER,
-      },
-      rest: {
         type: Sequelize.INTEGER,
       },
       created_at: {

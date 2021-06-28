@@ -157,7 +157,11 @@ function WorkoutPopup({
                 sets: 1,
                 exercises: sets,
               })
-              .then((res) => console.log(res))
+              .then(() => {
+                setExercises([]);
+                setSets([]);
+                setTrigger(false);
+              })
               .catch((err) => console.log(err));
           }}
         >

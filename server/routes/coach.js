@@ -121,13 +121,13 @@ coach.post("/workouts/new/:coach_id", async (req, res) => {
   const workout = await models.Workout.create({ name, sets, coach_id });
   if (!workout)
     return res.status(400).send({ message: "Can't create workout" });
-  workout
-    .addExerciseSets(exerciseSets, { through: { index: [5, 6] } })
-    .then(() => res.status(201).send("workout created"))
-    .catch((err) => {
-      console.log(err.message);
-      res.status(400).send(err);
+  await exerciseSets.map(async (item, index) => {
+    const query = await workout.addExerciseSets(item, {
+      through: { index: index + 1 },
     });
+    if (!query) return res.status(400);
+  });
+  return res.status(201).send("Workout Crated");
 });
 
 coach.get("/clients/show/:userId", async (req, res) => {
