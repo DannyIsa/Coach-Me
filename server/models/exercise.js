@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.ExerciseSet, {
         foreignKey: "name",
         targetKey: "name",
+        onDelete: "cascade",
+
       });
     }
   }

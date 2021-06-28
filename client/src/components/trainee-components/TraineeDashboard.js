@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import EditableInput from "./EditableInput";
 function TraineeDashboard({ userDetails }) {
   const [previousWorkouts, setPreviousWorkouts] = useState([]);
   const [measureLogs, setMeasureLogs] = useState([]);
+  const [editMode, setEditMode] = useState(false);
 
   const getWorkoutsLog = () =>
     axios
@@ -24,15 +25,12 @@ function TraineeDashboard({ userDetails }) {
         console.log(err);
       });
 
-  const getMesuarments = () =>
+  const getMeasurements = () =>
     axios
       .get("http://localhost:3001/api/logs/measure/show/" + userDetails.id)
       .then(({ data }) => {
         if (data) {
-          const measurements = data.map((log, i) => {
-            console.log(log, "log");
-            setMeasureLogs(log);
-          });
+          setMeasureLogs(data[data.length - 1]);
         }
       })
       .catch((err) => {
@@ -42,7 +40,7 @@ function TraineeDashboard({ userDetails }) {
   useEffect(() => {
     if (!userDetails) return;
     getWorkoutsLog();
-    getMesuarments();
+    getMeasurements();
   }, [userDetails]);
 
   return (
@@ -59,14 +57,48 @@ function TraineeDashboard({ userDetails }) {
           <div>Activity Level: {}</div>
           <div>Workouts Per Week: {}</div>
           <br />
+          <button
+            className="edit-button"
+            onClick={() => setEditMode(!editMode)}
+          >
+            {editMode ? "Save" : "Edit"}
+          </button>
           <h2>Body Measurments:</h2>
-          <div>Height: {userDetails.height} cm</div>
-          <div>Weight: {userDetails.weight} kg</div>
-          <div>Chest: {measureLogs.chest_perimeter} cm</div>
-          <div>Hip: {measureLogs.hip_perimeter} cm</div>
-          <div>Bicep: {measureLogs.bicep_perimeter} cm</div>
-          <div>Thigh: {measureLogs.thigh_perimeter} cm</div>
-          <div>Waist: {measureLogs.waist_perimeter} cm</div>
+          <EditableInput
+            value={userDetails.height}
+            attribute={"Height"}
+            editing={editMode}
+          />
+          <EditableInput
+            value={userDetails.weight}
+            attribute={"Weight"}
+            editing={editMode}
+          />
+          <EditableInput
+            value={userDetails.chest_perimeter}
+            attribute={"Chest"}
+            editing={editMode}
+          />
+          <EditableInput
+            value={userDetails.hip_perimeter}
+            attribute={"Hip"}
+            editing={editMode}
+          />
+          <EditableInput
+            value={userDetails.bicep_perimeter}
+            attribute={"Bicep"}
+            editing={editMode}
+          />
+          <EditableInput
+            value={userDetails.waist_perimeter}
+            attribute={"Waist"}
+            editing={editMode}
+          />
+          <EditableInput
+            value={userDetails.thigh_perimeter}
+            attribute={"thigh"}
+            editing={editMode}
+          />
           <br />
           <h2>Forms To Fill Out:</h2>
           <div>daily general update</div>

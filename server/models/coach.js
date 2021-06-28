@@ -11,14 +11,19 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Workout, {
         sourceKey: "id",
         foreignKey: "coach_id",
+        onDelete: "cascade",
       });
       this.hasMany(models.Trainee, {
         sourceKey: "id",
         foreignKey: "coach_id",
+        onDelete: "cascade",
+
       });
       this.hasMany(models.CoachRequest, {
         foreignKey: "coach_id",
         sourceKey: "id",
+        onDelete: "cascade",
+
       });
     }
   }

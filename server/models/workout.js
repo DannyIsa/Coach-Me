@@ -9,15 +9,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsToMany(models.ExerciseSet, {
-        through: "workout_exercise_joins",
+        through: models.WorkoutExerciseJoin,
+        onDelete: "cascade",
       });
       this.belongsTo(models.Coach, {
         foreignKey: "coach_id",
         targetKey: "id",
+        onDelete: "cascade",
       });
       this.hasMany(models.WorkoutLog, {
         foreignKey: "id",
         sourceKey: "id",
+        onDelete: "cascade",
       });
     }
   }
