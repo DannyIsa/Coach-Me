@@ -99,14 +99,21 @@ coach.post("/exercise-set/append", async (req, res) => {
 coach.post("/workouts/new/:coach_id", async (req, res) => {
   const { coach_id } = req.params;
   let { name, sets, exercises } = req.body;
+  if (!name) name = "";
   exercises.forEach((item) => {
-    if (item.sets <= 0) item.sets = 1;
-    if (item.min_reps <= 0) item.min_reps = 1;
-    if (item.max_reps <= 0 || item.max_reps < item.min_reps)
-      item.max_reps = item.min_reps;
-    if (sets <= 0) sets = 1;
+    if (
+      item.sets <= 0 ||
+      item.min_reps <= 0 ||
+      item.max_reps <= 0 ||
+      item.max_reps <= 0 ||
+      sets <= 0
+    )
+      return res.status(400).send("Numbers must be positive");
+    if (item.max_reps < item.min_reps)
+      return res.status(400).send("Max reps cant be lower then min reps");
   });
-  if (name.match(/^[A-Za-z1-9 ]/i)) name = "Workout";
+  if (!name.match(/^[A-Za-z1-9 ]$/i))
+    return res.status(400).send("Invalid name");
   if (!Number(coach_id)) return res.status(400).send("Invalid ID");
   let exerciseSets = await models.ExerciseSet.bulkCreate([...exercises]);
   if (!exerciseSets) exerciseSets = [];
@@ -164,8 +171,8 @@ coach.get("/workouts/show/:coachId", async (req, res) => {
 coach.get("/exercises/show", async (req, res) => {
   let { input, sort } = req.query;
   let query = { order: [["name", "ASC"]] };
-  if (input.match(/^[ ]/i)) input = "";
-  if (input && input.match(/^[A-Za-z ]/i)) {
+  if (input.match(/^[ ]$/i)) input = "";
+  if (input && input.match(/^[A-Za-z ]$/i)) {
     if (sort === "name" || sort === "muscle" || sort === "type")
       query.where = { [sort]: { [Op.like]: "%" + input + "%" } };
   }

@@ -14,6 +14,7 @@ function WorkoutPopup({
   const [tempNewOrder, setTempNewOrder] = useState([]);
   const [workoutName, setWorkoutName] = useState("");
   const [workoutSets, setWorkoutSets] = useState();
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     let temp = [...exercises].map((val) => {
@@ -49,7 +50,13 @@ function WorkoutPopup({
   return trigger ? (
     <div className="pop-up">
       <div className="pop-up-inner">
-        <button className="close-button" onClick={() => setTrigger(false)}>
+        <button
+          className="close-button"
+          onClick={() => {
+            setTrigger(false);
+            setErrorMessage("");
+          }}
+        >
           close
         </button>
         <input
@@ -153,34 +160,37 @@ function WorkoutPopup({
                 </td>
               </tr>
             ))}
-            <br />
-            <strong>Sets: </strong>
-            <input
-              type="number"
-              min={1}
-              defaultValue={1}
-              onChange={(e) => setWorkoutSets(e.target.value)}
-            />
           </tbody>
         </table>
+        <br />
+        <strong>Sets: </strong>
+        <input
+          type="number"
+          min={1}
+          defaultValue={1}
+          onChange={(e) => setWorkoutSets(e.target.value)}
+        />
+        <br />
         <button
           onClick={() => {
             axios
               .post("/api/coach/workouts/new/" + userDetails.id, {
                 name: workoutName,
-                sets: setWorkoutSets,
+                sets: workoutSets,
                 exercises: sets,
               })
               .then(() => {
                 setExercises([]);
                 setSets([]);
+                setErrorMessage("");
                 setTrigger(false);
               })
-              .catch((err) => console.log(err.response.data));
+              .catch((err) => setErrorMessage(err.response.data));
           }}
         >
           Create Workout
         </button>
+        <h3 className="error-message">{errorMessage}</h3>
       </div>
     </div>
   ) : (
