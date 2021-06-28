@@ -75,6 +75,17 @@ export default function CaloriesTracker({ userDetails }) {
       .catch((err) => console.log(err.response.data));
   };
 
+  const deleteItemFromMeal = (id) => {
+    axios
+      .delete(`http://localhost:3001/api/food/eaten-food/${id}`)
+      .then(({ data }) => {
+        setEatenFood(data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
   return (
     <div>
       <div>Todays date is: {getCurrentDate()}</div>
@@ -93,8 +104,9 @@ export default function CaloriesTracker({ userDetails }) {
             return (
               food.meal_of_the_day === "Breakfast" && (
                 <div>
-                  <h5>{food.food_name}</h5>
-                  <span>{food.food_calories}</span>
+                  <h4>{food.food_name}</h4>
+                  <span>{food.food_calories} calories</span>
+                  <button onClick={() => deleteItemFromMeal(food.id)}>X</button>
                 </div>
               )
             );
@@ -116,8 +128,9 @@ export default function CaloriesTracker({ userDetails }) {
             return (
               food.meal_of_the_day === "Lunch" && (
                 <div>
-                  <h5>{food.food_name}</h5>
-                  <span>{food.food_calories}</span>
+                  <h4>{food.food_name}</h4>
+                  <span>{food.food_calories} calories</span>
+                  <button onClick={() => deleteItemFromMeal(food.id)}>X</button>
                 </div>
               )
             );
@@ -138,8 +151,9 @@ export default function CaloriesTracker({ userDetails }) {
             return (
               food.meal_of_the_day === "Dinner" && (
                 <div>
-                  <h5>{food.food_name}</h5>
-                  <span>{food.food_calories}</span>
+                  <h4>{food.food_name}</h4>
+                  <span>{food.food_calories} calories</span>
+                  <button onClick={() => deleteItemFromMeal(food.id)}>X</button>
                 </div>
               )
             );
@@ -160,8 +174,9 @@ export default function CaloriesTracker({ userDetails }) {
             return (
               food.meal_of_the_day === "Snacks" && (
                 <div>
-                  <h5>{food.food_name}</h5>
-                  <span>{food.food_calories}</span>
+                  <h4>{food.food_name}</h4>
+                  <span>{food.food_calories} calories</span>
+                  <button onClick={() => deleteItemFromMeal(food.id)}>X</button>
                 </div>
               )
             );
@@ -190,7 +205,7 @@ export default function CaloriesTracker({ userDetails }) {
               setSelectedMeal("");
             }}
           >
-            X
+            close
           </button>
           <div>
             {searchedFood.map((food, i) => {

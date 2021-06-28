@@ -43,7 +43,7 @@
   justify-content: center;
 }
 
-.nav-options {
+.nav-options-main {
   position: absolute;
   right: 12rem;
   display: grid;
@@ -88,12 +88,12 @@
 
 //////////////////////////////////////////////////////
 
-@media (max-width: 1125px) {
+@media (max-width: 1200px) {
   .header {
     height: 60px;
   }
 
-  .nav-options {
+  .nav-options-main {
     display: flex;
     width: 100%;
     position: absolute;
@@ -116,7 +116,7 @@
     }
   }
 
-  .menu-icon {
+  .menu-icon-main {
     width: 45px;
     height: 45px;
     color: white;

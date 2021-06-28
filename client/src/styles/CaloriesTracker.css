@@ -7,7 +7,7 @@
   flex-direction: column;
   text-align: center;
   border: black solid 3px;
-  width: 150px;
+  width: 300px;
 }
 
 .chosen-meal {
@@ -15,7 +15,7 @@
   flex-direction: column;
   text-align: center;
   border: red solid 3px;
-  width: 150px;
+  width: 300px;
 }
 .add-food-button {
   margin-bottom: 0 px;
