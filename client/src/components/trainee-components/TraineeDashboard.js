@@ -22,7 +22,7 @@ function TraineeDashboard({ userDetails }) {
         }
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response.data);
       });
 
   const getMeasurements = () =>
@@ -34,7 +34,7 @@ function TraineeDashboard({ userDetails }) {
         }
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response.data);
       });
 
   useEffect(() => {

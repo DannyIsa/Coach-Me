@@ -40,7 +40,7 @@ function SignUp({ setReqDone }) {
             });
           })
           .catch((err) => {
-            setError(err.message);
+            setError(err.response.data);
           });
       });
   };
@@ -64,7 +64,7 @@ function SignUp({ setReqDone }) {
             });
           })
           .catch((err) => {
-            setError(err.message);
+            setError(err.response.data);
           });
       });
   };
@@ -92,11 +92,12 @@ function SignUp({ setReqDone }) {
             });
           })
           .catch((err) => {
-            setError(err.message);
+            setError(err.response.data);
           });
       })
       .catch((err) => {
-        setError(err.message);
+        console.log(err);
+        setError(err.response.data);
       });
   };
   const signInWithPassword = () => {
@@ -111,7 +112,7 @@ function SignUp({ setReqDone }) {
         });
       })
       .catch((err) => {
-        setError(err.message);
+        setError(err.response.data);
       });
   };
 

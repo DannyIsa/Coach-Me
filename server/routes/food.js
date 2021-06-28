@@ -48,7 +48,7 @@ food.post("/eaten-food", async (req, res) => {
       trainee_id: id,
     },
   });
-  if (!eatenFood) return res.send(404).send("No eaten food for this trainee");
+  if (!eatenFood) return res.status(404).send("No eaten food for this trainee");
   res.status(200).send(eatenFood);
 });
 
@@ -60,7 +60,7 @@ food.get("/eaten-food/:id", async (req, res) => {
       trainee_id: id,
     },
   });
-  if (!eatenFood) return res.send(404).send("No eaten food for this trainee");
+  if (!eatenFood) return res.status(404).send("No eaten food for this trainee");
   res.status(200).send(eatenFood);
 });
 

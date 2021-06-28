@@ -25,8 +25,8 @@ export default function CaloriesTracker({ userDetails }) {
         .then(({ data }) => {
           setEatenFood(data);
         })
-        .catch((e) => {
-          console.log(e);
+        .catch((err) => {
+          console.log(err.response.data);
         });
     }
   }, [userDetails]);
@@ -72,7 +72,7 @@ export default function CaloriesTracker({ userDetails }) {
         setAddFoodPressed(false);
         setSelectedMeal("");
       })
-      .catch((e) => console.log(e));
+      .catch((err) => console.log(err.response.data));
   };
 
   const deleteItemFromMeal = (id) => {
