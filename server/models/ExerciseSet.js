@@ -11,11 +11,13 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Exercise, {
         sourceKey: "name",
         foreignKey: "name",
+        onDelete: "cascade",
       });
       this.belongsToMany(models.Workout, {
-        through: "workout_exercise_joins",
+        through: models.WorkoutExerciseJoin,
         foreignKey: "exercise_id",
         sourceKey: "id",
+        onDelete: "cascade",
       });
     }
   }
