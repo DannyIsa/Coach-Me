@@ -97,6 +97,8 @@ user.put("/details/:id", (req, res) => {
   if ((type !== "Coach" && type !== "Trainee") || !obj) {
     return res.status(400).send("Invalid Client");
   }
+  if (!Number(obj.phone_number))
+    return res.status(400).send("Invalid Phone Number");
   if (type === "Coach") {
     query = {
       name: obj.name,
