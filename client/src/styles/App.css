@@ -666,6 +666,7 @@ form.sign-in-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
 .details-div .left-div {
@@ -692,8 +693,17 @@ form.sign-in-form {
 }
 
 .details-div .left-div h1 {
+  margin: 2.5rem 0;
   color: white;
   text-transform: uppercase;
+}
+
+.details-div .left-div .details-welcome p {
+  text-align: center;
+  line-height: 3rem;
+  color: white;
+  font-size: 30px;
+  word-wrap: break-word;
 }
 
 .details-div .right-div {
@@ -703,7 +713,7 @@ form.sign-in-form {
 }
 
 .details-div .right-div .details-form {
-  height: 90vh;
+  height: 100vh;
   width: 80vw;
 }
 
@@ -736,6 +746,10 @@ form.sign-in-form {
 
 .details-div .right-div #gender-div input {
   width: 1.5rem;
+}
+
+.details-div .right-div .num1 {
+  margin: 1.8rem 0;
 }
 
 .details-div .right-div .inputbox {
@@ -796,7 +810,7 @@ form.sign-in-form {
   background: linear-gradient(45deg, greenyellow, dodgerblue);
 }
 
-.details-div .right-div form a {
+.details-div .right-div form button {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -811,7 +825,7 @@ form.sign-in-form {
   letter-spacing: 4px;
 }
 
-.details-div .right-div a:hover {
+.details-div .right-div button:hover {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
@@ -819,12 +833,12 @@ form.sign-in-form {
           box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
-.details-div .right-div a span {
+.details-div .right-div button span {
   position: absolute;
   display: block;
 }
 
-.details-div .right-div a span:nth-child(1) {
+.details-div .right-div button span:nth-child(1) {
   top: 0;
   left: -100%;
   width: 100%;
@@ -855,7 +869,7 @@ form.sign-in-form {
   }
 }
 
-.details-div .right-div a span:nth-child(2) {
+.details-div .right-div button span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 2px;
@@ -888,7 +902,7 @@ form.sign-in-form {
   }
 }
 
-.details-div .right-div a span:nth-child(3) {
+.details-div .right-div button span:nth-child(3) {
   bottom: 0;
   right: -100%;
   width: 100%;
@@ -921,7 +935,7 @@ form.sign-in-form {
   }
 }
 
-.details-div .right-div a span:nth-child(4) {
+.details-div .right-div button span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 2px;

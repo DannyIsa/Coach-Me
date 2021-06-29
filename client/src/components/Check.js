@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import gif from "../pics/whiteGif.gif";
+import "../styles/Check.css";
 
 function Check({ user, loading, registered, userType }) {
   const history = useHistory();
@@ -13,7 +15,11 @@ function Check({ user, loading, registered, userType }) {
   }, [user, loading, registered]);
   return (
     <div className="loading-page">
-      <h1 className="headline">Loading...</h1>
+      <h2 className="headline">
+        Wait a minute, <br />
+        I'm in the middle of training
+      </h2>
+      <img src={gif} id="gif" alt="white Gif" />
     </div>
   );
 }

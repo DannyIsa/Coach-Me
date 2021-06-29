@@ -18,13 +18,12 @@ function Details({ userDetails, userType, setRegistered }) {
             </a>
           </div>
         </div>
-        <h1>Welcome 👋</h1>
-        <p>We are happy to have you here!</p>
-        <p>
-          This is a one-time form, <br />
-          please take a minute to fill in the following details.
-        </p>
-        <p>Good luck!</p>
+        <h1>Welcome friend 👋</h1>
+        <div className="details-welcome">
+          <p>We are happy to have you here!</p>
+          <p>Please take a minute to fill in the following details.</p>
+          <p>Good luck!</p>
+        </div>
         <img src={couple} id="couple" alt="couple training" />
       </div>
       <div className="right-div">
@@ -56,13 +55,15 @@ function Details({ userDetails, userType, setRegistered }) {
               .catch((err) => console.log(err.response.data));
           }}
         >
-          <div className="inputbox">
-            <input type="tel" required="required" name="name" />
-            <span>Name</span>
-          </div>
-          <div className="inputbox">
-            <input type="text" required="required" name="phone-number" />
-            <span>Number</span>
+          <div className="num1">
+            <div className="inputbox">
+              <input type="tel" required="required" name="name" />
+              <span>Name</span>
+            </div>
+            <div className="inputbox">
+              <input type="text" required="required" name="phone-number" />
+              <span>Number</span>
+            </div>
           </div>
           <div id="gender-div">
             <div>
@@ -112,31 +113,35 @@ function Details({ userDetails, userType, setRegistered }) {
               )}
             </div>
           </div>
-          <div className="inputbox">
-            <input type="date" required="required" name="birthdate" />
-            <span>Date of Birth</span>
+          <div className="num1">
+            <div className="inputbox">
+              <input type="date" required="required" name="birthdate" />
+              <span>Date of Birth</span>
+            </div>
           </div>
           {userType === "Trainee" && (
             <>
-              <div className="inputbox">
-                <input type="number" required="required" name="height" />
-                <span>Height (Cm)</span>
-              </div>
-              <div className="inputbox">
-                <input type="number" required="required" name="weight" />
-                <span>Weight (Kg)</span>
-              </div>
-              <div className="inputbox">
-                <select
-                  name="activity-level"
-                  placeholder="Choose Your Activity Level"
-                  required
-                >
-                  <option value="Sedentary">Sedentary</option>
-                  <option value="LightlyActive">Lightly Active</option>
-                  <option value="Active">Active</option>
-                  <option value="VeryActive">Very Active</option>
-                </select>
+              <div className="num1">
+                <div className="inputbox">
+                  <input type="number" required="required" name="height" />
+                  <span>Height (Cm)</span>
+                </div>
+                <div className="inputbox">
+                  <input type="number" required="required" name="weight" />
+                  <span>Weight (Kg)</span>
+                </div>
+                <div className="selectbox">
+                  <select
+                    name="activity-level"
+                    placeholder="Choose Your Activity Level"
+                    required
+                  >
+                    <option value="Sedentary">Sedentary</option>
+                    <option value="LightlyActive">Lightly Active</option>
+                    <option value="Active">Active</option>
+                    <option value="VeryActive">Very Active</option>
+                  </select>
+                </div>
               </div>
             </>
           )}
@@ -147,13 +152,6 @@ function Details({ userDetails, userType, setRegistered }) {
             <span></span>
             Submit
           </button>
-          {/* <a href="#" type="submit" value="submit">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Submit
-          </a> */}
         </form>
       </div>
     </div>
@@ -161,92 +159,3 @@ function Details({ userDetails, userType, setRegistered }) {
 }
 
 export default Details;
-
-{
-  /* <div>
-      <form>
-        <input name="name" placeholder="Enter Your Full Name" required />
-        <br />
-        <input
-          type="tel"
-          name="phone-number"
-          placeholder="Enter Your Phone Number"
-          required
-        />
-        <br />
-        <label htmlFor="gender">Male</label>
-        <input
-          type="radio"
-          name="gender"
-          value="male"
-          required
-          onChange={(e) => {
-            setOther(false);
-          }}
-        />
-        <label htmlFor="gender">Female</label>
-        <input
-          type="radio"
-          name="gender"
-          value="female"
-          required
-          onChange={(e) => {
-            setOther(false);
-          }}
-        />
-        <label htmlFor="gender" required>
-          Other
-        </label>
-        <input
-          type="radio"
-          name="gender"
-          value="other"
-          onChange={() => {
-            setOther(true);
-          }}
-        />
-        {other && (
-          <input
-            name="gender"
-            required
-            placeholder="Enter Your Gender"
-            required
-          />
-        )}
-        <br />
-        <input type="date" name="birthdate" required />
-        <br />
-
-        {userType === "Trainee" && (
-          <>
-            <input
-              type="number"
-              name="height"
-              placeholder="Enter Your Height (Cm)"
-              required
-            />
-            <br />
-            <input
-              type="number"
-              name="weight"
-              placeholder="Enter Your Weight (Kg)"
-              required
-            />
-            <br />
-            <select
-              name="activity-level"
-              placeholder="Choose Your Activity Level"
-              required
-            >
-              <option value="Sedentary">Sedentary</option>
-              <option value="LightlyActive">Lightly Active</option>
-              <option value="Active">Active</option>
-              <option value="VeryActive">Very Active</option>
-            </select>
-            <br />
-          </>
-        )}
-        <button type="submit" value="submit">
-          submit
-        </button> */
-}

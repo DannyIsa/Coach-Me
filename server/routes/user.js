@@ -68,7 +68,7 @@ user.get("/login/:email", async (req, res) => {
 
 user.get("/check/:email", async (req, res) => {
   const { email } = req.params;
-
+  if (!email) return res.status(400).send("Invalid email");
   const trainee = await models.Trainee.findOne({ where: { email: email } });
   if (trainee) {
     return res.status(200).send({

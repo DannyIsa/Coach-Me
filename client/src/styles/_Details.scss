@@ -1,6 +1,7 @@
 .details-div {
   height: 100vh;
   display: flex;
+  overflow: hidden;
 
   .left-div {
     background-color: #5995fd;
@@ -18,24 +19,29 @@
     }
 
     & h1 {
+      margin: 2.5rem 0;
       color: white;
       text-transform: uppercase;
+    }
+
+    .details-welcome {
+      & p {
+        text-align: center;
+        line-height: 3rem;
+        color: white;
+        font-size: 30px;
+        word-wrap: break-word;
+      }
     }
   }
   .right-div {
     background-color: white;
     width: 70vw;
     height: 100vh;
-    // height: 100vh;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // justify-content: center;
 
     .details-form {
-      height: 90vh;
+      height: 100vh;
       width: 80vw;
-      // background-color: #5995fd;
     }
 
     & input {
@@ -61,6 +67,16 @@
         width: 1.5rem;
       }
     }
+    .num1 {
+      margin: 1.8rem 0;
+    }
+
+    // & .selectbox {
+    //   position: relative;
+    //   width: 300px;
+    //   height: 50px;
+    //   margin-bottom: 50px;
+    // }
 
     & .inputbox {
       position: relative;
@@ -111,7 +127,7 @@
       }
     }
 
-    & form a {
+    & form button {
       position: relative;
       display: inline-block;
       padding: 10px 20px;
@@ -125,7 +141,7 @@
       letter-spacing: 4px;
     }
 
-    & a:hover {
+    & button:hover {
       background: #ffc719;
       color: #fff;
       border-radius: 5px;
@@ -133,12 +149,12 @@
         0 0 100px #ffc719;
     }
 
-    & a span {
+    & button span {
       position: absolute;
       display: block;
     }
 
-    & a span:nth-child(1) {
+    & button span:nth-child(1) {
       top: 0;
       left: -100%;
       width: 100%;
@@ -157,7 +173,7 @@
       }
     }
 
-    & a span:nth-child(2) {
+    & button span:nth-child(2) {
       top: -100%;
       right: 0;
       width: 2px;
@@ -177,7 +193,7 @@
       }
     }
 
-    & a span:nth-child(3) {
+    & button span:nth-child(3) {
       bottom: 0;
       right: -100%;
       width: 100%;
@@ -197,7 +213,7 @@
       }
     }
 
-    & a span:nth-child(4) {
+    & button span:nth-child(4) {
       bottom: -100%;
       left: 0;
       width: 2px;
@@ -218,3 +234,113 @@
     }
   }
 }
+
+// @media (max-width: 1330px) {
+//   .details-div {
+//     height: 100vh;
+//     display: flex;
+//     flex-direction: column;
+//     overflow: hidden;
+
+//     .left-div {
+//       background-color: #5995fd;
+//       width: 100vw;
+//       height: fit-content;
+//       display: flex;
+//       justify-content: space-around;
+//       flex-direction: row;
+//       align-items: center;
+//       flex-wrap: wrap;
+
+//       & #couple {
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         width: 7rem;
+//         height: 8rem;
+//       }
+
+//       & h1 {
+//         font-size: 28px;
+//         color: white;
+//         text-transform: uppercase;
+//         // word-wrap: break-word;
+//       }
+
+//       .details-welcome {
+//         & p {
+//           text-align: center;
+//           line-height: 3rem;
+//           color: white;
+//           font-size: 20px;
+//           word-wrap: break-word;
+//           margin-right: 5rem;
+//         }
+//       }
+//     }
+//     .right-div {
+//       background-color: white;
+//       width: 100vw;
+//       flex-wrap: wrap;
+//       // height: 70vh;
+
+//       .details-form {
+//         // height: 90vh;
+//         // width: 80vw;
+//         display: flex;
+//         flex-direction: row;
+//       }
+
+//       & input {
+//         max-width: 280px;
+//         width: 100%;
+//         background-color: #f0f0f0;
+//         margin: 10px 0;
+//         height: 55px;
+//         border-radius: 15px;
+//         outline: none;
+//         display: flex;
+//         flex-wrap: wrap;
+//         padding: 0 1.5rem;
+//         position: relative;
+//       }
+
+//       #gender-div {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-between;
+//         width: 15vw;
+
+//         & input {
+//           width: 1.5rem;
+//         }
+//       }
+//       & .num1 {
+//         display: flex;
+//         flex-direction: column;
+//       }
+
+//       & .inputbox {
+//         position: relative;
+//         width: 300px;
+//         height: 50px;
+//         margin-bottom: 50px;
+
+//         & form button {
+//           position: absolute;
+//           bottom: 0;
+//           // margin-bottom: 5rem;
+//           padding: 10px 20px;
+//           color: #ffc719;
+//           font-size: 16px;
+//           text-decoration: none;
+//           text-transform: uppercase;
+//           overflow: hidden;
+//           transition: 0.5s;
+//           margin-top: 40px;
+//           letter-spacing: 4px;
+//         }
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,17 @@
+.loading-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.headline {
+  font-size: 2rem;
+  color: white;
+}
+#gif {
+  margin-top: 2rem;
+  align-self: center;
+  height: 50vh;
+  width: 50vh;
+}
