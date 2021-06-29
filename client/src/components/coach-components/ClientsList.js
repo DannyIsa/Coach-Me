@@ -48,7 +48,7 @@ function ClientsList({ userDetails }) {
   }
 
   return (
-    <div>
+    <div className="client-list-start">
       <div
         className="requests-alert"
         onClick={() => setHideAlerts(!hideAlerts)}

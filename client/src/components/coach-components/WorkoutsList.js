@@ -12,7 +12,7 @@ function WorkoutsList({ userDetails }) {
       .catch((err) => console.log(err.response.data));
   }, [userDetails]);
   return (
-    <div>
+    <div className="create-workouts-start">
       <Link to="/coach/workouts/create">Create workout</Link>
       <h1>Your Workouts:</h1>
       {workouts.map((item, index) => (
