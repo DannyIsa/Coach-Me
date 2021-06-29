@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import pdf from "../../documents/health_declaration.pdf";
 import EditableInput from "./EditableInput";
 function TraineeDashboard({ userDetails }) {
   const [previousWorkouts, setPreviousWorkouts] = useState([]);
@@ -37,11 +38,31 @@ function TraineeDashboard({ userDetails }) {
         console.log(err);
       });
 
+  const updateMeasurements = () =>
+    axios
+      .post("http://localhost:3001/api/logs/measure/add", {
+        id: userDetails.id,
+        weight: userDetails.weight,
+        chestPerimeter: measureLogs.chest_perimeter,
+        hipPerimeter: measureLogs.hip_perimeter,
+        bicepPerimeter: measureLogs.bicep_perimeter,
+        thighPerimeter: measureLogs.thigh_perimeter,
+        waistPerimeter: measureLogs.waist_perimeter,
+      })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((e) => console.log(e));
+
   useEffect(() => {
     if (!userDetails) return;
     getWorkoutsLog();
     getMeasurements();
   }, [userDetails]);
+
+  // useEffect(() => {
+  //   updateMeasurements();
+  // }, [measureLogs]);
 
   return (
     <div>
@@ -63,52 +84,78 @@ function TraineeDashboard({ userDetails }) {
           >
             {editMode ? "Save" : "Edit"}
           </button>
+          {/* <button onClick={updateMeasurements}>click to update</button> */}
           <h2>Body Measurments:</h2>
           <EditableInput
-            value={userDetails.height}
+            value={userDetails.height + " cm"}
             attribute={"Height"}
             editing={editMode}
           />
           <EditableInput
-            value={userDetails.weight}
+            value={userDetails.weight + " kg"}
             attribute={"Weight"}
             editing={editMode}
           />
           <EditableInput
-            value={userDetails.chest_perimeter}
+            value={
+              measureLogs && measureLogs.chest_perimeter !== null
+                ? measureLogs.chest_perimeter + " cm"
+                : "no value"
+            }
             attribute={"Chest"}
             editing={editMode}
           />
           <EditableInput
-            value={userDetails.hip_perimeter}
+            value={
+              measureLogs && measureLogs.hip_perimeter !== null
+                ? measureLogs.hip_perimeter + " cm"
+                : "no value"
+            }
             attribute={"Hip"}
             editing={editMode}
           />
           <EditableInput
-            value={userDetails.bicep_perimeter}
+            value={
+              measureLogs && measureLogs.bicep_perimeter !== null
+                ? measureLogs.bicep_perimeter + " cm"
+                : "no value"
+            }
             attribute={"Bicep"}
             editing={editMode}
           />
           <EditableInput
-            value={userDetails.waist_perimeter}
+            value={
+              measureLogs && measureLogs.waist_perimeter !== null
+                ? measureLogs.waist_perimeter + " cm"
+                : "no value"
+            }
             attribute={"Waist"}
             editing={editMode}
           />
           <EditableInput
-            value={userDetails.thigh_perimeter}
+            value={
+              measureLogs && measureLogs.thigh_perimeter !== null
+                ? measureLogs.thigh_perimeter + " cm"
+                : "no value"
+            }
             attribute={"thigh"}
             editing={editMode}
           />
           <br />
           <h2>Forms To Fill Out:</h2>
           <div>daily general update</div>
-          <div>health declaration</div>
+          <div>
+            health declaration
+            <a href={pdf} target="_blank">
+              download pdf
+            </a>
+          </div>
+
           <br />
           <h2>
             My Next Workout:
             {previousWorkouts}
           </h2>
-          {/* <Link to="/trainee/coaches">Coaches List</Link> */}
         </>
       ) : (
         ""
@@ -118,7 +165,3 @@ function TraineeDashboard({ userDetails }) {
 }
 
 export default TraineeDashboard;
-
-{
-  /* <Link to="/trainee/coaches">Coaches</Link> */
-}
