@@ -162,13 +162,27 @@ coach.post("/exercise/add", async (req, res) => {
 });
 coach.get("/workouts/show/:coachId", async (req, res) => {
   const { coachId } = req.params;
-  const coach = await models.Coach.findOne({ where: { id: coachId } });
+  if (!coachId) return res.status(400).send("Invalid Id");
+  const coach = await models.Coach.findOne({
+    where: { id: coachId },
+  });
   if (!coach) return res.status(404).send("Coach Not Found");
   const workouts = await coach.getWorkouts();
   if (!workouts) return res.status(200).send([]);
   res.status(200).send(workouts);
 });
 
+coach.get("/workouts/show-detailed/:coachId", async (req, res) => {
+  const { coachId } = req.params;
+  const { workoutId } = req.query;
+  if (!coachId) return res.status(400).send("Invalid Coach Id");
+  if (!workoutId) return res.status(400).send("Invalid Workout Id");
+
+  const coach = await models.Coach.findOne({
+    where: { id: coachId },
+  });
+  if (!coach) return res.status(404).send("Coach Not Found");
+});
 coach.get("/exercises/show", async (req, res) => {
   let { input, sort } = req.query;
   let query = { order: [["name", "ASC"]] };

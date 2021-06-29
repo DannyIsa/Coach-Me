@@ -94,7 +94,6 @@ food.delete("/eaten-food/:foodId", async (req, res) => {
     where: { id: foodId, trainee_id: traineeId },
   });
   if (!eatenFoodId) return res.send(404).send("No food with that id");
-  const deletedFoodTraineeId = eatenFoodId.trainee_id;
   await eatenFoodId.destroy();
   const { status, data } = await getFoodFromEaten(traineeId);
   res.status(status).send(data);
