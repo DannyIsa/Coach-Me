@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import { ReactComponent as CloseMenu } from "../assets/x.svg";
-import { ReactComponent as MenuIcon } from "../assets/menu.svg";
+import { ReactComponent as CloseMenu } from "../../assets/x.svg";
+import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
 
-import "../styles/NavBar.css";
-import SignOutButton from "./SignOutButton";
-import logo from "../pics/logo.png";
+import "../../styles/NavBar.css";
+import logo from "../../pics/logo.png";
 
 function NavBarTrainee({ signOut, userType }) {
   const [click, setClick] = useState(false);

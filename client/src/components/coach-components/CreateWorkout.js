@@ -36,7 +36,6 @@ function CreateWorkout({ userDetails }) {
       })
       .catch((err) => console.log(err.response.data));
   }, []);
-
   useEffect(() => {
     axios
       .get(`/api/coach/exercises/show?input=${searchInput}&sort=${sortValue}`)
@@ -116,14 +115,15 @@ function CreateWorkout({ userDetails }) {
           </button>
         </div>
       ))}
-      <button
-        disabled={chosen.length === 0}
-        onClick={() => {
-          setPopupTrigger(true);
-        }}
-      >
-        Next
-      </button>
+      {chosen.length > 0 && (
+        <button
+          onClick={() => {
+            setPopupTrigger(true);
+          }}
+        >
+          Next
+        </button>
+      )}
       <div className="exercises-list">
         {exercises.length > 0
           ? exercises.map((item, index) => (

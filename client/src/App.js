@@ -8,8 +8,8 @@ import axios from "axios";
 
 import SignUp from "./components/SignUp";
 import HomePage from "./components/HomePage";
-import NavBarTrainee from "./components/NavBarTrainee";
-import NavBarCoach from "./components/NavBarCoach";
+import NavBarTrainee from "./components/trainee-components/NavBarTrainee";
+import NavBarCoach from "./components/coach-components/NavBarCoach";
 import Check from "./components/Check";
 import Details from "./components/Details";
 import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
