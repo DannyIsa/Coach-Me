@@ -13,37 +13,21 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
-      food_name: {
-        primaryKey: true,
-        allowNull: false,
-        type: Sequelize.STRING,
-      },
       food_id: {
         primaryKey: true,
         allowNull: false,
         type: Sequelize.INTEGER,
       },
-      food_calories: {
-        primaryKey: true,
-        allowNull: false,
-        type: Sequelize.INTEGER,
-      },
-      food_protein: {
-        primaryKey: true,
-        allowNull: false,
-        type: Sequelize.INTEGER,
-      },
-      food_carbs: {
-        primaryKey: true,
-        allowNull: false,
-        type: Sequelize.INTEGER,
-      },
-      food_fats: {
-        primaryKey: true,
-        allowNull: false,
-        type: Sequelize.INTEGER,
-      },
       meal_of_the_day: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
+      amount: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+      },
+      day: {
+        allowNull: false,
         type: Sequelize.STRING,
       },
       created_at: {

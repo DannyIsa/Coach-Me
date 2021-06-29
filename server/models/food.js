@@ -9,16 +9,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.NeedToEat, {
-        targetKey: "food_name",
-        foreignKey: "name",
+        targetKey: "food_id",
+        foreignKey: "id",
         onDelete: "cascade",
-
       });
       this.belongsTo(models.EatenFood, {
-        targetKey: "food_name",
-        foreignKey: "name",
+        targetKey: "food_id",
+        foreignKey: "id",
         onDelete: "cascade",
-
       });
     }
   }

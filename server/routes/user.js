@@ -31,7 +31,6 @@ function checkValid(client) {
 user.post("/register", async (req, res) => {
   const { type } = req.query;
   const { email } = req.body;
-  console.log(type);
   if (type !== "Coach" && type !== "Trainee") {
     return res.status(400).send("Invalid");
   }
@@ -121,7 +120,6 @@ user.put("/details/:id", (req, res) => {
       activity_level: obj.activity_level,
     };
   }
-  // console.log(query);
 
   if (!checkValid(query)) return res.status(400).send("Invalid Details");
 

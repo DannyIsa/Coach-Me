@@ -12,13 +12,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "trainee_id",
         targetKey: "id",
         onDelete: "cascade",
-
       });
       this.hasOne(models.Food, {
-        foreignKey: "name",
-        sourceKey: "food_name",
+        foreignKey: "food_id",
+        sourceKey: "id",
         onDelete: "cascade",
-
       });
     }
   }
@@ -26,12 +24,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       trainee_id: DataTypes.INTEGER,
       food_id: DataTypes.INTEGER,
-      food_name: DataTypes.STRING,
-      food_calories: DataTypes.INTEGER,
-      food_protein: DataTypes.INTEGER,
-      food_carbs: DataTypes.INTEGER,
-      food_fats: DataTypes.INTEGER,
       meal_of_the_day: DataTypes.STRING,
+      amount: DataTypes.INTEGER,
     },
     {
       sequelize,

@@ -21,6 +21,7 @@ function Details({ userDetails, userType, setRegistered }) {
           if (userType === "Trainee") {
             obj.height = data.get("height");
             obj.weight = data.get("weight");
+            obj.activity_level = data.get("activity-level");
           }
           axios
             .put("http://localhost:3001/api/user/details/" + userDetails.id, {
@@ -103,7 +104,7 @@ function Details({ userDetails, userType, setRegistered }) {
             />
             <br />
             <select
-              name="activitylevel"
+              name="activity-level"
               placeholder="Choose Your Activity Level"
               required
             >

@@ -28,28 +28,39 @@ food.get("/get-food/:searchedFood", async (req, res) => {
 });
 
 food.post("/eaten-food", async (req, res) => {
-  const { food, id, mealOfTheDay } = req.body;
-  if (!food) return res.status(400).send("Must Send food");
-  if (!id) return res.status(400).send("Must Send id");
+  const { foodId, traineeId, mealOfTheDay, amount } = req.body;
+  if (!foodId) return res.status(400).send("Must Send Food Id");
+  if (!traineeId) return res.status(400).send("Must Send Trainee Id");
   if (!mealOfTheDay) return res.status(400).send("Must Send Meal");
+  if (!amount) return res.status(400).send("Must Send Amount");
 
-  await models.EatenFood.create({
-    trainee_id: id,
-    food_id: food.id,
-    food_name: food.name,
-    food_calories: food.calories,
-    food_protein: food.protein,
-    food_carbs: food.carbs,
-    food_fats: food.fats,
+  const trainee = await models.Trainee.findOne({ where: { id: trainee_id } });
+  if (!trainee) return res.status(404).send("No Trainee Found");
+  const eaten = await models.EatenFood.create({
+    trainee_id: traineeId,
     meal_of_the_day: mealOfTheDay,
+    amount,
   });
-  const eatenFood = await models.EatenFood.findAll({
-    where: {
-      trainee_id: id,
-    },
-  });
-  if (!eatenFood) return res.status(404).send("No eaten food for this trainee");
-  res.status(200).send(eatenFood);
+  const query = await trainee.addEatenFood(eaten);
+  console.log(query);
+  res.send(query ? "yes" : "no");
+  // await models.EatenFood.create({
+  //   trainee_id: id,
+  //   food_id: food.id,
+  //   food_name: food.name,
+  //   food_calories: food.calories,
+  //   food_protein: food.protein,
+  //   food_carbs: food.carbs,
+  //   food_fats: food.fats,
+  //   meal_of_the_day: mealOfTheDay,
+  // });
+  // const eatenFood = await models.EatenFood.findAll({
+  //   where: {
+  //     trainee_id: id,
+  //   },
+  // });
+  // if (!eatenFood) return res.status(404).send("No eaten food for this trainee");
+  // res.status(200).send(eatenFood);
 });
 
 food.get("/eaten-food/:id", async (req, res) => {

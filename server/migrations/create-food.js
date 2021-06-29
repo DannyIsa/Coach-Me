@@ -14,18 +14,23 @@ module.exports = {
         type: Sequelize.STRING,
       },
       calories: {
+        allowNull: false,
         type: Sequelize.INTEGER,
       },
       protein: {
+        allowNull: false,
         type: Sequelize.INTEGER,
       },
       carbs: {
+        allowNull: false,
         type: Sequelize.INTEGER,
       },
       fats: {
+        allowNull: false,
         type: Sequelize.INTEGER,
       },
       weight: {
+        allowNull: false,
         type: Sequelize.INTEGER,
       },
       image: {
