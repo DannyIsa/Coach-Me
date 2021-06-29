@@ -6,7 +6,7 @@ function Check({ user, loading, registered, userType }) {
   useEffect(() => {
     if (!loading) {
       if (user) {
-        if (registered === true) history.push("/home");
+        if (registered === true) history.push("/profile");
         else if (registered === false) history.push("/details");
       } else history.push("/home");
     }

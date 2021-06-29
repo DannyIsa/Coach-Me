@@ -8,12 +8,14 @@ import axios from "axios";
 
 import SignUp from "./components/SignUp";
 import HomePage from "./components/HomePage";
-import NavBar from "./components/NavBar";
+import NavBarTrainee from "./components/NavBarTrainee";
+import NavBarCoach from "./components/NavBarCoach";
 import Check from "./components/Check";
 import Details from "./components/Details";
 import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
 import CoachesList from "./components/trainee-components/CoachesList";
 import WorkoutsList from "./components/coach-components/WorkoutsList";
+import Food from "./components/Food";
 
 import CoachDashboard from "./components/coach-components/CoachDashboard";
 import ClientsList from "./components/coach-components/ClientsList";
@@ -58,7 +60,7 @@ function App() {
           setUserDetails({ ...data.details });
         })
         .catch((err) => {
-          console.log(err);
+          console.log(err.response.data);
         });
     }
   }, [user, loading, reqDone]);
@@ -84,8 +86,11 @@ function App() {
             // user is registered
             registered ? (
               <>
-                {/* <SignOutButton signOut={signOut} /> */}
-                <NavBar userType={userType} signOut={signOut} />
+                {userType === "Coach" ? (
+                  <NavBarCoach userType={userType} signOut={signOut} />
+                ) : (
+                  <NavBarTrainee userType={userType} signOut={signOut} />
+                )}
                 <Switch>
                   <Route exact path="/profile">
                     {userType === "Coach" ? (
@@ -112,6 +117,9 @@ function App() {
                       <CoachesList userDetails={userDetails} />
                     </Route>
                   )}
+                  <Route exact path="/food">
+                    <Food userDetails={userDetails} />
+                  </Route>
                 </Switch>
               </>
             ) : (

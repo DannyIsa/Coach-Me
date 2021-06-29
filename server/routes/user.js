@@ -48,7 +48,7 @@ user.post("/register", async (req, res) => {
       res.status(201).send(`${type} Registered`);
     })
     .catch((err) => {
-      res.status(400).send(err.message);
+      res.status(400).send(err);
     });
 });
 
@@ -64,7 +64,7 @@ user.get("/login/:email", async (req, res) => {
   if (coach) {
     return res.status(200).send(coach);
   }
-  return res.status(400).send({ message: `${email} is not registered` });
+  return res.status(400).send(`${email} is not registered`);
 });
 
 user.get("/check/:email", async (req, res) => {
@@ -87,7 +87,7 @@ user.get("/check/:email", async (req, res) => {
     });
   }
 
-  res.status(404).send({ message: "No Client With That Email" });
+  res.status(404).send("No Client With That Email");
 });
 
 user.put("/details/:id", (req, res) => {
@@ -95,8 +95,10 @@ user.put("/details/:id", (req, res) => {
   const { type, obj } = req.body;
   let query;
   if ((type !== "Coach" && type !== "Trainee") || !obj) {
-    return res.status(400).send({ message: "Invalid Client" });
+    return res.status(400).send("Invalid Client");
   }
+  if (!Number(obj.phone_number))
+    return res.status(400).send("Invalid Phone Number");
   if (type === "Coach") {
     query = {
       name: obj.name,
@@ -120,17 +122,15 @@ user.put("/details/:id", (req, res) => {
   }
   // console.log(query);
 
-  if (!checkValid(query))
-    return res.status(400).send({ message: "Invalid Details" });
+  if (!checkValid(query)) return res.status(400).send("Invalid Details");
 
   models[type]
     .update(query, { where: { id } })
     .then((data) => {
-      if (!data[0])
-        return res.status(404).send({ message: `No Client With id ${id}` });
+      if (!data[0]) return res.status(404).send(`No Client With id ${id}`);
       res.status(201).send(`${type} ${query.name} Updated`);
     })
-    .catch((err) => res.status(400).send(err.message));
+    .catch((err) => res.status(400).send(err));
 });
 
 module.exports = user;

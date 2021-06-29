@@ -1,6 +1,11 @@
 @import "./SignUp";
 @import "./CreateWorkout";
+@import "./WorkoutsList";
+@import "./ClientsList";
 @import "./Popup";
+@import "./CoachDashboard";
+@import "./TraineeDashboard";
+@import "./CoachesList";
 
 * {
   margin: 0;
@@ -48,7 +53,6 @@ button {
 a {
   text-decoration: none;
   text-transform: uppercase;
-  padding: 23px 20px;
   color: rgba(255, 255, 255, 0.5);
   // font-weight: 100;
   box-sizing: border-box;

@@ -1,36 +1,68 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-function WorkoutPopup({ exercises, trigger, setTrigger, userDetails }) {
+function WorkoutPopup({
+  exercises,
+  setExercises,
+  trigger,
+  setTrigger,
+  userDetails,
+}) {
   const [sets, setSets] = useState([]);
+  const [draggedOver, setDraggedOver] = useState();
+  const [draggedItem, setDraggedItem] = useState();
+  const [tempNewOrder, setTempNewOrder] = useState([]);
+  const [workoutName, setWorkoutName] = useState("");
+  const [workoutSets, setWorkoutSets] = useState();
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     let temp = [...exercises].map((val) => {
+      const set = sets.find((item) => item.name === val);
       let item = {
         name: val,
-        min_reps: 0,
-        max_reps: 0,
-        sets: 0,
-        rest: 0,
-        added_weight: 0,
+        min_reps: set ? set["min_reps"] : 1,
+        max_reps: set ? set["max_reps"] : 1,
+        sets: set ? set["sets"] : 1,
+        rest: set ? set["rest"] : 0,
+        added_weight: set ? set["added_weight"] : 0,
       };
       return item;
     });
     setSets(temp);
   }, [exercises]);
 
-  function validate(val) {
-    if (Number(val)) if (Number(val) >= 0) return true;
-    return false;
+  function changeOrder(indexToEnter, indexLocation) {
+    if (
+      (!indexToEnter && indexToEnter !== 0) ||
+      (!indexLocation && indexLocation !== 0) ||
+      indexToEnter === indexLocation
+    )
+      return;
+    let name = exercises[indexToEnter];
+    let newExercises = [...exercises].filter(
+      (item, index) => index !== indexToEnter
+    );
+    newExercises.splice(indexLocation, 0, name);
+    setTempNewOrder(newExercises);
   }
 
   return trigger ? (
     <div className="pop-up">
       <div className="pop-up-inner">
-        <button className="close-button" onClick={() => setTrigger(false)}>
+        <button
+          className="close-button"
+          onClick={() => {
+            setTrigger(false);
+            setErrorMessage("");
+          }}
+        >
           close
         </button>
-        <h1>Your sets</h1>
+        <input
+          onChange={(e) => setWorkoutName(e.target.value)}
+          placeholder={"Enter Your Workout Name"}
+        />
         <table>
           <thead>
             <tr>
@@ -45,16 +77,32 @@ function WorkoutPopup({ exercises, trigger, setTrigger, userDetails }) {
           </thead>
           <tbody>
             {exercises.map((value, index) => (
-              <tr className="set-div" key={"set" + index}>
+              <tr
+                className="set-div"
+                key={"set" + index}
+                draggable
+                onDragStart={() => {
+                  setDraggedItem(index);
+                }}
+                onDragEnd={() => {
+                  setDraggedItem(undefined);
+                  setExercises(tempNewOrder);
+                }}
+                onDragEnter={() => {
+                  setDraggedOver(index);
+                }}
+                onDragLeave={() => {
+                  changeOrder(draggedItem, draggedOver);
+                  setDraggedOver(undefined);
+                }}
+              >
                 <td className="order">{index + 1}</td>
                 <td>{value}</td>
                 <td>
                   <input
                     type="number"
                     name="min_reps"
-                    defaultValue={1}
-                    min={1}
-                    max={sets[index]["max_reps"]}
+                    value={sets[index]["min_reps"]}
                     onChange={(e) => {
                       let temp = [...sets];
                       temp[index][e.target.name] = Number(e.target.value);
@@ -66,21 +114,7 @@ function WorkoutPopup({ exercises, trigger, setTrigger, userDetails }) {
                   <input
                     type="number"
                     name="max_reps"
-                    defaultValue={1}
-                    min={sets[index]["min_reps"]}
-                    onChange={(e) => {
-                      let temp = [...sets];
-                      temp[index][e.target.name] = Number(e.target.value);
-                      setSets(temp);
-                    }}
-                  />
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    name="sets"
-                    defaultValue={1}
-                    min={1}
+                    value={sets[index]["max_reps"]}
                     onChange={(e) => {
                       let temp = [...sets];
                       temp[index][e.target.name] = Number(e.target.value);
@@ -92,8 +126,19 @@ function WorkoutPopup({ exercises, trigger, setTrigger, userDetails }) {
                   <input
                     type="number"
                     name="rest"
-                    defaultValue={0}
-                    min={0}
+                    value={sets[index]["rest"]}
+                    onChange={(e) => {
+                      let temp = [...sets];
+                      temp[index][e.target.name] = Number(e.target.value);
+                      setSets(temp);
+                    }}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    name="sets"
+                    value={sets[index]["sets"]}
                     onChange={(e) => {
                       let temp = [...sets];
                       temp[index][e.target.name] = Number(e.target.value);
@@ -105,8 +150,7 @@ function WorkoutPopup({ exercises, trigger, setTrigger, userDetails }) {
                   <input
                     type="number"
                     name="added_weight"
-                    defaultValue={0}
-                    min={0}
+                    value={sets[index]["added_weight"]}
                     onChange={(e) => {
                       let temp = [...sets];
                       temp[index][e.target.name] = Number(e.target.value);
@@ -118,20 +162,35 @@ function WorkoutPopup({ exercises, trigger, setTrigger, userDetails }) {
             ))}
           </tbody>
         </table>
+        <br />
+        <strong>Sets: </strong>
+        <input
+          type="number"
+          min={1}
+          defaultValue={1}
+          onChange={(e) => setWorkoutSets(e.target.value)}
+        />
+        <br />
         <button
           onClick={() => {
             axios
               .post("/api/coach/workouts/new/" + userDetails.id, {
-                name: "yes",
-                sets: 1,
+                name: workoutName,
+                sets: workoutSets,
                 exercises: sets,
               })
-              .then((res) => console.log(res))
-              .catch((err) => console.log(err));
+              .then(() => {
+                setExercises([]);
+                setSets([]);
+                setErrorMessage("");
+                setTrigger(false);
+              })
+              .catch((err) => setErrorMessage(err.response.data));
           }}
         >
           Create Workout
         </button>
+        <h3 className="error-message">{errorMessage}</h3>
       </div>
     </div>
   ) : (

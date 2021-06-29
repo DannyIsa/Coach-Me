@@ -552,6 +552,30 @@ form.sign-in-form {
   height: 70%;
 }
 
+.create-workouts-start {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 7rem;
+}
+
+.client-list-start {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 7rem;
+}
+
 .pop-up {
   position: fixed;
   top: 0;
@@ -593,6 +617,42 @@ form.sign-in-form {
   position: absolute;
   right: 10px;
   top: 10px;
+}
+
+.coach-dashboard {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 7rem;
+}
+
+.trainee-dashboard {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 7rem;
+}
+
+.coaches-list {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 7rem;
 }
 
 * {
@@ -639,7 +699,6 @@ button:hover {
 a {
   text-decoration: none;
   text-transform: uppercase;
-  padding: 23px 20px;
   color: rgba(255, 255, 255, 0.5);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

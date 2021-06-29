@@ -48,7 +48,7 @@ food.post("/eaten-food", async (req, res) => {
       trainee_id: id,
     },
   });
-  if (!eatenFood) return res.send(404).send("No eaten food for this trainee");
+  if (!eatenFood) return res.status(404).send("No eaten food for this trainee");
   res.status(200).send(eatenFood);
 });
 
@@ -60,8 +60,39 @@ food.get("/eaten-food/:id", async (req, res) => {
       trainee_id: id,
     },
   });
+  if (!eatenFood) return res.status(404).send("No eaten food for this trainee");
+  res.status(200).send(eatenFood);
+});
+
+food.delete("/eaten-food/:id", async (req, res) => {
+  const { id } = req.params;
+  if (!id) return res.status(400).send("Must send id");
+  const eatenFoodId = await models.EatenFood.findOne({
+    where: { id },
+  });
+  if (!eatenFoodId) return res.send(404).send("No food with that id");
+  const deletedFoodTraineeId = eatenFoodId.trainee_id;
+  await eatenFoodId.destroy();
+  const eatenFood = await models.EatenFood.findAll({
+    where: {
+      trainee_id: deletedFoodTraineeId,
+    },
+  });
   if (!eatenFood) return res.send(404).send("No eaten food for this trainee");
   res.status(200).send(eatenFood);
+});
+
+food.get("/need-to-eat/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  if (!id) return res.status(400).send("Must send id");
+  const traineesNeedToEatFood = await models.NeedToEat.findAll({
+    where: { trainee_id: id },
+  });
+  if (!traineesNeedToEatFood) {
+    return res.status(404).send("No need to eat food fo this trainee");
+  }
+  res.status(200).send(traineesNeedToEatFood);
 });
 
 module.exports = food;

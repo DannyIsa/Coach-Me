@@ -40,8 +40,11 @@ function SignUp({ setReqDone }) {
             });
           })
           .catch((err) => {
-            setError(err.message);
+            setError(err.response.data);
           });
+      })
+      .catch((err) => {
+        setError(err.message);
       });
   };
 
@@ -69,12 +72,6 @@ function SignUp({ setReqDone }) {
       });
   };
 
-  // const SignUpWithFacebook = () => {
-  //   const facebookProvider = new firebase.auth.FacebookAuthProvider();
-  //   facebookProvider.addScope("email");
-  //   firebase.auth().signInWithPopup(facebookProvider);
-  // };
-
   const SignUpWithPassword = () => {
     setReqDone(false);
     firebase
@@ -92,10 +89,11 @@ function SignUp({ setReqDone }) {
             });
           })
           .catch((err) => {
-            setError(err.message);
+            setError(err.response.data);
           });
       })
       .catch((err) => {
+        console.log(err);
         setError(err.message);
       });
   };
@@ -172,24 +170,9 @@ function SignUp({ setReqDone }) {
               className="btn solid"
               onClick={signInWithPassword}
             />
-            <p className="social-text">Or Sign in with social platforms</p>
-            <div className="social-media">
-              <a href="#" className="social-icon" onClick={SignUpWithGoogle}>
-                <FontAwesomeIcon icon={faGoogle} />
-              </a>
-              <a href="#" className="social-icon" onClick={SignUpWithFacebook}>
-                <FontAwesomeIcon icon={faFacebookF} />
-              </a>
-              <a href="#" className="social-icon">
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-            </div>
           </form>
           <form onSubmit={(e) => e.preventDefault()} className="sign-up-form">
             <h2 className="title">Create Account</h2>
-            {/* <div className="input-field">
-              <input type="text" placeholder="Username" />
-            </div> */}
             <div className="input-field">
               <FontAwesomeIcon
                 icon={faEnvelope}

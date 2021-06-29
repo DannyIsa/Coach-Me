@@ -83,72 +83,67 @@ function HomePage() {
       </div>
       <div id="viewport1">
         <h1>How It Works</h1>
-        <p>khfddfuijbhvfgtuuyoijkbhvgchfdtuyukgjhgcfhxgrdytufyjhgvchdtfyjhvg</p>
+        <p>khfddfuijbhvfgtuuyoijkbhvgchfdtu</p>
       </div>
       <div id="viewport2">
         <h1>About</h1>
-        <p>khfddfuijbhvfgtuuyoijkbhvgchfdtuyukgjhgcfhxgrdytufyjhgvchdtfyjhvg</p>
+        <p>khfddfuijbhvfgtuuyoijkbhvgchfdtuyuk</p>
       </div>
-      <footer>
-        <section id="contact">
-          <ul>
-            <li>
-              <p>Oren</p>
-              <a
-                href="https://github.com/orenb99"
-                target="_blank"
-                className="social-icon"
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-            </li>
-            <li>
-              <p>Moran</p>
-              <a
-                href="https://github.com/moran-aga"
-                target="_blank"
-                className="social-icon"
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-            </li>
-            <li>
-              <p>Daniel</p>
-              <a
-                href="https://github.com/DannyIsa"
-                target="_blank"
-                className="social-icon"
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-            </li>
-            <li>
-              <p>Amit</p>
-              <a
-                href="https://github.com/amitby98"
-                target="_blank"
-                className="social-icon"
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-            </li>
-          </ul>
-        </section>
-        <section id="terms">
-          <ul id="terms1">
-            <li>
-              <a href="#">Privacy</a>
-            </li>
-            <li>
-              <a href="#">Terms</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-          <span>© Copyright 2021, CoachMe Team</span>
-        </section>
-      </footer>
+
+      <div className="ct-footer-post">
+        <div className="footer-container">
+          <div className="inner-left">
+            <ul>
+              <li>
+                <p>Oren</p>
+                <a
+                  href="https://github.com/orenb99"
+                  target="_blank"
+                  className="social-icon"
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </li>
+              <li>
+                <p>Moran</p>
+                <a
+                  href="https://github.com/moran-aga"
+                  target="_blank"
+                  className="social-icon"
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </li>
+              <li>
+                <p>Daniel</p>
+                <a
+                  href="https://github.com/DannyIsa"
+                  target="_blank"
+                  className="social-icon"
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </li>
+              <li>
+                <p>Amit</p>
+                <a
+                  href="https://github.com/amitby98"
+                  target="_blank"
+                  className="social-icon"
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="inner-right">
+            <p>
+              © 2021, CoachMe Team. All Rights Reserved. <br />
+              <a href="">Privacy Policy</a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

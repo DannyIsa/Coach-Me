@@ -23,7 +23,7 @@ function TraineeDashboard({ userDetails }) {
         }
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response.data);
       });
 
   const getMeasurements = () =>
@@ -35,7 +35,7 @@ function TraineeDashboard({ userDetails }) {
         }
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response.data);
       });
 
   const updateMeasurements = () =>
@@ -65,7 +65,7 @@ function TraineeDashboard({ userDetails }) {
   // }, [measureLogs]);
 
   return (
-    <div>
+    <div className="trainee-dashboard">
       {userDetails ? (
         <>
           <h1>{userDetails.name}</h1>
