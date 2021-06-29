@@ -12,38 +12,32 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "coach_id",
         targetKey: "id",
         onDelete: "cascade",
-
       });
       this.hasMany(models.WorkoutLog, {
         sourceKey: "id",
         foreignKey: "id",
         onDelete: "cascade",
-
       });
       this.hasMany(models.MeasureLog, {
         sourceKey: "id",
         foreignKey: "id",
         onDelete: "cascade",
-
       });
 
       this.hasOne(models.CoachRequest, {
         foreignKey: "trainee_id",
         sourceKey: "id",
         onDelete: "cascade",
-
       });
       this.hasMany(models.NeedToEat, {
         sourceKey: "id",
         foreignKey: "trainee_id",
         onDelete: "cascade",
-
       });
       this.hasMany(models.EatenFood, {
         sourceKey: "id",
         foreignKey: "trainee_id",
         onDelete: "cascade",
-
       });
     }
   }
@@ -58,6 +52,7 @@ module.exports = (sequelize, DataTypes) => {
       height: DataTypes.FLOAT,
       weight: DataTypes.INTEGER,
       daily_calorie_goal: DataTypes.INTEGER,
+      activity_level: DataTypes.STRING,
     },
     {
       sequelize,

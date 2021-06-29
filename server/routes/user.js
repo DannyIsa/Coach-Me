@@ -118,6 +118,7 @@ user.put("/details/:id", (req, res) => {
       weight: obj.weight,
       //calculate with weight and height
       daily_calorie_goal: 0,
+      activity_level: obj.activity_level,
     };
   }
   // console.log(query);

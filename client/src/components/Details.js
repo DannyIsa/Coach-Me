@@ -102,6 +102,17 @@ function Details({ userDetails, userType, setRegistered }) {
               required
             />
             <br />
+            <select
+              name="activitylevel"
+              placeholder="Choose Your Activity Level"
+              required
+            >
+              <option value="Sedentary">Sedentary</option>
+              <option value="LightlyActive">Lightly Active</option>
+              <option value="Active">Active</option>
+              <option value="VeryActive">Very Active</option>
+            </select>
+            <br />
           </>
         )}
         <button type="submit" value="submit">
