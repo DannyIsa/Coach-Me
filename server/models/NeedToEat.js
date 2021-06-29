@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: "cascade",
       });
       this.hasOne(models.Food, {
-        foreignKey: "food_id",
-        sourceKey: "id",
+        foreignKey: "id",
+        sourceKey: "food_id",
         onDelete: "cascade",
       });
     }
