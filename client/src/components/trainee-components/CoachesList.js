@@ -32,7 +32,7 @@ function CoachesList({ userDetails }) {
       .catch((err) => console.log(err.response.data));
   }
   return (
-    <div>
+    <div className="coaches-list">
       <h1>Coaches:</h1>
       {coaches && request
         ? coaches.map((item, index) => (
