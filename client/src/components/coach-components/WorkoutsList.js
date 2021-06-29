@@ -5,13 +5,17 @@ function WorkoutsList({ userDetails }) {
 
   useEffect(() => {});
   return (
-    <div>
-      <Link to="/coach/workouts/create">Create workout</Link>
-      <h1>Your Workouts:</h1>
+    // <div>
+    <div className="create-workouts-start">
+      <div className="workoutsHeader">
+        <Link to="/coach/workouts/create">Create workout</Link>
+        <h1>Your Workouts:</h1>
+      </div>
       <div className="workouts-list">
         {workouts.map((item, index) => item.name)}
       </div>
     </div>
+    // </div>
   );
 }
 
