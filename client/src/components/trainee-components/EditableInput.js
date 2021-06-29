@@ -7,7 +7,8 @@ function EditableInput({ attribute, value, editing }) {
       {editing ? (
         <input type="number" min={0} defaultValue={value} />
       ) : value ? (
-        <b>{`${value} ${attribute === "Weight" ? "kg" : "cm"}`}</b>
+        // <b>{`${value} ${attribute === "Weight" ? "kg" : "cm"}`}</b>
+        <b>{`${value}`}</b>
       ) : (
         <b>No Value</b>
       )}
