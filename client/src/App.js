@@ -52,9 +52,11 @@ function App() {
   useEffect(() => {
     if (user && reqDone) {
       const { email } = user;
+      console.log(user);
       axios
         .get("http://localhost:3001/api/user/check/" + email)
         .then(({ data }) => {
+          console.log(data);
           setUserType(data.type);
           setRegistered(data.valid);
           setUserDetails({ ...data.details });

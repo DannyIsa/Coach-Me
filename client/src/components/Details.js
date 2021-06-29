@@ -7,6 +7,7 @@ import couple from "../pics/couple.png";
 function Details({ userDetails, userType, setRegistered }) {
   const history = useHistory();
   const [other, setOther] = useState(false);
+  console.log(userDetails);
   return (
     <div className="details-div">
       <div className="left-div">
@@ -17,11 +18,13 @@ function Details({ userDetails, userType, setRegistered }) {
             </a>
           </div>
         </div>
-        <h1>hello friend 👋</h1>
+        <h1>Welcome 👋</h1>
+        <p>We are happy to have you here!</p>
         <p>
-          This is a one-time form, please take a minute to fill in the following
-          details.
+          This is a one-time form, <br />
+          please take a minute to fill in the following details.
         </p>
+        <p>Good luck!</p>
         <img src={couple} id="couple" alt="couple training" />
       </div>
       <div className="right-div">
@@ -39,6 +42,7 @@ function Details({ userDetails, userType, setRegistered }) {
             if (userType === "Trainee") {
               obj.height = data.get("height");
               obj.weight = data.get("weight");
+              obj.activity_level = data.get("activity-level");
             }
             axios
               .put("http://localhost:3001/api/user/details/" + userDetails.id, {
@@ -53,11 +57,11 @@ function Details({ userDetails, userType, setRegistered }) {
           }}
         >
           <div className="inputbox">
-            <input type="tel" required="required" />
+            <input type="tel" required="required" name="name" />
             <span>Name</span>
           </div>
           <div className="inputbox">
-            <input type="text" required="required" />
+            <input type="text" required="required" name="phone-number" />
             <span>Number</span>
           </div>
           <div id="gender-div">
@@ -97,59 +101,70 @@ function Details({ userDetails, userType, setRegistered }) {
               />
               {other && (
                 <div className="inputbox">
-                  <input type="text" id="other-input" required="required" />
-                  <span>Enter Your Gender</span>
+                  <input
+                    type="text"
+                    id="other-input"
+                    required="required"
+                    name="gender"
+                  />
+                  <span>Gender</span>
                 </div>
               )}
             </div>
           </div>
           <div className="inputbox">
-            <input type="date" required="required" />
+            <input type="date" required="required" name="birthdate" />
             <span>Date of Birth</span>
           </div>
           {userType === "Trainee" && (
             <>
               <div className="inputbox">
-                <input type="number" required="required" />
+                <input type="number" required="required" name="height" />
                 <span>Height (Cm)</span>
               </div>
               <div className="inputbox">
-                <input type="number" required="required" />
+                <input type="number" required="required" name="weight" />
                 <span>Weight (Kg)</span>
+              </div>
+              <div className="inputbox">
+                <select
+                  name="activity-level"
+                  placeholder="Choose Your Activity Level"
+                  required
+                >
+                  <option value="Sedentary">Sedentary</option>
+                  <option value="LightlyActive">Lightly Active</option>
+                  <option value="Active">Active</option>
+                  <option value="VeryActive">Very Active</option>
+                </select>
               </div>
             </>
           )}
-          {/* <button type="submit" value="submit">
-    <div>
-      <h1>Details</h1>
-      <form
-        className="details-form"
-        onSubmit={(e) => {
-          e.preventDefault();
-          const data = new FormData(e.target);
-          let obj = {
-            name: data.get("name"),
-            phone_number: data.get("phone-number"),
-            gender: data.get("gender"),
-            birthdate: data.get("birthdate"),
-          };
-          if (userType === "Trainee") {
-            obj.height = data.get("height");
-            obj.weight = data.get("weight");
-            obj.activity_level = data.get("activity-level");
-          }
-          axios
-            .put("http://localhost:3001/api/user/details/" + userDetails.id, {
-              obj,
-              type: userType,
-            })
-            .then(() => {
-              setRegistered(true);
-              history.push("/");
-            })
-            .catch((err) => console.log(err.response.data));
-        }}
-      >
+          <button type="submit" value="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </button>
+          {/* <a href="#" type="submit" value="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </a> */}
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default Details;
+
+{
+  /* <div>
+      <form>
         <input name="name" placeholder="Enter Your Full Name" required />
         <br />
         <input
@@ -233,18 +248,5 @@ function Details({ userDetails, userType, setRegistered }) {
         )}
         <button type="submit" value="submit">
           submit
-        </button> */}
-          <a href="#" type="submit" value="submit">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Submit
-          </a>
-        </form>
-      </div>
-    </div>
-  );
+        </button> */
 }
-
-export default Details;

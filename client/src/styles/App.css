@@ -692,7 +692,7 @@ form.sign-in-form {
 }
 
 .details-div .left-div h1 {
-  color: red;
+  color: white;
   text-transform: uppercase;
 }
 
@@ -735,13 +735,7 @@ form.sign-in-form {
 }
 
 .details-div .right-div #gender-div input {
-  width: 1.7rem;
-}
-
-.details-div .right-div #gender-div #other-input {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 1.5rem;
 }
 
 .details-div .right-div .inputbox {
@@ -759,9 +753,16 @@ form.sign-in-form {
   border: 2px solid #000;
   outline: none;
   background: none;
-  padding: 10px;
+  padding: 30px;
   border-radius: 10px;
   font-size: 1.2em;
+}
+
+.details-div .right-div .inputbox #other-input {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: 2rem;
 }
 
 .details-div .right-div .inputbox:last-child {
@@ -771,7 +772,7 @@ form.sign-in-form {
 .details-div .right-div .inputbox span {
   position: absolute;
   top: 14px;
-  left: 20px;
+  left: 40px;
   font-size: 1em;
   -webkit-transition: 0.6s;
   transition: 0.6s;

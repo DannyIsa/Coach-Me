@@ -18,7 +18,7 @@
     }
 
     & h1 {
-      color: red;
+      color: white;
       text-transform: uppercase;
     }
   }
@@ -58,18 +58,16 @@
       width: 15vw;
 
       & input {
-        width: 1.7rem;
-      }
-
-      & #other-input {
-        width: fit-content;
+        width: 1.5rem;
       }
     }
+
     & .inputbox {
       position: relative;
       width: 300px;
       height: 50px;
       margin-bottom: 50px;
+
       & input {
         position: absolute;
         top: 0;
@@ -78,17 +76,22 @@
         border: 2px solid #000;
         outline: none;
         background: none;
-        padding: 10px;
+        padding: 30px;
         border-radius: 10px;
         font-size: 1.2em;
       }
+      & #other-input {
+        width: fit-content;
+        margin-left: 2rem;
+      }
+
       &:last-child {
         margin-bottom: 0;
       }
       & span {
         position: absolute;
         top: 14px;
-        left: 20px;
+        left: 40px;
         font-size: 1em;
         transition: 0.6s;
       }
