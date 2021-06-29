@@ -69,12 +69,6 @@ function SignUp({ setReqDone }) {
       });
   };
 
-  // const SignUpWithFacebook = () => {
-  //   const facebookProvider = new firebase.auth.FacebookAuthProvider();
-  //   facebookProvider.addScope("email");
-  //   firebase.auth().signInWithPopup(facebookProvider);
-  // };
-
   const SignUpWithPassword = () => {
     setReqDone(false);
     firebase
