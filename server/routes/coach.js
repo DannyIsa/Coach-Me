@@ -107,7 +107,8 @@ coach.post("/workouts/new/:coach_id", async (req, res) => {
       item.min_reps <= 0 ||
       item.max_reps <= 0 ||
       item.max_reps <= 0 ||
-      sets <= 0
+      sets <= 0 ||
+      !sets
     )
       return res.status(400).send("Numbers must be positive");
     if (item.max_reps < item.min_reps)
@@ -172,16 +173,26 @@ coach.get("/workouts/show/:coachId", async (req, res) => {
   res.status(200).send(workouts);
 });
 
-coach.get("/workouts/show-detailed/:coachId", async (req, res) => {
+coach.get("/workouts/show-exercises/:coachId", async (req, res) => {
   const { coachId } = req.params;
   const { workoutId } = req.query;
   if (!coachId) return res.status(400).send("Invalid Coach Id");
   if (!workoutId) return res.status(400).send("Invalid Workout Id");
-
-  const coach = await models.Coach.findOne({
-    where: { id: coachId },
+  const workout = await models.Workout.findOne({
+    where: { coach_id: coachId, id: workoutId },
+    include: models.ExerciseSet,
   });
-  if (!coach) return res.status(404).send("Coach Not Found");
+  if (!workout) return res.status(404).send("Workout Not Found");
+  const exercises = workout.ExerciseSets.map((item) => {
+    let temp = {
+      ...item.toJSON(),
+      index: item.toJSON().WorkoutExerciseJoin.index,
+    };
+    delete temp.WorkoutExerciseJoin;
+    return temp;
+  });
+  exercises.sort((a, b) => a.index - b.index);
+  return res.status(200).send(exercises);
 });
 coach.get("/exercises/show", async (req, res) => {
   let { input, sort } = req.query;

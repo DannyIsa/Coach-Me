@@ -25,23 +25,23 @@ function HomePage() {
       <div className="homeNav">
         <div className="logo-nav">
           <div className="logo-container">
-            <a href="#">
+            <a href="/">
               <img src={logo} id="logo" alt="CoachMe Logo" />
             </a>
           </div>
           <ul className={click ? "nav-options active" : "nav-options"}>
             <li className="option" onClick={closeMobileMenu}>
-              <a href="#" className="link">
+              <a href="/" className="link">
                 Home
               </a>
             </li>
             <li className="option" onClick={closeMobileMenu}>
-              <a href="#viewport1" className="link">
+              <a href="/viewport1" className="link">
                 How It Works
               </a>
             </li>
             <li className="option" onClick={closeMobileMenu}>
-              <a href="#viewport2" className="link">
+              <a href="/viewport2" className="link">
                 About
               </a>
             </li>
