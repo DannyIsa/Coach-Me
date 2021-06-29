@@ -13,7 +13,7 @@ function Details({ userDetails, userType, setRegistered }) {
       <div className="left-div">
         <div className="logo-nav">
           <div className="logo-container">
-            <a href="#">
+            <a href="/">
               <img src={logo} id="logo" alt="CoachMe Logo" />
             </a>
           </div>

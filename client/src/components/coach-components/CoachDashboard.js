@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function CoachDashboard({ user, userDetails }) {
+function CoachDashboard({ userDetails }) {
   return (
     <div className="coach-dashboard">
       {userDetails ? (
