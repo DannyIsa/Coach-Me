@@ -102,7 +102,7 @@ export default function CaloriesTracker({ userDetails }) {
           {eatenFood.map((food) => {
             return (
               food.meal_of_the_day === "Breakfast" && (
-                <div>
+                <div key={food.id}>
                   <h4>{food.food_name}</h4>
                   <span>{food.food_calories} calories</span>
                   <button onClick={() => deleteItemFromMeal(food.id)}>X</button>
@@ -126,7 +126,7 @@ export default function CaloriesTracker({ userDetails }) {
           {eatenFood.map((food) => {
             return (
               food.meal_of_the_day === "Lunch" && (
-                <div>
+                <div key={food.id}>
                   <h4>{food.food_name}</h4>
                   <span>{food.food_calories} calories</span>
                   <button onClick={() => deleteItemFromMeal(food.id)}>X</button>
@@ -149,7 +149,7 @@ export default function CaloriesTracker({ userDetails }) {
           {eatenFood.map((food) => {
             return (
               food.meal_of_the_day === "Dinner" && (
-                <div>
+                <div key={food.id}>
                   <h4>{food.food_name}</h4>
                   <span>{food.food_calories} calories</span>
                   <button onClick={() => deleteItemFromMeal(food.id)}>X</button>
@@ -172,7 +172,7 @@ export default function CaloriesTracker({ userDetails }) {
           {eatenFood.map((food) => {
             return (
               food.meal_of_the_day === "Snacks" && (
-                <div>
+                <div key={food.id}>
                   <h4>{food.food_name}</h4>
                   <span>{food.food_calories} calories</span>
                   <button onClick={() => deleteItemFromMeal(food.id)}>X</button>
@@ -210,6 +210,7 @@ export default function CaloriesTracker({ userDetails }) {
             {searchedFood.map((food, i) => {
               return (
                 <h4
+                  key={food.id}
                   onClick={() => {
                     setAddFoodAmount(1);
                     setPopUpAddFood(food);
