@@ -23,7 +23,7 @@ export default function NeedToEat({ userDetails }) {
         {needToEatFoodList.map((food) => {
           return (
             food.meal_of_the_day === "Breakfast" && (
-              <div>
+              <div key={food.id}>
                 <h4>{food.food_name}</h4>
                 <span>{food.food_calories} calories</span>
                 <hr />
@@ -37,7 +37,7 @@ export default function NeedToEat({ userDetails }) {
         {needToEatFoodList.map((food) => {
           return (
             food.meal_of_the_day === "Lunch" && (
-              <div>
+              <div key={food.id}>
                 <h4>{food.food_name}</h4>
                 <span>{food.food_calories} calories</span> <hr />
               </div>
@@ -50,7 +50,7 @@ export default function NeedToEat({ userDetails }) {
         {needToEatFoodList.map((food) => {
           return (
             food.meal_of_the_day === "Dinner" && (
-              <div>
+              <div key={food.id}>
                 <h4>{food.food_name}</h4>
                 <span>{food.food_calories} calories</span> <hr />
               </div>
@@ -63,7 +63,7 @@ export default function NeedToEat({ userDetails }) {
         {needToEatFoodList.map((food) => {
           return (
             food.meal_of_the_day === "Snacks" && (
-              <div>
+              <div key={food.id}>
                 <h4>{food.food_name}</h4>
                 <span>{food.food_calories} calories</span> <hr />
               </div>

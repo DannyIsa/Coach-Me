@@ -7,9 +7,9 @@
 .link:hover {
   color: #ffc719;
   -webkit-transition-timing-function: linear;
-          transition-timing-function: linear;
+  transition-timing-function: linear;
   -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  transition-duration: 0.5s;
   -webkit-transition-property: border;
   transition-property: border;
   border-bottom: 4px solid #ffc719;
@@ -22,8 +22,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: fixed;
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -35,11 +35,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
 }
 
 .logo-container {
@@ -47,11 +47,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .nav-options-main {
@@ -59,8 +59,8 @@
   right: 12rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (auto)[4];
-      grid-template-columns: repeat(4, auto);
+  -ms-grid-columns: (auto) [4];
+  grid-template-columns: repeat(4, auto);
   grid-gap: 40px;
   list-style-type: none;
 }
@@ -82,8 +82,8 @@
 .sign-in {
   padding-right: 50px;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
 }
 
 .sign-in:hover {
@@ -97,8 +97,8 @@
   color: white;
   cursor: pointer;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .mobile-menu {
@@ -122,8 +122,8 @@
     transition: all 0.5s ease;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     list-style-type: none;
     grid-gap: 0px;
   }
@@ -135,7 +135,7 @@
     transition: all 0.5s ease;
     z-index: 1;
     -ms-flex-line-pack: center;
-        align-content: center;
+    align-content: center;
     padding-left: 0px;
   }
   .menu-icon-main {
@@ -148,11 +148,11 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     height: 10vw;
     padding: 30px 0px;
   }
@@ -166,8 +166,8 @@
     background: #0d7e65;
     padding: 10px 30px;
     -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    -ms-grid-row-align: center;
+    align-self: center;
     border-radius: 3px;
   }
   .signIn {

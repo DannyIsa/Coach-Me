@@ -16,6 +16,34 @@ const { Router } = require("express");
 const food = Router();
 food.use(express.json());
 
+async function getFoodFromEaten(trainee_id) {
+  const eatenFood = await models.EatenFood.findAll({
+    where: {
+      trainee_id,
+    },
+    include: {
+      model: models.Food,
+      attributes: [
+        "name",
+        "calories",
+        "protein",
+        "carbs",
+        "fats",
+        "weight",
+        "image",
+      ],
+    },
+  });
+
+  if (!eatenFood) return { status: 404, data: "Couldn't find food" };
+  const valArray = eatenFood.map((item) => {
+    let temp = { ...item.toJSON(), ...item.Food.toJSON() };
+    delete temp.Food;
+    return temp;
+  });
+  return { status: 200, data: valArray };
+}
+
 food.get("/get-food/:searchedFood", async (req, res) => {
   const { searchedFood } = req.params;
   if (!searchedFood) return res.status(400).send("Must send food name");
@@ -28,58 +56,48 @@ food.get("/get-food/:searchedFood", async (req, res) => {
 });
 
 food.post("/eaten-food", async (req, res) => {
-  const { food, id, mealOfTheDay } = req.body;
-  if (!food) return res.status(400).send("Must Send food");
-  if (!id) return res.status(400).send("Must Send id");
+  const { foodId, traineeId, mealOfTheDay, amount } = req.body;
+  if (!foodId) return res.status(400).send("Must Send Food Id");
+  if (!traineeId) return res.status(400).send("Must Send Trainee Id");
   if (!mealOfTheDay) return res.status(400).send("Must Send Meal");
+  if (!amount) return res.status(400).send("Must Send Amount");
 
-  await models.EatenFood.create({
-    trainee_id: id,
-    food_id: food.id,
-    food_name: food.name,
-    food_calories: food.calories,
-    food_protein: food.protein,
-    food_carbs: food.carbs,
-    food_fats: food.fats,
+  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
+  if (!trainee) return res.status(404).send("No Trainee Found");
+  const eaten = await models.EatenFood.create({
+    trainee_id: traineeId,
+    food_id: foodId,
     meal_of_the_day: mealOfTheDay,
+    amount,
   });
-  const eatenFood = await models.EatenFood.findAll({
-    where: {
-      trainee_id: id,
-    },
-  });
-  if (!eatenFood) return res.status(404).send("No eaten food for this trainee");
-  res.status(200).send(eatenFood);
+  const query = await trainee.addEatenFood(eaten);
+  if (!query) return res.status(400).send("Couldn't add food");
+  const food = await eaten.getFood();
+  if (!food) return res.status(400).send("Couldn't get data");
+  res.status(201).send(food);
 });
 
 food.get("/eaten-food/:id", async (req, res) => {
   const { id } = req.params;
   if (!id) return res.status(400).send("Must send id");
-  const eatenFood = await models.EatenFood.findAll({
-    where: {
-      trainee_id: id,
-    },
-  });
-  if (!eatenFood) return res.status(404).send("No eaten food for this trainee");
-  res.status(200).send(eatenFood);
+  const { status, data } = await getFoodFromEaten(id);
+  res.status(status).send(data);
 });
 
-food.delete("/eaten-food/:id", async (req, res) => {
-  const { id } = req.params;
-  if (!id) return res.status(400).send("Must send id");
+food.delete("/eaten-food/:foodId", async (req, res) => {
+  const { foodId } = req.params;
+  const { traineeId } = req.query;
+  if (!foodId) return res.status(400).send("Must send food id");
+  if (!traineeId) return res.status(400).send("Must send trainee id");
+
   const eatenFoodId = await models.EatenFood.findOne({
-    where: { id },
+    where: { id: foodId, trainee_id: traineeId },
   });
   if (!eatenFoodId) return res.send(404).send("No food with that id");
   const deletedFoodTraineeId = eatenFoodId.trainee_id;
   await eatenFoodId.destroy();
-  const eatenFood = await models.EatenFood.findAll({
-    where: {
-      trainee_id: deletedFoodTraineeId,
-    },
-  });
-  if (!eatenFood) return res.send(404).send("No eaten food for this trainee");
-  res.status(200).send(eatenFood);
+  const { status, data } = await getFoodFromEaten(traineeId);
+  res.status(status).send(data);
 });
 
 food.get("/need-to-eat/:id", async (req, res) => {

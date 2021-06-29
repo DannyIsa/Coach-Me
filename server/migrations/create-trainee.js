@@ -38,6 +38,9 @@ module.exports = {
       daily_calorie_goal: {
         type: Sequelize.INTEGER,
       },
+      activity_level: {
+        type: Sequelize.STRING,
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE,
