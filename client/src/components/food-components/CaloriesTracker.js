@@ -63,16 +63,17 @@ export default function CaloriesTracker({ userDetails }) {
     food.fats = food.fats * addFoodAmount;
     axios
       .post("http://localhost:3001/api/food/eaten-food", {
-        id: userDetails.id,
-        food,
+        traineeId: userDetails.id,
+        foodId: food.id,
         mealOfTheDay: selectedMeal,
+        amount: addFoodAmount,
       })
       .then((res) => {
         setEatenFood(res.data);
         setAddFoodPressed(false);
         setSelectedMeal("");
       })
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => console.log(err));
   };
 
   const deleteItemFromMeal = (id) => {
@@ -99,17 +100,20 @@ export default function CaloriesTracker({ userDetails }) {
         <div className={selectedMeal === "Breakfast" ? "chosen-meal" : "meal"}>
           <h1>Breakfast</h1>
 
-          {eatenFood.map((food) => {
-            return (
-              food.meal_of_the_day === "Breakfast" && (
-                <div key={food.id}>
-                  <h4>{food.food_name}</h4>
-                  <span>{food.food_calories} calories</span>
-                  <button onClick={() => deleteItemFromMeal(food.id)}>X</button>
-                </div>
-              )
-            );
-          })}
+          {eatenFood &&
+            eatenFood.map((food) => {
+              return (
+                food.meal_of_the_day === "Breakfast" && (
+                  <div key={food.id}>
+                    <h4>{food.food_name}</h4>
+                    <span>{food.food_calories} calories</span>
+                    <button onClick={() => deleteItemFromMeal(food.id)}>
+                      X
+                    </button>
+                  </div>
+                )
+              );
+            })}
 
           <button
             onClick={() => {

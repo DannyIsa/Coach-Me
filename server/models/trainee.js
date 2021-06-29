@@ -12,38 +12,34 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "coach_id",
         targetKey: "id",
         onDelete: "cascade",
-
       });
       this.hasMany(models.WorkoutLog, {
         sourceKey: "id",
         foreignKey: "id",
         onDelete: "cascade",
-
       });
       this.hasMany(models.MeasureLog, {
         sourceKey: "id",
         foreignKey: "id",
         onDelete: "cascade",
-
       });
 
       this.hasOne(models.CoachRequest, {
         foreignKey: "trainee_id",
         sourceKey: "id",
         onDelete: "cascade",
-
       });
-      this.hasMany(models.NeedToEat, {
+      this.belongsToMany(models.Food, {
+        through: models.NeedToEat,
         sourceKey: "id",
         foreignKey: "trainee_id",
         onDelete: "cascade",
-
       });
-      this.hasMany(models.EatenFood, {
+      this.belongsToMany(models.Food, {
+        through: models.EatenFood,
         sourceKey: "id",
         foreignKey: "trainee_id",
         onDelete: "cascade",
-
       });
     }
   }

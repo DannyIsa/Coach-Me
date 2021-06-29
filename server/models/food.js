@@ -8,17 +8,17 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.NeedToEat, {
-        targetKey: "food_name",
-        foreignKey: "name",
+      this.belongsToMany(models.Trainee, {
+        through: models.NeedToEat,
+        sourceKey: "id",
+        foreignKey: "food_id",
         onDelete: "cascade",
-
       });
-      this.belongsTo(models.EatenFood, {
-        targetKey: "food_name",
-        foreignKey: "name",
+      this.belongsToMany(models.Trainee, {
+        through: models.EatenFood,
+        sourceKey: "id",
+        foreignKey: "food_id",
         onDelete: "cascade",
-
       });
     }
   }
