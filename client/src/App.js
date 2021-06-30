@@ -1,6 +1,11 @@
 import "./styles/App.css";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -12,15 +17,10 @@ import NavBarTrainee from "./components/trainee-components/NavBarTrainee";
 import NavBarCoach from "./components/coach-components/NavBarCoach";
 import Check from "./components/Check";
 import Details from "./components/Details";
-import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
-import CoachesList from "./components/trainee-components/CoachesList";
-import WorkoutsList from "./components/coach-components/WorkoutsList";
 import Food from "./components/Food";
 
+import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
 import CoachDashboard from "./components/coach-components/CoachDashboard";
-import ClientsList from "./components/coach-components/ClientsList";
-import CreateWorkout from "./components/coach-components/CreateWorkout";
-import AddExercise from "./components/coach-components/AddExercise";
 import CoachRouter from "./components/routers/CoachRouter";
 import TraineeRouter from "./components/routers/TraineeRouter";
 
@@ -102,16 +102,20 @@ function App() {
                       <TraineeDashboard user={user} userDetails={userDetails} />
                     )}
                   </Route>
-                  {userType === "Coach" && (
-                    <Route strict path="/coach">
+                  <Route strict path="/coach">
+                    {userType === "Coach" ? (
                       <CoachRouter userDetails={userDetails} />
-                    </Route>
-                  )}
-                  {userType === "Trainee" && (
-                    <Route strict path="/trainee">
+                    ) : (
+                      <Redirect to="/" />
+                    )}
+                  </Route>
+                  <Route strict path="/trainee">
+                    {userType === "Trainee" ? (
                       <TraineeRouter userDetails={userDetails} />
-                    </Route>
-                  )}
+                    ) : (
+                      <Redirect to="/" />
+                    )}
+                  </Route>
                   <Route exact path="/food">
                     <Food userDetails={userDetails} />
                   </Route>
