@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import firebase from "firebase";
 import axios from "axios";
 
@@ -8,7 +7,6 @@ function AddExercise({ userDetails }) {
   const [types, setTypes] = useState([]);
   const [equipments, setEquipments] = useState([]);
   const [muscles, setMuscles] = useState([]);
-  const history = useHistory();
   const storage = firebase.storage();
 
   function join(major, minor) {
@@ -84,8 +82,8 @@ function AddExercise({ userDetails }) {
             } else dataObj.image = "";
             axios
               .post("/api/coach/exercise/add", { exercise: dataObj })
-              .then(() => {
-                history.push("/profile");
+              .then(({ data }) => {
+                setErrorMessage(data);
               })
               .catch((err) => setErrorMessage(err.response.data));
           }}

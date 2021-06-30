@@ -170,7 +170,7 @@ coach.post("/exercise/add", async (req, res) => {
   });
   if (exists) return res.status(400).send("Exercise already exists");
   models.Exercise.create({ ...exercise })
-    .then(() => res.status(201).send("Exercise created"))
+    .then(() => res.status(201).send(`Exercise ${exercise.name} added`))
     .catch((err) => res.status(400).send(err));
 });
 coach.get("/workouts/show/:coachId", async (req, res) => {
