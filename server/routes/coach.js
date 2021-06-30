@@ -1,6 +1,7 @@
 const models = require("../models");
 const { Op, Model } = require("sequelize");
 const Sequelize = require("sequelize");
+
 require("dotenv").config();
 const sequelize = new Sequelize(
   process.env.SQL_DATA_BASE,

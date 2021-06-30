@@ -1,8 +1,6 @@
 const models = require("../models");
 const { Op } = require("sequelize");
 const Sequelize = require("sequelize");
-const io = require("socket.io")(8080);
-
 require("dotenv").config();
 const sequelize = new Sequelize(
   process.env.SQL_DATA_BASE,
@@ -51,7 +49,7 @@ trainee.post("/request/send/:traineeId", (req, res) => {
         request
           .update({ coach_id: coachId, content })
           .then(() => {
-            io.emit("request received", coachId);
+            req.io.emit("request received", coachId);
             return res.status(201).send(request);
           })
           .catch((err) => {

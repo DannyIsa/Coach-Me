@@ -43,6 +43,7 @@ function App() {
   const [userType, setUserType] = useState();
   const [userDetails, setUserDetails] = useState();
   const [reqDone, setReqDone] = useState(true);
+  const [alertMessage, setAlertMessage] = useState();
   function signOut(history) {
     auth.signOut().then(() => {
       auth.onAuthStateChanged(() => {
@@ -55,14 +56,26 @@ function App() {
 
   useEffect(() => {
     const socket = io("http://localhost:8080");
-    if (userType === "Coach")
+    socket.on("alert", (data) => {
+      console.log(data);
+      setAlertMessage(data);
+    });
+    if (userType === "Coach") {
       socket.on("request received", (data) => {
         if (userDetails.id === data) {
-          console.log("New Alert");
+          setAlertMessage("New Alert");
         }
       });
+    }
   }, []);
 
+  useEffect(() => {
+    if (alertMessage) {
+      setTimeout(() => {
+        setAlertMessage();
+      }, 10000);
+    }
+  }, [alertMessage]);
   useEffect(() => {
     if (user && reqDone) {
       const { email } = user;
@@ -160,6 +173,7 @@ function App() {
           )}
         </Switch>
       </Router>
+      {alertMessage && <div className="alert-message">{alertMessage}</div>}
     </div>
   );
 }
