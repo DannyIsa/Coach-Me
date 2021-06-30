@@ -74,6 +74,7 @@ food.post("/eaten-food", async (req, res) => {
   if (!query) return res.status(400).send("Couldn't add food");
   const food = await eaten.getFood();
   if (!food) return res.status(400).send("Couldn't get data");
+
   res.status(201).send(food);
 });
 
