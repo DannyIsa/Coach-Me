@@ -44,6 +44,34 @@ async function getFoodFromEaten(trainee_id) {
   return { status: 200, data: valArray };
 }
 
+const getFoodFromNeedToEat = async (trainee_id) => {
+  const eatenFood = await models.NeedToEat.findAll({
+    where: {
+      trainee_id,
+    },
+    include: {
+      model: models.Food,
+      attributes: [
+        "name",
+        "calories",
+        "protein",
+        "carbs",
+        "fats",
+        "weight",
+        "image",
+      ],
+    },
+  });
+
+  if (!eatenFood) return { status: 404, data: "Couldn't find food" };
+  const valArray = eatenFood.map((item) => {
+    let temp = { ...item.toJSON(), ...item.Food.toJSON() };
+    delete temp.Food;
+    return temp;
+  });
+  return { status: 200, data: valArray };
+};
+
 food.get("/get-food/:searchedFood", async (req, res) => {
   const { searchedFood } = req.params;
   if (!searchedFood) return res.status(400).send("Must send food name");
@@ -102,15 +130,9 @@ food.delete("/eaten-food/:foodId", async (req, res) => {
 
 food.get("/need-to-eat/:id", async (req, res) => {
   const { id } = req.params;
-  console.log(id);
   if (!id) return res.status(400).send("Must send id");
-  const traineesNeedToEatFood = await models.NeedToEat.findAll({
-    where: { trainee_id: id },
-  });
-  if (!traineesNeedToEatFood) {
-    return res.status(404).send("No need to eat food fo this trainee");
-  }
-  res.status(200).send(traineesNeedToEatFood);
+  const { status, data } = await getFoodFromNeedToEat(id);
+  res.status(status).send(data);
 });
 
 module.exports = food;

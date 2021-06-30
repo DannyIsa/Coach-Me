@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import pdf from "../../documents/health_declaration.pdf";
 import EditableInput from "./EditableInput";
+import WeeklyCalendar from "./WeeklyCalendar";
+
 function TraineeDashboard({ userDetails }) {
   const [previousWorkouts, setPreviousWorkouts] = useState([]);
   const [measureLogs, setMeasureLogs] = useState([]);
@@ -66,66 +68,8 @@ function TraineeDashboard({ userDetails }) {
 
   return (
     <div className="trainee-dashboard">
-      <table>
-        <thead>
-          <tr>
-            <th>Sunday</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Workout</td>
-            <td>Workout</td>
-            <td>Workout</td>
-            <td>Workout</td>
-            <td>Workout</td>
-            <td>Workout</td>
-            <td>Workout</td>
-          </tr>
-          <tr>
-            <td>Breakfast</td>
-            <td>Breakfast</td>
-            <td>Breakfast</td>
-            <td>Breakfast</td>
-            <td>Breakfast</td>
-            <td>Breakfast</td>
-            <td>Breakfast</td>
-          </tr>
-          <tr>
-            <td>Lunch</td>
-            <td>Lunch</td>
-            <td>Lunch</td>
-            <td>Lunch</td>
-            <td>Lunch</td>
-            <td>Lunch</td>
-            <td>Lunch</td>
-          </tr>
-          <tr>
-            <td>Dinner</td>
-            <td>Dinner</td>
-            <td>Dinner</td>
-            <td>Dinner</td>
-            <td>Dinner</td>
-            <td>Dinner</td>
-            <td>Dinner</td>
-          </tr>
-          <tr>
-            <td>Snacks</td>
-            <td>Snacks</td>
-            <td>Snacks</td>
-            <td>Snacks</td>
-            <td>Snacks</td>
-            <td>Snacks</td>
-            <td>Snacks</td>
-          </tr>
-        </tbody>
-      </table>
+      <WeeklyCalendar userDetails={userDetails} />
+
       {userDetails ? (
         <>
           <h1>{userDetails.name}</h1>
