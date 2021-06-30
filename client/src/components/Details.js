@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import logo from "../pics/logo.png";
 import couple from "../pics/couple.png";
 
-function Details({ userDetails, userType, setRegistered }) {
+function Details({ userDetails, userType, setRegistered, setReqDone }) {
   const history = useHistory();
   const [other, setOther] = useState(false);
   console.log(userDetails);
@@ -31,6 +31,7 @@ function Details({ userDetails, userType, setRegistered }) {
           className="details-form"
           onSubmit={(e) => {
             e.preventDefault();
+            setReqDone(false);
             const data = new FormData(e.target);
             let obj = {
               name: data.get("name"),
@@ -52,7 +53,10 @@ function Details({ userDetails, userType, setRegistered }) {
                 setRegistered(true);
                 history.push("/");
               })
-              .catch((err) => console.log(err.response.data));
+              .catch((err) => console.log(err.response.data))
+              .finally(() => {
+                setReqDone(true);
+              });
           }}
         >
           <div className="num1">
@@ -62,7 +66,7 @@ function Details({ userDetails, userType, setRegistered }) {
             </div>
             <div className="inputbox">
               <input type="text" required="required" name="phone-number" />
-              <span>Number</span>
+              <span>Phone Number</span>
             </div>
           </div>
           <div id="gender-div">

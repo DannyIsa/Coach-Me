@@ -62,12 +62,13 @@ function App() {
     });
     if (userType === "Coach") {
       socket.on("request received", (data) => {
+        console.log(data);
         if (userDetails.id === data) {
           setAlertMessage("New Alert");
         }
       });
     }
-  }, []);
+  }, [userDetails]);
 
   useEffect(() => {
     if (alertMessage) {
@@ -76,6 +77,7 @@ function App() {
       }, 10000);
     }
   }, [alertMessage]);
+
   useEffect(() => {
     if (user && reqDone) {
       const { email } = user;
@@ -154,6 +156,7 @@ function App() {
                     <Details
                       userDetails={userDetails}
                       userType={userType}
+                      setReqDone={setReqDone}
                       setRegistered={setRegistered}
                     />
                   </Route>

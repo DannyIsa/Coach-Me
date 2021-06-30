@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 function WorkoutsList({ userDetails }) {
   const [workouts, setWorkouts] = useState([]);
-  const [shownWorkoutExercises, setShownWorkoutExercises] = useState();
   const [shownWorkout, setShownWorkout] = useState();
 
   useEffect(() => {
@@ -14,16 +13,6 @@ function WorkoutsList({ userDetails }) {
       .catch((err) => console.log(err.response.data));
   }, [userDetails]);
 
-  useEffect(() => {
-    if (userDetails && shownWorkout) {
-      axios
-        .get(
-          `/api/coach/workouts/show-exercises/${userDetails.id}?workoutId=${shownWorkout.id}`
-        )
-        .then(({ data }) => setShownWorkoutExercises(data))
-        .catch((err) => console.log(err.response.data));
-    }
-  }, [shownWorkout]);
   return (
     <div className="create-workouts-start">
       <Link to="/coach/workouts/create">Create workout</Link>
@@ -38,11 +27,11 @@ function WorkoutsList({ userDetails }) {
           ))}
         </div>
         <br />
-        {shownWorkout && shownWorkoutExercises && (
+        {shownWorkout && (
           <div className="shown-workout">
             <h1 className="workout-name">{shownWorkout.name}</h1>
             <ol>
-              {shownWorkoutExercises.map((item) => (
+              {shownWorkout.exercises.map((item) => (
                 <li className="exercise-block">
                   <h2 className="exercise-name">{item.name}</h2>
                   <h3 className="exercise-details">{`${item.min_reps} ${
