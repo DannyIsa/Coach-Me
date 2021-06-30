@@ -75,7 +75,7 @@ food.post("/eaten-food", async (req, res) => {
   const food = await eaten.getFood();
   if (!food) return res.status(400).send("Couldn't get data");
   const dataToSend = { ...eaten.toJSON(), ...food.toJSON() };
-  res.status(201).send(food);
+  res.status(201).send(dataToSend);
 });
 
 food.get("/eaten-food/:id", async (req, res) => {
