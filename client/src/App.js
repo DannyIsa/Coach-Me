@@ -21,6 +21,8 @@ import CoachDashboard from "./components/coach-components/CoachDashboard";
 import ClientsList from "./components/coach-components/ClientsList";
 import CreateWorkout from "./components/coach-components/CreateWorkout";
 import AddExercise from "./components/coach-components/AddExercise";
+import CoachRouter from "./components/routers/CoachRouter";
+import TraineeRouter from "./components/routers/TraineeRouter";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDXQY7ezPYUQoh3yJmWRZEalb9N-yieW-o",
@@ -101,24 +103,13 @@ function App() {
                     )}
                   </Route>
                   {userType === "Coach" && (
-                    <Switch>
-                      <Route exact path="/coach/clients">
-                        <ClientsList userDetails={userDetails} />
-                      </Route>
-                      <Route exact path="/coach/workouts">
-                        <WorkoutsList userDetails={userDetails} />
-                      </Route>
-                      <Route exact path="/coach/workouts/create">
-                        <CreateWorkout userDetails={userDetails} />
-                      </Route>
-                      <Route exact path="/coach/add-exercise">
-                        <AddExercise userDetails={userDetails} />
-                      </Route>
-                    </Switch>
+                    <Route strict path="/coach">
+                      <CoachRouter userDetails={userDetails} />
+                    </Route>
                   )}
                   {userType === "Trainee" && (
-                    <Route exact path="/trainee/coaches">
-                      <CoachesList userDetails={userDetails} />
+                    <Route strict path="/trainee">
+                      <TraineeRouter userDetails={userDetails} />
                     </Route>
                   )}
                   <Route exact path="/food">
