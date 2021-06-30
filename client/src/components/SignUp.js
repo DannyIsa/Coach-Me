@@ -247,9 +247,9 @@ function SignUp({ setReqDone }) {
               <a href="#" className="social-icon" onClick={SignUpWithFacebook}>
                 <FontAwesomeIcon icon={faFacebookF} />
               </a>
-              <a href="#" className="social-icon">
+              {/* <a href="#" className="social-icon">
                 <FontAwesomeIcon icon={faGithub} />
-              </a>
+              </a> */}
             </div>
           </form>
         </div>
