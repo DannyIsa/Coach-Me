@@ -115,9 +115,12 @@ export default function CaloriesTracker({ userDetails }) {
                 food.meal_of_the_day === "Breakfast" && (
                   <div key={food.id}>
                     <h4>
-                      {food.name} ({food.weight}g)
+                      {food.name} ({food.weight * food.amount}g)
                     </h4>
-                    <span>{food.calories} calories</span>
+                    <p>{food.calories * food.amount} calories</p>
+                    <p>{food.protein * food.amount} protein</p>
+                    <p>{food.carbs * food.amount} carbs</p>
+                    <p>{food.fats * food.amount} fats</p>
                     <button onClick={() => deleteItemFromMeal(food.id)}>
                       X
                     </button>
@@ -144,9 +147,12 @@ export default function CaloriesTracker({ userDetails }) {
                 food.meal_of_the_day === "Lunch" && (
                   <div key={food.id}>
                     <h4>
-                      {food.name} ({food.weight}g)
+                      {food.name} ({food.weight * food.amount}g)
                     </h4>
-                    <span>{food.calories} calories</span>
+                    <p>{food.calories * food.amount} calories</p>
+                    <p>{food.protein * food.amount} protein</p>
+                    <p>{food.carbs * food.amount} carbs</p>
+                    <p>{food.fats * food.amount} fats</p>
                     <button onClick={() => deleteItemFromMeal(food.id)}>
                       X
                     </button>
@@ -172,9 +178,12 @@ export default function CaloriesTracker({ userDetails }) {
                 food.meal_of_the_day === "Dinner" && (
                   <div key={food.id}>
                     <h4>
-                      {food.name} ({food.weight}g)
+                      {food.name} ({food.weight * food.amount}g)
                     </h4>
-                    <span>{food.calories} calories</span>
+                    <p>{food.calories * food.amount} calories</p>
+                    <p>{food.protein * food.amount} protein</p>
+                    <p>{food.carbs * food.amount} carbs</p>
+                    <p>{food.fats * food.amount} fats</p>
                     <button onClick={() => deleteItemFromMeal(food.id)}>
                       X
                     </button>
@@ -200,9 +209,12 @@ export default function CaloriesTracker({ userDetails }) {
                 food.meal_of_the_day === "Snacks" && (
                   <div key={food.id}>
                     <h4>
-                      {food.name} ({food.weight}g)
+                      {food.name} ({food.weight * food.amount}g)
                     </h4>
-                    <span>{food.calories} calories</span>
+                    <p>{food.calories * food.amount} calories</p>
+                    <p>{food.protein * food.amount} protein</p>
+                    <p>{food.carbs * food.amount} carbs</p>
+                    <p>{food.fats * food.amount} fats</p>
                     <button onClick={() => deleteItemFromMeal(food.id)}>
                       X
                     </button>
@@ -256,7 +268,7 @@ export default function CaloriesTracker({ userDetails }) {
             {popUpAddFood && (
               <div className="pop-up-selected-food">
                 <h3>
-                  {popUpAddFood.name} ({popUpAddFood.weight}g)
+                  {popUpAddFood.name} ({popUpAddFood.weight * addFoodAmount}g)
                 </h3>
                 <p>Calories: {popUpAddFood.calories * addFoodAmount}</p>
                 <p>Protein: {popUpAddFood.protein * addFoodAmount}</p>
