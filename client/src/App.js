@@ -23,6 +23,7 @@ import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
 import CoachDashboard from "./components/coach-components/CoachDashboard";
 import CoachRouter from "./components/routers/CoachRouter";
 import TraineeRouter from "./components/routers/TraineeRouter";
+import { io } from "socket.io-client";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDXQY7ezPYUQoh3yJmWRZEalb9N-yieW-o",
@@ -51,6 +52,16 @@ function App() {
       });
     });
   }
+
+  useEffect(() => {
+    const socket = io("http://localhost:8080");
+    if (userType === "Coach")
+      socket.on("request received", (data) => {
+        if (userDetails.id === data) {
+          console.log("New Alert");
+        }
+      });
+  }, []);
 
   useEffect(() => {
     if (user && reqDone) {

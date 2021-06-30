@@ -6,7 +6,7 @@ function TraineeRouter({ userDetails }) {
   return (
     <Router>
       <Switch>
-        <Route exact path="/trainee/">
+        <Route exact path="/trainee/coaches">
           <CoachesList userDetails={userDetails} />
         </Route>
       </Switch>

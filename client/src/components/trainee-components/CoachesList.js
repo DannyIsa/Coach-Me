@@ -26,7 +26,6 @@ function CoachesList({ userDetails }) {
         content,
       })
       .then(({ data }) => {
-        console.log(data);
         setRequest(data);
       })
       .catch((err) => console.log(err.response.data));
