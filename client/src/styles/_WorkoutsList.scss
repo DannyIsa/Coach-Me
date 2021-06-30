@@ -3,4 +3,22 @@
   display: flex;
   flex-direction: column;
   padding-top: 7rem;
+  & > .content {
+    display: flex;
+    justify-content: space-evenly;
+    & > div {
+      width: 40%;
+      &.workouts-list {
+        & > h1:hover {
+          cursor: pointer;
+          font-size: 2.2em;
+        }
+      }
+      &.shown-workout {
+        & > ol > li {
+          margin: 20px;
+        }
+      }
+    }
+  }
 }

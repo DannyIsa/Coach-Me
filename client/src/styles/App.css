@@ -564,6 +564,28 @@ form.sign-in-form {
   padding-top: 7rem;
 }
 
+.create-workouts-start > .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.create-workouts-start > .content > div {
+  width: 40%;
+}
+
+.create-workouts-start > .content > div.workouts-list > h1:hover {
+  cursor: pointer;
+  font-size: 2.2em;
+}
+
+.create-workouts-start > .content > div.shown-workout > ol > li {
+  margin: 20px;
+}
+
 .client-list-start {
   height: 100vh;
   display: -webkit-box;
@@ -829,8 +851,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .details-div .right-div button span {
