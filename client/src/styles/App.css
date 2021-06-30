@@ -990,6 +990,18 @@ form.sign-in-form {
   }
 }
 
+.add-exercise-start {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 7rem;
+}
+
 * {
   margin: 0;
   padding: 0;
