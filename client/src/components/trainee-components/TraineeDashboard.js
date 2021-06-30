@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import pdf from "../../documents/health_declaration.pdf";
 import EditableInput from "./EditableInput";
+import WeeklyCalendar from "./WeeklyCalendar";
+
 function TraineeDashboard({ userDetails }) {
   const [previousWorkouts, setPreviousWorkouts] = useState([]);
   const [measureLogs, setMeasureLogs] = useState([]);
@@ -66,6 +68,8 @@ function TraineeDashboard({ userDetails }) {
 
   return (
     <div className="trainee-dashboard">
+      <WeeklyCalendar userDetails={userDetails} />
+
       {userDetails ? (
         <>
           <h1>{userDetails.name}</h1>

@@ -1,6 +1,7 @@
 const models = require("../models");
 const { Op, Model } = require("sequelize");
 const Sequelize = require("sequelize");
+
 require("dotenv").config();
 const sequelize = new Sequelize(
   process.env.SQL_DATA_BASE,
@@ -15,6 +16,21 @@ const express = require("express");
 const { Router } = require("express");
 const coach = Router();
 coach.use(express.json());
+
+function unifyArray(array, attribute) {
+  let temp = [];
+  array.map((item) => {
+    let str = item[attribute];
+    if (str.includes(",")) {
+      str = str.split(",");
+      str.map((value) => {
+        if (!temp.includes(value)) temp.push(value);
+      });
+    } else if (!temp.includes(str)) temp.push(str);
+  });
+  temp.sort();
+  return temp;
+}
 
 coach.get("/requests/show/:coachId", async (req, res) => {
   const { coachId } = req.params;
@@ -147,18 +163,15 @@ coach.get("/show/all", async (req, res) => {
 });
 
 coach.post("/exercise/add", async (req, res) => {
-  const { name, muscle, image, type, description, equipment } = req.body;
-  const exists = await models.Exercise.findOne({ where: { name } });
+  const { exercise } = req.body;
+  if (!exercise.name.match(/^[A-Za-z ]*$/i))
+    return res.status(400).send("Invalid Name");
+  const exists = await models.Exercise.findOne({
+    where: { name: exercise.name },
+  });
   if (exists) return res.status(400).send("Exercise already exists");
-  models.Exercise.create({
-    name,
-    muscle,
-    image,
-    type,
-    description,
-    equipment,
-  })
-    .then(() => res.status(201).send("Exercise created"))
+  models.Exercise.create({ ...exercise })
+    .then(() => res.status(201).send(`Exercise ${exercise.name} added`))
     .catch((err) => res.status(400).send(err));
 });
 coach.get("/workouts/show/:coachId", async (req, res) => {
@@ -205,6 +218,33 @@ coach.get("/exercises/show", async (req, res) => {
   const exercises = await models.Exercise.findAll(query);
   if (!exercises) return res.status(200).send([]);
   return res.status(200).send(exercises);
+});
+
+coach.get("/exercises/tags", async (req, res) => {
+  const muscles = await models.Exercise.findAll({
+    attributes: [[Sequelize.fn("DISTINCT", Sequelize.col("muscle")), "muscle"]],
+  });
+  const equipments = await models.Exercise.findAll({
+    attributes: [
+      [Sequelize.fn("DISTINCT", Sequelize.col("equipment")), "equipment"],
+    ],
+  });
+  const types = await models.Exercise.findAll({
+    attributes: [[Sequelize.fn("DISTINCT", Sequelize.col("type")), "type"]],
+  });
+
+  if (!muscles || !equipments || !types)
+    return res.status(400).send("Couldn't get tags");
+
+  const uniqueMuscles = unifyArray(muscles, "muscle");
+  const uniqueTypes = unifyArray(types, "type");
+  const uniqueEquipments = unifyArray(equipments, "equipment");
+
+  return res.status(200).send({
+    muscles: uniqueMuscles,
+    types: uniqueTypes,
+    equipments: uniqueEquipments,
+  });
 });
 
 coach.put("/workouts/append/:coachId", (req, res) => {});

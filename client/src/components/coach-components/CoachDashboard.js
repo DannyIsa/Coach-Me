@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function CoachDashboard({ userDetails }) {
+  useEffect(() => {
+    console.log("yes");
+  }, []);
   return (
     <div className="coach-dashboard">
       {userDetails ? (

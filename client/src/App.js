@@ -1,6 +1,11 @@
 import "./styles/App.css";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -12,14 +17,13 @@ import NavBarTrainee from "./components/trainee-components/NavBarTrainee";
 import NavBarCoach from "./components/coach-components/NavBarCoach";
 import Check from "./components/Check";
 import Details from "./components/Details";
-import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
-import CoachesList from "./components/trainee-components/CoachesList";
-import WorkoutsList from "./components/coach-components/WorkoutsList";
 import Food from "./components/Food";
 
+import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
 import CoachDashboard from "./components/coach-components/CoachDashboard";
-import ClientsList from "./components/coach-components/ClientsList";
-import CreateWorkout from "./components/coach-components/CreateWorkout";
+import CoachRouter from "./components/routers/CoachRouter";
+import TraineeRouter from "./components/routers/TraineeRouter";
+import { io } from "socket.io-client";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDXQY7ezPYUQoh3yJmWRZEalb9N-yieW-o",
@@ -39,6 +43,7 @@ function App() {
   const [userType, setUserType] = useState();
   const [userDetails, setUserDetails] = useState();
   const [reqDone, setReqDone] = useState(true);
+  const [alertMessage, setAlertMessage] = useState();
   function signOut(history) {
     auth.signOut().then(() => {
       auth.onAuthStateChanged(() => {
@@ -49,6 +54,28 @@ function App() {
     });
   }
 
+  useEffect(() => {
+    const socket = io("http://localhost:8080");
+    socket.on("alert", (data) => {
+      console.log(data);
+      setAlertMessage(data);
+    });
+    if (userType === "Coach") {
+      socket.on("request received", (data) => {
+        if (userDetails.id === data) {
+          setAlertMessage("New Alert");
+        }
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (alertMessage) {
+      setTimeout(() => {
+        setAlertMessage();
+      }, 10000);
+    }
+  }, [alertMessage]);
   useEffect(() => {
     if (user && reqDone) {
       const { email } = user;
@@ -99,24 +126,20 @@ function App() {
                       <TraineeDashboard user={user} userDetails={userDetails} />
                     )}
                   </Route>
-                  {userType === "Coach" && (
-                    <Switch>
-                      <Route exact path="/coach/clients">
-                        <ClientsList userDetails={userDetails} />
-                      </Route>
-                      <Route exact path="/coach/workouts">
-                        <WorkoutsList userDetails={userDetails} />
-                      </Route>
-                      <Route exact path="/coach/workouts/create">
-                        <CreateWorkout userDetails={userDetails} />
-                      </Route>
-                    </Switch>
-                  )}
-                  {userType === "Trainee" && (
-                    <Route exact path="/trainee/coaches">
-                      <CoachesList userDetails={userDetails} />
-                    </Route>
-                  )}
+                  <Route strict path="/coach">
+                    {userType === "Coach" ? (
+                      <CoachRouter userDetails={userDetails} />
+                    ) : (
+                      <Redirect to="/" />
+                    )}
+                  </Route>
+                  <Route strict path="/trainee">
+                    {userType === "Trainee" ? (
+                      <TraineeRouter userDetails={userDetails} />
+                    ) : (
+                      <Redirect to="/" />
+                    )}
+                  </Route>
                   <Route exact path="/food">
                     <Food userDetails={userDetails} />
                   </Route>
@@ -150,6 +173,7 @@ function App() {
           )}
         </Switch>
       </Router>
+      {alertMessage && <div className="alert-message">{alertMessage}</div>}
     </div>
   );
 }
