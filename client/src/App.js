@@ -20,6 +20,7 @@ import Food from "./components/Food";
 import CoachDashboard from "./components/coach-components/CoachDashboard";
 import ClientsList from "./components/coach-components/ClientsList";
 import CreateWorkout from "./components/coach-components/CreateWorkout";
+import AddExercise from "./components/coach-components/AddExercise";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDXQY7ezPYUQoh3yJmWRZEalb9N-yieW-o",
@@ -109,6 +110,9 @@ function App() {
                       </Route>
                       <Route exact path="/coach/workouts/create">
                         <CreateWorkout userDetails={userDetails} />
+                      </Route>
+                      <Route exact path="/coach/add-exercise">
+                        <AddExercise userDetails={userDetails} />
                       </Route>
                     </Switch>
                   )}

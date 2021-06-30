@@ -105,8 +105,8 @@ function NavBarCoach({ signOut, userType }) {
             </a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="#" className="link">
-              Requests
+            <a href="/coach/add-exercise" className="link">
+              Add Exercise
             </a>
           </li>
           <li className="option mobile-option" onClick={closeMobileMenu}>
