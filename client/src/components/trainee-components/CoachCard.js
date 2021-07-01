@@ -1,7 +1,6 @@
 /* global WebKitCSSMatrix */
-
-const React = require("react");
-const sleep = require("p-sleep");
+import React from "react";
+import sleep from "p-sleep";
 
 const settings = {
   snapBackDuration: 300,
@@ -301,4 +300,4 @@ const CoachCard = React.forwardRef(
   }
 );
 
-module.exports = CoachCard;
+export default CoachCard;
