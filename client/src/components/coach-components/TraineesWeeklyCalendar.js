@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../../styles/WeeklyCalendar.css";
 
 export default function TraineesWeeklyCalendar({ chosenTrainee }) {
   const [needToEat, setNeedToEat] = useState([]);

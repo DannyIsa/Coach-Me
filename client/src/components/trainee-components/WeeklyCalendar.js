@@ -52,7 +52,7 @@ export default function WeeklyCalendar({ userDetails }) {
           </tr>
         </thead>
         <tbody>
-          {MEALS.map((meal, mi) => (
+          {Meals.map((meal, mi) => (
             <tr key={mi}>
               {DaysOfTheWeek.map((day, di) => {
                 let item = needToEat.find(
