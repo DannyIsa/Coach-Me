@@ -35,6 +35,7 @@ trainee.post("/request/send/:traineeId", (req, res) => {
     content,
   })
     .then((data) => {
+      req.io.emit("request received", coachId);
       res.status(201).send(data);
     })
     .catch(async (err) => {

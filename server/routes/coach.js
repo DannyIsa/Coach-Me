@@ -58,6 +58,10 @@ coach.put("/request/accept/:coachId", async (req, res) => {
         where: { trainee_id: traineeId, coach_id: coachId },
       })
         .then(() => {
+          req.io.emit("request handled", {
+            traineeId: Number(traineeId),
+            accept: true,
+          });
           res.status(200).send("Request Accepted");
         })
         .catch((err) => res.status(400).send(err));
@@ -77,6 +81,10 @@ coach.put("/request/decline/:coachId", (req, res) => {
       if (!data) {
         return res.status(404).send("No Client With That Id");
       }
+      req.io.emit("request handled", {
+        traineeId: Number(traineeId),
+        accept: false,
+      });
       res.status(200).send("Request Declined");
     })
     .catch((err) => res.status(400).send(err));
@@ -183,7 +191,20 @@ coach.get("/workouts/show/:coachId", async (req, res) => {
   if (!coach) return res.status(404).send("Coach Not Found");
   const workouts = await coach.getWorkouts();
   if (!workouts) return res.status(200).send([]);
-  res.status(200).send(workouts);
+  const final = await Promise.all(
+    workouts.map(async (workout) => {
+      let sets = await workout.getExerciseSets();
+      sets = sets.map((set) => {
+        let temp = { ...set.toJSON(), index: set.WorkoutExerciseJoin.index };
+        delete temp.WorkoutExerciseJoin;
+        return temp;
+      });
+      sets.sort((a, b) => a.index - b.index);
+      let item = { ...workout.toJSON(), exercises: sets };
+      return item;
+    })
+  );
+  res.status(200).send(final);
 });
 
 coach.get("/workouts/show-exercises/:coachId", async (req, res) => {

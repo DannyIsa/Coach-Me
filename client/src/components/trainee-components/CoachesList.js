@@ -2,11 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {} from "react-router-dom";
 
-function CoachesList({ userDetails }) {
+function CoachesList({ userDetails, alertMessage }) {
   const [coaches, setCoaches] = useState();
   const [request, setRequest] = useState();
 
   useEffect(async () => {
+    if (alertMessage) if (!alertMessage.startsWith("Request")) return;
     if (!userDetails) return;
     let coachesData = (await axios.get("/api/coach/show/all")).data;
     setCoaches(coachesData);
@@ -14,7 +15,7 @@ function CoachesList({ userDetails }) {
       await axios.get("/api/trainee/request/show/" + userDetails.id)
     ).data;
     if (requestData) setRequest(requestData);
-  }, [userDetails]);
+  }, [userDetails, alertMessage]);
 
   function sendRequest(coachId, traineeId, traineeName) {
     const content = prompt("Enter Your Request Content");

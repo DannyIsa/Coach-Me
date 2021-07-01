@@ -56,10 +56,6 @@ function App() {
 
   useEffect(() => {
     const socket = io("http://localhost:8080");
-    socket.on("alert", (data) => {
-      console.log(data);
-      setAlertMessage(data);
-    });
     if (userType === "Coach") {
       socket.on("request received", (data) => {
         if (userDetails.id === data) {
@@ -67,7 +63,14 @@ function App() {
         }
       });
     }
-  }, []);
+    if (userType === "Trainee") {
+      socket.on("request handled", ({ traineeId, accept }) => {
+        console.log(traineeId, userDetails.id);
+        if (userDetails.id === traineeId)
+          setAlertMessage(`Request ${accept ? "Accepted" : "Rejected"}`);
+      });
+    }
+  }, [userDetails]);
 
   useEffect(() => {
     if (alertMessage) {
@@ -76,6 +79,7 @@ function App() {
       }, 10000);
     }
   }, [alertMessage]);
+
   useEffect(() => {
     if (user && reqDone) {
       const { email } = user;
@@ -128,14 +132,20 @@ function App() {
                   </Route>
                   <Route strict path="/coach">
                     {userType === "Coach" ? (
-                      <CoachRouter userDetails={userDetails} />
+                      <CoachRouter
+                        userDetails={userDetails}
+                        alertMessage={alertMessage}
+                      />
                     ) : (
                       <Redirect to="/" />
                     )}
                   </Route>
                   <Route strict path="/trainee">
                     {userType === "Trainee" ? (
-                      <TraineeRouter userDetails={userDetails} />
+                      <TraineeRouter
+                        userDetails={userDetails}
+                        alertMessage={alertMessage}
+                      />
                     ) : (
                       <Redirect to="/" />
                     )}
@@ -154,6 +164,7 @@ function App() {
                     <Details
                       userDetails={userDetails}
                       userType={userType}
+                      setReqDone={setReqDone}
                       setRegistered={setRegistered}
                     />
                   </Route>
