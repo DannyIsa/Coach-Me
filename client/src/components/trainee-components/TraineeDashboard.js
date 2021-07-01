@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import pdf from "../../documents/health_declaration.pdf";
 import EditableInput from "./EditableInput";
-import WeeklyCalendar from "./WeeklyCalendar";
+import { Link } from "react-router-dom";
 
 function TraineeDashboard({ userDetails }) {
   const [previousWorkouts, setPreviousWorkouts] = useState([]);
@@ -35,7 +35,6 @@ function TraineeDashboard({ userDetails }) {
           setMeasureLogs({});
         } else {
           setMeasureLogs(data[data.length - 1]);
-          console.log(data, "mesuree");
         }
       })
       .catch((err) => {
@@ -74,8 +73,7 @@ function TraineeDashboard({ userDetails }) {
 
   return (
     <div className="trainee-dashboard">
-      <WeeklyCalendar userDetails={userDetails} />
-
+      <Link to="/trainee/calendar">Weekly Calendar</Link>
       {userDetails ? (
         <>
           <h1>{userDetails.name}</h1>
