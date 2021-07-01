@@ -75,14 +75,14 @@ function ClientsList({ userDetails }) {
           ))}
       </div>
       <h1>Your Clients:</h1>
-      <div className={"clients-list"}></div>
-      {clients
-        ? clients.map((item, index) => (
+      <div className="clients-list">
+        {clients &&
+          clients.map((item, index) => (
             <div className="client-div" key={"client" + index}>
               {item.name}
             </div>
-          ))
-        : "Loading..."}
+          ))}
+      </div>
     </div>
   );
 }
