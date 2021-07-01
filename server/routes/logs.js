@@ -18,6 +18,28 @@ logs.use(express.json());
 
 logs.post("/workout/add", (req, res) => {});
 
+async function updateOrCreate(model, where, newItem) {
+  // First try to find the record
+  const todayLog = await model.findOne({
+    where: where,
+  });
+  if (!todayLog) {
+    // Item not found, create a new one
+    const item = await model.create(newItem);
+    return { item, status: 201 };
+  }
+  // Found an item, update it
+  const item = await model.update(newItem, { where });
+  if (!item) {
+    return { item: "couldnt update", status: 400 };
+  }
+  const newLog = await model.findOne({
+    where: where,
+  });
+
+  return { item: newLog, status: 201 };
+}
+
 logs.post("/measure/add", async (req, res) => {
   const {
     id,
@@ -28,7 +50,9 @@ logs.post("/measure/add", async (req, res) => {
     thighPerimeter,
     waistPerimeter,
   } = req.body || null;
+
   const trainee = await models.Trainee.findOne({ where: { id } });
+
   if (!id || !trainee) {
     return res.status(404).send("Invalid ID");
   }
@@ -43,17 +67,30 @@ logs.post("/measure/add", async (req, res) => {
     return res.status(404).send("Must send measure logs");
   }
 
-  models.MeasureLog.create({
-    trainee_id: id,
-    weight,
-    chest_perimeter: chestPerimeter,
-    hip_perimeter: hipPerimeter,
-    bicep_perimeter: bicepPerimeter,
-    thigh_perimeter: thighPerimeter,
-    waist_perimeter: waistPerimeter,
-  }).then((data) => {
-    res.status(201).send(data);
-  });
+  updateOrCreate(
+    models.MeasureLog,
+    {
+      created_at: {
+        [Op.gt]: new Date().setHours(0, 0, 0, 0),
+        [Op.lt]: new Date(),
+      },
+    },
+    {
+      trainee_id: id,
+      weight,
+      chest_perimeter: chestPerimeter,
+      hip_perimeter: hipPerimeter,
+      bicep_perimeter: bicepPerimeter,
+      thigh_perimeter: thighPerimeter,
+      waist_perimeter: waistPerimeter,
+    }
+  )
+    .then((data) => {
+      return res.status(data.status).send(data.item);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 logs.post("/diet/add", async (req, res) => {
