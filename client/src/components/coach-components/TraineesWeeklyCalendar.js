@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../../styles/WeeklyCalendar.css";
 
 export default function TraineesWeeklyCalendar({ chosenTrainee }) {
   const [needToEat, setNeedToEat] = useState([]);
@@ -44,7 +45,13 @@ export default function TraineesWeeklyCalendar({ chosenTrainee }) {
 
   return (
     <div>
-      <button onClick={() => setEditMode(true)}>EDIT</button>
+      <button
+        onClick={() => {
+          editMode ? setEditMode(false) : setEditMode(true);
+        }}
+      >
+        EDIT
+      </button>
 
       <div className="table">
         {DaysOfTheWeek.map((day) => {
@@ -69,9 +76,11 @@ export default function TraineesWeeklyCalendar({ chosenTrainee }) {
                               <p>{food.protein * food.amount} protein</p>
                               <p>{food.carbs * food.amount} carbs</p>
                               <p>{food.fats * food.amount} fats</p>
-                              <button onClick={() => removeThisFood(food.id)}>
-                                remove
-                              </button>
+                              {editMode && (
+                                <button onClick={() => removeThisFood(food.id)}>
+                                  remove
+                                </button>
+                              )}
                             </div>
                           )
                         );

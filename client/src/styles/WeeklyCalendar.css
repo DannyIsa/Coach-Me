@@ -1,0 +1,11 @@
+.table {
+  display: flex;
+}
+
+.column {
+  border: 1px black solid;
+}
+
+.table-meal {
+  border: 1px black solid;
+}
