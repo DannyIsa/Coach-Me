@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
-function ClientsList({ userDetails }) {
+function ClientsList({ userDetails, alertMessage }) {
   const [clients, setClients] = useState();
   const [requests, setRequests] = useState();
   const [hideAlerts, setHideAlerts] = useState(true);
@@ -29,7 +28,9 @@ function ClientsList({ userDetails }) {
       return [];
     }
   }
-
+  useEffect(() => {
+    if (alertMessage === "New Alert") setRender(!render);
+  }, [alertMessage]);
   useEffect(async () => {
     if (!userDetails) return;
     setRequests(await getRequests());

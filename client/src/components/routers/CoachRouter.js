@@ -5,12 +5,12 @@ import CreateWorkout from "../coach-components/CreateWorkout";
 import AddExercise from "../coach-components/AddExercise";
 import WorkoutsList from "../coach-components/WorkoutsList";
 
-function CoachRouter({ userDetails }) {
+function CoachRouter({ userDetails, alertMessage }) {
   return (
     <Router>
       <Switch>
         <Route exact path="/coach/clients">
-          <ClientsList userDetails={userDetails} />
+          <ClientsList userDetails={userDetails} alertMessage={alertMessage} />
         </Route>
         <Route exact path="/coach/workouts">
           <WorkoutsList userDetails={userDetails} />

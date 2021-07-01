@@ -56,16 +56,18 @@ function App() {
 
   useEffect(() => {
     const socket = io("http://localhost:8080");
-    socket.on("alert", (data) => {
-      console.log(data);
-      setAlertMessage(data);
-    });
     if (userType === "Coach") {
       socket.on("request received", (data) => {
-        console.log(data);
         if (userDetails.id === data) {
           setAlertMessage("New Alert");
         }
+      });
+    }
+    if (userType === "Trainee") {
+      socket.on("request handled", ({ traineeId, accept }) => {
+        console.log(traineeId, userDetails.id);
+        if (userDetails.id === traineeId)
+          setAlertMessage(`Request ${accept ? "Accepted" : "Rejected"}`);
       });
     }
   }, [userDetails]);
@@ -130,14 +132,20 @@ function App() {
                   </Route>
                   <Route strict path="/coach">
                     {userType === "Coach" ? (
-                      <CoachRouter userDetails={userDetails} />
+                      <CoachRouter
+                        userDetails={userDetails}
+                        alertMessage={alertMessage}
+                      />
                     ) : (
                       <Redirect to="/" />
                     )}
                   </Route>
                   <Route strict path="/trainee">
                     {userType === "Trainee" ? (
-                      <TraineeRouter userDetails={userDetails} />
+                      <TraineeRouter
+                        userDetails={userDetails}
+                        alertMessage={alertMessage}
+                      />
                     ) : (
                       <Redirect to="/" />
                     )}
