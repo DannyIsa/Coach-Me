@@ -125,9 +125,9 @@ function App() {
                 <Switch>
                   <Route exact path="/profile">
                     {userType === "Coach" ? (
-                      <CoachDashboard user={user} userDetails={userDetails} />
+                      <CoachDashboard userDetails={userDetails} />
                     ) : (
-                      <TraineeDashboard user={user} userDetails={userDetails} />
+                      <TraineeDashboard userDetails={userDetails} />
                     )}
                   </Route>
                   <Route strict path="/coach">
