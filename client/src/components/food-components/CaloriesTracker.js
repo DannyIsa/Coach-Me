@@ -71,7 +71,6 @@ export default function CaloriesTracker({ userDetails }) {
       .then(({ data }) => {
         let temp = [...eatenFood];
         temp.push(data);
-        console.log(temp);
         setEatenFood([...temp]);
         setAddFoodPressed(false);
         setSelectedMeal("");

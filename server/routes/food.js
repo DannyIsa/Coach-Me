@@ -122,7 +122,7 @@ food.delete("/eaten-food/:foodId", async (req, res) => {
   const eatenFoodId = await models.EatenFood.findOne({
     where: { id: foodId, trainee_id: traineeId },
   });
-  if (!eatenFoodId) return res.send(404).send("No food with that id");
+  if (!eatenFoodId) return res.status(404).send("No food with that id");
   await eatenFoodId.destroy();
   const { status, data } = await getFoodFromEaten(traineeId);
   res.status(status).send(data);
@@ -132,6 +132,20 @@ food.get("/need-to-eat/:id", async (req, res) => {
   const { id } = req.params;
   if (!id) return res.status(400).send("Must send id");
   const { status, data } = await getFoodFromNeedToEat(id);
+  res.status(status).send(data);
+});
+
+food.delete("/need-to-eat/:foodId", async (req, res) => {
+  const { foodId } = req.params;
+  const { traineeId } = req.query;
+  if (!foodId) return res.status(400).send("Must send food id");
+  if (!traineeId) return res.status(400).send("Must send trainee id");
+  const needToEatFood = await models.NeedToEat.findOne({
+    where: { id: foodId, trainee_id: traineeId },
+  });
+  if (!needToEatFood) return res.status(404).send("No food with that id");
+  await needToEatFood.destroy();
+  const { status, data } = await getFoodFromNeedToEat(traineeId);
   res.status(status).send(data);
 });
 

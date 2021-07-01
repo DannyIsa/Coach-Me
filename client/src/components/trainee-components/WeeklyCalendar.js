@@ -18,7 +18,7 @@ export default function WeeklyCalendar({ userDetails }) {
     }
   }, [userDetails]);
 
-  const MEALS = ["Breakfast", "Lunch", "Dinner", "Snacks"];
+  const Meals = ["Breakfast", "Lunch", "Dinner", "Snacks"];
   const DaysOfTheWeek = [
     "Sunday",
     "Monday",
@@ -36,7 +36,7 @@ export default function WeeklyCalendar({ userDetails }) {
           <div className="column">
             <h1>{day}</h1>
             <h3>Workout</h3>
-            {MEALS.map((meal) => {
+            {Meals.map((meal) => {
               return (
                 <div className="table-meal">
                   <h3>{meal}</h3>
