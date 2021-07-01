@@ -5,63 +5,61 @@ import CoachCard from "./CoachCard.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-// function CoachesList({ userDetails, alertMessage }) {
-//   const [coaches, setCoaches] = useState();
-//   const [request, setRequest] = useState();
+function CoachesList({ userDetails, alertMessage }) {
+  const [coaches, setCoaches] = useState();
+  const [request, setRequest] = useState();
 
-//   useEffect(async () => {
-//     if (alertMessage) if (!alertMessage.startsWith("Request")) return;
-//     if (!userDetails) return;
-//     let coachesData = (await axios.get("/api/coach/show/all")).data;
-//     setCoaches(coachesData);
-//     let requestData = (
-//       await axios.get("/api/trainee/request/show/" + userDetails.id)
-//     ).data;
-//     if (requestData) setRequest(requestData);
-//   }, [userDetails, alertMessage]);
+  useEffect(async () => {
+    if (alertMessage) if (!alertMessage.startsWith("Request")) return;
+    if (!userDetails) return;
+    let coachesData = (await axios.get("/api/coach/show/all")).data;
+    setCoaches(coachesData);
+    let requestData = (
+      await axios.get("/api/trainee/request/show/" + userDetails.id)
+    ).data;
+    if (requestData) setRequest(requestData);
+  }, [userDetails, alertMessage]);
 
-//   function sendRequest(coachId, traineeId, traineeName) {
-//     const content = prompt("Enter Your Request Content");
-//     if (!content) return;
-//     axios
-//       .post(`/api/trainee/request/send/${traineeId}`, {
-//         coachId,
-//         traineeName,
-//         content,
-//       })
-//       .then(({ data }) => {
-//         setRequest(data);
-//       })
-//       .catch((err) => console.log(err.response.data));
-//   }
-// }
-const db = [
-  {
-    name: "Richard Hendricks",
-    url: "./img/richard.jpg",
-  },
-  {
-    name: "Erlich Bachman",
-    url: "./img/erlich.jpg",
-  },
-  {
-    name: "Monica Hall",
-    url: "./img/monica.jpg",
-  },
-  {
-    name: "Jared Dunn",
-    url: "./img/jared.jpg",
-  },
-  {
-    name: "Dinesh Chugtai",
-    url: "./img/dinesh.jpg",
-  },
-];
+  function sendRequest(coachId, traineeId, traineeName) {
+    const content = prompt("Enter Your Request Content");
+    if (!content) return;
+    axios
+      .post(`/api/trainee/request/send/${traineeId}`, {
+        coachId,
+        traineeName,
+        content,
+      })
+      .then(({ data }) => {
+        setRequest(data);
+      })
+      .catch((err) => console.log(err.response.data));
+  }
+  const db = [
+    {
+      name: "Richard Hendricks",
+      url: "./img/richard.jpg",
+    },
+    {
+      name: "Erlich Bachman",
+      url: "./img/erlich.jpg",
+    },
+    {
+      name: "Monica Hall",
+      url: "./img/monica.jpg",
+    },
+    {
+      name: "Jared Dunn",
+      url: "./img/jared.jpg",
+    },
+    {
+      name: "Dinesh Chugtai",
+      url: "./img/dinesh.jpg",
+    },
+  ];
 
-const alreadyRemoved = [];
-let charactersState = db; // This fixes issues with updating characters state forcing it to use the current state and not the state that was active when the card was created.
+  const alreadyRemoved = [];
+  let charactersState = db; // This fixes issues with updating characters state forcing it to use the current state and not the state that was active when the card was created.
 
-function Advanced() {
   const [characters, setCharacters] = useState(db);
   const [lastDirection, setLastDirection] = useState();
 
@@ -160,9 +158,7 @@ function Advanced() {
           </h2>
         )}
       </div>
-      {/* </div> */}
-      {/* )) : "Loading..."} */}
     </div>
   );
 }
-export default Advanced;
+export default CoachesList;
