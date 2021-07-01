@@ -19,11 +19,11 @@ export default function WeeklyCalendar({ userDetails }) {
               setWorkouts(data);
             })
             .catch((err) => {
-              console.log(err.response.message);
+              console.log(err.response.data);
             });
         })
         .catch((err) => {
-          console.log(err.response.message);
+          console.log(err.response.data);
         });
     }
   }, [userDetails]);
@@ -67,6 +67,12 @@ export default function WeeklyCalendar({ userDetails }) {
               })}
             </tr>
           ))}
+          <tr>
+            {DaysOfTheWeek.map((day, index) => {
+              let item = workouts.find((workout) => workout.day === day);
+              return <td key={index}>{"workout" + (item ? item.name : "")}</td>;
+            })}
+          </tr>
         </tbody>
       </table>
       {/* {DaysOfTheWeek.map((day) => {

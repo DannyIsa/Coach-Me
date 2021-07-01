@@ -121,7 +121,10 @@ trainee.get("/workouts/show/:traineeId", async (req, res) => {
   const calendars = await trainee.getCalendars();
   if (!calendars) return res.status(200).send([]);
   const workouts = await Promise.all(
-    calendars.map(async (calendar) => await calendar.getWorkout())
+    calendars.map(async (calendar) => {
+      let item = await calendar.getWorkout();
+      return { ...item.toJSON(), day: calendar.day };
+    })
   );
   if (!workouts) res.status(200).send([]);
   res.status(200).send(workouts);
