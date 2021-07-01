@@ -32,6 +32,7 @@ function ClientsList({ userDetails, alertMessage }) {
   useEffect(() => {
     if (alertMessage === "New Alert") setRender(!render);
   }, [alertMessage]);
+  
   useEffect(async () => {
     if (!userDetails) return;
     setRequests(await getRequests());
