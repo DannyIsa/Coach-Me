@@ -113,4 +113,20 @@ trainee.get("/request/show/:traineeId", async (req, res) => {
   if (!request) return res.status(200).send({ coach_id: 0 });
   return res.status(200).send(request);
 });
+
+trainee.get("/workouts/show/:traineeId", async (req, res) => {
+  const { traineeId } = req.params;
+  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
+  if (!trainee) return res.status(404).send("No Matching Id");
+  const calendars = await trainee.getCalendars();
+  if (!calendars) return res.status(200).send([]);
+  const workouts = await Promise.all(
+    calendars.map(async (calendar) => {
+      let item = await calendar.getWorkout();
+      return { ...item.toJSON(), day: calendar.day };
+    })
+  );
+  if (!workouts) res.status(200).send([]);
+  res.status(200).send(workouts);
+});
 module.exports = trainee;

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../../styles/WeeklyCalendar.css";
 
 export default function WeeklyCalendar({ userDetails }) {
   const [needToEat, setNeedToEat] = useState([]);
+  const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
     if (userDetails) {
@@ -11,14 +11,24 @@ export default function WeeklyCalendar({ userDetails }) {
         .get(`http://localhost:3001/api/food/need-to-eat/${userDetails.id}`)
         .then(({ data }) => {
           setNeedToEat(data);
+          axios
+            .get(
+              `http://localhost:3001/api/trainee/workouts/show/${userDetails.id}`
+            )
+            .then(({ data }) => {
+              setWorkouts(data);
+            })
+            .catch((err) => {
+              console.log(err.response.data);
+            });
         })
-        .catch((e) => {
-          console.log(e);
+        .catch((err) => {
+          console.log(err.response.data);
         });
     }
   }, [userDetails]);
 
-  const MEALS = ["Breakfast", "Lunch", "Dinner", "Snacks"];
+  const Meals = ["Breakfast", "Lunch", "Dinner", "Snacks"];
   const DaysOfTheWeek = [
     "Sunday",
     "Monday",
@@ -30,13 +40,47 @@ export default function WeeklyCalendar({ userDetails }) {
   ];
 
   return (
-    <div className="table">
-      {DaysOfTheWeek.map((day) => {
+    <div className="weekly-calendar start">
+      <table className="table">
+        <thead>
+          <tr>
+            {DaysOfTheWeek.map((day, index) => (
+              <td key={index}>
+                <h2>{day}</h2>
+              </td>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {Meals.map((meal, mi) => (
+            <tr key={mi}>
+              {DaysOfTheWeek.map((day, di) => {
+                let item = needToEat.find(
+                  (foodToEat) =>
+                    foodToEat.day === day && foodToEat.meal_of_the_day === meal
+                );
+                return (
+                  <td key={di}>
+                    {meal + " " + (item ? JSON.stringify(item) : "")}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+          <tr>
+            {DaysOfTheWeek.map((day, index) => {
+              let item = workouts.find((workout) => workout.day === day);
+              return <td key={index}>{"workout" + (item ? item.name : "")}</td>;
+            })}
+          </tr>
+        </tbody>
+      </table>
+      {/* {DaysOfTheWeek.map((day) => {
         return (
           <div className="column">
             <h1>{day}</h1>
             <h3>Workout</h3>
-            {MEALS.map((meal) => {
+            {Meals.map((meal) => {
               return (
                 <div className="table-meal">
                   <h3>{meal}</h3>
@@ -62,7 +106,7 @@ export default function WeeklyCalendar({ userDetails }) {
             })}
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 }

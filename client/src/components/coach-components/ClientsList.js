@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import TraineesWeeklyCalendar from "./TraineesWeeklyCalendar";
 
 function ClientsList({ userDetails, alertMessage }) {
   const [clients, setClients] = useState();
@@ -32,7 +33,7 @@ function ClientsList({ userDetails, alertMessage }) {
   useEffect(() => {
     if (alertMessage === "New Alert") setRender(!render);
   }, [alertMessage]);
-  
+
   useEffect(async () => {
     if (!userDetails) return;
     setRequests(await getRequests());
@@ -84,14 +85,17 @@ function ClientsList({ userDetails, alertMessage }) {
             <div
               className="client-div"
               key={"client" + index}
-              onClick={() => {
-                setChosenTrainee(item);
-                console.log(item);
-              }}
+              onClick={() => setChosenTrainee(item)}
             >
               {item.name}
             </div>
           ))}
+        {chosenTrainee && (
+          <>
+            <button onClick={() => setChosenTrainee("")}>CLOSE</button>
+            <TraineesWeeklyCalendar chosenTrainee={chosenTrainee} />
+          </>
+        )}
       </div>
     </div>
   );
