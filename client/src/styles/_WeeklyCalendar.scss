@@ -1,0 +1,14 @@
+.weekly-calendar {
+  height: 100vh;
+  padding-top: 7rem;
+  display: flex;
+  text-align: center;
+  border: black 1px solid;
+  & > .column {
+    border: black 1px solid;
+    padding: 1% 6% 6% 1%;
+    & > .table-meal {
+      border: black 1px solid;
+    }
+  }
+}

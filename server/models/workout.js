@@ -22,6 +22,11 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "id",
         onDelete: "cascade",
       });
+      this.hasMany(models.Calendar, {
+        foreignKey: "id",
+        sourceKey: "id",
+        onDelete: "cascade",
+      });
     }
   }
   Workout.init(

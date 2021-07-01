@@ -8,6 +8,7 @@
 @import "./CoachesList";
 @import "./Details";
 @import "./AddExercise";
+@import "./WeeklyCalendar";
 * {
   margin: 0;
   padding: 0;
@@ -79,3 +80,4 @@ a:hover {
   border: black 3px solid;
   background-color: cadetblue;
 }
+

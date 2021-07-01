@@ -1002,6 +1002,25 @@ form.sign-in-form {
   padding-top: 7rem;
 }
 
+.weekly-calendar {
+  height: 100vh;
+  padding-top: 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  border: black 1px solid;
+}
+
+.weekly-calendar > .column {
+  border: black 1px solid;
+  padding: 1% 6% 6% 1%;
+}
+
+.weekly-calendar > .column > .table-meal {
+  border: black 1px solid;
+}
+
 * {
   margin: 0;
   padding: 0;
