@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 import axios from "axios";
 import { debounce } from "lodash";
+import DaySelect from "./DaySelect";
 import "../../styles/CaloriesTracker.css";
 
 export default function CaloriesTracker({ userDetails }) {
@@ -100,6 +101,7 @@ export default function CaloriesTracker({ userDetails }) {
       >
         {usedCalories}%
       </meter>
+      <DaySelect />
       <h3>
         {usedCalories} / {totalCalories} Calories Eaten
       </h3>
