@@ -20,11 +20,11 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
         </div>
         <h1>Welcome friend 👋</h1>
         <div className="details-welcome">
-          <p>We are happy to have you here!</p>
+          <p>We're happy to have you here!</p>
           <p>Please take a minute to fill in the following details.</p>
           <p>Good luck!</p>
         </div>
-        <img src={couple} id="couple" alt="couple training" />
+        {/* <img src={couple} id="couple" alt="couple training" /> */}
       </div>
       <div className="right-div">
         <form
