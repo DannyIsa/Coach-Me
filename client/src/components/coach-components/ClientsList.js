@@ -6,6 +6,7 @@ function ClientsList({ userDetails, alertMessage }) {
   const [requests, setRequests] = useState();
   const [hideAlerts, setHideAlerts] = useState(true);
   const [render, setRender] = useState(false);
+  const [chosenTrainee, setChosenTrainee] = useState("");
 
   async function getRequests() {
     try {
@@ -79,7 +80,14 @@ function ClientsList({ userDetails, alertMessage }) {
       <div className="clients-list">
         {clients &&
           clients.map((item, index) => (
-            <div className="client-div" key={"client" + index}>
+            <div
+              className="client-div"
+              key={"client" + index}
+              onClick={() => {
+                setChosenTrainee(item);
+                console.log(item);
+              }}
+            >
               {item.name}
             </div>
           ))}
