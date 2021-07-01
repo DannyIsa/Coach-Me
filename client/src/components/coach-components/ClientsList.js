@@ -93,6 +93,26 @@ function ClientsList({ userDetails, alertMessage }) {
         {chosenTrainee && (
           <>
             <button onClick={() => setChosenTrainee("")}>CLOSE</button>
+            <div className="trainee-details">
+              <h2>{"Name: " + chosenTrainee.name}</h2>
+              <h2>{"Email: " + chosenTrainee.email}</h2>
+              <h2>{"Phone Number :" + chosenTrainee.phone_number}</h2>
+              <h2>
+                {"Age: " +
+                  Math.abs(
+                    new Date(
+                      Date.now() - new Date(chosenTrainee.birthdate).getTime()
+                    ).getUTCFullYear() - 1970
+                  )}
+              </h2>
+              <h2>{"Gender: " + chosenTrainee.gender}</h2>
+              <h2>{"Weight: " + chosenTrainee.weight}</h2>
+              <h2>{"Height: " + chosenTrainee.height}</h2>
+              <h2>
+                {"Daily Calorie Goal: " + chosenTrainee.daily_calorie_goal}
+              </h2>
+              <h2>{"Activity Level: " + chosenTrainee.activity_level}</h2>
+            </div>
             <TraineesWeeklyCalendar chosenTrainee={chosenTrainee} />
           </>
         )}

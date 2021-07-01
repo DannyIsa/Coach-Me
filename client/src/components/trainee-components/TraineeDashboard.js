@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import pdf from "../../documents/health_declaration.pdf";
-import EditableInput from "./EditableInput";
+import EditableInput from "../EditableInput";
 import { Link } from "react-router-dom";
 
 function TraineeDashboard({ userDetails }) {
