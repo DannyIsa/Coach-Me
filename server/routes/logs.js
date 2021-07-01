@@ -20,7 +20,7 @@ logs.post("/workout/add", (req, res) => {});
 
 logs.post("/measure/add", async (req, res) => {
   const {
-    id: traineeId,
+    id,
     weight,
     chestPerimeter,
     hipPerimeter,
@@ -28,9 +28,9 @@ logs.post("/measure/add", async (req, res) => {
     thighPerimeter,
     waistPerimeter,
   } = req.body || null;
-  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
-  if (!traineeId || !trainee) {
-    return res.status(404).send( "Invalid ID" );
+  const trainee = await models.Trainee.findOne({ where: { id } });
+  if (!id || !trainee) {
+    return res.status(404).send("Invalid ID");
   }
   if (
     !weight &&
@@ -40,19 +40,19 @@ logs.post("/measure/add", async (req, res) => {
     !thighPerimeter &&
     !waistPerimeter
   ) {
-    return res.status(404).send( "Must send measure logs" );
+    return res.status(404).send("Must send measure logs");
   }
 
   models.MeasureLog.create({
-    id: traineeId,
+    trainee_id: id,
     weight,
-    "chest-perimeter": chestPerimeter,
-    "hip-perimeter": hipPerimeter,
-    "bicep-perimeter": bicepPerimeter,
-    "thigh-perimeter": thighPerimeter,
-    "waist-perimeter": waistPerimeter,
-  }).then(() => {
-    res.status(201).send(`${traineeId} measure logs added`);
+    chest_perimeter: chestPerimeter,
+    hip_perimeter: hipPerimeter,
+    bicep_perimeter: bicepPerimeter,
+    thigh_perimeter: thighPerimeter,
+    waist_perimeter: waistPerimeter,
+  }).then((data) => {
+    res.status(201).send(data);
   });
 });
 
@@ -70,12 +70,10 @@ logs.post("/diet/add", async (req, res) => {
   } = req.body || null;
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
   if (!traineeId || !trainee) {
-    return res.status(400).send( "Invalid ID" );
+    return res.status(400).send("Invalid ID");
   }
   if (!totalCalories || !usedCalories) {
-    return res
-      .status(404)
-      .send( "Must sand total and used caloriess" );
+    return res.status(404).send("Must sand total and used caloriess");
   }
 
   models.DietLog.create({
@@ -98,7 +96,7 @@ logs.get("/workout/show/:traineeId", async (req, res) => {
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
 
   if (!traineeId || !trainee) {
-    return res.status(400).send( "Invalid ID" );
+    return res.status(400).send("Invalid ID");
   }
 
   const traineeWorkoutsLog = await models.WorkoutLog.findAll({
@@ -120,7 +118,7 @@ logs.get("/measure/show/:traineeId", async (req, res) => {
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
 
   if (!traineeId || !trainee) {
-    return res.status(404).send( "Invalid ID" );
+    return res.status(404).send("Invalid ID");
   }
 
   const traineeMeasureLog = await models.MeasureLog.findAll({
@@ -135,7 +133,7 @@ logs.get("/diet/show/:traineeId", async (req, res) => {
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
 
   if (!traineeId || !trainee) {
-    return res.status(404).send( "Invalid ID" );
+    return res.status(404).send("Invalid ID");
   }
 
   const traineeDietLog = await models.DietLog.findOne({
