@@ -1,13 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import pdf from "../../documents/health_declaration.pdf";
 import EditableInput from "./EditableInput";
-import WeeklyCalendar from "./WeeklyCalendar";
+import { Link } from "react-router-dom";
 
 function TraineeDashboard({ userDetails }) {
   const [previousWorkouts, setPreviousWorkouts] = useState([]);
-  const [measureLogs, setMeasureLogs] = useState([]);
+  const [measureLogs, setMeasureLogs] = useState({});
   const [editMode, setEditMode] = useState(false);
 
   const getWorkoutsLog = () =>
@@ -32,7 +31,9 @@ function TraineeDashboard({ userDetails }) {
     axios
       .get("http://localhost:3001/api/logs/measure/show/" + userDetails.id)
       .then(({ data }) => {
-        if (data) {
+        if (data.length === 0) {
+          setMeasureLogs({});
+        } else {
           setMeasureLogs(data[data.length - 1]);
         }
       })
@@ -40,21 +41,29 @@ function TraineeDashboard({ userDetails }) {
         console.log(err.response.data);
       });
 
-  const updateMeasurements = () =>
-    axios
-      .post("http://localhost:3001/api/logs/measure/add", {
-        id: userDetails.id,
-        weight: userDetails.weight,
-        chestPerimeter: measureLogs.chest_perimeter,
-        hipPerimeter: measureLogs.hip_perimeter,
-        bicepPerimeter: measureLogs.bicep_perimeter,
-        thighPerimeter: measureLogs.thigh_perimeter,
-        waistPerimeter: measureLogs.waist_perimeter,
-      })
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((e) => console.log(e));
+  const updateMeasurements = () => {
+    if (!editMode) {
+      setEditMode(!editMode);
+      return;
+    } else {
+      axios
+        .post("http://localhost:3001/api/logs/measure/add", {
+          id: userDetails.id,
+          weight: measureLogs.weight,
+          chestPerimeter: measureLogs.chest_perimeter,
+          hipPerimeter: measureLogs.hip_perimeter,
+          bicepPerimeter: measureLogs.bicep_perimeter,
+          thighPerimeter: measureLogs.thigh_perimeter,
+          waistPerimeter: measureLogs.waist_perimeter,
+        })
+        .then((res) => {
+          console.log(res.data, "data");
+          setMeasureLogs(res.data);
+          setEditMode(!editMode);
+        })
+        .catch((e) => console.log(e));
+    }
+  };
 
   useEffect(() => {
     if (!userDetails) return;
@@ -62,14 +71,9 @@ function TraineeDashboard({ userDetails }) {
     getMeasurements();
   }, [userDetails]);
 
-  // useEffect(() => {
-  //   updateMeasurements();
-  // }, [measureLogs]);
-
   return (
     <div className="trainee-dashboard">
-      <WeeklyCalendar userDetails={userDetails} />
-
+      <Link to="/trainee/calendar">Weekly Calendar</Link>
       {userDetails ? (
         <>
           <h1>{userDetails.name}</h1>
@@ -79,71 +83,79 @@ function TraineeDashboard({ userDetails }) {
           <div>Email: {userDetails.email}</div>
           <div>birthdate: {userDetails.birthdate}</div>
           <div>Goal: {}</div>
-          <div>Activity Level: {}</div>
+          <div>Activity Level: {userDetails.activity_level}</div>
           <div>Workouts Per Week: {}</div>
           <br />
-          <button
-            className="edit-button"
-            onClick={() => setEditMode(!editMode)}
-          >
+          <button className="edit-button" onClick={updateMeasurements}>
             {editMode ? "Save" : "Edit"}
           </button>
-          {/* <button onClick={updateMeasurements}>click to update</button> */}
           <h2>Body Measurments:</h2>
+          <div>height: {userDetails.height + " cm"} </div>
           <EditableInput
-            value={userDetails.height + " cm"}
-            attribute={"Height"}
+            value={
+              measureLogs && measureLogs.weight
+                ? measureLogs.weight + " kg"
+                : userDetails.weight + " kg"
+            }
+            attribute={"weight"}
             editing={editMode}
-          />
-          <EditableInput
-            value={userDetails.weight + " kg"}
-            attribute={"Weight"}
-            editing={editMode}
+            measureLogs={measureLogs}
+            setMeasureLogs={setMeasureLogs}
           />
           <EditableInput
             value={
-              measureLogs && measureLogs.chest_perimeter !== null
+              measureLogs && measureLogs.chest_perimeter
                 ? measureLogs.chest_perimeter + " cm"
                 : "no value"
             }
-            attribute={"Chest"}
+            attribute={"chest_perimeter"}
             editing={editMode}
+            measureLogs={measureLogs}
+            setMeasureLogs={setMeasureLogs}
           />
           <EditableInput
             value={
-              measureLogs && measureLogs.hip_perimeter !== null
+              measureLogs && measureLogs.hip_perimeter
                 ? measureLogs.hip_perimeter + " cm"
                 : "no value"
             }
-            attribute={"Hip"}
+            attribute={"hip_perimeter"}
             editing={editMode}
+            measureLogs={measureLogs}
+            setMeasureLogs={setMeasureLogs}
           />
           <EditableInput
             value={
-              measureLogs && measureLogs.bicep_perimeter !== null
+              measureLogs && measureLogs.bicep_perimeter
                 ? measureLogs.bicep_perimeter + " cm"
                 : "no value"
             }
-            attribute={"Bicep"}
+            attribute={"bicep_perimeter"}
             editing={editMode}
+            measureLogs={measureLogs}
+            setMeasureLogs={setMeasureLogs}
           />
           <EditableInput
             value={
-              measureLogs && measureLogs.waist_perimeter !== null
+              measureLogs && measureLogs.waist_perimeter
                 ? measureLogs.waist_perimeter + " cm"
                 : "no value"
             }
-            attribute={"Waist"}
+            attribute={"waist_perimeter"}
             editing={editMode}
+            measureLogs={measureLogs}
+            setMeasureLogs={setMeasureLogs}
           />
           <EditableInput
             value={
-              measureLogs && measureLogs.thigh_perimeter !== null
+              measureLogs && measureLogs.thigh_perimeter
                 ? measureLogs.thigh_perimeter + " cm"
                 : "no value"
             }
-            attribute={"thigh"}
+            attribute={"thigh_perimeter"}
             editing={editMode}
+            measureLogs={measureLogs}
+            setMeasureLogs={setMeasureLogs}
           />
           <br />
           <h2>Forms To Fill Out:</h2>

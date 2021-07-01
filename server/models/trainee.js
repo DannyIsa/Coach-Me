@@ -39,6 +39,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "trainee_id",
         onDelete: "cascade",
       });
+      this.hasMany(models.Calendar, {
+        sourceKey: "id",
+        foreignKey: "trainee_id",
+        onDelete: "cascade",
+      });
     }
   }
   Trainee.init(
