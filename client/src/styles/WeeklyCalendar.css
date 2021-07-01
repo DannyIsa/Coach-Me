@@ -2,8 +2,11 @@
   display: flex;
   justify-content: space-around;
   text-align: center;
-  border: black 5px solid;
+  border: black 1px solid;
 }
 .column {
-  border: black 5px solid;
+  border: black 1px solid;
+}
+.table-meal {
+  border: black 1px solid;
 }
