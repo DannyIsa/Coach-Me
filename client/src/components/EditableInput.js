@@ -1,12 +1,8 @@
 import React from "react";
 
-function EditableInput({
-  attribute,
-  value,
-  editing,
-  measureLogs,
-  setMeasureLogs,
-}) {
+function EditableInput({ attribute, value, editing, state, setState }) {
+  console.log(value);
+
   return (
     <div className="editable-input">
       <label>{attribute.replace("_", " ") + ": "}</label>
@@ -16,16 +12,16 @@ function EditableInput({
           min={0}
           defaultValue={value}
           onChange={(e) => {
-            setMeasureLogs({
-              ...measureLogs,
+            setState({
+              ...state,
               [attribute]: e.target.value,
             });
           }}
         />
       ) : value ? (
-        // <b>{`${value} ${attribute === "Weight" ? "kg" : "cm"}`}</b>
-        <b>{`${value}`}</b>
+        <b>{`${value} ${attribute === "weight" ? "kg" : "cm"}`}</b>
       ) : (
+        // <b>{`${value}`}</b>
         <b>No Value</b>
       )}
     </div>

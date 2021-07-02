@@ -44,6 +44,7 @@ logs.post("/measure/add", async (req, res) => {
   const {
     id,
     weight,
+    height,
     chestPerimeter,
     hipPerimeter,
     bicepPerimeter,
@@ -58,6 +59,7 @@ logs.post("/measure/add", async (req, res) => {
   }
   if (
     !weight &&
+    !height &&
     !chestPerimeter &&
     !hipPerimeter &&
     !bicepPerimeter &&
@@ -78,6 +80,7 @@ logs.post("/measure/add", async (req, res) => {
     {
       trainee_id: id,
       weight,
+      height,
       chest_perimeter: chestPerimeter,
       hip_perimeter: hipPerimeter,
       bicep_perimeter: bicepPerimeter,

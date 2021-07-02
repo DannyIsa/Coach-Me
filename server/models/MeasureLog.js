@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: "id",
         foreignKey: "trainee_id",
         onDelete: "cascade",
-
       });
     }
   }
@@ -20,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       trainee_id: DataTypes.INTEGER,
       weight: DataTypes.FLOAT,
+      height: DataTypes.FLOAT,
       chest_perimeter: DataTypes.FLOAT,
       hip_perimeter: DataTypes.FLOAT,
       bicep_perimeter: DataTypes.FLOAT,
