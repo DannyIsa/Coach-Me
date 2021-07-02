@@ -133,7 +133,7 @@ food.get("/need-to-eat/:coachId", async (req, res) => {
   const { traineeId } = req.query;
   if (!coachId || !traineeId) return res.status(400).send("Must send id");
   const trainee = await models.Trainee.findOne({
-    where: { coach_id: coachId, id: trainee_id },
+    where: { coach_id: coachId, id: traineeId },
   });
   if (!trainee) return res.status(404).send("No Matching Client");
   const { status, data } = await getFoodFromNeedToEat(traineeId);
