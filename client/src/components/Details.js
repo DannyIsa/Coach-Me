@@ -144,7 +144,9 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
                   placeholder="Choose Your Activity Level"
                   required
                 >
-                  <label>Choose Your Activity Level</label>
+                  <option disabled selected value>
+                    Select Activity Level
+                  </option>
                   <option value="Sedentary">Sedentary</option>
                   <option value="LightlyActive">Lightly Active</option>
                   <option value="Active">Active</option>
