@@ -1,31 +1,31 @@
 import React from "react";
 
-function EditableInput({
-  attribute,
-  value,
-  editing,
-  measureLogs,
-  setMeasureLogs,
-}) {
+function EditableInput({ attribute, value, editing, state, setState }) {
   return (
     <div className="editable-input">
-      <label>{attribute.replace("_", " ") + ": "}</label>
+      <label>{attribute.split("_").join(" ") + ": "}</label>
       {editing ? (
         <input
           type="number"
           min={0}
-          defaultValue={value}
+          defaultValue={value === "no value" ? 0 : value}
           onChange={(e) => {
-            setMeasureLogs({
-              ...measureLogs,
+            setState({
+              ...state,
               [attribute]: e.target.value,
             });
           }}
         />
       ) : value ? (
-        // <b>{`${value} ${attribute === "Weight" ? "kg" : "cm"}`}</b>
-        <b>{`${value}`}</b>
+        <b>{`${value} ${
+          attribute === "weight"
+            ? "kg"
+            : attribute === "daily_calorie_goal"
+            ? "cal"
+            : "cm"
+        }`}</b>
       ) : (
+        // <b>{`${value}`}</b>
         <b>No Value</b>
       )}
     </div>

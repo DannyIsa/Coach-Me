@@ -124,7 +124,7 @@ coach.post("/workouts/new/:coach_id", async (req, res) => {
   const { coach_id } = req.params;
   let { name, sets, exercises } = req.body;
   if (!name || name === "") return res.status(400).send("Invalid name");
-
+  let valid = { status: 200 };
   exercises.forEach((item) => {
     if (
       item.sets <= 0 ||
@@ -134,10 +134,11 @@ coach.post("/workouts/new/:coach_id", async (req, res) => {
       sets <= 0 ||
       !sets
     )
-      return res.status(400).send("Numbers must be positive");
+      valid = { status: 400, message: "Numbers Must Be Positive" };
     if (item.max_reps < item.min_reps)
-      return res.status(400).send("Max reps cant be lower then min reps");
+      valid = { status: 400, message: "Max reps cant be lower then min reps" };
   });
+  if (valid.status === 400) return res.status(valid.status).send(valid.message);
   if (!name.match(/^[A-Za-z1-9 ]*$/i))
     return res.status(400).send("Invalid name");
   if (!Number(coach_id)) return res.status(400).send("Invalid ID");
@@ -266,6 +267,22 @@ coach.get("/exercises/tags", async (req, res) => {
     types: uniqueTypes,
     equipments: uniqueEquipments,
   });
+});
+
+coach.put("/clients/update/:coachId", async (req, res) => {
+  const { coachId } = req.params;
+  const { traineeId, goal } = req.body;
+  const trainee = await models.Trainee.findOne({
+    where: { id: traineeId, coach_id: coachId },
+  });
+  if (!trainee) return res.status(404).send("No Trainee Found");
+  trainee
+    .update({ daily_calorie_goal: goal })
+    .then((data) => {
+      if (data) return res.status(201).send(data);
+      else return res.status(400).send("Couldn't update");
+    })
+    .catch((err) => res.status(400).send(err));
 });
 
 coach.put("/workouts/append/:coachId", (req, res) => {});

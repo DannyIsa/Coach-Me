@@ -49,6 +49,7 @@ function TraineeDashboard({ userDetails }) {
       axios
         .post("http://localhost:3001/api/logs/measure/add", {
           id: userDetails.id,
+          height: measureLogs.height,
           weight: measureLogs.weight,
           chestPerimeter: measureLogs.chest_perimeter,
           hipPerimeter: measureLogs.hip_perimeter,
@@ -57,7 +58,6 @@ function TraineeDashboard({ userDetails }) {
           waistPerimeter: measureLogs.waist_perimeter,
         })
         .then((res) => {
-          console.log(res.data, "data");
           setMeasureLogs(res.data);
           setEditMode(!editMode);
         })
@@ -90,72 +90,82 @@ function TraineeDashboard({ userDetails }) {
             {editMode ? "Save" : "Edit"}
           </button>
           <h2>Body Measurments:</h2>
-          <div>height: {userDetails.height + " cm"} </div>
+          <EditableInput
+            value={
+              measureLogs && measureLogs.height
+                ? measureLogs.height
+                : userDetails.height
+            }
+            attribute={"height"}
+            editing={editMode}
+            state={measureLogs}
+            setState={setMeasureLogs}
+          />
           <EditableInput
             value={
               measureLogs && measureLogs.weight
-                ? measureLogs.weight + " kg"
-                : userDetails.weight + " kg"
+                ? measureLogs.weight
+                : userDetails.weight
             }
             attribute={"weight"}
             editing={editMode}
-            measureLogs={measureLogs}
-            setMeasureLogs={setMeasureLogs}
+            state={measureLogs}
+            setState={setMeasureLogs}
           />
           <EditableInput
             value={
               measureLogs && measureLogs.chest_perimeter
-                ? measureLogs.chest_perimeter + " cm"
+                ? measureLogs.chest_perimeter
                 : "no value"
             }
             attribute={"chest_perimeter"}
             editing={editMode}
-            measureLogs={measureLogs}
-            setMeasureLogs={setMeasureLogs}
+            state={measureLogs}
+            setState={setMeasureLogs}
           />
           <EditableInput
             value={
               measureLogs && measureLogs.hip_perimeter
-                ? measureLogs.hip_perimeter + " cm"
+                ? measureLogs.hip_perimeter
                 : "no value"
             }
             attribute={"hip_perimeter"}
             editing={editMode}
-            measureLogs={measureLogs}
-            setMeasureLogs={setMeasureLogs}
+            state={measureLogs}
+            setState={setMeasureLogs}
           />
           <EditableInput
             value={
               measureLogs && measureLogs.bicep_perimeter
-                ? measureLogs.bicep_perimeter + " cm"
+                ? measureLogs.bicep_perimeter
                 : "no value"
             }
             attribute={"bicep_perimeter"}
             editing={editMode}
-            measureLogs={measureLogs}
-            setMeasureLogs={setMeasureLogs}
+            state={measureLogs}
+            setState={setMeasureLogs}
           />
           <EditableInput
             value={
               measureLogs && measureLogs.waist_perimeter
-                ? measureLogs.waist_perimeter + " cm"
+                ? measureLogs.waist_perimeter
                 : "no value"
             }
             attribute={"waist_perimeter"}
             editing={editMode}
-            measureLogs={measureLogs}
-            setMeasureLogs={setMeasureLogs}
+            state={measureLogs}
+            setState={setMeasureLogs}
           />
           <EditableInput
             value={
               measureLogs && measureLogs.thigh_perimeter
-                ? measureLogs.thigh_perimeter + " cm"
+                ? measureLogs.thigh_perimeter
                 : "no value"
             }
             attribute={"thigh_perimeter"}
             editing={editMode}
-            measureLogs={measureLogs}
-            setMeasureLogs={setMeasureLogs}
+            state={measureLogs}
+            setState={setMeasureLogs}
           />
           <br />
           <h2>Forms To Fill Out:</h2>

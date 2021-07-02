@@ -1,5 +1,5 @@
 const models = require("../models");
-const { Op } = require("sequelize");
+const { Op, where } = require("sequelize");
 const Sequelize = require("sequelize");
 require("dotenv").config();
 const sequelize = new Sequelize(
@@ -44,6 +44,7 @@ logs.post("/measure/add", async (req, res) => {
   const {
     id,
     weight,
+    height,
     chestPerimeter,
     hipPerimeter,
     bicepPerimeter,
@@ -58,6 +59,7 @@ logs.post("/measure/add", async (req, res) => {
   }
   if (
     !weight &&
+    !height &&
     !chestPerimeter &&
     !hipPerimeter &&
     !bicepPerimeter &&
@@ -78,6 +80,7 @@ logs.post("/measure/add", async (req, res) => {
     {
       trainee_id: id,
       weight,
+      height,
       chest_perimeter: chestPerimeter,
       hip_perimeter: hipPerimeter,
       bicep_perimeter: bicepPerimeter,
@@ -85,11 +88,13 @@ logs.post("/measure/add", async (req, res) => {
       waist_perimeter: waistPerimeter,
     }
   )
-    .then((data) => {
+    .then(async (data) => {
+      const { height, weight } = data.item;
+      await trainee.update({ height, weight });
       return res.status(data.status).send(data.item);
     })
     .catch((err) => {
-      console.log(err);
+      return res.status(err.status).send("Couldn't update logs");
     });
 });
 
@@ -141,7 +146,6 @@ logs.get("/workout/show/:traineeId", async (req, res) => {
   });
 
   const workoutId = traineeWorkoutsLog.map((e) => e.workout_id);
-  console.log(workoutId);
 
   const workoutOfThisLog = await models.Workout.findAll({
     where: { id: workoutId },
