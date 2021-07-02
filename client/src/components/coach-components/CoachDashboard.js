@@ -9,11 +9,11 @@ function CoachDashboard({ userDetails }) {
         <>
           <h1>{`Hello Coach ${userDetails.name}`}</h1>
 
-          <div className="dashboard-items">
+          {/* <div className="dashboard-items">
             <Link to="/coach/clients">
               <div className="link-div">Your Trainees</div>
             </Link>
-          </div>
+          </div> */}
         </>
       ) : (
         "Loading..."
