@@ -1,14 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import TraineesWeeklyCalendar from "./TraineesWeeklyCalendar";
-
+import EditableInput from "../EditableInput";
+import { Link } from "react-router-dom";
 function ClientsList({ userDetails, alertMessage }) {
   const [clients, setClients] = useState();
   const [requests, setRequests] = useState();
   const [hideAlerts, setHideAlerts] = useState(true);
   const [render, setRender] = useState(false);
   const [chosenTrainee, setChosenTrainee] = useState("");
-
+  const [clientDetails, setClientDetails] = useState({});
+  const [editMode, setEditMode] = useState(false);
   async function getRequests() {
     try {
       let requests = await axios.get(
@@ -39,6 +40,27 @@ function ClientsList({ userDetails, alertMessage }) {
     setRequests(await getRequests());
     setClients(await getClients());
   }, [userDetails, render]);
+
+  const handleEdit = () => {
+    if (!editMode) {
+      setEditMode(!editMode);
+      return;
+    } else {
+      axios
+        .put(
+          "http://localhost:3001/api/coach/clients/update/" + userDetails.id,
+          {
+            traineeId: chosenTrainee.id,
+            goal: clientDetails.daily_calorie_goal,
+          }
+        )
+        .then(({ data }) => {
+          setChosenTrainee(data);
+          setEditMode(!editMode);
+        })
+        .catch((err) => console.log(err.response.data));
+    }
+  };
 
   function handleRequest(accept, traineeId) {
     axios
@@ -93,6 +115,7 @@ function ClientsList({ userDetails, alertMessage }) {
         {chosenTrainee && (
           <>
             <button onClick={() => setChosenTrainee("")}>CLOSE</button>
+            <button onClick={handleEdit}>{editMode ? "Save" : "Edit"}</button>
             <div className="trainee-details">
               <h2>{"Name: " + chosenTrainee.name}</h2>
               <h2>{"Email: " + chosenTrainee.email}</h2>
@@ -108,12 +131,22 @@ function ClientsList({ userDetails, alertMessage }) {
               <h2>{"Gender: " + chosenTrainee.gender}</h2>
               <h2>{"Weight: " + chosenTrainee.weight}</h2>
               <h2>{"Height: " + chosenTrainee.height}</h2>
-              <h2>
-                {"Daily Calorie Goal: " + chosenTrainee.daily_calorie_goal}
-              </h2>
+              <EditableInput
+                value={
+                  chosenTrainee && chosenTrainee.daily_calorie_goal
+                    ? chosenTrainee.daily_calorie_goal
+                    : "no value"
+                }
+                attribute={"daily_calorie_goal"}
+                editing={editMode}
+                state={clientDetails}
+                setState={setClientDetails}
+              />
               <h2>{"Activity Level: " + chosenTrainee.activity_level}</h2>
             </div>
-            <TraineesWeeklyCalendar chosenTrainee={chosenTrainee} />
+            <Link to={"/coach/calendar/" + chosenTrainee.id}>
+              View Calendar
+            </Link>
           </>
         )}
       </div>

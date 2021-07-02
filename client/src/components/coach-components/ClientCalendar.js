@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
-export default function WeeklyCalendar({ userDetails }) {
+function ClientCalendar({ userDetails }) {
   const [needToEat, setNeedToEat] = useState([]);
   const [workouts, setWorkouts] = useState([]);
+  const { traineeId } = useParams();
 
   useEffect(() => {
     if (userDetails) {
       axios
         .get(
-          `http://localhost:3001/api/food/need-to-eat/${userDetails.coach_id}?trainneId=${userDetails.id}`
+          `http://localhost:3001/api/food/need-to-eat/${userDetails.id}?traineeId=${traineeId}`
         )
         .then(({ data }) => {
           setNeedToEat(data);
           axios
             .get(
-              `http://localhost:3001/api/trainee/workouts/show/${userDetails.coach_id}?trainneId=${userDetails.id}`
+              `http://localhost:3001/api/trainee/workouts/show/${userDetails.id}?traineeId=${traineeId}`
             )
             .then(({ data }) => {
               setWorkouts(data);
@@ -112,3 +114,4 @@ export default function WeeklyCalendar({ userDetails }) {
     </div>
   );
 }
+export default ClientCalendar;

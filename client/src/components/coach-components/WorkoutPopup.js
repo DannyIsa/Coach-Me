@@ -13,7 +13,7 @@ function WorkoutPopup({
   const [draggedItem, setDraggedItem] = useState();
   const [tempNewOrder, setTempNewOrder] = useState([]);
   const [workoutName, setWorkoutName] = useState("");
-  const [workoutSets, setWorkoutSets] = useState();
+  const [workoutSets, setWorkoutSets] = useState(1);
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {

@@ -1,16 +1,14 @@
 import React from "react";
 
 function EditableInput({ attribute, value, editing, state, setState }) {
-  console.log(value);
-
   return (
     <div className="editable-input">
-      <label>{attribute.replace("_", " ") + ": "}</label>
+      <label>{attribute.split("_").join(" ") + ": "}</label>
       {editing ? (
         <input
           type="number"
           min={0}
-          defaultValue={value}
+          defaultValue={value === "no value" ? 0 : value}
           onChange={(e) => {
             setState({
               ...state,
@@ -19,7 +17,13 @@ function EditableInput({ attribute, value, editing, state, setState }) {
           }}
         />
       ) : value ? (
-        <b>{`${value} ${attribute === "weight" ? "kg" : "cm"}`}</b>
+        <b>{`${value} ${
+          attribute === "weight"
+            ? "kg"
+            : attribute === "daily_calorie_goal"
+            ? "cal"
+            : "cm"
+        }`}</b>
       ) : (
         // <b>{`${value}`}</b>
         <b>No Value</b>

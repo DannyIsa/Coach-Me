@@ -128,10 +128,15 @@ food.delete("/eaten-food/:foodId", async (req, res) => {
   res.status(status).send(data);
 });
 
-food.get("/need-to-eat/:id", async (req, res) => {
-  const { id } = req.params;
-  if (!id) return res.status(400).send("Must send id");
-  const { status, data } = await getFoodFromNeedToEat(id);
+food.get("/need-to-eat/:coachId", async (req, res) => {
+  const { coachId } = req.params;
+  const { traineeId } = req.query;
+  if (!coachId || !traineeId) return res.status(400).send("Must send id");
+  const trainee = await models.Trainee.findOne({
+    where: { coach_id: coachId, id: trainee_id },
+  });
+  if (!trainee) return res.status(404).send("No Matching Client");
+  const { status, data } = await getFoodFromNeedToEat(traineeId);
   res.status(status).send(data);
 });
 

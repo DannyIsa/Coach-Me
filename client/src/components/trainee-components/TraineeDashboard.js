@@ -58,7 +58,6 @@ function TraineeDashboard({ userDetails }) {
           waistPerimeter: measureLogs.waist_perimeter,
         })
         .then((res) => {
-          console.log(res.data, "data");
           setMeasureLogs(res.data);
           setEditMode(!editMode);
         })
