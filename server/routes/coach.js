@@ -285,6 +285,7 @@ coach.put("/clients/update/:coachId", async (req, res) => {
     .catch((err) => res.status(400).send(err));
 });
 
-coach.put("/workouts/append/:coachId", (req, res) => {});
-
+coach.put("/client/calendar",(req,res)=>{
+  
+})
 module.exports = coach;
