@@ -153,9 +153,11 @@ function CoachesList({ userDetails, alertMessage }) {
             You swiped {lastDirection}
           </h2>
         ) : (
-          <h2 className="infoText">
-            Swipe a card or press a <br /> button to get started!
-          </h2>
+          <p className="infoText">
+            Swipe a card or press a button to get started!
+            <br />
+            NOTE - You can only choose one coach!
+          </p>
         )}
       </div>
     </div>

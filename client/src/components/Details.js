@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import logo from "../pics/logo.png";
-import couple from "../pics/couple.png";
 
 function Details({ userDetails, userType, setRegistered, setReqDone }) {
   const history = useHistory();
@@ -18,13 +17,12 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
             </a>
           </div>
         </div>
-        <h1>Welcome friend 👋</h1>
+        <h1>Welcome friend!</h1>
         <div className="details-welcome">
           <p>We're happy to have you here!</p>
           <p>Please take a minute to fill in the following details.</p>
-          <p>Good luck!</p>
         </div>
-        {/* <img src={couple} id="couple" alt="couple training" /> */}
+        <h1>Good luck!</h1>
       </div>
       <div className="right-div">
         <form
@@ -70,7 +68,7 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
             </div>
           </div>
           <div id="gender-div">
-            <div>
+            <div id="gender1">
               <label htmlFor="gender">Male</label>
               <input
                 type="radio"
@@ -92,7 +90,7 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
                 }}
               />
             </div>
-            <div>
+            <div id="gender2">
               <label htmlFor="gender" required>
                 Other
               </label>
@@ -117,15 +115,20 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
               )}
             </div>
           </div>
-          <div className="num1">
+          <div className="num2">
             <div className="inputbox">
-              <input type="date" required="required" name="birthdate" />
+              <input
+                type="date"
+                required="required"
+                name="birthdate"
+                className="birthday"
+              />
               <span>Date of Birth</span>
             </div>
           </div>
           {userType === "Trainee" && (
             <>
-              <div className="num1">
+              <div className="num3">
                 <div className="inputbox">
                   <input type="number" required="required" name="height" />
                   <span>Height (Cm)</span>
@@ -134,19 +137,19 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
                   <input type="number" required="required" name="weight" />
                   <span>Weight (Kg)</span>
                 </div>
-                <div className="selectbox">
-                  <select
-                    name="activity-level"
-                    placeholder="Choose Your Activity Level"
-                    required
-                  >
-                    <label>Choose Your Activity Level</label>
-                    <option value="Sedentary">Sedentary</option>
-                    <option value="LightlyActive">Lightly Active</option>
-                    <option value="Active">Active</option>
-                    <option value="VeryActive">Very Active</option>
-                  </select>
-                </div>
+              </div>
+              <div className="selectbox">
+                <select
+                  name="activity-level"
+                  placeholder="Choose Your Activity Level"
+                  required
+                >
+                  <label>Choose Your Activity Level</label>
+                  <option value="Sedentary">Sedentary</option>
+                  <option value="LightlyActive">Lightly Active</option>
+                  <option value="Active">Active</option>
+                  <option value="VeryActive">Very Active</option>
+                </select>
               </div>
             </>
           )}
