@@ -5,6 +5,23 @@ import "../../styles/WeeklyCalendar.css";
 export default function TraineesWeeklyCalendar({ chosenTrainee }) {
   const [needToEat, setNeedToEat] = useState([]);
   const [editMode, setEditMode] = useState(false);
+  const [chosenMeal, setChosenMeal] = useState("");
+  const [foodSearch, setFoodSearch] = useState([]);
+
+  useEffect(() => {}, []);
+
+  useEffect(() => {
+    if (chosenTrainee) {
+      axios
+        .get(`http://localhost:3001/api/food/need-to-eat/${chosenTrainee.id}`)
+        .then(({ data }) => {
+          setNeedToEat(data);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }
+  }, [chosenTrainee]);
 
   const removeThisFood = (foodId) => {
     console.log(foodId);
@@ -19,18 +36,7 @@ export default function TraineesWeeklyCalendar({ chosenTrainee }) {
       .catch((e) => console.log(e.response.data));
   };
 
-  useEffect(() => {
-    if (chosenTrainee) {
-      axios
-        .get(`http://localhost:3001/api/food/need-to-eat/${chosenTrainee.id}`)
-        .then(({ data }) => {
-          setNeedToEat(data);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    }
-  }, [chosenTrainee]);
+  const openSearchFoodInput = () => {};
 
   const Meals = ["Breakfast", "Lunch", "Dinner", "Snacks"];
   const DaysOfTheWeek = [
@@ -61,8 +67,25 @@ export default function TraineesWeeklyCalendar({ chosenTrainee }) {
               <h3>Workout</h3>
               {Meals.map((meal) => {
                 return (
-                  <div className="table-meal" key={`${day} ${meal}`}>
+                  <div
+                    className={
+                      chosenMeal.meal === meal && chosenMeal.day === day
+                        ? "chosen-meal table-meal"
+                        : "table-meal"
+                    }
+                    key={`${day} ${meal}`}
+                  >
                     <h3>{meal}</h3>
+                    {editMode && (
+                      <button
+                        onClick={() => {
+                          openSearchFoodInput();
+                          setChosenMeal({ day, meal });
+                        }}
+                      >
+                        +
+                      </button>
+                    )}
                     {needToEat &&
                       needToEat.map((food) => {
                         return (
@@ -92,6 +115,23 @@ export default function TraineesWeeklyCalendar({ chosenTrainee }) {
           );
         })}
       </div>
+      {/* {chosenMeal && (
+        <div className="pop-up-selected-food">
+          <h3>
+            {foodSearch.name} ({foodSearch.weight * addFoodAmount}g)
+          </h3>
+          <p>Calories: {foodSearch.calories * addFoodAmount}</p>
+          <p>Protein: {foodSearch.protein * addFoodAmount}</p>
+          <p>Carbs: {foodSearch.carbs * addFoodAmount}</p>
+          <p>Fats: {foodSearch.fats * addFoodAmount}</p>
+          <label>Amount:</label>
+          <input
+            onChange={(e) => setAddFoodAmount(e.target.value)}
+            value={addFoodAmount}
+          ></input>
+          <button onClick={() => addEatenFood(foodSearch)}>ADD</button>
+        </div>
+      )} */}
     </div>
   );
 }
