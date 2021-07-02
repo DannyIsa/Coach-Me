@@ -9,3 +9,6 @@
 .table-meal {
   border: 1px black solid;
 }
+.chosen-meal {
+  border: 1px red solid;
+}
