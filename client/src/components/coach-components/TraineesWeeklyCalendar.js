@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "../../styles/WeeklyCalendar.css";
+import { debounce } from "lodash";
 
 export default function TraineesWeeklyCalendar({ chosenTrainee }) {
   const [needToEat, setNeedToEat] = useState([]);
   const [editMode, setEditMode] = useState(false);
   const [chosenMeal, setChosenMeal] = useState("");
-  const [foodSearch, setFoodSearch] = useState([]);
+  const foodSearchInput = useRef();
+  const [searchedFood, setSearchedFood] = useState([]);
 
   useEffect(() => {}, []);
 
@@ -22,6 +24,20 @@ export default function TraineesWeeklyCalendar({ chosenTrainee }) {
         });
     }
   }, [chosenTrainee]);
+
+  const searchFood = debounce(() => {
+    // if (foodSearchInput.current.value) {
+    //   axios
+    //     .get(
+    //       `http://localhost:3001/api/food/get-food/${foodSearchInput.current.value}`
+    //     )
+    //     .then(({ data }) => {
+    //       setSearchedFood(data);
+    //     });
+    // } else if (!foodSearchInput.current.value) {
+    //   setSearchedFood([]);
+    // }
+  }, 300);
 
   const removeThisFood = (foodId) => {
     console.log(foodId);
@@ -115,23 +131,15 @@ export default function TraineesWeeklyCalendar({ chosenTrainee }) {
           );
         })}
       </div>
-      {/* {chosenMeal && (
-        <div className="pop-up-selected-food">
-          <h3>
-            {foodSearch.name} ({foodSearch.weight * addFoodAmount}g)
-          </h3>
-          <p>Calories: {foodSearch.calories * addFoodAmount}</p>
-          <p>Protein: {foodSearch.protein * addFoodAmount}</p>
-          <p>Carbs: {foodSearch.carbs * addFoodAmount}</p>
-          <p>Fats: {foodSearch.fats * addFoodAmount}</p>
-          <label>Amount:</label>
+      {chosenMeal && (
+        <div>
           <input
-            onChange={(e) => setAddFoodAmount(e.target.value)}
-            value={addFoodAmount}
+            ref={foodSearchInput}
+            onChange={() => searchFood}
+            placeholder="search food"
           ></input>
-          <button onClick={() => addEatenFood(foodSearch)}>ADD</button>
         </div>
-      )} */}
+      )}
     </div>
   );
 }
