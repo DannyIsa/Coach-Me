@@ -1334,6 +1334,173 @@ form.sign-in-form {
   }
 }
 
+@media (max-height: 748px) {
+  .details-div {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow: hidden;
+  }
+  .details-div .left-div {
+    width: 100vw;
+    height: 25vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .details-div .left-div h1 {
+    font-size: 0.8rem;
+  }
+  .details-div .left-div .details-welcome p {
+    line-height: 1.5rem;
+    font-size: 15px;
+  }
+  .details-div .right-div {
+    width: 100vw;
+    height: 75vh;
+  }
+  .details-div .right-div input {
+    margin: 0;
+  }
+  .details-div .right-div .details-form {
+    height: 70vh;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .details-div .right-div #gender-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 7rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 0vw;
+  }
+  .details-div .right-div #gender-div #gender1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .details-div .right-div #gender-div #gender1 label {
+    margin-left: 0.5rem;
+  }
+  .details-div .right-div #gender-div #gender1 input {
+    margin-left: 0.8rem;
+    width: 1.2rem;
+  }
+  .details-div .right-div #gender-div #gender2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 2rem;
+  }
+  .details-div .right-div #gender-div #gender2 label {
+    margin-left: 0.5rem;
+  }
+  .details-div .right-div #gender-div #gender2 input {
+    margin-left: 0rem;
+    width: 1.2rem;
+  }
+  .details-div .right-div .num1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    left: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 0;
+  }
+  .details-div .right-div .num2 {
+    margin-bottom: 0rem;
+  }
+  .details-div .right-div .num3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 5rem;
+  }
+  .details-div .right-div .selectbox {
+    margin-left: 5.5rem;
+  }
+  .details-div .right-div form button {
+    position: absolute;
+    right: 0;
+  }
+  .details-div .right-div .inputbox {
+    width: 0vw;
+    height: 30px;
+    margin-bottom: 5rem;
+  }
+  .details-div .right-div .inputbox input {
+    width: 15vw;
+  }
+  .details-div .right-div .inputbox #other-input {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: 2rem;
+  }
+  .details-div .right-div .inputbox:last-child {
+    margin-bottom: 0;
+    margin-left: 0rem;
+  }
+  .details-div .right-div .inputbox span {
+    position: absolute;
+    top: 14px;
+    left: 4px;
+    font-size: 0.8em;
+  }
+  .details-div .right-div .inputbox input:focus ~ span,
+  .details-div .right-div .inputbox input:valid ~ span {
+    -webkit-transform: translateX(-5px) translateY(-60px);
+            transform: translateX(-5px) translateY(-60px);
+    font-size: 0.8em;
+  }
+}
+
 .add-exercise-start {
   height: 100vh;
   display: -webkit-box;
