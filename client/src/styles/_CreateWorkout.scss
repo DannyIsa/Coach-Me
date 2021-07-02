@@ -1,6 +1,10 @@
 .create-workout-page {
-  width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 7rem;
+  // width: 100vw;
+  // height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
   & > .search-div {
