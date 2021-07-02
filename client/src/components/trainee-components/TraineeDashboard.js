@@ -76,8 +76,8 @@ function TraineeDashboard({ userDetails }) {
       <Link to="/trainee/calendar">Weekly Calendar</Link>
       {userDetails ? (
         <>
-          <h1>{userDetails.name}</h1>
-          <h1>{userDetails.email}</h1>
+          <h1>Hello {userDetails.name}</h1>
+          {/* <h1>{userDetails.email}</h1> */}
           <br />
           <h2>Personal info:</h2>
           <div>Email: {userDetails.email}</div>
