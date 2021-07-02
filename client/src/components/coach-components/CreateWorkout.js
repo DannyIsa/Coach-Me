@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import WorkoutPopup from "./WorkoutPopup";
+
 function CreateWorkout({ userDetails }) {
   const [exercises, setExercises] = useState([]);
   const [chosen, setChosen] = useState([]);
@@ -65,7 +67,7 @@ function CreateWorkout({ userDetails }) {
           }}
           onChange={(e) => setSearchInput(e.target.value)}
         />
-        <br />
+        <Link to="/coach/add-exercise"> Add Exercise</Link>
         <div className="tags">
           <h3>Exercise Types:</h3>
           <div className="types">

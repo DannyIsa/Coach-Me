@@ -16,7 +16,6 @@ function WorkoutsList({ userDetails }) {
   return (
     <div className="create-workouts-start">
       <Link to="/coach/workouts/create">Create workout</Link>
-      <Link to="/coach/add-exercise"> Add Exercise</Link>
       <h1>Your Workouts:</h1>
       <br />
       <div className="content">
