@@ -18,11 +18,12 @@ function EditableInput({ attribute, value, editing, state, setState }) {
         />
       ) : value ? (
         <b>{`${value} ${
-          attribute === "weight"
+          value !== "no value" &&
+          (attribute === "weight"
             ? "kg"
             : attribute === "daily_calorie_goal"
             ? "cal"
-            : "cm"
+            : "cm")
         }`}</b>
       ) : (
         // <b>{`${value}`}</b>
