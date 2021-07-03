@@ -8,8 +8,9 @@ function ClientCalendar({ userDetails }) {
   const { traineeId } = useParams();
   const [field, setField] = useState({ day: null, type: null });
   const [results, setResults] = useState([]);
-  const [chosen, setChosen] = useState({});
+  const [chosen, setChosen] = useState();
   const [searchInput, setSearchInput] = useState("");
+  const [foodAmount, setFoodAmount] = useState(1);
   useEffect(() => {
     if (userDetails && traineeId) {
       axios
@@ -36,19 +37,12 @@ function ClientCalendar({ userDetails }) {
   }, [userDetails]);
 
   useEffect(() => {
-    console.log(chosen, field);
-  }, [chosen]);
-
-  useEffect(() => {
     if (!field || !userDetails) return;
     if (field.type === "Workout") {
       axios
-        .get(
-          `/api/coach/workouts/show/${userDetails.id}?field=name&value=${searchInput}`
-        )
+        .get(`/api/coach/workouts/show/${userDetails.id}?value=${searchInput}`)
         .then(({ data }) => {
           setResults(data);
-          setChosen();
         })
         .catch((err) => {
           setResults([]);
@@ -56,14 +50,52 @@ function ClientCalendar({ userDetails }) {
           console.log(err.response.data);
         });
     } else {
-      setResults([]);
-      setChosen();
+      axios
+        .get(`/api/food/get-food?searchedFood=${searchInput}`)
+        .then(({ data }) => {
+          setResults(data);
+        })
+        .catch((err) => {
+          setResults([]);
+          setChosen();
+          console.log(err.response.data);
+        });
     }
   }, [searchInput, field]);
 
-  const addItem=async()=>{
-
-  }
+  const addItem = async () => {
+    const dataToSend = {
+      traineeId,
+      day: field.day,
+      type: field.type,
+      valueId: chosen.id,
+      amount: foodAmount,
+    };
+    try {
+      const res = await axios.put(
+        "/api/coach/client/calendar/" + userDetails.id,
+        dataToSend
+      );
+      if (dataToSend.type === "Workout") {
+        let temp = [...workouts].filter(
+          (workout) => workout.day !== res.data.day
+        );
+        temp.push(res.data);
+        setWorkouts(temp);
+      } else {
+        console.log(res.data);
+        let temp = [...needToEat].filter(
+          (food) =>
+            food.day !== res.data.day &&
+            food.meal_of_the_day !== res.data.meal_of_the_day
+        );
+        temp.push(res.data);
+        setNeedToEat(temp);
+      }
+    } catch (err) {
+      console.log(err.response.data);
+    }
+  };
 
   const Meals = ["Breakfast", "Lunch", "Dinner", "Snacks"];
   const DaysOfTheWeek = [
@@ -98,12 +130,19 @@ function ClientCalendar({ userDetails }) {
                 return (
                   <td
                     key={di}
-                    onClick={() => setField({ type: meal, day })}
+                    onClick={() => {
+                      setChosen();
+                      setSearchInput("");
+                      setFoodAmount(1);
+                      setField({ type: meal, day });
+                    }}
                     className={
-                      field.day === day && field.type === meal && "chosen"
+                      field.day === day && field.type === meal ? "chosen" : ""
                     }
                   >
-                    {meal + " " + (item ? JSON.stringify(item) : "")}
+                    {meal +
+                      " " +
+                      (item ? ":\n" + item.name + " X" + item.amount : "")}
                   </td>
                 );
               })}
@@ -115,12 +154,19 @@ function ClientCalendar({ userDetails }) {
               return (
                 <td
                   className={
-                    field.day === day && field.type === "Workout" && "chosen"
+                    field.day === day && field.type === "Workout"
+                      ? "chosen"
+                      : ""
                   }
                   key={index}
-                  onClick={() => setField({ type: "Workout", day })}
+                  onClick={() => {
+                    setChosen();
+                    setSearchInput("");
+                    setFoodAmount(1);
+                    setField({ type: "Workout", day });
+                  }}
                 >
-                  {"workout" + (item ? item.name : "")}
+                  {"Workout" + (item ? ":\n" + item.name : "")}
                 </td>
               );
             })}
@@ -128,56 +174,72 @@ function ClientCalendar({ userDetails }) {
         </tbody>
       </table>
       {field.type && (
-        <div>
-          Searching for {field.type}
-          <br />
-          {
-            <div className="control-div">
-              <div className="search-div">
-                <input
-                  className="search-input"
-                  onChange={(e) => setSearchInput(e.target.value)}
-                />
-                <div className="results">
-                  {results.map((item, index) => (
-                    <div
-                      key={index}
-                      onClick={() => setChosen(item)}
-                      className={
-                        chosen && chosen.name === item.name && "chosen"
-                      }
-                    >
-                      {item.name}
-                      <br />
-                    </div>
-                  ))}
+        <div className="control-div">
+          <div className="search-div">
+            <input
+              className="search-input"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+            />
+            <div className="results">
+              {results.map((item, index) => (
+                <div
+                  key={index}
+                  onClick={() => {
+                    setFoodAmount(1);
+                    setChosen(item);
+                  }}
+                  className={chosen && chosen.id === item.id ? "chosen" : ""}
+                >
+                  {item.name}
+                  <br />
                 </div>
-              </div>
-              {field.type === "Workout" && chosen && (
-                <div className="details-div">
-                  <h1 className="workout-name">{chosen.name}</h1>
-                  <ol>
-                    {chosen.exercises.map((item) => (
-                      <li className="exercise-block">
-                        <h2 className="exercise-name">{item.name}</h2>
-                        <h3 className="exercise-details">{`${item.min_reps} ${
-                          item.min_reps !== item.max_reps
-                            ? "-" + item.max_reps
-                            : ""
-                        } reps, rest for ${item.rest}s ${
-                          item.added_weight > 0
-                            ? "+" + item.added_weight + "kg "
-                            : ""
-                        }X${item.sets}`}</h3>
-                      </li>
-                    ))}
-                  </ol>
-                  <h1>{"X" + chosen.sets}</h1>
-                  <button onClick={()=>{addItem()}}>Add</button>
-                </div>
-              )}
+              ))}
             </div>
-          }
+          </div>
+          {field.type === "Workout" && chosen && (
+            <div className="details-div">
+              <h1 className="workout-name">{chosen.name}</h1>
+              <ol>
+                {chosen.exercises.map((item, index) => (
+                  <li className="exercise-block" key={index}>
+                    <h2 className="exercise-name">{item.name}</h2>
+                    <h3 className="exercise-details">{`${item.min_reps} ${
+                      item.min_reps !== item.max_reps ? "-" + item.max_reps : ""
+                    } reps, rest for ${item.rest}s ${
+                      item.added_weight > 0
+                        ? "+" + item.added_weight + "kg "
+                        : ""
+                    }X${item.sets}`}</h3>
+                  </li>
+                ))}
+              </ol>
+              <h1>{"X" + chosen.sets}</h1>
+              <button onClick={addItem}>Add</button>
+            </div>
+          )}
+          {field.type !== "Workout" && chosen && (
+            <div className="details-div">
+              <h4>
+                {chosen.name} ({chosen.weight * foodAmount}g)
+              </h4>
+              <p>{chosen.calories * foodAmount} calories</p>
+              <p>{chosen.protein * foodAmount} protein</p>
+              <p>{chosen.carbs * foodAmount} carbs</p>
+              <p>{chosen.fats * foodAmount} fats</p>
+              <label htmlFor="amount">amount</label>
+              <input
+                name="amount"
+                type="number"
+                value={foodAmount}
+                onChange={(e) => {
+                  setFoodAmount(Math.abs(e.target.value));
+                }}
+              />
+              <br />
+              <button onClick={addItem}>Add</button>
+            </div>
+          )}
         </div>
       )}
     </div>

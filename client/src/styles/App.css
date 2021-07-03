@@ -1717,6 +1717,18 @@ form.sign-in-form {
   border: black 1px solid;
 }
 
+.weekly-calendar > .control-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.weekly-calendar > .control-div > .details-div {
+  margin-left: 50px;
+  text-align: left;
+  display: block;
+}
+
 * {
   margin: 0;
   padding: 0;

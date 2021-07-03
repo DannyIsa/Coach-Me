@@ -292,14 +292,58 @@ coach.put("/clients/update/:coachId", async (req, res) => {
 
 coach.put("/client/calendar/:coachId", async (req, res) => {
   const { coachId } = req.params;
-  const { traineeId, day, type, valueId } = req.body;
+  const { traineeId, day, type, valueId, amount } = req.body;
   if (!coachId || !traineeId) return res.status(400).send("No Id Received");
   const trainee = await models.Trainee.findOne({
     where: { id: traineeId, coach_id: traineeId },
-    include: { model: models.Calendar, where: { day } },
   });
-  if (!trainee) res.status(404).send("No Trainee Found");
-  console.log(trainee.toJSON());
-  res.send("yes");
+  if (!trainee) return res.status(404).send("No Trainee Found");
+  let calendar = await models.Calendar.findOne({
+    where: { trainee_id: traineeId, day },
+  });
+  if (!calendar) {
+    calendar = await models.Calendar.create({
+      trainee_id: traineeId,
+      day,
+      workout_id: 0,
+    });
+  }
+  if (type === "Workout") {
+    const workout = await models.Workout.findOne({
+      where: { id: valueId },
+    });
+    if (!workout) return res.status(404).send("No Workout Found");
+    calendar
+      .update({ workout_id: valueId })
+      .then(() => {
+        return res.status(201).send({ ...workout.toJSON(), day });
+      })
+      .catch((err) => {
+        return res.status(err.status).send(err);
+      });
+  } else {
+    let meal = await models.NeedToEat.findOne({
+      where: { trainee_id: traineeId, meal_of_the_day: type, day },
+    });
+    if (!meal) {
+      meal = await models.NeedToEat.create({
+        trainee_id: traineeId,
+        meal_of_the_day: type,
+        food_id: valueId,
+        day,
+        amount: Number(amount) ? Number(amount) : 1,
+      });
+    } else {
+      meal = await meal.update({
+        food_id: valueId,
+        amount: Number(amount) ? Number(amount) : 1,
+      });
+    }
+    if (!meal) return res.status(400).send("Couldn't Add Food");
+    const food = await meal.getFood();
+    if (!food) return res.status(400).send("Couldn't Add Food");
+    let dataToSend = { ...meal.toJSON(), ...food.toJSON() };
+    return res.status(201).send(dataToSend);
+  }
 });
 module.exports = coach;
