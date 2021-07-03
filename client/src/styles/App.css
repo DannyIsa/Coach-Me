@@ -6,9 +6,14 @@
   margin-top: 1rem;
 }
 
+#who {
+  color: black;
+}
+
 .chosen {
   margin: 0rem 1rem;
   background-color: #ffc719;
+  color: black;
 }
 
 .show-password {
@@ -168,6 +173,7 @@ form.sign-in-form {
 .social-text {
   padding: 0.7rem 0;
   font-size: 1rem;
+  color: black;
 }
 
 .social-media {
@@ -886,14 +892,14 @@ form.sign-in-form {
 
 .details-div .left-div h1 {
   text-align: center;
-  color: white;
+  color: whitesmoke;
   text-transform: uppercase;
 }
 
 .details-div .left-div .details-welcome p {
   text-align: center;
   line-height: 3rem;
-  color: white;
+  color: whitesmoke;
   font-size: 30px;
   word-wrap: break-word;
 }
@@ -1498,8 +1504,6 @@ form.sign-in-form {
       -ms-flex-align: center;
           align-items: center;
   padding-top: 9rem;
-  color: white;
-  background-color: #cecbcb;
 }
 
 .add-exercise-start h1 {
@@ -1679,6 +1683,21 @@ form.sign-in-form {
   font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
+.client-list-start {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 9rem;
+}
+
 .weekly-calendar {
   height: 100vh;
   padding-top: 7rem;
@@ -1713,7 +1732,8 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #cecbcb;
+  color: whitesmoke;
 }
 
 button {
