@@ -130,6 +130,7 @@ food.delete("/eaten-food/:foodId", async (req, res) => {
 food.get("/need-to-eat/:coachId", async (req, res) => {
   const { coachId } = req.params;
   const { traineeId } = req.query;
+  console.log(coachId, traineeId);
   if (!coachId || !traineeId) return res.status(400).send("Must send id");
   const trainee = await models.Trainee.findOne({
     where: { coach_id: coachId, id: traineeId },

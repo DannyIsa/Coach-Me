@@ -4,18 +4,19 @@ import axios from "axios";
 export default function WeeklyCalendar({ userDetails }) {
   const [needToEat, setNeedToEat] = useState([]);
   const [workouts, setWorkouts] = useState([]);
+  const [chosen, setChosen] = useState();
 
   useEffect(() => {
     if (userDetails) {
       axios
         .get(
-          `http://localhost:3001/api/food/need-to-eat/${userDetails.coach_id}?trainneId=${userDetails.id}`
+          `http://localhost:3001/api/food/need-to-eat/${userDetails.coach_id}?traineeId=${userDetails.id}`
         )
         .then(({ data }) => {
           setNeedToEat(data);
           axios
             .get(
-              `http://localhost:3001/api/trainee/workouts/show/${userDetails.coach_id}?trainneId=${userDetails.id}`
+              `http://localhost:3001/api/trainee/workouts/show/${userDetails.coach_id}?traineeId=${userDetails.id}`
             )
             .then(({ data }) => {
               setWorkouts(data);
@@ -63,7 +64,9 @@ export default function WeeklyCalendar({ userDetails }) {
                 );
                 return (
                   <td key={di}>
-                    {meal + " " + (item ? JSON.stringify(item) : "")}
+                    {meal +
+                      " " +
+                      (item ? ":\n" + item.name + " X" + item.amount : "")}
                   </td>
                 );
               })}
@@ -72,43 +75,16 @@ export default function WeeklyCalendar({ userDetails }) {
           <tr>
             {DaysOfTheWeek.map((day, index) => {
               let item = workouts.find((workout) => workout.day === day);
-              return <td key={index}>{"workout" + (item ? item.name : "")}</td>;
+              return (
+                <td key={index}>
+                  {"workout" + (item ? ":\n" + item.name : "")}
+                </td>
+              );
             })}
           </tr>
         </tbody>
       </table>
-      {/* {DaysOfTheWeek.map((day) => {
-        return (
-          <div className="column">
-            <h1>{day}</h1>
-            <h3>Workout</h3>
-            {Meals.map((meal) => {
-              return (
-                <div className="table-meal">
-                  <h3>{meal}</h3>
-                  {needToEat &&
-                    needToEat.map((food) => {
-                      return (
-                        food.meal_of_the_day === meal &&
-                        food.day === day && (
-                          <div key={food.id}>
-                            <h4>
-                              {food.name} ({food.weight * food.amount}g)
-                            </h4>
-                            <p>{food.calories * food.amount} calories</p>
-                            <p>{food.protein * food.amount} protein</p>
-                            <p>{food.carbs * food.amount} carbs</p>
-                            <p>{food.fats * food.amount} fats</p>
-                          </div>
-                        )
-                      );
-                    })}
-                </div>
-              );
-            })}
-          </div>
-        );
-      })} */}
+      <div className="details-div"></div>
     </div>
   );
 }
