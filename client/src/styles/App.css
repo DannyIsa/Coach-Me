@@ -1494,7 +1494,189 @@ form.sign-in-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-top: 7rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 9rem;
+  color: white;
+  background-color: #cecbcb;
+}
+
+.add-exercise-start h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.add-exercise-start .add-exercise-form {
+  position: absolute;
+  bottom: 0;
+}
+
+.add-exercise-start .add-exercise-form form {
+  overflow: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+  height: 70vh;
+}
+
+.add-exercise-start .add-exercise-form form select {
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+.add-exercise-start .add-exercise-form form button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffc719;
+  border-color: transparent transparent;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+.add-exercise-start .add-exercise-form form button:hover {
+  background: #ffc719;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+}
+
+.add-exercise-start .add-exercise-form form button span {
+  position: absolute;
+  display: block;
+}
+
+.add-exercise-start .add-exercise-form form button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#ffc719));
+  background: linear-gradient(90deg, transparent, #ffc719);
+  -webkit-animation: btn-anim1 1s linear infinite;
+          animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.add-exercise-start .add-exercise-form form button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#ffc719));
+  background: linear-gradient(180deg, transparent, #ffc719);
+  -webkit-animation: btn-anim2 1s linear infinite;
+          animation: btn-anim2 1s linear infinite;
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.add-exercise-start .add-exercise-form form button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#ffc719));
+  background: linear-gradient(270deg, transparent, #ffc719);
+  -webkit-animation: btn-anim3 1s linear infinite;
+          animation: btn-anim3 1s linear infinite;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.add-exercise-start .add-exercise-form form button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#ffc719));
+  background: linear-gradient(360deg, transparent, #ffc719);
+  -webkit-animation: btn-anim4 1s linear infinite;
+          animation: btn-anim4 1s linear infinite;
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+
+.add-exercise-start .add-exercise-form .form-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 20rem;
+  height: 8rem;
+  border-radius: 0.4rem;
+  margin-bottom: 2rem;
+  margin-left: 3rem;
+  background-color: #5995fd;
+}
+
+.add-exercise-start .add-exercise-form .form-block .textarea-control {
+  width: 18rem;
+  height: 4.5rem;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+.add-exercise-start .add-exercise-form .form-block input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .weekly-calendar {

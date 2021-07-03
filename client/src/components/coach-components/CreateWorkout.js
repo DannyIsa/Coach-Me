@@ -159,7 +159,7 @@ function CreateWorkout({ userDetails }) {
                     setChosen(temp);
                   }}
                 >
-                  Add Exercise
+                  Add
                 </button>
               </div>
             ))
