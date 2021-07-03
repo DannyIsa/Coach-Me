@@ -1664,7 +1664,7 @@ form.sign-in-form {
   border-radius: 0.4rem;
   margin-bottom: 2rem;
   margin-left: 3rem;
-  background-color: #5995fd;
+  background-color: #1456a1;
 }
 
 .add-exercise-start .add-exercise-form .form-block .textarea-control {
@@ -1745,7 +1745,9 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
-  background-color: #cecbcb;
+  background-color: #bdd4e7;
+  background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 button {
