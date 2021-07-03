@@ -185,12 +185,17 @@ coach.post("/exercise/add", async (req, res) => {
 });
 coach.get("/workouts/show/:coachId", async (req, res) => {
   const { coachId } = req.params;
-  if (!coachId) return res.status(400).send("Invalid Id");
-  const coach = await models.Coach.findOne({
+  const { value } = req.query;
+  let query = {
     where: { id: coachId },
-  });
+    include: { model: models.Workout, where: {} },
+  };
+  if (value) query.include.where["name"] = { [Op.like]: "%" + value + "%" };
+
+  if (!coachId) return res.status(400).send("Invalid Id");
+  const coach = await models.Coach.findOne(query);
   if (!coach) return res.status(404).send("Coach Not Found");
-  const workouts = await coach.getWorkouts();
+  const workouts = coach.Workouts;
   if (!workouts) return res.status(200).send([]);
   const final = await Promise.all(
     workouts.map(async (workout) => {
@@ -285,7 +290,16 @@ coach.put("/clients/update/:coachId", async (req, res) => {
     .catch((err) => res.status(400).send(err));
 });
 
-coach.put("/client/calendar",(req,res)=>{
-  
-})
+coach.put("/client/calendar/:coachId", async (req, res) => {
+  const { coachId } = req.params;
+  const { traineeId, day, type, valueId } = req.body;
+  if (!coachId || !traineeId) return res.status(400).send("No Id Received");
+  const trainee = await models.Trainee.findOne({
+    where: { id: traineeId, coach_id: traineeId },
+    include: { model: models.Calendar, where: { day } },
+  });
+  if (!trainee) res.status(404).send("No Trainee Found");
+  console.log(trainee.toJSON());
+  res.send("yes");
+});
 module.exports = coach;
