@@ -1,14 +1,10 @@
 import React, { useState, useRef } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import firebase from "firebase";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faEnvelope, faEye } from "@fortawesome/free-solid-svg-icons";
-import {
-  faGoogle,
-  faGithub,
-  faFacebookF,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGoogle, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
 function SignUp({ setReqDone }) {
   const [mode, setMode] = useState("");
@@ -243,15 +239,12 @@ function SignUp({ setReqDone }) {
             />
             <p className="social-text">Or Sign up with social platforms</p>
             <div className="social-media">
-              <a href="#" className="social-icon" onClick={SignUpWithGoogle}>
+              <Link className="social-icon" onClick={SignUpWithGoogle}>
                 <FontAwesomeIcon icon={faGoogle} />
-              </a>
-              <a href="#" className="social-icon" onClick={SignUpWithFacebook}>
+              </Link>
+              <Link className="social-icon" onClick={SignUpWithFacebook}>
                 <FontAwesomeIcon icon={faFacebookF} />
-              </a>
-              {/* <a href="#" className="social-icon">
-                <FontAwesomeIcon icon={faGithub} />
-              </a> */}
+              </Link>
             </div>
           </form>
         </div>

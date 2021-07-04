@@ -1,6 +1,4 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 
 function CoachDashboard({ userDetails }) {
   return (
@@ -8,12 +6,6 @@ function CoachDashboard({ userDetails }) {
       {userDetails ? (
         <>
           <h1>{`Hello Coach ${userDetails.name}`}</h1>
-
-          {/* <div className="dashboard-items">
-            <Link to="/coach/clients">
-              <div className="link-div">Your Trainees</div>
-            </Link>
-          </div> */}
         </>
       ) : (
         "Loading..."

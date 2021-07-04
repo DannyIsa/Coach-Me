@@ -99,6 +99,7 @@ function HomePage() {
                 <a
                   href="https://github.com/orenb99"
                   target="_blank"
+                  rel="noreferrer"
                   className="social-icon"
                 >
                   <FontAwesomeIcon icon={faGithub} />
@@ -109,6 +110,7 @@ function HomePage() {
                 <a
                   href="https://github.com/moran-aga"
                   target="_blank"
+                  rel="noreferrer"
                   className="social-icon"
                 >
                   <FontAwesomeIcon icon={faGithub} />
@@ -119,6 +121,7 @@ function HomePage() {
                 <a
                   href="https://github.com/DannyIsa"
                   target="_blank"
+                  rel="noreferrer"
                   className="social-icon"
                 >
                   <FontAwesomeIcon icon={faGithub} />
@@ -129,6 +132,7 @@ function HomePage() {
                 <a
                   href="https://github.com/amitby98"
                   target="_blank"
+                  rel="noreferrer"
                   className="social-icon"
                 >
                   <FontAwesomeIcon icon={faGithub} />
@@ -139,7 +143,7 @@ function HomePage() {
           <div className="inner-right">
             <p>
               © 2021, CoachMe Team. All Rights Reserved. <br />
-              <a href="">Privacy Policy</a>
+              <Link>Privacy Policy</Link>
             </p>
           </div>
         </div>
