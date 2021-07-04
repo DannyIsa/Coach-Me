@@ -79,11 +79,10 @@ const getFoodFromNeedToEat = async (trainee_id) => {
   return { status: 200, data: valArray };
 };
 
-food.get("/get-food/:searchedFood", async (req, res) => {
-  const { searchedFood } = req.params;
-  if (!searchedFood) return res.status(400).send("Must send food name");
+food.get("/get-food", async (req, res) => {
+  const { searchedFood } = req.query;
   const searchedFoods = await models.Food.findAll({
-    where: { name: { [Op.substring]: searchedFood } },
+    where: { name: { [Op.substring]: searchedFood ? searchedFood : "" } },
     limit: 15,
   });
   if (!searchedFoods) return res.status(404).send("No such food");
@@ -138,6 +137,7 @@ food.delete("/eaten-food/:foodId", async (req, res) => {
 food.get("/need-to-eat/:coachId", async (req, res) => {
   const { coachId } = req.params;
   const { traineeId } = req.query;
+  console.log(coachId, traineeId);
   if (!coachId || !traineeId) return res.status(400).send("Must send id");
   const trainee = await models.Trainee.findOne({
     where: { coach_id: coachId, id: traineeId },

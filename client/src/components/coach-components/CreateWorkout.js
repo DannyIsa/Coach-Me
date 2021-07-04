@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import WorkoutPopup from "./WorkoutPopup";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+
 function CreateWorkout({ userDetails }) {
   const [exercises, setExercises] = useState([]);
   const [chosen, setChosen] = useState([]);
@@ -46,84 +50,90 @@ function CreateWorkout({ userDetails }) {
   }, [searchInput, sortValue]);
   return (
     <div className="create-workout-page">
-      <h1>Create a new workout</h1>
-      {userDetails && (
-        <WorkoutPopup
-          userDetails={userDetails}
-          trigger={popupTrigger}
-          setTrigger={setPopupTrigger}
-          exercises={chosen}
-          setExercises={setChosen}
-        />
-      )}
-      <div className="search-div">
-        <input
-          placeholder="Search for exercises"
-          onFocus={() => {
-            setSortValue("name");
-            setSearchInput("");
-          }}
-          onChange={(e) => setSearchInput(e.target.value)}
-        />
-        <br />
-        <div className="tags">
-          <h3>Exercise Types:</h3>
-          <div className="types">
-            {typeTags.map((item, index) => (
-              <strong
-                key={"typeTag" + index}
-                className="type tag"
+      <div className="main-div">
+        {/* <h1>Create a new workout</h1> */}
+        {userDetails && (
+          <WorkoutPopup
+            userDetails={userDetails}
+            trigger={popupTrigger}
+            setTrigger={setPopupTrigger}
+            exercises={chosen}
+            setExercises={setChosen}
+          />
+        )}
+        <div className="search-div">
+          <div className="search">
+            <input
+              placeholder="Search for exercises"
+              onFocus={() => {
+                setSortValue("name");
+                setSearchInput("");
+              }}
+              onChange={(e) => setSearchInput(e.target.value)}
+            />
+            <Link to="/coach/add-exercise"> Add Exercise</Link>
+          </div>
+          <div className="tags">
+            <h3>Sort by Exercise Types:</h3>
+            <div className="types">
+              {typeTags.map((item, index) => (
+                <strong
+                  key={"typeTag" + index}
+                  className="type tag"
+                  onClick={() => {
+                    setSortValue("type");
+                    setSearchInput(item);
+                  }}
+                >
+                  {item}
+                </strong>
+              ))}
+            </div>
+            <h3>Sort by Working Muscles:</h3>
+            <div className="muscles">
+              {muscleTags.map((item, index) => (
+                <strong
+                  key={"muscleTag" + index}
+                  className="muscle tag"
+                  onClick={() => {
+                    setSortValue("muscle");
+                    setSearchInput(item);
+                  }}
+                >
+                  {item}
+                </strong>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="new-build-workout">
+          <h1>New Workout :</h1>
+          {chosen.map((item, index) => (
+            <div className="chosen-exercise" key={"chosen" + index}>
+              {item}
+              <button
                 onClick={() => {
-                  setSortValue("type");
-                  setSearchInput(item);
+                  let temp = [...chosen];
+                  temp = temp.filter((value) => value !== item);
+                  setChosen(temp);
                 }}
               >
-                {item}
-              </strong>
-            ))}
-          </div>
-          <h3>Working Muscles:</h3>
-          <div className="muscles">
-            {muscleTags.map((item, index) => (
-              <strong
-                key={"muscleTag" + index}
-                className="muscle tag"
-                onClick={() => {
-                  setSortValue("muscle");
-                  setSearchInput(item);
-                }}
-              >
-                {item}
-              </strong>
-            ))}
-          </div>
+                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
+              </button>
+            </div>
+          ))}
+          {chosen.length > 0 && (
+            <button
+              className="next-button"
+              onClick={() => {
+                setPopupTrigger(true);
+              }}
+            >
+              Next
+            </button>
+          )}
         </div>
       </div>
-      <br />
-      <h1>New Workout</h1>
-      {chosen.map((item, index) => (
-        <div className="chosen-exercise" key={"chosen" + index}>
-          {item}
-          <button
-            onClick={() => {
-              let temp = [...chosen];
-              temp = temp.filter((value) => value !== item);
-              setChosen(temp);
-            }}
-          >
-            [X]
-          </button>
-        </div>
-      ))}
-      {chosen.length > 0 && (
-        <button
-          onClick={() => {
-            setPopupTrigger(true);
-          }}
-        >
-          Next
-        </button>
-      )}
       <div className="exercises-list">
         {exercises.length > 0
           ? exercises.map((item, index) => (
@@ -149,7 +159,7 @@ function CreateWorkout({ userDetails }) {
                     setChosen(temp);
                   }}
                 >
-                  add exercise
+                  Add
                 </button>
               </div>
             ))

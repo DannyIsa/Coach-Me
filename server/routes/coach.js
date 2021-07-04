@@ -185,12 +185,17 @@ coach.post("/exercise/add", async (req, res) => {
 });
 coach.get("/workouts/show/:coachId", async (req, res) => {
   const { coachId } = req.params;
-  if (!coachId) return res.status(400).send("Invalid Id");
-  const coach = await models.Coach.findOne({
+  const { value } = req.query;
+  let query = {
     where: { id: coachId },
-  });
+    include: { model: models.Workout, where: {} },
+  };
+  if (value) query.include.where["name"] = { [Op.like]: "%" + value + "%" };
+
+  if (!coachId) return res.status(400).send("Invalid Id");
+  const coach = await models.Coach.findOne(query);
   if (!coach) return res.status(404).send("Coach Not Found");
-  const workouts = await coach.getWorkouts();
+  const workouts = coach.Workouts;
   if (!workouts) return res.status(200).send([]);
   const final = await Promise.all(
     workouts.map(async (workout) => {
@@ -285,6 +290,60 @@ coach.put("/clients/update/:coachId", async (req, res) => {
     .catch((err) => res.status(400).send(err));
 });
 
-coach.put("/workouts/append/:coachId", (req, res) => {});
-
+coach.put("/client/calendar/:coachId", async (req, res) => {
+  const { coachId } = req.params;
+  const { traineeId, day, type, valueId, amount } = req.body;
+  if (!coachId || !traineeId) return res.status(400).send("No Id Received");
+  const trainee = await models.Trainee.findOne({
+    where: { id: traineeId, coach_id: traineeId },
+  });
+  if (!trainee) return res.status(404).send("No Trainee Found");
+  let calendar = await models.Calendar.findOne({
+    where: { trainee_id: traineeId, day },
+  });
+  if (!calendar) {
+    calendar = await models.Calendar.create({
+      trainee_id: traineeId,
+      day,
+      workout_id: 0,
+    });
+  }
+  if (type === "Workout") {
+    const workout = await models.Workout.findOne({
+      where: { id: valueId },
+    });
+    if (!workout) return res.status(404).send("No Workout Found");
+    calendar
+      .update({ workout_id: valueId })
+      .then(() => {
+        return res.status(201).send({ ...workout.toJSON(), day });
+      })
+      .catch((err) => {
+        return res.status(err.status).send(err);
+      });
+  } else {
+    let meal = await models.NeedToEat.findOne({
+      where: { trainee_id: traineeId, meal_of_the_day: type, day },
+    });
+    if (!meal) {
+      meal = await models.NeedToEat.create({
+        trainee_id: traineeId,
+        meal_of_the_day: type,
+        food_id: valueId,
+        day,
+        amount: Number(amount) ? Number(amount) : 1,
+      });
+    } else {
+      meal = await meal.update({
+        food_id: valueId,
+        amount: Number(amount) ? Number(amount) : 1,
+      });
+    }
+    if (!meal) return res.status(400).send("Couldn't Add Food");
+    const food = await meal.getFood();
+    if (!food) return res.status(400).send("Couldn't Add Food");
+    let dataToSend = { ...meal.toJSON(), ...food.toJSON() };
+    return res.status(201).send(dataToSend);
+  }
+});
 module.exports = coach;

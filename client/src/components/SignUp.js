@@ -222,6 +222,7 @@ function SignUp({ setReqDone }) {
                 value="Trainee"
                 onClick={() => setType("Trainee")}
                 className={type === "Trainee" ? "chosen" : "not-chosen"}
+                id="who"
               >
                 Trainee
               </div>
@@ -229,6 +230,7 @@ function SignUp({ setReqDone }) {
                 value="Coach"
                 onClick={() => setType("Coach")}
                 className={type === "Coach" ? "chosen" : "not-chosen"}
+                id="who"
               >
                 Coach
               </div>

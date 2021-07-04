@@ -1,0 +1,10 @@
+.weekly-calendar {
+  & > .control-div {
+    display: flex;
+    & > .details-div {
+      margin-left: 50px;
+      text-align: left;
+      display: block;
+    }
+  }
+}

@@ -47,7 +47,7 @@ export default function CaloriesTracker({ userDetails }) {
     if (foodSearchInput.current.value) {
       axios
         .get(
-          `http://localhost:3001/api/food/get-food/${foodSearchInput.current.value}`
+          `http://localhost:3001/api/food/get-food?searchedFood=${foodSearchInput.current.value}`
         )
         .then(({ data }) => {
           setSearchedFood(data);
