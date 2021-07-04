@@ -118,7 +118,11 @@ function App() {
             registered ? (
               <>
                 {userType === "Coach" ? (
-                  <NavBarCoach userType={userType} signOut={signOut} />
+                  <NavBarCoach
+                    userType={userType}
+                    signOut={signOut}
+                    userDetails={userDetails}
+                  />
                 ) : (
                   <NavBarTrainee userType={userType} signOut={signOut} />
                 )}
