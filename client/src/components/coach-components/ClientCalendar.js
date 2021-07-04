@@ -9,6 +9,7 @@ function ClientCalendar({ userDetails }) {
   const [field, setField] = useState({ day: null, type: null });
   const [results, setResults] = useState([]);
   const [chosen, setChosen] = useState();
+  const [chosenItems, setChosenItems] = useState();
   const [searchInput, setSearchInput] = useState("");
   const [foodAmount, setFoodAmount] = useState(1);
   useEffect(() => {
@@ -63,6 +64,18 @@ function ClientCalendar({ userDetails }) {
     }
   }, [searchInput, field]);
 
+  useEffect(() => {
+    if (!field) return;
+    if (field.type === "Workout") {
+      const item = [...workouts].find((workout) => workout.day === field.day);
+      setChosenItems(item);
+    } else {
+      const items = [...needToEat].filter(
+        (food) => food.meal_of_the_day === field.type && food.day === field.day
+      );
+      setChosenItems(items);
+    }
+  }, [field]);
   const addItem = async () => {
     const dataToSend = {
       traineeId,
@@ -83,11 +96,11 @@ function ClientCalendar({ userDetails }) {
         temp.push(res.data);
         setWorkouts(temp);
       } else {
-        console.log(res.data);
         let temp = [...needToEat].filter(
           (food) =>
             food.day !== res.data.day &&
-            food.meal_of_the_day !== res.data.meal_of_the_day
+            food.meal_of_the_day !== res.data.meal_of_the_day &&
+            food.id !== res.food_id
         );
         temp.push(res.data);
         setNeedToEat(temp);
@@ -123,7 +136,7 @@ function ClientCalendar({ userDetails }) {
           {Meals.map((meal, mi) => (
             <tr key={mi}>
               {DaysOfTheWeek.map((day, di) => {
-                let item = needToEat.find(
+                let items = needToEat.filter(
                   (foodToEat) =>
                     foodToEat.day === day && foodToEat.meal_of_the_day === meal
                 );
@@ -142,7 +155,9 @@ function ClientCalendar({ userDetails }) {
                   >
                     {meal +
                       " " +
-                      (item ? ":\n" + item.name + " X" + item.amount : "")}
+                      items.map((item) =>
+                        item ? "\n" + item.name + " X" + item.amount : ""
+                      )}
                   </td>
                 );
               })}
@@ -240,6 +255,53 @@ function ClientCalendar({ userDetails }) {
               <button onClick={addItem}>Add</button>
             </div>
           )}
+          <div className="chosen-calendar-div">
+            {chosenItems &&
+              (chosenItems.exercises ? (
+                <>
+                  <h1 className="workout-name">
+                    {field.day + ": " + chosenItems.name}
+                  </h1>
+                  <ol>
+                    {chosenItems.exercises.map((item, index) => (
+                      <li className="exercise-block" key={index}>
+                        <h2 className="exercise-name">{item.name}</h2>
+                        <h3 className="exercise-details">{`${item.min_reps} ${
+                          item.min_reps !== item.max_reps
+                            ? "-" + item.max_reps
+                            : ""
+                        } reps, rest for ${item.rest}s ${
+                          item.added_weight > 0
+                            ? "+" + item.added_weight + "kg "
+                            : ""
+                        }X${item.sets}`}</h3>
+                      </li>
+                    ))}
+                  </ol>
+                  <h1>{"X" + chosenItems.sets}</h1>
+                  <button>Remove</button>
+                </>
+              ) : (
+                <>
+                  <h1>{field.day + " " + field.type + ": "}</h1>
+                  <ol>
+                    {chosenItems.map((item) => (
+                      <li>
+                        <h4>
+                          {item.name} ({item.weight * item.amount}g)
+                        </h4>
+                        <p>{item.calories * item.amount} calories</p>
+                        <p>{item.protein * item.amount} protein</p>
+                        <p>{item.carbs * item.amount} carbs</p>
+                        <p>{item.fats * item.amount} fats</p>
+                        <br />
+                        <button>Remove</button>
+                      </li>
+                    ))}
+                  </ol>
+                </>
+              ))}
+          </div>
         </div>
       )}
     </div>
