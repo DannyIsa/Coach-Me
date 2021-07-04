@@ -323,7 +323,12 @@ coach.put("/client/calendar/:coachId", async (req, res) => {
       });
   } else {
     let meal = await models.NeedToEat.findOne({
-      where: { trainee_id: traineeId, meal_of_the_day: type, day },
+      where: {
+        trainee_id: traineeId,
+        meal_of_the_day: type,
+        day,
+        food_id: valueId,
+      },
     });
     if (!meal) {
       meal = await models.NeedToEat.create({
