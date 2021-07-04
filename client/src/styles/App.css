@@ -942,6 +942,7 @@ form.sign-in-form {
           justify-content: space-between;
   width: 15vw;
   margin-top: 2rem;
+  color: black;
 }
 
 .details-div .right-div #gender-div input {
@@ -992,6 +993,7 @@ form.sign-in-form {
 }
 
 .details-div .right-div .inputbox span {
+  color: black;
   position: absolute;
   top: 14px;
   left: 40px;
@@ -1312,6 +1314,7 @@ form.sign-in-form {
     margin-left: 1rem;
   }
   .details-div .right-div .inputbox span {
+    color: black;
     position: absolute;
     top: 14px;
     left: 4px;
@@ -1479,6 +1482,7 @@ form.sign-in-form {
     margin-left: 0rem;
   }
   .details-div .right-div .inputbox span {
+    color: black;
     position: absolute;
     top: 14px;
     left: 4px;
