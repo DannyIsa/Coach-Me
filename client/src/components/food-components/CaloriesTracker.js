@@ -101,9 +101,9 @@ export default function CaloriesTracker({ userDetails }) {
       >
         {usedCalories}%
       </meter>
-      <DaySelect />
+      <DaySelect userDetails={userDetails} />
       <h3>
-        {usedCalories} / {totalCalories} Calories Eaten
+        {Number(usedCalories)} / {totalCalories} Calories Eaten
       </h3>
 
       <div className="meal-container">
