@@ -30,7 +30,7 @@
   background: rgba(0, 0, 0, 0.1);
 }
 
-.logo-nav {
+.homeNav .logo-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,7 +42,7 @@
           justify-content: space-evenly;
 }
 
-.logo-container {
+.homeNav .logo-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,7 +54,7 @@
           justify-content: center;
 }
 
-.nav-options-main {
+.homeNav .nav-options-main {
   position: absolute;
   right: 12rem;
   display: -ms-grid;
@@ -65,11 +65,11 @@
   list-style-type: none;
 }
 
-.mobile-option {
+.homeNav .mobile-option {
   display: none;
 }
 
-.signIn {
+.homeNav .signIn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,18 +79,18 @@
   list-style-type: none;
 }
 
-.sign-in {
+.homeNav .sign-in {
   padding-right: 50px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-.sign-in:hover {
+.homeNav .sign-in:hover {
   color: #3b3be2;
 }
 
-.signIn-btn {
+.homeNav .signIn-btn {
   padding: 10px 10px;
   border-radius: 3px;
   background: #2a9d8f;
@@ -101,8 +101,191 @@
           align-items: center;
 }
 
-.mobile-menu {
+.homeNav .mobile-menu {
   display: none;
+}
+
+.homeNav .box a {
+  text-decoration: none;
+  color: black;
+}
+
+.homeNav .box a:visited {
+  color: black;
+}
+
+.homeNav .box::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.homeNav .box::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.homeNav .box::-webkit-scrollbar-thumb {
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.homeNav .notification {
+  color: black;
+  padding-top: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.homeNav .notification button {
+  color: black;
+}
+
+.homeNav .number {
+  height: 30px;
+  width: 30px;
+  background-color: #d63031;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 23px;
+  left: 10px;
+  padding: 3px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.homeNav .number:empty {
+  display: none;
+}
+
+.homeNav .notBtn {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.homeNav .fas {
+  font-size: 25pt;
+  padding-bottom: 10px;
+  color: black;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.homeNav .box {
+  width: 400px;
+  height: 0px;
+  border-radius: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: absolute;
+  overflow-y: scroll;
+  padding: 0px;
+  left: -300px;
+  margin-top: 5px;
+  background-color: #f4f4f4;
+  -webkit-box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.1);
+  cursor: context-menu;
+}
+
+.homeNav .fas:hover {
+  color: #d63031;
+}
+
+.homeNav .notBtn:hover > .box {
+  height: 60vh;
+}
+
+.homeNav .content {
+  padding: 20px;
+  color: black;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.homeNav .gry {
+  background-color: #f4f4f4;
+}
+
+.homeNav .top {
+  color: black;
+  padding: 10px;
+}
+
+.homeNav .display {
+  position: relative;
+}
+
+.homeNav .cont {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f4f4f4;
+}
+
+.homeNav .cont:empty {
+  display: none;
+}
+
+.homeNav .stick {
+  text-align: center;
+  display: block;
+  font-size: 50pt;
+  padding-top: 70px;
+  padding-left: 80px;
+}
+
+.homeNav .stick:hover {
+  color: black;
+}
+
+.homeNav .cent {
+  text-align: center;
+  display: block;
+}
+
+.homeNav .sec {
+  padding: 25px 10px;
+  background-color: #f4f4f4;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.homeNav .profCont {
+  padding-left: 15px;
+}
+
+.homeNav .profile {
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  width: 75px;
+  float: left;
+}
+
+.homeNav .txt {
+  vertical-align: top;
+  font-size: 1.25rem;
+  padding: 5px 10px 0px 115px;
+}
+
+.homeNav .sub {
+  font-size: 1rem;
+  color: grey;
+}
+
+.homeNav .new {
+  border-style: none none solid none;
+  border-color: red;
+}
+
+.homeNav .sec:hover {
+  background-color: #bfbfbf;
 }
 
 @media (max-width: 1200px) {
