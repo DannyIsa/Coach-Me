@@ -5,7 +5,6 @@ import CreateWorkout from "../coach-components/CreateWorkout";
 import AddExercise from "../coach-components/AddExercise";
 import WorkoutsList from "../coach-components/WorkoutsList";
 import ClientCalendar from "../coach-components/ClientCalendar";
-import Requests from "../coach-components/Requests";
 
 function CoachRouter({ userDetails, alertMessage }) {
   return (
@@ -19,9 +18,6 @@ function CoachRouter({ userDetails, alertMessage }) {
         </Route>
         <Route exact path="/coach/workouts/create">
           <CreateWorkout userDetails={userDetails} />
-        </Route>
-        <Route exact path="/coach/requests">
-          <Requests userDetails={userDetails} />
         </Route>
         <Route exact path="/coach/add-exercise">
           <AddExercise userDetails={userDetails} />

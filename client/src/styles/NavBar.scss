@@ -14,11 +14,6 @@
   border-bottom: 4px solid #ffc719;
 }
 
-// .link .active {
-//   color: #ffc719;
-//   border-bottom: 4px solid #ffc719;
-// }
-
 .homeNav {
   z-index: 1;
   height: 77px;
@@ -85,99 +80,6 @@
     display: none;
   }
 
-  .box a {
-    text-decoration: none;
-    color: black;
-  }
-
-  .box a:visited {
-    color: black;
-  }
-
-  .box::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #f5f5f5;
-    border-radius: 5px;
-  }
-
-  .box::-webkit-scrollbar {
-    width: 10px;
-    background-color: #f5f5f5;
-    border-radius: 5px;
-  }
-
-  .box::-webkit-scrollbar-thumb {
-    background-color: black;
-    border: 2px solid black;
-    border-radius: 5px;
-  }
-
-  // header {
-  //   -moz-box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.1);
-  //   box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.1);
-  //   height: 110px;
-  //   vertical-align: middle;
-  // }
-
-  // h1 {
-  //   float: left;
-  //   padding: 10px 30px;
-  // }
-
-  // body {
-  //   margin: 0;
-  //   padding: 0;
-  //   font-family: "Raleway", sans-serif;
-  // }
-
-  // .icons {
-  //   display: inline;
-  //   float: right;
-  // }
-
-  .notification {
-    color: black;
-    padding-top: 30px;
-    position: relative;
-    display: inline-block;
-
-    & button {
-      color: black;
-    }
-  }
-
-  .number {
-    height: 30px;
-    width: 30px;
-    background-color: #d63031;
-    border-radius: 20px;
-    color: white;
-    text-align: center;
-    position: absolute;
-    top: 23px;
-    left: 10px;
-    padding: 3px;
-    border-style: solid;
-    border-width: 2px;
-  }
-
-  .number:empty {
-    display: none;
-  }
-
-  .notBtn {
-    transition: 0.5s;
-    cursor: pointer;
-  }
-
-  .fas {
-    font-size: 25pt;
-    padding-bottom: 10px;
-    color: black;
-    margin-right: 40px;
-    margin-left: 40px;
-  }
-
   .box {
     width: 400px;
     height: 0px;
@@ -193,104 +95,162 @@
     -moz-box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.1);
     cursor: context-menu;
+    z-index: 2;
+
+    & a {
+      text-decoration: none;
+      color: black;
+    }
+
+    & a:visited {
+      color: black;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #f5f5f5;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: black;
+      border: 2px solid black;
+      border-radius: 5px;
+    }
   }
 
-  .fas:hover {
-    color: #d63031;
-  }
-
-  .notBtn:hover > .box {
-    height: 60vh;
-  }
-
-  .content {
-    padding: 20px;
+  .notification {
     color: black;
-    vertical-align: middle;
-    text-align: left;
+    font-size: 1.5rem;
+    position: relative;
+    display: inline-block;
+
+    & button {
+      color: black;
+      border: 1px solid black;
+      padding: 0.5rem 1.5rem;
+      margin-top: 1rem;
+
+      &:hover {
+        border-color: #ffc719;
+      }
+
+      .fa-fa :hover {
+        color: #ffc719;
+      }
+    }
   }
 
-  .gry {
-    background-color: #f4f4f4;
+  .number {
+    height: 23px;
+    width: 25px;
+    background-color: #d63031;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    left: 16px;
+    border-style: solid;
+    border-width: 2px;
+
+    .requests-alert {
+      font-size: 1rem;
+    }
   }
 
-  .top {
-    color: black;
-    padding: 10px;
+  .number:empty {
+    display: none;
+  }
+
+  .notBtn {
+    transition: 0.5s;
+    cursor: pointer;
+
+    &:hover > .box {
+      height: 40vh;
+    }
   }
 
   .display {
     position: relative;
+
+    .cont {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      // background-color: #4e0d0d;
+      background-color: #f4f4f4;
+
+      &:empty {
+        display: none;
+      }
+      // .fa-fa {
+      //   border: 2px solid transparent;
+      //   &:hover {
+      //     color: #ffc719;
+      //   }
+      // }
+    }
+    .cent {
+      text-align: center;
+      display: block;
+      color: black;
+    }
   }
 
-  .cont {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #f4f4f4;
-  }
+  // .stick {
+  //   text-align: center;
+  //   display: block;
+  //   font-size: 50pt;
+  //   padding-top: 70px;
+  //   padding-left: 80px;
+  // }
 
-  .cont:empty {
-    display: none;
-  }
-
-  .stick {
-    text-align: center;
-    display: block;
-    font-size: 50pt;
-    padding-top: 70px;
-    padding-left: 80px;
-  }
-
-  .stick:hover {
-    color: black;
-  }
-
-  .cent {
-    text-align: center;
-    display: block;
-  }
+  // .stick:hover {
+  //   color: black;
+  // }
 
   .sec {
     padding: 25px 10px;
     background-color: #f4f4f4;
     transition: 0.5s;
+
+    &:hover {
+      background-color: #bfbfbf;
+    }
   }
 
-  .profCont {
-    padding-left: 15px;
-  }
+  // .profCont {
+  //   padding-left: 15px;
+  // }
 
-  .profile {
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
-    width: 75px;
-    float: left;
-  }
+  // .profile {
+  //   -webkit-clip-path: circle(50% at 50% 50%);
+  //   clip-path: circle(50% at 50% 50%);
+  //   width: 75px;
+  //   float: left;
+  // }
 
   .txt {
-    vertical-align: top;
+    // vertical-align: top;
     font-size: 1.25rem;
-    padding: 5px 10px 0px 115px;
+    padding: 5px 10px 0px 10px;
   }
 
   .sub {
     font-size: 1rem;
     color: grey;
   }
-
-  .new {
-    border-style: none none solid none;
-    border-color: red;
-  }
-
-  .sec:hover {
-    background-color: #bfbfbf;
-  }
 }
 
-//////////////////////////////////////////////////////
+//////////////////////////////////
 
 @media (max-width: 1200px) {
   .header {
@@ -325,6 +285,7 @@
     height: 45px;
     color: white;
   }
+
   .option {
     display: flex;
     align-items: center;
@@ -338,22 +299,32 @@
     border-bottom: none;
   }
 
-  .sign-in {
-    border-radius: 3px;
-    color: white;
-    background: #0d7e65;
-    padding: 10px 30px;
-    align-self: center;
-    border-radius: 3px;
-  }
-
-  .signIn {
+  .signIn-btn {
     display: none;
   }
-}
-.mobile-menu {
-  display: block;
-  position: absolute;
-  right: 0;
-  margin-right: 20px;
+
+  .homeNav {
+    .mobile-menu {
+      display: block;
+      position: absolute;
+      right: 0;
+      margin-right: 20px;
+
+      .sign-in {
+        border-radius: 3px;
+        color: white;
+        background: #0d7e65;
+        padding: 10px 30px;
+        align-self: center;
+        border-radius: 3px;
+      }
+    }
+    .mobile-option {
+      display: block;
+      text-align: center;
+    }
+    .box {
+      left: -150px;
+    }
+  }
 }

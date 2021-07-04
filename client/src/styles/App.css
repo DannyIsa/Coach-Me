@@ -1688,21 +1688,6 @@ form.sign-in-form {
   font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
-.client-list-start {
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-top: 9rem;
-}
-
 .weekly-calendar {
   height: 100vh;
   padding-top: 7rem;
