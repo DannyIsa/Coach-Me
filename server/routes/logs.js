@@ -171,17 +171,34 @@ logs.get("/measure/show/:traineeId", async (req, res) => {
 
 logs.get("/diet/show/:traineeId", async (req, res) => {
   const { traineeId } = req.params;
-  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
+  const { day, month, year } = req.query;
+  let date;
+  if (!day || !month | !year) date = new Date();
+  else date = new Date(year + "-" + month + "-" + day);
+  date = date.toISOString().slice(0, 10);
+  console.log(date);
+  const trainee = await models.Trainee.findOne({
+    where: { id: traineeId },
+  });
 
   if (!traineeId || !trainee) {
     return res.status(404).send("Invalid ID");
   }
 
-  const traineeDietLog = await models.DietLog.findOne({
-    where: { trainee_id: traineeId },
+  const traineeDietLog = await models.EatenFood.findAll({
+    where: {
+      [Op.and]: [
+        { trainee_id: traineeId },
+        sequelize.where(
+          sequelize.fn("date", sequelize.col("created_at")),
+          "=",
+          date
+        ),
+      ],
+    },
   });
 
-  res.status(201).send(traineeDietLog);
+  res.status(200).send(traineeDietLog);
 });
 
 module.exports = logs;

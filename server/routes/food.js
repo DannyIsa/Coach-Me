@@ -16,10 +16,18 @@ const { Router } = require("express");
 const food = Router();
 food.use(express.json());
 
-async function getFoodFromEaten(trainee_id) {
+async function getEatenFoodFromToday(trainee_id) {
   const eatenFood = await models.EatenFood.findAll({
     where: {
-      trainee_id,
+      [Op.and]: [
+        { trainee_id },
+        {
+          created_at: {
+            [Op.gt]: new Date().setHours(0, 0, 0, 0),
+            [Op.lt]: new Date(),
+          },
+        },
+      ],
     },
     include: {
       model: models.Food,
@@ -43,7 +51,6 @@ async function getFoodFromEaten(trainee_id) {
   });
   return { status: 200, data: valArray };
 }
-
 const getFoodFromNeedToEat = async (trainee_id) => {
   const eatenFood = await models.NeedToEat.findAll({
     where: {
@@ -109,7 +116,7 @@ food.post("/eaten-food", async (req, res) => {
 food.get("/eaten-food/:id", async (req, res) => {
   const { id } = req.params;
   if (!id) return res.status(400).send("Must send id");
-  const { status, data } = await getFoodFromEaten(id);
+  const { status, data } = await getEatenFoodFromToday(id);
   res.status(status).send(data);
 });
 
@@ -124,7 +131,7 @@ food.delete("/eaten-food/:foodId", async (req, res) => {
   });
   if (!eatenFoodId) return res.status(404).send("No food with that id");
   await eatenFoodId.destroy();
-  const { status, data } = await getFoodFromEaten(traineeId);
+  const { status, data } = await getEatenFoodFromToday(traineeId);
   res.status(status).send(data);
 });
 
