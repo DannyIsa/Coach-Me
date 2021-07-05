@@ -1,9 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import EditWorkoutPopup from "./EditWorkoutPopup";
+
 function WorkoutsList({ userDetails }) {
   const [workouts, setWorkouts] = useState([]);
   const [shownWorkout, setShownWorkout] = useState();
+  const [popupTrigger, setPopupTrigger] = useState(false);
 
   useEffect(() => {
     if (!userDetails) return;
@@ -13,9 +16,31 @@ function WorkoutsList({ userDetails }) {
       .catch((err) => console.log(err.response.data));
   }, [userDetails]);
 
+  const handleRemove = (itemId) => {
+    axios
+      .delete(
+        `/api/coach/workouts/delete/${userDetails.id}?workoutId=${itemId}`
+      )
+      .then(() => {
+        setShownWorkout();
+        setWorkouts([...workouts].filter((workout) => workout.id !== itemId));
+      })
+      .catch((err) => console.log(err.response.data));
+  };
+
   return (
     <div className="create-workouts-start">
+      {console.log(workouts)}
       <Link to="/coach/workouts/create">Create workout</Link>
+      {userDetails && (
+        <EditWorkoutPopup
+          userDetails={userDetails}
+          trigger={popupTrigger}
+          setTrigger={setPopupTrigger}
+          workout={shownWorkout}
+          setWorkout={setShownWorkout}
+        />
+      )}
       <h1>Your Workouts:</h1>
       <br />
       <div className="content">
@@ -43,6 +68,10 @@ function WorkoutsList({ userDetails }) {
               ))}
             </ol>
             <h1>{"X" + shownWorkout.sets}</h1>
+            <button onClick={() => handleRemove(shownWorkout.id)}>
+              Remove
+            </button>
+            <button onClick={() => setPopupTrigger(true)}>edit</button>
             <br />
           </div>
         )}

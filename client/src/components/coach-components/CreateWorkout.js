@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import WorkoutPopup from "./WorkoutPopup";
+import CreateWorkoutPopup from "./CreateWorkoutPopup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -14,7 +14,9 @@ function CreateWorkout({ userDetails }) {
   const [typeTags, setTypeTags] = useState([]);
   const [muscleTags, setMuscleTags] = useState([]);
   const [popupTrigger, setPopupTrigger] = useState(false);
-
+  const [draggedItem, setDraggedItem] = useState();
+  const [draggedOver, setDraggedOver] = useState(false);
+  const [snap, setSnap] = useState();
   function addItem(array, str) {
     if (str.includes(",")) {
       str = str.split(",");
@@ -25,6 +27,9 @@ function CreateWorkout({ userDetails }) {
     return array;
   }
 
+  useEffect(() => {
+    if (draggedOver && draggedItem) setSnap(draggedItem);
+  }, [draggedItem, draggedOver]);
   useEffect(() => {
     axios
       .get(`/api/coach/exercises/show?input=${searchInput}&sort=${sortValue}`)
@@ -50,11 +55,21 @@ function CreateWorkout({ userDetails }) {
       .catch((err) => console.log(err.response.data));
   }, [searchInput, sortValue]);
   return (
-    <div className="create-workout-page">
+    <div
+      className="create-workout-page"
+      onDragEnter={(e) => {
+        if (
+          e.target.className === "main-div" ||
+          e.target.className === "create-workout-page"
+        ) {
+          setSnap();
+        }
+      }}
+    >
       <div className="main-div">
         {/* <h1>Create a new workout</h1> */}
         {userDetails && (
-          <WorkoutPopup
+          <CreateWorkoutPopup
             userDetails={userDetails}
             trigger={popupTrigger}
             setTrigger={setPopupTrigger}
@@ -108,7 +123,15 @@ function CreateWorkout({ userDetails }) {
             </div>
           </div>
         </div>
-        <div className="new-build-workout">
+        <div
+          className="new-build-workout"
+          onDragOver={() => {
+            setDraggedOver(true);
+          }}
+          onDragLeave={() => {
+            setDraggedOver(false);
+          }}
+        >
           <h1>New Workout :</h1>
           {chosen.map((item, index) => (
             <div className="chosen-exercise" key={"chosen" + index}>
@@ -142,13 +165,21 @@ function CreateWorkout({ userDetails }) {
               <div
                 className="exercise-block"
                 key={"exerciseItem" + index}
-                // draggable
-                // onDragStart={() => {
-                //   setDraggedItem(index);
-                // }}
+                draggable={true}
+                onDragStart={() => {
+                  setDraggedItem(item);
+                }}
+                onDragEnd={() => {
+                  setDraggedItem();
+                  if (!snap) return;
+                  let temp = [...chosen];
+                  if (temp.includes(snap.name) || temp.length === 10) return;
+                  temp.push(snap.name);
+                  setChosen(temp);
+                }}
               >
                 <h2 className="exercise-name">{item.name}</h2>
-                <img
+                {/* <img
                   className="exercise-image"
                   src={item.image}
                   alt={item.name}
@@ -169,7 +200,7 @@ function CreateWorkout({ userDetails }) {
                   }}
                 >
                   Add
-                </button>
+                </button> */}
               </div>
             ))
           : "No Exercises"}
