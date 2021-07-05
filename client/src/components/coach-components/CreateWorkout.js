@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import WorkoutPopup from "./WorkoutPopup";
+import CreateWorkoutPopup from "./CreateWorkoutPopup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -54,7 +54,7 @@ function CreateWorkout({ userDetails }) {
       <div className="main-div">
         {/* <h1>Create a new workout</h1> */}
         {userDetails && (
-          <WorkoutPopup
+          <CreateWorkoutPopup
             userDetails={userDetails}
             trigger={popupTrigger}
             setTrigger={setPopupTrigger}

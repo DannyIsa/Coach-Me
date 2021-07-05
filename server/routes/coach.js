@@ -387,4 +387,63 @@ coach.put("/client/calendar/:coachId", async (req, res) => {
     return res.status(201).send(dataToSend);
   }
 });
+
+coach.delete("/workouts/delete/:coachId", async (req, res) => {
+  const { coachId } = req.params;
+  const { workoutId } = req.query;
+  if (!coachId && !workoutId) return res.status(400).send("Id Required");
+  const workout = await models.Workout.findOne({
+    where: { id: workoutId, coach_id: coachId },
+  });
+  if (!workout) return res.status(404).send("Workout Not Found");
+  workout
+    .destroy()
+    .then((data) => {
+      return res.status(200).send(data);
+    })
+    .catch((err) => {
+      return res.status(400).send(err);
+    });
+});
+
+coach.patch("/workouts/update/:coachId", async (req, res) => {
+  const { coachId } = req.params;
+  const { workoutId, exercises, sets } = req.body;
+  console.log(exercises);
+  if (!coachId && !workoutId) return res.status(400).send("Id Required");
+  const coach = await models.Coach.findOne({ where: { id: coachId } });
+  let valid = { status: 200 };
+  exercises.forEach((item) => {
+    if (
+      item.sets <= 0 ||
+      item.min_reps <= 0 ||
+      item.max_reps <= 0 ||
+      item.max_reps <= 0 ||
+      sets <= 0 ||
+      !sets
+    )
+      valid = { status: 400, message: "Numbers Must Be Positive" };
+    if (item.max_reps < item.min_reps)
+      valid = { status: 400, message: "Max reps cant be lower then min reps" };
+  });
+  if (valid.status === 400) return res.status(valid.status).send(valid.message);
+  if (!coach) return res.status(404).send("No Coach Found");
+  const workout = await models.Workout.findOne({
+    where: { id: workoutId, coach_id: coachId },
+  });
+  if (!workout) return res.status(404).send("No Workout Found");
+  const exerciseSets = await workout.getExerciseSets();
+  const success = await Promise.all(
+    exerciseSets.map(async (set, index) => {
+      let item = exercises[index];
+      delete item.index;
+      return await set.update({ ...item }, { through: { index: index + 1 } });
+    })
+  );
+  if (!success) return res.status(400).send("Couldn't update");
+  workout
+    .update({ sets })
+    .then(() => res.status(201).send("Updated Successfully"))
+    .catch((err) => res.status(400).send(err));
+});
 module.exports = coach;

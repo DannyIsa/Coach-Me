@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-function WorkoutPopup({
+function CreateWorkoutPopup({
   exercises,
   setExercises,
   trigger,
@@ -198,4 +198,4 @@ function WorkoutPopup({
   );
 }
 
-export default WorkoutPopup;
+export default CreateWorkoutPopup;
