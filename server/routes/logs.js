@@ -198,7 +198,17 @@ logs.get("/diet/show/:traineeId", async (req, res) => {
     },
   });
 
-  res.status(200).send(traineeDietLog);
+  if (traineeDietLog.length === 0)
+    return res.status(400).send("No eaten food at this day");
+
+  const items = await Promise.all(
+    traineeDietLog.map(async (log) => {
+      let item = await log.getFood();
+      return { ...item.toJSON(), ...log.toJSON() };
+    })
+  );
+
+  res.status(200).send(items);
 });
 
 module.exports = logs;

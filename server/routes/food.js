@@ -112,13 +112,6 @@ food.post("/eaten-food", async (req, res) => {
   res.status(201).send(dataToSend);
 });
 
-food.get("/eaten-food/:id", async (req, res) => {
-  const { id } = req.params;
-  if (!id) return res.status(400).send("Must send id");
-  const { status, data } = await getEatenFoodFromToday(id);
-  res.status(status).send(data);
-});
-
 food.delete("/eaten-food/:foodId", async (req, res) => {
   const { foodId } = req.params;
   const { traineeId } = req.query;
