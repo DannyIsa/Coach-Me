@@ -73,7 +73,6 @@ function ClientCalendar({ userDetails }) {
       const items = [...needToEat].filter(
         (food) => food.meal_of_the_day === field.type && food.day === field.day
       );
-      console.log(items);
       setChosenItems(items);
     }
   }, [field]);
