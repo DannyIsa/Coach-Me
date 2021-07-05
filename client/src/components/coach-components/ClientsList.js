@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import EditableInput from "../EditableInput";
 import { Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+
 function ClientsList({ userDetails, alertMessage }) {
   const [clients, setClients] = useState();
   const [requests, setRequests] = useState();
@@ -77,36 +80,64 @@ function ClientsList({ userDetails, alertMessage }) {
   return (
     <div className="client-list-start">
       <h1>Your Clients:</h1>
-      <div className="clients-list">
+      <div className="img__wrap">
         {clients &&
           clients.map((item, index) => (
             <div
-              className="client-div"
+              className="img__img"
               key={"client" + index}
               onClick={() => setChosenTrainee(item)}
             >
+              {/* <img class="img__img" src="http://placehold.it/257x200.jpg" /> */}
               {item.name}
             </div>
           ))}
         {chosenTrainee && (
-          <>
-            <button onClick={() => setChosenTrainee("")}>CLOSE</button>
-            <button onClick={handleEdit}>{editMode ? "Save" : "Edit"}</button>
+          <div className="img__description">
             <div className="trainee-details">
-              <h2>{"Name: " + chosenTrainee.name}</h2>
-              <h2>{"Email: " + chosenTrainee.email}</h2>
-              <h2>{"Phone Number :" + chosenTrainee.phone_number}</h2>
-              <h2>
+              <span className="first">Name:</span>
+              <span>{" " + chosenTrainee.name}</span>
+              <br />
+              {/* <h2>{"Name: " + chosenTrainee.name}</h2> */}
+              {/* <h2>{"Email: " + chosenTrainee.email}</h2> */}
+              <span className="first">Email:</span>
+              <span>{" " + chosenTrainee.email}</span>
+              <br />
+              {/* <h2>{"Phone Number :" + chosenTrainee.phone_number}</h2> */}
+              <span className="first">Phone Number:</span>
+              <span>{" " + chosenTrainee.phone_number}</span>
+              <br />
+              {/* <h2>
                 {"Age: " +
                   Math.abs(
                     new Date(
                       Date.now() - new Date(chosenTrainee.birthdate).getTime()
                     ).getUTCFullYear() - 1970
                   )}
-              </h2>
-              <h2>{"Gender: " + chosenTrainee.gender}</h2>
-              <h2>{"Weight: " + chosenTrainee.weight}</h2>
-              <h2>{"Height: " + chosenTrainee.height}</h2>
+              </h2> */}
+              <span className="first">Age:</span>
+              <span>
+                {" " +
+                  Math.abs(
+                    new Date(
+                      Date.now() - new Date(chosenTrainee.birthdate).getTime()
+                    ).getUTCFullYear() - 1970
+                  )}
+              </span>
+              <br />
+              {/* <h2>{"Gender: " + chosenTrainee.gender}</h2> */}
+              <span className="first">Gender:</span>
+              <span>{" " + chosenTrainee.gender}</span>
+              <br />
+              {/* <h2>{"Weight: " + chosenTrainee.weight}</h2> */}
+              <span className="first">Weight:</span>
+              <span>{" " + chosenTrainee.weight}</span>
+              <br />
+              {/* <h2>{"Height: " + chosenTrainee.height}</h2> */}
+              <span className="first">Height:</span>
+              <span>{" " + chosenTrainee.height}</span>
+              <br />
+
               <EditableInput
                 value={
                   chosenTrainee && chosenTrainee.daily_calorie_goal
@@ -118,12 +149,29 @@ function ClientsList({ userDetails, alertMessage }) {
                 state={clientDetails}
                 setState={setClientDetails}
               />
-              <h2>{"Activity Level: " + chosenTrainee.activity_level}</h2>
+              {/* <h2>{"Activity Level: " + chosenTrainee.activity_level}</h2> */}
+              <span className="first">Activity Level:</span>
+              <span>{" " + chosenTrainee.activity_level}</span>
+              <br />
             </div>
-            <Link to={"/coach/calendar/" + chosenTrainee.id}>
+            <Link
+              to={"/coach/calendar/" + chosenTrainee.id}
+              className="view-calender"
+            >
               View Calendar
             </Link>
-          </>
+            <div>
+              <button onClick={() => setChosenTrainee("")}>
+                {" "}
+                <FontAwesomeIcon
+                  icon={faTimes}
+                  color="#acacac"
+                  className="fa-fa"
+                />
+              </button>
+              <button onClick={handleEdit}>{editMode ? "✔" : "✎"}</button>
+            </div>
+          </div>
         )}
       </div>
     </div>

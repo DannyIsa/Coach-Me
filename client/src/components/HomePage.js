@@ -10,7 +10,6 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "../styles/HomePage.css";
 import run from "../pics/home.mp4";
 import logo from "../pics/logo.png";
-import map from "../pics/map.png";
 
 function HomePage() {
   const [click, setClick] = useState(false);
