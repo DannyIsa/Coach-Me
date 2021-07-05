@@ -789,7 +789,22 @@ form.sign-in-form {
   margin-bottom: 5rem;
 }
 
-.client-list-start .img__img {
+.client-list-start .img-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 200px;
+  width: 100vw;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.client-list-start .img-mini {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -800,23 +815,15 @@ form.sign-in-form {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 2rem;
-  width: 20vw;
-  height: 30vh;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
   background-color: pink;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   overflow: scroll;
 }
 
-.client-list-start .img__wrap {
-  position: relative;
-  height: 200px;
-  width: 257px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.client-list-start .img__description {
+.client-list-start .img-description {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -827,11 +834,6 @@ form.sign-in-form {
   width: 20vw;
   height: 30vh;
   font-size: 1.3rem;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background: rgba(29, 106, 154, 0.72);
   color: #fff;
   visibility: hidden;
@@ -842,20 +844,20 @@ form.sign-in-form {
   overflow: scroll;
 }
 
-.client-list-start .img__description .trainee-details .first {
+.client-list-start .img-description .trainee-details .first {
   font-size: 1.3rem;
   font-weight: bold;
 }
 
-.client-list-start .img__description .view-calender {
+.client-list-start .img-description .view-calender {
   font-size: 1.1rem;
 }
 
-.client-list-start .img__description .fa-fa :hover {
+.client-list-start .img-description .fa-fa :hover {
   color: #ffc719;
 }
 
-.client-list-start .img__wrap:hover .img__description {
+.client-list-start .img-container:hover .img-description {
   visibility: visible;
   opacity: 1;
 }

@@ -15,25 +15,6 @@ function CreateWorkout({ userDetails }) {
   const [muscleTags, setMuscleTags] = useState([]);
   const [popupTrigger, setPopupTrigger] = useState(false);
 
-  // const [draggedOver, setDraggedOver] = useState();
-  // const [draggedItem, setDraggedItem] = useState();
-  // const [tempNewOrder, setTempNewOrder] = useState([]);
-
-  // function changeOrder(indexToEnter, indexLocation) {
-  //   if (
-  //     (!indexToEnter && indexToEnter !== 0) ||
-  //     (!indexLocation && indexLocation !== 0) ||
-  //     indexToEnter === indexLocation
-  //   )
-  //     return;
-  //   let name = exercises[indexToEnter];
-  //   let newExercises = [...exercises].filter(
-  //     (item, index) => index !== indexToEnter
-  //   );
-  //   newExercises.splice(indexLocation, 0, name);
-  //   setTempNewOrder(newExercises);
-  // }
-
   function addItem(array, str) {
     if (str.includes(",")) {
       str = str.split(",");
@@ -79,6 +60,7 @@ function CreateWorkout({ userDetails }) {
             setTrigger={setPopupTrigger}
             exercises={chosen}
             setExercises={setChosen}
+            edit={false}
           />
         )}
         <div className="search-div">
@@ -129,21 +111,7 @@ function CreateWorkout({ userDetails }) {
         <div className="new-build-workout">
           <h1>New Workout :</h1>
           {chosen.map((item, index) => (
-            <div
-              className="chosen-exercise"
-              key={"chosen" + index}
-              // onDragEnd={() => {
-              //   setDraggedItem(undefined);
-              //   setExercises(tempNewOrder);
-              // }}
-              // onDragEnter={() => {
-              //   setDraggedOver(index);
-              // }}
-              // onDragLeave={() => {
-              //   changeOrder(draggedItem, draggedOver);
-              //   setDraggedOver(undefined);
-              // }}
-            >
+            <div className="chosen-exercise" key={"chosen" + index}>
               {item}
               <button
                 onClick={() => {
