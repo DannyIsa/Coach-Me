@@ -310,7 +310,6 @@ coach.patch("/client/calendar/:coachId", async (req, res) => {
       .then((data) => res.status(201).send(data))
       .catch((err) => res.status(err.status).send(err));
   } else {
-    console.log(valueId);
     const meal = await models.NeedToEat.findOne({
       where: {
         id: valueId,
@@ -396,20 +395,24 @@ coach.delete("/workouts/delete/:coachId", async (req, res) => {
     where: { id: workoutId, coach_id: coachId },
   });
   if (!workout) return res.status(404).send("Workout Not Found");
-  workout
-    .destroy()
-    .then((data) => {
-      return res.status(200).send(data);
-    })
-    .catch((err) => {
-      return res.status(400).send(err);
-    });
+
+  const exercises = await workout.getExerciseSets();
+  await workout.destroy();
+  const joins = await models.WorkoutExerciseJoin.destroy({
+    where: { workout_id: workoutId },
+  });
+  if (!joins) return res.status(404).send("Couldn't Delete");
+
+  const success = await Promise.all(
+    exercises.map(async (item) => await item.destroy())
+  );
+  if (!success) return res.status(404).send("Couldn't Delete");
+  return res.status(200).send("Deleted Successfully");
 });
 
 coach.patch("/workouts/update/:coachId", async (req, res) => {
   const { coachId } = req.params;
   const { workoutId, exercises, sets } = req.body;
-  console.log(exercises);
   if (!coachId && !workoutId) return res.status(400).send("Id Required");
   const coach = await models.Coach.findOne({ where: { id: coachId } });
   let valid = { status: 200 };

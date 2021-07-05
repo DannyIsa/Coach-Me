@@ -21,9 +21,9 @@ function WorkoutsList({ userDetails }) {
       .delete(
         `/api/coach/workouts/delete/${userDetails.id}?workoutId=${itemId}`
       )
-      .then(({ data }) => {
+      .then(() => {
         setShownWorkout();
-        setWorkouts([...workouts].filter((workout) => workout.id !== data.id));
+        setWorkouts([...workouts].filter((workout) => workout.id !== itemId));
       })
       .catch((err) => console.log(err.response.data));
   };
