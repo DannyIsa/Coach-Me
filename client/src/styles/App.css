@@ -787,12 +787,16 @@ form.sign-in-form {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-top: 7rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: scroll;
 }
 
 .client-list-start h1 {
-  margin-left: 5rem;
+  margin-bottom: 3rem;
   font-weight: lighter;
+  font-size: 2.8em;
 }
 
 .client-list-start .ticket-list {
@@ -815,15 +819,13 @@ form.sign-in-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 0.5rem 2rem 2rem;
+  padding: 0.5rem 2rem;
   border-radius: 0.4rem;
-  margin: 1.5rem;
-  background-color: #d8c3a5;
+  margin: 1rem;
+  background-color: #1456a1;
 }
 
 .client-list-start .ticket-list .ticket .ticket-content,
@@ -833,7 +835,7 @@ form.sign-in-form {
 }
 
 .client-list-start .ticket-list .ticket .ticket-title {
-  padding: 2rem 0 0;
+  padding: 1rem 0 0 0;
   font-size: 1.5em;
 }
 
@@ -850,25 +852,37 @@ form.sign-in-form {
   opacity: 1;
 }
 
-.client-list-start .ticket-list .ticket .active-label {
+.client-list-start .ticket-list .ticket:hover .ticket-header span {
+  opacity: 1;
+  float: right;
+  margin-top: 0.7rem;
+}
+
+.client-list-start .ticket-list .ticket .ticket-header span {
+  white-space: nowrap;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+  opacity: 0;
+}
+
+.client-list-start .ticket-list .ticket .Sedentary {
   background-color: gray;
 }
 
-.client-list-start .ticket-list .ticket .not-label {
+.client-list-start .ticket-list .ticket .LightlyActive {
   background-color: lightblue;
 }
 
-.client-list-start .ticket-list .ticket .hidden {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+.client-list-start .ticket-list .ticket .Active {
+  background-color: lightgreen;
 }
 
-.client-list-start .ticket-list .ticket #show {
-  font-weight: 700;
-  font-size: 1.1em;
+.client-list-start .ticket-list .ticket .VeryActive {
+  background-color: tomato;
 }
 
 .client-list-start .ticket-list .ticket #footer {
@@ -880,116 +894,6 @@ form.sign-in-form {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-top: 0.5em;
-}
-
-.client-list-start .ticket-list .ticket #done-button {
-  position: absolute;
-  left: 0.6rem;
-  margin-top: -0.3rem;
-  width: 1.6rem;
-  opacity: 0;
-}
-
-.client-list-start .ticket-list .ticket .ticket:hover #done-button {
-  opacity: 1;
-}
-
-.client-list-start .ticket-list .ticket #creationTime {
-  padding-top: 0.5rem;
-}
-
-.client-list-start .ticket-list .ticket .done {
-  opacity: 0.5;
-}
-
-.client-list-start .img-container {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  height: 200px;
-  width: 100vw;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.client-list-start .img-mini {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 2rem;
-  margin-left: 3rem;
-  background-color: pink;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  overflow: scroll;
-}
-
-.client-list-start .img-description {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 20vw;
-  height: 30vh;
-  font-size: 1.3rem;
-  background: rgba(29, 106, 154, 0.72);
-  color: #fff;
-  word-wrap: break-word;
-  overflow: scroll;
-}
-
-.client-list-start .img-description .trainee-details .first {
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
-.client-list-start .img-description .fa-fa :hover {
-  color: #ffc719;
-}
-
-.client-list-start .img-container:hover .img-description {
-  visibility: visible;
-  opacity: 1;
-}
-
-.client-list-start .client-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 2rem;
-  width: 30vw;
-  height: 30vh;
-  background-color: pink;
-}
-
-.client-list-start .client-div:hover {
-  opacity: 0.8;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: -webkit-transform 2s;
-  transition: -webkit-transform 2s;
-  transition: transform 2s;
-  transition: transform 2s, -webkit-transform 2s;
 }
 
 .pop-up {

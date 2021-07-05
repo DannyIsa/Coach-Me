@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen, faWeight } from "@fortawesome/free-solid-svg-icons";
+
 function EditableInput({
   attribute,
   value,
@@ -38,6 +41,7 @@ function EditableInput({
 
   return (
     <div className="editable-input">
+      {/* <FontAwesomeIcon icon={faWeight} color="white" className="fa-fa" />{" "} */}
       <label>{attribute.split("_").join(" ") + ": "}</label>
       {editing ? (
         <input
@@ -59,7 +63,9 @@ function EditableInput({
       ) : (
         <b>No Value</b>
       )}
-      <button onClick={handleEdit}>{editing ? "SAVE" : "EDIT"}</button>
+      <button className="edit-button" onClick={handleEdit}>
+        {editing ? "SAVE" : "✏️"}
+      </button>
     </div>
   );
 }
