@@ -73,6 +73,7 @@ function ClientCalendar({ userDetails }) {
       const items = [...needToEat].filter(
         (food) => food.meal_of_the_day === field.type && food.day === field.day
       );
+      console.log(items);
       setChosenItems(items);
     }
   }, [field]);
@@ -94,20 +95,62 @@ function ClientCalendar({ userDetails }) {
           (workout) => workout.day !== res.data.day
         );
         temp.push(res.data);
+        setChosenItems(res.data);
         setWorkouts(temp);
       } else {
-        let temp = [...needToEat].filter(
+        let temp = [...needToEat];
+        temp = temp.filter(
           (food) =>
-            food.day !== res.data.day &&
-            food.meal_of_the_day !== res.data.meal_of_the_day &&
-            food.id !== res.food_id
+            (food.day !== res.data.day &&
+              food.meal_of_the_day !== res.data.meal_of_the_day) ||
+            food.food_id !== res.data.food_id
         );
         temp.push(res.data);
         setNeedToEat(temp);
+        temp = temp.filter(
+          (food) =>
+            food.day === res.data.day &&
+            food.meal_of_the_day === res.data.meal_of_the_day
+        );
+        setChosenItems(temp);
       }
     } catch (err) {
-      console.log(err.response.data);
+      console.log(err);
     }
+  };
+
+  const removeItem = async (itemId) => {
+    axios
+      .patch("/api/coach/client/calendar/" + userDetails.id, {
+        traineeId,
+        day: field.day,
+        type: field.type,
+        valueId: itemId,
+      })
+      .then(({ data }) => {
+        if (field.type === "Workout") {
+          let temp = [...workouts].filter(
+            (workout) => workout.day !== data.day
+          );
+          setChosenItems();
+          setWorkouts(temp);
+        } else {
+          let temp = [...needToEat].filter(
+            (food) =>
+              (food.day !== data.day &&
+                food.meal_of_the_day !== data.meal_of_the_day) ||
+              food.food_id !== data.food_id
+          );
+          setNeedToEat(temp);
+          temp = temp.filter(
+            (food) =>
+              food.day === data.day &&
+              food.meal_of_the_day === data.meal_of_the_day
+          );
+          setChosenItems(temp);
+        }
+      })
+      .catch((err) => console.log(err.response.data));
   };
 
   const Meals = ["Breakfast", "Lunch", "Dinner", "Snacks"];
@@ -279,7 +322,7 @@ function ClientCalendar({ userDetails }) {
                     ))}
                   </ol>
                   <h1>{"X" + chosenItems.sets}</h1>
-                  <button>Remove</button>
+                  <button onClick={() => removeItem(1)}>Remove</button>
                 </>
               ) : (
                 <>
@@ -295,7 +338,9 @@ function ClientCalendar({ userDetails }) {
                         <p>{item.carbs * item.amount} carbs</p>
                         <p>{item.fats * item.amount} fats</p>
                         <br />
-                        <button>Remove</button>
+                        <button onClick={() => removeItem(item.id)}>
+                          Remove
+                        </button>
                       </li>
                     ))}
                   </ol>

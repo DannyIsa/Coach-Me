@@ -126,6 +126,7 @@ trainee.get("/workouts/show/:coachId", async (req, res) => {
   const workouts = await Promise.all(
     calendars.map(async (calendar) => {
       let workout = await calendar.getWorkout();
+      if (!workout) return { calendar };
       let exercises = await workout.getExerciseSets();
       let item = { ...workout.toJSON(), exercises, day: calendar.day };
       delete item.ExerciseSets;

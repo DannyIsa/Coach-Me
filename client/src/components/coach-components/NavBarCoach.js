@@ -32,7 +32,6 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
       let requests = await axios.get(
         "/api/coach/requests/show/" + userDetails.id
       );
-      console.log(requests);
       return requests.data;
     } catch (err) {
       console.log(err);
@@ -55,7 +54,6 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
   }, [alertMessage]);
 
   useEffect(async () => {
-    console.log(userDetails);
     if (!userDetails) return;
     setRequests(await getRequests());
     setClients(await getClients());

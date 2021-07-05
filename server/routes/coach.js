@@ -290,6 +290,40 @@ coach.put("/clients/update/:coachId", async (req, res) => {
     .catch((err) => res.status(400).send(err));
 });
 
+coach.patch("/client/calendar/:coachId", async (req, res) => {
+  const { coachId } = req.params;
+  const { traineeId, day, type, valueId } = req.body;
+  if (!traineeId || !coachId) return res.status(400).send("ID Required");
+  if (!day || !type || !valueId)
+    return res.status(400).send("Details Required");
+  const trainee = await models.Trainee.findOne({
+    where: { id: traineeId, coach_id: coachId },
+  });
+  if (!trainee) return res.status(404).send("No Trainee Found");
+  if (type === "Workout") {
+    const calendar = await models.Calendar.findOne({
+      where: { trainee_id: traineeId, day },
+    });
+    if (!calendar) return res.status(404).send("No Calendar Found");
+    calendar
+      .destroy()
+      .then((data) => res.status(201).send(data))
+      .catch((err) => res.status(err.status).send(err));
+  } else {
+    console.log(valueId);
+    const meal = await models.NeedToEat.findOne({
+      where: {
+        id: valueId,
+      },
+    });
+    if (!meal) return res.status(404).send("No Meal Found");
+    meal
+      .destroy()
+      .then((data) => res.status(201).send(data))
+      .catch((err) => res.status(400).send(err));
+  }
+});
+
 coach.put("/client/calendar/:coachId", async (req, res) => {
   const { coachId } = req.params;
   const { traineeId, day, type, valueId, amount } = req.body;
@@ -315,8 +349,9 @@ coach.put("/client/calendar/:coachId", async (req, res) => {
     if (!workout) return res.status(404).send("No Workout Found");
     calendar
       .update({ workout_id: valueId })
-      .then(() => {
-        return res.status(201).send({ ...workout.toJSON(), day });
+      .then(async () => {
+        const exercises = await workout.getExerciseSets();
+        return res.status(201).send({ ...workout.toJSON(), day, exercises });
       })
       .catch((err) => {
         return res.status(err.status).send(err);
@@ -347,7 +382,8 @@ coach.put("/client/calendar/:coachId", async (req, res) => {
     if (!meal) return res.status(400).send("Couldn't Add Food");
     const food = await meal.getFood();
     if (!food) return res.status(400).send("Couldn't Add Food");
-    let dataToSend = { ...meal.toJSON(), ...food.toJSON() };
+    delete food.id;
+    let dataToSend = { ...food.toJSON(), ...meal.toJSON() };
     return res.status(201).send(dataToSend);
   }
 });
