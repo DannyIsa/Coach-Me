@@ -97,13 +97,13 @@ function ClientCalendar({ userDetails }) {
         setChosenItems(res.data);
         setWorkouts(temp);
       } else {
-        let temp = [...needToEat].filter(
+        let temp = [...needToEat];
+        temp = temp.filter(
           (food) =>
-            food.day !== res.data.day &&
-            food.meal_of_the_day !== res.data.meal_of_the_day &&
-            food.id !== res.data.food_id
+            (food.day !== res.data.day &&
+              food.meal_of_the_day !== res.data.meal_of_the_day) ||
+            food.food_id !== res.data.food_id
         );
-        console.log(needToEat, res.data);
         temp.push(res.data);
         setNeedToEat(temp);
       }
