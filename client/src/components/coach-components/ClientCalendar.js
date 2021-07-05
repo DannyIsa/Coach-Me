@@ -25,11 +25,9 @@ function ClientCalendar({ userDetails }) {
               `http://localhost:3001/api/trainee/workouts/show/${userDetails.id}?traineeId=${traineeId}`
             )
             .then(({ data }) => {
-              console.log(data);
               setWorkouts(data);
             })
             .catch((err) => {
-              console.log(err);
               console.log(err.response.data);
             });
         })
@@ -70,13 +68,11 @@ function ClientCalendar({ userDetails }) {
     if (!field) return;
     if (field.type === "Workout") {
       const item = [...workouts].find((workout) => workout.day === field.day);
-      console.log(item);
       setChosenItems(item);
     } else {
       const items = [...needToEat].filter(
         (food) => food.meal_of_the_day === field.type && food.day === field.day
       );
-      console.log(items);
       setChosenItems(items);
     }
   }, [field]);
@@ -98,19 +94,17 @@ function ClientCalendar({ userDetails }) {
           (workout) => workout.day !== res.data.day
         );
         temp.push(res.data);
-        console.log(temp);
+        setChosenItems(res.data);
         setWorkouts(temp);
       } else {
-        let temp = [...needToEat].filter((food) => {
-          console.log(food);
-          return (
+        let temp = [...needToEat].filter(
+          (food) =>
             food.day !== res.data.day &&
             food.meal_of_the_day !== res.data.meal_of_the_day &&
-            food.id !== res.food_id
-          );
-        });
+            food.id !== res.data.food_id
+        );
+        console.log(needToEat, res.data);
         temp.push(res.data);
-        console.log(temp);
         setNeedToEat(temp);
       }
     } catch (err) {
@@ -118,7 +112,7 @@ function ClientCalendar({ userDetails }) {
     }
   };
 
-  const removeItem = async (itemId = 1) => {
+  const removeItem = async (itemId) => {
     axios
       .patch("/api/coach/client/calendar/" + userDetails.id, {
         traineeId,
@@ -309,7 +303,7 @@ function ClientCalendar({ userDetails }) {
                     ))}
                   </ol>
                   <h1>{"X" + chosenItems.sets}</h1>
-                  <button onClick={removeItem}>Remove</button>
+                  <button onClick={() => removeItem(1)}>Remove</button>
                 </>
               ) : (
                 <>
