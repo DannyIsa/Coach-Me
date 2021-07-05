@@ -777,6 +777,113 @@ form.sign-in-form {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-top: 7rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.client-list-start h1 {
+  margin-bottom: 5rem;
+}
+
+.client-list-start .img__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2rem;
+  width: 20vw;
+  height: 30vh;
+  background-color: pink;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.client-list-start .img__wrap {
+  position: relative;
+  height: 200px;
+  width: 257px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.client-list-start .img__description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20vw;
+  height: 30vh;
+  font-size: 1.3rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(29, 106, 154, 0.72);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 2s, visibility 1s;
+  transition: opacity 2s, visibility 1s;
+  word-wrap: break-word;
+  overflow: scroll;
+}
+
+.client-list-start .img__description .trainee-details .first {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.client-list-start .img__description .view-calender {
+  font-size: 1.1rem;
+}
+
+.client-list-start .img__description .fa-fa :hover {
+  color: #ffc719;
+}
+
+.client-list-start .img__wrap:hover .img__description {
+  visibility: visible;
+  opacity: 1;
+}
+
+.client-list-start .client-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2rem;
+  width: 30vw;
+  height: 30vh;
+  background-color: pink;
+}
+
+.client-list-start .client-div:hover {
+  opacity: 0.8;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s;
 }
 
 .pop-up {
@@ -1729,6 +1836,7 @@ form.sign-in-form {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 body {
