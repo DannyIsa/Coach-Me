@@ -80,11 +80,12 @@ function ClientsList({ userDetails, alertMessage }) {
   return (
     <div className="client-list-start">
       <h1>Your Clients:</h1>
-      <div className="img__wrap">
+      <div className="img-container">
         {clients &&
           clients.map((item, index) => (
+            //  <div className="img-block">
             <div
-              className="img__img"
+              className="img-mini"
               key={"client" + index}
               onClick={() => setChosenTrainee(item)}
             >
@@ -93,7 +94,7 @@ function ClientsList({ userDetails, alertMessage }) {
             </div>
           ))}
         {chosenTrainee && (
-          <div className="img__description">
+          <div className="img-description">
             <div className="trainee-details">
               <span className="first">Name:</span>
               <span>{" " + chosenTrainee.name}</span>
