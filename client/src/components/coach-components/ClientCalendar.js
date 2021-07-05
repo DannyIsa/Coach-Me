@@ -73,6 +73,7 @@ function ClientCalendar({ userDetails }) {
       const items = [...needToEat].filter(
         (food) => food.meal_of_the_day === field.type && food.day === field.day
       );
+      console.log(items);
       setChosenItems(items);
     }
   }, [field]);
@@ -106,6 +107,12 @@ function ClientCalendar({ userDetails }) {
         );
         temp.push(res.data);
         setNeedToEat(temp);
+        temp = temp.filter(
+          (food) =>
+            food.day === res.data.day &&
+            food.meal_of_the_day === res.data.meal_of_the_day
+        );
+        setChosenItems(temp);
       }
     } catch (err) {
       console.log(err);
@@ -125,13 +132,25 @@ function ClientCalendar({ userDetails }) {
           let temp = [...workouts].filter(
             (workout) => workout.day !== data.day
           );
+          setChosenItems();
           setWorkouts(temp);
         } else {
-          let temp = [needToEat].filter((food) => food.day !== data.day);
+          let temp = [...needToEat].filter(
+            (food) =>
+              (food.day !== data.day &&
+                food.meal_of_the_day !== data.meal_of_the_day) ||
+              food.food_id !== data.food_id
+          );
           setNeedToEat(temp);
+          temp = temp.filter(
+            (food) =>
+              food.day === data.day &&
+              food.meal_of_the_day === data.meal_of_the_day
+          );
+          setChosenItems(temp);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err.response.data));
   };
 
   const Meals = ["Breakfast", "Lunch", "Dinner", "Snacks"];

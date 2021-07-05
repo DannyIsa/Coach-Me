@@ -382,7 +382,8 @@ coach.put("/client/calendar/:coachId", async (req, res) => {
     if (!meal) return res.status(400).send("Couldn't Add Food");
     const food = await meal.getFood();
     if (!food) return res.status(400).send("Couldn't Add Food");
-    let dataToSend = { ...meal.toJSON(), ...food.toJSON() };
+    delete food.id;
+    let dataToSend = { ...food.toJSON(), ...meal.toJSON() };
     return res.status(201).send(dataToSend);
   }
 });
