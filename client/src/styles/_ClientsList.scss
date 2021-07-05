@@ -4,14 +4,154 @@
   flex-direction: column;
   padding-top: 7rem;
   // align-items: center;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   overflow: scroll;
 
   & h1 {
-    margin-bottom: 5rem;
     margin-left: 5rem;
     font-weight: lighter;
-    // text-transform: uppercase;
+  }
+  .ticket-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    & .ticket {
+      display: flex;
+      position: relative;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-around;
+      width: fit-content;
+      padding: 0.5rem 2rem 2rem;
+      border-radius: 0.4rem;
+      margin: 1.5rem;
+      background-color: #d8c3a5;
+
+      .ticket-content,
+      .ticket-title {
+        width: 20rem;
+        word-wrap: break-word;
+      }
+
+      .ticket-title {
+        padding: 2rem 0 0;
+        font-size: 1.5em;
+      }
+
+      .ticket-content {
+        font-size: 1.2em;
+      }
+      .ticket-header .view-calender {
+        font-size: 2rem;
+        // color: rgb(180, 20, 20);
+        opacity: 0;
+      }
+      &:hover .ticket-header .view-calender {
+        opacity: 1;
+      }
+
+      // .ticket-labels {
+      //   width: 90%;
+      //   flex-wrap: wrap;
+      //   margin: 0.7rem 0 0.6rem;
+      // }
+
+      // .label {
+      //   white-space: nowrap;
+      //   border-radius: 0.2rem;
+      //   padding: 0.2rem;
+      //   font-weight: 700;
+      //   font-size: 0.8rem;
+      //   margin-right: 0.2rem;
+      //   margin-bottom: 0.2rem;
+      //   box-shadow: 0 0 15px -3px rgb(0 0 0 / 29%);
+      // }
+
+      .active-label {
+        background-color: gray;
+      }
+
+      .not-label {
+        background-color: lightblue;
+      }
+
+      // .Guidelines {
+      //   background-color: lightgreen;
+      // }
+
+      // .Problem {
+      //   background-color: tomato;
+      // }
+
+      // .Login {
+      //   background-color: lightcoral;
+      // }
+
+      // .Tutorial {
+      //   background-color: cyan;
+      // }
+
+      // .View.Count {
+      //   background-color: cornflowerblue;
+      // }
+
+      // .Collapse {
+      //   background-color: pink;
+      // }
+      // .Expand {
+      //   background-color: plum;
+      // }
+
+      .hidden {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+
+      #show {
+        font-weight: 700;
+        font-size: 1.1em;
+      }
+      #footer {
+        display: flex;
+        flex-direction: column;
+        padding-top: 0.5em;
+      }
+
+      // .hideTicketButton {
+      //   position: absolute;
+      //   right: 1rem;
+      //   width: 2rem;
+      //   height: 1.8rem;
+      //   opacity: 0;
+      // }
+
+      // .ticket:hover .hideTicketButton {
+      //   opacity: 1;
+      // }
+
+      #done-button {
+        position: absolute;
+        left: 0.6rem;
+        margin-top: -0.3rem;
+        width: 1.6rem;
+        opacity: 0;
+      }
+
+      .ticket:hover #done-button {
+        opacity: 1;
+      }
+
+      #creationTime {
+        padding-top: 0.5rem;
+      }
+
+      .done {
+        opacity: 0.5;
+      }
+    }
   }
 
   .img-container {
@@ -62,9 +202,7 @@
         font-weight: bold;
       }
     }
-    .view-calender {
-      font-size: 1.1rem;
-    }
+
     .fa-fa :hover {
       color: #ffc719;
     }

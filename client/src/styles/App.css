@@ -273,12 +273,22 @@ form.sign-in-form {
 
 .panel .content {
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-transition: -webkit-transform 0.9s ease-in-out;
   transition: -webkit-transform 0.9s ease-in-out;
   transition: transform 0.9s ease-in-out;
   transition: transform 0.9s ease-in-out, -webkit-transform 0.9s ease-in-out;
   -webkit-transition-delay: 0.6s;
           transition-delay: 0.6s;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .panel h3 {
@@ -777,15 +787,119 @@ form.sign-in-form {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-top: 7rem;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   overflow: scroll;
 }
 
 .client-list-start h1 {
-  margin-bottom: 5rem;
   margin-left: 5rem;
   font-weight: lighter;
+}
+
+.client-list-start .ticket-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.client-list-start .ticket-list .ticket {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem 2rem 2rem;
+  border-radius: 0.4rem;
+  margin: 1.5rem;
+  background-color: #d8c3a5;
+}
+
+.client-list-start .ticket-list .ticket .ticket-content,
+.client-list-start .ticket-list .ticket .ticket-title {
+  width: 20rem;
+  word-wrap: break-word;
+}
+
+.client-list-start .ticket-list .ticket .ticket-title {
+  padding: 2rem 0 0;
+  font-size: 1.5em;
+}
+
+.client-list-start .ticket-list .ticket .ticket-content {
+  font-size: 1.2em;
+}
+
+.client-list-start .ticket-list .ticket .ticket-header .view-calender {
+  font-size: 2rem;
+  opacity: 0;
+}
+
+.client-list-start .ticket-list .ticket:hover .ticket-header .view-calender {
+  opacity: 1;
+}
+
+.client-list-start .ticket-list .ticket .active-label {
+  background-color: gray;
+}
+
+.client-list-start .ticket-list .ticket .not-label {
+  background-color: lightblue;
+}
+
+.client-list-start .ticket-list .ticket .hidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.client-list-start .ticket-list .ticket #show {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.client-list-start .ticket-list .ticket #footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 0.5em;
+}
+
+.client-list-start .ticket-list .ticket #done-button {
+  position: absolute;
+  left: 0.6rem;
+  margin-top: -0.3rem;
+  width: 1.6rem;
+  opacity: 0;
+}
+
+.client-list-start .ticket-list .ticket .ticket:hover #done-button {
+  opacity: 1;
+}
+
+.client-list-start .ticket-list .ticket #creationTime {
+  padding-top: 0.5rem;
+}
+
+.client-list-start .ticket-list .ticket .done {
+  opacity: 0.5;
 }
 
 .client-list-start .img-container {
@@ -841,10 +955,6 @@ form.sign-in-form {
 .client-list-start .img-description .trainee-details .first {
   font-size: 1.3rem;
   font-weight: bold;
-}
-
-.client-list-start .img-description .view-calender {
-  font-size: 1.1rem;
 }
 
 .client-list-start .img-description .fa-fa :hover {
