@@ -87,14 +87,14 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
             </Link>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <Link to={`${userType}/workouts`} className="link">
+            <a href="/coach/workouts" className="link">
               Workouts
-            </Link>
+            </a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <Link to="/coach/clients" className="link">
+            <a href="/coach/clients" className="link">
               Trainees
-            </Link>
+            </a>
           </li>
           <li className="option">
             <div className="notification">
@@ -107,7 +107,7 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
                 </div>
                 <FontAwesomeIcon
                   icon={faBell}
-                  color="black"
+                  color="white"
                   className="fa-fa"
                 />
                 <div className="box">

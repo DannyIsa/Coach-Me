@@ -781,6 +781,7 @@ form.sign-in-form {
 
 .pop-up {
   position: fixed;
+  color: black;
   top: 0;
   left: 0;
   z-index: 2;
@@ -802,7 +803,7 @@ form.sign-in-form {
   position: relative;
   width: 100%;
   max-width: 700px;
-  background-color: white;
+  background-color: #837c7c;
 }
 
 .pop-up > .pop-up-inner > table > tbody > tr > td {

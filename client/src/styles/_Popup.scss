@@ -1,5 +1,6 @@
 .pop-up {
   position: fixed;
+  color: black;
   top: 0;
   left: 0;
   z-index: 2;
@@ -13,7 +14,7 @@
     position: relative;
     width: 100%;
     max-width: 700px;
-    background-color: white;
+    background-color: rgb(131, 124, 124);
     & > table {
       & > tbody {
         & > tr {

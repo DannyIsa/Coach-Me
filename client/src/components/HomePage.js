@@ -10,6 +10,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "../styles/HomePage.css";
 import run from "../pics/home.mp4";
 import logo from "../pics/logo.png";
+import map from "../pics/map.png";
 
 function HomePage() {
   const [click, setClick] = useState(false);
@@ -25,23 +26,23 @@ function HomePage() {
       <div className="homeNav">
         <div className="logo-nav">
           <div className="logo-container">
-            <a href="/">
+            <Link to="/">
               <img src={logo} id="logo" alt="CoachMe Logo" />
-            </a>
+            </Link>
           </div>
           <ul className={click ? "nav-options active" : "nav-options"}>
             <li className="option" onClick={closeMobileMenu}>
-              <a href="/" className="link">
+              <Link to="/" className="link">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="option" onClick={closeMobileMenu}>
-              <a href="/viewport1" className="link">
+              <a href="#viewport1" className="link">
                 How It Works
               </a>
             </li>
             <li className="option" onClick={closeMobileMenu}>
-              <a href="/viewport2" className="link">
+              <a href="#viewport2" className="link">
                 About
               </a>
             </li>

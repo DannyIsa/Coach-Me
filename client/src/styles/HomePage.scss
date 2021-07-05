@@ -146,6 +146,7 @@
 #viewport1 {
   // background-color: #a7c1ee;
   background-color: white;
+  color: black;
   // background-color: #5995fd;
   height: 100vh;
   display: flex;
@@ -153,9 +154,7 @@
   flex-direction: column;
 }
 #viewport2 {
-  // background-color: white;
-  // background-color: #5995fd;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
