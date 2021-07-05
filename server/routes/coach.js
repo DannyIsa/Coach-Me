@@ -329,7 +329,7 @@ coach.put("/client/calendar/:coachId", async (req, res) => {
   const { traineeId, day, type, valueId, amount } = req.body;
   if (!coachId || !traineeId) return res.status(400).send("No Id Received");
   const trainee = await models.Trainee.findOne({
-    where: { id: traineeId, coach_id: traineeId },
+    where: { id: traineeId, coach_id: coachId },
   });
   if (!trainee) return res.status(404).send("No Trainee Found");
   let calendar = await models.Calendar.findOne({

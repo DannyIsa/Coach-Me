@@ -115,7 +115,7 @@ function ClientCalendar({ userDetails }) {
         setChosenItems(temp);
       }
     } catch (err) {
-      console.log(err);
+      console.log(err.response.data);
     }
   };
 

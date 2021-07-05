@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
 import DayPicker from "react-day-picker";
 import axios from "axios";
-import DayPickerInput from "react-day-picker/DayPickerInput";
+// import DayPickerInput from "react-day-picker/DayPickerInput";
 import "react-day-picker/lib/style.css";
 
-// export default function Hello() {
-//   return <DayPicker />;
-// }
-
-export default function DaySelect({ userDetails }) {
+export default function DaySelect({ userDetails, setFoodOfSelectedDate }) {
   const [selectedDay, setSelectedDay] = useState(new Date());
 
   const handleDayClick = (day, { selected }) => {
@@ -23,8 +19,13 @@ export default function DaySelect({ userDetails }) {
           selectedDay.getDate() + 1
         }&month=${selectedDay.getMonth() + 1}&year=${selectedDay.getFullYear()}`
       )
-      .then(({ data }) => console.log({ data }))
-      .catch((err) => console.log(err));
+      .then(({ data }) => {
+        setFoodOfSelectedDate(data);
+      })
+      .catch((err) => {
+        console.log(err.response.data);
+        setFoodOfSelectedDate([]);
+      });
   }, [selectedDay, userDetails]);
   return (
     <>

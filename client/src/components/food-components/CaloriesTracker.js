@@ -10,8 +10,6 @@ export default function CaloriesTracker({ userDetails }) {
   const [usedCalories, setUsedCalories] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const [eatenFood, setEatenFood] = useState([]);
-
   const [selectedMeal, setSelectedMeal] = useState("");
   const [addFoodPressed, setAddFoodPressed] = useState(false);
   const [searchedFood, setSearchedFood] = useState([]);
@@ -19,29 +17,23 @@ export default function CaloriesTracker({ userDetails }) {
   const [popUpAddFood, setPopUpAddFood] = useState("");
   const [addFoodAmount, setAddFoodAmount] = useState(1);
 
-  useEffect(() => {
-    if (userDetails) {
-      axios
-        .get(`http://localhost:3001/api/food/eaten-food/${userDetails.id}`)
-        .then(({ data }) => {
-          setEatenFood(data);
-        })
-        .catch((err) => {
-          console.log(err.response.data);
-        });
-    }
-  }, [userDetails]);
+  const [foodOfSelectedDate, setFoodOfSelectedDate] = useState("");
 
   useEffect(() => {
-    if (userDetails && eatenFood) {
+    if (foodOfSelectedDate.length > 0) {
+    }
+  }, [foodOfSelectedDate]);
+
+  useEffect(() => {
+    if (userDetails && foodOfSelectedDate) {
       setUsedCalories(0);
       setTotalCalories(userDetails.daily_calorie_goal);
 
-      eatenFood.map((food) => {
-        setUsedCalories((prev) => prev + food.food_calories);
+      foodOfSelectedDate.map((food) => {
+        setUsedCalories((prev) => prev + food.calories * food.amount);
       });
     }
-  }, [userDetails, eatenFood]);
+  }, [foodOfSelectedDate]);
 
   const searchFood = debounce(() => {
     if (foodSearchInput.current.value) {
@@ -57,7 +49,7 @@ export default function CaloriesTracker({ userDetails }) {
     }
   }, 300);
 
-  const addEatenFood = (food) => {
+  const addfoodOfSelectedDate = (food) => {
     food.calories = food.calories * addFoodAmount;
     food.protein = food.protein * addFoodAmount;
     food.carbs = food.carbs * addFoodAmount;
@@ -70,9 +62,9 @@ export default function CaloriesTracker({ userDetails }) {
         amount: addFoodAmount,
       })
       .then(({ data }) => {
-        let temp = [...eatenFood];
+        let temp = [...foodOfSelectedDate];
         temp.push(data);
-        setEatenFood([...temp]);
+        setFoodOfSelectedDate([...temp]);
         setAddFoodPressed(false);
         setSelectedMeal("");
       })
@@ -85,10 +77,10 @@ export default function CaloriesTracker({ userDetails }) {
         `http://localhost:3001/api/food/eaten-food/${id}?traineeId=${userDetails.id}`
       )
       .then(({ data }) => {
-        setEatenFood(data);
+        setFoodOfSelectedDate(data);
       })
       .catch((e) => {
-        console.log(e);
+        console.log(e.response.data);
       });
   };
 
@@ -101,7 +93,13 @@ export default function CaloriesTracker({ userDetails }) {
       >
         {usedCalories}%
       </meter>
-      <DaySelect userDetails={userDetails} />
+      <span>
+        {usedCalories} / {totalCalories}
+      </span>
+      <DaySelect
+        setFoodOfSelectedDate={setFoodOfSelectedDate}
+        userDetails={userDetails}
+      />
       <h3>
         {Number(usedCalories)} / {totalCalories} Calories Eaten
       </h3>
@@ -110,8 +108,8 @@ export default function CaloriesTracker({ userDetails }) {
         <div className={selectedMeal === "Breakfast" ? "chosen-meal" : "meal"}>
           <h1>Breakfast</h1>
 
-          {eatenFood &&
-            eatenFood.map((food) => {
+          {foodOfSelectedDate &&
+            foodOfSelectedDate.map((food) => {
               return (
                 food.meal_of_the_day === "Breakfast" && (
                   <div key={food.id}>
@@ -142,8 +140,8 @@ export default function CaloriesTracker({ userDetails }) {
         </div>
         <div className={selectedMeal === "Lunch" ? "chosen-meal" : "meal"}>
           <h1>Lunch</h1>
-          {eatenFood &&
-            eatenFood.map((food) => {
+          {foodOfSelectedDate &&
+            foodOfSelectedDate.map((food) => {
               return (
                 food.meal_of_the_day === "Lunch" && (
                   <div key={food.id}>
@@ -173,8 +171,8 @@ export default function CaloriesTracker({ userDetails }) {
         </div>
         <div className={selectedMeal === "Dinner" ? "chosen-meal" : "meal"}>
           <h1>Dinner</h1>
-          {eatenFood &&
-            eatenFood.map((food) => {
+          {foodOfSelectedDate &&
+            foodOfSelectedDate.map((food) => {
               return (
                 food.meal_of_the_day === "Dinner" && (
                   <div key={food.id}>
@@ -204,8 +202,8 @@ export default function CaloriesTracker({ userDetails }) {
         </div>
         <div className={selectedMeal === "Snacks" ? "chosen-meal" : "meal"}>
           <h1>Snacks</h1>
-          {eatenFood &&
-            eatenFood.map((food) => {
+          {foodOfSelectedDate &&
+            foodOfSelectedDate.map((food) => {
               return (
                 food.meal_of_the_day === "Snacks" && (
                   <div key={food.id}>
@@ -280,7 +278,9 @@ export default function CaloriesTracker({ userDetails }) {
                   onChange={(e) => setAddFoodAmount(e.target.value)}
                   value={addFoodAmount}
                 ></input>
-                <button onClick={() => addEatenFood(popUpAddFood)}>ADD</button>
+                <button onClick={() => addfoodOfSelectedDate(popUpAddFood)}>
+                  ADD
+                </button>
               </div>
             )}
           </div>
