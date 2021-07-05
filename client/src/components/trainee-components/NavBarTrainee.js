@@ -49,7 +49,7 @@ function NavBarTrainee({ signOut, userType }) {
           </li>
           <li className="option mobile-option" onClick={closeMobileMenu}>
             <Link className="sign-in link" onClick={() => signOut(history)}>
-              SignOut
+              Logout
             </Link>
           </li>
         </ul>
@@ -57,7 +57,7 @@ function NavBarTrainee({ signOut, userType }) {
       <ul className="signIn">
         <li onClick={closeMobileMenu}>
           <Link className="signIn-btn" onClick={() => signOut(history)}>
-            SignOut
+            Logout
           </Link>
         </li>
       </ul>

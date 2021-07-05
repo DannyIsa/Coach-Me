@@ -777,9 +777,6 @@ form.sign-in-form {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-top: 7rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   overflow: scroll;
@@ -787,6 +784,8 @@ form.sign-in-form {
 
 .client-list-start h1 {
   margin-bottom: 5rem;
+  margin-left: 5rem;
+  font-weight: lighter;
 }
 
 .client-list-start .img-container {
@@ -816,7 +815,6 @@ form.sign-in-form {
           justify-content: center;
   font-size: 2rem;
   margin-left: 3rem;
-  margin-bottom: 2rem;
   background-color: pink;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -836,10 +834,6 @@ form.sign-in-form {
   font-size: 1.3rem;
   background: rgba(29, 106, 154, 0.72);
   color: #fff;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: opacity 2s, visibility 1s;
-  transition: opacity 2s, visibility 1s;
   word-wrap: break-word;
   overflow: scroll;
 }
