@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import EditableInput from "../EditableInput";
+import EditableInputInline from "../EditableInputInline";
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,11 +9,11 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 function ClientsList({ userDetails, alertMessage }) {
   const [clients, setClients] = useState();
   const [requests, setRequests] = useState();
-  const [hideAlerts, setHideAlerts] = useState(true);
+  // const [hideAlerts, setHideAlerts] = useState(true);
   const [render, setRender] = useState(false);
-  const [chosenTrainee, setChosenTrainee] = useState("");
-  const [clientDetails, setClientDetails] = useState({});
-  const [editMode, setEditMode] = useState(false);
+  // const [chosenTrainee, setChosenTrainee] = useState("");
+  // const [clientDetails, setClientDetails] = useState({});
+  // const [editMode, setEditMode] = useState(false);
   async function getRequests() {
     try {
       let requests = await axios.get(
@@ -45,26 +45,26 @@ function ClientsList({ userDetails, alertMessage }) {
     setClients(await getClients());
   }, [userDetails, render]);
 
-  const handleEdit = () => {
-    if (!editMode) {
-      setEditMode(!editMode);
-      return;
-    } else {
-      axios
-        .put(
-          "http://localhost:3001/api/coach/clients/update/" + userDetails.id,
-          {
-            traineeId: chosenTrainee.id,
-            goal: clientDetails.daily_calorie_goal,
-          }
-        )
-        .then(({ data }) => {
-          setChosenTrainee(data);
-          setEditMode(!editMode);
-        })
-        .catch((err) => console.log(err.response.data));
-    }
-  };
+  // const handleEdit = () => {
+  //   if (!editMode) {
+  //     setEditMode(!editMode);
+  //     return;
+  //   } else {
+  //     axios
+  //       .put(
+  //         "http://localhost:3001/api/coach/clients/update/" + userDetails.id,
+  //         {
+  //           traineeId: chosenTrainee.id,
+  //           goal: clientDetails.daily_calorie_goal,
+  //         }
+  //       )
+  //       .then(({ data }) => {
+  //         setChosenTrainee(data);
+  //         setEditMode(!editMode);
+  //       })
+  //       .catch((err) => console.log(err.response.data));
+  //   }
+  // };
 
   function handleRequest(accept, traineeId) {
     axios
@@ -87,7 +87,7 @@ function ClientsList({ userDetails, alertMessage }) {
               <div
                 className="img-mini"
                 key={"client" + index}
-                onClick={() => setChosenTrainee(item)}
+                // onClick={() => setChosenTrainee(item)}
               >
                 {/* <img class="img__img" src="http://placehold.it/257x200.jpg" /> */}
                 {item.name}
@@ -138,16 +138,17 @@ function ClientsList({ userDetails, alertMessage }) {
                   <span>{" " + item.height}</span>
                   <br />
 
-                  <EditableInput
+                  <EditableInputInline
                     value={
                       item && item.daily_calorie_goal
                         ? item.daily_calorie_goal
                         : "no value"
                     }
                     attribute={"daily_calorie_goal"}
-                    editing={editMode}
-                    state={clientDetails}
-                    setState={setClientDetails}
+                    clients={clients}
+                    setClients={setClients}
+                    traineeId={item.id}
+                    userDetails={userDetails}
                   />
                   {/* <h2>{"Activity Level: " + chosenTrainee.activity_level}</h2> */}
                   <span className="first">Activity Level:</span>
@@ -169,7 +170,7 @@ function ClientsList({ userDetails, alertMessage }) {
                       className="fa-fa"
                     />
                   </button> */}
-                  <button onClick={handleEdit}>{editMode ? "✔" : "✎"}</button>
+                  {/* <button onClick={handleEdit}>{editMode ? "✔" : "✎"}</button> */}
                 </div>
               </div>
               {/* )} */}
