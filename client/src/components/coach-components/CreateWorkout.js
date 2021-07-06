@@ -54,6 +54,7 @@ function CreateWorkout({ userDetails }) {
       })
       .catch((err) => console.log(err.response.data));
   }, [searchInput, sortValue]);
+
   return (
     <div
       className="create-workout-page"
@@ -179,19 +180,23 @@ function CreateWorkout({ userDetails }) {
                 }}
               >
                 <h2 className="exercise-name">{item.name}</h2>
-                {/* <img
-                  className="exercise-image"
-                  src={item.image}
-                  alt={item.name}
-                />
-                <h4 className="exercise-category">
-                  {item.muscle}: {item.type}
-                </h4>
-                <h4 className="exercise-equipment">{item.equipment}</h4>
-                <p className="exercise-description">
-                  {item.description ? item.description : "no description"}
-                </p>
-                <button
+                {/* <div>
+                  <h2 className="exercise-name">{item.name}</h2>
+                  <img
+                    className="exercise-image"
+                    src={item.image}
+                    alt={item.name}
+                  />
+                  <h4 className="exercise-category">
+                    {item.muscle}: {item.type}
+                  </h4>
+                  <h4 className="exercise-equipment">{item.equipment}</h4>
+                  <p className="exercise-description">
+                    {item.description ? item.description : "no description"}
+                  </p>
+                </div> */}
+
+                {/* <button
                   onClick={() => {
                     let temp = [...chosen];
                     if (temp.includes(item.name) || temp.length === 10) return;
