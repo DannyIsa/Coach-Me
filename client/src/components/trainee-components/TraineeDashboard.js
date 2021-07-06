@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function TraineeDashboard({ userDetails }) {
   return (
@@ -6,6 +7,7 @@ function TraineeDashboard({ userDetails }) {
       {userDetails ? (
         <>
           <h1>{`Hello Trainee ${userDetails.name}`}</h1>
+          <Link to="/trainee/calendar">Weekly Calendar</Link>
         </>
       ) : (
         "Loading..."

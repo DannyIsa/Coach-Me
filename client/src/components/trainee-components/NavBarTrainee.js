@@ -23,6 +23,11 @@ function NavBarTrainee({ signOut, userType }) {
         </div>
         <ul className={click ? "nav-options active" : "nav-options-main"}>
           <li className="option" onClick={closeMobileMenu}>
+            <a href="/dashboard" className="link">
+              Home
+            </a>
+          </li>
+          <li className="option" onClick={closeMobileMenu}>
             <a href="/food" className="link">
               Nutrition
             </a>
@@ -32,11 +37,6 @@ function NavBarTrainee({ signOut, userType }) {
               Workouts
             </a>
           </li> */}
-          <li className="option" onClick={closeMobileMenu}>
-            <a href="/trainee/dashboard" className="link">
-              Home
-            </a>
-          </li>
           <li className="option" onClick={closeMobileMenu}>
             <a href="/trainee/profile" className="link">
               Profile
