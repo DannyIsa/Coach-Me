@@ -641,7 +641,7 @@ form.sign-in-form {
 .create-workout-page .exercises-list {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 50%;
   height: 35rem;
   overflow: scroll;
   display: -webkit-box;

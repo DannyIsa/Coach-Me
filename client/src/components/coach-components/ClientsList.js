@@ -83,9 +83,18 @@ function ClientsList({ userDetails, alertMessage }) {
                     className="fa-fa"
                   />
                 </Link>
-                {/* <button className="edit-button" onClick={handleEdit}>
-                  {editing ? "SAVE" : "✏️"}
-                </button> */}
+                <EditableInputInline
+                  value={
+                    item && item.daily_calorie_goal
+                      ? item.daily_calorie_goal
+                      : "no value"
+                  }
+                  attribute={"daily_calorie_goal"}
+                  clients={clients}
+                  setClients={setClients}
+                  traineeId={item.id}
+                  userDetails={userDetails}
+                />
                 <span className={item.activity_level}>
                   {" " + item.activity_level}
                 </span>
@@ -118,7 +127,7 @@ function ClientsList({ userDetails, alertMessage }) {
                   /> */}
                   Gender:
                 </span>
-                <span>{" " + item.gender}</span>{" "}
+                <span>{" " + item.gender}</span> <br />
                 <span className="first">
                   {/* <FontAwesomeIcon
                     icon={faUser}
@@ -145,7 +154,7 @@ function ClientsList({ userDetails, alertMessage }) {
                   /> */}
                   Weight:
                 </span>
-                <span>{" " + item.weight}</span> {/* <br /> */}
+                <span>{" " + item.weight}</span> <br />
                 <span className="first">
                   {/* <FontAwesomeIcon
                     icon={faArrowsAltV}
@@ -156,7 +165,7 @@ function ClientsList({ userDetails, alertMessage }) {
                 </span>
                 <span>{" " + item.height}</span>
                 <br />
-                <EditableInputInline
+                {/* <EditableInputInline
                   value={
                     item && item.daily_calorie_goal
                       ? item.daily_calorie_goal
@@ -167,7 +176,7 @@ function ClientsList({ userDetails, alertMessage }) {
                   setClients={setClients}
                   traineeId={item.id}
                   userDetails={userDetails}
-                />
+                /> */}
               </div>
             </div>
           ))}

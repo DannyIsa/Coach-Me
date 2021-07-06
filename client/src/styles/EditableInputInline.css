@@ -1,0 +1,25 @@
+.editable-input {
+  position: absolute;
+  top: 1.2rem;
+  right: 10rem;
+  opacity: 0;
+}
+.editable-input input {
+  width: 5rem;
+}
+.edit-button {
+  border: none;
+  padding: 0rem 0.5rem;
+}
+.edit-button:hover {
+  border: none;
+}
+.fas-fas {
+  align-self: center;
+  transition: 0.5s;
+  font-size: 1.2rem;
+}
+
+.client-list-start .ticket-list .ticket:hover .ticket-header .editable-input {
+  opacity: 1;
+}
