@@ -125,8 +125,54 @@ function CreateWorkout({ userDetails }) {
             </div>
           </div>
         </div>
+      </div>
+      <div className="exercises-container">
+        <div className="exercises-left">
+          {exercises.length > 0
+            ? exercises.map((item, index) => (
+                <div
+                  className="exercise-block"
+                  key={"exerciseItem" + index}
+                  draggable={true}
+                  onDragStart={() => {
+                    setDraggedItem(item);
+                  }}
+                  onDragEnd={() => {
+                    setDraggedItem();
+                    if (!snap) return;
+                    let temp = [...chosen];
+                    if (temp.includes(snap.name) || temp.length === 10) return;
+                    temp.push(snap.name);
+                    setChosen(temp);
+                  }}
+                  onClick={() => setChosenWorkout(item)}
+                >
+                  <h2 className="exercise-name">{item.name}</h2>
+                </div>
+              ))
+            : "No Exercises"}
+        </div>
+        {chosenWorkout && (
+          <div className="exercise-middle">
+            <h2 className="exercise-name">{chosenWorkout.name}</h2>
+            <img
+              className="exercise-image"
+              src={chosenWorkout.image}
+              alt={chosenWorkout.name}
+            />
+            <h4 className="exercise-category">
+              {chosenWorkout.muscle}: {chosenWorkout.type}
+            </h4>
+            <h4 className="exercise-equipment">{chosenWorkout.equipment}</h4>
+            <p className="exercise-description">
+              {chosenWorkout.description
+                ? chosenWorkout.description
+                : "no description"}
+            </p>
+          </div>
+        )}
         <div
-          className="new-build-workout"
+          className="exercise-right"
           onDragOver={() => {
             setDraggedOver(true);
           }}
@@ -165,61 +211,6 @@ function CreateWorkout({ userDetails }) {
           )}
         </div>
       </div>
-      <div className="exercises-list">
-        {exercises.length > 0
-          ? exercises.map((item, index) => (
-              <div
-                className="exercise-block"
-                key={"exerciseItem" + index}
-                draggable={true}
-                onDragStart={() => {
-                  setDraggedItem(item);
-                }}
-                onDragEnd={() => {
-                  setDraggedItem();
-                  if (!snap) return;
-                  let temp = [...chosen];
-                  if (temp.includes(snap.name) || temp.length === 10) return;
-                  temp.push(snap.name);
-                  setChosen(temp);
-                }}
-                onClick={() => setChosenWorkout(item)}
-              >
-                <h2 className="exercise-name">{item.name}</h2>
-
-                {/* <button
-                  onClick={() => {
-                    let temp = [...chosen];
-                    if (temp.includes(item.name) || temp.length === 10) return;
-                    temp.push(item.name);
-                    setChosen(temp);
-                  }}
-                >
-                  Add
-                </button> */}
-              </div>
-            ))
-          : "No Exercises"}
-      </div>
-      {chosenWorkout && (
-        <div>
-          <h2 className="exercise-name">{chosenWorkout.name}</h2>
-          <img
-            className="exercise-image"
-            src={chosenWorkout.image}
-            alt={chosenWorkout.name}
-          />
-          <h4 className="exercise-category">
-            {chosenWorkout.muscle}: {chosenWorkout.type}
-          </h4>
-          <h4 className="exercise-equipment">{chosenWorkout.equipment}</h4>
-          <p className="exercise-description">
-            {chosenWorkout.description
-              ? chosenWorkout.description
-              : "no description"}
-          </p>
-        </div>
-      )}
     </div>
   );
 }

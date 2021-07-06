@@ -73,7 +73,7 @@ function TraineeProfile({ userDetails }) {
 
   return (
     <div className="trainee-dashboard">
-      <Link to="/trainee/calendar">Weekly Calendar</Link>
+      {/* <Link to="/trainee/calendar">Weekly Calendar</Link> */}
       {userDetails ? (
         <>
           <h1>Hello {userDetails.name}</h1>

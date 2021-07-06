@@ -595,53 +595,19 @@ form.sign-in-form {
   border: solid 2px #ffc719;
 }
 
-.create-workout-page .new-build-workout {
+.create-workout-page .exercises-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 10rem;
-  width: 20rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  overflow: scroll;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-.create-workout-page .new-build-workout h1 {
-  font-size: 1.5rem;
-}
-
-.create-workout-page .new-build-workout .chosen-exercise {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.create-workout-page .new-build-workout .chosen-exercise button {
-  padding: 0.2rem 0.5rem;
-  margin: 0;
-}
-
-.create-workout-page .new-build-workout .next-button {
-  padding: 0.3rem 0rem;
-  width: 6rem;
-  margin: 0;
-  margin-left: 3rem;
-}
-
-.create-workout-page .exercises-list {
-  position: absolute;
-  bottom: 0;
-  width: 20%;
+.create-workout-page .exercises-container .exercises-left {
+  float: left;
+  width: 30rem;
   height: 35rem;
   overflow: scroll;
   display: -webkit-box;
@@ -649,30 +615,98 @@ form.sign-in-form {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.create-workout-page .exercises-list .exercise-block {
+.create-workout-page .exercises-container .exercise-middle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  padding: 1rem;
+  width: 25rem;
+  padding: 0.5rem 2rem 2rem;
   border-radius: 0.4rem;
 }
 
-.create-workout-page .exercises-list .exercise-block .exercise-name {
+.create-workout-page .exercises-container .exercise-middle .exercise-name {
   text-align: center;
+  width: 20rem;
   word-wrap: break-word;
   font-size: 1.5em;
+}
+
+.create-workout-page .exercises-container .exercise-middle .exercise-image {
+  width: 20rem;
+  height: 20rem;
+}
+
+.create-workout-page .exercises-container .exercise-middle .exercise-category {
+  width: 90%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.create-workout-page .exercises-container .exercise-middle .exercise-equipment {
+  width: 90%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.create-workout-page .exercises-container .exercise-middle .exercise-description {
+  width: 20rem;
+  word-wrap: break-word;
+  font-size: 1.2em;
+}
+
+.create-workout-page .exercises-container .exercise-right {
+  width: 30rem;
+  height: 35rem;
+  overflow: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: absolute;
+  right: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.create-workout-page .exercises-container .exercise-right h1 {
+  font-size: 1.5rem;
+}
+
+.create-workout-page .exercises-container .exercise-right .chosen-exercise {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.create-workout-page .exercises-container .exercise-right .chosen-exercise button {
+  padding: 0.2rem 0.5rem;
+  margin: 0;
+}
+
+.create-workout-page .exercises-container .exercise-right .next-button {
+  padding: 0.3rem 0rem;
+  width: 6rem;
+  margin: 0;
+  margin-left: 3rem;
 }
 
 @media (max-height: 840px) {

@@ -48,90 +48,100 @@
     }
   }
 
-  .new-build-workout {
+  .exercises-container {
     display: flex;
-    flex-direction: column;
-    height: 10rem;
-    width: 20rem;
-    justify-content: space-between;
-    overflow: scroll;
-
-    h1 {
-      font-size: 1.5rem;
-    }
-    .chosen-exercise {
+    flex-direction: row;
+    .exercises-left {
+      // position: absolute;
+      // bottom: 0;
+      float: left;
+      width: 30rem;
+      height: 35rem;
+      overflow: scroll;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-around;
-      align-items: center;
 
-      button {
-        padding: 0.2rem 0.5rem;
-        margin: 0;
-      }
+      // .exercise-block {
+      //   display: flex;
+      //   position: relative;
+      //   align-items: center;
+      //   flex-direction: column;
+      //   justify-content: space-around;
+      //   width: 25rem;
+      //   padding: 0.5rem 2rem 2rem;
+      //   border-radius: 0.4rem;
+      //   margin-bottom: 2rem;
+      //   // background-color: #5995fd;
+      // }
     }
-    .next-button {
-      padding: 0.3rem 0rem;
-      width: 6rem;
-      margin: 0;
-      margin-left: 3rem;
-    }
-  }
-
-  .exercises-list {
-    position: absolute;
-    bottom: 0;
-    width: 20%;
-    height: 35rem;
-    overflow: scroll;
-    display: flex;
-    flex-wrap: wrap;
-    // justify-content: space-around;
-
-    .exercise-block {
+    .exercise-middle {
       display: flex;
-      position: relative;
-      align-items: center;
+      text-align: center;
       flex-direction: column;
       justify-content: space-around;
-      // width: 25rem;
-      padding: 1rem;
+      width: 25rem;
+      padding: 0.5rem 2rem 2rem;
       border-radius: 0.4rem;
-      // margin-bottom: 2rem;
-      // background-color: #5995fd;
 
       .exercise-name {
-        // background-color: blue;
         text-align: center;
-        // width: 20rem;
+        width: 20rem;
         word-wrap: break-word;
         font-size: 1.5em;
       }
-      // .exercise-image {
-      //   width: 20rem;
-      //   height: 20rem;
-      // }
-      // .exercise-category {
-      //   // background-color: rgb(255, 0, 179);
-      //   width: 90%;
-      //   flex-wrap: wrap;
-      // }
-      // .exercise-equipment {
-      //   // background-color: rgb(136, 255, 0);
-      //   width: 90%;
-      //   flex-wrap: wrap;
-      // }
-      // .exercise-description {
-      //   // background-color: rgb(255, 115, 0);
-      //   width: 20rem;
-      //   word-wrap: break-word;
-      //   font-size: 1.2em;
-      // }
-      // button {
-      //   padding: 0.5rem;
-      // }
+      .exercise-image {
+        width: 20rem;
+        height: 20rem;
+      }
+      .exercise-category {
+        width: 90%;
+        flex-wrap: wrap;
+      }
+      .exercise-equipment {
+        width: 90%;
+        flex-wrap: wrap;
+      }
+      .exercise-description {
+        width: 20rem;
+        word-wrap: break-word;
+        font-size: 1.2em;
+      }
+    }
+    .exercise-right {
+      // float: right;
+      width: 30rem;
+      height: 35rem;
+      overflow: scroll;
+      display: flex;
+      flex-wrap: wrap;
+      position: absolute;
+      right: 0;
+      flex-direction: column;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+      .chosen-exercise {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        button {
+          padding: 0.2rem 0.5rem;
+          margin: 0;
+        }
+      }
+      .next-button {
+        padding: 0.3rem 0rem;
+        width: 6rem;
+        margin: 0;
+        margin-left: 3rem;
+      }
     }
   }
 }
+
 @media (max-height: 840px) {
   .create-workout-page {
     padding-top: 5rem;
