@@ -1,10 +1,10 @@
-.editable-input {
+.editable-input-inline {
   position: absolute;
   top: 1.2rem;
   right: 10rem;
   opacity: 0;
 }
-.editable-input input {
+.editable-input-inline input {
   width: 5rem;
 }
 .edit-button {
@@ -20,6 +20,10 @@
   font-size: 1.2rem;
 }
 
-.client-list-start .ticket-list .ticket:hover .ticket-header .editable-input {
+.client-list-start
+  .ticket-list
+  .ticket:hover
+  .ticket-header
+  .editable-input-inline {
   opacity: 1;
 }

@@ -41,7 +41,7 @@ function EditableInput({
   };
 
   return (
-    <div className="editable-input">
+    <div className="editable-input-inline">
       {/* <label>Daily Goal: </label> */}
       {/* <label>{attribute.split("_").join(" ") + ": "}</label> */}
       {editing ? (

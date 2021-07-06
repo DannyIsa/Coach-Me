@@ -74,7 +74,9 @@ export default function WeeklyCalendar({ userDetails }) {
                   <td key={di}>
                     <div className="table-one-container">
                       <h3 className="container-title">{meal}</h3>
-                      <p>{items ? items.name + " X" + items.amount : ""}</p>
+                      {items.map((item) => {
+                        return <p>{item && item.name + " X" + item.amount}</p>;
+                      })}
                     </div>
                   </td>
                 );
@@ -101,20 +103,28 @@ export default function WeeklyCalendar({ userDetails }) {
         </tbody>
       </table>
       {chosenWorkout && (
-        <div>
-          <h5>{chosenWorkout.name}</h5>
-          {chosenWorkout.exercises.map((exercise) => {
-            return (
-              <div>
-                <h6>{exercise.name}</h6>
-                <p>Sets: {exercise.sets}</p>
-                <p>Minimum reps: {exercise.min_reps}</p>
-                <p>Maximum reps: {exercise.max_reps}</p>
-                <p>Adeed weight: {exercise.added_weight}</p>
-                <p>Rest: {exercise.rest}</p>
-              </div>
-            );
-          })}
+        <div className="popup-background">
+          <div className="popup-workout">
+            <button
+              onClick={() => setChosenWorkout(false)}
+              className="popup-close-button"
+            >
+              CLOSE
+            </button>
+            <h1>{chosenWorkout.name}</h1>
+            {chosenWorkout.exercises.map((exercise) => {
+              return (
+                <div>
+                  <h3>{exercise.name}</h3>
+                  <p>Sets: {exercise.sets}</p>
+                  <p>Minimum reps: {exercise.min_reps}</p>
+                  <p>Maximum reps: {exercise.max_reps}</p>
+                  <p>Adeed weight: {exercise.added_weight}</p>
+                  <p>Rest: {exercise.rest}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>
