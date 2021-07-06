@@ -13,6 +13,9 @@ function TraineeRouter({ userDetails, alertMessage }) {
         <Route exact path="/trainee/calendar">
           <WeeklyCalendar userDetails={userDetails} />
         </Route>
+        <Route exact path="/trainee/workout/:workoutId">
+          <WeeklyCalendar userDetails={userDetails} />
+        </Route>
       </Switch>
     </Router>
   );

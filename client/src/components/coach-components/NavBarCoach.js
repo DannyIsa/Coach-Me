@@ -98,10 +98,9 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
             <div className="notification">
               <div className="notBtn">
                 <div className="number">
-                  {" "}
-                  <div className="requests-alert">
-                    {requests ? requests.length : 0}
-                  </div>
+                  {requests && requests.length > 0 && (
+                    <div className="requests-alert">{requests.length}</div>
+                  )}
                 </div>
                 <FontAwesomeIcon
                   icon={faBell}

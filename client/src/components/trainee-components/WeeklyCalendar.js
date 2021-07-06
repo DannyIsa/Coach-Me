@@ -58,7 +58,7 @@ export default function WeeklyCalendar({ userDetails }) {
           {Meals.map((meal, mi) => (
             <tr key={mi}>
               {DaysOfTheWeek.map((day, di) => {
-                let item = needToEat.find(
+                let items = needToEat.filter(
                   (foodToEat) =>
                     foodToEat.day === day && foodToEat.meal_of_the_day === meal
                 );
@@ -66,7 +66,9 @@ export default function WeeklyCalendar({ userDetails }) {
                   <td key={di}>
                     {meal +
                       " " +
-                      (item ? ":\n" + item.name + " X" + item.amount : "")}
+                      items.map((item) =>
+                        item ? "\n" + item.name + " X" + item.amount : ""
+                      )}
                   </td>
                 );
               })}
@@ -77,7 +79,7 @@ export default function WeeklyCalendar({ userDetails }) {
               let item = workouts.find((workout) => workout.day === day);
               return (
                 <td key={index}>
-                  {"workout" + (item ? ":\n" + item.name : "")}
+                  {"Workout" + (item ? ":\n" + item.name : "")}
                 </td>
               );
             })}
