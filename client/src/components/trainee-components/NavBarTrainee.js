@@ -50,6 +50,17 @@ function NavBarTrainee({ signOut, userType, userDetails, alertMessage }) {
       .catch((err) => console.log(err.response.data));
   }
 
+  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111111");
+  console.log(request);
+  console.log(
+    "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!2222222"
+  );
+
+  console.log(coaches);
+  console.log(
+    "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!3333333"
+  );
+
   return (
     <div className="homeNav">
       <div className="logo-nav">
@@ -84,9 +95,7 @@ function NavBarTrainee({ signOut, userType, userDetails, alertMessage }) {
               <div className="notBtn">
                 <div className="number">
                   {coaches && request.length > 0 && (
-                    <div className="requests-alert">
-                      {coaches && request.length}
-                    </div>
+                    <div className="requests-alert">{request.length}</div>
                   )}
                 </div>
                 <FontAwesomeIcon

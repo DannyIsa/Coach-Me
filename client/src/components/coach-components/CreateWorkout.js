@@ -97,7 +97,7 @@ function CreateWorkout({ userDetails }) {
             {typeTags.map((item, index) => (
               <strong
                 key={"typeTag" + index}
-                className="type tag"
+                className={`${item} tag`}
                 onClick={() => {
                   setSortValue("type");
                   setSearchInput(item);
@@ -110,16 +110,16 @@ function CreateWorkout({ userDetails }) {
           <h3>Sort by Working Muscles:</h3>
           <div className="muscles">
             {muscleTags.map((item, index) => (
-              <strong
+              <span
                 key={"muscleTag" + index}
-                className="muscle tag"
+                className={`${item} tag`}
                 onClick={() => {
                   setSortValue("muscle");
                   setSearchInput(item);
                 }}
               >
                 {item}
-              </strong>
+              </span>
             ))}
           </div>
         </div>

@@ -41,17 +41,51 @@
       height: 9rem;
 
       .tag {
-        margin: 3px;
-        font-size: 1em;
-        padding: 3px;
-        border: solid 2px;
-        border-radius: 10%;
-        font-weight: lighter;
-        &:hover {
-          font-size: 1.2em;
-          // cursor: pointer;
-          border: solid 2px #ffc719;
-        }
+        white-space: nowrap;
+        border-radius: 0.2rem;
+        padding: 0.2rem;
+        font-weight: 700;
+        font-size: 0.8rem;
+        margin-right: 0.2rem;
+        margin-bottom: 0.2rem;
+        background-color: plum;
+        // opacity: 0;
+        // &:hover {
+        // font-size: 1.2em;
+        // cursor: pointer;
+        // border: solid 2px #ffc719;
+        // }
+      }
+
+      .Arms {
+        background-color: rgb(151, 99, 209);
+      }
+
+      .Core {
+        background-color: lightblue;
+      }
+
+      .Back {
+        background-color: lightgreen;
+      }
+
+      .Legs {
+        background-color: rgb(255, 127, 127);
+      }
+      .Weight {
+        background-color: grey;
+      }
+      .Machine {
+        background-color: rgb(255, 127, 244);
+      }
+      .Cardio {
+        background-color: rgb(127, 229, 255);
+      }
+      .Laps {
+        background-color: rgb(228, 201, 84);
+      }
+      .Plyo {
+        background-color: rgb(195, 118, 29);
       }
     }
   }

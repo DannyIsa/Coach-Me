@@ -588,17 +588,50 @@ form.sign-in-form {
 }
 
 .create-workout-page .search-div .tags .tag {
-  margin: 3px;
-  font-size: 1em;
-  padding: 3px;
-  border: solid 2px;
-  border-radius: 10%;
-  font-weight: lighter;
+  white-space: nowrap;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+  background-color: plum;
 }
 
-.create-workout-page .search-div .tags .tag:hover {
-  font-size: 1.2em;
-  border: solid 2px #ffc719;
+.create-workout-page .search-div .tags .Arms {
+  background-color: #9763d1;
+}
+
+.create-workout-page .search-div .tags .Core {
+  background-color: lightblue;
+}
+
+.create-workout-page .search-div .tags .Back {
+  background-color: lightgreen;
+}
+
+.create-workout-page .search-div .tags .Legs {
+  background-color: #ff7f7f;
+}
+
+.create-workout-page .search-div .tags .Weight {
+  background-color: grey;
+}
+
+.create-workout-page .search-div .tags .Machine {
+  background-color: #ff7ff4;
+}
+
+.create-workout-page .search-div .tags .Cardio {
+  background-color: #7fe5ff;
+}
+
+.create-workout-page .search-div .tags .Laps {
+  background-color: #e4c954;
+}
+
+.create-workout-page .search-div .tags .Plyo {
+  background-color: #c3761d;
 }
 
 .create-workout-page .exercises-container {

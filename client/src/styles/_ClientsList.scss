@@ -83,110 +83,11 @@
         background-color: rgb(255, 127, 127);
       }
 
-      // .hidden {
-      //   overflow: hidden;
-      //   text-overflow: ellipsis;
-      //   display: -webkit-box;
-      //   -webkit-line-clamp: 3;
-      //   -webkit-box-orient: vertical;
-      // }
-
-      // #show {
-      //   font-weight: 700;
-      //   font-size: 1.1em;
-      // }
       #footer {
         display: flex;
         flex-direction: column;
         padding-top: 0.5em;
       }
-
-      // #done-button {
-      //   position: absolute;
-      //   left: 0.6rem;
-      //   margin-top: -0.3rem;
-      //   width: 1.6rem;
-      //   opacity: 0;
-      // }
-
-      // .ticket:hover #done-button {
-      //   opacity: 1;
-      // }
     }
   }
 }
-// .img-container {
-//   position: relative;
-//   display: flex;
-//   flex-direction: row;
-//   height: 200px;
-//   width: 100vw;
-//   flex-wrap: wrap;
-// }
-
-// .img-mini {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: 2rem;
-//   margin-left: 3rem;
-//   // margin-bottom: 2rem;
-//   // width: 20vw;
-//   // height: 30vh;
-//   background-color: pink;
-//   flex-wrap: wrap;
-//   overflow: scroll;
-// }
-
-// .img-description {
-//   display: flex;
-//   flex-direction: column;
-//   width: 20vw;
-//   height: 30vh;
-//   font-size: 1.3rem;
-//   // position: absolute;
-//   // top: 0;
-//   // bottom: 0;
-//   // left: 0;
-//   // right: 0;
-//   background: rgba(29, 106, 154, 0.72);
-//   color: #fff;
-//   // visibility: hidden;
-//   // opacity: 0;
-//   // transition: opacity 2s, visibility 1s;
-//   word-wrap: break-word;
-//   overflow: scroll;
-
-//   .trainee-details {
-//     & .first {
-//       font-size: 1.3rem;
-//       font-weight: bold;
-//     }
-//   }
-
-//   .fa-fa :hover {
-//     color: #ffc719;
-//   }
-// }
-
-// .img-container:hover .img-description {
-//   visibility: visible;
-//   opacity: 1;
-// }
-
-// .client-div {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: 2rem;
-//   width: 30vw;
-//   height: 30vh;
-//   background-color: pink;
-
-//   &:hover {
-//     opacity: 0.8;
-//     transform: scale(1.1);
-//     transition: transform 2s;
-//   }
-// }
-// }
