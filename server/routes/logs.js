@@ -132,7 +132,7 @@ logs.post("/diet/add", async (req, res) => {
     return res.status(400).send("Invalid ID");
   }
   if (!totalCalories || !usedCalories) {
-    return res.status(404).send("Must sand total and used caloriess");
+    return res.status(404).send("Must send total and used calories");
   }
 
   models.DietLog.create({

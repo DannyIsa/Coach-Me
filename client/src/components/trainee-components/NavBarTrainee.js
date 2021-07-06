@@ -15,7 +15,7 @@ import {
 import "../../styles/NavBar.css";
 import logo from "../../pics/logo.png";
 
-function NavBarTrainee({ signOut, userType, userDetails, alertMessage }) {
+function NavBarTrainee({ signOut, userDetails, alertMessage }) {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -112,7 +112,7 @@ function NavBarTrainee({ signOut, userType, userDetails, alertMessage }) {
                               <div className="alert sec" key={"alert" + index}>
                                 <div className="txt">{item.coach_name}</div>
                                 <div className="txt">{item.content}</div>
-                                {/* <div className="txt sub">
+                                <div className="txt sub">
                                   {new Date(item.updatedAt).toLocaleDateString(
                                     "it-IT"
                                   ) +
@@ -120,7 +120,7 @@ function NavBarTrainee({ signOut, userType, userDetails, alertMessage }) {
                                     new Date(item.updatedAt).toLocaleTimeString(
                                       "it-IT"
                                     )}
-                                </div> */}
+                                </div>
                                 <div className="coaches-item" key={"C" + index}>
                                   <h3>{item.name}</h3>
                                   {item.id === userDetails.coach_id ? (

@@ -124,7 +124,7 @@ function App() {
                     userDetails={userDetails}
                   />
                 ) : (
-                  <NavBarTrainee userType={userType} signOut={signOut} />
+                  <NavBarTrainee userDetails={userDetails} signOut={signOut} />
                 )}
                 <Switch>
                   <Route exact path="/dashboard">
