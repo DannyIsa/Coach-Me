@@ -534,21 +534,26 @@ form.sign-in-form {
   overflow: scroll;
 }
 
-.create-workout-page .main-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+.create-workout-page h1 {
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: lighter;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .create-workout-page .search-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  margin-left: 12rem;
+  width: 85rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .create-workout-page .search-div .search {
@@ -588,6 +593,7 @@ form.sign-in-form {
   padding: 3px;
   border: solid 2px;
   border-radius: 10%;
+  font-weight: lighter;
 }
 
 .create-workout-page .search-div .tags .tag:hover {
@@ -599,6 +605,11 @@ form.sign-in-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 2rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -606,7 +617,6 @@ form.sign-in-form {
 }
 
 .create-workout-page .exercises-container .exercises-left {
-  float: left;
   width: 30rem;
   height: 35rem;
   overflow: scroll;
@@ -615,24 +625,35 @@ form.sign-in-form {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  cursor: -webkit-grab;
+  cursor: grab;
+  background-color: #1456a1;
+  border-radius: 0.4rem;
+}
+
+.create-workout-page .exercises-container .exercises-left .exercise-block {
+  padding: 0.5rem 1rem;
+}
+
+.create-workout-page .exercises-container .exercises-left .exercise-block h2 {
+  font-weight: lighter;
 }
 
 .create-workout-page .exercises-container .exercise-middle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 25rem;
+  width: 30rem;
   padding: 0.5rem 2rem 2rem;
   border-radius: 0.4rem;
+  background-color: #1456a1;
+  cursor: no-drop;
 }
 
 .create-workout-page .exercises-container .exercise-middle .exercise-name {
@@ -640,11 +661,17 @@ form.sign-in-form {
   width: 20rem;
   word-wrap: break-word;
   font-size: 1.5em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .create-workout-page .exercises-container .exercise-middle .exercise-image {
   width: 20rem;
   height: 20rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .create-workout-page .exercises-container .exercise-middle .exercise-category {
@@ -666,6 +693,8 @@ form.sign-in-form {
 }
 
 .create-workout-page .exercises-container .exercise-right {
+  text-align: center;
+  background-color: #1456a1;
   width: 30rem;
   height: 35rem;
   overflow: scroll;
@@ -674,16 +703,21 @@ form.sign-in-form {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  position: absolute;
-  right: 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-radius: 0.4rem;
 }
 
 .create-workout-page .exercises-container .exercise-right h1 {
   font-size: 1.5rem;
+  margin: 1rem 0rem;
+}
+
+.create-workout-page .exercises-container .exercise-right p {
+  font-size: 1.3rem;
+  margin: 13rem 0rem;
 }
 
 .create-workout-page .exercises-container .exercise-right .chosen-exercise {
@@ -707,42 +741,6 @@ form.sign-in-form {
   width: 6rem;
   margin: 0;
   margin-left: 3rem;
-}
-
-@media (max-height: 840px) {
-  .create-workout-page {
-    padding-top: 5rem;
-  }
-}
-
-@media (max-width: 770px) {
-  .create-workout-page {
-    padding-top: 5rem;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .create-workout-page .main-div {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .create-workout-page .main-div .search-div {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .create-workout-page .exercises-list {
-    height: 24rem;
-  }
 }
 
 .create-workouts-start {
@@ -872,7 +870,7 @@ form.sign-in-form {
 }
 
 .client-list-start .ticket-list .ticket .Sedentary {
-  background-color: gray;
+  background-color: #ff7ff4;
 }
 
 .client-list-start .ticket-list .ticket .LightlyActive {
@@ -884,7 +882,7 @@ form.sign-in-form {
 }
 
 .client-list-start .ticket-list .ticket .VeryActive {
-  background-color: tomato;
+  background-color: #ff7f7f;
 }
 
 .client-list-start .ticket-list .ticket #footer {

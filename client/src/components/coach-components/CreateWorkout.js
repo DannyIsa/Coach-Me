@@ -68,61 +68,59 @@ function CreateWorkout({ userDetails }) {
         }
       }}
     >
-      <div className="main-div">
-        {/* <h1>Create a new workout</h1> */}
-        {userDetails && (
-          <CreateWorkoutPopup
-            userDetails={userDetails}
-            trigger={popupTrigger}
-            setTrigger={setPopupTrigger}
-            exercises={chosen}
-            setExercises={setChosen}
-            edit={false}
+      <h1>Create a new workout</h1>
+      {userDetails && (
+        <CreateWorkoutPopup
+          userDetails={userDetails}
+          trigger={popupTrigger}
+          setTrigger={setPopupTrigger}
+          exercises={chosen}
+          setExercises={setChosen}
+          edit={false}
+        />
+      )}
+      <div className="search-div">
+        <div className="search">
+          <input
+            placeholder="Search for exercises"
+            onFocus={() => {
+              setSortValue("name");
+              setSearchInput("");
+            }}
+            onChange={(e) => setSearchInput(e.target.value)}
           />
-        )}
-        <div className="search-div">
-          <div className="search">
-            <input
-              placeholder="Search for exercises"
-              onFocus={() => {
-                setSortValue("name");
-                setSearchInput("");
-              }}
-              onChange={(e) => setSearchInput(e.target.value)}
-            />
-            <Link to="/coach/add-exercise"> Add Exercise</Link>
+          <Link to="/coach/add-exercise"> Add Exercise</Link>
+        </div>
+        <div className="tags">
+          <h3>Sort by Exercise Types:</h3>
+          <div className="types">
+            {typeTags.map((item, index) => (
+              <strong
+                key={"typeTag" + index}
+                className="type tag"
+                onClick={() => {
+                  setSortValue("type");
+                  setSearchInput(item);
+                }}
+              >
+                {item}
+              </strong>
+            ))}
           </div>
-          <div className="tags">
-            <h3>Sort by Exercise Types:</h3>
-            <div className="types">
-              {typeTags.map((item, index) => (
-                <strong
-                  key={"typeTag" + index}
-                  className="type tag"
-                  onClick={() => {
-                    setSortValue("type");
-                    setSearchInput(item);
-                  }}
-                >
-                  {item}
-                </strong>
-              ))}
-            </div>
-            <h3>Sort by Working Muscles:</h3>
-            <div className="muscles">
-              {muscleTags.map((item, index) => (
-                <strong
-                  key={"muscleTag" + index}
-                  className="muscle tag"
-                  onClick={() => {
-                    setSortValue("muscle");
-                    setSearchInput(item);
-                  }}
-                >
-                  {item}
-                </strong>
-              ))}
-            </div>
+          <h3>Sort by Working Muscles:</h3>
+          <div className="muscles">
+            {muscleTags.map((item, index) => (
+              <strong
+                key={"muscleTag" + index}
+                className="muscle tag"
+                onClick={() => {
+                  setSortValue("muscle");
+                  setSearchInput(item);
+                }}
+              >
+                {item}
+              </strong>
+            ))}
           </div>
         </div>
       </div>
@@ -147,30 +145,32 @@ function CreateWorkout({ userDetails }) {
                   }}
                   onClick={() => setChosenWorkout(item)}
                 >
-                  <h2 className="exercise-name">{item.name}</h2>
+                  <h2 className="exercise-name">{item.name} </h2>
                 </div>
               ))
             : "No Exercises"}
         </div>
-        {chosenWorkout && (
-          <div className="exercise-middle">
-            <h2 className="exercise-name">{chosenWorkout.name}</h2>
-            <img
-              className="exercise-image"
-              src={chosenWorkout.image}
-              alt={chosenWorkout.name}
-            />
-            <h4 className="exercise-category">
-              {chosenWorkout.muscle}: {chosenWorkout.type}
-            </h4>
-            <h4 className="exercise-equipment">{chosenWorkout.equipment}</h4>
-            <p className="exercise-description">
-              {chosenWorkout.description
-                ? chosenWorkout.description
-                : "no description"}
-            </p>
-          </div>
-        )}
+        <div className="exercise-middle">
+          {chosenWorkout && (
+            <>
+              <h2 className="exercise-name">{chosenWorkout.name}</h2>
+              <img
+                className="exercise-image"
+                src={chosenWorkout.image}
+                alt={chosenWorkout.name}
+              />
+              <h4 className="exercise-category">
+                {chosenWorkout.muscle}: {chosenWorkout.type}
+              </h4>
+              <h4 className="exercise-equipment">{chosenWorkout.equipment}</h4>
+              <p className="exercise-description">
+                {chosenWorkout.description
+                  ? chosenWorkout.description
+                  : "no description"}
+              </p>
+            </>
+          )}
+        </div>
         <div
           className="exercise-right"
           onDragOver={() => {
@@ -192,12 +192,12 @@ function CreateWorkout({ userDetails }) {
                     setChosen(temp);
                   }}
                 >
-                  <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faTimes} />
                 </button>
               </div>
             ))
           ) : (
-            <h1>No Exercises</h1>
+            <p>Drag an exercise from the list and drop it here</p>
           )}
           {chosen.length > 0 && (
             <button

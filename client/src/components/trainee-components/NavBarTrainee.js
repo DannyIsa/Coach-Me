@@ -1,17 +1,54 @@
-import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 import { ReactComponent as CloseMenu } from "../../assets/x.svg";
 import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSearchLocation,
+  faCheck,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
+
 import "../../styles/NavBar.css";
 import logo from "../../pics/logo.png";
 
-function NavBarTrainee({ signOut, userType }) {
+function NavBarTrainee({ signOut, userType, userDetails, alertMessage }) {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   const history = useHistory();
+  // const [render, setRender] = useState(false);
+  const [coaches, setCoaches] = useState();
+  const [request, setRequest] = useState();
+
+  useEffect(async () => {
+    if (alertMessage) if (!alertMessage.startsWith("Request")) return;
+    if (!userDetails) return;
+    let coachesData = (await axios.get("/api/coach/show/all")).data;
+    setCoaches(coachesData);
+    let requestData = (
+      await axios.get("/api/trainee/request/show/" + userDetails.id)
+    ).data;
+    if (requestData) setRequest(requestData);
+  }, [userDetails, alertMessage]);
+
+  function sendRequest(coachId, traineeId, traineeName) {
+    const content = prompt("Enter Your Request Content");
+    if (!content) return;
+    axios
+      .post(`/api/trainee/request/send/${traineeId}`, {
+        coachId,
+        traineeName,
+        content,
+      })
+      .then(({ data }) => {
+        setRequest(data);
+      })
+      .catch((err) => console.log(err.response.data));
+  }
 
   return (
     <div className="homeNav">
@@ -32,20 +69,78 @@ function NavBarTrainee({ signOut, userType }) {
               Nutrition
             </a>
           </li>
-          {/* <li className="option" onClick={closeMobileMenu}>
-            <a href={`/${userType}/workouts`} className="link">
-              Workouts
-            </a>
-          </li> */}
           <li className="option" onClick={closeMobileMenu}>
             <a href="/trainee/profile" className="link">
               Profile
             </a>
           </li>
-          <li className="option" onClick={closeMobileMenu}>
+          {/* <li className="option" onClick={closeMobileMenu}>
             <a href="/trainee/coaches" className="link">
               Find A Coach
             </a>
+          </li> */}
+          <li className="option">
+            <div className="notification">
+              <div className="notBtn">
+                <div className="number">
+                  {coaches && request.length > 0 && (
+                    <div className="requests-alert">
+                      {coaches && request.length}
+                    </div>
+                  )}
+                </div>
+                <FontAwesomeIcon
+                  icon={faSearchLocation}
+                  color="white"
+                  className="fa-fa"
+                />
+                <div className="box">
+                  <div className="display">
+                    <div className="cont">
+                      <div className="alerts-div">
+                        {coaches && request
+                          ? coaches.map((item, index) => (
+                              <div className="alert sec" key={"alert" + index}>
+                                <div className="txt">{item.coach_name}</div>
+                                <div className="txt">{item.content}</div>
+                                {/* <div className="txt sub">
+                                  {new Date(item.updatedAt).toLocaleDateString(
+                                    "it-IT"
+                                  ) +
+                                    ", " +
+                                    new Date(item.updatedAt).toLocaleTimeString(
+                                      "it-IT"
+                                    )}
+                                </div> */}
+                                <div className="coaches-item" key={"C" + index}>
+                                  <h3>{item.name}</h3>
+                                  {item.id === userDetails.coach_id ? (
+                                    "Your Coach"
+                                  ) : item.id === request.coach_id ? (
+                                    "Request Pending"
+                                  ) : (
+                                    <button
+                                      onClick={() =>
+                                        sendRequest(
+                                          item.id,
+                                          userDetails.id,
+                                          userDetails.name
+                                        )
+                                      }
+                                    >
+                                      Send Request
+                                    </button>
+                                  )}
+                                </div>
+                              </div>
+                            ))
+                          : "Loading..."}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
           <li className="option mobile-option" onClick={closeMobileMenu}>
             <Link className="sign-in link" onClick={() => signOut(history)}>
