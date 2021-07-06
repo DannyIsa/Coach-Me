@@ -135,20 +135,24 @@ function CreateWorkout({ userDetails }) {
           }}
         >
           <h1>New Workout :</h1>
-          {chosen.map((item, index) => (
-            <div className="chosen-exercise" key={"chosen" + index}>
-              {item}
-              <button
-                onClick={() => {
-                  let temp = [...chosen];
-                  temp = temp.filter((value) => value !== item);
-                  setChosen(temp);
-                }}
-              >
-                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-              </button>
-            </div>
-          ))}
+          {chosen.length > 0 ? (
+            chosen.map((item, index) => (
+              <div className="chosen-exercise" key={"chosen" + index}>
+                {item}
+                <button
+                  onClick={() => {
+                    let temp = [...chosen];
+                    temp = temp.filter((value) => value !== item);
+                    setChosen(temp);
+                  }}
+                >
+                  <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
+                </button>
+              </div>
+            ))
+          ) : (
+            <h1>No Exercises</h1>
+          )}
           {chosen.length > 0 && (
             <button
               className="next-button"
