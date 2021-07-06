@@ -1,14 +1,23 @@
 .table {
-  display: flex;
+  height: 85vh;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.column {
-  border: 1px black solid;
+.table td {
+  border: 3px #0099ff solid;
 }
 
-.table-meal {
-  border: 1px black solid;
+.table-one-container {
+  width: auto;
+  height: 100%;
 }
-.chosen-meal {
-  border: 1px red solid;
+
+.day-title {
+  font-size: 2.3rem;
+}
+
+.container-title {
+  font-size: 1.5rem;
+  margin-top: 0;
 }
