@@ -16,6 +16,7 @@ function CreateWorkout({ userDetails }) {
   const [popupTrigger, setPopupTrigger] = useState(false);
   const [draggedItem, setDraggedItem] = useState();
   const [draggedOver, setDraggedOver] = useState(false);
+  const [chosenWorkout, setChosenWorkout] = useState();
   const [snap, setSnap] = useState();
   function addItem(array, str) {
     if (str.includes(",")) {
@@ -178,23 +179,9 @@ function CreateWorkout({ userDetails }) {
                   temp.push(snap.name);
                   setChosen(temp);
                 }}
+                onClick={() => setChosenWorkout(item)}
               >
                 <h2 className="exercise-name">{item.name}</h2>
-                {/* <div>
-                  <h2 className="exercise-name">{item.name}</h2>
-                  <img
-                    className="exercise-image"
-                    src={item.image}
-                    alt={item.name}
-                  />
-                  <h4 className="exercise-category">
-                    {item.muscle}: {item.type}
-                  </h4>
-                  <h4 className="exercise-equipment">{item.equipment}</h4>
-                  <p className="exercise-description">
-                    {item.description ? item.description : "no description"}
-                  </p>
-                </div> */}
 
                 {/* <button
                   onClick={() => {
@@ -210,6 +197,25 @@ function CreateWorkout({ userDetails }) {
             ))
           : "No Exercises"}
       </div>
+      {chosenWorkout && (
+        <div>
+          <h2 className="exercise-name">{chosenWorkout.name}</h2>
+          <img
+            className="exercise-image"
+            src={chosenWorkout.image}
+            alt={chosenWorkout.name}
+          />
+          <h4 className="exercise-category">
+            {chosenWorkout.muscle}: {chosenWorkout.type}
+          </h4>
+          <h4 className="exercise-equipment">{chosenWorkout.equipment}</h4>
+          <p className="exercise-description">
+            {chosenWorkout.description
+              ? chosenWorkout.description
+              : "no description"}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
