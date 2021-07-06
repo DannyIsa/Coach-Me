@@ -77,14 +77,13 @@ function TraineeProfile({ userDetails }) {
       {userDetails ? (
         <>
           <h1>Hello {userDetails.name}</h1>
-          {/* <h1>{userDetails.email}</h1> */}
+          <h1>{userDetails.email}</h1>
           <br />
           <h2>Personal info:</h2>
           <div>Email: {userDetails.email}</div>
           <div>birthdate: {userDetails.birthdate}</div>
-          <div>Goal: {}</div>
+          <div>Goal: {userDetails.daily_calorie_goal}</div>
           <div>Activity Level: {userDetails.activity_level}</div>
-          <div>Workouts Per Week: {}</div>
           <br />
           <button className="edit-button" onClick={updateMeasurements}>
             {editMode ? "Save" : "Edit"}
@@ -176,7 +175,7 @@ function TraineeProfile({ userDetails }) {
               download pdf
             </a>
           </div>
-
+          {JSON.stringify(userDetails)}
           <br />
           <h2>
             My Next Workout:
