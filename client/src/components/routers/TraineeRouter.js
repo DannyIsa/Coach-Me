@@ -2,11 +2,15 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import CoachesList from "../trainee-components/CoachesList";
 import WeeklyCalendar from "../trainee-components/WeeklyCalendar";
-
+import WorkoutTimer from "../trainee-components/WorkoutTimer";
+import TraineeProfile from "../trainee-components/TraineeProfile";
 function TraineeRouter({ userDetails, alertMessage }) {
   return (
     <Router>
       <Switch>
+        <Route exact path="/trainee/profile">
+          <TraineeProfile userDetails={userDetails} />
+        </Route>
         <Route exact path="/trainee/coaches">
           <CoachesList userDetails={userDetails} alertMessage={alertMessage} />
         </Route>
@@ -14,7 +18,7 @@ function TraineeRouter({ userDetails, alertMessage }) {
           <WeeklyCalendar userDetails={userDetails} />
         </Route>
         <Route exact path="/trainee/workout/:workoutId">
-          <WeeklyCalendar userDetails={userDetails} />
+          <WorkoutTimer userDetails={userDetails} />
         </Route>
       </Switch>
     </Router>

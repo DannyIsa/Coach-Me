@@ -74,13 +74,13 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
     <div className="homeNav">
       <div className="logo-nav">
         <div className="logo-container">
-          <Link to="/profile">
+          <Link to="/dashboard">
             <img src={logo} id="logo" alt="CoachMe Logo" />
           </Link>
         </div>
         <ul className={click ? "nav-options active" : "nav-options-main"}>
           <li className="option" onClick={closeMobileMenu}>
-            <Link to="/profile" className="link">
+            <Link to="/dashboard" className="link">
               Home
             </Link>
           </li>
