@@ -263,6 +263,15 @@ function SignUp({ setReqDone }) {
               Sign up
             </button>
             <h2 className="error-message">{errorMessage}</h2>
+            {/* <div className="red-alert">
+              <span
+                className="closebtn"
+                onClick="this.parentElement.style.display='none';"
+              >
+                &times;
+              </span>
+              <b>Error: </b> {errorMessage}
+            </div> */}
           </div>
           <img src="img/log.svg" className="image" alt="" />
         </div>
@@ -280,6 +289,16 @@ function SignUp({ setReqDone }) {
               Sign in
             </button>
             <h2 className="error-message">{errorMessage}</h2>
+            {/* <div className="red-alert">
+              <span
+                className="closebtn"
+                onClick="this.parentElement.style.display='none';"
+              >
+                &times;
+              </span>
+              <b>Error: </b>
+              {errorMessage}
+            </div> */}
           </div>
           <img src="img/register.svg" className="image" alt="" />
         </div>

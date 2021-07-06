@@ -3,12 +3,12 @@ import { useHistory } from "react-router-dom";
 import gif from "../pics/whiteGif.gif";
 import "../styles/Check.css";
 
-function Check({ user, loading, registered, userType }) {
+function Check({ user, loading, registered }) {
   const history = useHistory();
   useEffect(() => {
     if (!loading) {
       if (user) {
-        if (registered === true) history.push("/profile");
+        if (registered === true) history.push("/dashboard");
         else if (registered === false) history.push("/details");
       } else history.push("/home");
     }

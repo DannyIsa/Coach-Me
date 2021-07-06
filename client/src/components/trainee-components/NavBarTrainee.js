@@ -17,13 +17,13 @@ function NavBarTrainee({ signOut, userType }) {
     <div className="homeNav">
       <div className="logo-nav">
         <div className="logo-container">
-          <a href="/profile">
+          <a href="/dashboard">
             <img src={logo} id="logo" alt="CoachMe Logo" />
           </a>
         </div>
         <ul className={click ? "nav-options active" : "nav-options-main"}>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="/profile" className="link">
+            <a href="/dashboard" className="link">
               Home
             </a>
           </li>
@@ -38,7 +38,7 @@ function NavBarTrainee({ signOut, userType }) {
             </a>
           </li> */}
           <li className="option" onClick={closeMobileMenu}>
-            <a href="/profile" className="link">
+            <a href="/trainee/profile" className="link">
               Profile
             </a>
           </li>

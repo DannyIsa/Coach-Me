@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "../styles/EditableInputInline.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen, faSave } from "@fortawesome/free-solid-svg-icons";
+
 function EditableInput({
   attribute,
   value,
@@ -38,7 +42,8 @@ function EditableInput({
 
   return (
     <div className="editable-input">
-      <label>{attribute.split("_").join(" ") + ": "}</label>
+      {/* <label>Daily Goal: </label> */}
+      {/* <label>{attribute.split("_").join(" ") + ": "}</label> */}
       {editing ? (
         <input
           type="number"
@@ -59,7 +64,13 @@ function EditableInput({
       ) : (
         <b>No Value</b>
       )}
-      <button onClick={handleEdit}>{editing ? "SAVE" : "EDIT"}</button>
+      <button className="edit-button" onClick={handleEdit}>
+        {editing ? (
+          <FontAwesomeIcon icon={faSave} color="white" className="fas-fas" />
+        ) : (
+          <FontAwesomeIcon icon={faPen} color="white" className="fas-fas" />
+        )}
+      </button>
     </div>
   );
 }

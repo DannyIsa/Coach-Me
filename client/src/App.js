@@ -127,7 +127,7 @@ function App() {
                   <NavBarTrainee userType={userType} signOut={signOut} />
                 )}
                 <Switch>
-                  <Route exact path="/profile">
+                  <Route exact path="/dashboard">
                     {userType === "Coach" ? (
                       <CoachDashboard userDetails={userDetails} />
                     ) : (

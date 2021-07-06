@@ -16,7 +16,24 @@ const { Router } = require("express");
 const logs = Router();
 logs.use(express.json());
 
-logs.post("/workout/add", (req, res) => {});
+logs.post("/workout/add/:traineeId", async (req, res) => {
+  const { traineeId } = req.params;
+  const { workoutId, time } = req.body;
+  if (!traineeId | !workoutId) return res.status(400).send("Id Required");
+  if (!time) return res.status(400).send("Time Required");
+  const workout = await models.Workout.findOne({ where: { id: workoutId } });
+  if (!workout) return res.status(404).send("Workout Not Found");
+  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
+  if (!trainee) return res.status(404).send("Trainee Not Found");
+
+  const log = await models.WorkoutLog.create({
+    trainee_id: traineeId,
+    workout_id: workoutId,
+    time,
+  });
+  if (!log) return res.status(400).send("Couldn't Register Log");
+  return res.status(201).send(log);
+});
 
 async function updateOrCreate(model, where, newItem) {
   // First try to find the record

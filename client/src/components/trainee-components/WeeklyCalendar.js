@@ -66,7 +66,7 @@ export default function WeeklyCalendar({ userDetails }) {
           {Meals.map((meal, mi) => (
             <tr key={mi}>
               {DaysOfTheWeek.map((day, di) => {
-                let item = needToEat.find(
+                let items = needToEat.filter(
                   (foodToEat) =>
                     foodToEat.day === day && foodToEat.meal_of_the_day === meal
                 );
@@ -74,7 +74,7 @@ export default function WeeklyCalendar({ userDetails }) {
                   <td key={di}>
                     <div className="table-one-container">
                       <h3 className="container-title">{meal}</h3>
-                      <p>{item ? item.name + " X" + item.amount : ""}</p>
+                      <p>{items ? items.name + " X" + items.amount : ""}</p>
                     </div>
                   </td>
                 );
