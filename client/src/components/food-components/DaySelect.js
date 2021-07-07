@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import DayPicker from "react-day-picker";
 import axios from "axios";
 // import DayPickerInput from "react-day-picker/DayPickerInput";
 import "react-day-picker/lib/style.css";
+import { SetErrorContext } from "../../App";
 
 export default function DaySelect({ userDetails, setFoodOfSelectedDate }) {
   const [selectedDay, setSelectedDay] = useState(new Date());
+  const setError = useContext(SetErrorContext);
 
   const handleDayClick = (day, { selected }) => {
     setSelectedDay(selected ? undefined : day);

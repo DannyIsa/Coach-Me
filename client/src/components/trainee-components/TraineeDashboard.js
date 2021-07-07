@@ -1,11 +1,13 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { SetErrorContext } from "../../App";
 
 function TraineeDashboard({ userDetails }) {
   const [workoutLogs, setWorkoutLogs] = useState([]);
   const [measureLogs, setMeasureLogs] = useState([]);
   const [dietLogs, setDietLogs] = useState([]);
+  const setError = useContext(SetErrorContext);
 
   useEffect(() => {
     if (!userDetails) return;

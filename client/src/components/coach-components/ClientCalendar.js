@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { SetErrorContext } from "../../App";
 
 function ClientCalendar({ userDetails }) {
   const [needToEat, setNeedToEat] = useState([]);
@@ -12,6 +13,8 @@ function ClientCalendar({ userDetails }) {
   const [chosenItems, setChosenItems] = useState();
   const [searchInput, setSearchInput] = useState("");
   const [foodAmount, setFoodAmount] = useState(1);
+  const setError = useContext(SetErrorContext);
+
   useEffect(() => {
     if (userDetails && traineeId) {
       axios

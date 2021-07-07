@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import firebase from "firebase";
 import axios from "axios";
+import { SetErrorContext } from "../../App";
 
 function AddExercise({ userDetails }) {
   const [errorMessage, setErrorMessage] = useState("");
@@ -8,6 +9,7 @@ function AddExercise({ userDetails }) {
   const [equipments, setEquipments] = useState([]);
   const [muscles, setMuscles] = useState([]);
   const storage = firebase.storage();
+  const setError = useContext(SetErrorContext);
 
   function join(major, minor) {
     if (minor === major || !minor) return major;

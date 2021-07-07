@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import "../styles/EditableInputInline.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faSave } from "@fortawesome/free-solid-svg-icons";
+import { SetErrorContext } from "../App";
 
 function EditableInput({
   attribute,
@@ -14,6 +15,8 @@ function EditableInput({
 }) {
   const [editing, setEditing] = useState(false);
   const [clientDetails, setClientDetails] = useState({});
+  const setError = useContext(SetErrorContext);
+
   const handleEdit = () => {
     if (!editing) {
       setEditing(!editing);

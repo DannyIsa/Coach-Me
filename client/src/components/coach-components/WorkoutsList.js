@@ -1,12 +1,14 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import EditWorkoutPopup from "./EditWorkoutPopup";
+import { SetErrorContext } from "../../App";
 
 function WorkoutsList({ userDetails }) {
   const [workouts, setWorkouts] = useState([]);
   const [shownWorkout, setShownWorkout] = useState();
   const [popupTrigger, setPopupTrigger] = useState(false);
+  const setError = useContext(SetErrorContext);
 
   useEffect(() => {
     if (!userDetails) return;

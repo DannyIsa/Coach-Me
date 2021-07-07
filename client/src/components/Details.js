@@ -1,11 +1,14 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import logo from "../pics/logo.png";
+import { SetErrorContext } from "../App";
 
 function Details({ userDetails, userType, setRegistered, setReqDone }) {
   const history = useHistory();
   const [other, setOther] = useState(false);
+  const setError = useContext(SetErrorContext);
+
   console.log(userDetails);
   return (
     <div className="details-div">

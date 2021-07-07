@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
+import { SetErrorContext } from "../../App";
 
 import axios from "axios";
 import { debounce } from "lodash";
@@ -8,7 +9,7 @@ import "../../styles/CaloriesTracker.css";
 export default function CaloriesTracker({ userDetails }) {
   const [totalCalories, setTotalCalories] = useState(0);
   const [usedCalories, setUsedCalories] = useState(0);
-  const [errorMessage, setErrorMessage] = useState("");
+  const setError = useContext(SetErrorContext);
 
   const [selectedMeal, setSelectedMeal] = useState("");
   const [addFoodPressed, setAddFoodPressed] = useState(false);
@@ -286,7 +287,6 @@ export default function CaloriesTracker({ userDetails }) {
           </div>
         </>
       )}
-      {errorMessage && <h3>{errorMessage}</h3>}
     </div>
   );
 }

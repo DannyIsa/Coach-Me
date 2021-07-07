@@ -87,3 +87,14 @@ a:hover {
   border: black 3px solid;
   background-color: cadetblue;
 }
+
+.error-message {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  text-align: center;
+  border: black 3px solid;
+  background-color: red;
+}

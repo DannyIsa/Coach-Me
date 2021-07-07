@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import "../../styles/WeeklyCalendar.css";
+import { SetErrorContext } from "../../App";
 
 export default function WeeklyCalendar({ userDetails }) {
   const [needToEat, setNeedToEat] = useState([]);
   const [workouts, setWorkouts] = useState([]);
   const [chosenWorkout, setChosenWorkout] = useState();
+  const setError = useContext(SetErrorContext);
 
   useEffect(() => {
     if (userDetails) {

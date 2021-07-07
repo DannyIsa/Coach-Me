@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { SetErrorContext } from "../../App";
 
 import CreateWorkoutPopup from "./CreateWorkoutPopup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,6 +18,8 @@ function CreateWorkout({ userDetails }) {
   const [draggedItem, setDraggedItem] = useState();
   const [draggedOver, setDraggedOver] = useState(false);
   const [chosenWorkout, setChosenWorkout] = useState();
+  const setError = useContext(SetErrorContext);
+
   const [snap, setSnap] = useState();
   function addItem(array, str) {
     if (str.includes(",")) {

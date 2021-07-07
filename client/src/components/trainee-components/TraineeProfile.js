@@ -1,13 +1,14 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import pdf from "../../documents/health_declaration.pdf";
 import EditableInput from "../EditableInput";
-import { Link } from "react-router-dom";
+import { SetErrorContext } from "../../App";
 
 function TraineeProfile({ userDetails }) {
   const [previousWorkouts, setPreviousWorkouts] = useState([]);
   const [measureLogs, setMeasureLogs] = useState({});
   const [editMode, setEditMode] = useState(false);
+  const setError = useContext(SetErrorContext);
 
   const getWorkoutsLog = () =>
     axios
@@ -24,7 +25,7 @@ function TraineeProfile({ userDetails }) {
         }
       })
       .catch((err) => {
-        console.log(err.response.data);
+        setError(err.response.data);
       });
 
   const getMeasurements = () =>
@@ -38,7 +39,7 @@ function TraineeProfile({ userDetails }) {
         }
       })
       .catch((err) => {
-        console.log(err.response.data);
+        setError(err.response.data);
       });
 
   const updateMeasurements = () => {
@@ -61,7 +62,7 @@ function TraineeProfile({ userDetails }) {
           setMeasureLogs(res.data);
           setEditMode(!editMode);
         })
-        .catch((e) => console.log(e));
+        .catch((err) => setError(err.response.data));
     }
   };
 
@@ -175,7 +176,6 @@ function TraineeProfile({ userDetails }) {
               download pdf
             </a>
           </div>
-          {JSON.stringify(userDetails)}
           <br />
           <h2>
             My Next Workout:
