@@ -1,12 +1,14 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import logo from "../pics/logo.png";
+import { SetErrorContext } from "../App";
 
 function Details({ userDetails, userType, setRegistered, setReqDone }) {
   const history = useHistory();
   const [other, setOther] = useState(false);
-  console.log(userDetails);
+  const setError = useContext(SetErrorContext);
+
   return (
     <div className="details-div">
       <div className="left-div">
@@ -51,7 +53,7 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
                 setRegistered(true);
                 history.push("/");
               })
-              .catch((err) => console.log(err.response.data))
+              .catch((err) => setError(err.response.data))
               .finally(() => {
                 setReqDone(true);
               });

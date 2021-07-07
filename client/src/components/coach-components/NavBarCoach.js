@@ -1,6 +1,7 @@
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { SetErrorContext } from "../../App";
 
 import { ReactComponent as CloseMenu } from "../../assets/x.svg";
 import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
@@ -26,6 +27,7 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
   // const [hideAlerts, setHideAlerts] = useState(true);
   const [render, setRender] = useState(false);
   const [chosenTrainee, setChosenTrainee] = useState("");
+  const setError = useContext(SetErrorContext);
 
   async function getRequests() {
     try {
@@ -34,7 +36,7 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
       );
       return requests.data;
     } catch (err) {
-      console.log(err);
+      setError(err.response.data);
       return [];
     }
   }
@@ -67,7 +69,7 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
         }?traineeId=${traineeId}`
       )
       .then(() => setRender(!render))
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   }
 
   return (

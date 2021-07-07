@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import "../../styles/WeeklyCalendar.css";
+import { SetErrorContext } from "../../App";
 
 export default function WeeklyCalendar({ userDetails }) {
   const [needToEat, setNeedToEat] = useState([]);
   const [workouts, setWorkouts] = useState([]);
   const [chosenWorkout, setChosenWorkout] = useState();
+  const setError = useContext(SetErrorContext);
 
   useEffect(() => {
     if (userDetails) {
@@ -22,14 +24,13 @@ export default function WeeklyCalendar({ userDetails }) {
             )
             .then(({ data }) => {
               setWorkouts(data);
-              console.log(data);
             })
             .catch((err) => {
-              console.log(err.response.data);
+              setError(err.response.data);
             });
         })
         .catch((err) => {
-          console.log(err.response.data);
+          setError(err.response.data);
         });
     }
   }, [userDetails]);

@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -36,6 +36,7 @@ firebase.initializeApp({
 });
 
 const auth = firebase.auth();
+export const SetErrorContext = React.createContext();
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -44,6 +45,7 @@ function App() {
   const [userDetails, setUserDetails] = useState();
   const [reqDone, setReqDone] = useState(true);
   const [alertMessage, setAlertMessage] = useState();
+  const [errorMessage, setErrorMessage] = useState();
   function signOut(history) {
     auth.signOut().then(() => {
       auth.onAuthStateChanged(() => {
@@ -81,6 +83,15 @@ function App() {
   }, [alertMessage]);
 
   useEffect(() => {
+    console.log(errorMessage);
+    if (errorMessage) {
+      setTimeout(() => {
+        setErrorMessage();
+      }, 4500);
+    }
+  }, [errorMessage]);
+
+  useEffect(() => {
     if (user && reqDone) {
       const { email } = user;
       axios
@@ -91,7 +102,7 @@ function App() {
           setUserDetails({ ...data.details });
         })
         .catch((err) => {
-          console.log(err.response.data);
+          setErrorMessage(err.response.data);
         });
     }
   }, [user, loading, reqDone]);
@@ -103,92 +114,98 @@ function App() {
   return (
     <div>
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <Check
-              user={user}
-              loading={loading}
-              registered={registered}
-              userType={userType}
-            />
-          </Route>
-          {/* user is logged in */}
-          {user ? (
-            // user is registered
-            registered ? (
-              <>
-                {userType === "Coach" ? (
-                  <NavBarCoach
-                    userType={userType}
-                    signOut={signOut}
-                    userDetails={userDetails}
-                  />
-                ) : (
-                  <NavBarTrainee userDetails={userDetails} signOut={signOut} />
-                )}
-                <Switch>
-                  <Route exact path="/dashboard">
-                    {userType === "Coach" ? (
-                      <CoachDashboard userDetails={userDetails} />
-                    ) : (
-                      <TraineeDashboard userDetails={userDetails} />
-                    )}
-                  </Route>
-                  <Route strict path="/coach">
-                    {userType === "Coach" ? (
-                      <CoachRouter
-                        userDetails={userDetails}
-                        alertMessage={alertMessage}
-                      />
-                    ) : (
-                      <Redirect to="/" />
-                    )}
-                  </Route>
-                  <Route strict path="/trainee">
-                    {userType === "Trainee" ? (
-                      <TraineeRouter
-                        userDetails={userDetails}
-                        alertMessage={alertMessage}
-                      />
-                    ) : (
-                      <Redirect to="/" />
-                    )}
-                  </Route>
-                  <Route exact path="/food">
-                    <Food userDetails={userDetails} />
-                  </Route>
-                </Switch>
-              </>
-            ) : (
-              // user isn't registered
-              <>
-                {/* <SignOutButton signOut={signOut} /> */}
-                <Switch>
-                  <Route exact path="/details">
-                    <Details
-                      userDetails={userDetails}
+        <SetErrorContext.Provider value={setErrorMessage}>
+          <Switch>
+            <Route exact path="/">
+              <Check
+                user={user}
+                loading={loading}
+                registered={registered}
+                userType={userType}
+              />
+            </Route>
+            {/* user is logged in */}
+            {user ? (
+              // user is registered
+              registered ? (
+                <>
+                  {userType === "Coach" ? (
+                    <NavBarCoach
                       userType={userType}
-                      setReqDone={setReqDone}
-                      setRegistered={setRegistered}
+                      signOut={signOut}
+                      userDetails={userDetails}
                     />
-                  </Route>
-                </Switch>
-              </>
-            )
-          ) : (
-            <Switch>
-              {/* user isn't logged in */}
-              <Route exact path="/home">
-                <HomePage />
-              </Route>
-              <Route exact path="/sign-up">
-                <SignUp setReqDone={setReqDone} auth={auth} />
-              </Route>
-            </Switch>
-          )}
-        </Switch>
+                  ) : (
+                    <NavBarTrainee
+                      userDetails={userDetails}
+                      signOut={signOut}
+                    />
+                  )}
+                  <Switch>
+                    <Route exact path="/dashboard">
+                      {userType === "Coach" ? (
+                        <CoachDashboard userDetails={userDetails} />
+                      ) : (
+                        <TraineeDashboard userDetails={userDetails} />
+                      )}
+                    </Route>
+                    <Route strict path="/coach">
+                      {userType === "Coach" ? (
+                        <CoachRouter
+                          userDetails={userDetails}
+                          alertMessage={alertMessage}
+                        />
+                      ) : (
+                        <Redirect to="/" />
+                      )}
+                    </Route>
+                    <Route strict path="/trainee">
+                      {userType === "Trainee" ? (
+                        <TraineeRouter
+                          userDetails={userDetails}
+                          alertMessage={alertMessage}
+                        />
+                      ) : (
+                        <Redirect to="/" />
+                      )}
+                    </Route>
+                    <Route exact path="/food">
+                      <Food userDetails={userDetails} />
+                    </Route>
+                  </Switch>
+                </>
+              ) : (
+                // user isn't registered
+                <>
+                  {/* <SignOutButton signOut={signOut} /> */}
+                  <Switch>
+                    <Route exact path="/details">
+                      <Details
+                        userDetails={userDetails}
+                        userType={userType}
+                        setReqDone={setReqDone}
+                        setRegistered={setRegistered}
+                      />
+                    </Route>
+                  </Switch>
+                </>
+              )
+            ) : (
+              <Switch>
+                {/* user isn't logged in */}
+                <Route exact path="/home">
+                  <HomePage />
+                </Route>
+                <Route exact path="/sign-up">
+                  <SignUp setReqDone={setReqDone} auth={auth} />
+                </Route>
+              </Switch>
+            )}
+          </Switch>
+        </SetErrorContext.Provider>
       </Router>
       {alertMessage && <div className="alert-message">{alertMessage}</div>}
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
     </div>
   );
 }

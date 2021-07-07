@@ -13,7 +13,7 @@ function EditWorkoutPopup({
   const [draggedItem, setDraggedItem] = useState();
   const [tempNewOrder, setTempNewOrder] = useState([]);
   const [workoutSets, setWorkoutSets] = useState(1);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState();
 
   useEffect(() => {
     if (!workout) return;

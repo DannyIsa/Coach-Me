@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
+import { SetErrorContext } from "../../App";
 
 import axios from "axios";
 import { debounce } from "lodash";
@@ -8,7 +9,7 @@ import "../../styles/CaloriesTracker.css";
 export default function CaloriesTracker({ userDetails }) {
   const [totalCalories, setTotalCalories] = useState(0);
   const [usedCalories, setUsedCalories] = useState(0);
-  const [errorMessage, setErrorMessage] = useState("");
+  const setError = useContext(SetErrorContext);
 
   const [selectedMeal, setSelectedMeal] = useState("");
   const [addFoodPressed, setAddFoodPressed] = useState(false);
@@ -43,7 +44,8 @@ export default function CaloriesTracker({ userDetails }) {
         )
         .then(({ data }) => {
           setSearchedFood(data);
-        });
+        })
+        .catch((err) => setError(err.response.data));
     } else if (!foodSearchInput.current.value) {
       setSearchedFood([]);
     }
@@ -68,7 +70,7 @@ export default function CaloriesTracker({ userDetails }) {
         setAddFoodPressed(false);
         setSelectedMeal("");
       })
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   };
 
   const deleteItemFromMeal = (id) => {
@@ -80,7 +82,7 @@ export default function CaloriesTracker({ userDetails }) {
         setFoodOfSelectedDate(data);
       })
       .catch((e) => {
-        console.log(e.response.data);
+        setError(e.response.data);
       });
   };
 
@@ -286,7 +288,6 @@ export default function CaloriesTracker({ userDetails }) {
           </div>
         </>
       )}
-      {errorMessage && <h3>{errorMessage}</h3>}
     </div>
   );
 }

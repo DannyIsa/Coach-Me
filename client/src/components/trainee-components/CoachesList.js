@@ -1,10 +1,12 @@
 import axios from "axios";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { SetErrorContext } from "../../App";
 import {} from "react-router-dom";
 
 function CoachesList({ userDetails, alertMessage }) {
   const [coaches, setCoaches] = useState();
   const [request, setRequest] = useState();
+  const setError = useContext(SetErrorContext);
 
   useEffect(async () => {
     if (alertMessage) if (!alertMessage.startsWith("Request")) return;
@@ -29,7 +31,7 @@ function CoachesList({ userDetails, alertMessage }) {
       .then(({ data }) => {
         setRequest(data);
       })
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   }
 
   return (

@@ -1,7 +1,8 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import EditableInputInline from "../EditableInputInline";
 import { Link } from "react-router-dom";
+import { SetErrorContext } from "../../App";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,11 +19,9 @@ import {
 function ClientsList({ userDetails, alertMessage }) {
   const [clients, setClients] = useState();
   const [requests, setRequests] = useState();
-  // const [hideAlerts, setHideAlerts] = useState(true);
   const [render, setRender] = useState(false);
-  // const [chosenTrainee, setChosenTrainee] = useState("");
-  // const [clientDetails, setClientDetails] = useState({});
-  // const [editMode, setEditMode] = useState(false);
+  const setError = useContext(SetErrorContext);
+
   async function getRequests() {
     try {
       let requests = await axios.get(
@@ -62,7 +61,7 @@ function ClientsList({ userDetails, alertMessage }) {
         }?traineeId=${traineeId}`
       )
       .then(() => setRender(!render))
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   }
 
   return (

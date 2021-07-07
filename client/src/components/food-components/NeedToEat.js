@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import { SetErrorContext } from "../../App";
 
 export default function NeedToEat({ userDetails }) {
   const [needToEatFoodList, setNeedToEatFoodList] = useState([]);
+  const setError = useContext(SetErrorContext);
 
   useEffect(() => {
     if (userDetails) {
@@ -11,7 +13,7 @@ export default function NeedToEat({ userDetails }) {
         .then(({ data }) => {
           setNeedToEatFoodList(data);
         })
-        .catch((e) => console.log(e));
+        .catch((err) => setError(err.response.data));
     }
   }, [userDetails]);
 

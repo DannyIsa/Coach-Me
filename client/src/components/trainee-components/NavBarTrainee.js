@@ -1,6 +1,7 @@
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { SetErrorContext } from "../../App";
 
 import { ReactComponent as CloseMenu } from "../../assets/x.svg";
 import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
@@ -23,6 +24,7 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
   // const [render, setRender] = useState(false);
   const [coaches, setCoaches] = useState();
   const [request, setRequest] = useState();
+  const setError = useContext(SetErrorContext);
 
   useEffect(async () => {
     if (alertMessage) if (!alertMessage.startsWith("Request")) return;
@@ -47,7 +49,7 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
       .then(({ data }) => {
         setRequest(data);
       })
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   }
 
   console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111111");

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { SetErrorContext } from "../../App";
 
 function ClientCalendar({ userDetails }) {
   const [needToEat, setNeedToEat] = useState([]);
@@ -12,6 +13,8 @@ function ClientCalendar({ userDetails }) {
   const [chosenItems, setChosenItems] = useState();
   const [searchInput, setSearchInput] = useState("");
   const [foodAmount, setFoodAmount] = useState(1);
+  const setError = useContext(SetErrorContext);
+
   useEffect(() => {
     if (userDetails && traineeId) {
       axios
@@ -28,11 +31,11 @@ function ClientCalendar({ userDetails }) {
               setWorkouts(data);
             })
             .catch((err) => {
-              console.log(err.response.data);
+              setError(err.response.data);
             });
         })
         .catch((err) => {
-          console.log(err.response.data);
+          setError(err.response.data);
         });
     }
   }, [userDetails]);
@@ -48,7 +51,7 @@ function ClientCalendar({ userDetails }) {
         .catch((err) => {
           setResults([]);
           setChosen();
-          console.log(err.response.data);
+          setError(err.response.data);
         });
     } else {
       axios
@@ -59,7 +62,7 @@ function ClientCalendar({ userDetails }) {
         .catch((err) => {
           setResults([]);
           setChosen();
-          console.log(err.response.data);
+          setError(err.response.data);
         });
     }
   }, [searchInput, field]);
@@ -114,7 +117,7 @@ function ClientCalendar({ userDetails }) {
         setChosenItems(temp);
       }
     } catch (err) {
-      console.log(err.response.data);
+      setError(err.response.data);
     }
   };
 
@@ -149,7 +152,7 @@ function ClientCalendar({ userDetails }) {
           setChosenItems(temp);
         }
       })
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   };
 
   const Meals = ["Breakfast", "Lunch", "Dinner", "Snacks"];
