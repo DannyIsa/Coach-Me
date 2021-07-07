@@ -9,7 +9,7 @@ function WorkoutTimer({ userDetails }) {
 
   return (
     <div className="timerContainer" style={{ textAlign: "center" }}>
-      <div className="timer" style={{ fontSize: "100px" }}>
+      <div className="timer" style={{ fontSize: "70px" }}>
         <span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span>
       </div>
 
