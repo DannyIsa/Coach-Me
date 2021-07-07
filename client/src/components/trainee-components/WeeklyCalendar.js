@@ -113,9 +113,11 @@ export default function WeeklyCalendar({ userDetails }) {
             >
               CLOSE
             </button>
-            <Link to={`/trainee/workout/${chosenWorkout.id}`}>
-              start workout
-            </Link>
+            {chosenWorkout && (
+              <Link to={`/trainee/workout/${chosenWorkout.id}`}>
+                start workout
+              </Link>
+            )}
             <h1>{chosenWorkout.name}</h1>
             {chosenWorkout.exercises.map((exercise) => {
               return (

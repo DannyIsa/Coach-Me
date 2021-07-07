@@ -9,10 +9,11 @@ function LiveWorkout({ userDetails }) {
   const { workoutId } = useParams();
   const setError = useContext(SetErrorContext);
 
-  const getWorkout = () => {
-    if (userDetails) {
+  useEffect(() => {
+    if (userDetails && workoutId) {
+      console.log(workoutId);
       axios
-        .get(`http://localhost:3001/api/trainee/workouts/show/${workoutId}`)
+        .get(`/api/trainee/workouts/show/${workoutId}`)
         .then(({ data }) => {
           // setCurrentWorkout(data);
           console.log(data, "AAAAAAAAAA");
@@ -21,13 +22,6 @@ function LiveWorkout({ userDetails }) {
           setError(err.response.data);
           console.log(err);
         });
-    }
-  };
-
-  useEffect(() => {
-    if (userDetails && workoutId) {
-      console.log(userDetails);
-      getWorkout();
     }
   }, [userDetails, workoutId]);
 

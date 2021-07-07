@@ -31,7 +31,6 @@ function TraineeDashboard({ userDetails }) {
         <>
           <h1>{`Welcome Back, ${userDetails.name} !`}</h1>
           <Link to="/trainee/calendar">Weekly Calendar</Link>
-          <Link to="/trainee/workout/:workoutId">start workout</Link>
           {JSON.stringify(dietLogs)}
         </>
       ) : (
