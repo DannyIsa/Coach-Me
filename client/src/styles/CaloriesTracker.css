@@ -44,7 +44,6 @@
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-top: 50px;
 }
 
 .meal {
@@ -56,8 +55,19 @@
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
-  border: black solid 3px;
+  border: #ddd solid 3px;
+  border-radius: 5px;
   width: 300px;
+}
+
+.meal .eaten-food-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .chosen-meal {
