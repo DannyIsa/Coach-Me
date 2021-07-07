@@ -1,16 +1,49 @@
+import axios from "axios";
 import React, { useState, useEffect, useContext } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { SetErrorContext } from "../../App";
 import WorkoutTimer from "./WorkoutTimer";
 
 function LiveWorkout({ userDetails }) {
-  const { workoutId } = useLocation();
+  const [currentWorkout, setCurrentWorkout] = useState();
+  const { workoutId } = useParams();
   const setError = useContext(SetErrorContext);
+
+  useEffect(() => {
+    if (userDetails && workoutId) {
+      axios
+        .get(
+          `/api/trainee/workout/show/once/${workoutId}?traineeId=${userDetails.id}&coachId=${userDetails.coach_id}`
+        )
+        .then(({ data }) => {
+          // setCurrentWorkout(data);
+          console.log(data, "AAAAAAAAAA");
+        })
+        .catch((err) => {
+          //   setError(err.response.data);
+          console.log(err);
+        });
+    }
+  }, [userDetails, workoutId]);
 
   return (
     <div>
       <h1>LiveWorkout </h1>
       <WorkoutTimer />
+
+      <h1>{currentWorkout}</h1>
+      {/* {chosenWorkout.exercises.map((exercise) => {
+        return (
+          <div>
+            <h3>{exercise.name}</h3>
+            <p>Sets: {exercise.sets}</p>
+            <p>Minimum reps: {exercise.min_reps}</p>
+            <p>Maximum reps: {exercise.max_reps}</p>
+            <p>Adeed weight: {exercise.added_weight}</p>
+            <p>Rest: {exercise.rest}</p>
+          </div>
+        );
+      })} */}
     </div>
   );
 }

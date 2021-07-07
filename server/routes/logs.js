@@ -18,7 +18,7 @@ logs.use(express.json());
 
 logs.post("/workout/add/:traineeId", async (req, res) => {
   const { traineeId } = req.params;
-  const { workoutId, time } = req.body;
+  const { workoutId } = req.body;
   if (!traineeId | !workoutId) return res.status(400).send("Id Required");
   if (!time) return res.status(400).send("Time Required");
   const workout = await models.Workout.findOne({ where: { id: workoutId } });
@@ -29,7 +29,6 @@ logs.post("/workout/add/:traineeId", async (req, res) => {
   const log = await models.WorkoutLog.create({
     trainee_id: traineeId,
     workout_id: workoutId,
-    time,
   });
   if (!log) return res.status(400).send("Couldn't Register Log");
   return res.status(201).send(log);
@@ -158,17 +157,13 @@ logs.get("/workout/show/:traineeId", async (req, res) => {
     return res.status(400).send("Invalid ID");
   }
 
-  const traineeWorkoutsLog = await models.WorkoutLog.findAll({
-    where: { trainee_id: traineeId },
-  });
+  const traineeWorkoutsLog = await trainee.getWorkoutLogs();
 
-  const workoutId = traineeWorkoutsLog.map((e) => e.workout_id);
-
-  const workoutOfThisLog = await models.Workout.findAll({
-    where: { id: workoutId },
-  });
-
-  res.status(201).json(workoutOfThisLog);
+  const workouts = await Promise.all(
+    traineeWorkoutsLog.map(async (log) => await log.getWorkout())
+  );
+  if (!workouts) return res.status(200).send([]);
+  res.status(200).json(workouts);
 });
 
 logs.get("/measure/show/:traineeId", async (req, res) => {
@@ -179,11 +174,10 @@ logs.get("/measure/show/:traineeId", async (req, res) => {
     return res.status(404).send("Invalid ID");
   }
 
-  const traineeMeasureLog = await models.MeasureLog.findAll({
-    where: { trainee_id: traineeId },
-  });
+  const traineeMeasureLog = await trainee.getMeasureLogs();
+  if (!traineeMeasureLog) return res.status(200).send([]);
 
-  res.status(201).send(traineeMeasureLog);
+  return res.status(200).send(traineeMeasureLog);
 });
 
 logs.get("/diet/show/:traineeId", async (req, res) => {
@@ -226,6 +220,37 @@ logs.get("/diet/show/:traineeId", async (req, res) => {
   );
 
   res.status(200).send(items);
+});
+
+logs.get("/diet/show/all/:traineeId", async (req, res) => {
+  const { traineeId } = req.params;
+  if (!Number(traineeId)) return res.status(400).send("Id Required");
+  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
+  if (!trainee) return res.status(404).send("No Trainee Found");
+  const dietLogs = await models.EatenFood.findAll({
+    attributes: [
+      "created_at",
+      "amount",
+      [sequelize.fn("sum", sequelize.col("Food.calories")), "total_calories"],
+      [sequelize.fn("sum", sequelize.col("Food.protein")), "total_protein"],
+      [sequelize.fn("sum", sequelize.col("Food.fats")), "total_fats"],
+      [sequelize.fn("sum", sequelize.col("Food.carbs")), "total_carbs"],
+    ],
+    where: { trainee_id: traineeId },
+    include: {
+      model: models.Food,
+      attributes: ["calories", "protein", "fats", "carbs"],
+    },
+    group: [sequelize.fn("date", sequelize.col("EatenFood.created_at"))],
+  });
+  if (!dietLogs) return [];
+  let dataToSend = [...dietLogs].map((log) => {
+    let item = { ...log.toJSON() };
+    delete item.Food;
+    return item;
+  });
+
+  return res.status(200).send(dataToSend);
 });
 
 module.exports = logs;

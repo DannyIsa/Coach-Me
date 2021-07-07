@@ -83,7 +83,6 @@ function App() {
   }, [alertMessage]);
 
   useEffect(() => {
-    console.log(errorMessage);
     if (errorMessage) {
       setTimeout(() => {
         setErrorMessage();
@@ -205,7 +204,9 @@ function App() {
         </SetErrorContext.Provider>
       </Router>
       {alertMessage && <div className="alert-message">{alertMessage}</div>}
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      {errorMessage && (
+        <div className="error-message-alert">{errorMessage}</div>
+      )}
     </div>
   );
 }

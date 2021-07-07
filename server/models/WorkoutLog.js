@@ -24,7 +24,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       trainee_id: DataTypes.INTEGER,
       workout_id: DataTypes.INTEGER,
-      time: DataTypes.TIME,
     },
     {
       sequelize,
