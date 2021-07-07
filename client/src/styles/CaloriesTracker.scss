@@ -39,14 +39,20 @@
 .meal-container {
   display: flex;
   justify-content: space-around;
-  margin-top: 50px;
 }
 .meal {
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: black solid 3px;
+  border: #ddd solid 3px;
+  border-radius: 5px;
   width: 300px;
+  .eaten-food-container {
+    display: flex;
+    flex-direction: column;
+    .delete-eaten-food-container {
+    }
+  }
 }
 
 .chosen-meal {
@@ -58,10 +64,6 @@
 }
 .add-food-button {
   margin-bottom: 0 px;
-}
-
-.pop-up-selected-food {
-  border: black solid 3px;
 }
 
 .popup-background {
@@ -87,9 +89,38 @@
   background-color: white;
   color: black;
   overflow-y: auto;
+  border-radius: 15px;
   .popup-close-button {
     position: absolute;
     top: 16px;
     right: 16px;
+    color: black;
+  }
+  .search-food-input {
+    width: 40%;
+    max-width: 550px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  .searched-food-list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    .searched-food-single {
+      border-bottom: solid 1px #ddd;
+      padding: 8px;
+      // width: max-content;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .add-food-button {
+    color: black;
+  }
+  .pop-up-selected-food {
+    border: black solid 3px;
+    border-radius: 6px;
   }
 }

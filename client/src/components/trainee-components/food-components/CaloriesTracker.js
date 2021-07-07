@@ -118,7 +118,7 @@ export default function CaloriesTracker({ userDetails }) {
             foodOfSelectedDate.map((food) => {
               return (
                 food.meal_of_the_day === "Breakfast" && (
-                  <div key={food.id}>
+                  <div className="eaten-food-container" key={food.id}>
                     <h4>
                       {food.name} ({food.weight * food.amount}g)
                     </h4>
@@ -126,8 +126,11 @@ export default function CaloriesTracker({ userDetails }) {
                     <p>{food.protein * food.amount} protein</p>
                     <p>{food.carbs * food.amount} carbs</p>
                     <p>{food.fats * food.amount} fats</p>
-                    <button onClick={() => deleteItemFromMeal(food.id)}>
-                      X
+                    <button
+                      className="delete-eaten-food-container"
+                      onClick={() => deleteItemFromMeal(food.id)}
+                    >
+                      delete
                     </button>
                   </div>
                 )
@@ -150,7 +153,7 @@ export default function CaloriesTracker({ userDetails }) {
             foodOfSelectedDate.map((food) => {
               return (
                 food.meal_of_the_day === "Lunch" && (
-                  <div key={food.id}>
+                  <div className="eaten-food-container" key={food.id}>
                     <h4>
                       {food.name} ({food.weight * food.amount}g)
                     </h4>
@@ -159,7 +162,7 @@ export default function CaloriesTracker({ userDetails }) {
                     <p>{food.carbs * food.amount} carbs</p>
                     <p>{food.fats * food.amount} fats</p>
                     <button onClick={() => deleteItemFromMeal(food.id)}>
-                      X
+                      delete
                     </button>
                   </div>
                 )
@@ -181,7 +184,7 @@ export default function CaloriesTracker({ userDetails }) {
             foodOfSelectedDate.map((food) => {
               return (
                 food.meal_of_the_day === "Dinner" && (
-                  <div key={food.id}>
+                  <div className="eaten-food-container" key={food.id}>
                     <h4>
                       {food.name} ({food.weight * food.amount}g)
                     </h4>
@@ -190,7 +193,7 @@ export default function CaloriesTracker({ userDetails }) {
                     <p>{food.carbs * food.amount} carbs</p>
                     <p>{food.fats * food.amount} fats</p>
                     <button onClick={() => deleteItemFromMeal(food.id)}>
-                      X
+                      delete
                     </button>
                   </div>
                 )
@@ -212,7 +215,7 @@ export default function CaloriesTracker({ userDetails }) {
             foodOfSelectedDate.map((food) => {
               return (
                 food.meal_of_the_day === "Snacks" && (
-                  <div key={food.id}>
+                  <div className="eaten-food-container" key={food.id}>
                     <h4>
                       {food.name} ({food.weight * food.amount}g)
                     </h4>
@@ -221,7 +224,7 @@ export default function CaloriesTracker({ userDetails }) {
                     <p>{food.carbs * food.amount} carbs</p>
                     <p>{food.fats * food.amount} fats</p>
                     <button onClick={() => deleteItemFromMeal(food.id)}>
-                      X
+                      delete
                     </button>
                   </div>
                 )
@@ -242,6 +245,7 @@ export default function CaloriesTracker({ userDetails }) {
         <div className="popup-background">
           <div className="popup-add-food">
             <input
+              className="search-food-input"
               ref={foodSearchInput}
               onChange={searchFood}
               placeholder="search food"
@@ -255,16 +259,16 @@ export default function CaloriesTracker({ userDetails }) {
             >
               close
             </button>
-            <div>
+            <div className="searched-food-list">
               {searchedFood.map((food, i) => {
                 return (
                   <h4
+                    className="searched-food-single"
                     key={food.id}
                     onClick={() => {
                       setAddFoodAmount(1);
                       setPopUpAddFood(food);
                     }}
-                    // onMouseLeave={setPopUpAddFood("")}
                     key={food.id}
                   >
                     {food.name} ({food.weight}g)
@@ -286,7 +290,10 @@ export default function CaloriesTracker({ userDetails }) {
                     onChange={(e) => setAddFoodAmount(e.target.value)}
                     value={addFoodAmount}
                   ></input>
-                  <button onClick={() => addFoodOfSelectedDate(popUpAddFood)}>
+                  <button
+                    className="add-food-button"
+                    onClick={() => addFoodOfSelectedDate(popUpAddFood)}
+                  >
                     ADD
                   </button>
                 </div>

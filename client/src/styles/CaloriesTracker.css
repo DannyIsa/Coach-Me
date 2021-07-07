@@ -44,7 +44,6 @@
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-top: 50px;
 }
 
 .meal {
@@ -56,8 +55,19 @@
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
-  border: black solid 3px;
+  border: #ddd solid 3px;
+  border-radius: 5px;
   width: 300px;
+}
+
+.meal .eaten-food-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .chosen-meal {
@@ -75,10 +85,6 @@
 
 .add-food-button {
   margin-bottom: 0 px;
-}
-
-.pop-up-selected-food {
-  border: black solid 3px;
 }
 
 .popup-background {
@@ -108,11 +114,52 @@
   background-color: white;
   color: black;
   overflow-y: auto;
+  border-radius: 15px;
 }
 
 .popup-add-food .popup-close-button {
   position: absolute;
   top: 16px;
   right: 16px;
+  color: black;
+}
+
+.popup-add-food .search-food-input {
+  width: 40%;
+  max-width: 550px;
+  height: 40px;
+  font-size: 1.5rem;
+}
+
+.popup-add-food .searched-food-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.popup-add-food .searched-food-list .searched-food-single {
+  border-bottom: solid 1px #ddd;
+  padding: 8px;
+}
+
+.popup-add-food .searched-food-list:hover {
+  cursor: pointer;
+}
+
+.popup-add-food .add-food-button {
+  color: black;
+}
+
+.popup-add-food .pop-up-selected-food {
+  border: black solid 3px;
+  border-radius: 6px;
 }
 /*# sourceMappingURL=CaloriesTracker.css.map */

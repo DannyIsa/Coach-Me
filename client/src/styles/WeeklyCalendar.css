@@ -45,6 +45,7 @@
   background-color: white;
   color: black;
   overflow-y: auto;
+  border-radius: 15px;
 }
 
 .popup-workout .popup-close-button {
