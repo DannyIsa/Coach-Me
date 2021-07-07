@@ -4,6 +4,7 @@ import CoachesList from "../trainee-components/CoachesList";
 import WeeklyCalendar from "../trainee-components/WeeklyCalendar";
 import WorkoutTimer from "../trainee-components/WorkoutTimer";
 import TraineeProfile from "../trainee-components/TraineeProfile";
+import LiveWorkout from "../trainee-components/LiveWorkout";
 function TraineeRouter({ userDetails, alertMessage }) {
   return (
     <Router>
@@ -18,7 +19,7 @@ function TraineeRouter({ userDetails, alertMessage }) {
           <WeeklyCalendar userDetails={userDetails} />
         </Route>
         <Route exact path="/trainee/workout/:workoutId">
-          <WorkoutTimer userDetails={userDetails} />
+          <LiveWorkout userDetails={userDetails} />
         </Route>
       </Switch>
     </Router>
