@@ -7,7 +7,7 @@ import DaySelect from "./DaySelect";
 import "../../../styles/CaloriesTracker.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt, faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export default function CaloriesTracker({ userDetails }) {
   const [totalCalories, setTotalCalories] = useState(0);
@@ -124,7 +124,7 @@ export default function CaloriesTracker({ userDetails }) {
               }}
               className="add-food-button"
             >
-              <FontAwesomeIcon icon={faPlus} color="black" className="fa-fa" />
+              <FontAwesomeIcon icon={faPlus} color="white" className="fa-fa" />
             </button>
           </div>
           <div className="meal-container">
@@ -166,7 +166,7 @@ export default function CaloriesTracker({ userDetails }) {
               }}
               className="add-food-button"
             >
-              <FontAwesomeIcon icon={faPlus} color="black" className="fa-fa" />
+              <FontAwesomeIcon icon={faPlus} color="white" className="fa-fa" />
             </button>
           </div>
           <div className="meal-container">
@@ -208,7 +208,7 @@ export default function CaloriesTracker({ userDetails }) {
               }}
               className="add-food-button"
             >
-              <FontAwesomeIcon icon={faPlus} color="black" className="fa-fa" />
+              <FontAwesomeIcon icon={faPlus} color="white" className="fa-fa" />
             </button>
           </div>
           <div className="meal-container">
@@ -250,7 +250,7 @@ export default function CaloriesTracker({ userDetails }) {
               }}
               className="add-food-button"
             >
-              <FontAwesomeIcon icon={faPlus} color="black" className="fa-fa" />
+              <FontAwesomeIcon icon={faPlus} color="white" className="fa-fa" />
             </button>
           </div>
           <div className="meal-container">
@@ -290,7 +290,7 @@ export default function CaloriesTracker({ userDetails }) {
               className="search-food-input"
               ref={foodSearchInput}
               onChange={searchFood}
-              placeholder="search food"
+              placeholder="What do you want to eat today ?"
             ></input>
             <button
               className="popup-close-button"
@@ -299,7 +299,7 @@ export default function CaloriesTracker({ userDetails }) {
                 setSelectedMeal("");
               }}
             >
-              close
+              <FontAwesomeIcon icon={faTimes} color="black" className="fa-fa" />
             </button>
             <div className="searched-food-list">
               {searchedFood.map((food, i) => {

@@ -1,10 +1,10 @@
 .calorie-tracker {
   padding-top: 5.5rem;
-  // color: white;
+  color: white;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  color: black;
+  // color: black;
 
   .meter-and-calendar {
     display: flex;
@@ -81,6 +81,7 @@
         flex-direction: row;
         margin: 1rem 0.5rem;
         justify-content: space-between;
+
         .delete-eaten-food-button {
           border: none;
           padding: 0;
@@ -123,12 +124,17 @@
       top: 16px;
       right: 16px;
       color: black;
+      border: none;
     }
     .search-food-input {
-      width: 40%;
-      max-width: 550px;
+      width: 23rem;
+      // max-width: 550px;
       height: 40px;
       font-size: 1.5rem;
+
+      &:focus {
+        outline-color: rgb(51, 102, 255);
+      }
     }
     .searched-food-list {
       display: flex;

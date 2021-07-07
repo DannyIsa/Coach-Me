@@ -1995,6 +1995,22 @@ form.sign-in-form {
   width: 20rem;
 }
 
+.profile-container .main-body .main1 .d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 100%;
+}
+
 .profile-container .main-body .main2 {
   padding: 15px;
 }
@@ -2002,10 +2018,21 @@ form.sign-in-form {
 .profile-container .main-body .main2 .card {
   background-color: #1456a1;
   width: 40rem;
+  padding-bottom: 0.4rem;
 }
 
 .profile-container .main-body .main2 .card .next-workout {
   height: 23.5rem;
+}
+
+.profile-container .main-body .main2 .edit-button {
+  float: right;
+  padding: 0.3rem;
+  border: 1px solid white;
+}
+
+.profile-container .main-body .main2 .edit-button:hover {
+  border-color: #ffc719;
 }
 
 .profile-container .main-body .card {
@@ -2037,6 +2064,10 @@ form.sign-in-form {
           flex: 1 1 auto;
   min-height: 1px;
   padding: 1rem;
+}
+
+.profile-container .main-body .card .card-body .row {
+  margin-top: 1.5rem;
 }
 
 .profile-container .main-body .mb-3,

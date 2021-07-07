@@ -82,7 +82,7 @@ function TraineeProfile({ userDetails }) {
               <div className="col-md-4 mb-3">
                 <div className="card">
                   <div className="card-body">
-                    <div className="d-flex flex-column align-items-center text-center">
+                    <div className="d-flex">
                       <img
                         src={userPic}
                         alt="Admin"
@@ -93,7 +93,7 @@ function TraineeProfile({ userDetails }) {
                         <h4>{userDetails.name}</h4>
                         {/* <p className="text-secondary mb-1">Full Stack Developer</p> */}
                         {/* <p className="text-muted font-size-sm">
-                        Bay Area, San Francisco, CA
+                        Bay Area, Israel, CA
                       </p> */}
                         {/* <button className="btn btn-primary">Follow</button> */}
                         {/* <button className="btn btn-outline-primary">Message</button> */}
@@ -107,8 +107,8 @@ function TraineeProfile({ userDetails }) {
             <div className="col-md-8">
               <div className="card mb-3">
                 <div className="card-body">
+                  <h2>Personal info:</h2>
                   <div className="row">
-                    <h2>Personal info:</h2>
                     <div className="col-sm-3">
                       <h6 className="mb-0">Email:</h6>
                     </div>
@@ -161,6 +161,7 @@ function TraineeProfile({ userDetails }) {
               <div className="col-sm-6 mb-3">
                 <div className="card h-100">
                   <div className="card-body">
+                    {/* <div>x */}
                     <button
                       className="edit-button"
                       onClick={updateMeasurements}
@@ -280,116 +281,3 @@ function TraineeProfile({ userDetails }) {
 }
 
 export default TraineeProfile;
-
-// {/* <div className="trainee-dashboard">
-// {/* <Link to="/trainee/calendar">Weekly Calendar</Link> */}
-// {userDetails ? (
-//   <>
-//     <h1>Hello {userDetails.name}</h1>
-//     <br />
-//     <h2>Personal info:</h2>
-//     <div>Email: {userDetails.email}</div>
-//     <div>birthdate: {userDetails.birthdate}</div>
-//     <div>Goal: {userDetails.daily_calorie_goal}</div>
-//     <div>Activity Level: {userDetails.activity_level}</div>
-//     <br />
-//     <button className="edit-button" onClick={updateMeasurements}>
-//       {editMode ? "Save" : "Edit"}
-//     </button>
-//     <h2>Body Measurments:</h2>
-//     <EditableInput
-//       value={
-//         measureLogs && measureLogs.height
-//           ? measureLogs.height
-//           : userDetails.height
-//       }
-//       attribute={"height"}
-//       editing={editMode}
-//       state={measureLogs}
-//       setState={setMeasureLogs}
-//     />
-//     <EditableInput
-//       value={
-//         measureLogs && measureLogs.weight
-//           ? measureLogs.weight
-//           : userDetails.weight
-//       }
-//       attribute={"weight"}
-//       editing={editMode}
-//       state={measureLogs}
-//       setState={setMeasureLogs}
-//     />
-//     <EditableInput
-//       value={
-//         measureLogs && measureLogs.chest_perimeter
-//           ? measureLogs.chest_perimeter
-//           : "no value"
-//       }
-//       attribute={"chest_perimeter"}
-//       editing={editMode}
-//       state={measureLogs}
-//       setState={setMeasureLogs}
-//     />
-//     <EditableInput
-//       value={
-//         measureLogs && measureLogs.hip_perimeter
-//           ? measureLogs.hip_perimeter
-//           : "no value"
-//       }
-//       attribute={"hip_perimeter"}
-//       editing={editMode}
-//       state={measureLogs}
-//       setState={setMeasureLogs}
-//     />
-//     <EditableInput
-//       value={
-//         measureLogs && measureLogs.bicep_perimeter
-//           ? measureLogs.bicep_perimeter
-//           : "no value"
-//       }
-//       attribute={"bicep_perimeter"}
-//       editing={editMode}
-//       state={measureLogs}
-//       setState={setMeasureLogs}
-//     />
-//     <EditableInput
-//       value={
-//         measureLogs && measureLogs.waist_perimeter
-//           ? measureLogs.waist_perimeter
-//           : "no value"
-//       }
-//       attribute={"waist_perimeter"}
-//       editing={editMode}
-//       state={measureLogs}
-//       setState={setMeasureLogs}
-//     />
-//     <EditableInput
-//       value={
-//         measureLogs && measureLogs.thigh_perimeter
-//           ? measureLogs.thigh_perimeter
-//           : "no value"
-//       }
-//       attribute={"thigh_perimeter"}
-//       editing={editMode}
-//       state={measureLogs}
-//       setState={setMeasureLogs}
-//     />
-//     <br />
-//     <h2>Forms To Fill Out:</h2>
-//     <div>daily general update</div>
-//     <div>
-//       health declaration
-//       <a href={pdf} target="_blank">
-//         download pdf
-//       </a>
-//     </div>
-//     <br />
-//     <h2>
-//       My Next Workout:
-//       {previousWorkouts}
-//     </h2>
-//   </>
-// ) : (
-//   ""
-// )}
-// </div> */}

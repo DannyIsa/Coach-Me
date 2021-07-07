@@ -1,9 +1,9 @@
 .calorie-tracker {
   padding-top: 5.5rem;
+  color: white;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  color: black;
 }
 
 .calorie-tracker .meter-and-calendar {
@@ -160,13 +160,17 @@
   top: 16px;
   right: 16px;
   color: black;
+  border: none;
 }
 
 .calorie-tracker .popup-add-food .search-food-input {
-  width: 40%;
-  max-width: 550px;
+  width: 23rem;
   height: 40px;
   font-size: 1.5rem;
+}
+
+.calorie-tracker .popup-add-food .search-food-input:focus {
+  outline-color: #3366ff;
 }
 
 .calorie-tracker .popup-add-food .searched-food-list {

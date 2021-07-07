@@ -2,16 +2,8 @@
   height: 100%;
   display: flex;
   padding-top: 6rem;
-  //   color: black;
   justify-content: center;
-  //   background-color: #e2e8f0;
 
-  //   & button {
-  //     color: black;
-  //   }
-  //   & a {
-  //     color: black;
-  //   }
   .main-body {
     padding: 15px;
     display: flex;
@@ -24,14 +16,38 @@
         background-color: #1456a1;
         width: 20rem;
       }
+      .d-flex {
+        // display: flex;
+        // flex-direction: column;
+        // text-align: center;
+        // // align-selfx: center;
+        // justify-content: space-between;
+
+        ////////
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+      }
     }
     .main2 {
       padding: 15px;
       .card {
         background-color: #1456a1;
         width: 40rem;
+        padding-bottom: 0.4rem;
         .next-workout {
           height: 23.5rem;
+        }
+      }
+      .edit-button {
+        float: right;
+        padding: 0.3rem;
+        border: 1px solid white;
+
+        &:hover {
+          border-color: #ffc719;
         }
       }
     }
@@ -55,6 +71,10 @@
         flex: 1 1 auto;
         min-height: 1px;
         padding: 1rem;
+
+        .row {
+          margin-top: 1.5rem;
+        }
       }
     }
 
