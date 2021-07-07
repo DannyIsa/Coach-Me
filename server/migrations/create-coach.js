@@ -32,9 +32,9 @@ module.exports = {
       rating_count: {
         type: Sequelize.INTEGER,
       },
-      // image: {
-      //   type: Sequelize.STRING,
-      // },
+      image: {
+        type: Sequelize.STRING,
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE,

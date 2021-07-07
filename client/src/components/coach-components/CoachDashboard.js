@@ -4,16 +4,16 @@ import axios from "axios";
 import { SetErrorContext } from "../../App";
 
 function CoachDashboard({ userDetails }) {
-  // const storage = firebase.storage();
-  // const setError = useContext(SetErrorContext);
+  const storage = firebase.storage();
+  const setError = useContext(SetErrorContext);
 
   return (
     <div className="coach-dashboard">
       {userDetails ? (
         <>
           <h1>{`Hello Coach ${userDetails.name}`}</h1>
-          {/* <div>upload a photo 📷</div> */}
-          {/* <div className="add-coach-info-form">
+          <div>upload a photo 📷</div>
+          <div className="add-coach-info-form">
             <form
               onSubmit={async (e) => {
                 e.preventDefault();
@@ -44,11 +44,11 @@ function CoachDashboard({ userDetails }) {
                   dataObj.image = url;
                 } else dataObj.image = "";
                 axios
-                  .post("/api/coach/image/add", { image: dataObj })
+                  .post(`/api/coach/image/add/${userDetails.id}`, dataObj)
                   .then(({ data }) => {
-                    setError(data);
+                    console.log(data);
                   })
-                  .catch((err) => setError(err.response.data));
+                  .catch((err) => console.log(err));
               }}
             >
               <div className="form-block">
@@ -65,7 +65,7 @@ function CoachDashboard({ userDetails }) {
                 </button>
               </div>
             </form>
-          </div> */}
+          </div>
         </>
       ) : (
         "Loading..."
