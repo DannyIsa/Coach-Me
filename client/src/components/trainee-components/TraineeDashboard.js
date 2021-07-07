@@ -10,8 +10,15 @@ function TraineeDashboard({ userDetails }) {
   const [dietLogs, setDietLogs] = useState([]);
   const setError = useContext(SetErrorContext);
 
-  useEffect(() => {
+  useEffect(async () => {
     if (!userDetails) return;
+    try {
+      const mLogs = await axios.get("/api/logs/measure/show/" + userDetails.id);
+      const dLogs = await axios.get("/api/logs/diet/show/all/" + userDetails.id);
+      const wLogs = await axios.get("/api/logs/workout/show/" + userDetails.id);
+    } catch (err) {
+      setError(err.response.data);
+    }
   }, [userDetails]);
   return (
     <div className="coach-dashboard">
