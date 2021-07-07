@@ -39,14 +39,20 @@
 .meal-container {
   display: flex;
   justify-content: space-around;
-  margin-top: 50px;
 }
 .meal {
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: black solid 3px;
+  border: #ddd solid 3px;
+  border-radius: 5px;
   width: 300px;
+  .eaten-food-container {
+    display: flex;
+    flex-direction: column;
+    .delete-eaten-food-container {
+    }
+  }
 }
 
 .chosen-meal {

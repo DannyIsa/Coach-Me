@@ -29,6 +29,7 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
     if (!userDetails) return;
     let coachesData = (await axios.get("/api/coach/show/all")).data;
     setCoaches(coachesData);
+    console.log(coachesData);
     let requestData = (
       await axios.get("/api/trainee/request/show/" + userDetails.id)
     ).data;
@@ -95,6 +96,7 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                           ? coaches.map((item, index) => (
                               <div className="alert sec" key={"alert" + index}>
                                 <div className="txt">{item.name}</div>
+
                                 <div
                                   className="coaches-item txt"
                                   key={"C" + index}
