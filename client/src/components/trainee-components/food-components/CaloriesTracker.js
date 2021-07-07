@@ -242,6 +242,7 @@ export default function CaloriesTracker({ userDetails }) {
         <div className="popup-background">
           <div className="popup-add-food">
             <input
+              className="search-food-input"
               ref={foodSearchInput}
               onChange={searchFood}
               placeholder="search food"
@@ -255,16 +256,16 @@ export default function CaloriesTracker({ userDetails }) {
             >
               close
             </button>
-            <div>
+            <div className="searched-food-list">
               {searchedFood.map((food, i) => {
                 return (
                   <h4
+                    className="searched-food-single"
                     key={food.id}
                     onClick={() => {
                       setAddFoodAmount(1);
                       setPopUpAddFood(food);
                     }}
-                    // onMouseLeave={setPopUpAddFood("")}
                     key={food.id}
                   >
                     {food.name} ({food.weight}g)
@@ -286,7 +287,10 @@ export default function CaloriesTracker({ userDetails }) {
                     onChange={(e) => setAddFoodAmount(e.target.value)}
                     value={addFoodAmount}
                   ></input>
-                  <button onClick={() => addFoodOfSelectedDate(popUpAddFood)}>
+                  <button
+                    className="add-food-button"
+                    onClick={() => addFoodOfSelectedDate(popUpAddFood)}
+                  >
                     ADD
                   </button>
                 </div>
