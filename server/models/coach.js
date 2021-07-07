@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
       gender: DataTypes.STRING,
       avg_rating: DataTypes.FLOAT,
       rating_count: DataTypes.INTEGER,
-      image: DataTypes.STRING,
+      // image: DataTypes.STRING,
     },
     {
       sequelize,

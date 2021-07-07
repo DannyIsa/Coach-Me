@@ -4,8 +4,8 @@ import axios from "axios";
 import { SetErrorContext } from "../../App";
 
 function CoachDashboard({ userDetails }) {
-  const storage = firebase.storage();
-  const setError = useContext(SetErrorContext);
+  // const storage = firebase.storage();
+  // const setError = useContext(SetErrorContext);
 
   return (
     <div className="coach-dashboard">
@@ -13,7 +13,7 @@ function CoachDashboard({ userDetails }) {
         <>
           <h1>{`Hello Coach ${userDetails.name}`}</h1>
           {/* <div>upload a photo 📷</div> */}
-          <div className="add-coach-info-form">
+          {/* <div className="add-coach-info-form">
             <form
               onSubmit={async (e) => {
                 e.preventDefault();
@@ -65,7 +65,7 @@ function CoachDashboard({ userDetails }) {
                 </button>
               </div>
             </form>
-          </div>
+          </div> */}
         </>
       ) : (
         "Loading..."
