@@ -150,7 +150,13 @@ trainee.get("/workout/show/one/:workoutId", async (req, res) => {
 
   const exercises = await workout.getExerciseSets();
   if (!exercises) return res.status(404).send("Invalid Workout");
-  const data = { ...workout.toJSON(), exercises };
+  const exercisesWithImages = await Promise.all(
+    exercises.map(async (exercise) => {
+      let { image } = await exercise.getExercise({ attributes: ["image"] });
+      return { ...exercise.toJSON(), image };
+    })
+  );
+  const data = { ...workout.toJSON(), exercises: exercisesWithImages };
   delete data.ExerciseSets;
   res.status(200).send(data);
 });
