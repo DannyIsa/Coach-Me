@@ -93,11 +93,6 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
           <li className="option">
             <div className="notification">
               <div className="notBtn">
-                <div className="number">
-                  {coaches && request.length > 0 && (
-                    <div className="requests-alert">{request.length}</div>
-                  )}
-                </div>
                 <FontAwesomeIcon
                   icon={faSearchLocation}
                   color="white"
@@ -110,19 +105,11 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                         {coaches && request
                           ? coaches.map((item, index) => (
                               <div className="alert sec" key={"alert" + index}>
-                                <div className="txt">{item.coach_name}</div>
-                                <div className="txt">{item.content}</div>
-                                <div className="txt sub">
-                                  {new Date(item.updatedAt).toLocaleDateString(
-                                    "it-IT"
-                                  ) +
-                                    ", " +
-                                    new Date(item.updatedAt).toLocaleTimeString(
-                                      "it-IT"
-                                    )}
-                                </div>
-                                <div className="coaches-item" key={"C" + index}>
-                                  <h3>{item.name}</h3>
+                                <div className="txt">{item.name}</div>
+                                <div
+                                  className="coaches-item txt"
+                                  key={"C" + index}
+                                >
                                   {item.id === userDetails.coach_id ? (
                                     "Your Coach"
                                   ) : item.id === request.coach_id ? (
@@ -141,6 +128,15 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                                     </button>
                                   )}
                                 </div>
+                                {/* <div className="txt sub">
+                                  {new Date(item.updatedAt).toLocaleDateString(
+                                    "it-IT"
+                                  ) +
+                                    ", " +
+                                    new Date(item.updatedAt).toLocaleTimeString(
+                                      "it-IT"
+                                    )}
+                                </div> */}
                               </div>
                             ))
                           : "Loading..."}

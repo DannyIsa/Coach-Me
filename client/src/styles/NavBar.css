@@ -247,6 +247,10 @@
   padding: 5px 10px 0px 10px;
 }
 
+.homeNav .coaches-item {
+  color: #e03a3a;
+}
+
 .homeNav .sub {
   font-size: 1rem;
   color: grey;
