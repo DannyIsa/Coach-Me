@@ -126,7 +126,10 @@ function CreateWorkout({ userDetails }) {
           </div>
         </div>
         <div>
-          <Link to="/coach/add-exercise"> Add Exercise</Link>
+          <Link to="/coach/add-exercise" className="add">
+            {" "}
+            Add Exercise
+          </Link>
         </div>
       </div>
       <div className="exercises-container">
@@ -150,7 +153,7 @@ function CreateWorkout({ userDetails }) {
                   }}
                   onClick={() => setChosenWorkout(item)}
                 >
-                  <h2 className="exercise-name">{item.name} </h2>
+                  <p className="exercise-name">{item.name} • </p>
                 </div>
               ))
             : "No Exercises"}
@@ -164,9 +167,14 @@ function CreateWorkout({ userDetails }) {
                 src={chosenWorkout.image}
                 alt={chosenWorkout.name}
               />
-              <h4 className="exercise-category">
-                {chosenWorkout.muscle}: {chosenWorkout.type}
-              </h4>
+              <div className="middle-tags">
+                <span className={`${chosenWorkout.muscle} tag`}>
+                  {chosenWorkout.muscle}:{" "}
+                </span>
+                <span className={`${chosenWorkout.type} tag`}>
+                  {chosenWorkout.type}
+                </span>
+              </div>
               <h4 className="exercise-equipment">{chosenWorkout.equipment}</h4>
               <p className="exercise-description">
                 {chosenWorkout.description

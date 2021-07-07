@@ -29,7 +29,7 @@ function TraineeDashboard({ userDetails }) {
     <div className="coach-dashboard">
       {userDetails ? (
         <>
-          <h1>{`Hello Trainee ${userDetails.name}`}</h1>
+          <h1>{`Welcome Back, ${userDetails.name} !`}</h1>
           <Link to="/trainee/calendar">Weekly Calendar</Link>
           <Link to="/trainee/workout/:workoutId">start workout</Link>
           {JSON.stringify(dietLogs)}
