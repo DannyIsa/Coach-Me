@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { SetErrorContext } from "../../App";
+import "../../styles/LiveWorkout.css";
 import WorkoutTimer from "./WorkoutTimer";
 
 function LiveWorkout({ userDetails }) {

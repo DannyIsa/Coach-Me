@@ -108,7 +108,7 @@ food.post("/eaten-food", async (req, res) => {
   if (!query) return res.status(400).send("Couldn't add food");
   const food = await eaten.getFood();
   if (!food) return res.status(400).send("Couldn't get data");
-  const dataToSend = { ...eaten.toJSON(), ...food.toJSON() };
+  const dataToSend = { ...food.toJSON(), ...eaten.toJSON() };
   res.status(201).send(dataToSend);
 });
 
