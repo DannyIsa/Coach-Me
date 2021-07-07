@@ -11,9 +11,10 @@ function LiveWorkout({ userDetails }) {
 
   useEffect(() => {
     if (userDetails && workoutId) {
-      console.log(workoutId);
       axios
-        .get(`/api/trainee/workout/show/${workoutId}`)
+        .get(
+          `/api/trainee/workout/show/once/${workoutId}?traineeId=${userDetails.id}&coachId=${userDetails.coach_id}`
+        )
         .then(({ data }) => {
           // setCurrentWorkout(data);
           console.log(data, "AAAAAAAAAA");
