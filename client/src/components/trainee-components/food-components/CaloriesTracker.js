@@ -124,7 +124,7 @@ export default function CaloriesTracker({ userDetails }) {
               }}
               className="add-food-button"
             >
-              <FontAwesomeIcon icon={faPlus} color="black" className="fa-fa" />
+              <FontAwesomeIcon icon={faPlus} color="white" className="fa-fa" />
             </button>
           </div>
           <div className="meal-container">
@@ -166,7 +166,7 @@ export default function CaloriesTracker({ userDetails }) {
               }}
               className="add-food-button"
             >
-              <FontAwesomeIcon icon={faPlus} color="black" className="fa-fa" />
+              <FontAwesomeIcon icon={faPlus} color="white" className="fa-fa" />
             </button>
           </div>
           <div className="meal-container">
@@ -208,7 +208,7 @@ export default function CaloriesTracker({ userDetails }) {
               }}
               className="add-food-button"
             >
-              <FontAwesomeIcon icon={faPlus} color="black" className="fa-fa" />
+              <FontAwesomeIcon icon={faPlus} color="white" className="fa-fa" />
             </button>
           </div>
           <div className="meal-container">
@@ -250,7 +250,7 @@ export default function CaloriesTracker({ userDetails }) {
               }}
               className="add-food-button"
             >
-              <FontAwesomeIcon icon={faPlus} color="black" className="fa-fa" />
+              <FontAwesomeIcon icon={faPlus} color="white" className="fa-fa" />
             </button>
           </div>
           <div className="meal-container">
