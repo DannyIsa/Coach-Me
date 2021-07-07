@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import { SetErrorContext } from "../../App";
+import { SetErrorContext } from "../../../App";
 
 import axios from "axios";
 import { debounce } from "lodash";
 import DaySelect from "./DaySelect";
-import "../../styles/CaloriesTracker.css";
+import "../../../styles/CaloriesTracker.css";
 
 export default function CaloriesTracker({ userDetails }) {
   const [totalCalories, setTotalCalories] = useState(0);
@@ -86,17 +86,24 @@ export default function CaloriesTracker({ userDetails }) {
   return (
     <div className="calorie-tracker">
       <div className="meter-and-calendar">
-        <progress
-          className="calorie-meter"
-          min="0"
-          value={usedCalories ? usedCalories : 0}
-          max={totalCalories ? totalCalories : usedCalories ? usedCalories : 0}
-        >
-          {usedCalories}%
-        </progress>
-        <h3>
-          {Number(usedCalories)} / {totalCalories} Calories Eaten
-        </h3>
+        <div className="meter-and-title">
+          <progress
+            className="calorie-meter"
+            min="0"
+            value={usedCalories ? usedCalories : 0}
+            max={
+              totalCalories ? totalCalories : usedCalories ? usedCalories : 0
+            }
+          >
+            {usedCalories}%
+          </progress>
+          <h3 className="meter-numbers">
+            <span className={usedCalories > totalCalories ? "red" : "green"}>
+              {Number(usedCalories)}
+            </span>{" "}
+            / {totalCalories} Calories Eaten
+          </h3>
+        </div>
         <DaySelect
           setFoodOfSelectedDate={setFoodOfSelectedDate}
           userDetails={userDetails}
@@ -232,58 +239,61 @@ export default function CaloriesTracker({ userDetails }) {
         </div>
       </div>
       {addFoodPressed && (
-        <>
-          <input
-            ref={foodSearchInput}
-            onChange={searchFood}
-            placeholder="search food"
-          ></input>
-          <button
-            onClick={() => {
-              setAddFoodPressed(false);
-              setSelectedMeal("");
-            }}
-          >
-            close
-          </button>
-          <div>
-            {searchedFood.map((food, i) => {
-              return (
-                <h4
-                  key={food.id}
-                  onClick={() => {
-                    setAddFoodAmount(1);
-                    setPopUpAddFood(food);
-                  }}
-                  // onMouseLeave={setPopUpAddFood("")}
-                  key={food.id}
-                >
-                  {food.name} ({food.weight}g)
-                </h4>
-              );
-            })}
+        <div className="popup-background">
+          <div className="popup-add-food">
+            <input
+              ref={foodSearchInput}
+              onChange={searchFood}
+              placeholder="search food"
+            ></input>
+            <button
+              className="popup-close-button"
+              onClick={() => {
+                setAddFoodPressed(false);
+                setSelectedMeal("");
+              }}
+            >
+              close
+            </button>
+            <div>
+              {searchedFood.map((food, i) => {
+                return (
+                  <h4
+                    key={food.id}
+                    onClick={() => {
+                      setAddFoodAmount(1);
+                      setPopUpAddFood(food);
+                    }}
+                    // onMouseLeave={setPopUpAddFood("")}
+                    key={food.id}
+                  >
+                    {food.name} ({food.weight}g)
+                  </h4>
+                );
+              })}
 
-            {popUpAddFood && (
-              <div className="pop-up-selected-food">
-                <h3>
-                  {popUpAddFood.name} ({popUpAddFood.weight * addFoodAmount}g)
-                </h3>
-                <p>Calories: {popUpAddFood.calories * addFoodAmount}</p>
-                <p>Protein: {popUpAddFood.protein * addFoodAmount}</p>
-                <p>Carbs: {popUpAddFood.carbs * addFoodAmount}</p>
-                <p>Fats: {popUpAddFood.fats * addFoodAmount}</p>
-                <label>Amount:</label>
-                <input
-                  onChange={(e) => setAddFoodAmount(e.target.value)}
-                  value={addFoodAmount}
-                ></input>
-                <button onClick={() => addFoodOfSelectedDate(popUpAddFood)}>
-                  ADD
-                </button>
-              </div>
-            )}
+              {popUpAddFood && (
+                <div className="pop-up-selected-food">
+                  <h3>
+                    {popUpAddFood.name} ({popUpAddFood.weight * addFoodAmount}g)
+                  </h3>
+                  <p>Calories: {popUpAddFood.calories * addFoodAmount}</p>
+                  <p>Protein: {popUpAddFood.protein * addFoodAmount}</p>
+                  <p>Carbs: {popUpAddFood.carbs * addFoodAmount}</p>
+                  <p>Fats: {popUpAddFood.fats * addFoodAmount}</p>
+                  <label>Amount:</label>
+                  <input
+                    onChange={(e) => setAddFoodAmount(e.target.value)}
+                    value={addFoodAmount}
+                  ></input>
+                  <button onClick={() => addFoodOfSelectedDate(popUpAddFood)}>
+                    ADD
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

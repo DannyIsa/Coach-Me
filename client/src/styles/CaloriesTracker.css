@@ -2,12 +2,6 @@
   padding-top: 90px;
 }
 
-.calorie-meter {
-  width: 50%;
-  max-width: 640px;
-  height: 45px;
-}
-
 .meter-and-calendar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15,6 +9,33 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   text-align: center;
+}
+
+.meter-and-calendar .meter-and-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  width: 70%;
+}
+
+.meter-and-calendar .meter-and-title .calorie-meter {
+  width: 50%;
+  max-width: 640px;
+  min-width: 400px;
+  height: 45px;
+}
+
+.meter-and-calendar .meter-and-title .meter-numbers {
+  padding-top: 10px;
+}
+
+.meter-and-calendar .meter-and-title .red {
+  color: crimson;
+}
+
+.meter-and-calendar .meter-and-title .green {
+  color: seagreen;
 }
 
 .meal-container {
@@ -58,5 +79,40 @@
 
 .pop-up-selected-food {
   border: black solid 3px;
+}
+
+.popup-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.popup-add-food {
+  position: relative;
+  padding: 32px;
+  width: 100%;
+  height: 50%;
+  margin-top: 200px;
+  max-width: 640px;
+  max-height: 400px;
+  background-color: white;
+  color: black;
+  overflow-y: auto;
+}
+
+.popup-add-food .popup-close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
 /*# sourceMappingURL=CaloriesTracker.css.map */

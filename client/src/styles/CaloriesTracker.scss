@@ -2,33 +2,38 @@
   padding-top: 90px;
 }
 
-.calorie-meter {
-  width: 50%;
-  max-width: 640px;
-  height: 45px;
-  // -webkit-appearance: none;
-  // border-radius: 15px;
-  // &::-webkit-progress-bar {
-  //   background-color: #f1f1f1;
-  // }
-  // &::-webkit-progress-value {
-  //   background-color: #3399ff;
-  // }
-  // &:-moz-meter-optimum::-moz-meter-bar {
-  //   background: indianred;
-  // }
-  // &:-moz-meter-sub-optimum::-moz-meter-bar {
-  //   background: #99ff99;
-  // }
-  // &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
-  //   background: indianred;
-  // }
-}
-
 .meter-and-calendar {
   display: flex;
   justify-content: space-around;
   text-align: center;
+  .meter-and-title {
+    display: flex;
+    margin: auto;
+    width: 70%;
+    .calorie-meter {
+      width: 50%;
+      max-width: 640px;
+      min-width: 400px;
+      height: 45px;
+      // -webkit-appearance: none;
+      // border-radius: 15px;
+      // &::-webkit-progress-bar {
+      //   background-color: #f1f1f1;
+      // }
+      // &::-webkit-progress-value {
+      //   background-color: #3399ff;
+      // }
+    }
+    .meter-numbers {
+      padding-top: 10px;
+    }
+    .red {
+      color: crimson;
+    }
+    .green {
+      color: seagreen;
+    }
+  }
 }
 
 .meal-container {
@@ -57,4 +62,34 @@
 
 .pop-up-selected-food {
   border: black solid 3px;
+}
+
+.popup-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.popup-add-food {
+  position: relative;
+  padding: 32px;
+  width: 100%;
+  height: 50%;
+  margin-top: 200px;
+  max-width: 640px;
+  max-height: 400px;
+  background-color: white;
+  color: black;
+  overflow-y: auto;
+  .popup-close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
 }

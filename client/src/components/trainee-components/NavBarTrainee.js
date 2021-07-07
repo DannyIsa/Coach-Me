@@ -65,7 +65,7 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
             </a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="/food" className="link">
+            <a href="/trainee/food" className="link">
               Nutrition
             </a>
           </li>

@@ -17,7 +17,6 @@ import NavBarTrainee from "./components/trainee-components/NavBarTrainee";
 import NavBarCoach from "./components/coach-components/NavBarCoach";
 import Check from "./components/Check";
 import Details from "./components/Details";
-import Food from "./components/Food";
 
 import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
 import CoachDashboard from "./components/coach-components/CoachDashboard";
@@ -167,9 +166,6 @@ function App() {
                       ) : (
                         <Redirect to="/" />
                       )}
-                    </Route>
-                    <Route exact path="/food">
-                      <Food userDetails={userDetails} />
                     </Route>
                   </Switch>
                 </>
