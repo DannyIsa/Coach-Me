@@ -14,8 +14,13 @@ function TraineeDashboard({ userDetails }) {
     if (!userDetails) return;
     try {
       const mLogs = await axios.get("/api/logs/measure/show/" + userDetails.id);
-      const dLogs = await axios.get("/api/logs/diet/show/all/" + userDetails.id);
+      const dLogs = await axios.get(
+        "/api/logs/diet/show/all/" + userDetails.id
+      );
       const wLogs = await axios.get("/api/logs/workout/show/" + userDetails.id);
+      setWorkoutLogs(wLogs.data);
+      setDietLogs(dLogs.data);
+      setMeasureLogs(mLogs.data);
     } catch (err) {
       setError(err.response.data);
     }
@@ -27,6 +32,7 @@ function TraineeDashboard({ userDetails }) {
           <h1>{`Hello Trainee ${userDetails.name}`}</h1>
           <Link to="/trainee/calendar">Weekly Calendar</Link>
           <Link to="/trainee/workout/:workoutId">start workout</Link>
+          {JSON.stringify(dietLogs)}
         </>
       ) : (
         "Loading..."
