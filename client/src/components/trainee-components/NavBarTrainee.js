@@ -49,7 +49,7 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
       .then(({ data }) => {
         setRequest(data);
       })
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   }
 
   return (

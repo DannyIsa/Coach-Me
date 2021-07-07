@@ -31,11 +31,11 @@ function ClientCalendar({ userDetails }) {
               setWorkouts(data);
             })
             .catch((err) => {
-              console.log(err.response.data);
+              setError(err.response.data);
             });
         })
         .catch((err) => {
-          console.log(err.response.data);
+          setError(err.response.data);
         });
     }
   }, [userDetails]);
@@ -51,7 +51,7 @@ function ClientCalendar({ userDetails }) {
         .catch((err) => {
           setResults([]);
           setChosen();
-          console.log(err.response.data);
+          setError(err.response.data);
         });
     } else {
       axios
@@ -62,7 +62,7 @@ function ClientCalendar({ userDetails }) {
         .catch((err) => {
           setResults([]);
           setChosen();
-          console.log(err.response.data);
+          setError(err.response.data);
         });
     }
   }, [searchInput, field]);
@@ -117,7 +117,7 @@ function ClientCalendar({ userDetails }) {
         setChosenItems(temp);
       }
     } catch (err) {
-      console.log(err.response.data);
+      setError(err.response.data);
     }
   };
 
@@ -152,7 +152,7 @@ function ClientCalendar({ userDetails }) {
           setChosenItems(temp);
         }
       })
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   };
 
   const Meals = ["Breakfast", "Lunch", "Dinner", "Snacks"];

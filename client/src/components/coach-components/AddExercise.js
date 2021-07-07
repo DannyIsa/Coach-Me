@@ -4,7 +4,6 @@ import axios from "axios";
 import { SetErrorContext } from "../../App";
 
 function AddExercise({ userDetails }) {
-  const [errorMessage, setErrorMessage] = useState("");
   const [types, setTypes] = useState([]);
   const [equipments, setEquipments] = useState([]);
   const [muscles, setMuscles] = useState([]);
@@ -24,7 +23,7 @@ function AddExercise({ userDetails }) {
         setEquipments(data.equipments);
         setMuscles(data.muscles);
       })
-      .catch((err) => setErrorMessage(err.response.data));
+      .catch((err) => setError(err.response.data));
   }, []);
   return (
     <div className="add-exercise-start">
@@ -54,15 +53,15 @@ function AddExercise({ userDetails }) {
                 .map((val) => val[0].toUpperCase() + val.slice(1, val.length))
                 .join(" ");
               if (!dataObj.muscle) {
-                setErrorMessage("Major Muscle Required");
+                setError("Major Muscle Required");
                 return;
               }
               if (!dataObj.type) {
-                setErrorMessage("Major Type Required");
+                setError("Major Type Required");
                 return;
               }
               if (!dataObj.equipment) {
-                setErrorMessage("Major Equipment Required");
+                setError("Major Equipment Required");
                 return;
               }
               if (
@@ -71,7 +70,7 @@ function AddExercise({ userDetails }) {
                 !dataObj.image.name.endsWith(".png") &&
                 !dataObj.image.name.endsWith(".gif")
               ) {
-                setErrorMessage("File Type needs to be jpg/png/gif");
+                setError("File Type needs to be jpg/png/gif");
                 return;
               }
               if (dataObj.image.name !== "") {
@@ -81,7 +80,7 @@ function AddExercise({ userDetails }) {
                   .child(dataObj.image.name)
                   .getDownloadURL();
                 if (!url) {
-                  setErrorMessage("Couldn't upload image");
+                  setError("Couldn't upload image");
                   return;
                 }
                 dataObj.image = url;
@@ -89,9 +88,9 @@ function AddExercise({ userDetails }) {
               axios
                 .post("/api/coach/exercise/add", { exercise: dataObj })
                 .then(({ data }) => {
-                  setErrorMessage(data);
+                  setError(data);
                 })
-                .catch((err) => setErrorMessage(err.response.data));
+                .catch((err) => setError(err.response.data));
             }}
           >
             <div className="form-block">
@@ -227,7 +226,6 @@ function AddExercise({ userDetails }) {
       ) : (
         "Loading"
       )}
-      <h1 className="error-message">{errorMessage}</h1>
     </div>
   );
 }

@@ -24,14 +24,13 @@ export default function WeeklyCalendar({ userDetails }) {
             )
             .then(({ data }) => {
               setWorkouts(data);
-              console.log(data);
             })
             .catch((err) => {
-              console.log(err.response.data);
+              setError(err.response.data);
             });
         })
         .catch((err) => {
-          console.log(err.response.data);
+          setError(err.response.data);
         });
     }
   }, [userDetails]);

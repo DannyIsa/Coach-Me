@@ -25,7 +25,7 @@ export default function DaySelect({ userDetails, setFoodOfSelectedDate }) {
         setFoodOfSelectedDate(data);
       })
       .catch((err) => {
-        console.log(err.response.data);
+        setError(err.response.data);
         setFoodOfSelectedDate([]);
       });
   }, [selectedDay, userDetails]);

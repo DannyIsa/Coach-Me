@@ -83,6 +83,7 @@ function App() {
   }, [alertMessage]);
 
   useEffect(() => {
+    console.log(errorMessage);
     if (errorMessage) {
       setTimeout(() => {
         setErrorMessage();

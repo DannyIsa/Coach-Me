@@ -13,7 +13,7 @@ export default function NeedToEat({ userDetails }) {
         .then(({ data }) => {
           setNeedToEatFoodList(data);
         })
-        .catch((e) => console.log(e));
+        .catch((err) => setError(err.response.data));
     }
   }, [userDetails]);
 

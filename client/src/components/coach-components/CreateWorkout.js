@@ -48,7 +48,7 @@ function CreateWorkout({ userDetails }) {
         setTypeTags(typeArray);
         setMuscleTags(muscleArray);
       })
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   }, []);
   useEffect(() => {
     axios
@@ -56,7 +56,7 @@ function CreateWorkout({ userDetails }) {
       .then(({ data }) => {
         setExercises(data);
       })
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   }, [searchInput, sortValue]);
 
   return (

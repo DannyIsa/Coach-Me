@@ -15,7 +15,7 @@ function WorkoutsList({ userDetails }) {
     axios
       .get("/api/coach/workouts/show/" + userDetails.id)
       .then(({ data }) => setWorkouts(data))
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   }, [userDetails]);
 
   const handleRemove = (itemId) => {
@@ -27,12 +27,11 @@ function WorkoutsList({ userDetails }) {
         setShownWorkout();
         setWorkouts([...workouts].filter((workout) => workout.id !== itemId));
       })
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   };
 
   return (
     <div className="create-workouts-start">
-      {console.log(workouts)}
       <Link to="/coach/workouts/create">Create workout</Link>
       {userDetails && (
         <EditWorkoutPopup

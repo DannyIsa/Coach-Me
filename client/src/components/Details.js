@@ -9,7 +9,6 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
   const [other, setOther] = useState(false);
   const setError = useContext(SetErrorContext);
 
-  console.log(userDetails);
   return (
     <div className="details-div">
       <div className="left-div">
@@ -54,7 +53,7 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
                 setRegistered(true);
                 history.push("/");
               })
-              .catch((err) => console.log(err.response.data))
+              .catch((err) => setError(err.response.data))
               .finally(() => {
                 setReqDone(true);
               });

@@ -11,7 +11,6 @@ function TraineeDashboard({ userDetails }) {
 
   useEffect(() => {
     if (!userDetails) return;
-    axios.get("/api/")
   }, [userDetails]);
   return (
     <div className="coach-dashboard">

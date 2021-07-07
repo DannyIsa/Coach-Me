@@ -44,7 +44,8 @@ export default function CaloriesTracker({ userDetails }) {
         )
         .then(({ data }) => {
           setSearchedFood(data);
-        });
+        })
+        .catch((err) => setError(err.response.data));
     } else if (!foodSearchInput.current.value) {
       setSearchedFood([]);
     }
@@ -69,7 +70,7 @@ export default function CaloriesTracker({ userDetails }) {
         setAddFoodPressed(false);
         setSelectedMeal("");
       })
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   };
 
   const deleteItemFromMeal = (id) => {
@@ -81,7 +82,7 @@ export default function CaloriesTracker({ userDetails }) {
         setFoodOfSelectedDate(data);
       })
       .catch((e) => {
-        console.log(e.response.data);
+        setError(e.response.data);
       });
   };
 

@@ -61,7 +61,7 @@ function ClientsList({ userDetails, alertMessage }) {
         }?traineeId=${traineeId}`
       )
       .then(() => setRender(!render))
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   }
 
   return (

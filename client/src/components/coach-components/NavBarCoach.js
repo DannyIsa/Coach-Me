@@ -36,7 +36,7 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
       );
       return requests.data;
     } catch (err) {
-      console.log(err);
+      setError(err.response.data);
       return [];
     }
   }
@@ -69,7 +69,7 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
         }?traineeId=${traineeId}`
       )
       .then(() => setRender(!render))
-      .catch((err) => console.log(err.response.data));
+      .catch((err) => setError(err.response.data));
   }
 
   return (
