@@ -227,23 +227,30 @@ logs.get("/diet/show/all/:traineeId", async (req, res) => {
   if (!Number(traineeId)) return res.status(400).send("Id Required");
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
   if (!trainee) return res.status(404).send("No Trainee Found");
-  const dietLogs = await models.NeedToEat.findAll({
+  const dietLogs = await models.EatenFood.findAll({
+    attributes: [
+      "created_at",
+      "amount",
+      [sequelize.fn("sum", sequelize.col("Food.calories")), "total_calories"],
+      [sequelize.fn("sum", sequelize.col("Food.protein")), "total_protein"],
+      [sequelize.fn("sum", sequelize.col("Food.fats")), "total_fats"],
+      [sequelize.fn("sum", sequelize.col("Food.carbs")), "total_carbs"],
+    ],
     where: { trainee_id: traineeId },
+    include: {
+      model: models.Food,
+      attributes: ["calories", "protein", "fats", "carbs"],
+    },
+    group: [sequelize.fn("date", sequelize.col("EatenFood.created_at"))],
   });
   if (!dietLogs) return [];
-  const foodArray = await Promise.all(
-    dietLogs.map(async (log) => {
-      let food = await log.getFood();
-      delete food.updated_at;
-      delete food.created_at;
-      return {
-        ...food.toJSON(),
-        created_at: log.created_at,
-        meal_of_the_day: log.meal_of_the_day,
-      };
-    })
-  );
-  return res.status(200).send(dietLogs);
+  let dataToSend = [...dietLogs].map((log) => {
+    let item = { ...log.toJSON() };
+    delete item.Food;
+    return item;
+  });
+
+  return res.status(200).send(dataToSend);
 });
 
 module.exports = logs;
