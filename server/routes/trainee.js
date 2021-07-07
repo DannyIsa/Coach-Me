@@ -137,7 +137,7 @@ trainee.get("/workouts/show/:coachId", async (req, res) => {
   res.status(200).send(workouts);
 });
 
-trainee.get("/workout/show/one/:coachId", async (req, res) => {
+trainee.get("/workout/show/one/:workoutId", async (req, res) => {
   const { coachId } = req.query;
   const { traineeId } = req.query;
   const { workoutId } = req.params;
