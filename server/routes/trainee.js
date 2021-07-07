@@ -136,4 +136,20 @@ trainee.get("/workouts/show/:coachId", async (req, res) => {
   if (!workouts) res.status(200).send([]);
   res.status(200).send(workouts);
 });
+
+trainee.get("/workouts/show/:workoutId", async (req, res) => {
+  console.log(req.params, "RRRRR");
+  const { workoutId } = req.params;
+  if (!workoutId) {
+    return res.status(400).send("must send id");
+  }
+  const workout = await models.Workout.findOne({
+    where: { id: workoutId },
+  });
+  if (!workout) {
+    return res.status(404).send("workout not found");
+  }
+  res.status(201).send(workout);
+});
+
 module.exports = trainee;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "../../styles/WeeklyCalendar.css";
 import { SetErrorContext } from "../../App";
@@ -112,6 +113,9 @@ export default function WeeklyCalendar({ userDetails }) {
             >
               CLOSE
             </button>
+            <Link to={`/trainee/workout/${chosenWorkout.id}`}>
+              start workout
+            </Link>
             <h1>{chosenWorkout.name}</h1>
             {chosenWorkout.exercises.map((exercise) => {
               return (
