@@ -15,8 +15,10 @@
         }
       }
       &.shown-workout {
+        height: 40rem;
+        overflow: scroll;
         & > ol > li {
-          margin: 20px;
+          margin: 10px;
         }
       }
     }

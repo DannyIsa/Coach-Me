@@ -532,6 +532,9 @@ form.sign-in-form {
           flex-direction: column;
   padding-top: 5.8rem;
   overflow: scroll;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .create-workout-page h1 {
@@ -546,11 +549,9 @@ form.sign-in-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 12rem;
-  width: 85rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -564,14 +565,23 @@ form.sign-in-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-right: 5rem;
+  width: 10rem;
 }
 
-.create-workout-page .search-div input {
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
-  width: 10rem;
+.create-workout-page .search-div .search input {
+  width: 12rem;
   font-size: 1rem;
-  margin-bottom: 0.8rem;
+  padding: 0rem 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: white;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+}
+
+.create-workout-page .search-div .search input:focus {
+  width: 15rem;
 }
 
 .create-workout-page .search-div .tags {
@@ -676,6 +686,7 @@ form.sign-in-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -683,10 +694,16 @@ form.sign-in-form {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 30rem;
+  height: 35rem;
   padding: 0.5rem 2rem 2rem;
   border-radius: 0.4rem;
   background-color: #1456a1;
   cursor: no-drop;
+  overflow: scroll;
+}
+
+.create-workout-page .exercises-container .exercise-middle p {
+  font-size: 1.3rem;
 }
 
 .create-workout-page .exercises-container .exercise-middle .exercise-name {
@@ -726,14 +743,15 @@ form.sign-in-form {
 }
 
 .create-workout-page .exercises-container .exercise-right {
-  text-align: center;
   background-color: #1456a1;
   width: 30rem;
   height: 35rem;
-  overflow: scroll;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-orient: vertical;
@@ -757,16 +775,20 @@ form.sign-in-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: scroll;
+  width: 25rem;
 }
 
 .create-workout-page .exercises-container .exercise-right .chosen-exercise button {
   padding: 0.2rem 0.5rem;
   margin: 0;
+  margin-bottom: 0.5rem;
 }
 
 .create-workout-page .exercises-container .exercise-right .next-button {
@@ -774,6 +796,8 @@ form.sign-in-form {
   width: 6rem;
   margin: 0;
   margin-left: 3rem;
+  position: absolute;
+  bottom: 2rem;
 }
 
 .create-workouts-start {
@@ -806,8 +830,13 @@ form.sign-in-form {
   font-size: 2.2em;
 }
 
+.create-workouts-start > .content > div.shown-workout {
+  height: 40rem;
+  overflow: scroll;
+}
+
 .create-workouts-start > .content > div.shown-workout > ol > li {
-  margin: 20px;
+  margin: 10px;
 }
 
 .client-list-start {
@@ -969,9 +998,10 @@ form.sign-in-form {
 }
 
 .pop-up > .pop-up-inner > .close-button {
-  position: absolute;
-  right: 10px;
-  top: 10px;
+  border: 1px solid;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  float: right;
 }
 
 .coach-dashboard {

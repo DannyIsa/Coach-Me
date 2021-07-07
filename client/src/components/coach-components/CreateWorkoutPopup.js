@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+
 function CreateWorkoutPopup({
   exercises,
   setExercises,
@@ -57,7 +60,7 @@ function CreateWorkoutPopup({
             setErrorMessage("");
           }}
         >
-          close
+          <FontAwesomeIcon icon={faTimes} />
         </button>
         <input
           onChange={(e) => setWorkoutName(e.target.value)}

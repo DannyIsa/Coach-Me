@@ -89,7 +89,6 @@ function CreateWorkout({ userDetails }) {
             }}
             onChange={(e) => setSearchInput(e.target.value)}
           />
-          <Link to="/coach/add-exercise"> Add Exercise</Link>
         </div>
         <div className="tags">
           <h3>Sort by Exercise Types:</h3>
@@ -123,6 +122,9 @@ function CreateWorkout({ userDetails }) {
             ))}
           </div>
         </div>
+        <div>
+          <Link to="/coach/add-exercise"> Add Exercise</Link>
+        </div>
       </div>
       <div className="exercises-container">
         <div className="exercises-left">
@@ -151,7 +153,7 @@ function CreateWorkout({ userDetails }) {
             : "No Exercises"}
         </div>
         <div className="exercise-middle">
-          {chosenWorkout && (
+          {chosenWorkout ? (
             <>
               <h2 className="exercise-name">{chosenWorkout.name}</h2>
               <img
@@ -169,6 +171,8 @@ function CreateWorkout({ userDetails }) {
                   : "no description"}
               </p>
             </>
+          ) : (
+            <p>Tap on exercise to see more details!</p>
           )}
         </div>
         <div
