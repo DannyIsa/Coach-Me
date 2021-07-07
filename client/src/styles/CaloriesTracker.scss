@@ -124,12 +124,17 @@
       top: 16px;
       right: 16px;
       color: black;
+      border: none;
     }
     .search-food-input {
-      width: 40%;
-      max-width: 550px;
+      width: 23rem;
+      // max-width: 550px;
       height: 40px;
       font-size: 1.5rem;
+
+      &:focus {
+        outline-color: rgb(51, 102, 255);
+      }
     }
     .searched-food-list {
       display: flex;
