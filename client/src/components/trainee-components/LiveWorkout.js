@@ -13,13 +13,13 @@ function LiveWorkout({ userDetails }) {
     if (userDetails && workoutId) {
       console.log(workoutId);
       axios
-        .get(`/api/trainee/workouts/show/${workoutId}`)
+        .get(`/api/trainee/workout/show/${workoutId}`)
         .then(({ data }) => {
           // setCurrentWorkout(data);
           console.log(data, "AAAAAAAAAA");
         })
         .catch((err) => {
-          setError(err.response.data);
+          //   setError(err.response.data);
           console.log(err);
         });
     }

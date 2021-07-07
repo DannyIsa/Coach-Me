@@ -137,7 +137,7 @@ trainee.get("/workouts/show/:coachId", async (req, res) => {
   res.status(200).send(workouts);
 });
 
-trainee.get("/workouts/show/:workoutId", async (req, res) => {
+trainee.get("/workout/show/:workoutId", async (req, res) => {
   console.log(req.params, "RRRRR");
   const { workoutId } = req.params;
   if (!workoutId) {
