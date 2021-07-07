@@ -1,52 +1,66 @@
 .calorie-tracker {
-  padding-top: 90px;
+  padding-top: 5.5rem;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: black;
 }
 
-.meter-and-calendar {
+.calorie-tracker .meter-and-calendar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 40%;
+  height: 90vh;
+  float: right;
+  margin-right: 1rem;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.meter-and-calendar .meter-and-title {
+.calorie-tracker .meter-and-calendar .meter-and-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: auto;
-  width: 70%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
 }
 
-.meter-and-calendar .meter-and-title .calorie-meter {
-  width: 50%;
-  max-width: 640px;
-  min-width: 400px;
-  height: 45px;
+.calorie-tracker .meter-and-calendar .meter-and-title .calorie-meter {
+  width: 90%;
+  margin-bottom: 0.5rem;
+  height: 3rem;
 }
 
-.meter-and-calendar .meter-and-title .meter-numbers {
+.calorie-tracker .meter-and-calendar .meter-and-title .meter-numbers {
   padding-top: 10px;
 }
 
-.meter-and-calendar .meter-and-title .red {
+.calorie-tracker .meter-and-calendar .meter-and-title .red {
   color: crimson;
 }
 
-.meter-and-calendar .meter-and-title .green {
+.calorie-tracker .meter-and-calendar .meter-and-title .green {
   color: seagreen;
 }
 
-.meal-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.meal {
+.calorie-tracker .meals-container {
+  border-radius: 0.4rem;
+  width: 55%;
+  height: 89vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,13 +68,26 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
-  border: #ddd solid 3px;
-  border-radius: 5px;
-  width: 300px;
+  margin-left: 3rem;
+  background-color: #3366ff;
 }
 
-.meal .eaten-food-container {
+.calorie-tracker .meals-container .add-to-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.calorie-tracker .meals-container .add-to-container .add-food-button {
+  border: none;
+  padding: 0;
+  margin: 0rem 0.5rem;
+}
+
+.calorie-tracker .meals-container .meal-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,26 +95,37 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #fefbff;
+  color: black;
+  height: 10rem;
+  overflow: scroll;
 }
 
-.chosen-meal {
+.calorie-tracker .meals-container .meal-container .eaten-food-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  text-align: center;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 1rem 0.5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.calorie-tracker .meals-container .meal-container .eaten-food-container .delete-eaten-food-button {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.calorie-tracker .chosen-meal {
   border: red solid 3px;
-  width: 300px;
 }
 
-.add-food-button {
-  margin-bottom: 0 px;
-}
-
-.popup-background {
+.calorie-tracker .popup-background {
   position: fixed;
   top: 0;
   left: 0;
@@ -103,7 +141,7 @@
           justify-content: center;
 }
 
-.popup-add-food {
+.calorie-tracker .popup-add-food {
   position: relative;
   padding: 32px;
   width: 100%;
@@ -117,21 +155,21 @@
   border-radius: 15px;
 }
 
-.popup-add-food .popup-close-button {
+.calorie-tracker .popup-add-food .popup-close-button {
   position: absolute;
   top: 16px;
   right: 16px;
   color: black;
 }
 
-.popup-add-food .search-food-input {
+.calorie-tracker .popup-add-food .search-food-input {
   width: 40%;
   max-width: 550px;
   height: 40px;
   font-size: 1.5rem;
 }
 
-.popup-add-food .searched-food-list {
+.calorie-tracker .popup-add-food .searched-food-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,20 +183,16 @@
           justify-content: center;
 }
 
-.popup-add-food .searched-food-list .searched-food-single {
+.calorie-tracker .popup-add-food .searched-food-list .searched-food-single {
   border-bottom: solid 1px #ddd;
   padding: 8px;
 }
 
-.popup-add-food .searched-food-list:hover {
+.calorie-tracker .popup-add-food .searched-food-list:hover {
   cursor: pointer;
 }
 
-.popup-add-food .add-food-button {
-  color: black;
-}
-
-.popup-add-food .pop-up-selected-food {
+.calorie-tracker .popup-add-food .pop-up-selected-food {
   border: black solid 3px;
   border-radius: 6px;
 }

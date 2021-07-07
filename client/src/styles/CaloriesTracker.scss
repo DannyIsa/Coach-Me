@@ -1,126 +1,153 @@
 .calorie-tracker {
-  padding-top: 90px;
-}
-
-.meter-and-calendar {
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-  .meter-and-title {
-    display: flex;
-    margin: auto;
-    width: 70%;
-    .calorie-meter {
-      width: 50%;
-      max-width: 640px;
-      min-width: 400px;
-      height: 45px;
-      // -webkit-appearance: none;
-      // border-radius: 15px;
-      // &::-webkit-progress-bar {
-      //   background-color: #f1f1f1;
-      // }
-      // &::-webkit-progress-value {
-      //   background-color: #3399ff;
-      // }
-    }
-    .meter-numbers {
-      padding-top: 10px;
-    }
-    .red {
-      color: crimson;
-    }
-    .green {
-      color: seagreen;
-    }
-  }
-}
-
-.meal-container {
-  display: flex;
-  justify-content: space-around;
-}
-.meal {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border: #ddd solid 3px;
-  border-radius: 5px;
-  width: 300px;
-  .eaten-food-container {
-    display: flex;
-    flex-direction: column;
-    .delete-eaten-food-container {
-    }
-  }
-}
-
-.chosen-meal {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border: red solid 3px;
-  width: 300px;
-}
-.add-food-button {
-  margin-bottom: 0 px;
-}
-
-.popup-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  padding-top: 5.5rem;
+  // color: white;
+  width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-.popup-add-food {
-  position: relative;
-  padding: 32px;
-  width: 100%;
-  height: 50%;
-  margin-top: 200px;
-  max-width: 640px;
-  max-height: 400px;
-  background-color: white;
+  overflow: hidden;
   color: black;
-  overflow-y: auto;
-  border-radius: 15px;
-  .popup-close-button {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    color: black;
-  }
-  .search-food-input {
-    width: 40%;
-    max-width: 550px;
-    height: 40px;
-    font-size: 1.5rem;
-  }
-  .searched-food-list {
+
+  .meter-and-calendar {
     display: flex;
     flex-direction: column;
+    width: 40%;
+    height: 90vh;
+    float: right;
+    margin-right: 1rem;
+    justify-content: space-around;
+    align-items: center;
+
+    .meter-and-title {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 80%;
+
+      .calorie-meter {
+        width: 90%;
+        margin-bottom: 0.5rem;
+        height: 3rem;
+      }
+      .meter-numbers {
+        padding-top: 10px;
+      }
+      .red {
+        color: crimson;
+      }
+      .green {
+        color: seagreen;
+      }
+    }
+  }
+
+  .meals-container {
+    border-radius: 0.4rem;
+    width: 55%;
+    height: 89vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+    // background-color: rgb(174, 0, 255);
+    background-color: rgb(51, 102, 255);
+
+    .add-to-container {
+      display: flex;
+      justify-content: space-between;
+
+      .add-food-button {
+        border: none;
+        padding: 0;
+        margin: 0rem 0.5rem;
+      }
+    }
+
+    .meal-container {
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(254, 251, 255);
+      color: black;
+      height: 10rem;
+      overflow: scroll;
+
+      // .meal {
+      //   display: flex;
+      //   // flex-direction: column;
+      //   text-align: center;
+      //   border: rgb(221, 221, 221) solid 3px;
+      //   border-radius: 5px;
+      //   // width: 300px;
+      // }
+      .eaten-food-container {
+        display: flex;
+        flex-direction: row;
+        margin: 1rem 0.5rem;
+        justify-content: space-between;
+        .delete-eaten-food-button {
+          border: none;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .chosen-meal {
+    border: red solid 3px;
+  }
+
+  .popup-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
     text-align: center;
     justify-content: center;
-    .searched-food-single {
-      border-bottom: solid 1px #ddd;
-      padding: 8px;
-      // width: max-content;
-    }
-    &:hover {
-      cursor: pointer;
-    }
   }
-  .add-food-button {
+
+  .popup-add-food {
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    height: 50%;
+    margin-top: 200px;
+    max-width: 640px;
+    max-height: 400px;
+    background-color: white;
     color: black;
-  }
-  .pop-up-selected-food {
-    border: black solid 3px;
-    border-radius: 6px;
+    overflow-y: auto;
+    border-radius: 15px;
+    .popup-close-button {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      color: black;
+    }
+    .search-food-input {
+      width: 40%;
+      max-width: 550px;
+      height: 40px;
+      font-size: 1.5rem;
+    }
+    .searched-food-list {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      .searched-food-single {
+        border-bottom: solid 1px #ddd;
+        padding: 8px;
+        // width: max-content;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .pop-up-selected-food {
+      border: black solid 3px;
+      border-radius: 6px;
+    }
   }
 }
