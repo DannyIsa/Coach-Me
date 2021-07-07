@@ -174,7 +174,19 @@ logs.get("/measure/show/:traineeId", async (req, res) => {
     return res.status(404).send("Invalid ID");
   }
 
-  const traineeMeasureLog = await trainee.getMeasureLogs();
+  const traineeMeasureLog = await models.MeasureLog.findAll({
+    attributes: [
+      "height",
+      "weight",
+      "hip_perimeter",
+      "chest_perimeter",
+      "thigh_perimeter",
+      "bicep_perimeter",
+      "waist_perimeter",
+      [sequelize.fn("date", sequelize.col("MeasureLog.created_at")), "date"],
+    ],
+    where: { trainee_id: traineeId },
+  });
   if (!traineeMeasureLog) return res.status(200).send([]);
 
   return res.status(200).send(traineeMeasureLog);
@@ -229,7 +241,7 @@ logs.get("/diet/show/all/:traineeId", async (req, res) => {
   if (!trainee) return res.status(404).send("No Trainee Found");
   const dietLogs = await models.EatenFood.findAll({
     attributes: [
-      "created_at",
+      [sequelize.fn("date", sequelize.col("EatenFood.created_at")), "date"],
       "amount",
       [sequelize.fn("sum", sequelize.col("Food.calories")), "total_calories"],
       [sequelize.fn("sum", sequelize.col("Food.protein")), "total_protein"],
@@ -241,7 +253,7 @@ logs.get("/diet/show/all/:traineeId", async (req, res) => {
       model: models.Food,
       attributes: ["calories", "protein", "fats", "carbs"],
     },
-    group: [sequelize.fn("date", sequelize.col("EatenFood.created_at"))],
+    group: ["date"],
   });
   if (!dietLogs) return [];
   let dataToSend = [...dietLogs].map((log) => {
