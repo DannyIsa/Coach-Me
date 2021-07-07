@@ -1,3 +1,23 @@
+.calorie-tracker {
+  padding-top: 90px;
+}
+
+.calorie-meter {
+  width: 50%;
+  max-width: 640px;
+  height: 55px;
+}
+
+.calorie-meter:-moz-meter-optimum::-moz-meter-bar {
+  background: indianred;
+}
+.calorie-meter:-moz-meter-sub-optimum::-moz-meter-bar {
+  background: #ffff66;
+}
+.calorie-meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+  background: #99ff99;
+}
+
 .meal-container {
   display: flex;
   justify-content: space-around;
