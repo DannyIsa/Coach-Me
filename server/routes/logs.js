@@ -261,7 +261,6 @@ logs.get("/diet/show/all/:traineeId", async (req, res) => {
     delete item.Food;
     return item;
   });
-
   return res.status(200).send(dataToSend);
 });
 
