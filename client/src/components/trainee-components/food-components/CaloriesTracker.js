@@ -162,7 +162,7 @@ export default function CaloriesTracker({ userDetails }) {
                     <p>{food.carbs * food.amount} carbs</p>
                     <p>{food.fats * food.amount} fats</p>
                     <button onClick={() => deleteItemFromMeal(food.id)}>
-                      X
+                      delete
                     </button>
                   </div>
                 )
@@ -193,7 +193,7 @@ export default function CaloriesTracker({ userDetails }) {
                     <p>{food.carbs * food.amount} carbs</p>
                     <p>{food.fats * food.amount} fats</p>
                     <button onClick={() => deleteItemFromMeal(food.id)}>
-                      X
+                      delete
                     </button>
                   </div>
                 )
@@ -224,7 +224,7 @@ export default function CaloriesTracker({ userDetails }) {
                     <p>{food.carbs * food.amount} carbs</p>
                     <p>{food.fats * food.amount} fats</p>
                     <button onClick={() => deleteItemFromMeal(food.id)}>
-                      X
+                      delete
                     </button>
                   </div>
                 )
