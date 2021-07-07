@@ -51,11 +51,7 @@ export default function CaloriesTracker({ userDetails }) {
     }
   }, 300);
 
-  const addfoodOfSelectedDate = (food) => {
-    food.calories = food.calories * addFoodAmount;
-    food.protein = food.protein * addFoodAmount;
-    food.carbs = food.carbs * addFoodAmount;
-    food.fats = food.fats * addFoodAmount;
+  const addFoodOfSelectedDate = (food) => {
     axios
       .post("http://localhost:3001/api/food/eaten-food", {
         traineeId: userDetails.id,
@@ -66,6 +62,7 @@ export default function CaloriesTracker({ userDetails }) {
       .then(({ data }) => {
         let temp = [...foodOfSelectedDate];
         temp.push(data);
+        console.log(data);
         setFoodOfSelectedDate([...temp]);
         setAddFoodPressed(false);
         setSelectedMeal("");
@@ -88,23 +85,23 @@ export default function CaloriesTracker({ userDetails }) {
 
   return (
     <div className="calorie-tracker">
-      <meter
-        className="calorie-meter"
-        low={totalCalories ? totalCalories / 3 : 0}
-        high={totalCalories ? (totalCalories / 3) * 2 : 0}
-        min="0"
-        value={usedCalories ? usedCalories : 0}
-        max={totalCalories ? totalCalories : usedCalories ? usedCalories : 0}
-      >
-        {usedCalories}%
-      </meter>
-      <h3>
-        {Number(usedCalories)} / {totalCalories} Calories Eaten
-      </h3>
-      <DaySelect
-        setFoodOfSelectedDate={setFoodOfSelectedDate}
-        userDetails={userDetails}
-      />
+      <div className="meter-and-calendar">
+        <progress
+          className="calorie-meter"
+          min="0"
+          value={usedCalories ? usedCalories : 0}
+          max={totalCalories ? totalCalories : usedCalories ? usedCalories : 0}
+        >
+          {usedCalories}%
+        </progress>
+        <h3>
+          {Number(usedCalories)} / {totalCalories} Calories Eaten
+        </h3>
+        <DaySelect
+          setFoodOfSelectedDate={setFoodOfSelectedDate}
+          userDetails={userDetails}
+        />
+      </div>
 
       <div className="meal-container">
         <div className={selectedMeal === "Breakfast" ? "chosen-meal" : "meal"}>
@@ -280,7 +277,7 @@ export default function CaloriesTracker({ userDetails }) {
                   onChange={(e) => setAddFoodAmount(e.target.value)}
                   value={addFoodAmount}
                 ></input>
-                <button onClick={() => addfoodOfSelectedDate(popUpAddFood)}>
+                <button onClick={() => addFoodOfSelectedDate(popUpAddFood)}>
                   ADD
                 </button>
               </div>

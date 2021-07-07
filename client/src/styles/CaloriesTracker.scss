@@ -1,0 +1,60 @@
+.calorie-tracker {
+  padding-top: 90px;
+}
+
+.calorie-meter {
+  width: 50%;
+  max-width: 640px;
+  height: 45px;
+  // -webkit-appearance: none;
+  // border-radius: 15px;
+  // &::-webkit-progress-bar {
+  //   background-color: #f1f1f1;
+  // }
+  // &::-webkit-progress-value {
+  //   background-color: #3399ff;
+  // }
+  // &:-moz-meter-optimum::-moz-meter-bar {
+  //   background: indianred;
+  // }
+  // &:-moz-meter-sub-optimum::-moz-meter-bar {
+  //   background: #99ff99;
+  // }
+  // &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+  //   background: indianred;
+  // }
+}
+
+.meter-and-calendar {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.meal-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.meal {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: black solid 3px;
+  width: 300px;
+}
+
+.chosen-meal {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: red solid 3px;
+  width: 300px;
+}
+.add-food-button {
+  margin-bottom: 0 px;
+}
+
+.pop-up-selected-food {
+  border: black solid 3px;
+}

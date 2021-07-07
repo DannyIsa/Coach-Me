@@ -5,39 +5,53 @@
 .calorie-meter {
   width: 50%;
   max-width: 640px;
-  height: 55px;
+  height: 45px;
 }
 
-.calorie-meter:-moz-meter-optimum::-moz-meter-bar {
-  background: indianred;
-}
-.calorie-meter:-moz-meter-sub-optimum::-moz-meter-bar {
-  background: #ffff66;
-}
-.calorie-meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
-  background: #99ff99;
+.meter-and-calendar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
 }
 
 .meal-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin-top: 50px;
 }
+
 .meal {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
   border: black solid 3px;
   width: 300px;
 }
 
 .chosen-meal {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
   border: red solid 3px;
   width: 300px;
 }
+
 .add-food-button {
   margin-bottom: 0 px;
 }
@@ -45,3 +59,4 @@
 .pop-up-selected-food {
   border: black solid 3px;
 }
+/*# sourceMappingURL=CaloriesTracker.css.map */

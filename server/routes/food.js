@@ -115,12 +115,14 @@ food.post("/eaten-food", async (req, res) => {
 food.delete("/eaten-food/:foodId", async (req, res) => {
   const { foodId } = req.params;
   const { traineeId } = req.query;
+
   if (!foodId) return res.status(400).send("Must send food id");
   if (!traineeId) return res.status(400).send("Must send trainee id");
 
   const eatenFoodId = await models.EatenFood.findOne({
     where: { id: foodId, trainee_id: traineeId },
   });
+  console.log(eatenFoodId);
   if (!eatenFoodId) return res.status(404).send("No food with that id");
   await eatenFoodId.destroy();
   const { status, data } = await getEatenFoodFromToday(traineeId);
@@ -153,7 +155,5 @@ food.delete("/need-to-eat/:foodId", async (req, res) => {
   const { status, data } = await getFoodFromNeedToEat(traineeId);
   res.status(status).send(data);
 });
-
-
 
 module.exports = food;

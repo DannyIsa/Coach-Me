@@ -45,7 +45,10 @@ export default function DaySelect({ userDetails, setFoodOfSelectedDate }) {
           onDayClick={handleDayClick}
         />
       </div>
-      <p>{selectedDay ? selectedDay.toLocaleDateString() : "Today 👻"}</p>
+      <p>
+        Selected date:{" "}
+        {selectedDay ? selectedDay.toLocaleDateString() : "Today 👻"}
+      </p>
     </>
   );
 }
