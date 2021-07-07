@@ -87,24 +87,24 @@ export default function CaloriesTracker({ userDetails }) {
   };
 
   return (
-    <div>
+    <div className="calorie-tracker">
       <meter
+        className="calorie-meter"
+        low={totalCalories ? totalCalories / 3 : 0}
+        high={totalCalories ? (totalCalories / 3) * 2 : 0}
         min="0"
         value={usedCalories ? usedCalories : 0}
         max={totalCalories ? totalCalories : usedCalories ? usedCalories : 0}
       >
         {usedCalories}%
       </meter>
-      <span>
-        {usedCalories} / {totalCalories}
-      </span>
+      <h3>
+        {Number(usedCalories)} / {totalCalories} Calories Eaten
+      </h3>
       <DaySelect
         setFoodOfSelectedDate={setFoodOfSelectedDate}
         userDetails={userDetails}
       />
-      <h3>
-        {Number(usedCalories)} / {totalCalories} Calories Eaten
-      </h3>
 
       <div className="meal-container">
         <div className={selectedMeal === "Breakfast" ? "chosen-meal" : "meal"}>

@@ -9,8 +9,7 @@ import { ReactComponent as MenuIcon } from "../../assets/menu.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearchLocation,
-  faCheck,
-  faTimes,
+  faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
 import "../../styles/NavBar.css";
@@ -21,7 +20,6 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   const history = useHistory();
-  // const [render, setRender] = useState(false);
   const [coaches, setCoaches] = useState();
   const [request, setRequest] = useState();
   const setError = useContext(SetErrorContext);
@@ -51,17 +49,6 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
       })
       .catch((err) => setError(err.response.data));
   }
-
-  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111111");
-  console.log(request);
-  console.log(
-    "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!2222222"
-  );
-
-  console.log(coaches);
-  console.log(
-    "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!3333333"
-  );
 
   return (
     <div className="homeNav">
@@ -126,7 +113,11 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                                         )
                                       }
                                     >
-                                      Send Request
+                                      <FontAwesomeIcon
+                                        icon={faUserPlus}
+                                        color="black"
+                                        className="fa-fa"
+                                      />
                                     </button>
                                   )}
                                 </div>

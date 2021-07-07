@@ -10,6 +10,7 @@
 @import "./AddExercise";
 @import "./WeeklyCalendar";
 @import "./ClientCalendar";
+@import "./TraineeProfile";
 
 * {
   margin: 0;
@@ -88,7 +89,7 @@ a:hover {
   background-color: cadetblue;
 }
 
-.error-message {
+.error-message-alert {
   width: 80px;
   height: 80px;
   position: fixed;
