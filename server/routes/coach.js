@@ -449,4 +449,17 @@ coach.patch("/workouts/update/:coachId", async (req, res) => {
     .then(() => res.status(201).send("Updated Successfully"))
     .catch((err) => res.status(400).send(err));
 });
+
+coach.post("/image/add/:coachId", async (req, res) => {
+  const { coachId } = req.params;
+  const { image } = req.body;
+  const coach = await models.Coach.findOne({ where: { id: coachId } });
+  if (!coach) return res.status(404).send("No Matching Coach");
+  coach
+    .update({
+      image,
+    })
+    .then((data) => res.status(201).send(data))
+    .catch((err) => res.status(400).send(err));
+});
 module.exports = coach;

@@ -17,13 +17,11 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "id",
         foreignKey: "coach_id",
         onDelete: "cascade",
-
       });
       this.hasMany(models.CoachRequest, {
         foreignKey: "coach_id",
         sourceKey: "id",
         onDelete: "cascade",
-
       });
     }
   }
@@ -36,6 +34,7 @@ module.exports = (sequelize, DataTypes) => {
       gender: DataTypes.STRING,
       avg_rating: DataTypes.FLOAT,
       rating_count: DataTypes.INTEGER,
+      image: DataTypes.STRING,
     },
     {
       sequelize,

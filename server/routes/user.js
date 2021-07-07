@@ -17,8 +17,12 @@ const user = Router();
 user.use(express.json());
 
 function checkValid(client) {
+  let tmp = { ...client };
+  if (tmp.hasOwnProperty("image")) {
+    delete tmp.image;
+  }
   let valid = true;
-  const values = Object.values(client);
+  const values = Object.values(tmp);
   if (values === []) return false;
   values.map((value) => {
     if (!value && value !== 0) {

@@ -6,6 +6,9 @@ import { debounce } from "lodash";
 import DaySelect from "./DaySelect";
 import "../../../styles/CaloriesTracker.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt, faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
+
 export default function CaloriesTracker({ userDetails }) {
   const [totalCalories, setTotalCalories] = useState(0);
   const [usedCalories, setUsedCalories] = useState(0);
@@ -110,141 +113,184 @@ export default function CaloriesTracker({ userDetails }) {
         />
       </div>
 
-      <div className="meal-container">
+      <div className="meals-container">
         <div className={selectedMeal === "Breakfast" ? "chosen-meal" : "meal"}>
-          <h1>Breakfast</h1>
-
-          {foodOfSelectedDate &&
-            foodOfSelectedDate.map((food) => {
-              return (
-                food.meal_of_the_day === "Breakfast" && (
-                  <div key={food.id}>
-                    <h4>
-                      {food.name} ({food.weight * food.amount}g)
-                    </h4>
-                    <p>{food.calories * food.amount} calories</p>
-                    <p>{food.protein * food.amount} protein</p>
-                    <p>{food.carbs * food.amount} carbs</p>
-                    <p>{food.fats * food.amount} fats</p>
-                    <button onClick={() => deleteItemFromMeal(food.id)}>
-                      X
-                    </button>
-                  </div>
-                )
-              );
-            })}
-
-          <button
-            onClick={() => {
-              setSelectedMeal("Breakfast");
-              setAddFoodPressed(true);
-            }}
-            className="add-food-button"
-          >
-            Add Food
-          </button>
+          <div className="add-to-container">
+            <h1>Breakfast</h1>
+            <button
+              onClick={() => {
+                setSelectedMeal("Breakfast");
+                setAddFoodPressed(true);
+              }}
+              className="add-food-button"
+            >
+              <FontAwesomeIcon icon={faPlus} color="white" className="fa-fa" />
+            </button>
+          </div>
+          <div className="meal-container">
+            {foodOfSelectedDate &&
+              foodOfSelectedDate.map((food) => {
+                return (
+                  food.meal_of_the_day === "Breakfast" && (
+                    <div className="eaten-food-container" key={food.id}>
+                      <h4>
+                        {food.name} ({food.weight * food.amount}g)
+                      </h4>
+                      <p>{food.calories * food.amount} calories</p>
+                      <p>{food.protein * food.amount} protein</p>
+                      <p>{food.carbs * food.amount} carbs</p>
+                      <p>{food.fats * food.amount} fats</p>
+                      <button
+                        className="delete-eaten-food-button"
+                        onClick={() => deleteItemFromMeal(food.id)}
+                      >
+                        <FontAwesomeIcon
+                          icon={faTrashAlt}
+                          color="black"
+                          className="fa-fa"
+                        />
+                      </button>
+                    </div>
+                  )
+                );
+              })}
+          </div>
         </div>
         <div className={selectedMeal === "Lunch" ? "chosen-meal" : "meal"}>
-          <h1>Lunch</h1>
-          {foodOfSelectedDate &&
-            foodOfSelectedDate.map((food) => {
-              return (
-                food.meal_of_the_day === "Lunch" && (
-                  <div key={food.id}>
-                    <h4>
-                      {food.name} ({food.weight * food.amount}g)
-                    </h4>
-                    <p>{food.calories * food.amount} calories</p>
-                    <p>{food.protein * food.amount} protein</p>
-                    <p>{food.carbs * food.amount} carbs</p>
-                    <p>{food.fats * food.amount} fats</p>
-                    <button onClick={() => deleteItemFromMeal(food.id)}>
-                      X
-                    </button>
-                  </div>
-                )
-              );
-            })}
-          <button
-            onClick={() => {
-              setSelectedMeal("Lunch");
-              setAddFoodPressed(true);
-            }}
-            className="add-food-button"
-          >
-            Add Food
-          </button>
+          <div className="add-to-container">
+            <h1>Lunch</h1>
+            <button
+              onClick={() => {
+                setSelectedMeal("Lunch");
+                setAddFoodPressed(true);
+              }}
+              className="add-food-button"
+            >
+              <FontAwesomeIcon icon={faPlus} color="white" className="fa-fa" />
+            </button>
+          </div>
+          <div className="meal-container">
+            {foodOfSelectedDate &&
+              foodOfSelectedDate.map((food) => {
+                return (
+                  food.meal_of_the_day === "Lunch" && (
+                    <div className="eaten-food-container" key={food.id}>
+                      <h4>
+                        {food.name} ({food.weight * food.amount}g)
+                      </h4>
+                      <p>{food.calories * food.amount} calories</p>
+                      <p>{food.protein * food.amount} protein</p>
+                      <p>{food.carbs * food.amount} carbs</p>
+                      <p>{food.fats * food.amount} fats</p>
+                      <button
+                        className="delete-eaten-food-button"
+                        onClick={() => deleteItemFromMeal(food.id)}
+                      >
+                        <FontAwesomeIcon
+                          icon={faTrashAlt}
+                          color="black"
+                          className="fa-fa"
+                        />
+                      </button>
+                    </div>
+                  )
+                );
+              })}
+          </div>
         </div>
         <div className={selectedMeal === "Dinner" ? "chosen-meal" : "meal"}>
-          <h1>Dinner</h1>
-          {foodOfSelectedDate &&
-            foodOfSelectedDate.map((food) => {
-              return (
-                food.meal_of_the_day === "Dinner" && (
-                  <div key={food.id}>
-                    <h4>
-                      {food.name} ({food.weight * food.amount}g)
-                    </h4>
-                    <p>{food.calories * food.amount} calories</p>
-                    <p>{food.protein * food.amount} protein</p>
-                    <p>{food.carbs * food.amount} carbs</p>
-                    <p>{food.fats * food.amount} fats</p>
-                    <button onClick={() => deleteItemFromMeal(food.id)}>
-                      X
-                    </button>
-                  </div>
-                )
-              );
-            })}
-          <button
-            onClick={() => {
-              setSelectedMeal("Dinner");
-              setAddFoodPressed(true);
-            }}
-            className="add-food-button"
-          >
-            Add Food
-          </button>
+          <div className="add-to-container">
+            <h1>Dinner</h1>
+            <button
+              onClick={() => {
+                setSelectedMeal("Dinner");
+                setAddFoodPressed(true);
+              }}
+              className="add-food-button"
+            >
+              <FontAwesomeIcon icon={faPlus} color="white" className="fa-fa" />
+            </button>
+          </div>
+          <div className="meal-container">
+            {foodOfSelectedDate &&
+              foodOfSelectedDate.map((food) => {
+                return (
+                  food.meal_of_the_day === "Dinner" && (
+                    <div className="eaten-food-container" key={food.id}>
+                      <h4>
+                        {food.name} ({food.weight * food.amount}g)
+                      </h4>
+                      <p>{food.calories * food.amount} calories</p>
+                      <p>{food.protein * food.amount} protein</p>
+                      <p>{food.carbs * food.amount} carbs</p>
+                      <p>{food.fats * food.amount} fats</p>
+                      <button
+                        className="delete-eaten-food-button"
+                        onClick={() => deleteItemFromMeal(food.id)}
+                      >
+                        <FontAwesomeIcon
+                          icon={faTrashAlt}
+                          color="black"
+                          className="fa-fa"
+                        />
+                      </button>
+                    </div>
+                  )
+                );
+              })}
+          </div>
         </div>
         <div className={selectedMeal === "Snacks" ? "chosen-meal" : "meal"}>
-          <h1>Snacks</h1>
-          {foodOfSelectedDate &&
-            foodOfSelectedDate.map((food) => {
-              return (
-                food.meal_of_the_day === "Snacks" && (
-                  <div key={food.id}>
-                    <h4>
-                      {food.name} ({food.weight * food.amount}g)
-                    </h4>
-                    <p>{food.calories * food.amount} calories</p>
-                    <p>{food.protein * food.amount} protein</p>
-                    <p>{food.carbs * food.amount} carbs</p>
-                    <p>{food.fats * food.amount} fats</p>
-                    <button onClick={() => deleteItemFromMeal(food.id)}>
-                      X
-                    </button>
-                  </div>
-                )
-              );
-            })}
-          <button
-            onClick={() => {
-              setSelectedMeal("Snacks");
-              setAddFoodPressed(true);
-            }}
-            className="add-food-button"
-          >
-            Add Food
-          </button>
+          <div className="add-to-container">
+            <h1>Snacks</h1>
+            <button
+              onClick={() => {
+                setSelectedMeal("Snacks");
+                setAddFoodPressed(true);
+              }}
+              className="add-food-button"
+            >
+              <FontAwesomeIcon icon={faPlus} color="white" className="fa-fa" />
+            </button>
+          </div>
+          <div className="meal-container">
+            {foodOfSelectedDate &&
+              foodOfSelectedDate.map((food) => {
+                return (
+                  food.meal_of_the_day === "Snacks" && (
+                    <div className="eaten-food-container" key={food.id}>
+                      <h4>
+                        {food.name} ({food.weight * food.amount}g)
+                      </h4>
+                      <p>{food.calories * food.amount} calories</p>
+                      <p>{food.protein * food.amount} protein</p>
+                      <p>{food.carbs * food.amount} carbs</p>
+                      <p>{food.fats * food.amount} fats</p>
+                      <button
+                        className="delete-eaten-food-button"
+                        onClick={() => deleteItemFromMeal(food.id)}
+                      >
+                        <FontAwesomeIcon
+                          icon={faTrashAlt}
+                          color="black"
+                          className="fa-fa"
+                        />
+                      </button>
+                    </div>
+                  )
+                );
+              })}
+          </div>
         </div>
       </div>
       {addFoodPressed && (
         <div className="popup-background">
           <div className="popup-add-food">
             <input
+              className="search-food-input"
               ref={foodSearchInput}
               onChange={searchFood}
-              placeholder="search food"
+              placeholder="What do you want to eat today ?"
             ></input>
             <button
               className="popup-close-button"
@@ -253,18 +299,18 @@ export default function CaloriesTracker({ userDetails }) {
                 setSelectedMeal("");
               }}
             >
-              close
+              <FontAwesomeIcon icon={faTimes} color="black" className="fa-fa" />
             </button>
-            <div>
+            <div className="searched-food-list">
               {searchedFood.map((food, i) => {
                 return (
                   <h4
+                    className="searched-food-single"
                     key={food.id}
                     onClick={() => {
                       setAddFoodAmount(1);
                       setPopUpAddFood(food);
                     }}
-                    // onMouseLeave={setPopUpAddFood("")}
                     key={food.id}
                   >
                     {food.name} ({food.weight}g)
@@ -286,7 +332,10 @@ export default function CaloriesTracker({ userDetails }) {
                     onChange={(e) => setAddFoodAmount(e.target.value)}
                     value={addFoodAmount}
                   ></input>
-                  <button onClick={() => addFoodOfSelectedDate(popUpAddFood)}>
+                  <button
+                    className="add-food-button"
+                    onClick={() => addFoodOfSelectedDate(popUpAddFood)}
+                  >
                     ADD
                   </button>
                 </div>
