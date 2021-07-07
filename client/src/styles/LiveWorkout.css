@@ -1,0 +1,17 @@
+.header {
+  padding-top: 90px;
+}
+
+.exerciseContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.exercise {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: black solid 3px;
+  width: 200px;
+}
