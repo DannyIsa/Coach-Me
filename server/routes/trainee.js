@@ -137,19 +137,22 @@ trainee.get("/workouts/show/:coachId", async (req, res) => {
   res.status(200).send(workouts);
 });
 
-trainee.get("/workout/show/:workoutId", async (req, res) => {
-  console.log(req.params, "RRRRR");
+trainee.get("/workout/show/one/:coachId", async (req, res) => {
+  const { coachId } = req.query;
+  const { traineeId } = req.query;
   const { workoutId } = req.params;
-  if (!workoutId) {
-    return res.status(400).send("must send id");
-  }
-  const workout = await models.Workout.findOne({
-    where: { id: workoutId },
+  const trainee = await models.Trainee.findOne({
+    where: { id: traineeId, coach_id: coachId },
   });
-  if (!workout) {
-    return res.status(404).send("workout not found");
-  }
-  res.status(201).send(workout);
+  if (!trainee) return res.status(404).send("No Matching Id");
+  const workout = await models.Workout.findOne({ where: { id: workoutId } });
+  if (!workout) res.status(404).send("Workout Not Found");
+
+  const exercises = await workout.getExerciseSets();
+  if (!exercises) return res.status(404).send("Invalid Workout");
+  const data = { ...workout.toJSON(), exercises };
+  delete data.ExerciseSets;
+  res.status(200).send(data);
 });
 
 module.exports = trainee;
