@@ -4,6 +4,8 @@ import pdf from "../../documents/health_declaration.pdf";
 import EditableInput from "../EditableInput";
 import { SetErrorContext } from "../../App";
 import userPic from "../../pics/user1.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 
 function TraineeProfile({ userDetails }) {
   const [previousWorkouts, setPreviousWorkouts] = useState([]);
@@ -256,8 +258,12 @@ function TraineeProfile({ userDetails }) {
                     <div>daily general update</div>{" "}
                     <div>
                       health declaration{" "}
-                      <a href={pdf} target="_blank">
-                        download pdf{" "}
+                      <a href={pdf} target="_blank" className="pdf-btn">
+                        <FontAwesomeIcon
+                          icon={faFileDownload}
+                          color="white"
+                          className="fa-fa"
+                        />
                       </a>{" "}
                     </div>
                   </div>

@@ -17,13 +17,6 @@
         width: 20rem;
       }
       .d-flex {
-        // display: flex;
-        // flex-direction: column;
-        // text-align: center;
-        // // align-selfx: center;
-        // justify-content: space-between;
-
-        ////////
         display: flex;
         flex-flow: column;
         align-items: center;
@@ -49,6 +42,10 @@
         &:hover {
           border-color: #ffc719;
         }
+      }
+      .pdf-btn {
+        font-size: 1.2rem;
+        margin-left: 0.3rem;
       }
     }
     .card {

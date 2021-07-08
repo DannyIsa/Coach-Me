@@ -1761,7 +1761,8 @@ form.sign-in-form {
 
 .add-exercise-start h1 {
   text-align: center;
-  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 2.8em;
 }
 
 .add-exercise-start .add-exercise-form {
@@ -2033,6 +2034,11 @@ form.sign-in-form {
 
 .profile-container .main-body .main2 .edit-button:hover {
   border-color: #ffc719;
+}
+
+.profile-container .main-body .main2 .pdf-btn {
+  font-size: 1.2rem;
+  margin-left: 0.3rem;
 }
 
 .profile-container .main-body .card {

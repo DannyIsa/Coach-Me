@@ -26,6 +26,7 @@
         width: 90%;
         margin-bottom: 0.5rem;
         height: 3rem;
+        color: #1456a1;
       }
       .meter-numbers {
         padding-top: 10px;
@@ -47,7 +48,8 @@
     flex-direction: column;
     margin-left: 3rem;
     // background-color: rgb(174, 0, 255);
-    background-color: rgb(51, 102, 255);
+    background-color: #1456a1;
+    // background-color: rgb(51, 102, 255);
 
     .add-to-container {
       display: flex;
@@ -133,7 +135,8 @@
       font-size: 1.5rem;
 
       &:focus {
-        outline-color: rgb(51, 102, 255);
+        outline-color: #1456a1;
+        // outline-color: rgb(51, 102, 255);
       }
     }
     .searched-food-list {

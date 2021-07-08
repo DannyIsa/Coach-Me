@@ -43,6 +43,7 @@
   width: 90%;
   margin-bottom: 0.5rem;
   height: 3rem;
+  color: #1456a1;
 }
 
 .calorie-tracker .meter-and-calendar .meter-and-title .meter-numbers {
@@ -69,7 +70,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   margin-left: 3rem;
-  background-color: #3366ff;
+  background-color: #1456a1;
 }
 
 .calorie-tracker .meals-container .add-to-container {
@@ -170,7 +171,7 @@
 }
 
 .calorie-tracker .popup-add-food .search-food-input:focus {
-  outline-color: #3366ff;
+  outline-color: #1456a1;
 }
 
 .calorie-tracker .popup-add-food .searched-food-list {
