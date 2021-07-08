@@ -19,8 +19,8 @@ logs.use(express.json());
 logs.post("/workout/add/:traineeId", async (req, res) => {
   const { traineeId } = req.params;
   const { workoutId } = req.body;
+  console.log(traineeId, workoutId);
   if (!traineeId | !workoutId) return res.status(400).send("Id Required");
-  if (!time) return res.status(400).send("Time Required");
   const workout = await models.Workout.findOne({ where: { id: workoutId } });
   if (!workout) return res.status(404).send("Workout Not Found");
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });

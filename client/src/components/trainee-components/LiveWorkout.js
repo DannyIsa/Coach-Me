@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { SetErrorContext } from "../../App";
 import "../../styles/LiveWorkout.css";
 import WorkoutTimer from "./WorkoutTimer";
@@ -11,6 +11,7 @@ function LiveWorkout({ userDetails }) {
   const [index, setIndex] = useState(0);
   const [ended, setEnded] = useState(false);
   const { workoutId } = useParams();
+  const history = useHistory();
   const setError = useContext(SetErrorContext);
 
   const splitArray = (attribute) => {
@@ -69,7 +70,20 @@ function LiveWorkout({ userDetails }) {
       ) : (
         <>
           <h1>Workout Ended</h1>
-          <button>Submit Workout</button>
+          <button
+            onClick={() => {
+              axios
+                .post("/api/logs/workout/add/" + userDetails.id, {
+                  workoutId: currentWorkout.id,
+                })
+                .then(() => {
+                  history.push("/trainee/calendar");
+                })
+                .catch((err) => setError(err.response.data));
+            }}
+          >
+            Submit Workout
+          </button>
         </>
       )}
       {currentWorkout && timeArray && (
