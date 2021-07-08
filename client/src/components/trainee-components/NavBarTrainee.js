@@ -96,44 +96,67 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                         {coaches && request
                           ? coaches.map((item, index) => (
                               <div className="alert sec" key={"alert" + index}>
-                                <div className="txt">{item.name}</div>
                                 <div>
                                   {item.image && (
                                     <img
-                                      height="42"
-                                      width="42"
+                                      className="coach-card-image"
                                       src={item.image}
                                     />
                                   )}
-                                  <p>Gender: {item.gender}</p>
-                                  <p>Email: {item.email}</p>
                                 </div>
+                                <div className="coach-card-con">
+                                  {item.name}
+                                  <p>{item.email}</p>
+                                  <div className="coach-card-details">
+                                    <p>
+                                      Gender <span>{item.gender}</span>
+                                    </p>
+                                    <p>
+                                      Rating <span>8.3</span>
+                                    </p>
+                                  </div>
 
-                                <div
-                                  className="coaches-item txt"
-                                  key={"C" + index}
-                                >
-                                  {item.id === userDetails.coach_id ? (
-                                    "Your Coach"
-                                  ) : item.id === request.coach_id ? (
-                                    "Request Pending"
-                                  ) : (
-                                    <button
-                                      onClick={() =>
-                                        sendRequest(
-                                          item.id,
-                                          userDetails.id,
-                                          userDetails.name
-                                        )
-                                      }
-                                    >
-                                      <FontAwesomeIcon
-                                        icon={faUserPlus}
-                                        color="black"
-                                        className="fa-fa"
-                                      />
-                                    </button>
-                                  )}
+                                  <div
+                                    className="coaches-item txt"
+                                    key={"C" + index}
+                                  >
+                                    {item.id === userDetails.coach_id ? (
+                                      "Your Coach"
+                                    ) : item.id === request.coach_id ? (
+                                      "Request Pending"
+                                    ) : (
+                                      <div className="coach-card-btn">
+                                        <button
+                                          className="chat-btn"
+                                          onClick={() =>
+                                            sendRequest(
+                                              item.id,
+                                              userDetails.id,
+                                              userDetails.name
+                                            )
+                                          }
+                                        >
+                                          Chat
+                                        </button>
+                                        <button
+                                          className="requests-btn"
+                                          onClick={() =>
+                                            sendRequest(
+                                              item.id,
+                                              userDetails.id,
+                                              userDetails.name
+                                            )
+                                          }
+                                        >
+                                          <FontAwesomeIcon
+                                            icon={faUserPlus}
+                                            color="white"
+                                            className="fa-fa"
+                                          />
+                                        </button>
+                                      </div>
+                                    )}
+                                  </div>
                                 </div>
                                 {/* <div className="txt sub">
                                   {new Date(item.updatedAt).toLocaleDateString(
