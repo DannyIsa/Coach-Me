@@ -153,7 +153,7 @@ function CreateWorkout({ userDetails }) {
                   }}
                   onClick={() => setChosenWorkout(item)}
                 >
-                  <p className="exercise-name">{item.name} • </p>
+                  <h3 className="exercise-name">{item.name} • </h3>
                 </div>
               ))
             : "No Exercises"}
