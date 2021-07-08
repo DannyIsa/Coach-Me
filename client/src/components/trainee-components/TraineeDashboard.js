@@ -31,7 +31,7 @@ function TraineeDashboard({ userDetails }) {
     }
   }, [userDetails]);
   return (
-    <div className="coach-dashboard">
+    <div className="trainee-dashboard">
       {userDetails ? (
         <>
           <h1>{`Welcome Back, ${userDetails.name} !`}</h1>

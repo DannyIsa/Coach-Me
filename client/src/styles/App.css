@@ -1083,12 +1083,6 @@ form.sign-in-form {
   padding-top: 7rem;
 }
 
-.trainee-dashboard .edit-button {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
 .coaches-list {
   height: 100vh;
   display: -webkit-box;
