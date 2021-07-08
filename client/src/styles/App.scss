@@ -3,7 +3,7 @@
 @import "./WorkoutsList";
 @import "./ClientsList";
 @import "./Popup";
-@import "./CoachDashboard";
+// @import "./CoachDashboard";
 @import "./TraineeDashboard";
 @import "./CoachesList";
 @import "./Details";
@@ -36,6 +36,8 @@ body {
   // overflow: hidden;
   // height: 100vh;
   // text-transform: uppercase;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 button {
