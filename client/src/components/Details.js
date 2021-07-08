@@ -2,9 +2,11 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import logo from "../pics/logo.png";
+import firebase from "firebase";
 import { SetErrorContext } from "../App";
 
 function Details({ userDetails, userType, setRegistered, setReqDone }) {
+  const storage = firebase.storage();
   const history = useHistory();
   const [other, setOther] = useState(false);
   const setError = useContext(SetErrorContext);
@@ -29,7 +31,7 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
       <div className="right-div">
         <form
           className="details-form"
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
             setReqDone(false);
             const data = new FormData(e.target);
@@ -38,12 +40,33 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
               phone_number: data.get("phone-number"),
               gender: data.get("gender"),
               birthdate: data.get("birthdate"),
+              image: data.get("image"),
             };
             if (userType === "Trainee") {
               obj.height = data.get("height");
               obj.weight = data.get("weight");
               obj.activity_level = data.get("activity-level");
             }
+            if (
+              obj.image.name !== "" &&
+              !obj.image.name.endsWith(".jpg") &&
+              !obj.image.name.endsWith(".png")
+            ) {
+              setError("File Type needs to be jpg/png");
+              return;
+            }
+            if (obj.image.name !== "") {
+              await storage.ref(obj.image.name).put(obj.image);
+              const url = await storage
+                .ref()
+                .child(obj.image.name)
+                .getDownloadURL();
+              if (!url) {
+                setError("Couldn't upload image");
+                return;
+              }
+              obj.image = url;
+            } else obj.image = "";
             axios
               .put("http://localhost:3001/api/user/details/" + userDetails.id, {
                 obj,
@@ -128,6 +151,24 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
               <span>Date of Birth</span>
             </div>
           </div>
+          {/* img upload */}
+          <div>
+            <div className="form-block">
+              <h2 className="label-name" htmlFor="image">
+                Upload Your Profile Image 📷:
+              </h2>
+              <input type="file" name="image" accept=".jpg,.png,.gif" />
+            </div>
+
+            {/* <div className="form-block">
+              <button type="submit" value="submit">
+                <span></span>
+                Upload
+              </button>
+            </div> */}
+          </div>
+          {/* img upload */}
+
           {userType === "Trainee" && (
             <>
               <div className="num3">

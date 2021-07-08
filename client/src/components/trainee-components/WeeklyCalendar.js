@@ -8,6 +8,7 @@ export default function WeeklyCalendar({ userDetails }) {
   const [needToEat, setNeedToEat] = useState([]);
   const [workouts, setWorkouts] = useState([]);
   const [chosenWorkout, setChosenWorkout] = useState();
+  const [done, setDone] = useState({ done: false, workout: undefined });
   const setError = useContext(SetErrorContext);
 
   useEffect(() => {
@@ -34,6 +35,17 @@ export default function WeeklyCalendar({ userDetails }) {
           setError(err.response.data);
         });
     }
+  }, [userDetails]);
+
+  useEffect(() => {
+    if (userDetails)
+      axios
+        .get("/api/logs/workout/check/" + userDetails.id)
+        .then(({ data }) => {
+          console.log(data);
+          setDone(data);
+        })
+        .catch((err) => setError(err.response.data));
   }, [userDetails]);
 
   const handleExerciseClicked = (workout) => {
@@ -95,6 +107,11 @@ export default function WeeklyCalendar({ userDetails }) {
                     {item && (
                       <div onClick={() => handleExerciseClicked(item)}>
                         <h5>{item.name}</h5>
+                        <h4>
+                          {done.workout &&
+                            item.day.startsWith(done.workout.day) &&
+                            (done.done ? "Done!" : "Your Workout Today!")}
+                        </h4>
                       </div>
                     )}
                   </div>
@@ -113,11 +130,17 @@ export default function WeeklyCalendar({ userDetails }) {
             >
               CLOSE
             </button>
-            {chosenWorkout && (
-              <Link to={`/trainee/workout/${chosenWorkout.id}`}>
-                start workout
-              </Link>
-            )}
+            {chosenWorkout &&
+              chosenWorkout.day.startsWith(
+                new Date().toString().split(" ")[0]
+              ) &&
+              (!done.done ? (
+                <Link to={`/trainee/workout/${chosenWorkout.id}`}>
+                  start workout
+                </Link>
+              ) : (
+                <h2>Done!</h2>
+              ))}
             <h1>{chosenWorkout.name}</h1>
             {chosenWorkout.exercises.map((exercise) => {
               return (
