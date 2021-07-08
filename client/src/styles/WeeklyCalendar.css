@@ -1,24 +1,34 @@
 .table {
-  height: 85vh;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 150px;
+  width: 80%;
   border-collapse: collapse;
 }
 
 .table td {
-  border: 3px #0099ff solid;
+  border: 2px #d1d3d8 solid;
+  background-color: rgb(231, 228, 223);
+  width: 5rem;
+  height: 5.5rem;
+  color: rgb(77, 75, 75);
+  word-wrap: break-all;
 }
 
 .table-one-container {
   width: auto;
   height: 100%;
+  word-wrap: break-all;
 }
 
 .day-title {
-  font-size: 2.3rem;
+  font-size: 2rem;
+  background-color: rgb(135, 187, 222);
+  color: black;
 }
 
 .container-title {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   margin-top: 0;
 }
 

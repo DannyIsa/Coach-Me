@@ -71,7 +71,7 @@ export default function WeeklyCalendar({ userDetails }) {
           <tr>
             {DaysOfTheWeek.map((day, index) => (
               <td key={index} className="table-one-container">
-                <h2 className="day-title">{day}</h2>
+                <h2 className="day-title">{day.slice(0, 3)}</h2>
               </td>
             ))}
           </tr>
