@@ -4,3 +4,8 @@
   flex-direction: column;
   padding-top: 7rem;
 }
+
+.profile-image {
+  height: 200px;
+  width: 200px;
+}
