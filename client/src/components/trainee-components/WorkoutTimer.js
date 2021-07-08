@@ -37,16 +37,17 @@ function WorkoutTimer({ rest, raiseIndex, index }) {
         {started ? "Resume" : "Start"}
       </button>
       <button onClick={pause}>Pause</button>
-      <button
-        onClick={() => {
-          if (!started) return;
-          setStarted(false);
-          console.log(rest);
-          restart(time, false);
-        }}
-      >
-        Restart
-      </button>
+      {started && (
+        <button
+          onClick={() => {
+            setStarted(false);
+            console.log(rest);
+            restart(time, false);
+          }}
+        >
+          Reset
+        </button>
+      )}
     </div>
   );
 }

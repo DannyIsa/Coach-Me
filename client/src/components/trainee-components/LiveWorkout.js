@@ -9,6 +9,7 @@ function LiveWorkout({ userDetails }) {
   const [currentWorkout, setCurrentWorkout] = useState();
   const [timeArray, setTimeArray] = useState();
   const [index, setIndex] = useState(0);
+  const [ended, setEnded] = useState(false);
   const { workoutId } = useParams();
   const setError = useContext(SetErrorContext);
 
@@ -43,6 +44,9 @@ function LiveWorkout({ userDetails }) {
   }, [userDetails, workoutId]);
 
   useEffect(() => {
+    console.log(ended);
+  }, [ended]);
+  useEffect(() => {
     if (!currentWorkout) return;
     let restArray = splitArray("rest");
     let idArray = splitArray("id");
@@ -50,18 +54,23 @@ function LiveWorkout({ userDetails }) {
   }, [currentWorkout]);
 
   return (
-    <div>
-      <h1>LiveWorkout </h1>
+    <div className="live-workout-page">
+      <h1 className="header">LiveWorkout </h1>
 
-      {timeArray && (
+      {timeArray && !ended ? (
         <WorkoutTimer
           rest={timeArray.restArray[index]}
           index={index}
           raiseIndex={() => {
-            if (index < timeArray.restArray.length) setIndex(index + 1);
-            else console.log("done");
+            if (index < timeArray.restArray.length - 1) setIndex(index + 1);
+            else setEnded(true);
           }}
         />
+      ) : (
+        <>
+          <h1>Workout Ended</h1>
+          <button>Submit Workout</button>
+        </>
       )}
       {currentWorkout && timeArray && (
         <div className="workout-details-div">
@@ -71,11 +80,11 @@ function LiveWorkout({ userDetails }) {
               <div
                 className={
                   timeArray.idArray[index] === exercise.id
-                    ? "working-exercise"
-                    : ""
+                    ? "working exercise"
+                    : "exercise"
                 }
               >
-                <img src={exercise.image} alt={exercise.name} width={300} />
+                <img src={exercise.image} alt={exercise.name} />
                 <h3>{exercise.name}</h3>
                 <p>Sets: {exercise.sets}</p>
                 <p>Minimum reps: {exercise.min_reps}</p>

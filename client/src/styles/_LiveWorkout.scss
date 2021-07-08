@@ -1,0 +1,22 @@
+.live-workout-page {
+  & > .header {
+    padding-top: 90px;
+  }
+
+  & > .workout-details-div {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+
+  .exercise {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: black solid 3px;
+    width: 200px;
+    &.working {
+      border: red solid 4px;
+    }
+  }
+}
