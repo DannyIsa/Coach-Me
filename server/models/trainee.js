@@ -58,6 +58,7 @@ module.exports = (sequelize, DataTypes) => {
       weight: DataTypes.INTEGER,
       daily_calorie_goal: DataTypes.INTEGER,
       activity_level: DataTypes.STRING,
+      image: DataTypes.STRING,
     },
     {
       sequelize,

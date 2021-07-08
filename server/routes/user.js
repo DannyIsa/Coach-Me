@@ -108,6 +108,7 @@ user.put("/details/:id", (req, res) => {
       birthdate: obj.birthdate,
       gender: obj.gender,
       phone_number: obj.phone_number,
+      image: obj.image,
       avg_rating: 0,
       rating_count: 0,
     };
@@ -119,6 +120,7 @@ user.put("/details/:id", (req, res) => {
       gender: obj.gender,
       height: obj.height,
       weight: obj.weight,
+      image: obj.image,
       //calculate with weight and height
       daily_calorie_goal: 0,
       activity_level: obj.activity_level,
@@ -135,5 +137,29 @@ user.put("/details/:id", (req, res) => {
     })
     .catch((err) => res.status(400).send(err));
 });
+
+// user.post("/image/add/:userId", async (req, res) => {
+//   const { userId } = req.params;
+//   const { image } = req.body;
+//   const coach = await models.Coach.findOne({ where: { id: userId } });
+//   const trainee = await models.Trainee.findOne({ where: { id: userId } });
+
+//   if (coach) {
+//     coach
+//       .update({
+//         image,
+//       })
+//       .then((data) => res.status(201).send(data))
+//       .catch((err) => res.status(400).send(err));
+//   } else if (trainee) {
+//     trainee
+//       .update({
+//         image,
+//       })
+//       .then((data) => res.status(201).send(data))
+//       .catch((err) => res.status(400).send(err));
+//   } else if (!coach && !trainee)
+//     return res.status(404).send("No Matching User");
+// });
 
 module.exports = user;
