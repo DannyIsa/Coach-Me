@@ -157,18 +157,29 @@
   display: inline-block;
 }
 
-.homeNav .notification button {
-  color: black;
-  border: 1px solid black;
+.homeNav .notification .coaches-item .coach-card-btn .requests-btn {
+  color: white;
+  border: 1px solid #5995fd;
+  background-color: #5995fd;
   padding: 0.5rem 1.5rem;
-  margin-top: 1rem;
+  border-radius: 5px;
 }
 
-.homeNav .notification button:hover {
-  border-color: #ffc719;
+.homeNav .notification .coaches-item .coach-card-btn .chat-btn {
+  background-color: white;
+  color: #5995fd;
+  border: 1px solid #5995fd;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  text-transform: none;
 }
 
-.homeNav .notification button .fa-fa :hover {
+.homeNav .notification .coaches-item .coach-card-btn .chat-btn:hover {
+  background-color: #5995fd;
+  color: white;
+}
+
+.homeNav .notification .coaches-item .coach-card-btn .fa-fa :hover {
   color: #ffc719;
 }
 
@@ -232,10 +243,75 @@
 }
 
 .homeNav .sec {
-  padding: 25px 10px;
-  background-color: #f4f4f4;
+  padding: 10px;
+  padding-bottom: 40px;
+  background-color: white;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  height: 11.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.homeNav .sec p {
+  font-size: 1.2rem;
+}
+
+.homeNav .sec .coach-card-image {
+  border-radius: 10px;
+  width: 7rem;
+  height: 10rem;
+  float: left;
+  margin-right: 1rem;
+}
+
+.homeNav .sec .coach-card-con {
+  height: 10rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 15rem;
+}
+
+.homeNav .sec .coach-card-con .coach-card-details {
+  width: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  /* background-color: blue; */
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #f2f5f8 !important;
+  border-radius: 5px;
+  color: #000 !important;
+}
+
+.homeNav .sec .coach-card-con .coach-card-details p {
+  font-size: 10px;
+  color: #a1aab9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.homeNav .sec .coach-card-con .coach-card-details span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
 }
 
 .homeNav .sec:hover {
@@ -243,12 +319,11 @@
 }
 
 .homeNav .txt {
-  font-size: 1.25rem;
-  padding: 5px 10px 0px 10px;
+  font-size: 1.5rem;
 }
 
 .homeNav .coaches-item {
-  color: #e03a3a;
+  color: #5995fd;
 }
 
 .homeNav .sub {

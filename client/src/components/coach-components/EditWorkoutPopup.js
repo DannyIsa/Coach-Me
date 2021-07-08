@@ -7,6 +7,7 @@ function EditWorkoutPopup({
   trigger,
   setTrigger,
   userDetails,
+  render,
 }) {
   const [sets, setSets] = useState([]);
   const [draggedOver, setDraggedOver] = useState();
@@ -49,106 +50,108 @@ function EditWorkoutPopup({
           close
         </button>
         <h2>{workout.name}</h2>
-        <table>
-          <thead>
-            <tr>
-              <td>Order</td>
-              <td>Exercise</td>
-              <td>Min-Reps</td>
-              <td>Max-Reps</td>
-              <td>Rest</td>
-              <td>Sets</td>
-              <td>Added Weight</td>
-            </tr>
-          </thead>
-          <tbody>
-            {workout &&
-              workout.exercises.map((value, index) => (
-                <tr
-                  className="set-div"
-                  key={"set" + index}
-                  draggable
-                  onDragStart={() => {
-                    setDraggedItem(index);
-                  }}
-                  onDragEnd={() => {
-                    setDraggedItem(undefined);
-                    setWorkout({ ...workout, exercises: tempNewOrder });
-                  }}
-                  onDragEnter={() => {
-                    setDraggedOver(index);
-                  }}
-                  onDragLeave={() => {
-                    changeOrder(draggedItem, draggedOver);
-                    setDraggedOver(undefined);
-                  }}
-                >
-                  <td className="order">{index + 1}</td>
-                  <td>{value.name}</td>
-                  <td>
-                    <input
-                      type="number"
-                      name="min_reps"
-                      value={sets[index]["min_reps"]}
-                      onChange={(e) => {
-                        let temp = [...sets];
-                        temp[index][e.target.name] = Number(e.target.value);
-                        setSets(temp);
-                      }}
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="number"
-                      name="max_reps"
-                      value={sets[index]["max_reps"]}
-                      onChange={(e) => {
-                        let temp = [...sets];
-                        temp[index][e.target.name] = Number(e.target.value);
-                        setSets(temp);
-                      }}
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="number"
-                      name="rest"
-                      value={sets[index]["rest"]}
-                      onChange={(e) => {
-                        let temp = [...sets];
-                        temp[index][e.target.name] = Number(e.target.value);
-                        setSets(temp);
-                      }}
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="number"
-                      name="sets"
-                      value={sets[index]["sets"]}
-                      onChange={(e) => {
-                        let temp = [...sets];
-                        temp[index][e.target.name] = Number(e.target.value);
-                        setSets(temp);
-                      }}
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="number"
-                      name="added_weight"
-                      value={sets[index]["added_weight"]}
-                      onChange={(e) => {
-                        let temp = [...sets];
-                        temp[index][e.target.name] = Number(e.target.value);
-                        setSets(temp);
-                      }}
-                    />
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
+        {sets.length > 0 && (
+          <table>
+            <thead>
+              <tr>
+                <td>Order</td>
+                <td>Exercise</td>
+                <td>Min-Reps</td>
+                <td>Max-Reps</td>
+                <td>Rest</td>
+                <td>Sets</td>
+                <td>Added Weight</td>
+              </tr>
+            </thead>
+            <tbody>
+              {workout &&
+                workout.exercises.map((value, index) => (
+                  <tr
+                    className="set-div"
+                    key={"set" + index}
+                    draggable
+                    onDragStart={() => {
+                      setDraggedItem(index);
+                    }}
+                    onDragEnd={() => {
+                      setDraggedItem(undefined);
+                      setWorkout({ ...workout, exercises: tempNewOrder });
+                    }}
+                    onDragEnter={() => {
+                      setDraggedOver(index);
+                    }}
+                    onDragLeave={() => {
+                      changeOrder(draggedItem, draggedOver);
+                      setDraggedOver(undefined);
+                    }}
+                  >
+                    <td className="order">{index + 1}</td>
+                    <td>{value.name}</td>
+                    <td>
+                      <input
+                        type="number"
+                        name="min_reps"
+                        value={sets[index]["min_reps"]}
+                        onChange={(e) => {
+                          let temp = [...sets];
+                          temp[index][e.target.name] = Number(e.target.value);
+                          setSets(temp);
+                        }}
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        name="max_reps"
+                        value={sets[index]["max_reps"]}
+                        onChange={(e) => {
+                          let temp = [...sets];
+                          temp[index][e.target.name] = Number(e.target.value);
+                          setSets(temp);
+                        }}
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        name="rest"
+                        value={sets[index]["rest"]}
+                        onChange={(e) => {
+                          let temp = [...sets];
+                          temp[index][e.target.name] = Number(e.target.value);
+                          setSets(temp);
+                        }}
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        name="sets"
+                        value={sets[index]["sets"]}
+                        onChange={(e) => {
+                          let temp = [...sets];
+                          temp[index][e.target.name] = Number(e.target.value);
+                          setSets(temp);
+                        }}
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        name="added_weight"
+                        value={sets[index]["added_weight"]}
+                        onChange={(e) => {
+                          let temp = [...sets];
+                          temp[index][e.target.name] = Number(e.target.value);
+                          setSets(temp);
+                        }}
+                      />
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        )}
         <br />
         <strong>Sets: </strong>
         <input
@@ -167,9 +170,9 @@ function EditWorkoutPopup({
                 exercises: sets,
               })
               .then(() => {
-                setWorkout({ ...workout, sets: workoutSets });
                 setErrorMessage("");
                 setTrigger(false);
+                render();
               })
               .catch((err) => setErrorMessage(err.response.data));
           }}
