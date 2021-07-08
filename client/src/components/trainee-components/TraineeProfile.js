@@ -13,25 +13,7 @@ function TraineeProfile({ userDetails }) {
   const [editMode, setEditMode] = useState(false);
   const setError = useContext(SetErrorContext);
 
-  const getWorkoutsLog = () =>
-    axios
-      .get("http://localhost:3001/api/logs/workout/show/" + userDetails.id)
-      .then(({ data }) => {
-        if (data) {
-          const workouts = data.map((workout, i) => {
-            const workoutName = workout.name;
-            setPreviousWorkouts((previousWorkouts) => [
-              ...previousWorkouts,
-              workoutName,
-            ]);
-          });
-        }
-      })
-      .catch((err) => {
-        setError(err.response.data);
-      });
-
-  const getMeasurements = () =>
+  const getMeasurements = () => {
     axios
       .get("http://localhost:3001/api/logs/measure/show/" + userDetails.id)
       .then(({ data }) => {
@@ -44,6 +26,7 @@ function TraineeProfile({ userDetails }) {
       .catch((err) => {
         setError(err.response.data);
       });
+  };
 
   const updateMeasurements = () => {
     if (!editMode) {
@@ -71,7 +54,6 @@ function TraineeProfile({ userDetails }) {
 
   useEffect(() => {
     if (!userDetails) return;
-    getWorkoutsLog();
     getMeasurements();
   }, [userDetails]);
 
@@ -271,8 +253,8 @@ function TraineeProfile({ userDetails }) {
               </div>
               <div className="col-sm-6 mb-3">
                 <div className="card h-100">
-                  <div className="card-body next-workout">
-                    <h2>My Next Workout: {previousWorkouts} </h2>
+                  <div className="card-body coach-info">
+                    <h2>My Coach: {previousWorkouts} </h2>
                   </div>
                 </div>
               </div>

@@ -29,8 +29,6 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
     if (!userDetails) return;
     let coachesData = (await axios.get("/api/coach/show/all")).data;
     setCoaches(coachesData);
-    console.log(coachesData);
-    console.log(coachesData);
     let requestData = (
       await axios.get("/api/trainee/request/show/" + userDetails.id)
     ).data;

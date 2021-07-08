@@ -19,7 +19,6 @@ logs.use(express.json());
 logs.post("/workout/add/:traineeId", async (req, res) => {
   const { traineeId } = req.params;
   const { workoutId } = req.body;
-  console.log(traineeId, workoutId);
   if (!traineeId | !workoutId) return res.status(400).send("Id Required");
   const workout = await models.Workout.findOne({ where: { id: workoutId } });
   if (!workout) return res.status(404).send("Workout Not Found");
@@ -156,14 +155,23 @@ logs.get("/workout/show/:traineeId", async (req, res) => {
   if (!traineeId || !trainee) {
     return res.status(400).send("Invalid ID");
   }
-
-  const traineeWorkoutsLog = await trainee.getWorkoutLogs();
-
+  const traineeWorkoutsLog = await models.WorkoutLog.findAll({
+    attributes: ["workout_id", "created_at"],
+    where: { trainee_id: traineeId },
+  });
   const workouts = await Promise.all(
-    traineeWorkoutsLog.map(async (log) => await log.getWorkout())
+    traineeWorkoutsLog.map(async (log) => {
+      let item = (await log.getWorkout()).toJSON();
+      delete item.createdAt;
+      delete item.updatedAt;
+      return {
+        ...item,
+        date: log.toJSON().created_at,
+      };
+    })
   );
   if (!workouts) return res.status(200).send([]);
-  res.status(200).json(workouts);
+  res.status(200).send(workouts);
 });
 
 logs.get("/measure/show/:traineeId", async (req, res) => {
@@ -300,11 +308,9 @@ logs.get("/workout/check/:traineeId", async (req, res) => {
     },
   });
   const workout = await calendar[0].getWorkout();
-  return res
-    .status(200)
-    .send({
-      done: false,
-      workout: { ...workout.toJSON(), day: calendar[0].day },
-    });
+  return res.status(200).send({
+    done: false,
+    workout: { ...workout.toJSON(), day: calendar[0].day },
+  });
 });
 module.exports = logs;

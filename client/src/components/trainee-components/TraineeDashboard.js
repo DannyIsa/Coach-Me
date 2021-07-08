@@ -8,6 +8,7 @@ function TraineeDashboard({ userDetails }) {
   const [workoutLogs, setWorkoutLogs] = useState([]);
   const [measureLogs, setMeasureLogs] = useState([]);
   const [dietLogs, setDietLogs] = useState([]);
+  const [wod, setWod] = useState({ done: false, workout: undefined });
   const setError = useContext(SetErrorContext);
 
   useEffect(async () => {
@@ -18,6 +19,10 @@ function TraineeDashboard({ userDetails }) {
         "/api/logs/diet/show/all/" + userDetails.id
       );
       const wLogs = await axios.get("/api/logs/workout/show/" + userDetails.id);
+      const todayWorkout = await axios.get(
+        "/api/logs/workout/check/" + userDetails.id
+      );
+      setWod(todayWorkout.data);
       setWorkoutLogs(wLogs.data);
       setDietLogs(dLogs.data);
       setMeasureLogs(mLogs.data);
@@ -108,6 +113,25 @@ function TraineeDashboard({ userDetails }) {
               <YAxis />
               <Tooltip />
             </LineChart>
+            <div>
+              <h2>Previous Workouts:</h2>
+              {workoutLogs.map((item, index) => (
+                <h3 key={index}>{`[ ${new Date(
+                  item.date
+                ).toLocaleDateString()} ${new Date(
+                  item.date
+                ).toLocaleTimeString("IT-it")} ]:  ${item.name}`}</h3>
+              ))}
+            </div>
+            <h2>Today's Workout: </h2>
+            {wod.workout &&
+              (wod.done ? (
+                <h3>"No Workouts Remaining For Today!" </h3>
+              ) : (
+                <Link to={`/trainee/workout/${wod.workout.id}`}>
+                  {wod.workout.name}
+                </Link>
+              ))}
           </div>
         </>
       ) : (
