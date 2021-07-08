@@ -199,7 +199,6 @@ logs.get("/diet/show/:traineeId", async (req, res) => {
   if (!day || !month | !year) date = new Date();
   else date = new Date(year + "-" + month + "-" + day);
   date = date.toISOString().slice(0, 10);
-  console.log(date);
   const trainee = await models.Trainee.findOne({
     where: { id: traineeId },
   });
@@ -264,4 +263,48 @@ logs.get("/diet/show/all/:traineeId", async (req, res) => {
   return res.status(200).send(dataToSend);
 });
 
+logs.get("/workout/check/:traineeId", async (req, res) => {
+  const { traineeId } = req.params;
+  if (!traineeId) return res.status(400).send("Id Required");
+  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
+  if (!trainee) return res.status(404).send("No Trainee Found");
+  const date = new Date().toISOString().slice(0, 10);
+
+  const logs = await models.WorkoutLog.findOne({
+    where: {
+      [Op.and]: [
+        { trainee_id: traineeId },
+        [
+          sequelize.where(
+            sequelize.fn("date", sequelize.col("created_at")),
+            "=",
+            date
+          ),
+        ],
+      ],
+    },
+  });
+  if (logs) {
+    const workout = await logs.getWorkout();
+    return res.status(200).send({
+      done: true,
+      workout: {
+        ...workout.toJSON(),
+        day: new Date().toString().split(" ")[0],
+      },
+    });
+  }
+  const calendar = await trainee.getCalendars({
+    where: {
+      day: { [Op.startsWith]: new Date().toString().split(" ")[0] },
+    },
+  });
+  const workout = await calendar[0].getWorkout();
+  return res
+    .status(200)
+    .send({
+      done: false,
+      workout: { ...workout.toJSON(), day: calendar[0].day },
+    });
+});
 module.exports = logs;
