@@ -86,7 +86,7 @@ function TraineeProfile({ userDetails }) {
                   <div className="card-body">
                     <div className="d-flex">
                       <img
-                        src={userPic}
+                        src={userDetails.image ? userDetails.image : userPic}
                         alt="Admin"
                         className="rounded-circle"
                         width="150"

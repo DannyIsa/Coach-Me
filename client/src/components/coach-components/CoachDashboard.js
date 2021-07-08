@@ -9,12 +9,6 @@ function CoachDashboard({ userDetails }) {
   const setError = useContext(SetErrorContext);
   console.log(userDetails, "DDDDDDDDD");
 
-  // useEffect(() => {
-  // if (userDetails.image) {
-
-  // }
-  // },[userDetails])
-
   return (
     <div className="coach-dashboard">
       {userDetails ? (
@@ -35,10 +29,9 @@ function CoachDashboard({ userDetails }) {
                   if (
                     dataObj.image.name !== "" &&
                     !dataObj.image.name.endsWith(".jpg") &&
-                    !dataObj.image.name.endsWith(".png") &&
-                    !dataObj.image.name.endsWith(".gif")
+                    !dataObj.image.name.endsWith(".png")
                   ) {
-                    setError("File Type needs to be jpg/png/gif");
+                    setError("File Type needs to be jpg/png");
                     return;
                   }
                   if (dataObj.image.name !== "") {
