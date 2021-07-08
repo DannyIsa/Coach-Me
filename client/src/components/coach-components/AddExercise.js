@@ -88,7 +88,7 @@ function AddExercise({ userDetails }) {
               axios
                 .post("/api/coach/exercise/add", { exercise: dataObj })
                 .then(({ data }) => {
-                  console.log(data);
+                  setError(data);
                 })
                 .catch((err) => setError(err.response.data));
             }}
