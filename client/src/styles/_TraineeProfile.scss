@@ -43,9 +43,18 @@
           border-color: #ffc719;
         }
       }
-      .pdf-btn {
-        font-size: 1.2rem;
-        margin-left: 0.3rem;
+      .forms {
+        height: 8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        & div {
+          font-size: 1.3rem;
+        }
+        .pdf-btn {
+          font-size: 1.2rem;
+          margin-left: 0.3rem;
+        }
       }
     }
     .card {
