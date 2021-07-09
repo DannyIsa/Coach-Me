@@ -12,16 +12,14 @@ function TraineeProfile({ userDetails }) {
   const [measureLogs, setMeasureLogs] = useState({});
   const [editMode, setEditMode] = useState(false);
   const setError = useContext(SetErrorContext);
+  const [coach, setCoach] = useState();
 
-  const getMeasurements = () => {
+  const getData = () => {
     axios
       .get("http://localhost:3001/api/logs/measure/show/" + userDetails.id)
       .then(({ data }) => {
-        if (data.length === 0) {
-          setMeasureLogs({});
-        } else {
-          setMeasureLogs(data[data.length - 1]);
-        }
+        if (data.length === 0) return;
+        setMeasureLogs(data[data.length - 1]);
       })
       .catch((err) => {
         setError(err.response.data);
@@ -54,7 +52,7 @@ function TraineeProfile({ userDetails }) {
 
   useEffect(() => {
     if (!userDetails) return;
-    getMeasurements();
+    getData();
   }, [userDetails]);
 
   return (
