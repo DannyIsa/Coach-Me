@@ -235,9 +235,9 @@ function TraineeProfile({ userDetails }) {
               </div>
               <div className="col-sm-6 mb-3">
                 <div className="card h-100">
-                  <div className="card-body">
+                  <div className="card-body forms">
                     <h2>Forms To Fill Out:</h2>
-                    <div>daily general update</div>{" "}
+                    <div>daily general update</div>
                     <div>
                       health declaration{" "}
                       <a href={pdf} target="_blank" className="pdf-btn">
@@ -246,7 +246,7 @@ function TraineeProfile({ userDetails }) {
                           color="white"
                           className="fa-fa"
                         />
-                      </a>{" "}
+                      </a>
                     </div>
                   </div>
                 </div>

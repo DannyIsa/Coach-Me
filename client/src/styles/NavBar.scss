@@ -131,7 +131,7 @@
     position: relative;
     display: inline-block;
 
-    .coaches-item .coach-card-btn {
+    .trainees-item .coach-card-btn {
       .requests-btn {
         color: white;
         border: 1px solid #5995fd;
@@ -157,6 +157,9 @@
       .fa-fa :hover {
         color: #ffc719;
       }
+    }
+    .trainees-item .coach-card-btn .chat-btn {
+      padding: 0.5rem 1rem;
     }
   }
 
@@ -232,13 +235,13 @@
   //   color: black;
   // }
 
-  .sec {
+  .sec,
+  .trainee-sec {
     padding: 10px;
     padding-bottom: 40px;
-    // background-color: #f4f4f4;
     background-color: white;
     transition: 0.5s;
-    height: 11.2rem;
+    height: 11.8rem;
     display: flex;
 
     & p {
@@ -246,13 +249,15 @@
       // color: pink;
     }
 
-    .coach-card-image {
+    .coach-card-image,
+    .trainee-card-image {
       border-radius: 10px;
       width: 7rem;
-      height: 10rem;
+      height: 10.6rem;
       float: left;
       margin-right: 1rem;
     }
+
     .coach-card-con {
       height: 10rem;
       justify-content: space-around;
@@ -261,8 +266,11 @@
       // background-color: #0d7e65;
       width: 15rem;
 
-      .coach-card-details {
-        width: 8rem;
+      .coach-card-details,
+      .trainee-card-details {
+        // width: 8rem;
+        width: 14rem;
+        word-wrap: break-word;
         display: flex;
         margin: 0.5rem;
         padding: 0.5rem;
@@ -293,25 +301,21 @@
     }
   }
 
-  // .profCont {
-  //   padding-left: 15px;
-  // }
-
-  // .profile {
-  //   -webkit-clip-path: circle(50% at 50% 50%);
-  //   clip-path: circle(50% at 50% 50%);
-  //   width: 75px;
-  //   float: left;
-  // }
-
   .txt {
     // vertical-align: top;
     font-size: 1.5rem;
     // padding: 5px 10px 0px 10px;
   }
-  .coaches-item {
+
+  .trainees-item {
     // color: rgb(224, 58, 58);
     color: #5995fd;
+
+    .date-requests {
+      font-size: 0.8rem;
+      color: grey;
+      margin-bottom: 0.3rem;
+    }
   }
 
   .sub {

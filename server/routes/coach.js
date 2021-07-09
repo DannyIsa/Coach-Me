@@ -42,7 +42,7 @@ coach.get("/requests/show/:coachId", async (req, res) => {
   const dataToSend = await Promise.all(
     requests.map(async (request) => {
       let trainee = await request.getTrainee({
-        attributes: ["image", "gender"],
+        attributes: ["image", "email"],
       });
       return { ...trainee.toJSON(), ...request.toJSON() };
     })

@@ -157,7 +157,7 @@
   display: inline-block;
 }
 
-.homeNav .notification .coaches-item .coach-card-btn .requests-btn {
+.homeNav .notification .trainees-item .coach-card-btn .requests-btn {
   color: white;
   border: 1px solid #5995fd;
   background-color: #5995fd;
@@ -165,7 +165,7 @@
   border-radius: 5px;
 }
 
-.homeNav .notification .coaches-item .coach-card-btn .chat-btn {
+.homeNav .notification .trainees-item .coach-card-btn .chat-btn {
   background-color: white;
   color: #5995fd;
   border: 1px solid #5995fd;
@@ -174,13 +174,17 @@
   text-transform: none;
 }
 
-.homeNav .notification .coaches-item .coach-card-btn .chat-btn:hover {
+.homeNav .notification .trainees-item .coach-card-btn .chat-btn:hover {
   background-color: #5995fd;
   color: white;
 }
 
-.homeNav .notification .coaches-item .coach-card-btn .fa-fa :hover {
+.homeNav .notification .trainees-item .coach-card-btn .fa-fa :hover {
   color: #ffc719;
+}
+
+.homeNav .notification .trainees-item .coach-card-btn .chat-btn {
+  padding: 0.5rem 1rem;
 }
 
 .homeNav .number {
@@ -242,31 +246,37 @@
   color: black;
 }
 
-.homeNav .sec {
+.homeNav .sec,
+.homeNav .trainee-sec {
   padding: 10px;
   padding-bottom: 40px;
   background-color: white;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  height: 11.2rem;
+  height: 11.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.homeNav .sec p {
+.homeNav .sec p,
+.homeNav .trainee-sec p {
   font-size: 1.2rem;
 }
 
-.homeNav .sec .coach-card-image {
+.homeNav .sec .coach-card-image,
+.homeNav .sec .trainee-card-image,
+.homeNav .trainee-sec .coach-card-image,
+.homeNav .trainee-sec .trainee-card-image {
   border-radius: 10px;
   width: 7rem;
-  height: 10rem;
+  height: 10.6rem;
   float: left;
   margin-right: 1rem;
 }
 
-.homeNav .sec .coach-card-con {
+.homeNav .sec .coach-card-con,
+.homeNav .trainee-sec .coach-card-con {
   height: 10rem;
   -ms-flex-pack: distribute;
       justify-content: space-around;
@@ -280,8 +290,12 @@
   width: 15rem;
 }
 
-.homeNav .sec .coach-card-con .coach-card-details {
-  width: 8rem;
+.homeNav .sec .coach-card-con .coach-card-details,
+.homeNav .sec .coach-card-con .trainee-card-details,
+.homeNav .trainee-sec .coach-card-con .coach-card-details,
+.homeNav .trainee-sec .coach-card-con .trainee-card-details {
+  width: 14rem;
+  word-wrap: break-word;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -296,7 +310,10 @@
   color: #000 !important;
 }
 
-.homeNav .sec .coach-card-con .coach-card-details p {
+.homeNav .sec .coach-card-con .coach-card-details p,
+.homeNav .sec .coach-card-con .trainee-card-details p,
+.homeNav .trainee-sec .coach-card-con .coach-card-details p,
+.homeNav .trainee-sec .coach-card-con .trainee-card-details p {
   font-size: 10px;
   color: #a1aab9;
   display: -webkit-box;
@@ -308,13 +325,17 @@
           flex-direction: column;
 }
 
-.homeNav .sec .coach-card-con .coach-card-details span {
+.homeNav .sec .coach-card-con .coach-card-details span,
+.homeNav .sec .coach-card-con .trainee-card-details span,
+.homeNav .trainee-sec .coach-card-con .coach-card-details span,
+.homeNav .trainee-sec .coach-card-con .trainee-card-details span {
   font-size: 1rem;
   font-weight: 500;
   color: black;
 }
 
-.homeNav .sec:hover {
+.homeNav .sec:hover,
+.homeNav .trainee-sec:hover {
   background-color: #bfbfbf;
 }
 
@@ -322,8 +343,14 @@
   font-size: 1.5rem;
 }
 
-.homeNav .coaches-item {
+.homeNav .trainees-item {
   color: #5995fd;
+}
+
+.homeNav .trainees-item .date-requests {
+  font-size: 0.8rem;
+  color: grey;
+  margin-bottom: 0.3rem;
 }
 
 .homeNav .sub {

@@ -74,11 +74,6 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
               Profile
             </a>
           </li>
-          {/* <li className="option" onClick={closeMobileMenu}>
-            <a href="/trainee/coaches" className="link">
-              Find A Coach
-            </a>
-          </li> */}
           <li className="option">
             <div className="notification">
               <div className="notBtn">
@@ -112,12 +107,16 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                                     <p>
                                       Rating <span>8.3</span>
                                     </p>
+                                    <p>
+                                      Expertise <span>Yoga</span>
+                                    </p>
                                   </div>
 
                                   <div
-                                    className="coaches-item txt"
+                                    className="trainees-item txt"
                                     key={"C" + index}
                                   >
+                                    <p className="date-requests">Tel Aviv</p>
                                     {item.id === userDetails.coach_id ? (
                                       "Your Coach"
                                     ) : item.id === request.coach_id ? (
@@ -126,13 +125,13 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                                       <div className="coach-card-btn">
                                         <button
                                           className="chat-btn"
-                                          onClick={() =>
-                                            sendRequest(
-                                              item.id,
-                                              userDetails.id,
-                                              userDetails.name
-                                            )
-                                          }
+                                          // onClick={() =>
+                                          //   sendRequest(
+                                          //     item.id,
+                                          //     userDetails.id,
+                                          //     userDetails.name
+                                          //   )
+                                          // }
                                         >
                                           Chat
                                         </button>
@@ -156,15 +155,6 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                                     )}
                                   </div>
                                 </div>
-                                {/* <div className="txt sub">
-                                  {new Date(item.updatedAt).toLocaleDateString(
-                                    "it-IT"
-                                  ) +
-                                    ", " +
-                                    new Date(item.updatedAt).toLocaleTimeString(
-                                      "it-IT"
-                                    )}
-                                </div> */}
                               </div>
                             ))
                           : "Loading..."}

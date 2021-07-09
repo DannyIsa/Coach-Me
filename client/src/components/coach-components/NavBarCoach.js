@@ -119,44 +119,74 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
                       />
                       <div className="cent">Looks Like your all caught up!</div>
                     </div> */}
+
                     <div className="cont">
                       <div className="alerts-div">
                         {requests &&
                           requests.map((item, index) => (
-                            <div className="alert sec" key={"alert" + index}>
-                              <div className="txt">{item.trainee_name}</div>
-                              <div className="txt">{item.content}</div>
-                              <div className="txt sub">
-                                {new Date(item.updatedAt).toLocaleDateString(
-                                  "it-IT"
-                                ) +
-                                  ", " +
-                                  new Date(item.updatedAt).toLocaleTimeString(
-                                    "it-IT"
-                                  )}
+                            <div
+                              className="alert trainee-sec"
+                              key={"alert" + index}
+                            >
+                              <div>
+                                {item.image && (
+                                  <img
+                                    className="trainee-card-image"
+                                    src={item.image}
+                                  />
+                                )}
                               </div>
-                              <button
-                                onClick={() =>
-                                  handleRequest(true, item.trainee_id)
-                                }
-                              >
-                                <FontAwesomeIcon
-                                  icon={faCheck}
-                                  color="#acacac"
-                                  className="fa-fa"
-                                />
-                              </button>
-                              <button
-                                onClick={() =>
-                                  handleRequest(false, item.trainee_id)
-                                }
-                              >
-                                <FontAwesomeIcon
-                                  icon={faTimes}
-                                  color="#acacac"
-                                  className="fa-fa"
-                                />
-                              </button>
+                              <div className="coach-card-con">
+                                {item.trainee_name}
+                                <p>{item.email}</p>
+                                <div className="trainee-card-details">
+                                  <p>
+                                    Message <span>{item.content}</span>
+                                  </p>
+                                </div>
+
+                                <div
+                                  className="trainees-item txt"
+                                  key={"C" + index}
+                                >
+                                  <p className="date-requests">
+                                    {new Date(
+                                      item.updatedAt
+                                    ).toLocaleDateString("it-IT") +
+                                      ", " +
+                                      new Date(
+                                        item.updatedAt
+                                      ).toLocaleTimeString("it-IT")}
+                                  </p>
+                                  <div className="coach-card-btn">
+                                    <button className="chat-btn">Chat</button>
+                                    <button
+                                      className="requests-btn"
+                                      onClick={() =>
+                                        handleRequest(true, item.trainee_id)
+                                      }
+                                    >
+                                      <FontAwesomeIcon
+                                        icon={faCheck}
+                                        color="#acacac"
+                                        className="fa-fa"
+                                      />
+                                    </button>
+                                    <button
+                                      className="requests-btn"
+                                      onClick={() =>
+                                        handleRequest(false, item.trainee_id)
+                                      }
+                                    >
+                                      <FontAwesomeIcon
+                                        icon={faTimes}
+                                        color="#acacac"
+                                        className="fa-fa"
+                                      />
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           ))}
                       </div>
@@ -192,20 +222,3 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
 }
 
 export default NavBarCoach;
-
-{
-  /* <div className="sec new">
-                          <a href="https://codepen.io/Golez/">
-                            <div className="profCont">
-                              <img
-                                className="profile"
-                                src="https://c1.staticflickr.com/5/4007/4626436851_5629a97f30_b.jpg"
-                              />
-                            </div>
-                            <div className="txt">
-                              James liked your post: "Pure css notification box"
-                            </div>
-                            <div className="txt sub">11/7 - 2:30 pm</div>
-                          </a>
-                        </div> */
-}
