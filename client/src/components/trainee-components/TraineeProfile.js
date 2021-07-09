@@ -17,9 +17,13 @@ function TraineeProfile({ userDetails }) {
   const getData = () => {
     axios
       .get("http://localhost:3001/api/logs/measure/show/" + userDetails.id)
-      .then(({ data }) => {
+      .then(async ({ data }) => {
         if (data.length === 0) return;
         setMeasureLogs(data[data.length - 1]);
+        axios
+          .get("/api/trainee/coach/show/" + userDetails.id)
+          .then(({ data }) => setCoach(data))
+          .catch((err) => setError(err));
       })
       .catch((err) => {
         setError(err.response.data);
