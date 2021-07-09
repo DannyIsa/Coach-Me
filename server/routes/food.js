@@ -103,6 +103,7 @@ food.post("/eaten-food", async (req, res) => {
     food_id: foodId,
     meal_of_the_day: mealOfTheDay,
     amount,
+    calorie_goal: trainee.toJSON().daily_calorie_goal,
   });
   const query = await trainee.addEatenFood(eaten);
   if (!query) return res.status(400).send("Couldn't add food");

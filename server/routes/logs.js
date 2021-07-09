@@ -113,41 +113,6 @@ logs.post("/measure/add", async (req, res) => {
     });
 });
 
-logs.post("/diet/add", async (req, res) => {
-  const {
-    id: traineeId,
-    totalCalories,
-    usedCalories,
-    totalProtein,
-    usedProtein,
-    totalCarbs,
-    usedCarbs,
-    totalFat,
-    usedFat,
-  } = req.body || null;
-  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
-  if (!traineeId || !trainee) {
-    return res.status(400).send("Invalid ID");
-  }
-  if (!totalCalories || !usedCalories) {
-    return res.status(404).send("Must send total and used calories");
-  }
-
-  models.DietLog.create({
-    id: traineeId,
-    "total-calories": totalCalories,
-    "used-calories": usedCalories,
-    "total-protein": totalProtein,
-    "used-protein": usedProtein,
-    "total-carbs": totalCarbs,
-    "used-carbs": usedCarbs,
-    "total-fat": totalFat,
-    "used-fat": usedFat,
-  }).then(() => {
-    res.status(201).send(`${traineeId} food log added`);
-  });
-});
-
 logs.get("/workout/show/:traineeId", async (req, res) => {
   const { traineeId } = req.params;
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
@@ -249,11 +214,23 @@ logs.get("/diet/show/all/:traineeId", async (req, res) => {
   const dietLogs = await models.EatenFood.findAll({
     attributes: [
       [sequelize.fn("date", sequelize.col("EatenFood.created_at")), "date"],
-      "amount",
-      [sequelize.fn("sum", sequelize.col("Food.calories")), "total_calories"],
-      [sequelize.fn("sum", sequelize.col("Food.protein")), "total_protein"],
-      [sequelize.fn("sum", sequelize.col("Food.fats")), "total_fats"],
-      [sequelize.fn("sum", sequelize.col("Food.carbs")), "total_carbs"],
+      [
+        sequelize.fn("sum", sequelize.literal("(amount*Food.calories)")),
+        "total_calories",
+      ],
+      [
+        sequelize.fn("sum", sequelize.literal("(amount*Food.protein)")),
+        "total_protein",
+      ],
+      [
+        sequelize.fn("sum", sequelize.literal("(amount*Food.fats)")),
+        "total_fats",
+      ],
+      [
+        sequelize.fn("sum", sequelize.literal("(amount*Food.carbs)")),
+        "total_carbs",
+      ],
+      "calorie_goal",
     ],
     where: { trainee_id: traineeId },
     include: {
@@ -265,6 +242,8 @@ logs.get("/diet/show/all/:traineeId", async (req, res) => {
   if (!dietLogs) return [];
   let dataToSend = [...dietLogs].map((log) => {
     let item = { ...log.toJSON() };
+    if (!item.calorie_goal)
+      item.calorie_goal = trainee.toJSON().daily_calorie_goal;
     delete item.Food;
     return item;
   });
