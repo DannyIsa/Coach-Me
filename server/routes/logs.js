@@ -311,7 +311,6 @@ logs.get("/workout/check/:traineeId", async (req, res) => {
   if (!workout)
     return res.status(200).send({
       done: false,
-      workout: undefined,
     });
   return res.status(200).send({
     done: false,

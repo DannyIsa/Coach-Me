@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import EditableInputInline from "../EditableInputInline";
 import { Link } from "react-router-dom";
 import { SetErrorContext } from "../../App";
-
+import TraineeLogs from "../TraineeLogs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
@@ -18,20 +18,9 @@ import {
 
 function ClientsList({ userDetails, alertMessage }) {
   const [clients, setClients] = useState();
-  const [requests, setRequests] = useState();
   const [render, setRender] = useState(false);
+  const [chosenClient, setChosenClient] = useState();
   const setError = useContext(SetErrorContext);
-
-  async function getRequests() {
-    try {
-      let requests = await axios.get(
-        "/api/coach/requests/show/" + userDetails.id
-      );
-      return requests.data;
-    } catch (err) {
-      return [];
-    }
-  }
 
   async function getClients() {
     try {
@@ -49,20 +38,8 @@ function ClientsList({ userDetails, alertMessage }) {
 
   useEffect(async () => {
     if (!userDetails) return;
-    setRequests(await getRequests());
     setClients(await getClients());
   }, [userDetails, render]);
-
-  function handleRequest(accept, traineeId) {
-    axios
-      .put(
-        `/api/coach/request/${accept ? "accept" : "decline"}/${
-          userDetails.id
-        }?traineeId=${traineeId}`
-      )
-      .then(() => setRender(!render))
-      .catch((err) => setError(err.response.data));
-  }
 
   return (
     <div className="client-list-start">
@@ -176,10 +153,12 @@ function ClientsList({ userDetails, alertMessage }) {
                   traineeId={item.id}
                   userDetails={userDetails}
                 /> */}
+                <button onClick={() => setChosenClient(item)}>Show Logs</button>
               </div>
             </div>
           ))}
       </div>
+      {chosenClient && <TraineeLogs type="Coach" userDetails={chosenClient} />}
     </div>
   );
 }
