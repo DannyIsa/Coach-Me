@@ -126,7 +126,14 @@ logs.get("/workout/show/:traineeId", async (req, res) => {
   });
   const workouts = await Promise.all(
     traineeWorkoutsLog.map(async (log) => {
-      let item = (await log.getWorkout()).toJSON();
+      let item = await log.getWorkout();
+      if (!item)
+        return {
+          id: log.workout_id,
+          name: "*Workout Deleted*",
+          date: log.toJSON().created_at,
+        };
+      item = item.toJSON();
       delete item.createdAt;
       delete item.updatedAt;
       return {
@@ -193,8 +200,7 @@ logs.get("/diet/show/:traineeId", async (req, res) => {
     },
   });
 
-  if (traineeDietLog.length === 0)
-    return res.status(400).send("No eaten food at this day");
+  if (traineeDietLog.length === 0) return res.status(200).send([]);
 
   const items = await Promise.all(
     traineeDietLog.map(async (log) => {

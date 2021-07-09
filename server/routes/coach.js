@@ -196,14 +196,13 @@ coach.get("/workouts/show/:coachId", async (req, res) => {
   const { value } = req.query;
   let query = {
     where: { id: coachId },
-    include: { model: models.Workout, where: {} },
   };
   if (value) query.include.where["name"] = { [Op.like]: "%" + value + "%" };
 
   if (!coachId) return res.status(400).send("Invalid Id");
   const coach = await models.Coach.findOne(query);
   if (!coach) return res.status(404).send("Coach Not Found");
-  const workouts = coach.Workouts;
+  const workouts = await coach.getWorkouts();
   if (!workouts) return res.status(200).send([]);
   const final = await Promise.all(
     workouts.map(async (workout) => {
