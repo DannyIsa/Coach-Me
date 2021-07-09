@@ -308,6 +308,11 @@ logs.get("/workout/check/:traineeId", async (req, res) => {
     },
   });
   const workout = await calendar[0].getWorkout();
+  if (!workout)
+    return res.status(200).send({
+      done: false,
+      workout: undefined,
+    });
   return res.status(200).send({
     done: false,
     workout: { ...workout.toJSON(), day: calendar[0].day },

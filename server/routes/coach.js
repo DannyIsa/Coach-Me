@@ -39,7 +39,15 @@ coach.get("/requests/show/:coachId", async (req, res) => {
   if (!coach) return res.status(404).send("No Matching Coach");
   const requests = await coach.getCoachRequests();
   if (!requests || requests.length === 0) return res.status(200).send([]);
-  res.status(200).send(requests);
+  const dataToSend = await Promise.all(
+    requests.map(async (request) => {
+      let trainee = await request.getTrainee({
+        attributes: ["image", "gender"],
+      });
+      return { ...trainee.toJSON(), ...request.toJSON() };
+    })
+  );
+  res.status(200).send(dataToSend);
 });
 
 coach.put("/request/accept/:coachId", async (req, res) => {
