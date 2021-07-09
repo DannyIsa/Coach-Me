@@ -34,8 +34,12 @@ function TraineeLogs({ userDetails, type }) {
     <div className="trainee-logs">
       {userDetails ? (
         <>
-          <h1>{`Welcome Back, ${userDetails.name} !`}</h1>
-          <Link to="/trainee/calendar">Weekly Calendar</Link>
+          {type === "Trainee" && (
+            <>
+              <h1>{`Welcome Back, ${userDetails.name} !`}</h1>
+              <Link to="/trainee/calendar">Weekly Calendar</Link>
+            </>
+          )}
           <div className="charts">
             <h1>Diet Logs</h1>
             <LineChart width={500} height={500} data={dietLogs}>
@@ -114,24 +118,35 @@ function TraineeLogs({ userDetails, type }) {
               <Tooltip />
             </LineChart>
             <div>
-              <h2>Previous Workouts:</h2>
-              {workoutLogs.map((item, index) => (
-                <h3 key={index}>{`[ ${new Date(
-                  item.date
-                ).toLocaleDateString()} ${new Date(
-                  item.date
-                ).toLocaleTimeString("IT-it")} ]:  ${item.name}`}</h3>
-              ))}
-            </div>
-            <h2>Today's Workout: </h2>
-            {wod.workout &&
-              (wod.done ? (
-                <h3>"No Workouts Remaining For Today!" </h3>
+              <h1>Previous Workouts:</h1>
+              {workoutLogs.length > 0 ? (
+                workoutLogs.map((item, index) => (
+                  <h3 key={index}>{`[ ${new Date(
+                    item.date
+                  ).toLocaleDateString()} ${new Date(
+                    item.date
+                  ).toLocaleTimeString("IT-it")} ]:  ${item.name}`}</h3>
+                ))
               ) : (
-                <Link to={`/trainee/workout/${wod.workout.id}`}>
-                  {wod.workout.name}
-                </Link>
-              ))}
+                <h3>No Previous Workouts</h3>
+              )}
+            </div>
+            {type === "Trainee" && (
+              <>
+                <h2>Today's Workout: </h2>
+                {wod.workout ? (
+                  wod.done ? (
+                    <h3>No Workouts Remaining For Today!</h3>
+                  ) : (
+                    <Link to={`/trainee/workout/${wod.workout.id}`}>
+                      {wod.workout.name}
+                    </Link>
+                  )
+                ) : (
+                  <h3>No Workouts Remaining For Today!</h3>
+                )}
+              </>
+            )}
           </div>
         </>
       ) : (

@@ -19,17 +19,8 @@ import {
 function ClientsList({ userDetails, alertMessage }) {
   const [clients, setClients] = useState();
   const [render, setRender] = useState(false);
+  const [chosenClient, setChosenClient] = useState();
   const setError = useContext(SetErrorContext);
-  async function getRequests() {
-    try {
-      let requests = await axios.get(
-        "/api/coach/requests/show/" + userDetails.id
-      );
-      return requests.data;
-    } catch (err) {
-      return [];
-    }
-  }
 
   async function getClients() {
     try {
@@ -47,7 +38,6 @@ function ClientsList({ userDetails, alertMessage }) {
 
   useEffect(async () => {
     if (!userDetails) return;
-    setRequests(await getRequests());
     setClients(await getClients());
   }, [userDetails, render]);
 
@@ -163,11 +153,12 @@ function ClientsList({ userDetails, alertMessage }) {
                   traineeId={item.id}
                   userDetails={userDetails}
                 /> */}
+                <button onClick={() => setChosenClient(item)}>Show Logs</button>
               </div>
             </div>
           ))}
       </div>
-      <TraineeLogs type="Coach" userDetails={}/>
+      {chosenClient && <TraineeLogs type="Coach" userDetails={chosenClient} />}
     </div>
   );
 }
