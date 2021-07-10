@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 
 function TraineeProfile({ userDetails }) {
-  const [previousWorkouts, setPreviousWorkouts] = useState([]);
   const [measureLogs, setMeasureLogs] = useState({});
   const [editMode, setEditMode] = useState(false);
   const setError = useContext(SetErrorContext);
@@ -37,8 +36,8 @@ function TraineeProfile({ userDetails }) {
       axios
         .post("http://localhost:3001/api/logs/measure/add", {
           id: userDetails.id,
-          height: measureLogs.height,
-          weight: measureLogs.weight,
+          height: measureLogs.height ? measureLogs.height : userDetails.height,
+          weight: measureLogs.weight ? measureLogs.weight : userDetails.weight,
           chestPerimeter: measureLogs.chest_perimeter,
           hipPerimeter: measureLogs.hip_perimeter,
           bicepPerimeter: measureLogs.bicep_perimeter,

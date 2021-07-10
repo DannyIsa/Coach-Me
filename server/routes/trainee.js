@@ -167,7 +167,6 @@ trainee.get("/coach/show/:traineeId", async (req, res) => {
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
   if (!trainee) return res.status(404).send("Trainee Not Found");
   const coach = await trainee.getCoach();
-  if (!coach) return res.status(404).send("No Coach Found");
   return res.status(200).send(coach);
 });
 
