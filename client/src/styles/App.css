@@ -899,16 +899,12 @@ form.sign-in-form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: 23rem;
+  height: 19rem;
   overflow: scroll;
-  padding: 0.5rem 2rem;
+  padding: 0rem 2rem;
   border-radius: 0.4rem;
   margin: 1rem;
   background-color: #1456a1;
@@ -916,13 +912,16 @@ form.sign-in-form {
 
 .workout-list-start .ticket-list .workout-ticket .ticket-content,
 .workout-list-start .ticket-list .workout-ticket .ticket-title {
-  width: 20rem;
+  width: 15rem;
   word-wrap: break-word;
+  height: 18rem;
+  margin-top: 0.7rem;
 }
 
 .workout-list-start .ticket-list .workout-ticket .ticket-title {
-  padding: 1rem 0 0 0;
+  padding: 0;
   font-size: 1.7rem;
+  font-weight: bold;
 }
 
 .workout-list-start .ticket-list .workout-ticket .ticket-content .exercise-block .exercise-name {
@@ -935,38 +934,48 @@ form.sign-in-form {
   font-weight: lighter;
 }
 
-.workout-list-start .ticket-list .workout-ticket .ticket-header .remove-workout {
+.workout-list-start .ticket-list .workout-ticket .workout-ticket-right .remove-workout {
+  margin-top: 2rem;
   border: none;
   opacity: 0;
 }
 
-.workout-list-start .ticket-list .workout-ticket:hover .ticket-header .remove-workout {
+.workout-list-start .ticket-list .workout-ticket:hover .workout-ticket-right .remove-workout {
   opacity: 1;
 }
 
-.workout-list-start .ticket-list .workout-ticket .ticket-header .editable-btn {
+.workout-list-start .ticket-list .workout-ticket .workout-ticket-right .editable-btn {
   border: none;
   opacity: 0;
 }
 
-.workout-list-start .ticket-list .workout-ticket:hover .ticket-header .editable-btn {
+.workout-list-start .ticket-list .workout-ticket:hover .workout-ticket-right .editable-btn {
   opacity: 1;
 }
 
-.workout-list-start .ticket-list .workout-ticket:hover .ticket-header span {
+.workout-list-start .ticket-list .workout-ticket:hover .workout-ticket-right span {
+  position: absolute;
+  right: 4rem;
   opacity: 1;
-  float: right;
-  margin-top: 1rem;
 }
 
-.workout-list-start .ticket-list .workout-ticket .ticket-header span {
-  white-space: nowrap;
-  border-radius: 0.2rem;
-  padding: 0.2rem;
+.workout-list-start .ticket-list .workout-ticket .workout-ticket-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 15rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.workout-list-start .ticket-list .workout-ticket .workout-ticket-right span {
   font-weight: 700;
   font-size: 1.2rem;
-  margin-right: 0.2rem;
-  margin-bottom: 0.2rem;
   opacity: 0;
 }
 
