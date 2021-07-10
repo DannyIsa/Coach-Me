@@ -216,24 +216,12 @@
       //   }
       // }
     }
-    .cent {
+    & .cent {
       text-align: center;
       display: block;
       color: black;
     }
   }
-
-  // .stick {
-  //   text-align: center;
-  //   display: block;
-  //   font-size: 50pt;
-  //   padding-top: 70px;
-  //   padding-left: 80px;
-  // }
-
-  // .stick:hover {
-  //   color: black;
-  // }
 
   .sec,
   .trainee-sec {
@@ -285,7 +273,7 @@
           color: #a1aab9;
           display: flex;
           flex-direction: column;
-          height: 2rem;
+          height: 2.2rem;
           overflow-y: auto;
         }
 

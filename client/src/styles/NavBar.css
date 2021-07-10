@@ -323,7 +323,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 2rem;
+  height: 2.2rem;
   overflow-y: auto;
 }
 

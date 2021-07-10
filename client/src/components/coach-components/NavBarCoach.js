@@ -117,7 +117,7 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
                         color="#acacac"
                         className="fa-fa stick"
                       />
-                      <div className="cent">Looks Like your all caught up!</div>
+                    <div className="cent">Looks Like your all caught up!</div>
                     </div> */}
 
                     <div className="cont">

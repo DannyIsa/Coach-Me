@@ -195,9 +195,6 @@ function App() {
                 <Route exact path="/sign-up">
                   <SignUp setReqDone={setReqDone} auth={auth} />
                 </Route>
-                <Route exact path="*">
-                  <Redirect to="/" />
-                </Route>
               </Switch>
             )}
             <Route exact path="*">

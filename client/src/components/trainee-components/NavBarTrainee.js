@@ -108,7 +108,7 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                                       Rating <span>8.3</span>
                                     </p>
                                     <p>
-                                      Expertise <span>Yoga</span>
+                                      Expertise <span>{item.expertise}</span>
                                     </p>
                                   </div>
 
@@ -117,7 +117,11 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                                     key={"C" + index}
                                   >
                                     <p className="date-requests">
-                                      Tel Aviv/Online coaching
+                                      {/* {console.log(item)} */}
+                                      {/* {item.online_coaching
+                                        ? item.online_coaching
+                                        : ""} */}
+                                      , {item.city}
                                     </p>
                                     {item.id === userDetails.coach_id ? (
                                       "Your Coach"
