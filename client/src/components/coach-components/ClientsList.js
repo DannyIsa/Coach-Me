@@ -10,6 +10,7 @@ import {
   faCalendarAlt,
   faEnvelope,
   faPhoneAlt,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
 function ClientsList({ userDetails, alertMessage }) {
@@ -126,7 +127,10 @@ function ClientsList({ userDetails, alertMessage }) {
       {chosenClient && (
         <div className="pop-up">
           <div className="pop-up-inner logs">
-            <button onClick={() => setChosenClient()}>close</button>
+            <button className="popup-close" onClick={() => setChosenClient()}>
+              {" "}
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
             <TraineeLogs type="Coach" userDetails={chosenClient} />
           </div>
         </div>

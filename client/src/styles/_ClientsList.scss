@@ -96,4 +96,12 @@
       }
     }
   }
+  .popup-close {
+    border: none;
+    float: right;
+    color: #acacac;
+    &:hover {
+      color: black;
+    }
+  }
 }

@@ -906,7 +906,7 @@ form.sign-in-form {
   overflow: scroll;
   padding: 0rem 2rem;
   border-radius: 0.4rem;
-  margin: 1rem;
+  margin: 2rem;
   background-color: #1456a1;
 }
 
@@ -1098,6 +1098,16 @@ form.sign-in-form {
 
 .client-list-start .ticket-list .ticket .VeryActive {
   background-color: #ff7f7f;
+}
+
+.client-list-start .popup-close {
+  border: none;
+  float: right;
+  color: #acacac;
+}
+
+.client-list-start .popup-close:hover {
+  color: black;
 }
 
 .pop-up {
@@ -1355,8 +1365,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .details-div .right-div button span {
@@ -1854,7 +1864,7 @@ form.sign-in-form {
 }
 
 .add-exercise-start .add-exercise-form form select {
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form form button {
@@ -1877,8 +1887,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .add-exercise-start .add-exercise-form form button span {
@@ -1991,7 +2001,7 @@ form.sign-in-form {
 .add-exercise-start .add-exercise-form .form-block .textarea-control {
   width: 18rem;
   height: 4.5rem;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form .form-block input {
@@ -2002,7 +2012,7 @@ form.sign-in-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .weekly-calendar {
