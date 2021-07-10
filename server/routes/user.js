@@ -18,7 +18,6 @@ user.use(express.json());
 
 function checkValid(client) {
   let valid = true;
-  console.log(client, "fffffff");
   const values = Object.values(client);
   if (values === []) return false;
   values.map((value) => {
@@ -93,7 +92,6 @@ user.get("/check/:email", async (req, res) => {
 user.put("/details/:id", (req, res) => {
   const { id } = req.params;
   const { type, obj } = req.body;
-  console.log(obj, "obj");
   let query;
   if ((type !== "Coach" && type !== "Trainee") || !obj) {
     return res.status(400).send("Invalid Client");
