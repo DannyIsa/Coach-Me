@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { SetErrorContext } from "../../App";
-
+import { debounce } from "lodash";
 function ClientCalendar({ userDetails }) {
   const [needToEat, setNeedToEat] = useState([]);
   const [workouts, setWorkouts] = useState([]);
@@ -66,6 +66,13 @@ function ClientCalendar({ userDetails }) {
         });
     }
   }, [searchInput, field]);
+
+  const handleSearch = useCallback(
+    debounce((e) => {
+      setSearchInput(e.target.value);
+    }),
+    1000
+  );
 
   useEffect(() => {
     if (!field) return;
@@ -239,7 +246,7 @@ function ClientCalendar({ userDetails }) {
             <input
               className="search-input"
               value={searchInput}
-              onChange={(e) => setSearchInput(e.target.value)}
+              onChange={handleSearch}
             />
             <div className="results">
               {results.map((item, index) => (
