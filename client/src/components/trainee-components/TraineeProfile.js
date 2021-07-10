@@ -16,10 +16,9 @@ function TraineeProfile({ userDetails }) {
 
   const getData = () => {
     axios
-      .get("http://localhost:3001/api/logs/measure/show/" + userDetails.id)
+      .get("/api/logs/measure/show/" + userDetails.id)
       .then(async ({ data }) => {
-        if (data.length === 0) return;
-        setMeasureLogs(data[data.length - 1]);
+        setMeasureLogs(data);
         axios
           .get("/api/trainee/coach/show/" + userDetails.id)
           .then(({ data }) => setCoach(data))
@@ -72,11 +71,10 @@ function TraineeProfile({ userDetails }) {
                       <img
                         src={userDetails.image ? userDetails.image : userPic}
                         alt="Admin"
-                        className="rounded-circle"
-                        width="150"
+                        className="profile-image"
                       />
                       <div className="mt-3">
-                        <h4>{userDetails.name}</h4>
+                        <h2>{userDetails.name}</h2>
                         {/* <p className="text-secondary mb-1">Full Stack Developer</p> */}
                         {/* <p className="text-muted font-size-sm">
                         Bay Area, Israel, CA
@@ -255,12 +253,24 @@ function TraineeProfile({ userDetails }) {
               </div>
               <div className="col-sm-6 mb-3">
                 <div className="card h-100">
-                  <div className="card-body coach-info">
+                  <div className="coach-info">
                     <h2>My Coach: </h2>
-                    <h2>Name: {coach ? coach.name : ""} </h2>
-                    <h2>Email: {coach ? coach.email : ""} </h2>
-                    <h2>Phone Number: {coach ? coach.phone_number : ""} </h2>
-                    {coach && <img src={coach.image} alt="" />}
+                    <p>
+                      Name: <span>{coach ? coach.name : ""} </span>
+                    </p>
+                    <p>
+                      Email: <span>{coach ? coach.email : ""}</span>{" "}
+                    </p>
+                    <p>
+                      Phone Number:{" "}
+                      <span>{coach ? coach.phone_number : ""} </span>
+                    </p>
+                    <p>
+                      City: <span>{coach ? coach.phone_number : ""} </span>
+                    </p>
+                    {coach && (
+                      <img src={coach.image} alt="" className="profile-image" />
+                    )}
                   </div>
                 </div>
               </div>

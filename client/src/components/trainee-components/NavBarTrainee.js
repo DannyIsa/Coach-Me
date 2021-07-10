@@ -116,7 +116,9 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                                     className="trainees-item txt"
                                     key={"C" + index}
                                   >
-                                    <p className="date-requests">Tel Aviv</p>
+                                    <p className="date-requests">
+                                      Tel Aviv/Online coaching
+                                    </p>
                                     {item.id === userDetails.coach_id ? (
                                       "Your Coach"
                                     ) : item.id === request.coach_id ? (
