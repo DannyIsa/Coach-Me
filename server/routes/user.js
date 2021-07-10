@@ -18,6 +18,7 @@ user.use(express.json());
 
 function checkValid(client) {
   let valid = true;
+  console.log(client, "fffffff");
   const values = Object.values(client);
   if (values === []) return false;
   values.map((value) => {
@@ -92,7 +93,7 @@ user.get("/check/:email", async (req, res) => {
 user.put("/details/:id", (req, res) => {
   const { id } = req.params;
   const { type, obj } = req.body;
-  console.log(obj, "ooo");
+  console.log(obj, "obj");
   let query;
   if ((type !== "Coach" && type !== "Trainee") || !obj) {
     return res.status(400).send("Invalid Client");
@@ -110,7 +111,7 @@ user.put("/details/:id", (req, res) => {
       rating_count: 0,
       online_coaching: obj.online_coaching,
       city: obj.city,
-      activity_level: obj.activity_level,
+      expertise: obj.expertise,
     };
   } else if (type === "Trainee") {
     query = {

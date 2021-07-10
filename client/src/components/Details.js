@@ -46,8 +46,7 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
               obj.height = data.get("height");
               obj.weight = data.get("weight");
               obj.activity_level = data.get("activity-level");
-            }
-            if (userType === "Coach") {
+            } else if (userType === "Coach") {
               obj.online_coaching = data.get("online-coaching");
               obj.city = data.get("city");
               obj.expertise = data.get("expertise");
