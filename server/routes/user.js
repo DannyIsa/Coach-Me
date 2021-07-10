@@ -122,7 +122,6 @@ user.put("/details/:id", (req, res) => {
       height: obj.height,
       weight: obj.weight,
       image: obj.image,
-      //calculate with weight and height
       daily_calorie_goal: 0,
       activity_level: obj.activity_level,
     };

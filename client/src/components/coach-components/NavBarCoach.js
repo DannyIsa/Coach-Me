@@ -55,10 +55,10 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
     if (alertMessage === "New Alert") setRender(!render);
   }, [alertMessage]);
 
-  useEffect(async () => {
+  useEffect(() => {
     if (!userDetails) return;
-    setRequests(await getRequests());
-    setClients(await getClients());
+    setRequests(getRequests());
+    setClients(getClients());
   }, [userDetails, render]);
 
   function handleRequest(accept, traineeId) {
