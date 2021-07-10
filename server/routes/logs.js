@@ -154,7 +154,7 @@ logs.get("/measure/show/:traineeId", async (req, res) => {
     return res.status(404).send("Invalid ID");
   }
 
-  const traineeMeasureLog = await models.MeasureLog.findAll({
+  const traineeMeasureLog = await models.MeasureLog.findOne({
     attributes: [
       "height",
       "weight",
@@ -166,8 +166,9 @@ logs.get("/measure/show/:traineeId", async (req, res) => {
       [sequelize.fn("date", sequelize.col("MeasureLog.created_at")), "date"],
     ],
     where: { trainee_id: traineeId },
+    order: [["created_at", "DESC"]],
   });
-  if (!traineeMeasureLog) return res.status(200).send([]);
+  if (!traineeMeasureLog) return res.status(200).send({});
 
   return res.status(200).send(traineeMeasureLog);
 });
