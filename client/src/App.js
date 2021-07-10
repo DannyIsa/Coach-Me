@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -195,8 +195,14 @@ function App() {
                 <Route exact path="/sign-up">
                   <SignUp setReqDone={setReqDone} auth={auth} />
                 </Route>
+                <Route exact path="*">
+                  <Redirect to="/" />
+                </Route>
               </Switch>
             )}
+            <Route exact path="*">
+              <Redirect to="/" />
+            </Route>
           </Switch>
         </SetErrorContext.Provider>
       </Router>
