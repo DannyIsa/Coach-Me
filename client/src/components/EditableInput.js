@@ -3,7 +3,7 @@ import React from "react";
 function EditableInput({ attribute, value, editing, state, setState }) {
   return (
     <div className="editable-input">
-      <label>{attribute.split("_").join(" ") + ": "}</label>
+      <b>{attribute.split("_").join(" ") + ": "}</b>
       {editing ? (
         <input
           type="number"
@@ -17,14 +17,14 @@ function EditableInput({ attribute, value, editing, state, setState }) {
           }}
         />
       ) : value ? (
-        <b>{`${value} ${
+        <span>{`${value} ${
           value !== "no value" &&
           (attribute === "weight"
             ? "kg"
             : attribute === "daily_calorie_goal"
             ? "cal"
             : "cm")
-        }`}</b>
+        }`}</span>
       ) : (
         // <b>{`${value}`}</b>
         <b>No Value</b>
