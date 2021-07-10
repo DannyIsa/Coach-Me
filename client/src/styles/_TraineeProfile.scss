@@ -93,10 +93,24 @@
       height: 100% !important;
     }
 
-    .profile-image {
-      border-radius: 10px;
-      width: 12rem;
-      height: 12.6rem;
+    .coach-info {
+      flex: 1 1 auto;
+      min-height: 1px;
+      padding: 1rem 1rem 0rem 1rem;
+
+      & p {
+        font-weight: bold;
+        margin-bottom: 0.4rem;
+
+        & span {
+          font-weight: lighter;
+        }
+      }
+      .profile-image {
+        border-radius: 10px;
+        width: 12rem;
+        height: 12.5rem;
+      }
     }
   }
 }

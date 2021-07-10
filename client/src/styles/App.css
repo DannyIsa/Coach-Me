@@ -2180,10 +2180,27 @@ form.sign-in-form {
   height: 100% !important;
 }
 
-.profile-container .main-body .profile-image {
+.profile-container .main-body .coach-info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem 1rem 0rem 1rem;
+}
+
+.profile-container .main-body .coach-info p {
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+.profile-container .main-body .coach-info p span {
+  font-weight: lighter;
+}
+
+.profile-container .main-body .coach-info .profile-image {
   border-radius: 10px;
   width: 12rem;
-  height: 12.6rem;
+  height: 12.5rem;
 }
 
 .live-workout-page > .header {
