@@ -72,11 +72,10 @@ function TraineeProfile({ userDetails }) {
                       <img
                         src={userDetails.image ? userDetails.image : userPic}
                         alt="Admin"
-                        className="rounded-circle"
-                        width="150"
+                        className="profile-image"
                       />
                       <div className="mt-3">
-                        <h4>{userDetails.name}</h4>
+                        <h2>{userDetails.name}</h2>
                         {/* <p className="text-secondary mb-1">Full Stack Developer</p> */}
                         {/* <p className="text-muted font-size-sm">
                         Bay Area, Israel, CA
@@ -257,10 +256,12 @@ function TraineeProfile({ userDetails }) {
                 <div className="card h-100">
                   <div className="card-body coach-info">
                     <h2>My Coach: </h2>
-                    <h2>Name: {coach ? coach.name : ""} </h2>
-                    <h2>Email: {coach ? coach.email : ""} </h2>
-                    <h2>Phone Number: {coach ? coach.phone_number : ""} </h2>
-                    {coach && <img src={coach.image} alt="" />}
+                    <p>Name: {coach ? coach.name : ""} </p>
+                    <p>Email: {coach ? coach.email : ""} </p>
+                    <p>Phone Number: {coach ? coach.phone_number : ""} </p>
+                    {coach && (
+                      <img src={coach.image} alt="" className="profile-image" />
+                    )}
                   </div>
                 </div>
               </div>

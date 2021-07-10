@@ -2180,6 +2180,12 @@ form.sign-in-form {
   height: 100% !important;
 }
 
+.profile-container .main-body .profile-image {
+  border-radius: 10px;
+  width: 12rem;
+  height: 12.6rem;
+}
+
 .live-workout-page > .header {
   padding-top: 90px;
 }
