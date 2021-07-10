@@ -324,7 +324,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   height: 2rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .homeNav .sec .coach-card-con .coach-card-details span,

@@ -49,6 +49,18 @@
       &:hover .ticket-header .view-calender {
         opacity: 1;
       }
+
+      .ticket-header .show-logs-btn {
+        font-size: 1.2rem;
+        position: absolute;
+        top: 0;
+        right: 14.5rem;
+        opacity: 0;
+        border: none;
+      }
+      &:hover .ticket-header .show-logs-btn {
+        opacity: 1;
+      }
       &:hover .ticket-header span {
         opacity: 1;
         float: right;
@@ -61,7 +73,7 @@
         padding: 0.2rem;
         font-weight: 700;
         font-size: 0.8rem;
-        margin-right: 0.2rem;
+        margin-right: 0rem;
         margin-bottom: 0.2rem;
         opacity: 0;
       }

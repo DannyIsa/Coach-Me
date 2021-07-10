@@ -1,7 +1,7 @@
 .editable-input-inline {
   position: absolute;
   top: 1.2rem;
-  right: 10rem;
+  right: 9rem;
   opacity: 0;
 }
 .editable-input-inline input {
@@ -9,7 +9,7 @@
 }
 .edit-button {
   border: none;
-  padding: 0rem 0.5rem;
+  padding: 0rem 0rem;
 }
 .edit-button:hover {
   border: none;
