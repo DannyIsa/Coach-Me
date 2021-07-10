@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import ClientsList from "../coach-components/ClientsList";
 import CreateWorkout from "../coach-components/CreateWorkout";
 import AddExercise from "../coach-components/AddExercise";
@@ -24,6 +29,9 @@ function CoachRouter({ userDetails, alertMessage }) {
         </Route>
         <Route exact path="/coach/calendar/:traineeId">
           <ClientCalendar userDetails={userDetails} />
+        </Route>
+        <Route exact path="*">
+          <Redirect to="/" />
         </Route>
       </Switch>
     </Router>

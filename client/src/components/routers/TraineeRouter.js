@@ -1,7 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import WeeklyCalendar from "../trainee-components/WeeklyCalendar";
-import WorkoutTimer from "../trainee-components/WorkoutTimer";
 import TraineeProfile from "../trainee-components/TraineeProfile";
 import LiveWorkout from "../trainee-components/LiveWorkout";
 import CaloriesTracker from "../trainee-components/food-components/CaloriesTracker";
@@ -21,6 +25,9 @@ function TraineeRouter({ userDetails, alertMessage }) {
         </Route>
         <Route exact path="/trainee/food">
           <CaloriesTracker userDetails={userDetails} />
+        </Route>
+        <Route exact path="*">
+          <Redirect to="/" />
         </Route>
       </Switch>
     </Router>
