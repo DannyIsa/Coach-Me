@@ -23,6 +23,7 @@ import CoachDashboard from "./components/coach-components/CoachDashboard";
 import CoachRouter from "./components/routers/CoachRouter";
 import TraineeRouter from "./components/routers/TraineeRouter";
 import { io } from "socket.io-client";
+import CoachProfile from "./components/coach-components/CoachProfile";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDXQY7ezPYUQoh3yJmWRZEalb9N-yieW-o",
@@ -142,7 +143,7 @@ function App() {
                   <Switch>
                     <Route exact path="/dashboard">
                       {userType === "Coach" ? (
-                        <CoachDashboard userDetails={userDetails} />
+                        <CoachProfile userDetails={userDetails} />
                       ) : (
                         <TraineeDashboard userDetails={userDetails} />
                       )}
