@@ -16,7 +16,7 @@ function TraineeProfile({ userDetails }) {
 
   const getData = () => {
     axios
-      .get("http://localhost:3001/api/logs/measure/show/" + userDetails.id)
+      .get("/api/logs/measure/show/" + userDetails.id)
       .then(async ({ data }) => {
         if (data.length === 0) return;
         setMeasureLogs(data[data.length - 1]);
