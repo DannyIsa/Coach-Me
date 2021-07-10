@@ -253,9 +253,12 @@ function TraineeProfile({ userDetails }) {
               <div className="col-sm-6 mb-3">
                 <div className="card h-100">
                   <div className="coach-info">
+                    {coach && (
+                      <img src={coach.image} alt="" className="profile-image" />
+                    )}
                     <h2>My Coach: </h2>
                     <p>
-                      Name: <span>{coach ? coach.name : ""} </span>
+                      Name: <span>{coach ? coach.name : ""}</span>{" "}
                     </p>
                     <p>
                       Email: <span>{coach ? coach.email : ""}</span>{" "}
@@ -265,11 +268,28 @@ function TraineeProfile({ userDetails }) {
                       <span>{coach ? coach.phone_number : ""} </span>
                     </p>
                     <p>
-                      City: <span>{coach ? coach.phone_number : ""} </span>
+                      Date Of Birth:{" "}
+                      <span>{coach ? coach.birthdate : ""} </span>
+                      {console.log(coach)}
                     </p>
-                    {coach && (
-                      <img src={coach.image} alt="" className="profile-image" />
-                    )}
+                    <p>
+                      Gender: <span>{coach ? coach.gender : ""}</span>{" "}
+                    </p>
+                    <p>
+                      City: <span>{coach ? coach.city : ""} </span>
+                    </p>
+                    <p>
+                      Expertise : <span>{coach ? coach.expertise : ""} </span>{" "}
+                    </p>
+                    <p>
+                      Online Coaching :{" "}
+                      <span>
+                        {coach.online_coaching === "Yes" ? "Yes" : "No"}{" "}
+                      </span>{" "}
+                    </p>
+                    <h3>
+                      Rate Your Coach : <span>rate</span>{" "}
+                    </h3>
                   </div>
                 </div>
               </div>
