@@ -44,6 +44,7 @@ function TraineeLogs({ userDetails, type }) {
             <div className="chart">
               <h1>Diet Logs</h1>
               <LineChart width={500} height={500} data={dietLogs}>
+                {console.log(dietLogs)}
                 <Legend verticalAlign="top" height={36} />
                 <Line
                   name="Calories(cal)"
@@ -56,7 +57,6 @@ function TraineeLogs({ userDetails, type }) {
                   type="monotone"
                   name="Protein(g)"
                   dataKey="total_protein"
-                  stroke="red"
                   strokeWidth={3}
                 />
                 <Line
@@ -71,6 +71,13 @@ function TraineeLogs({ userDetails, type }) {
                   name="Carbs(g)"
                   dataKey="total_carbs"
                   stroke="green"
+                  strokeWidth={3}
+                />
+                <Line
+                  type="monotone"
+                  name="Calorie Goal(cal)"
+                  dataKey="calorie_goal"
+                  stroke="red"
                   strokeWidth={3}
                 />
                 <XAxis dataKey="date" />

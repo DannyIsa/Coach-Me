@@ -136,6 +136,7 @@ export default function CaloriesTracker({ userDetails }) {
                   onClick={() => {
                     setSelectedMeal(meal);
                     setAddFoodPressed(true);
+                    setSearchInput();
                   }}
                   className="add-food-button"
                 >
@@ -195,6 +196,7 @@ export default function CaloriesTracker({ userDetails }) {
               onClick={() => {
                 setAddFoodPressed(false);
                 setSelectedMeal("");
+                setSearchInput();
               }}
             >
               <FontAwesomeIcon icon={faTimes} color="black" className="fa-fa" />
@@ -232,7 +234,10 @@ export default function CaloriesTracker({ userDetails }) {
                   ></input>
                   <button
                     className="add-food-button"
-                    onClick={() => addFoodOfSelectedDate(popUpAddFood)}
+                    onClick={() => {
+                      addFoodOfSelectedDate(popUpAddFood);
+                      setPopUpAddFood();
+                    }}
                   >
                     ADD
                   </button>
