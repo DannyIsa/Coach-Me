@@ -293,7 +293,7 @@ logs.get("/workout/check/:traineeId", async (req, res) => {
       day: { [Op.startsWith]: new Date().toString().split(" ")[0] },
     },
   });
-  console.log(calendar);
+  if (!calendar[0]) return res.status(200).send({ done: false });
   const workout = await calendar[0].getWorkout();
   if (!workout)
     return res.status(200).send({
