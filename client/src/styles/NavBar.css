@@ -323,6 +323,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 2rem;
+  overflow-y: scroll;
 }
 
 .homeNav .sec .coach-card-con .coach-card-details span,

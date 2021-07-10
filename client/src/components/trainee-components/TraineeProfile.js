@@ -257,6 +257,8 @@ function TraineeProfile({ userDetails }) {
                 <div className="card h-100">
                   <div className="card-body coach-info">
                     <h2>My Coach: {previousWorkouts} </h2>
+                    {/* <p>{coach.name}</p>
+                    <p>{coach.gender}</p> */}
                   </div>
                 </div>
               </div>
