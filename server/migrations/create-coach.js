@@ -35,6 +35,15 @@ module.exports = {
       image: {
         type: Sequelize.STRING,
       },
+      city: {
+        type: Sequelize.STRING,
+      },
+      expertise: {
+        type: Sequelize.STRING,
+      },
+      online_coaching: {
+        type: Sequelize.STRING,
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE,

@@ -47,6 +47,11 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
               obj.weight = data.get("weight");
               obj.activity_level = data.get("activity-level");
             }
+            if (userType === "Coach") {
+              obj.online_coaching = data.get("online-coaching");
+              obj.city = data.get("city");
+              obj.expertise = data.get("expertise");
+            }
             if (
               obj.image.name !== "" &&
               !obj.image.name.endsWith(".jpg") &&
@@ -84,7 +89,7 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
         >
           <div className="num1">
             <div className="inputbox">
-              <input type="tel" required="required" name="name" />
+              <input type="text" required="required" name="name" />
               <span>Name</span>
             </div>
             <div className="inputbox">
@@ -187,6 +192,49 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
                   <option value="Active">Active</option>
                   <option value="VeryActive">Very Active</option>
                 </select>
+              </div>
+            </>
+          )}
+          {userType === "Coach" && (
+            <>
+              <div className="num3">
+                <div className="inputbox">
+                  <input type="text" required="required" name="city" />
+                  <span>City</span>
+                </div>
+              </div>
+              <div className="selectbox">
+                <select
+                  name="expertise"
+                  // multiple
+                  placeholder="Choose Your expertise fields"
+                  required
+                >
+                  <option value="Yoga">Yoga</option>
+                  <option value="Pilatis">Pilatis</option>
+                  <option value="PowerLifting">Power Lifting</option>
+                  <option value="WeightLifting">Weight Lifting</option>
+                  <option value="Crossfit">Crossfit</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div id="online-div">
+                <div id="online-coaching">
+                  <label htmlFor="online-coaching">Yes</label>
+                  <input
+                    type="radio"
+                    name="online-coaching"
+                    value="true"
+                    required
+                  />
+                  <label htmlFor="online-coaching">No</label>
+                  <input
+                    type="radio"
+                    name="online-coaching"
+                    value="false"
+                    required
+                  />
+                </div>
               </div>
             </>
           )}
