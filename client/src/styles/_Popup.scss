@@ -37,5 +37,11 @@
       padding: 0.5rem 1rem;
       float: right;
     }
+
+    &.logs {
+      max-width: 1500px;
+      max-height: 800px;
+      background-color: white;
+    }
   }
 }
