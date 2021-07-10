@@ -85,7 +85,7 @@ function CoachProfile({ userDetails }) {
                       <h6 className="mb-0">online coaching: </h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
-                      {userDetails.online_coaching ? "Yes" : "No"}
+                      {userDetails.online_coaching === "Yes" ? "Yes" : "No"}
                     </div>
                   </div>
                   <hr />
@@ -99,7 +99,6 @@ function CoachProfile({ userDetails }) {
               <div className="col-sm-6 mb-3">
                 <div className="card h-100">
                   <div className="card-body">
-                    {/* <div>x */}
                     <button className="edit-button">
                       {editMode ? "Save" : "Edit"}
                     </button>
