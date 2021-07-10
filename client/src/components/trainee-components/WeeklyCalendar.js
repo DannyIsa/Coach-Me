@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "../../styles/WeeklyCalendar.css";
 import { SetErrorContext } from "../../App";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export default function WeeklyCalendar({ userDetails }) {
   const [needToEat, setNeedToEat] = useState([]);
@@ -128,7 +130,11 @@ export default function WeeklyCalendar({ userDetails }) {
               onClick={() => setChosenWorkout(false)}
               className="popup-close-button"
             >
-              CLOSE
+              <FontAwesomeIcon
+                icon={faTimes}
+                color="#acacac"
+                className="fa-fa"
+              />
             </button>
             {chosenWorkout &&
               chosenWorkout.day.startsWith(

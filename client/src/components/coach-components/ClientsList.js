@@ -6,14 +6,10 @@ import { SetErrorContext } from "../../App";
 import TraineeLogs from "../TraineeLogs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faTimes,
+  faEye,
   faCalendarAlt,
-  faWeight,
   faEnvelope,
   faPhoneAlt,
-  faGenderless,
-  faArrowsAltV,
-  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
 function ClientsList({ userDetails, alertMessage }) {
@@ -59,6 +55,17 @@ function ClientsList({ userDetails, alertMessage }) {
                     className="fa-fa"
                   />
                 </Link>
+                <button
+                  className="show-logs-btn"
+                  onClick={() => setChosenClient(item)}
+                >
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faEye}
+                    color="white"
+                    className="fa-fa"
+                  />
+                </button>
                 <EditableInputInline
                   value={
                     item && item.daily_calorie_goal
@@ -95,23 +102,9 @@ function ClientsList({ userDetails, alertMessage }) {
                 </span>
                 <span>{" " + item.phone_number}</span>
                 <br />
-                <span className="first">
-                  {/* <FontAwesomeIcon
-                    icon={faGenderless}
-                    color="white"
-                    className="fa-fa"
-                  /> */}
-                  Gender:
-                </span>
+                <span className="first">Gender:</span>
                 <span>{" " + item.gender}</span> <br />
-                <span className="first">
-                  {/* <FontAwesomeIcon
-                    icon={faUser}
-                    color="white"
-                    className="fa-fa"
-                  /> */}
-                  Age:
-                </span>
+                <span className="first">Age:</span>
                 <span>
                   {" " +
                     Math.abs(
@@ -121,39 +114,11 @@ function ClientsList({ userDetails, alertMessage }) {
                     )}
                 </span>
                 <br />
-                {/* <br /> */}
-                <span className="first">
-                  {/* <FontAwesomeIcon
-                    icon={faWeight}
-                    color="white"
-                    className="fa-fa"
-                  /> */}
-                  Weight:
-                </span>
+                <span className="first">Weight:</span>
                 <span>{" " + item.weight}</span> <br />
-                <span className="first">
-                  {/* <FontAwesomeIcon
-                    icon={faArrowsAltV}
-                    color="white"
-                    className="fa-fa"
-                  /> */}
-                  Height:
-                </span>
+                <span className="first">Height:</span>
                 <span>{" " + item.height}</span>
                 <br />
-                {/* <EditableInputInline
-                  value={
-                    item && item.daily_calorie_goal
-                      ? item.daily_calorie_goal
-                      : "no value"
-                  }
-                  attribute={"daily_calorie_goal"}
-                  clients={clients}
-                  setClients={setClients}
-                  traineeId={item.id}
-                  userDetails={userDetails}
-                /> */}
-                <button onClick={() => setChosenClient(item)}>Show Logs</button>
               </div>
             </div>
           ))}

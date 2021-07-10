@@ -151,23 +151,10 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
               <span>Date of Birth</span>
             </div>
           </div>
-          {/* img upload */}
-          <div>
-            <div className="form-block">
-              <h2 className="label-name" htmlFor="image">
-                Upload Your Profile Image 📷:
-              </h2>
-              <input type="file" name="image" accept=".jpg,.png,.gif" />
-            </div>
 
-            {/* <div className="form-block">
-              <button type="submit" value="submit">
-                <span></span>
-                Upload
-              </button>
-            </div> */}
+          <div className="image-block">
+            <input type="file" name="image" accept=".jpg,.png,.gif" />
           </div>
-          {/* img upload */}
 
           {userType === "Trainee" && (
             <>

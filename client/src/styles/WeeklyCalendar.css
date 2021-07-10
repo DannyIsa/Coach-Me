@@ -60,6 +60,11 @@
 
 .popup-workout .popup-close-button {
   position: absolute;
+  border: none;
   top: 16px;
   right: 16px;
+}
+
+.popup-workout .popup-close-button:hover {
+  color: black;
 }
