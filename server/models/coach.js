@@ -35,6 +35,9 @@ module.exports = (sequelize, DataTypes) => {
       avg_rating: DataTypes.FLOAT,
       rating_count: DataTypes.INTEGER,
       image: DataTypes.STRING,
+      city: DataTypes.STRING,
+      expertise: DataTypes.STRING,
+      online_coaching: DataTypes.STRING,
     },
     {
       sequelize,
