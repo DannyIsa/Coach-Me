@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useContext,
+  useCallback,
+} from "react";
 import { SetErrorContext } from "../../../App";
 
 import axios from "axios";
@@ -17,7 +23,7 @@ export default function CaloriesTracker({ userDetails }) {
   const [selectedMeal, setSelectedMeal] = useState("");
   const [addFoodPressed, setAddFoodPressed] = useState(false);
   const [searchedFood, setSearchedFood] = useState([]);
-  const foodSearchInput = useRef();
+  const [searchInput, setSearchInput] = useState();
   const [popUpAddFood, setPopUpAddFood] = useState("");
   const [addFoodAmount, setAddFoodAmount] = useState(1);
   const [selectedDay, setSelectedDay] = useState(new Date());
@@ -35,23 +41,25 @@ export default function CaloriesTracker({ userDetails }) {
   }, [foodOfSelectedDate]);
 
   useEffect(() => {
-    console.log(selectedDay);
-  }, [selectedDay]);
-
-  const searchFood = debounce(() => {
-    if (foodSearchInput.current.value) {
+    if (searchInput) {
       axios
         .get(
-          `http://localhost:3001/api/food/get-food?searchedFood=${foodSearchInput.current.value}`
+          `http://localhost:3001/api/food/get-food?searchedFood=${searchInput}`
         )
         .then(({ data }) => {
           setSearchedFood(data);
         })
         .catch((err) => setError(err.response.data));
-    } else if (!foodSearchInput.current.value) {
+    } else if (!searchInput) {
       setSearchedFood([]);
     }
-  }, 300);
+  }, [searchInput]);
+
+  const searchFood = useCallback(
+    debounce((e) => {
+      setSearchInput(e.target.value);
+    }, 1000)
+  );
 
   const addFoodOfSelectedDate = (food) => {
     axios
@@ -179,10 +187,9 @@ export default function CaloriesTracker({ userDetails }) {
           <div className="popup-add-food">
             <input
               className="search-food-input"
-              ref={foodSearchInput}
-              onChange={searchFood}
               placeholder="What do you want to eat today ?"
-            ></input>
+              onChange={searchFood}
+            />
             <button
               className="popup-close-button"
               onClick={() => {
