@@ -210,6 +210,9 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
                   placeholder="Choose Your expertise fields"
                   required
                 >
+                  <option disabled selected value>
+                    Select Expertise
+                  </option>
                   <option value="Yoga">Yoga</option>
                   <option value="Pilatis">Pilatis</option>
                   <option value="PowerLifting">Power Lifting</option>
