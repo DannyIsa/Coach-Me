@@ -253,11 +253,21 @@ function TraineeProfile({ userDetails }) {
               </div>
               <div className="col-sm-6 mb-3">
                 <div className="card h-100">
-                  <div className="card-body coach-info">
+                  <div className="coach-info">
                     <h2>My Coach: </h2>
-                    <p>Name: {coach ? coach.name : ""} </p>
-                    <p>Email: {coach ? coach.email : ""} </p>
-                    <p>Phone Number: {coach ? coach.phone_number : ""} </p>
+                    <p>
+                      Name: <span>{coach ? coach.name : ""} </span>
+                    </p>
+                    <p>
+                      Email: <span>{coach ? coach.email : ""}</span>{" "}
+                    </p>
+                    <p>
+                      Phone Number:{" "}
+                      <span>{coach ? coach.phone_number : ""} </span>
+                    </p>
+                    <p>
+                      City: <span>{coach ? coach.phone_number : ""} </span>
+                    </p>
                     {coach && (
                       <img src={coach.image} alt="" className="profile-image" />
                     )}
