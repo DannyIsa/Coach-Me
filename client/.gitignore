@@ -10,6 +10,8 @@
 
 # production
 /build
+App.css.map
+NavBar.css.map
 
 # misc
 .DS_Store

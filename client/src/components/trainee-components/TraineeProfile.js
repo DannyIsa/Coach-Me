@@ -23,7 +23,7 @@ function TraineeProfile({ userDetails }) {
         axios
           .get("/api/trainee/coach/show/" + userDetails.id)
           .then(({ data }) => setCoach(data))
-          .catch((err) => setError(err));
+          .catch((err) => setError(err.response.data));
       })
       .catch((err) => {
         setError(err.response.data);

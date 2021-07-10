@@ -7,11 +7,6 @@
   // flex-wrap: wrap;
   overflow: scroll;
 
-  // & h1 {
-  //   margin-bottom: 3rem;
-  //   font-weight: lighter;
-  //   font-size: 2.8em;
-  // }
   .ticket-list {
     display: flex;
     flex-wrap: wrap;
@@ -20,25 +15,27 @@
       display: flex;
       position: relative;
       align-items: center;
-      flex-direction: column;
       width: fit-content;
-      height: 23rem;
+      height: 19rem;
       overflow: scroll;
-      padding: 0.5rem 2rem;
+      padding: 0rem 2rem;
       border-radius: 0.4rem;
-      margin: 1rem;
+      margin: 2rem;
       // background-color: #3580d4;
       background-color: #1456a1;
 
       .ticket-content,
       .ticket-title {
-        width: 20rem;
+        width: 15rem;
         word-wrap: break-word;
+        height: 18rem;
+        margin-top: 0.7rem;
       }
 
       .ticket-title {
-        padding: 1rem 0 0 0;
+        padding: 0;
         font-size: 1.7rem;
+        font-weight: bold;
       }
 
       .ticket-content {
@@ -53,37 +50,38 @@
           }
         }
       }
-
-      .ticket-header .remove-workout {
+      .workout-ticket-right .remove-workout {
+        margin-top: 2rem;
         border: none;
         opacity: 0;
       }
-      &:hover .ticket-header .remove-workout {
+      &:hover .workout-ticket-right .remove-workout {
         opacity: 1;
       }
-      .ticket-header .editable-btn {
+      .workout-ticket-right .editable-btn {
         border: none;
         opacity: 0;
       }
-      &:hover .ticket-header .editable-btn {
+      &:hover .workout-ticket-right .editable-btn {
         opacity: 1;
       }
 
-      &:hover .ticket-header span {
+      &:hover .workout-ticket-right span {
+        position: absolute;
+        right: 4rem;
         opacity: 1;
-        float: right;
-        margin-top: 1rem;
       }
+      .workout-ticket-right {
+        display: flex;
+        flex-direction: column;
+        height: 15rem;
+        justify-content: space-between;
 
-      .ticket-header span {
-        white-space: nowrap;
-        border-radius: 0.2rem;
-        padding: 0.2rem;
-        font-weight: 700;
-        font-size: 1.2rem;
-        margin-right: 0.2rem;
-        margin-bottom: 0.2rem;
-        opacity: 0;
+        & span {
+          font-weight: 700;
+          font-size: 1.2rem;
+          opacity: 0;
+        }
       }
     }
   }
