@@ -5,8 +5,12 @@ import axios from "axios";
 import "react-day-picker/lib/style.css";
 import { SetErrorContext } from "../../../App";
 
-export default function DaySelect({ userDetails, setFoodOfSelectedDate }) {
-  const [selectedDay, setSelectedDay] = useState(new Date());
+export default function DaySelect({
+  userDetails,
+  setFoodOfSelectedDate,
+  selectedDay,
+  setSelectedDay,
+}) {
   const setError = useContext(SetErrorContext);
 
   const handleDayClick = (day, { selected }) => {

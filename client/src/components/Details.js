@@ -153,7 +153,12 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
           </div>
 
           <div className="image-block">
-            <input type="file" name="image" accept=".jpg,.png,.gif" />
+            <input
+              type="file"
+              required="required"
+              name="image"
+              accept=".jpg,.png,"
+            />
           </div>
 
           {userType === "Trainee" && (
