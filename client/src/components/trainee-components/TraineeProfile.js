@@ -256,7 +256,11 @@ function TraineeProfile({ userDetails }) {
               <div className="col-sm-6 mb-3">
                 <div className="card h-100">
                   <div className="card-body coach-info">
-                    <h2>My Coach: {previousWorkouts} </h2>
+                    <h2>My Coach: </h2>
+                    <h2>Name: {coach ? coach.name : ""} </h2>
+                    <h2>Email: {coach ? coach.email : ""} </h2>
+                    <h2>Phone Number: {coach ? coach.phone_number : ""} </h2>
+                    {coach && <img src={coach.image} alt="" />}
                   </div>
                 </div>
               </div>

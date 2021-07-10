@@ -158,7 +158,14 @@ function ClientsList({ userDetails, alertMessage }) {
             </div>
           ))}
       </div>
-      {chosenClient && <TraineeLogs type="Coach" userDetails={chosenClient} />}
+      {chosenClient && (
+        <div className="pop-up">
+          <div className="pop-up-inner logs">
+            <button onClick={() => setChosenClient()}>close</button>
+            <TraineeLogs type="Coach" userDetails={chosenClient} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
