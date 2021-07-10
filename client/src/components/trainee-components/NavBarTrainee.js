@@ -128,18 +128,11 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                                       "Request Pending"
                                     ) : (
                                       <div className="coach-card-btn">
-                                        <button
-                                          className="chat-btn"
-                                          // onClick={() =>
-                                          //   sendRequest(
-                                          //     item.id,
-                                          //     userDetails.id,
-                                          //     userDetails.name
-                                          //   )
-                                          // }
-                                        >
-                                          Chat
-                                        </button>
+                                        <Link to={`/chat/${item.id}`}>
+                                          <button className="chat-btn">
+                                            Chat
+                                          </button>
+                                        </Link>
                                         <button
                                           className="requests-btn"
                                           onClick={() =>
