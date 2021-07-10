@@ -85,7 +85,7 @@ function CoachProfile({ userDetails }) {
                       <h6 className="mb-0">online coaching: </h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
-                      {userDetails.online_coaching}
+                      {userDetails.online_coaching ? "Yes" : "No"}
                     </div>
                   </div>
                   <hr />

@@ -42,7 +42,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       online_coaching: {
-        type: Sequelize.STRING,
+        type: Sequelize.BOOLEAN,
       },
       created_at: {
         allowNull: false,
