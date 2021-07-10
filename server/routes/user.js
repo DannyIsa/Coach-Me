@@ -96,6 +96,7 @@ user.get("/check/:email", async (req, res) => {
 user.put("/details/:id", (req, res) => {
   const { id } = req.params;
   const { type, obj } = req.body;
+  console.log(obj, "ooo");
   let query;
   if ((type !== "Coach" && type !== "Trainee") || !obj) {
     return res.status(400).send("Invalid Client");
@@ -111,6 +112,9 @@ user.put("/details/:id", (req, res) => {
       image: obj.image,
       avg_rating: 0,
       rating_count: 0,
+      online_coaching: obj.online_coaching,
+      city: obj.city,
+      activity_level: obj.activity_level,
     };
   } else if (type === "Trainee") {
     query = {
