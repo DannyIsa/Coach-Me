@@ -149,7 +149,6 @@ logs.get("/workout/show/:traineeId", async (req, res) => {
 logs.get("/measure/show/latest/:traineeId", async (req, res) => {
   const { traineeId } = req.params;
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
-
   if (!traineeId || !trainee) {
     return res.status(404).send("Invalid ID");
   }

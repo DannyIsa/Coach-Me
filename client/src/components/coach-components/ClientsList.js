@@ -119,9 +119,9 @@ function ClientsList({ userDetails, alertMessage }) {
                 <span>{" " + item.weight}</span> <br />
                 <span className="first">Height:</span>
                 <span>{" " + item.height}</span>
-                <Link to={`/chat/${item.id}/${userDetails.id}`}>
+                <a href={`/chat/${item.id}/${userDetails.id}`}>
                   <button className="chat-btn">Chat</button>
-                </Link>
+                </a>
                 <br />
               </div>
             </div>

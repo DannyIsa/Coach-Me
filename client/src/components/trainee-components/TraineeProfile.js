@@ -17,7 +17,7 @@ function TraineeProfile({ userDetails }) {
 
   const getData = () => {
     axios
-      .get("/api/logs/measure/show/latest" + userDetails.id)
+      .get("/api/logs/measure/show/latest/" + userDetails.id)
       .then(async ({ data }) => {
         setMeasureLogs(data);
         axios
@@ -55,6 +55,7 @@ function TraineeProfile({ userDetails }) {
   };
 
   useEffect(() => {
+    console.log(userDetails);
     if (!userDetails) return;
     getData();
   }, [userDetails]);
@@ -302,12 +303,12 @@ function TraineeProfile({ userDetails }) {
                         </span>
                       </p>
                       <div className="coach-control-btn">
-                        <Link
+                        <a
                           className="chat-btn"
-                          to={`/chat/${userDetails.id}/${userDetails.coach_id}`}
+                          href={`/chat/${userDetails.id}/${userDetails.coach_id}`}
                         >
                           <button className="chat-btn">Chat</button>
-                        </Link>
+                        </a>
                         <button
                           className="leave-btn"
                           onClick={() => setLeavePopup(true)}
