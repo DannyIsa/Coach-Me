@@ -3,6 +3,12 @@
   flex-direction: column;
   align-items: center;
   color: black;
+  .mainDiv {
+    position: absolute;
+    bottom: 5rem;
+    display: flex;
+    flex-direction: row;
+  }
 
   & h1 {
     color: white;
@@ -13,13 +19,45 @@
   .charts {
     display: flex;
     flex-wrap: wrap;
-    // flex-flow: row;
-    width: 70%;
-    background-color: palegoldenrod;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+
+    // width: 60%;
+    // background-color: palegoldenrod;
+    // .chart {
+    //   background-color: palegoldenrod;
+    // }
 
     .line-chart {
-      background-color: white;
+      // background-color: white;
       margin-right: 2rem;
+      border-radius: 15px;
+    }
+  }
+  .workouts-dashboard {
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    // background-color: pink;
+    justify-content: space-around;
+
+    .workout1 {
+      text-align: center;
+      padding: 0.5rem;
+      background-color: rgb(192, 237, 255);
+      border-radius: 15px;
+      height: 10rem;
+      word-wrap: break-word;
+    }
+    .workout2 {
+      text-align: center;
+      padding: 0.5rem;
+      background-color: rgb(129, 29, 46);
+      border-radius: 15px;
+      word-wrap: break-word;
+      height: 10rem;
     }
   }
   // & > .charts {

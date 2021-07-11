@@ -42,133 +42,141 @@ function TraineeLogs({ userDetails, type }) {
               </Link>
             </>
           )}
-          <div className="charts">
-            <div className="chart">
-              <h2>Diet Logs</h2>
-              <LineChart
-                width={450}
-                height={500}
-                data={dietLogs}
-                className="line-chart"
-              >
-                <Legend verticalAlign="top" height={36} />
-                <Line
-                  name="Calories(cal)"
-                  type="monotone"
-                  dataKey="total_calories"
-                  stroke="black"
-                  strokeWidth={3}
-                />
-                <Line
-                  type="monotone"
-                  name="Protein(g)"
-                  dataKey="total_protein"
-                  strokeWidth={3}
-                />
-                <Line
-                  type="monotone"
-                  name="Fats(g)"
-                  dataKey="total_fats"
-                  stroke="blue"
-                  strokeWidth={3}
-                />
-                <Line
-                  type="monotone"
-                  name="Carbs(g)"
-                  dataKey="total_carbs"
-                  stroke="green"
-                  strokeWidth={3}
-                />
-                <Line
-                  type="monotone"
-                  name="Calorie Goal(cal)"
-                  dataKey="calorie_goal"
-                  stroke="red"
-                  strokeWidth={3}
-                />
-                <XAxis dataKey="date" />
-                <YAxis />
-                <Tooltip />
-              </LineChart>
+          <div className="mainDiv">
+            <div className="charts">
+              <div className="chart">
+                <h2>Diet Logs</h2>
+                <LineChart
+                  width={450}
+                  height={500}
+                  data={dietLogs}
+                  className="line-chart"
+                >
+                  <Legend verticalAlign="top" height={36} />
+                  <Line
+                    name="Calories(cal)"
+                    type="monotone"
+                    dataKey="total_calories"
+                    stroke="black"
+                    strokeWidth={3}
+                  />
+                  <Line
+                    type="monotone"
+                    name="Protein(g)"
+                    dataKey="total_protein"
+                    strokeWidth={3}
+                  />
+                  <Line
+                    type="monotone"
+                    name="Fats(g)"
+                    dataKey="total_fats"
+                    stroke="blue"
+                    strokeWidth={3}
+                  />
+                  <Line
+                    type="monotone"
+                    name="Carbs(g)"
+                    dataKey="total_carbs"
+                    stroke="green"
+                    strokeWidth={3}
+                  />
+                  <Line
+                    type="monotone"
+                    name="Calorie Goal(cal)"
+                    dataKey="calorie_goal"
+                    stroke="red"
+                    strokeWidth={3}
+                  />
+                  <XAxis dataKey="date" />
+                  <YAxis />
+                  <Tooltip />
+                </LineChart>
+              </div>
+              <div className="chart">
+                <h2>Measure Logs</h2>
+                <LineChart
+                  width={500}
+                  height={500}
+                  data={measureLogs}
+                  className="line-chart"
+                >
+                  <Legend verticalAlign="top" height={36} />
+                  <Line
+                    type="monotone"
+                    dataKey="weight"
+                    name="Weight(kg)"
+                    stroke="black"
+                    strokeWidth={3}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="chest_perimeter"
+                    name="Chest Perimeter(cm)"
+                    stroke="red"
+                    strokeWidth={3}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="thigh_perimeter"
+                    name="Thigh Perimeter(cm)"
+                    stroke="blue"
+                    strokeWidth={3}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="bicep_perimeter"
+                    name="Bicep Perimeter(cm)"
+                    stroke="green"
+                    strokeWidth={3}
+                  />
+                  <Line
+                    type="monotone"
+                    name="Hip Perimeter(cm)"
+                    dataKey="hip_perimeter"
+                    strokeWidth={3}
+                  />
+                  <XAxis dataKey="date" />
+                  <YAxis />
+                  <Tooltip />
+                </LineChart>
+              </div>
             </div>
-            <div className="chart">
-              <h2>Measure Logs</h2>
-              <LineChart
-                width={500}
-                height={500}
-                data={measureLogs}
-                className="line-chart"
-              >
-                <Legend verticalAlign="top" height={36} />
-                <Line
-                  type="monotone"
-                  dataKey="weight"
-                  name="Weight(kg)"
-                  stroke="black"
-                  strokeWidth={3}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="chest_perimeter"
-                  name="Chest Perimeter(cm)"
-                  stroke="red"
-                  strokeWidth={3}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="thigh_perimeter"
-                  name="Thigh Perimeter(cm)"
-                  stroke="blue"
-                  strokeWidth={3}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="bicep_perimeter"
-                  name="Bicep Perimeter(cm)"
-                  stroke="green"
-                  strokeWidth={3}
-                />
-                <Line
-                  type="monotone"
-                  name="Hip Perimeter(cm)"
-                  dataKey="hip_perimeter"
-                  strokeWidth={3}
-                />
-                <XAxis dataKey="date" />
-                <YAxis />
-                <Tooltip />
-              </LineChart>
-            </div>
-            <div>
-              <h2>Previous Workouts:</h2>
-              {workoutLogs.length > 0 ? (
-                workoutLogs.map((item, index) => (
-                  <h3 key={index}>{`[ ${new Date(
-                    item.date
-                  ).toLocaleDateString()} ${new Date(
-                    item.date
-                  ).toLocaleTimeString("IT-it")} ]:  ${item.name}`}</h3>
-                ))
-              ) : (
-                <h3>No Previous Workouts</h3>
-              )}
-            </div>
-            {type === "Trainee" && (
-              <div>
-                <h2>Today's Workout: </h2>
-                {wod.workout ? (
-                  wod.done ? (
-                    <h3>No Workouts Remaining For Today!</h3>
-                  ) : (
-                    <Link to={`/trainee/workout/${wod.workout.id}`}>
-                      {wod.workout.name}
-                    </Link>
-                  )
+
+            <div className="workouts-dashboard">
+              <div className="workout1">
+                <h2>Previous Workouts:</h2>
+                {workoutLogs.length > 0 ? (
+                  workoutLogs.map((item, index) => (
+                    <h3 key={index}>{`[ ${new Date(
+                      item.date
+                    ).toLocaleDateString()} ${new Date(
+                      item.date
+                    ).toLocaleTimeString("IT-it")} ]:  ${item.name}`}</h3>
+                  ))
                 ) : (
-                  <h3>No Workouts Remaining For Today!</h3>
+                  <h3>No Previous Workouts</h3>
                 )}
               </div>
-            )}
+              {type === "Trainee" && (
+                <div className="workout2">
+                  <h2>Today's Workout: </h2>
+                  {wod.workout ? (
+                    wod.done ? (
+                      <h3>
+                        No Workouts Remaining
+                        <br /> For Today!
+                      </h3>
+                    ) : (
+                      <Link to={`/trainee/workout/${wod.workout.id}`}>
+                        {wod.workout.name}
+                      </Link>
+                    )
+                  ) : (
+                    <h3>No Workouts Remaining For Today!</h3>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
         </>
       ) : (
