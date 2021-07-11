@@ -145,10 +145,10 @@
   position: relative;
   padding: 32px;
   width: 100%;
-  height: 50%;
+  height: 60%;
   margin-top: 200px;
   max-width: 640px;
-  max-height: 400px;
+  max-height: 500px;
   background-color: white;
   color: black;
   overflow-y: auto;
@@ -199,5 +199,16 @@
 .calorie-tracker .popup-add-food .pop-up-selected-food {
   border: black solid 3px;
   border-radius: 6px;
+}
+
+.calorie-tracker .popup-add-food .popup-close-button {
+  position: absolute;
+  border: none;
+  top: 16px;
+  right: 16px;
+}
+
+.calorie-tracker .popup-add-food .fa-fa:hover {
+  color: black;
 }
 /*# sourceMappingURL=CaloriesTracker.css.map */

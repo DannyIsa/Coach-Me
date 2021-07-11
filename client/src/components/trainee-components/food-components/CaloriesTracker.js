@@ -199,7 +199,11 @@ export default function CaloriesTracker({ userDetails }) {
                 setSearchInput();
               }}
             >
-              <FontAwesomeIcon icon={faTimes} color="black" className="fa-fa" />
+              <FontAwesomeIcon
+                icon={faTimes}
+                color="#acacac"
+                className="fa-fa"
+              />
             </button>
             <div className="searched-food-list">
               {searchedFood.map((food, i) => {
