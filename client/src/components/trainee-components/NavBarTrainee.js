@@ -105,9 +105,12 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                   <div className="display">
                     <div className="cont">
                       <div className="alerts-div">
-                        <div className="tags-div">
+                        <div className="tags">
                           {tags.map((tag) => (
-                            <strong onClick={() => setChosenTag(tag)}>
+                            <strong
+                              onClick={() => setChosenTag(tag)}
+                              className={`${tag} tag`}
+                            >
                               {tag}
                             </strong>
                           ))}
