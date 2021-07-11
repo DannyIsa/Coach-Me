@@ -44,7 +44,6 @@ function TraineeLogs({ userDetails, type }) {
             <div className="chart">
               <h1>Diet Logs</h1>
               <LineChart width={500} height={500} data={dietLogs}>
-                {console.log(dietLogs)}
                 <Legend verticalAlign="top" height={36} />
                 <Line
                   name="Calories(cal)"

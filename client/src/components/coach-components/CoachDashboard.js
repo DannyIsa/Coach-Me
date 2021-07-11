@@ -50,7 +50,7 @@ function CoachDashboard({ userDetails }) {
                     .then(({ data }) => {
                       console.log(data);
                     })
-                    .catch((err) => console.log(err));
+                    .catch((err) => setError(err.response.data));
                 }}
               >
                 <div className="form-block">

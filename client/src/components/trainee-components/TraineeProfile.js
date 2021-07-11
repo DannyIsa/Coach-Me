@@ -252,7 +252,7 @@ function TraineeProfile({ userDetails }) {
                     <h2>Forms To Fill Out:</h2>
                     <div>daily general update</div>
                     <div>
-                      health declaration{" "}
+                      health declaration
                       <a href={pdf} target="_blank" className="pdf-btn">
                         <FontAwesomeIcon
                           icon={faFileDownload}
@@ -271,41 +271,40 @@ function TraineeProfile({ userDetails }) {
                       <img src={coach.image} alt="" className="profile-image" />
                       <h2>My Coach: </h2>
                       <p>
-                        Name: <span>{coach ? coach.name : ""}</span>{" "}
+                        Name: <span>{coach ? coach.name : ""}</span>
                       </p>
                       <p>
-                        Email: <span>{coach ? coach.email : ""}</span>{" "}
+                        Email: <span>{coach ? coach.email : ""}</span>
                       </p>
                       <p>
-                        Phone Number:{" "}
+                        Phone Number:
                         <span>{coach ? coach.phone_number : ""} </span>
                       </p>
                       <p>
-                        Date Of Birth:{" "}
+                        Date Of Birth:
                         <span>{coach ? coach.birthdate : ""} </span>
-                        {console.log(coach)}
                       </p>
                       <p>
-                        Gender: <span>{coach ? coach.gender : ""}</span>{" "}
+                        Gender: <span>{coach ? coach.gender : ""}</span>
                       </p>
                       <p>
                         City: <span>{coach ? coach.city : ""} </span>
                       </p>
                       <p>
-                        Expertise : <span>{coach ? coach.expertise : ""} </span>{" "}
+                        Expertise : <span>{coach ? coach.expertise : ""} </span>
                       </p>
                       <p>
-                        Online Coaching :{" "}
+                        Online Coaching :
                         <span>
-                          {coach.online_coaching === "Yes" ? "Yes" : "No"}{" "}
-                        </span>{" "}
+                          {coach.online_coaching === "Yes" ? "Yes" : "No"}
+                        </span>
                       </p>
                       <div className="coach-control-btn">
                         <Link
                           className="chat-btn"
-                          to={"/chat/" + userDetails.id}
+                          to={`/chat/${userDetails.id}/${userDetails.coach_id}`}
                         >
-                          Chat
+                          <button className="chat-btn">Chat</button>
                         </Link>
                         <button
                           className="leave-btn"
@@ -315,7 +314,7 @@ function TraineeProfile({ userDetails }) {
                         </button>
                       </div>
                       <h3>
-                        Rate Your Coach : <span>rate</span>{" "}
+                        Rate Your Coach : <span>rate</span>
                       </h3>
                     </div>
                   ) : (

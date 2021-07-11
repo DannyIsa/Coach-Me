@@ -130,6 +130,9 @@ function App() {
               // user is registered
               registered ? (
                 <>
+                  <Route exact path="/chat/:traineeId/:coachId">
+                    <Chat userDetails={userDetails} userType={userType} />
+                  </Route>
                   {userType === "Coach" ? (
                     <NavBarCoach
                       userType={userType}
@@ -169,9 +172,6 @@ function App() {
                       ) : (
                         <Redirect to="/" />
                       )}
-                    </Route>
-                    <Route exact path="/chat/:traineeId/:coachId">
-                      <Chat userDetails={userDetails} userType={userType} />
                     </Route>
                   </Switch>
                 </>

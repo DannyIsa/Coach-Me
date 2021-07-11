@@ -45,9 +45,6 @@ function LiveWorkout({ userDetails }) {
   }, [userDetails, workoutId]);
 
   useEffect(() => {
-    console.log(ended);
-  }, [ended]);
-  useEffect(() => {
     if (!currentWorkout) return;
     let restArray = splitArray("rest");
     let idArray = splitArray("id");

@@ -21,10 +21,13 @@ chat.get("/:traineeId/:coachId", async (req, res) => {
   if (!coachId || !traineeId)
     return res.status(400).send("Must send trainee and coach id");
   const trainee = await models.Trainee.findOne({
-    where: { id: traineeId, coach_id: coachId },
+    where: { id: traineeId },
   });
   if (!trainee) return res.status(404).send("User Not Found");
+  const coach = await models.Coach.findOne({ where: { id: coachId } });
+  if (!coach) return res.status(404).send("User Not Found");
   const messages = await trainee.getChats({
+    where: { coach_id: coachId },
     order: [["created_at"]],
     limit: 50,
   });
@@ -42,9 +45,12 @@ chat.post("/:traineeId/:coachId", async (req, res) => {
   if (sender !== "Trainee" && sender !== "Coach")
     return res.status(400).send("Sender Required");
   const trainee = await models.Trainee.findOne({
-    where: { id: traineeId, coach_id: coachId },
+    where: { id: traineeId },
   });
   if (!trainee) return res.status(404).send("User Not Found");
+  const coach = await models.Coach.findOne({ where: { id: coachId } });
+  if (!coach) return res.status(404).send("User Not Found");
+
   const message = await models.Chat.create({
     trainee_id: traineeId,
     coach_id: coachId,

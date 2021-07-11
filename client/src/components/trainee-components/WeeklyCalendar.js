@@ -44,7 +44,6 @@ export default function WeeklyCalendar({ userDetails }) {
       axios
         .get("/api/logs/workout/check/" + userDetails.id)
         .then(({ data }) => {
-          console.log(data);
           setDone(data);
         })
         .catch((err) => setError(err.response.data));

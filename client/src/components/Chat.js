@@ -16,16 +16,15 @@ export default function Chat({ userDetails, userType }) {
     if (userType === "Trainee") {
       if (userDetails.id !== Number(traineeId)) return;
       axios
-        .get(
-          `http://localhost:3001/api/chat/${traineeId}/${userDetails.coach_id}`
-        )
+        .get(`http://localhost:3001/api/chat/${traineeId}/${coachId}`)
         .then(({ data }) => setMessages(data))
         .catch((err) => {
           setError(err.response.data);
         });
     } else {
+      if (userDetails.id !== Number(coachId)) return;
       axios
-        .get(`http://localhost:3001/api/chat/${traineeId}/${userDetails.id}`)
+        .get(`http://localhost:3001/api/chat/${traineeId}/${coachId}`)
         .then(({ data }) => setMessages(data))
         .catch((err) => {
           setError(err.response.data);
@@ -36,8 +35,6 @@ export default function Chat({ userDetails, userType }) {
   const sendMessage = async () => {
     if (!messageContent || messageContent === "") return;
     try {
-      const coachId =
-        userType === "Coach" ? userDetails.id : userDetails.coach_id;
       const message = await axios.post(`/api/chat/${traineeId}/${coachId}`, {
         content: messageContent,
         sender: userType,
@@ -54,6 +51,10 @@ export default function Chat({ userDetails, userType }) {
       <div>{messages && <h1>messages</h1>}</div>
       <h1>
         HI! {userType} {userDetails.name}!
+      </h1>
+      <h1>
+        You are chatting with
+        {userType === "Trainee" ? " Coach " + coachId : " Trainee " + traineeId}
       </h1>
       <div className="messages-div">
         {messages.map((message) => (
