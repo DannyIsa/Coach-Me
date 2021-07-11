@@ -13,7 +13,6 @@ export default function Chat({ userDetails, userType, socket }) {
 
   useEffect(() => {
     if (!userDetails || !traineeId) return;
-    socket.on("message received", (data) => console.log(data));
     if (userType === "Trainee") {
       if (userDetails.id !== Number(traineeId)) return;
       axios
@@ -33,6 +32,18 @@ export default function Chat({ userDetails, userType, socket }) {
     }
   }, [userDetails]);
 
+  useEffect(() => {
+    if (!userDetails || !traineeId || messages.length === 0) return;
+    socket.on("message received", (data) => {
+      if (
+        traineeId === data.traineeId &&
+        coachId === data.coachId &&
+        data.sender !== userType
+      )
+        setMessages([data, ...messages]);
+    });
+  }, [userDetails, messages]);
+
   const sendMessage = async () => {
     if (!messageContent || messageContent === "") return;
     try {
@@ -40,7 +51,7 @@ export default function Chat({ userDetails, userType, socket }) {
         content: messageContent,
         sender: userType,
       });
-      setMessages([...messages, message.data]);
+      setMessages([message.data, ...messages]);
       setMessageContent("");
     } catch (err) {
       setError(err.response.data);
