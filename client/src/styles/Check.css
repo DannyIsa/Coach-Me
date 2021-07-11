@@ -6,12 +6,12 @@
   justify-content: center;
 }
 .headline {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
 }
 #gif {
   margin-top: 2rem;
   align-self: center;
-  height: 40vh;
-  width: 40vh;
+  height: 25vh;
+  width: 25vh;
 }
