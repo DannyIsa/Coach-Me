@@ -74,8 +74,10 @@ function TraineeProfile({ userDetails }) {
         <div className="main-body">
           {leavePopup && (
             <div className="pop-up">
-              <div className="pop-up-inner">
-                <h3>Are you sure you want to leave your coach?</h3>
+              <div className="pop-up-leave">
+                <h1>Leave Coach</h1>
+                <h2>Are you sure you want to leave your coach?</h2>
+                <h3>All data will be deleted.</h3>
                 <button onClick={leaveCoach}>Yes</button>
                 <button onClick={() => setLeavePopup(false)}>No</button>
               </div>

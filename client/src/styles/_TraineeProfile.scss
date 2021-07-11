@@ -8,7 +8,44 @@
     padding: 15px;
     display: flex;
     background-color: rgba(255, 255, 255, 0.247);
+    .pop-up-leave {
+      position: relative;
+      padding-bottom: 32px;
+      width: 100%;
+      height: 25%;
+      max-width: 640px;
+      max-height: 300px;
+      background-color: white;
+      color: black;
+      border-radius: 15px;
 
+      & h1 {
+        color: black;
+        text-transform: uppercase;
+        padding: 0.5rem;
+        font-size: 1.5rem;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        background-color: #1456a1;
+      }
+
+      & h2,
+      h3 {
+        margin: 1rem 0rem;
+      }
+
+      & button {
+        margin-top: 0.5rem;
+        color: black;
+        border: solid 1px;
+        padding: 0.5rem 1rem;
+
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
     .main1 {
       padding: 15px 40px;
 
