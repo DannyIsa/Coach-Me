@@ -28,7 +28,7 @@ chat.get("/:traineeId/:coachId", async (req, res) => {
   if (!coach) return res.status(404).send("User Not Found");
   const messages = await trainee.getChats({
     where: { coach_id: coachId },
-    order: [["created_at"]],
+    order: [["created_at", "DESC"]],
     limit: 50,
   });
   if (!messages) return res.status(200).send([]);
@@ -58,7 +58,13 @@ chat.post("/:traineeId/:coachId", async (req, res) => {
     sender,
   });
   if (!message) return res.status(400).send("Couldn't Send Message");
-  req.io.emit("message received", { traineeId, coachId, sender, content });
+  req.io.emit("message received", {
+    traineeId,
+    coachId,
+    sender,
+    content,
+    createdAt: message.createdAt,
+  });
   return res.status(201).send(message);
 });
 

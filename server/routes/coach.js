@@ -68,6 +68,7 @@ coach.put("/request/accept/:coachId", async (req, res) => {
         .then(() => {
           req.io.emit("request handled", {
             traineeId: Number(traineeId),
+            coachId: Number(coachId),
             accept: true,
           });
           res.status(200).send("Request Accepted");
@@ -91,6 +92,7 @@ coach.put("/request/decline/:coachId", (req, res) => {
       }
       req.io.emit("request handled", {
         traineeId: Number(traineeId),
+        coachId: Number(coachId),
         accept: false,
       });
       res.status(200).send("Request Declined");
