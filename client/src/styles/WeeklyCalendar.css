@@ -1,8 +1,8 @@
 .table {
   margin-left: auto;
   margin-right: auto;
-  height: 150px;
-  width: 80%;
+  height: 95%;
+  width: 95%;
   border-collapse: collapse;
 }
 
@@ -58,6 +58,19 @@
   border-radius: 15px;
 }
 
+.done-header {
+  color: #ffc719;
+  font-size: 2rem;
+}
+
+.popup-workout .popup-start-button {
+  color: #acacac;
+}
+
+.popup-workout .popup-start-button:hover,
+.s-fa:hover {
+  color: #ffc719;
+}
 .popup-workout .popup-close-button {
   position: absolute;
   border: none;
@@ -65,6 +78,6 @@
   right: 16px;
 }
 
-.popup-workout .popup-close-button:hover {
+.popup-workout .fa-fa:hover {
   color: black;
 }

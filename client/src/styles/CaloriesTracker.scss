@@ -112,10 +112,10 @@
     position: relative;
     padding: 32px;
     width: 100%;
-    height: 50%;
+    height: 60%;
     margin-top: 200px;
     max-width: 640px;
-    max-height: 400px;
+    max-height: 500px;
     background-color: white;
     color: black;
     overflow-y: auto;
@@ -156,6 +156,16 @@
     .pop-up-selected-food {
       border: black solid 3px;
       border-radius: 6px;
+    }
+    .popup-close-button {
+      position: absolute;
+      border: none;
+      top: 16px;
+      right: 16px;
+    }
+
+    .fa-fa:hover {
+      color: black;
     }
   }
 }

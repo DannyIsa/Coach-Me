@@ -4,7 +4,7 @@ import axios from "axios";
 import "../../styles/WeeklyCalendar.css";
 import { SetErrorContext } from "../../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faPlayCircle, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export default function WeeklyCalendar({ userDetails }) {
   const [needToEat, setNeedToEat] = useState([]);
@@ -141,11 +141,19 @@ export default function WeeklyCalendar({ userDetails }) {
                 new Date().toString().split(" ")[0]
               ) &&
               (!done.done ? (
-                <Link to={`/trainee/workout/${chosenWorkout.id}`}>
-                  start workout
+                <Link
+                  to={`/trainee/workout/${chosenWorkout.id}`}
+                  className="popup-start-button"
+                >
+                  <FontAwesomeIcon
+                    icon={faPlayCircle}
+                    color="#acacac"
+                    className="s-fa"
+                  />
+                  Start
                 </Link>
               ) : (
-                <h2>Done!</h2>
+                <h2 className="done-header">Done!</h2>
               ))}
             <h1>{chosenWorkout.name}</h1>
             {chosenWorkout.exercises.map((exercise) => {
