@@ -157,6 +157,57 @@
   display: inline-block;
 }
 
+.homeNav .notification .tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.homeNav .notification .tags .tag {
+  white-space: nowrap;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin: 0.1rem;
+  color: white;
+  background-color: plum;
+}
+
+.homeNav .notification .tags .tag:hover {
+  cursor: pointer;
+}
+
+.homeNav .notification .tags .Yoga {
+  background-color: #9763d1;
+}
+
+.homeNav .notification .tags .Pilates {
+  background-color: lightblue;
+}
+
+.homeNav .notification .tags .PowerLifting {
+  background-color: lightgreen;
+}
+
+.homeNav .notification .tags .WeightLifting {
+  background-color: #55b9b1;
+}
+
+.homeNav .notification .tags .Crossfit {
+  background-color: #1dc391;
+}
+
+.homeNav .notification .tags .Other {
+  background-color: #ff7ff4;
+}
+
+.homeNav .notification .tags .all {
+  background-color: grey;
+}
+
 .homeNav .notification .trainees-item .coach-card-btn .requests-btn {
   color: white;
   border: 1px solid #5995fd;

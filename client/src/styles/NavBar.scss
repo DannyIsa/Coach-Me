@@ -131,6 +131,50 @@
     position: relative;
     display: inline-block;
 
+    .tags {
+      display: flex;
+      justify-content: space-around;
+
+      .tag {
+        white-space: nowrap;
+        border-radius: 0.2rem;
+        padding: 0.2rem;
+        font-weight: 700;
+        font-size: 0.8rem;
+        margin: 0.1rem;
+        color: white;
+        background-color: plum;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .Yoga {
+        background-color: rgb(151, 99, 209);
+      }
+
+      .Pilates {
+        background-color: lightblue;
+      }
+
+      .PowerLifting {
+        background-color: lightgreen;
+      }
+
+      .WeightLifting {
+        background-color: rgb(85, 185, 177);
+      }
+      .Crossfit {
+        background-color: rgb(29, 195, 145);
+      }
+      .Other {
+        background-color: rgb(255, 127, 244);
+      }
+
+      .all {
+        background-color: grey;
+      }
+    }
     .trainees-item .coach-card-btn {
       .requests-btn {
         color: white;
