@@ -74,12 +74,6 @@ function TraineeProfile({ userDetails }) {
                       />
                       <div className="mt-3">
                         <h2>{userDetails.name}</h2>
-                        {/* <p className="text-secondary mb-1">Full Stack Developer</p> */}
-                        {/* <p className="text-muted font-size-sm">
-                        Bay Area, Israel, CA
-                      </p> */}
-                        {/* <button className="btn btn-primary">Follow</button> */}
-                        {/* <button className="btn btn-outline-primary">Message</button> */}
                       </div>
                     </div>
                   </div>
@@ -255,6 +249,7 @@ function TraineeProfile({ userDetails }) {
                   {coach ? (
                     <div className="coach-info">
                       <img src={coach.image} alt="" className="profile-image" />
+<<<<<<< Updated upstream
                       <h2>My Coach: </h2>
                       <p>
                         Name: <span>{coach ? coach.name : ""}</span>{" "}
@@ -295,6 +290,37 @@ function TraineeProfile({ userDetails }) {
                       <h3>No Coach Found</h3>
                     </div>
                   )}
+=======
+                    )}
+                    <h2>My Coach: </h2>
+                    <p>
+                      Name: <span>{coach ? coach.name : ""}</span>
+                    </p>
+                    <p>
+                      Email: <span>{coach ? coach.email : ""}</span>
+                    </p>
+                    <p>
+                      Phone Number:
+                      <span>{coach ? coach.phone_number : ""} </span>
+                    </p>
+                    <p>
+                      Date Of Birth:
+                      <span>{coach ? coach.birthdate : ""} </span>
+                    </p>
+                    <p>
+                      Gender: <span>{coach ? coach.gender : ""}</span>
+                    </p>
+                    <p>
+                      City: <span>{coach ? coach.city : ""} </span>
+                    </p>
+                    <p>
+                      Expertise : <span>{coach ? coach.expertise : ""} </span>
+                    </p>
+                    <h3>
+                      Rate Your Coach : <span>rate</span>
+                    </h3>
+                  </div>
+>>>>>>> Stashed changes
                 </div>
               </div>
             </div>

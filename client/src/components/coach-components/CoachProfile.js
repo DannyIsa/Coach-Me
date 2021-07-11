@@ -55,6 +55,15 @@ function CoachProfile({ userDetails }) {
                   <hr />
                   <div className="row">
                     <div className="col-sm-3">
+                      <h6 className="mb-0">Phone Number:</h6>
+                    </div>
+                    <div className="col-sm-9 text-secondary">
+                      {userDetails.phone_number}
+                    </div>
+                  </div>
+                  <hr />
+                  <div className="row">
+                    <div className="col-sm-3">
                       <h6 className="mb-0">City:</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
@@ -71,15 +80,7 @@ function CoachProfile({ userDetails }) {
                     </div>
                   </div>
                   <hr />
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">Phone Number:</h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                      {userDetails.phone_number}
-                    </div>
-                  </div>
-                  <hr />
+
                   <div className="row">
                     <div className="col-sm-3">
                       <h6 className="mb-0">online coaching: </h6>
