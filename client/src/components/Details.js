@@ -226,14 +226,14 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
                   <input
                     type="radio"
                     name="online-coaching"
-                    value={true}
+                    value="true"
                     required
                   />
                   <label htmlFor="online-coaching">No</label>
                   <input
                     type="radio"
                     name="online-coaching"
-                    value={false}
+                    value="false"
                     required
                   />
                 </div>

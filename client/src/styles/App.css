@@ -1113,6 +1113,7 @@ form.sign-in-form {
 .pop-up {
   position: fixed;
   color: black;
+  text-align: center;
   top: 0;
   left: 0;
   z-index: 2;
