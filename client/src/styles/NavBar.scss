@@ -133,7 +133,8 @@
 
     .tags {
       display: flex;
-      justify-content: space-around;
+      // justify-content: space-around;
+      flex-wrap: wrap;
 
       .tag {
         white-space: nowrap;
@@ -141,7 +142,7 @@
         padding: 0.2rem;
         font-weight: 700;
         font-size: 0.8rem;
-        margin: 0.1rem;
+        margin: 0.3rem;
         color: white;
         background-color: plum;
         &:hover {

@@ -161,8 +161,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .homeNav .notification .tags .tag {
@@ -171,7 +171,7 @@
   padding: 0.2rem;
   font-weight: 700;
   font-size: 0.8rem;
-  margin: 0.1rem;
+  margin: 0.3rem;
   color: white;
   background-color: plum;
 }
