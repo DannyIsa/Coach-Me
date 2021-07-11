@@ -1144,6 +1144,7 @@ form.sign-in-form {
 .pop-up > .pop-up-inner {
   position: relative;
   width: 100%;
+  text-align: center;
   max-width: 700px;
   background-color: #837c7c;
 }
@@ -1160,17 +1161,37 @@ form.sign-in-form {
   width: 70%;
 }
 
-.pop-up > .pop-up-inner > .close-button {
-  border: 1px solid;
-  margin: 0;
-  padding: 0.5rem 1rem;
-  float: right;
-}
-
 .pop-up > .pop-up-inner.logs {
   max-width: 1500px;
   max-height: 800px;
   background-color: white;
+}
+
+.pop-up > .pop-up-inner .close-button {
+  float: right;
+  border: none;
+}
+
+.pop-up > .pop-up-inner .save-change-btn {
+  border: none;
+}
+
+.pop-up > .pop-up-inner .create-btn {
+  border: none;
+}
+
+.pop-up > .pop-up-inner .fa-fa:hover {
+  color: black;
+}
+
+.pop-up > .pop-up-inner h2 {
+  margin-left: 5rem;
+}
+
+.pop-up > .pop-up-inner .popup-name {
+  margin-left: 5rem;
+  width: 12rem;
+  padding: 0rem 0.7rem;
 }
 
 .trainee-dashboard {
@@ -2413,6 +2434,18 @@ form.sign-in-form {
   color: black;
 }
 
+.trainee-logs .mainDiv {
+  position: absolute;
+  bottom: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .trainee-logs h1 {
   color: white;
 }
@@ -2427,13 +2460,51 @@ form.sign-in-form {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 70%;
-  background-color: palegoldenrod;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 
 .trainee-logs .charts .line-chart {
-  background-color: white;
   margin-right: 2rem;
+  border-radius: 15px;
+}
+
+.trainee-logs .workouts-dashboard {
+  margin-left: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 50vh;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.trainee-logs .workouts-dashboard .workout1 {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #c0edff;
+  border-radius: 15px;
+  height: 10rem;
+  word-wrap: break-word;
+}
+
+.trainee-logs .workouts-dashboard .workout2 {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #811d2e;
+  border-radius: 15px;
+  word-wrap: break-word;
+  height: 10rem;
 }
 
 .chat-component {
@@ -2596,8 +2667,8 @@ a:hover {
   width: 80px;
   height: 80px;
   position: fixed;
-  top: 0%;
-  left: 0;
+  top: 5.5rem;
+  right: 0;
   text-align: center;
   border: black 3px solid;
   background-color: cadetblue;
@@ -2607,8 +2678,8 @@ a:hover {
   width: 80px;
   height: 80px;
   position: fixed;
-  top: 0%;
-  left: 0;
+  top: 5.5rem;
+  right: 0;
   text-align: center;
   border: black 3px solid;
   background-color: red;

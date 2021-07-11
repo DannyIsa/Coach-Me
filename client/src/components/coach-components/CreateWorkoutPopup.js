@@ -2,7 +2,11 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPlus,
+  faPlusCircle,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 
 function CreateWorkoutPopup({
   exercises,
@@ -63,6 +67,7 @@ function CreateWorkoutPopup({
           <FontAwesomeIcon icon={faTimes} />
         </button>
         <input
+          className="popup-name"
           onChange={(e) => setWorkoutName(e.target.value)}
           placeholder={"Enter Your Workout Name"}
         />
@@ -175,6 +180,7 @@ function CreateWorkoutPopup({
         />
         <br />
         <button
+          className="create-btn"
           onClick={() => {
             axios
               .post("/api/coach/workouts/new/" + userDetails.id, {
@@ -191,7 +197,7 @@ function CreateWorkoutPopup({
               .catch((err) => setErrorMessage(err.response.data));
           }}
         >
-          Create Workout
+          Create Workout <FontAwesomeIcon icon={faPlusCircle} />
         </button>
         <h3 className="error-message">{errorMessage}</h3>
       </div>
