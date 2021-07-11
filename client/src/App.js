@@ -148,7 +148,10 @@ function App() {
                     </Route>
                     <Route exact path="/dashboard">
                       {userType === "Coach" ? (
-                        <CoachProfile userDetails={userDetails} />
+                        <CoachProfile
+                          userDetails={userDetails}
+                          alertMessage={alertMessage}
+                        />
                       ) : (
                         <TraineeDashboard userDetails={userDetails} />
                       )}
