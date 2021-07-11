@@ -1,5 +1,7 @@
 .chat-component {
   & > .messages-div {
+    display: flex;
+    flex-direction: column;
     & > .message-div {
       width: 100vw;
       & > .message {
@@ -8,7 +10,7 @@
         max-width: 70%;
         height: fit-content;
         padding: 10px;
-        background-color: rgb(145, 252, 145);
+        // background-color: rgb(145, 252, 145);
         border-radius: 15px;
         & > .content {
           white-space: normal;
@@ -16,9 +18,11 @@
         }
         &.sent {
           float: right;
+          background-color: red;
         }
         &.received {
           float: left;
+          background-color: blue;
         }
       }
     }
