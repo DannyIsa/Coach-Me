@@ -2208,6 +2208,33 @@ form.sign-in-form {
   float: right;
 }
 
+.profile-container .main-body .coach-info .coach-control-btn {
+  float: right;
+}
+
+.profile-container .main-body .coach-info .coach-control-btn .chat-btn {
+  color: white;
+  border: 1px solid #5995fd;
+  background-color: #5995fd;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  text-transform: none;
+}
+
+.profile-container .main-body .coach-info .coach-control-btn .leave-btn {
+  background-color: white;
+  color: #5995fd;
+  border: 1px solid #5995fd;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  text-transform: none;
+}
+
+.profile-container .main-body .coach-info .coach-control-btn .leave-btn:hover {
+  background-color: #5995fd;
+  color: white;
+}
+
 .live-workout-page > .header {
   padding-top: 90px;
 }

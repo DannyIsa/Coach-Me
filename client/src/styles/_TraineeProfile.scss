@@ -116,6 +116,33 @@
         height: 17rem;
         float: right;
       }
+      .coach-control-btn {
+        float: right;
+
+        & .chat-btn {
+          color: white;
+          border: 1px solid #5995fd;
+          background-color: #5995fd;
+          padding: 0.5rem 1.5rem;
+          border-radius: 5px;
+          text-transform: none;
+        }
+
+        & .leave-btn {
+          background-color: white;
+          color: #5995fd;
+          border: 1px solid #5995fd;
+          padding: 0.5rem 1.5rem;
+          border-radius: 5px;
+          text-transform: none;
+          // font-size: 10px;
+
+          &:hover {
+            background-color: #5995fd;
+            color: white;
+          }
+        }
+      }
     }
   }
 }
