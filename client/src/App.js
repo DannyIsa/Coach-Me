@@ -47,6 +47,8 @@ function App() {
   const [reqDone, setReqDone] = useState(true);
   const [alertMessage, setAlertMessage] = useState();
   const [errorMessage, setErrorMessage] = useState();
+  const socket = io("http://localhost:8080");
+
   function signOut(history) {
     auth.signOut().then(() => {
       auth.onAuthStateChanged(() => {
@@ -58,7 +60,6 @@ function App() {
   }
 
   useEffect(() => {
-    const socket = io("http://localhost:8080");
     if (userType === "Coach") {
       socket.on("request received", (data) => {
         if (userDetails.id === data) {
@@ -169,15 +170,18 @@ function App() {
                         <Redirect to="/" />
                       )}
                     </Route>
-                    <Route exact path="/chat/:coachId">
-                      <Chat userDetails={userDetails} />
+                    <Route exact path="/chat/:traineeId">
+                      <Chat
+                        userDetails={userDetails}
+                        userType={userType}
+                        socket={socket}
+                      />
                     </Route>
                   </Switch>
                 </>
               ) : (
                 // user isn't registered
                 <>
-                  {/* <SignOutButton signOut={signOut} /> */}
                   <Switch>
                     <Route exact path="/details">
                       <Details

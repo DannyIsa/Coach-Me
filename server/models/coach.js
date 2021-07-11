@@ -23,6 +23,11 @@ module.exports = (sequelize, DataTypes) => {
         sourceKey: "id",
         onDelete: "cascade",
       });
+      this.hasMany(models.Chat, {
+        sourceKey: "id",
+        foreignKey: "coach_id",
+        onDelete: "cascade",
+      });
     }
   }
   Coach.init(
