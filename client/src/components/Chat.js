@@ -8,6 +8,8 @@ export default function Chat({ userDetails, userType, socket }) {
   const [messages, setMessages] = useState([]);
   const { traineeId, coachId } = useParams();
   const [messageContent, setMessageContent] = useState("");
+  const [coachName, setCoachName] = useState("");
+  const [traineeName, setTraineeName] = useState("");
 
   const setError = useContext(SetErrorContext);
 
@@ -21,6 +23,10 @@ export default function Chat({ userDetails, userType, socket }) {
         .catch((err) => {
           setError(err.response.data);
         });
+      axios
+        .get(`http://localhost:3001/api/coach/coach-name/${coachId}`)
+        .then(({ data }) => setCoachName(data))
+        .catch((e) => console.log(e.response.data));
     } else {
       if (userDetails.id !== Number(coachId)) return;
       axios
@@ -29,6 +35,10 @@ export default function Chat({ userDetails, userType, socket }) {
         .catch((err) => {
           setError(err.response.data);
         });
+      axios
+        .get(`http://localhost:3001/api/trainee/trainee-name/${coachId}`)
+        .then(({ data }) => setTraineeName(data))
+        .catch((e) => console.log(e.response.data));
     }
   }, [userDetails]);
 
@@ -60,13 +70,11 @@ export default function Chat({ userDetails, userType, socket }) {
 
   return userDetails && userType ? (
     <div className="chat-component">
-      <div>{messages && <h1>messages</h1>}</div>
-      <h1>
-        HI! {userType} {userDetails.name}!
-      </h1>
-      <h1>
+      <h1 className="chatting-with">
         You are chatting with
-        {userType === "Trainee" ? " Coach " + coachId : " Trainee " + traineeId}
+        {userType === "Trainee"
+          ? " Coach " + coachName
+          : " Trainee " + traineeName}
       </h1>
       <div className="messages-div">
         {messages.map((message) => (

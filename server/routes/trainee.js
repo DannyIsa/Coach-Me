@@ -19,6 +19,10 @@ const trainee = Router();
 trainee.use(express.json());
 trainee.use("/logs", logs);
 
+trainee.get("/trainee-name/:coachId", async (req, res) => {
+  const { coachId } = req.params;
+});
+
 trainee.post("/request/send/:traineeId", (req, res) => {
   const { coachId, traineeName, content } = req.body;
   const { traineeId } = req.params;

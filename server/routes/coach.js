@@ -31,6 +31,13 @@ function unifyArray(array, attribute) {
   temp.sort();
   return temp;
 }
+coach.get("/coach-name/:traineeId", async (req, res) => {
+  const { traineeId } = req.params;
+  if (!traineeId) return res.status(400).send("must send traineeId");
+  const coach = await models.Trainee.findOne({ where: { id: traineeId } });
+  if (!coach) return res.status(404).send("No Matching Coach");
+  res.status(200).send(coach.name);
+});
 
 coach.get("/requests/show/:coachId", async (req, res) => {
   const { coachId } = req.params;
