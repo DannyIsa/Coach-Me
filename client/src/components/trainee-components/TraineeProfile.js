@@ -278,7 +278,7 @@ function TraineeProfile({ userDetails }) {
                       <p>
                         Online Coaching :{" "}
                         <span>
-                          {coach.online_coaching === "Yes" ? "Yes" : "No"}{" "}
+                          {coach.online_coaching === "true" ? "Yes" : "No"}{" "}
                         </span>{" "}
                       </p>
                       <div className="coach-control-btn">
