@@ -2507,12 +2507,17 @@ form.sign-in-form {
   height: 10rem;
 }
 
-.chat-component {
-  padding-top: 100px;
+.chat-container {
+  height: 100vh;
   background-color: Beige;
 }
 
-.chat-component > .chatting-with {
+.chat-container .chat-component {
+  padding-top: 100px;
+  height: 100vh;
+}
+
+.chat-container .chat-component > .chatting-with {
   color: Moccasin;
   background-color: white;
   text-align: center;
@@ -2530,7 +2535,37 @@ form.sign-in-form {
   left: 25%;
 }
 
-.chat-component > .input-and-button {
+.chat-container .chat-component .messages-div {
+  position: absolute;
+  bottom: 7rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+.chat-container .chat-component .messages-div .message-div {
+  padding-right: 1.5rem;
+}
+
+.chat-container .chat-component .messages-div::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: Beige;
+  border-radius: 5px;
+}
+
+.chat-container .chat-component .messages-div::-webkit-scrollbar {
+  width: 10px;
+  background-color: Beige;
+  border-radius: 5px;
+}
+
+.chat-container .chat-component .messages-div::-webkit-scrollbar-thumb {
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.chat-container .chat-component > .input-and-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2541,9 +2576,11 @@ form.sign-in-form {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+  position: absolute;
+  bottom: 2rem;
 }
 
-.chat-component > .input-and-button > input {
+.chat-container .chat-component > .input-and-button > input {
   width: 80%;
   height: 30px;
   border-radius: 20px;
@@ -2551,11 +2588,11 @@ form.sign-in-form {
   outline: none;
 }
 
-.chat-component > .input-and-button .send-chat-btn {
+.chat-container .chat-component > .input-and-button .send-chat-btn {
   border: none;
 }
 
-.chat-component > .messages-div {
+.chat-container .chat-component > .messages-div {
   height: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2566,11 +2603,11 @@ form.sign-in-form {
           flex-direction: column-reverse;
 }
 
-.chat-component > .messages-div > .message-div {
+.chat-container .chat-component > .messages-div > .message-div {
   width: 100vw;
 }
 
-.chat-component > .messages-div > .message-div > .message {
+.chat-container .chat-component > .messages-div > .message-div > .message {
   margin: 10px;
   padding: 10px;
   max-width: 70%;
@@ -2581,18 +2618,18 @@ form.sign-in-form {
   border-radius: 15px;
 }
 
-.chat-component > .messages-div > .message-div > .message > .content {
+.chat-container .chat-component > .messages-div > .message-div > .message > .content {
   white-space: normal;
   font-size: 17px;
 }
 
-.chat-component > .messages-div > .message-div > .message.sent {
+.chat-container .chat-component > .messages-div > .message-div > .message.sent {
   float: right;
   background-color: white;
   color: black;
 }
 
-.chat-component > .messages-div > .message-div > .message.received {
+.chat-container .chat-component > .messages-div > .message-div > .message.received {
   float: left;
   background-color: PaleGreen;
   color: black;

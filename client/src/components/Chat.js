@@ -71,41 +71,41 @@ export default function Chat({ userDetails, userType, socket }) {
   };
 
   return userDetails && userType ? (
-    // <div className="chat-container">
-    <div className="chat-component">
-      <h1 className="chatting-with">
-        You are chatting with
-        {userType === "Trainee"
-          ? " Coach " + coachName
-          : " Trainee " + traineeName}
-      </h1>
-      <div className="messages-div">
-        {messages.map((message) => (
-          <Message
-            content={message.content}
-            date={new Date(message.createdAt)}
-            sent={message.sender === userType}
+    <div className="chat-container">
+      <div className="chat-component">
+        <h1 className="chatting-with">
+          You are chatting with
+          {userType === "Trainee"
+            ? " Coach " + coachName
+            : " Trainee " + traineeName}
+        </h1>
+        <div className="messages-div">
+          {messages.map((message) => (
+            <Message
+              content={message.content}
+              date={new Date(message.createdAt)}
+              sent={message.sender === userType}
+            />
+          ))}
+        </div>
+        <div className="input-and-button">
+          <input
+            value={messageContent}
+            onChange={(e) => setMessageContent(e.target.value)}
+            placeholder="Send Message"
           />
-        ))}
-      </div>
-      <div className="input-and-button">
-        <input
-          value={messageContent}
-          onChange={(e) => setMessageContent(e.target.value)}
-          placeholder="Send Message"
-        />
-        <button onClick={sendMessage} className="send-chat-btn">
-          {" "}
-          <FontAwesomeIcon
-            icon={faPaperPlane}
-            color="black"
-            className="fa-fa"
-          />
-        </button>
+          <button onClick={sendMessage} className="send-chat-btn">
+            {" "}
+            <FontAwesomeIcon
+              icon={faPaperPlane}
+              color="black"
+              className="fa-fa"
+            />
+          </button>
+        </div>
       </div>
     </div>
   ) : (
-    // </div>
     <div className="chat-component">"Loading..."</div>
   );
 }
