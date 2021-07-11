@@ -1172,6 +1172,8 @@ form.sign-in-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
   padding-top: 7rem;
 }
 
@@ -2305,14 +2307,41 @@ form.sign-in-form {
   border: red solid 4px;
 }
 
-.trainee-logs > .charts {
+.trainee-logs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+}
+
+.trainee-logs h1 {
+  color: white;
+}
+
+.trainee-logs .trainee-calendar {
+  margin: 2rem 0;
+}
+
+.trainee-logs .charts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 70%;
+  background-color: palegoldenrod;
+}
+
+.trainee-logs .charts .line-chart {
+  background-color: white;
+  margin-right: 2rem;
 }
 
 .chat-component > .messages-div {
