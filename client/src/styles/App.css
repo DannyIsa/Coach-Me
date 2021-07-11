@@ -1271,6 +1271,29 @@ form.sign-in-form {
   width: 80vw;
 }
 
+.details-div .right-div .online-coaching {
+  color: black;
+}
+
+.details-div .right-div .online-coaching .online-radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.details-div .right-div .online-coaching input {
+  width: 1.5rem;
+  margin-right: 0.5rem;
+  height: 3rem;
+}
+
 .details-div .right-div input {
   max-width: 280px;
   width: 100%;
@@ -1288,19 +1311,16 @@ form.sign-in-form {
   position: relative;
   font-size: 0.8em;
   color: black;
-  margin-right: 1.5rem;
-  margin-bottom: 1.3rem;
 }
 
 .details-div .right-div #gender-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 15vw;
-  margin-top: 2rem;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 70%;
   color: black;
 }
 
@@ -1308,23 +1328,53 @@ form.sign-in-form {
   width: 1.5rem;
 }
 
-.details-div .right-div .num1 .num2 .num3 {
-  margin: 1.8rem 0;
+.details-div .right-div .num1 {
+  margin-bottom: 3rem;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .details-div .right-div .num2 {
-  margin-bottom: 3rem;
+  margin: 3rem 0;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .details-div .right-div .num3 {
   margin-bottom: 2rem;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.details-div .right-div .num3 .selectbox {
+  margin-top: 0.8rem;
+}
+
+.details-div .right-div #gender3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .details-div .right-div .inputbox {
   position: relative;
-  width: 300px;
-  height: 50px;
-  margin-bottom: 50px;
+  width: 17.5rem;
+  height: 85px;
 }
 
 .details-div .right-div .inputbox input {
@@ -1341,10 +1391,8 @@ form.sign-in-form {
 }
 
 .details-div .right-div .inputbox #other-input {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-left: 2rem;
+  width: 17rem;
+  margin-left: 0.5rem;
 }
 
 .details-div .right-div .inputbox:last-child {
@@ -1355,7 +1403,7 @@ form.sign-in-form {
   color: black;
   position: absolute;
   top: 14px;
-  left: 40px;
+  left: 20px;
   font-size: 1em;
   -webkit-transition: 0.6s;
   transition: 0.6s;
@@ -1534,324 +1582,6 @@ form.sign-in-form {
   50%,
   100% {
     bottom: 100%;
-  }
-}
-
-@media (max-width: 668px) {
-  .details-div .left-div h1 {
-    text-align: center;
-    font-size: 1.5rem;
-  }
-  .details-div .left-div .details-welcome p {
-    text-align: center;
-    line-height: 2.2rem;
-    font-size: 20px;
-  }
-  .details-div .right-div .num3 {
-    margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 456px) {
-  .details-div {
-    height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    overflow: hidden;
-  }
-  .details-div .left-div {
-    width: 100vw;
-    height: 25vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .details-div .left-div h1 {
-    font-size: 1rem;
-  }
-  .details-div .left-div .details-welcome p {
-    line-height: 1.5rem;
-    font-size: 15px;
-  }
-  .details-div .right-div {
-    width: 100vw;
-    height: 75vh;
-  }
-  .details-div .right-div .details-form {
-    height: 70vh;
-    width: 70vw;
-  }
-  .details-div .right-div #gender-div {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 70vw;
-  }
-  .details-div .right-div #gender-div #gender1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .details-div .right-div #gender-div #gender1 label {
-    margin-left: 0.5rem;
-  }
-  .details-div .right-div #gender-div #gender1 input {
-    margin-left: 0.8rem;
-    width: 1.2rem;
-  }
-  .details-div .right-div #gender-div #gender2 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-bottom: 2rem;
-  }
-  .details-div .right-div #gender-div #gender2 label {
-    margin-left: 0.5rem;
-  }
-  .details-div .right-div #gender-div #gender2 input {
-    margin-left: 0rem;
-    width: 1.2rem;
-  }
-  .details-div .right-div .num1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .details-div .right-div .num2 {
-    margin-bottom: 3rem;
-  }
-  .details-div .right-div .num2 .birthday {
-    width: 8rem;
-  }
-  .details-div .right-div .num3 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 0rem;
-    margin-top: 0.5rem;
-  }
-  .details-div .right-div .num3 .inputbox {
-    margin-left: 1rem;
-  }
-  .details-div .right-div .inputbox {
-    width: 30vw;
-    height: 30px;
-  }
-  .details-div .right-div .inputbox input {
-    width: 30vw;
-  }
-  .details-div .right-div .inputbox #other-input {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin-left: 2rem;
-  }
-  .details-div .right-div .inputbox:last-child {
-    margin-bottom: 0;
-    margin-left: 1rem;
-  }
-  .details-div .right-div .inputbox span {
-    color: black;
-    position: absolute;
-    top: 14px;
-    left: 4px;
-    font-size: 0.8em;
-  }
-  .details-div .right-div .inputbox input:focus ~ span,
-  .details-div .right-div .inputbox input:valid ~ span {
-    -webkit-transform: translateX(-13px) translateY(-20px);
-            transform: translateX(-13px) translateY(-20px);
-    font-size: 0.8em;
-  }
-}
-
-@media (max-height: 748px) {
-  .details-div {
-    height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    overflow: hidden;
-  }
-  .details-div .left-div {
-    width: 100vw;
-    height: 25vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .details-div .left-div h1 {
-    font-size: 0.8rem;
-  }
-  .details-div .left-div .details-welcome p {
-    line-height: 1.5rem;
-    font-size: 15px;
-  }
-  .details-div .right-div {
-    width: 100vw;
-    height: 75vh;
-  }
-  .details-div .right-div input {
-    margin: 0;
-  }
-  .details-div .right-div .details-form {
-    height: 70vh;
-    width: 100vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-  .details-div .right-div #gender-div {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-left: 7rem;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 0vw;
-  }
-  .details-div .right-div #gender-div #gender1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .details-div .right-div #gender-div #gender1 label {
-    margin-left: 0.5rem;
-  }
-  .details-div .right-div #gender-div #gender1 input {
-    margin-left: 0.8rem;
-    width: 1.2rem;
-  }
-  .details-div .right-div #gender-div #gender2 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-bottom: 2rem;
-  }
-  .details-div .right-div #gender-div #gender2 label {
-    margin-left: 0.5rem;
-  }
-  .details-div .right-div #gender-div #gender2 input {
-    margin-left: 0rem;
-    width: 1.2rem;
-  }
-  .details-div .right-div .num1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: absolute;
-    left: 0;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 0;
-  }
-  .details-div .right-div .num2 {
-    margin-bottom: 0rem;
-  }
-  .details-div .right-div .num3 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-left: 5rem;
-  }
-  .details-div .right-div .selectbox {
-    margin-left: 5.5rem;
-  }
-  .details-div .right-div form button {
-    position: absolute;
-    right: 0;
-  }
-  .details-div .right-div .inputbox {
-    width: 0vw;
-    height: 30px;
-    margin-bottom: 5rem;
-  }
-  .details-div .right-div .inputbox input {
-    width: 15vw;
-  }
-  .details-div .right-div .inputbox #other-input {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin-left: 2rem;
-  }
-  .details-div .right-div .inputbox:last-child {
-    margin-bottom: 0;
-    margin-left: 0rem;
-  }
-  .details-div .right-div .inputbox span {
-    color: black;
-    position: absolute;
-    top: 14px;
-    left: 4px;
-    font-size: 0.8em;
-  }
-  .details-div .right-div .inputbox input:focus ~ span,
-  .details-div .right-div .inputbox input:valid ~ span {
-    -webkit-transform: translateX(-5px) translateY(-60px);
-            transform: translateX(-5px) translateY(-60px);
-    font-size: 0.8em;
   }
 }
 

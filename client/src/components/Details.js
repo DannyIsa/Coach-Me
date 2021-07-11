@@ -96,6 +96,7 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
               <span>Phone Number</span>
             </div>
           </div>
+
           <div id="gender-div">
             <div id="gender1">
               <label htmlFor="gender">Male</label>
@@ -108,6 +109,8 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
                   setOther(false);
                 }}
               />
+            </div>
+            <div id="gender2">
               <label htmlFor="gender">Female</label>
               <input
                 type="radio"
@@ -119,18 +122,20 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
                 }}
               />
             </div>
-            <div id="gender2">
-              <label htmlFor="gender" required>
-                Other
-              </label>
-              <input
-                type="radio"
-                name="gender"
-                value="other"
-                onChange={() => {
-                  setOther(true);
-                }}
-              />
+            <div id="gender3">
+              <div>
+                <label htmlFor="gender" required>
+                  Other
+                </label>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="other"
+                  onChange={() => {
+                    setOther(true);
+                  }}
+                />
+              </div>
               {other && (
                 <div className="inputbox">
                   <input
@@ -144,6 +149,7 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
               )}
             </div>
           </div>
+
           <div className="num2">
             <div className="inputbox">
               <input
@@ -154,15 +160,15 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
               />
               <span>Date of Birth</span>
             </div>
-          </div>
 
-          <div className="image-block">
-            <input
-              type="file"
-              required="required"
-              name="image"
-              accept=".jpg,.png,"
-            />
+            <div className="image-block">
+              <input
+                type="file"
+                required="required"
+                name="image"
+                accept=".jpg,.png,"
+              />
+            </div>
           </div>
 
           {userType === "Trainee" && (
@@ -177,6 +183,7 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
                   <span>Weight (Kg)</span>
                 </div>
               </div>
+
               <div className="selectbox">
                 <select
                   name="activity-level"
@@ -197,46 +204,53 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
           {userType === "Coach" && (
             <>
               <div className="num3">
-                <div className="inputbox">
-                  <input type="text" required="required" name="city" />
-                  <span>City</span>
+                <div>
+                  <div className="inputbox">
+                    <input type="text" required="required" name="city" />
+                    <span>City</span>
+                  </div>
+                  <div className="selectbox">
+                    <select
+                      name="expertise"
+                      // multiple
+                      placeholder="Choose Your expertise fields"
+                      required
+                    >
+                      <option disabled selected value>
+                        Select Expertise
+                      </option>
+                      <option value="Yoga">Yoga</option>
+                      <option value="Pilates">Pilates</option>
+                      <option value="Power Lifting">Power Lifting</option>
+                      <option value="Weight Lifting">Weight Lifting</option>
+                      <option value="Crossfit">Crossfit</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
-              <div className="selectbox">
-                <select
-                  name="expertise"
-                  // multiple
-                  placeholder="Choose Your expertise fields"
-                  required
-                >
-                  <option disabled selected value>
-                    Select Expertise
-                  </option>
-                  <option value="Yoga">Yoga</option>
-                  <option value="Pilates">Pilates</option>
-                  <option value="Power Lifting">Power Lifting</option>
-                  <option value="Weight Lifting">Weight Lifting</option>
-                  <option value="Crossfit">Crossfit</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-              <div id="online-div">
-                <div id="online-coaching">
-                  <label htmlFor="online-coaching">Yes</label>
-                  <input
-                    type="radio"
-                    name="online-coaching"
-                    value="true"
-                    required
-                  />
-                  <label htmlFor="online-coaching">No</label>
-                  <input
-                    type="radio"
-                    name="online-coaching"
-                    value="false"
-                    required
-                  />
+                {/* <div id="online-div"> */}
+                <div className="online-coaching">
+                  <div className="online-radio">
+                    <label htmlFor="online-coaching">Online Coaching</label>
+                    <input
+                      type="radio"
+                      name="online-coaching"
+                      value="true"
+                      required
+                    />
+                  </div>
+
+                  <div className="online-radio">
+                    <label htmlFor="online-coaching">Frontal Coaching</label>
+                    <input
+                      type="radio"
+                      name="online-coaching"
+                      value="false"
+                      required
+                    />
+                  </div>
                 </div>
+                {/* </div> */}
               </div>
             </>
           )}

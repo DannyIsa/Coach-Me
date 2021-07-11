@@ -37,8 +37,33 @@ body {
   // overflow: hidden;
   // height: 100vh;
   // text-transform: uppercase;
-  // overflow-x: hidden;
 }
+
+// div {
+//   overflow-x: hidden;
+//   overflow-y: scroll;
+
+//   &::-webkit-scrollbar-track {
+//     // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+//     // background-color: rgb(255, 129, 228);
+//     background-color: rgba(255, 255, 255, 0);
+//     // border-radius: 5px;
+//   }
+
+//   &::-webkit-scrollbar {
+//     width: 10px;
+//     // background-color: #f5f5f5;
+//     // background-color: Beige;
+//     background-color: rgba(255, 255, 255, 0);
+//     // border-radius: 5px;
+//   }
+
+//   &::-webkit-scrollbar-thumb {
+//     background-color: black;
+//     border: 2px solid black;
+//     border-radius: 5px;
+//   }
+// }
 
 button {
   opacity: 1;
