@@ -154,8 +154,7 @@ trainee.patch("/coach/leave/:traineeId", async (req, res) => {
   if (!trainee) return res.status(404).send("No Trainee Found");
   trainee
     .update({ coach_id: 0 })
-    .then(({ data }) => {
-      console.log(data);
+    .then((data) => {
       return res.status(201).send("Left Successfully");
     })
     .catch((err) => res.status(400).send(err));

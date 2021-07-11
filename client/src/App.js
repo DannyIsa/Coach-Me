@@ -170,7 +170,7 @@ function App() {
                         <Redirect to="/" />
                       )}
                     </Route>
-                    <Route exact path="/chat/:traineeId">
+                    <Route exact path="/chat/:traineeId/:coachId">
                       <Chat userDetails={userDetails} userType={userType} />
                     </Route>
                   </Switch>

@@ -7,7 +7,6 @@ import "../../styles/CoachDashboard.css";
 function CoachDashboard({ userDetails }) {
   const storage = firebase.storage();
   const setError = useContext(SetErrorContext);
-  console.log(userDetails, "DDDDDDDDD");
 
   return (
     <div className="coach-dashboard">

@@ -6,7 +6,7 @@ import Message from "./Message";
 
 export default function Chat({ userDetails, userType }) {
   const [messages, setMessages] = useState([]);
-  const { traineeId } = useParams();
+  const { traineeId, coachId } = useParams();
   const [messageContent, setMessageContent] = useState("");
 
   const setError = useContext(SetErrorContext);
