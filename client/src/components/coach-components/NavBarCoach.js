@@ -81,7 +81,7 @@ function NavBarCoach({ signOut, userDetails, alertMessage }) {
         <ul className={click ? "nav-options active" : "nav-options-main"}>
           <li className="option" onClick={closeMobileMenu}>
             <Link to="/dashboard" className="link">
-              Home
+              Profile
             </Link>
           </li>
           <li className="option" onClick={closeMobileMenu}>
