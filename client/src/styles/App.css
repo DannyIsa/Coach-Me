@@ -1,4 +1,3 @@
-@import url(/Users/Amit/Desktop/cyber4s/Coach-Me/client/src/styles/WeeklyCalendar.css);
 .role {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2026,6 +2025,107 @@ form.sign-in-form {
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+.weekly-calendar {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 7rem;
+}
+
+.weekly-calendar .table {
+  margin-left: auto;
+  margin-right: auto;
+  height: 95%;
+  width: 95%;
+  border-collapse: collapse;
+}
+
+.weekly-calendar .table td {
+  border: 2px #d1d3d8 solid;
+  background-color: #e7e4df;
+  width: 5rem;
+  height: 5.5rem;
+  color: #4d4b4b;
+  word-wrap: break-all;
+}
+
+.weekly-calendar .table-one-container {
+  width: auto;
+  height: 100%;
+  word-wrap: break-all;
+}
+
+.weekly-calendar .day-title {
+  font-size: 2rem;
+  background-color: #87bbde;
+  color: black;
+}
+
+.weekly-calendar .container-title {
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+.weekly-calendar .popup-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.weekly-calendar .popup-workout {
+  position: relative;
+  padding: 32px;
+  width: 100%;
+  height: 50%;
+  margin-top: 200px;
+  max-width: 640px;
+  max-height: 400px;
+  background-color: white;
+  color: black;
+  overflow-y: auto;
+  border-radius: 15px;
+}
+
+.weekly-calendar .done-header {
+  color: #ffc719;
+  font-size: 2rem;
+}
+
+.weekly-calendar .popup-workout .popup-start-button {
+  color: #acacac;
+}
+
+.weekly-calendar .popup-workout .popup-start-button:hover,
+.weekly-calendar .s-fa:hover {
+  color: #ffc719;
+}
+
+.weekly-calendar .popup-workout .popup-close-button {
+  position: absolute;
+  border: none;
+  top: 16px;
+  right: 16px;
+}
+
+.weekly-calendar .popup-workout .fa-fa:hover {
+  color: black;
 }
 
 .weekly-calendar > .control-div {
