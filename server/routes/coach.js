@@ -174,10 +174,11 @@ coach.get("/clients/show/:userId", async (req, res) => {
 });
 
 coach.get("/show/all", async (req, res) => {
-  const { expertise } = req.query;
+  const { expertise, city } = req.query;
   let query = {};
   if (expertise && expertise !== "" && expertise !== "all")
     query.where = { expertise };
+  if (city && city !== "" && city !== "all") query.where = { city };
   const coaches = await models.Coach.findAll(query);
   if (!coaches || coaches.length === 0) return res.status(200).send([]);
   res.status(200).send(coaches);

@@ -127,13 +127,20 @@ trainee.get("/coach/show/:traineeId", async (req, res) => {
   return res.status(200).send(coach);
 });
 
-trainee.get("/coach/expertise", async (req, res) => {
-  const tags = await models.Coach.findAll({
+trainee.get("/coach/tags", async (req, res) => {
+  const eTags = await models.Coach.findAll({
     attributes: [
       [Sequelize.fn("DISTINCT", Sequelize.col("expertise")), "expertise"],
     ],
+    order: [["expertise", "ASC"]],
   });
-  if (!tags) return res.status(200).send([]);
-  return res.status(200).send(tags.map((item) => item.expertise));
+  const cTags = await models.Coach.findAll({
+    attributes: [[Sequelize.fn("DISTINCT", Sequelize.col("city")), "city"]],
+    order: [["city", "ASC"]],
+  });
+  let dataToSend = {};
+  dataToSend.expertise = eTags ? eTags.map((item) => item.expertise) : [];
+  dataToSend.cities = cTags ? cTags.map((item) => item.city) : [];
+  return res.status(200).send(dataToSend);
 });
 module.exports = trainee;

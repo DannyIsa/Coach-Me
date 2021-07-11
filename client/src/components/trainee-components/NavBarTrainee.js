@@ -23,6 +23,8 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
   const [coaches, setCoaches] = useState();
   const [tags, setTags] = useState([]);
   const [chosenTag, setChosenTag] = useState("");
+  const [cities, setCities] = useState([]);
+  const [city, setCity] = useState("");
   const [request, setRequest] = useState();
   const setError = useContext(SetErrorContext);
 
@@ -38,8 +40,9 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
         await axios.get("/api/trainee/request/show/" + userDetails.id)
       ).data;
       if (requestData) setRequest(requestData);
-      const tagData = await axios.get("/api/trainee/coach/expertise");
-      setTags(["all", ...tagData.data]);
+      const tagData = await axios.get("/api/trainee/coach/tags");
+      setTags(["all", ...tagData.data.expertise]);
+      setCities(["all", ...tagData.data.cities]);
     } catch (err) {
       setError(err.response.data);
     }
@@ -48,10 +51,10 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
   useEffect(() => {
     console.log(chosenTag);
     axios
-      .get("/api/coach/show/all?expertise=" + chosenTag)
+      .get(`/api/coach/show/all?expertise=${chosenTag}&city=${city}`)
       .then(({ data }) => setCoaches(data))
       .catch((err) => setError(err.response.data));
-  }, [chosenTag]);
+  }, [chosenTag, city]);
 
   function sendRequest(coachId, traineeId, traineeName) {
     const content = prompt("Enter Your Request Content");
@@ -111,6 +114,16 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                             </strong>
                           ))}
                         </div>
+                        <select
+                          onChange={(e) => setCity(e.target.value)}
+                          name="cities"
+                        >
+                          {cities.map((city) => (
+                            <option name="cities" value={city}>
+                              {city}
+                            </option>
+                          ))}
+                        </select>
                         {coaches && request
                           ? coaches.map((item, index) => (
                               <div className="alert sec" key={"alert" + index}>
