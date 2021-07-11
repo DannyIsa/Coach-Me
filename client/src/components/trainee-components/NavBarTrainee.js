@@ -108,6 +108,7 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                         <div className="tags">
                           {tags.map((tag) => (
                             <strong
+                              key={tag}
                               onClick={() => setChosenTag(tag)}
                               className={`${tag} tag`}
                             >
@@ -124,7 +125,7 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                             Select City
                           </option>
                           {cities.map((city) => (
-                            <option name="cities" value={city}>
+                            <option name="cities" value={city} key={city}>
                               {city}
                             </option>
                           ))}

@@ -13,6 +13,7 @@ function TraineeProfile({ userDetails }) {
   const [editMode, setEditMode] = useState(false);
   const setError = useContext(SetErrorContext);
   const [coach, setCoach] = useState();
+  const [leavePopup, setLeavePopup] = useState(false);
 
   const getData = () => {
     axios
@@ -58,10 +59,28 @@ function TraineeProfile({ userDetails }) {
     getData();
   }, [userDetails]);
 
+  const leaveCoach = () => {
+    axios
+      .patch(
+        `/api/trainee/coach/leave/${userDetails.id}?coachId=${userDetails.coach_id}`
+      )
+      .then(() => setCoach())
+      .catch((err) => setError(err.response.data))
+      .finally(() => setLeavePopup(false));
+  };
   return (
     <div className="profile-container">
       {userDetails ? (
         <div className="main-body">
+          {leavePopup && (
+            <div className="pop-up">
+              <div className="pop-up-inner">
+                <h3>Are you sure you want to leave your coach?</h3>
+                <button onClick={leaveCoach}>Yes</button>
+                <button onClick={() => setLeavePopup(false)}>No</button>
+              </div>
+            </div>
+          )}
           <div className="main1">
             <div className="row gutters-sm">
               <div className="col-md-4 mb-3">
@@ -288,7 +307,12 @@ function TraineeProfile({ userDetails }) {
                         >
                           Chat
                         </Link>
-                        <button className="leave-btn">Leave</button>
+                        <button
+                          className="leave-btn"
+                          onClick={() => setLeavePopup(true)}
+                        >
+                          Leave
+                        </button>
                       </div>
                       <h3>
                         Rate Your Coach : <span>rate</span>{" "}
