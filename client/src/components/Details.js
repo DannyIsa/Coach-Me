@@ -213,9 +213,9 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
                     Select Expertise
                   </option>
                   <option value="Yoga">Yoga</option>
-                  <option value="Pilatis">Pilatis</option>
-                  <option value="PowerLifting">Power Lifting</option>
-                  <option value="WeightLifting">Weight Lifting</option>
+                  <option value="Pilates">Pilates</option>
+                  <option value="Power Lifting">Power Lifting</option>
+                  <option value="Weight Lifting">Weight Lifting</option>
                   <option value="Crossfit">Crossfit</option>
                   <option value="Other">Other</option>
                 </select>

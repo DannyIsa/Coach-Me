@@ -4,6 +4,7 @@ import pdf from "../../documents/health_declaration.pdf";
 import EditableInput from "../EditableInput";
 import { SetErrorContext } from "../../App";
 import userPic from "../../pics/user1.png";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 
@@ -281,7 +282,12 @@ function TraineeProfile({ userDetails }) {
                         </span>{" "}
                       </p>
                       <div className="coach-control-btn">
-                        <button className="chat-btn">Chat</button>
+                        <Link
+                          className="chat-btn"
+                          to={"/chat/" + userDetails.id}
+                        >
+                          Chat
+                        </Link>
                         <button className="leave-btn">Leave</button>
                       </div>
                       <h3>

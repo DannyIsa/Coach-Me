@@ -62,49 +62,6 @@ trainee.post("/request/send/:traineeId", (req, res) => {
     });
 });
 
-trainee.post("/meal/add", async (req, res) => {
-  const { traineeId, mealId } = req.body;
-  if (!Number(mealId) || !Number(traineeId))
-    return res.status(400).send("Invalid ID");
-  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
-  if (!trainee) return res.status(404).send("No Trainee Found");
-  const meal = await models.Meal.findOne({ where: { id: mealId } });
-  if (!meal) return res.status(404).send("No Meals Found");
-
-  trainee
-    .addMeal(meal)
-    .then(() => res.status(201).send("Meal Added To Trainee"))
-    .catch((err) => res.status(400).send(err));
-});
-
-trainee.get("/meal/show/:traineeId", async (req, res) => {
-  const { traineeId } = req.params;
-  let { sort } = req.query;
-  let { order } = req.query;
-  if (
-    !sort ||
-    (sort !== "name" &&
-      sort !== "calories" &&
-      sort !== "carbs" &&
-      sort !== "protein" &&
-      sort !== "fats" &&
-      sort !== "created_at")
-  )
-    sort = "name";
-  if (!order || (order !== "DESC" && order !== "ASC")) order = "ASC";
-  const trainee = await models.Trainee.findAll({
-    where: { id: traineeId },
-    include: { model: models.Meal },
-    order: [[models.Meal, sort, order]],
-  });
-  if (trainee.length === 0 || !trainee)
-    return res.status(404).send("No Trainee Found");
-  const { Meals } = trainee[0];
-  if (meals.length === 0 || !meals)
-    return res.status(404).send("No Meal Found");
-  res.status(200).send(Meals);
-});
-
 trainee.get("/request/show/:traineeId", async (req, res) => {
   const { traineeId } = req.params;
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
@@ -170,4 +127,13 @@ trainee.get("/coach/show/:traineeId", async (req, res) => {
   return res.status(200).send(coach);
 });
 
+trainee.get("/coach/expertise", async (req, res) => {
+  const tags = await models.Coach.findAll({
+    attributes: [
+      [Sequelize.fn("DISTINCT", Sequelize.col("expertise")), "expertise"],
+    ],
+  });
+  if (!tags) return res.status(200).send([]);
+  return res.status(200).send(tags.map((item) => item.expertise));
+});
 module.exports = trainee;

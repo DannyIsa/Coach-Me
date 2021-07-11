@@ -21,19 +21,37 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
   const closeMobileMenu = () => setClick(false);
   const history = useHistory();
   const [coaches, setCoaches] = useState();
+  const [tags, setTags] = useState([]);
+  const [chosenTag, setChosenTag] = useState("");
   const [request, setRequest] = useState();
   const setError = useContext(SetErrorContext);
 
   useEffect(async () => {
     if (alertMessage) if (!alertMessage.startsWith("Request")) return;
     if (!userDetails) return;
-    let coachesData = (await axios.get("/api/coach/show/all")).data;
-    setCoaches(coachesData);
-    let requestData = (
-      await axios.get("/api/trainee/request/show/" + userDetails.id)
-    ).data;
-    if (requestData) setRequest(requestData);
+    try {
+      const coachesData = (
+        await axios.get("/api/coach/show/all?expertise=" + chosenTag)
+      ).data;
+      setCoaches(coachesData);
+      const requestData = (
+        await axios.get("/api/trainee/request/show/" + userDetails.id)
+      ).data;
+      if (requestData) setRequest(requestData);
+      const tagData = await axios.get("/api/trainee/coach/expertise");
+      setTags(["all", ...tagData.data]);
+    } catch (err) {
+      setError(err.response.data);
+    }
   }, [userDetails, alertMessage]);
+
+  useEffect(() => {
+    console.log(chosenTag);
+    axios
+      .get("/api/coach/show/all?expertise=" + chosenTag)
+      .then(({ data }) => setCoaches(data))
+      .catch((err) => setError(err.response.data));
+  }, [chosenTag]);
 
   function sendRequest(coachId, traineeId, traineeName) {
     const content = prompt("Enter Your Request Content");
@@ -86,6 +104,13 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                   <div className="display">
                     <div className="cont">
                       <div className="alerts-div">
+                        <div className="tags-div">
+                          {tags.map((tag) => (
+                            <strong onClick={() => setChosenTag(tag)}>
+                              {tag}
+                            </strong>
+                          ))}
+                        </div>
                         {coaches && request
                           ? coaches.map((item, index) => (
                               <div className="alert sec" key={"alert" + index}>

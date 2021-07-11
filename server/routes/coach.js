@@ -1,5 +1,5 @@
 const models = require("../models");
-const { Op, Model } = require("sequelize");
+const { Op, Model, QueryInterface } = require("sequelize");
 const Sequelize = require("sequelize");
 
 require("dotenv").config();
@@ -174,7 +174,11 @@ coach.get("/clients/show/:userId", async (req, res) => {
 });
 
 coach.get("/show/all", async (req, res) => {
-  const coaches = await models.Coach.findAll();
+  const { expertise } = req.query;
+  let query = {};
+  if (expertise && expertise !== "" && expertise !== "all")
+    query.where = { expertise };
+  const coaches = await models.Coach.findAll(query);
   if (!coaches || coaches.length === 0) return res.status(200).send([]);
   res.status(200).send(coaches);
 });
