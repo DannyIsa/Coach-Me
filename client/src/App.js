@@ -57,9 +57,9 @@ function App() {
       });
     });
   }
+  const socket = io("http://localhost:8080");
 
   useEffect(() => {
-    const socket = io("http://localhost:8080");
     if (userType === "Coach") {
       socket.on("request received", (data) => {
         if (userDetails.id === data) {
@@ -144,7 +144,11 @@ function App() {
                   )}
                   <Switch>
                     <Route exact path="/chat/:traineeId/:coachId">
-                      <Chat userDetails={userDetails} userType={userType} />
+                      <Chat
+                        userDetails={userDetails}
+                        userType={userType}
+                        socket={socket}
+                      />
                     </Route>
                     <Route exact path="/dashboard">
                       {userType === "Coach" ? (
