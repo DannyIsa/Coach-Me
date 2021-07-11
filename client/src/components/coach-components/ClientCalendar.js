@@ -70,8 +70,7 @@ function ClientCalendar({ userDetails }) {
   const handleSearch = useCallback(
     debounce((e) => {
       setSearchInput(e.target.value);
-    }),
-    1000
+    }, 700)
   );
 
   useEffect(() => {
