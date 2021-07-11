@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { SetErrorContext } from "../App";
 import Message from "./Message";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 export default function Chat({ userDetails, userType, socket }) {
   const [messages, setMessages] = useState([]);
@@ -69,6 +71,7 @@ export default function Chat({ userDetails, userType, socket }) {
   };
 
   return userDetails && userType ? (
+    // <div className="chat-container">
     <div className="chat-component">
       <h1 className="chatting-with">
         You are chatting with
@@ -91,10 +94,18 @@ export default function Chat({ userDetails, userType, socket }) {
           onChange={(e) => setMessageContent(e.target.value)}
           placeholder="Send Message"
         />
-        <button onClick={sendMessage}>SEND</button>
+        <button onClick={sendMessage} className="send-chat-btn">
+          {" "}
+          <FontAwesomeIcon
+            icon={faPaperPlane}
+            color="black"
+            className="fa-fa"
+          />
+        </button>
       </div>
     </div>
   ) : (
+    // </div>
     <div className="chat-component">"Loading..."</div>
   );
 }

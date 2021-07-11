@@ -1,5 +1,5 @@
 .chat-component {
-  padding-top: 80px;
+  padding-top: 100px;
   background-color: Beige;
   & > .chatting-with {
     color: Moccasin;
@@ -26,6 +26,12 @@
       border-radius: 20px;
       padding-left: 10px;
       outline: none;
+    }
+    .send-chat-btn {
+      border: none;
+
+      // & .fa-fa {
+      // }
     }
   }
   & > .messages-div {
