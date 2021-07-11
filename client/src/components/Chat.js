@@ -4,7 +4,7 @@ import axios from "axios";
 import { SetErrorContext } from "../App";
 import Message from "./Message";
 
-export default function Chat({ userDetails, userType }) {
+export default function Chat({ userDetails, userType, socket }) {
   const [messages, setMessages] = useState([]);
   const { traineeId, coachId } = useParams();
   const [messageContent, setMessageContent] = useState("");
@@ -13,6 +13,7 @@ export default function Chat({ userDetails, userType }) {
 
   useEffect(() => {
     if (!userDetails || !traineeId) return;
+    socket.on("message received", (data) => console.log(data));
     if (userType === "Trainee") {
       if (userDetails.id !== Number(traineeId)) return;
       axios

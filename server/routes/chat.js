@@ -58,6 +58,7 @@ chat.post("/:traineeId/:coachId", async (req, res) => {
     sender,
   });
   if (!message) return res.status(400).send("Couldn't Send Message");
+  req.io.emit("message received", { traineeId, coachId, sender, content });
   return res.status(201).send(message);
 });
 
