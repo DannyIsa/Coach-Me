@@ -118,8 +118,8 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                                   >
                                     <p className="date-requests">
                                       {/* {console.log(item)} */}
-                                      {item.online_coaching === "Yes"
-                                        ? item.online_coaching
+                                      {item.online_coaching === "true"
+                                        ? "Online Coaching"
                                         : item.city}
                                     </p>
                                     {item.id === userDetails.coach_id ? (
