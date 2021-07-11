@@ -108,7 +108,7 @@ user.put("/details/:id", (req, res) => {
       avg_rating: 0,
       rating_count: 0,
       online_coaching: obj.online_coaching,
-      city: obj.city,
+      city: obj.city.toLowerCase(),
       expertise: obj.expertise,
     };
   } else if (type === "Trainee") {

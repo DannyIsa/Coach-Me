@@ -32,9 +32,7 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
     if (alertMessage) if (!alertMessage.startsWith("Request")) return;
     if (!userDetails) return;
     try {
-      const coachesData = (
-        await axios.get("/api/coach/show/all?expertise=" + chosenTag)
-      ).data;
+      const coachesData = (await axios.get("/api/coach/show/all")).data;
       setCoaches(coachesData);
       const requestData = (
         await axios.get("/api/trainee/request/show/" + userDetails.id)
