@@ -1144,6 +1144,7 @@ form.sign-in-form {
 .pop-up > .pop-up-inner {
   position: relative;
   width: 100%;
+  text-align: center;
   max-width: 700px;
   background-color: #837c7c;
 }
@@ -1160,17 +1161,37 @@ form.sign-in-form {
   width: 70%;
 }
 
-.pop-up > .pop-up-inner > .close-button {
-  border: 1px solid;
-  margin: 0;
-  padding: 0.5rem 1rem;
-  float: right;
-}
-
 .pop-up > .pop-up-inner.logs {
   max-width: 1500px;
   max-height: 800px;
   background-color: white;
+}
+
+.pop-up > .pop-up-inner .close-button {
+  float: right;
+  border: none;
+}
+
+.pop-up > .pop-up-inner .save-change-btn {
+  border: none;
+}
+
+.pop-up > .pop-up-inner .create-btn {
+  border: none;
+}
+
+.pop-up > .pop-up-inner .fa-fa:hover {
+  color: black;
+}
+
+.pop-up > .pop-up-inner h2 {
+  margin-left: 5rem;
+}
+
+.pop-up > .pop-up-inner .popup-name {
+  margin-left: 5rem;
+  width: 12rem;
+  padding: 0rem 0.7rem;
 }
 
 .trainee-dashboard {

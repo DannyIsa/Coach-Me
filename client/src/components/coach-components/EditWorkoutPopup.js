@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes, faSave } from "@fortawesome/free-solid-svg-icons";
 
 function EditWorkoutPopup({
   workout,
@@ -47,7 +49,7 @@ function EditWorkoutPopup({
             setErrorMessage("");
           }}
         >
-          close
+          <FontAwesomeIcon icon={faTimes} color="#acacac" className="fa-fa" />
         </button>
         <h2>{workout.name}</h2>
         {sets.length > 0 && (
@@ -162,6 +164,7 @@ function EditWorkoutPopup({
         />
         <br />
         <button
+          className="save-change-btn"
           onClick={() => {
             axios
               .patch("/api/coach/workouts/update/" + userDetails.id, {
@@ -177,7 +180,7 @@ function EditWorkoutPopup({
               .catch((err) => setErrorMessage(err.response.data));
           }}
         >
-          Save
+          Save <FontAwesomeIcon icon={faSave} />
         </button>
         <h3 className="error-message">{errorMessage}</h3>
       </div>
