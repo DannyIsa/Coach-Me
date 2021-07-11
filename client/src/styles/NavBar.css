@@ -171,7 +171,7 @@
   padding: 0.2rem;
   font-weight: 700;
   font-size: 0.8rem;
-  margin: 0.3rem;
+  margin: 0.25rem;
   color: white;
   background-color: plum;
 }
@@ -272,7 +272,7 @@
 }
 
 .homeNav .notBtn:hover > .box {
-  height: 40vh;
+  height: 50vh;
 }
 
 .homeNav .display {

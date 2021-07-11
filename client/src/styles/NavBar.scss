@@ -142,7 +142,7 @@
         padding: 0.2rem;
         font-weight: 700;
         font-size: 0.8rem;
-        margin: 0.3rem;
+        margin: 0.25rem;
         color: white;
         background-color: plum;
         &:hover {
@@ -236,7 +236,7 @@
     cursor: pointer;
 
     &:hover > .box {
-      height: 40vh;
+      height: 50vh;
     }
   }
 

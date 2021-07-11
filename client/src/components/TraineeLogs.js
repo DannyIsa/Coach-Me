@@ -37,13 +37,21 @@ function TraineeLogs({ userDetails, type }) {
           {type === "Trainee" && (
             <>
               <h1>{`Welcome Back, ${userDetails.name} !`}</h1>
-              <Link to="/trainee/calendar">Weekly Calendar</Link>
+              <Link to="/trainee/calendar" className="trainee-calendar">
+                Weekly Calendar
+              </Link>
             </>
           )}
           <div className="charts">
             <div className="chart">
-              <h1>Diet Logs</h1>
-              <LineChart width={500} height={500} data={dietLogs}>
+              <h2>Diet Logs</h2>
+              <LineChart
+                width={450}
+                height={500}
+                data={dietLogs}
+                className="line-chart"
+              >
+                {console.log(dietLogs)}
                 <Legend verticalAlign="top" height={36} />
                 <Line
                   name="Calories(cal)"
@@ -85,8 +93,13 @@ function TraineeLogs({ userDetails, type }) {
               </LineChart>
             </div>
             <div className="chart">
-              <h1>Measure Logs</h1>
-              <LineChart width={500} height={500} data={measureLogs}>
+              <h2>Measure Logs</h2>
+              <LineChart
+                width={500}
+                height={500}
+                data={measureLogs}
+                className="line-chart"
+              >
                 <Legend verticalAlign="top" height={36} />
                 <Line
                   type="monotone"
@@ -128,7 +141,7 @@ function TraineeLogs({ userDetails, type }) {
               </LineChart>
             </div>
             <div>
-              <h1>Previous Workouts:</h1>
+              <h2>Previous Workouts:</h2>
               {workoutLogs.length > 0 ? (
                 workoutLogs.map((item, index) => (
                   <h3 key={index}>{`[ ${new Date(

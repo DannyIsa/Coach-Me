@@ -116,10 +116,14 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                             </strong>
                           ))}
                         </div>
+
                         <select
                           onChange={(e) => setCity(e.target.value)}
                           name="cities"
                         >
+                          <option disabled selected value>
+                            Select City
+                          </option>
                           {cities.map((city) => (
                             <option name="cities" value={city} key={city}>
                               {city}

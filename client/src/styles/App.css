@@ -1172,6 +1172,8 @@ form.sign-in-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
   padding-top: 7rem;
 }
 
@@ -2065,6 +2067,45 @@ form.sign-in-form {
   background-color: rgba(255, 255, 255, 0.247);
 }
 
+.profile-container .main-body .pop-up-leave {
+  position: relative;
+  padding-bottom: 32px;
+  width: 100%;
+  height: 25%;
+  max-width: 640px;
+  max-height: 300px;
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+}
+
+.profile-container .main-body .pop-up-leave h1 {
+  color: black;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #1456a1;
+}
+
+.profile-container .main-body .pop-up-leave h2,
+.profile-container .main-body .pop-up-leave h3 {
+  margin: 1rem 0rem;
+}
+
+.profile-container .main-body .pop-up-leave button {
+  margin-top: 0.5rem;
+  color: black;
+  border: solid 1px;
+  padding: 0.5rem 1rem;
+}
+
+.profile-container .main-body .pop-up-leave button:hover {
+  background-color: black;
+  color: white;
+}
+
 .profile-container .main-body .main1 {
   padding: 15px 40px;
 }
@@ -2217,7 +2258,7 @@ form.sign-in-form {
   color: white;
   border: 1px solid #5995fd;
   background-color: #5995fd;
-  padding: 0.5rem 1.5rem;
+  padding: 0.25rem 1.5rem;
   border-radius: 5px;
   text-transform: none;
 }
@@ -2266,14 +2307,41 @@ form.sign-in-form {
   border: red solid 4px;
 }
 
-.trainee-logs > .charts {
+.trainee-logs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+}
+
+.trainee-logs h1 {
+  color: white;
+}
+
+.trainee-logs .trainee-calendar {
+  margin: 2rem 0;
+}
+
+.trainee-logs .charts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 70%;
+  background-color: palegoldenrod;
+}
+
+.trainee-logs .charts .line-chart {
+  background-color: white;
+  margin-right: 2rem;
 }
 
 .chat-component > .messages-div {
