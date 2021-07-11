@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import "../styles/Chat.css";
 import axios from "axios";
 import { SetErrorContext } from "../App";
+import Message from "./Message";
 
-export default function Chat({ userDetails, userType, socket }) {
+export default function Chat({ userDetails, userType }) {
   const [messages, setMessages] = useState([]);
   const { traineeId } = useParams();
   const [messageContent, setMessageContent] = useState("");
@@ -57,7 +57,11 @@ export default function Chat({ userDetails, userType, socket }) {
       </h1>
       <div className="messages-div">
         {messages.map((message) => (
-          <h3>{message.content}</h3>
+          <Message
+            content={message.content}
+            date={new Date(message.createdAt)}
+            sent={message.sender === userType}
+          />
         ))}
       </div>
       <input

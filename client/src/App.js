@@ -47,7 +47,6 @@ function App() {
   const [reqDone, setReqDone] = useState(true);
   const [alertMessage, setAlertMessage] = useState();
   const [errorMessage, setErrorMessage] = useState();
-  const socket = io("http://localhost:8080");
 
   function signOut(history) {
     auth.signOut().then(() => {
@@ -60,6 +59,7 @@ function App() {
   }
 
   useEffect(() => {
+    const socket = io("http://localhost:8080");
     if (userType === "Coach") {
       socket.on("request received", (data) => {
         if (userDetails.id === data) {
@@ -171,11 +171,7 @@ function App() {
                       )}
                     </Route>
                     <Route exact path="/chat/:traineeId">
-                      <Chat
-                        userDetails={userDetails}
-                        userType={userType}
-                        socket={socket}
-                      />
+                      <Chat userDetails={userDetails} userType={userType} />
                     </Route>
                   </Switch>
                 </>

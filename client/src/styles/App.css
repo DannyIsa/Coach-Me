@@ -2248,6 +2248,35 @@ form.sign-in-form {
       flex-wrap: wrap;
 }
 
+.chat-component > .messages-div > .message-div {
+  width: 100vw;
+}
+
+.chat-component > .messages-div > .message-div > .message {
+  margin: 10px;
+  padding: 10px;
+  max-width: 70%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  background-color: #91fc91;
+  border-radius: 15px;
+}
+
+.chat-component > .messages-div > .message-div > .message > .content {
+  white-space: normal;
+  font-size: 17px;
+}
+
+.chat-component > .messages-div > .message-div > .message.sent {
+  float: right;
+}
+
+.chat-component > .messages-div > .message-div > .message.received {
+  float: left;
+}
+
 * {
   margin: 0;
   padding: 0;

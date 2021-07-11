@@ -1,0 +1,26 @@
+.chat-component {
+  & > .messages-div {
+    & > .message-div {
+      width: 100vw;
+      & > .message {
+        margin: 10px;
+        padding: 10px;
+        max-width: 70%;
+        height: fit-content;
+        padding: 10px;
+        background-color: rgb(145, 252, 145);
+        border-radius: 15px;
+        & > .content {
+          white-space: normal;
+          font-size: 17px;
+        }
+        &.sent {
+          float: right;
+        }
+        &.received {
+          float: left;
+        }
+      }
+    }
+  }
+}
