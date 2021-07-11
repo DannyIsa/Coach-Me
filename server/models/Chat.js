@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       trainee_id: DataTypes.INTEGER,
       coach_id: DataTypes.INTEGER,
-      content: DataTypes.STRING,
+      content: DataTypes.TEXT,
       sender: DataTypes.STRING,
     },
     {
