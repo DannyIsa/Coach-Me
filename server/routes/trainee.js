@@ -1,5 +1,5 @@
 const models = require("../models");
-const { Op } = require("sequelize");
+const { Op, Model } = require("sequelize");
 const Sequelize = require("sequelize");
 require("dotenv").config();
 const sequelize = new Sequelize(
@@ -142,5 +142,22 @@ trainee.get("/coach/tags", async (req, res) => {
   dataToSend.expertise = eTags ? eTags.map((item) => item.expertise) : [];
   dataToSend.cities = cTags ? cTags.map((item) => item.city) : [];
   return res.status(200).send(dataToSend);
+});
+
+trainee.patch("/coach/leave/:traineeId", async (req, res) => {
+  const { traineeId } = req.params;
+  const { coachId } = req.query;
+  if (!traineeId || !coachId) return res.status(400).send("Id Required");
+  const trainee = await models.Trainee.findOne({
+    where: { id: traineeId, coach_id: coachId },
+  });
+  if (!trainee) return res.status(404).send("No Trainee Found");
+  trainee
+    .update({ coach_id: 0 })
+    .then(({ data }) => {
+      console.log(data);
+      return res.status(201).send("Left Successfully");
+    })
+    .catch((err) => res.status(400).send(err));
 });
 module.exports = trainee;
