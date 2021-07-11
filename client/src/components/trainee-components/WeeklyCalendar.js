@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "../../styles/WeeklyCalendar.css";
 import { SetErrorContext } from "../../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle, faTimes } from "@fortawesome/free-solid-svg-icons";
