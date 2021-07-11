@@ -146,7 +146,7 @@ logs.get("/workout/show/:traineeId", async (req, res) => {
   res.status(200).send(workouts);
 });
 
-logs.get("/measure/show/:traineeId", async (req, res) => {
+logs.get("/measure/show/latest/:traineeId", async (req, res) => {
   const { traineeId } = req.params;
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
 
@@ -169,6 +169,32 @@ logs.get("/measure/show/:traineeId", async (req, res) => {
     order: [["created_at", "DESC"]],
   });
   if (!traineeMeasureLog) return res.status(200).send({});
+
+  return res.status(200).send(traineeMeasureLog);
+});
+
+logs.get("/measure/show/:traineeId", async (req, res) => {
+  const { traineeId } = req.params;
+  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
+
+  if (!traineeId || !trainee) {
+    return res.status(404).send("Invalid ID");
+  }
+
+  const traineeMeasureLog = await models.MeasureLog.findAll({
+    attributes: [
+      "height",
+      "weight",
+      "hip_perimeter",
+      "chest_perimeter",
+      "thigh_perimeter",
+      "bicep_perimeter",
+      "waist_perimeter",
+      [sequelize.fn("date", sequelize.col("MeasureLog.created_at")), "date"],
+    ],
+    where: { trainee_id: traineeId },
+  });
+  if (!traineeMeasureLog) return res.status(200).send([]);
 
   return res.status(200).send(traineeMeasureLog);
 });

@@ -130,9 +130,6 @@ function App() {
               // user is registered
               registered ? (
                 <>
-                  <Route exact path="/chat/:traineeId/:coachId">
-                    <Chat userDetails={userDetails} userType={userType} />
-                  </Route>
                   {userType === "Coach" ? (
                     <NavBarCoach
                       userType={userType}
@@ -146,6 +143,9 @@ function App() {
                     />
                   )}
                   <Switch>
+                    <Route exact path="/chat/:traineeId/:coachId">
+                      <Chat userDetails={userDetails} userType={userType} />
+                    </Route>
                     <Route exact path="/dashboard">
                       {userType === "Coach" ? (
                         <CoachProfile userDetails={userDetails} />

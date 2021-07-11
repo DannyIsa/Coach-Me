@@ -51,7 +51,6 @@ function TraineeLogs({ userDetails, type }) {
                 data={dietLogs}
                 className="line-chart"
               >
-                {console.log(dietLogs)}
                 <Legend verticalAlign="top" height={36} />
                 <Line
                   name="Calories(cal)"
