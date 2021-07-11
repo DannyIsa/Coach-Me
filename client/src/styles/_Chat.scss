@@ -53,13 +53,13 @@
           white-space: normal;
           font-size: 17px;
         }
-        &.sent {
+        &.received {
           float: right;
           background-color: white;
           color: black;
           // margin-right: 30px;
         }
-        &.received {
+        &.sent {
           float: left;
           background-color: PaleGreen;
           color: black;
