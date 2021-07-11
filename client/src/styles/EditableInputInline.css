@@ -19,6 +19,9 @@
   transition: 0.5s;
   font-size: 1.2rem;
 }
+.fas-fas:hover {
+  color: black;
+}
 
 .client-list-start
   .ticket-list

@@ -27,6 +27,9 @@
       margin: 1rem;
       // background-color: #3580d4;
       background-color: #1456a1;
+      .fa-fa:hover {
+        color: black;
+      }
 
       .ticket-content,
       .ticket-title {
@@ -41,7 +44,14 @@
 
       .ticket-content {
         font-size: 1.2em;
+
+        .chat-client-btn {
+          float: right;
+          border: none;
+          padding: 0;
+        }
       }
+
       .ticket-header .view-calender {
         font-size: 2rem;
         opacity: 0;

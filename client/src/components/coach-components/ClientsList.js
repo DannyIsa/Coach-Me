@@ -11,6 +11,7 @@ import {
   faEnvelope,
   faPhoneAlt,
   faTimes,
+  faComment,
 } from "@fortawesome/free-solid-svg-icons";
 
 function ClientsList({ userDetails, alertMessage }) {
@@ -117,12 +118,18 @@ function ClientsList({ userDetails, alertMessage }) {
                 <br />
                 <span className="first">Weight:</span>
                 <span>{" " + item.weight}</span> <br />
+                <a href={`/chat/${item.id}/${userDetails.id}`}>
+                  <button className="chat-client-btn">
+                    {" "}
+                    <FontAwesomeIcon
+                      icon={faComment}
+                      color="white"
+                      className="fa-fa"
+                    />
+                  </button>
+                </a>
                 <span className="first">Height:</span>
                 <span>{" " + item.height}</span>
-                <a href={`/chat/${item.id}/${userDetails.id}`}>
-                  <button className="chat-btn">Chat</button>
-                </a>
-                <br />
               </div>
             </div>
           ))}

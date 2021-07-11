@@ -1,3 +1,4 @@
+@import url(/Users/Amit/Desktop/cyber4s/Coach-Me/client/src/styles/WeeklyCalendar.css);
 .role {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1030,6 +1031,10 @@ form.sign-in-form {
   background-color: #1456a1;
 }
 
+.client-list-start .ticket-list .ticket .fa-fa:hover {
+  color: black;
+}
+
 .client-list-start .ticket-list .ticket .ticket-content,
 .client-list-start .ticket-list .ticket .ticket-title {
   width: 20rem;
@@ -1043,6 +1048,12 @@ form.sign-in-form {
 
 .client-list-start .ticket-list .ticket .ticket-content {
   font-size: 1.2em;
+}
+
+.client-list-start .ticket-list .ticket .ticket-content .chat-client-btn {
+  float: right;
+  border: none;
+  padding: 0;
 }
 
 .client-list-start .ticket-list .ticket .ticket-header .view-calender {
@@ -1367,8 +1378,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .details-div .right-div button span {
@@ -1866,7 +1877,7 @@ form.sign-in-form {
 }
 
 .add-exercise-start .add-exercise-form form select {
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form form button {
@@ -1889,8 +1900,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .add-exercise-start .add-exercise-form form button span {
@@ -2003,7 +2014,7 @@ form.sign-in-form {
 .add-exercise-start .add-exercise-form .form-block .textarea-control {
   width: 18rem;
   height: 4.5rem;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form .form-block input {
@@ -2014,26 +2025,7 @@ form.sign-in-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
-}
-
-.weekly-calendar {
-  height: 100vh;
-  padding-top: 7rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: center;
-  border: black 1px solid;
-}
-
-.weekly-calendar > .column {
-  border: black 1px solid;
-  padding: 1% 6% 6% 1%;
-}
-
-.weekly-calendar > .column > .table-meal {
-  border: black 1px solid;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .weekly-calendar > .control-div {
