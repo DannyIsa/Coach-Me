@@ -243,11 +243,7 @@ function ClientCalendar({ userDetails }) {
       {field.type && (
         <div className="control-div">
           <div className="search-div">
-            <input
-              className="search-input"
-              value={searchInput}
-              onChange={handleSearch}
-            />
+            <input className="search-input" onChange={handleSearch} />
             <div className="results">
               {results.map((item, index) => (
                 <div
