@@ -65,11 +65,14 @@ export default function Chat({ userDetails, userType }) {
           />
         ))}
       </div>
-      <input
-        value={messageContent}
-        onChange={(e) => setMessageContent(e.target.value)}
-      />
-      <button onClick={sendMessage}>SEND</button>
+      <div className="input-and-button">
+        <input
+          value={messageContent}
+          onChange={(e) => setMessageContent(e.target.value)}
+          placeholder="Send Message"
+        />
+        <button onClick={sendMessage}>SEND</button>
+      </div>
     </div>
   ) : (
     <div className="chat-component">"Loading..."</div>

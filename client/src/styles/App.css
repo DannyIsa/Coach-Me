@@ -1367,8 +1367,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .details-div .right-div button span {
@@ -1866,7 +1866,7 @@ form.sign-in-form {
 }
 
 .add-exercise-start .add-exercise-form form select {
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form form button {
@@ -1889,8 +1889,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .add-exercise-start .add-exercise-form form button span {
@@ -2003,7 +2003,7 @@ form.sign-in-form {
 .add-exercise-start .add-exercise-form .form-block .textarea-control {
   width: 18rem;
   height: 4.5rem;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form .form-block input {
@@ -2014,7 +2014,7 @@ form.sign-in-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .weekly-calendar {
@@ -2344,7 +2344,29 @@ form.sign-in-form {
   margin-right: 2rem;
 }
 
+.chat-component > .input-and-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.chat-component > .input-and-button > input {
+  width: 80%;
+  height: 30px;
+  border-radius: 20px;
+  padding-left: 10px;
+  outline: none;
+}
+
 .chat-component > .messages-div {
+  height: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2376,12 +2398,14 @@ form.sign-in-form {
 
 .chat-component > .messages-div > .message-div > .message.sent {
   float: right;
-  background-color: red;
+  background-color: white;
+  color: black;
 }
 
 .chat-component > .messages-div > .message-div > .message.received {
   float: left;
-  background-color: blue;
+  background-color: PaleGreen;
+  color: black;
 }
 
 * {
