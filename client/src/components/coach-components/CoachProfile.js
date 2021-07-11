@@ -6,9 +6,31 @@ import userPic from "../../pics/user1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 
-function CoachProfile({ userDetails }) {
+function CoachProfile({ userDetails, alertMessage }) {
+  const [clientsNumber, setClientsNumber] = useState();
+  const [render, setRender] = useState(false);
+
   const [editMode, setEditMode] = useState(false);
   const setError = useContext(SetErrorContext);
+
+  async function getNumberOfClients() {
+    try {
+      let clients = await axios.get(
+        "/api/coach/clients/show/" + userDetails.id
+      );
+      return clients.data.length;
+    } catch (err) {
+      return [];
+    }
+  }
+  useEffect(() => {
+    if (alertMessage === "New Alert") setRender(!render);
+  }, [alertMessage]);
+
+  useEffect(async () => {
+    if (!userDetails) return;
+    setClientsNumber(await getNumberOfClients());
+  }, [userDetails, render]);
 
   return (
     <div className="profile-container">
@@ -86,7 +108,9 @@ function CoachProfile({ userDetails }) {
                       <h6 className="mb-0">online coaching: </h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
-                      {userDetails.online_coaching === "true" ? "Yes" : "No"}
+                      {userDetails.online_coaching === "true"
+                        ? "Yes ✔"
+                        : "No❌"}
                     </div>
                   </div>
                   <hr />
@@ -100,9 +124,10 @@ function CoachProfile({ userDetails }) {
               <div className="col-sm-6 mb-3">
                 <div className="card h-100">
                   <div className="card-body">
-                    <button className="edit-button">
+                    <div>Number of Trainees:{clientsNumber}</div>
+                    {/* <button className="edit-button">
                       {editMode ? "Save" : "Edit"}
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>

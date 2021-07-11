@@ -17,16 +17,14 @@ import {
 import "../../styles/NavBar.css";
 import logo from "../../pics/logo.png";
 
-function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
+function NavBarCoach({ signOut, userDetails, alertMessage }) {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   const history = useHistory();
   const [clients, setClients] = useState();
   const [requests, setRequests] = useState();
-  // const [hideAlerts, setHideAlerts] = useState(true);
   const [render, setRender] = useState(false);
-  const [chosenTrainee, setChosenTrainee] = useState("");
   const setError = useContext(SetErrorContext);
 
   async function getRequests() {
@@ -83,7 +81,7 @@ function NavBarCoach({ signOut, userType, userDetails, alertMessage }) {
         <ul className={click ? "nav-options active" : "nav-options-main"}>
           <li className="option" onClick={closeMobileMenu}>
             <Link to="/dashboard" className="link">
-              Home
+              Profile
             </Link>
           </li>
           <li className="option" onClick={closeMobileMenu}>

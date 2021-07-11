@@ -47,7 +47,6 @@ function App() {
   const [reqDone, setReqDone] = useState(true);
   const [alertMessage, setAlertMessage] = useState();
   const [errorMessage, setErrorMessage] = useState();
-
   function signOut(history) {
     auth.signOut().then(() => {
       auth.onAuthStateChanged(() => {
@@ -57,9 +56,27 @@ function App() {
       });
     });
   }
+  const socket = io("http://localhost:8080/", {
+    withCredentials: true,
+    transport: ["websocket"],
+  });
 
   useEffect(() => {
-    const socket = io("http://localhost:8080");
+    if (userDetails) {
+      socket.on("message received", (data) => {
+        if (data.sender !== userType) {
+          console.log(userDetails.id, data.coachId, data.traineeId);
+          if (
+            (userType === "Coach" && userDetails.id === Number(data.coachId)) ||
+            (userType === "Trainee" &&
+              userDetails.id === Number(data.traineeId))
+          ) {
+            if (!window.location.href.includes("chat"))
+              setAlertMessage("New Chat Message");
+          }
+        }
+      });
+    }
     if (userType === "Coach") {
       socket.on("request received", (data) => {
         if (userDetails.id === data) {
@@ -68,10 +85,11 @@ function App() {
       });
     }
     if (userType === "Trainee") {
-      socket.on("request handled", ({ traineeId, accept }) => {
-        console.log(traineeId, userDetails.id);
-        if (userDetails.id === traineeId)
+      socket.on("request handled", ({ traineeId, coachId, accept }) => {
+        if (userDetails.id === traineeId) {
           setAlertMessage(`Request ${accept ? "Accepted" : "Rejected"}`);
+          if (accept) setUserDetails({ ...userDetails, coach_id: coachId });
+        }
       });
     }
   }, [userDetails]);
@@ -80,7 +98,7 @@ function App() {
     if (alertMessage) {
       setTimeout(() => {
         setAlertMessage();
-      }, 10000);
+      }, 7000);
     }
   }, [alertMessage]);
 
@@ -132,23 +150,31 @@ function App() {
                 <>
                   {userType === "Coach" ? (
                     <NavBarCoach
-                      userType={userType}
                       signOut={signOut}
                       userDetails={userDetails}
+                      alertMessage={alertMessage}
                     />
                   ) : (
                     <NavBarTrainee
                       userDetails={userDetails}
                       signOut={signOut}
+                      alertMessage={alertMessage}
                     />
                   )}
                   <Switch>
                     <Route exact path="/chat/:traineeId/:coachId">
-                      <Chat userDetails={userDetails} userType={userType} />
+                      <Chat
+                        userDetails={userDetails}
+                        userType={userType}
+                        socket={socket}
+                      />
                     </Route>
                     <Route exact path="/dashboard">
                       {userType === "Coach" ? (
-                        <CoachProfile userDetails={userDetails} />
+                        <CoachProfile
+                          userDetails={userDetails}
+                          alertMessage={alertMessage}
+                        />
                       ) : (
                         <TraineeDashboard userDetails={userDetails} />
                       )}

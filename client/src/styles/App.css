@@ -2258,7 +2258,7 @@ form.sign-in-form {
   color: white;
   border: 1px solid #5995fd;
   background-color: #5995fd;
-  padding: 0.25rem 1.5rem;
+  padding: 0.25rem 1rem;
   border-radius: 5px;
   text-transform: none;
 }
@@ -2371,9 +2371,9 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 
 .chat-component > .messages-div > .message-div {

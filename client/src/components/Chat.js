@@ -4,7 +4,7 @@ import axios from "axios";
 import { SetErrorContext } from "../App";
 import Message from "./Message";
 
-export default function Chat({ userDetails, userType }) {
+export default function Chat({ userDetails, userType, socket }) {
   const [messages, setMessages] = useState([]);
   const { traineeId, coachId } = useParams();
   const [messageContent, setMessageContent] = useState("");
@@ -32,6 +32,18 @@ export default function Chat({ userDetails, userType }) {
     }
   }, [userDetails]);
 
+  useEffect(() => {
+    if (!userDetails || !traineeId || messages.length === 0) return;
+    socket.on("message received", (data) => {
+      if (
+        traineeId === data.traineeId &&
+        coachId === data.coachId &&
+        data.sender !== userType
+      )
+        setMessages([data, ...messages]);
+    });
+  }, [userDetails, messages]);
+
   const sendMessage = async () => {
     if (!messageContent || messageContent === "") return;
     try {
@@ -39,7 +51,7 @@ export default function Chat({ userDetails, userType }) {
         content: messageContent,
         sender: userType,
       });
-      setMessages([...messages, message.data]);
+      setMessages([message.data, ...messages]);
       setMessageContent("");
     } catch (err) {
       setError(err.response.data);
