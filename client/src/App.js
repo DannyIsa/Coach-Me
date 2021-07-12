@@ -22,9 +22,8 @@ import Chat from "./components/Chat";
 import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
 import CoachRouter from "./components/routers/CoachRouter";
 import TraineeRouter from "./components/routers/TraineeRouter";
-import { io } from "socket.io-client";
 import CoachProfile from "./components/coach-components/CoachProfile";
-
+import { socket } from "./socket";
 firebase.initializeApp({
   apiKey: "AIzaSyDXQY7ezPYUQoh3yJmWRZEalb9N-yieW-o",
   authDomain: "coach-me-7bdf4.firebaseapp.com",
@@ -55,16 +54,11 @@ function App() {
       });
     });
   }
-  const socket = io("http://localhost:8080/", {
-    withCredentials: true,
-    transport: ["websocket"],
-  });
 
   useEffect(() => {
     if (userDetails) {
       socket.on("message received", (data) => {
         if (data.sender !== userType) {
-          console.log(userDetails.id, data.coachId, data.traineeId);
           if (
             (userType === "Coach" && userDetails.id === Number(data.coachId)) ||
             (userType === "Trainee" &&
@@ -162,11 +156,7 @@ function App() {
                   )}
                   <Switch>
                     <Route exact path="/chat/:traineeId/:coachId">
-                      <Chat
-                        userDetails={userDetails}
-                        userType={userType}
-                        socket={socket}
-                      />
+                      <Chat userDetails={userDetails} userType={userType} />
                     </Route>
                     <Route exact path="/dashboard">
                       {userType === "Coach" ? (

@@ -38,6 +38,7 @@ chat.get("/:traineeId/:coachId", async (req, res) => {
 chat.post("/:traineeId/:coachId", async (req, res) => {
   const { traineeId, coachId } = req.params;
   const { content, sender } = req.body;
+  const io = req.app.get("socketIo");
   if (!coachId || !traineeId)
     return res.status(400).send("Must send trainee and coach id");
   if (!content || content === "")
@@ -58,7 +59,7 @@ chat.post("/:traineeId/:coachId", async (req, res) => {
     sender,
   });
   if (!message) return res.status(400).send("Couldn't Send Message");
-  req.io.emit("message received", {
+  io.emit("message received", {
     traineeId,
     coachId,
     sender,

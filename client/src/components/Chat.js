@@ -5,8 +5,8 @@ import { SetErrorContext } from "../App";
 import Message from "./Message";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-
-export default function Chat({ userDetails, userType, socket }) {
+import { socket } from "../socket";
+export default function Chat({ userDetails, userType }) {
   const [messages, setMessages] = useState([]);
   const { traineeId, coachId } = useParams();
   const [messageContent, setMessageContent] = useState("");
@@ -28,7 +28,7 @@ export default function Chat({ userDetails, userType, socket }) {
       axios
         .get(`http://localhost:3001/api/coach/coach-name/${coachId}`)
         .then(({ data }) => setCoachName(data))
-        .catch((e) => console.log(e.response.data));
+        .catch((e) => setError(e.response.data));
     } else {
       if (userDetails.id !== Number(coachId)) return;
       axios
@@ -40,7 +40,7 @@ export default function Chat({ userDetails, userType, socket }) {
       axios
         .get(`http://localhost:3001/api/trainee/trainee-name/${coachId}`)
         .then(({ data }) => setTraineeName(data))
-        .catch((e) => console.log(e.response.data));
+        .catch((e) => setError(e.response.data));
     }
   }, [userDetails]);
 

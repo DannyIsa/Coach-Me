@@ -26,6 +26,8 @@ trainee.get("/trainee-name/:coachId", async (req, res) => {
 trainee.post("/request/send/:traineeId", (req, res) => {
   const { coachId, traineeName, content } = req.body;
   const { traineeId } = req.params;
+  const io = req.app.get("socketIo");
+
   if (!Number(coachId) || !Number(traineeId)) {
     return res.status(400).send("Invalid ID");
   }
@@ -39,7 +41,7 @@ trainee.post("/request/send/:traineeId", (req, res) => {
     content,
   })
     .then((data) => {
-      req.io.emit("request received", coachId);
+      io.emit("request received", coachId);
       res.status(201).send(data);
     })
     .catch(async (err) => {
@@ -54,7 +56,7 @@ trainee.post("/request/send/:traineeId", (req, res) => {
         request
           .update({ coach_id: coachId, content })
           .then(() => {
-            req.io.emit("request received", coachId);
+            io.emit("request received", coachId);
             return res.status(201).send(request);
           })
           .catch((err) => {

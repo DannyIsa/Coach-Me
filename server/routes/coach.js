@@ -60,6 +60,8 @@ coach.get("/requests/show/:coachId", async (req, res) => {
 coach.put("/request/accept/:coachId", async (req, res) => {
   const { coachId } = req.params;
   const { traineeId } = req.query;
+  const io = req.app.get("socketIo");
+
   if (!Number(coachId) || !Number(traineeId))
     res.status(400).send("Invalid ID");
   const request = await models.CoachRequest.findOne({
@@ -73,7 +75,7 @@ coach.put("/request/accept/:coachId", async (req, res) => {
         where: { trainee_id: traineeId, coach_id: coachId },
       })
         .then(() => {
-          req.io.emit("request handled", {
+          io.emit("request handled", {
             traineeId: Number(traineeId),
             coachId: Number(coachId),
             accept: true,
@@ -88,6 +90,8 @@ coach.put("/request/accept/:coachId", async (req, res) => {
 coach.put("/request/decline/:coachId", (req, res) => {
   const { coachId } = req.params;
   const { traineeId } = req.query;
+  const io = req.app.get("socketIo");
+
   if (!Number(coachId) || !Number(traineeId))
     return res.status(400).send("Invalid ID");
   models.CoachRequest.destroy({
@@ -97,7 +101,7 @@ coach.put("/request/decline/:coachId", (req, res) => {
       if (!data) {
         return res.status(404).send("No Client With That Id");
       }
-      req.io.emit("request handled", {
+      io.emit("request handled", {
         traineeId: Number(traineeId),
         coachId: Number(coachId),
         accept: false,
