@@ -42,24 +42,24 @@
     height: 50vh;
     // background-color: pink;
     justify-content: space-around;
-
-    .workout1 {
-      text-align: center;
-      padding: 0.5rem;
-      background-color: rgb(192, 237, 255);
-      border-radius: 15px;
-      height: 10rem;
-      word-wrap: break-word;
-    }
-    .workout2 {
-      text-align: center;
-      padding: 0.5rem;
-      background-color: rgb(129, 29, 46);
-      border-radius: 15px;
-      word-wrap: break-word;
-      height: 10rem;
-    }
   }
+  .workout1 {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: rgb(192, 237, 255);
+    border-radius: 15px;
+    height: 10rem;
+    word-wrap: break-word;
+  }
+  // .workout2 {
+  //   text-align: center;
+  //   padding: 0.5rem;
+  //   background-color: rgb(129, 29, 46);
+  //   border-radius: 15px;
+  //   word-wrap: break-word;
+  //   height: 10rem;
+  // }
+  // }
   // & > .charts {
   //   display: flex;
   //   justify-content: space-around;

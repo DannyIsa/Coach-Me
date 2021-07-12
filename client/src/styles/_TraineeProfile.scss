@@ -118,6 +118,33 @@
         .row {
           margin-top: 1.5rem;
         }
+
+        .d-flex {
+          & img {
+            border-radius: 10px;
+            width: 15rem;
+            height: 17rem;
+            float: right;
+            margin-bottom: 1.5rem;
+          }
+          & button {
+            border: none;
+          }
+          & .fa-fa {
+            border: none;
+            position: absolute;
+            left: 4rem;
+            bottom: 0.5rem;
+            // float: right;
+          }
+
+          & input {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 1.5rem;
+            width: 12rem;
+          }
+        }
       }
     }
 

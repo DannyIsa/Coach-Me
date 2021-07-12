@@ -5,7 +5,32 @@
   padding-top: 7rem;
 }
 
-.profile-image {
-  height: 200px;
-  width: 200px;
+.m-flex {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  /* height: 100vh; */
+  /* background-color: aquamarine; */
+}
+.m-flex img {
+  border-radius: 10px;
+  width: 15rem;
+  height: 15rem;
+  /* float: right; */
+  margin-bottom: 1rem;
+}
+.m-flex button {
+  border: none;
+}
+.m-flex .fa-fa {
+  border: none;
+  position: absolute;
+  left: 4rem;
+  bottom: 0.5rem;
+}
+.m-flex input {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1.5rem;
+  width: 12rem;
 }

@@ -52,22 +52,24 @@ function TraineeDashboard({ userDetails }) {
               <h3>No Workouts Remaining For Today!</h3>
             )}
           </div>
-          <div className="measured1">
-            {measured ? (
-              <h2>Measurements Registered!</h2>
-            ) : (
-              <Link to="/trainee/profile">Measure Yourself!</Link>
-            )}
-          </div>
-          <div className="diet1">
-            {eaten ? (
-              <h2>Meals Registered!</h2>
-            ) : (
-              <>
-                <h2>You Didn't Eat Today! </h2>
-                <Link to="/trainee/food">Please Register Your Meals!</Link>
-              </>
-            )}
+          <div className="workout3">
+            <div className="measured1">
+              {measured ? (
+                <h2>Measurements Registered!</h2>
+              ) : (
+                <Link to="/trainee/profile">Measure Yourself!</Link>
+              )}
+            </div>
+            <div className="diet1">
+              {eaten ? (
+                <h2>Meals Registered!</h2>
+              ) : (
+                <>
+                  <h2>You Didn't Eat Today! </h2>
+                  <Link to="/trainee/profile">Please Register Your Meals!</Link>
+                </>
+              )}
+            </div>
           </div>
         </>
       ) : (

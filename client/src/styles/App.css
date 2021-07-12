@@ -1208,6 +1208,19 @@ form.sign-in-form {
   padding-top: 7rem;
 }
 
+.trainee-dashboard .workout2 {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #811d2e;
+  border-radius: 15px;
+  word-wrap: break-word;
+  height: 7rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: fixed;
+}
+
 .coaches-list {
   height: 100vh;
   display: -webkit-box;
@@ -2055,6 +2068,32 @@ form.sign-in-form {
   margin-top: 1.5rem;
 }
 
+.profile-container .main-body .card .card-body .d-flex img {
+  border-radius: 10px;
+  width: 15rem;
+  height: 17rem;
+  float: right;
+  margin-bottom: 1.5rem;
+}
+
+.profile-container .main-body .card .card-body .d-flex button {
+  border: none;
+}
+
+.profile-container .main-body .card .card-body .d-flex .fa-fa {
+  border: none;
+  position: absolute;
+  left: 4rem;
+  bottom: 0.5rem;
+}
+
+.profile-container .main-body .card .card-body .d-flex input {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1.5rem;
+  width: 12rem;
+}
+
 .profile-container .main-body .mb-3,
 .profile-container .main-body .my-3 {
   margin-bottom: 1rem !important;
@@ -2219,22 +2258,13 @@ form.sign-in-form {
       justify-content: space-around;
 }
 
-.trainee-logs .workouts-dashboard .workout1 {
+.trainee-logs .workout1 {
   text-align: center;
   padding: 0.5rem;
   background-color: #c0edff;
   border-radius: 15px;
   height: 10rem;
   word-wrap: break-word;
-}
-
-.trainee-logs .workouts-dashboard .workout2 {
-  text-align: center;
-  padding: 0.5rem;
-  background-color: #811d2e;
-  border-radius: 15px;
-  word-wrap: break-word;
-  height: 10rem;
 }
 
 .chat-container {
