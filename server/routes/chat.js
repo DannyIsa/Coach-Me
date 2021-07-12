@@ -74,9 +74,8 @@ chat.get("/show/list/:coachId", async (req, res) => {
   const coach = await models.Coach.findOne({ where: { id: coachId } });
   if (!coach) return res.status(404).send("Coach Not Found");
   const chats = await coach.getChats({
-    attributes: ["trainee_id", "created_at"],
+    attributes: ["trainee_id"],
     group: ["trainee_id"],
-    order: ["created_at"],
   });
   const clients = await coach.getTrainees({
     attributes: [
@@ -95,21 +94,32 @@ chat.get("/show/list/:coachId", async (req, res) => {
         let trainee = await models.Trainee.findOne({
           where: { id: chat.toJSON().trainee_id },
         });
+        let lastMessage = await coach.getChats({
+          attributes: ["created_at"],
+          where: { trainee_id: chat.trainee_id },
+          order: [["created_at", "DESC"]],
+          limit: 1,
+        });
         if (!trainee) return;
-        return { trainee_name: trainee.toJSON().name, ...chat.toJSON() };
+        return {
+          trainee_name: trainee.toJSON().name,
+          trainee_id: chat.trainee_id,
+          created_at: lastMessage[0].toJSON().created_at,
+        };
       })
     );
     if (clients.length === 0) combined = chatList;
     else
       combined = chatList.concat(
-        clients.filter((client) =>
-          chatList.find(
-            (chat) => chat.trainee_id !== client.toJSON().trainee_id
-          )
+        clients.filter(
+          (client) =>
+            !chatList.find(
+              (chat) => chat.trainee_id === client.toJSON().trainee_id
+            )
         )
       );
   }
-
+  combined.sort((a, b) => b.created_at - a.created_at);
   return res.status(200).send(combined);
 });
 
