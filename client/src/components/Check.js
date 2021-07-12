@@ -6,7 +6,6 @@ import "../styles/Check.css";
 function Check({ user, loading, registered }) {
   const history = useHistory();
   useEffect(() => {
-    console.log(user, loading, registered);
     if (!loading) {
       if (user) {
         if (registered === true) history.push("/dashboard");

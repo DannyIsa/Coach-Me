@@ -68,4 +68,27 @@ chat.post("/:traineeId/:coachId", async (req, res) => {
   return res.status(201).send(message);
 });
 
+chat.get("/show/list/:coachId", async (req, res) => {
+  const { coachId } = req.params;
+  if (!coachId) return res.status(400).send("Id Required");
+  const coach = await models.Coach.findOne({ where: { id: coachId } });
+  if (!coach) return res.status(404).send("Coach Not Found");
+  const chats = await coach.getChats({
+    attributes: ["trainee_id", "created_at"],
+    group: ["trainee_id"],
+    order: ["created_at"],
+  });
+  if (!chats) return res.status(200).send([]);
+  const chatList = await Promise.all(
+    chats.map(async (chat) => {
+      let trainee = await models.Trainee.findOne({
+        where: { id: chat.toJSON().trainee_id },
+      });
+      if (!trainee) return;
+      return { trainee_name: trainee.toJSON().name, ...chat.toJSON() };
+    })
+  );
+  return res.status(200).send(chatList);
+});
+
 module.exports = chat;

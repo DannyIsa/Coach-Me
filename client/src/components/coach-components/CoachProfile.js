@@ -6,6 +6,7 @@ import userPic from "../../pics/user1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 import firebase from "firebase";
+import { Link } from "react-router-dom";
 
 function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
   const storage = firebase.storage();
@@ -14,6 +15,7 @@ function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
   const [image, setImage] = useState();
   const [uploadingImage, setUploadingImage] = useState();
   const setError = useContext(SetErrorContext);
+  const [chats, setChats] = useState([]);
 
   async function getNumberOfClients() {
     try {
@@ -22,6 +24,7 @@ function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
       );
       return clients.data.length;
     } catch (err) {
+      setError(err.response.data);
       return [];
     }
   }
@@ -32,6 +35,12 @@ function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
   useEffect(async () => {
     if (!userDetails) return;
     setClientsNumber(await getNumberOfClients());
+    try {
+      const chatList = await axios.get("/api/chat/show/list/" + userDetails.id);
+      setChats(chatList.data);
+    } catch (err) {
+      setError(err.response.data);
+    }
   }, [userDetails, render]);
 
   const updateImage = async () => {
@@ -211,7 +220,27 @@ function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
               </div>
               <div className="col-sm-6 mb-3">
                 <div className="card h-100">
-                  <div className="coach-info"></div>
+                  <div className="coach-info">
+                    <h2>Chats List:</h2>
+                    <div>
+                      {chats.map((chat, index) => (
+                        <div
+                          key={chat.trainee_id + "" + "index"}
+                          className="chat-list-item"
+                        >
+                          <Link
+                            to={`/chat/${chat.trainee_id}/${userDetails.id}`}
+                          >
+                            {chat.trainee_name + "- "}
+                            Last Message:{" "}
+                            {new Date(chat.created_at).toLocaleDateString() +
+                              ", " +
+                              new Date(chat.created_at).toLocaleTimeString()}
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
