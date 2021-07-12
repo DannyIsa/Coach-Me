@@ -240,116 +240,140 @@ function ClientCalendar({ userDetails }) {
         </tbody>
       </table>
       {field.type && (
-        <div className="control-div">
-          <div className="search-div">
-            <input className="search-input" onChange={handleSearch} />
-            <div className="results">
-              {results.map((item, index) => (
-                <div
-                  key={index}
-                  onClick={() => {
-                    setFoodAmount(1);
-                    setChosen(item);
-                  }}
-                  className={chosen && chosen.id === item.id ? "chosen" : ""}
-                >
-                  {item.name}
-                  <br />
-                </div>
-              ))}
-            </div>
-          </div>
-          {field.type === "Workout" && chosen && (
-            <div className="details-div">
-              <h1 className="workout-name">{chosen.name}</h1>
-              <ol>
-                {chosen.exercises.map((item, index) => (
-                  <li className="exercise-block" key={index}>
-                    <h2 className="exercise-name">{item.name}</h2>
-                    <h3 className="exercise-details">{`${item.min_reps} ${
-                      item.min_reps !== item.max_reps ? "-" + item.max_reps : ""
-                    } reps, rest for ${item.rest}s ${
-                      item.added_weight > 0
-                        ? "+" + item.added_weight + "kg "
-                        : ""
-                    }X${item.sets}`}</h3>
-                  </li>
-                ))}
-              </ol>
-              <h1>{"X" + chosen.sets}</h1>
-              <button onClick={addItem}>Add</button>
-            </div>
-          )}
-          {field.type !== "Workout" && chosen && (
-            <div className="details-div">
-              <h4>
-                {chosen.name} ({chosen.weight * foodAmount}g)
-              </h4>
-              <p>{chosen.calories * foodAmount} calories</p>
-              <p>{chosen.protein * foodAmount} protein</p>
-              <p>{chosen.carbs * foodAmount} carbs</p>
-              <p>{chosen.fats * foodAmount} fats</p>
-              <label htmlFor="amount">amount</label>
+        <div className="popup-background">
+          <div className="popup-content">
+            <button
+              onClick={() => setField({ day: null, type: null })}
+              className="close-popup-button"
+            >
+              CLOSE
+            </button>
+            <div className="search-div">
+              <h1 className="workout-name">
+                {field.day + " " + field.type + ": "}
+              </h1>
               <input
-                name="amount"
-                type="number"
-                value={foodAmount}
-                onChange={(e) => {
-                  setFoodAmount(Math.abs(e.target.value));
-                }}
+                placeholder="Search Food"
+                className="search-input"
+                onChange={handleSearch}
               />
-              <br />
-              <button onClick={addItem}>Add</button>
+              <div className="results">
+                {results.map((item, index) => (
+                  <div
+                    key={index}
+                    onClick={() => {
+                      setFoodAmount(1);
+                      setChosen(item);
+                    }}
+                    className={chosen && chosen.id === item.id ? "chosen" : ""}
+                  >
+                    {item.name}
+                    <br />
+                  </div>
+                ))}
+              </div>
             </div>
-          )}
-          <div className="chosen-calendar-div">
-            {chosenItems &&
-              (chosenItems.exercises ? (
-                <>
-                  <h1 className="workout-name">
-                    {field.day + ": " + chosenItems.name}
-                  </h1>
-                  <ol>
-                    {chosenItems.exercises.map((item, index) => (
-                      <li className="exercise-block" key={index}>
-                        <h2 className="exercise-name">{item.name}</h2>
-                        <h3 className="exercise-details">{`${item.min_reps} ${
-                          item.min_reps !== item.max_reps
-                            ? "-" + item.max_reps
-                            : ""
-                        } reps, rest for ${item.rest}s ${
-                          item.added_weight > 0
-                            ? "+" + item.added_weight + "kg "
-                            : ""
-                        }X${item.sets}`}</h3>
-                      </li>
-                    ))}
-                  </ol>
-                  <h1>{"X" + chosenItems.sets}</h1>
-                  <button onClick={() => removeItem(1)}>Remove</button>
-                </>
-              ) : (
-                <>
-                  <h1>{field.day + " " + field.type + ": "}</h1>
-                  <ol>
-                    {chosenItems.map((item) => (
-                      <li>
-                        <h4>
-                          {item.name} ({item.weight * item.amount}g)
-                        </h4>
-                        <p>{item.calories * item.amount} calories</p>
-                        <p>{item.protein * item.amount} protein</p>
-                        <p>{item.carbs * item.amount} carbs</p>
-                        <p>{item.fats * item.amount} fats</p>
-                        <br />
-                        <button onClick={() => removeItem(item.id)}>
-                          Remove
-                        </button>
-                      </li>
-                    ))}
-                  </ol>
-                </>
-              ))}
+            {field.type === "Workout" && chosen && (
+              <div className="details-div">
+                <h1 className="workout-name">{chosen.name}</h1>
+                <ol>
+                  {chosen.exercises.map((item, index) => (
+                    <li className="exercise-block" key={index}>
+                      <h2 className="exercise-name">{item.name}</h2>
+                      <h3 className="exercise-details">{`${item.min_reps} ${
+                        item.min_reps !== item.max_reps
+                          ? "-" + item.max_reps
+                          : ""
+                      } reps, rest for ${item.rest}s ${
+                        item.added_weight > 0
+                          ? "+" + item.added_weight + "kg "
+                          : ""
+                      }X${item.sets}`}</h3>
+                    </li>
+                  ))}
+                </ol>
+                <h1>{"X" + chosen.sets}</h1>
+                <button className="popup-add-button-workout" onClick={addItem}>
+                  Add
+                </button>
+              </div>
+            )}
+            {field.type !== "Workout" && chosen && (
+              <div className="details-div">
+                <h4>
+                  {chosen.name} ({chosen.weight * foodAmount}g)
+                </h4>
+                <p>{chosen.calories * foodAmount} calories</p>
+                <p>{chosen.protein * foodAmount} protein</p>
+                <p>{chosen.carbs * foodAmount} carbs</p>
+                <p>{chosen.fats * foodAmount} fats</p>
+                <div>
+                  <label htmlFor="amount">amount:</label>
+                  <input
+                    className="popup-amount-input"
+                    name="amount"
+                    type="number"
+                    value={foodAmount}
+                    onChange={(e) => {
+                      setFoodAmount(Math.abs(e.target.value));
+                    }}
+                  />
+                </div>
+                <br />
+                <button className="popup-add-button" onClick={addItem}>
+                  Add
+                </button>
+              </div>
+            )}
+            {/* <div className="chosen-calendar-div">
+              {chosenItems &&
+                (chosenItems.exercises ? (
+                  <>
+                    <h1 className="workout-name">
+                      {field.day + ": " + chosenItems.name}
+                    </h1>
+                    <ol>
+                      {chosenItems.exercises.map((item, index) => (
+                        <li className="exercise-block" key={index}>
+                          <h2 className="exercise-name">{item.name}</h2>
+                          <h3 className="exercise-details">{`${item.min_reps} ${
+                            item.min_reps !== item.max_reps
+                              ? "-" + item.max_reps
+                              : ""
+                          } reps, rest for ${item.rest}s ${
+                            item.added_weight > 0
+                              ? "+" + item.added_weight + "kg "
+                              : ""
+                          }X${item.sets}`}</h3>
+                        </li>
+                      ))}
+                    </ol>
+                    <h1>{"X" + chosenItems.sets}</h1>
+                    <button onClick={() => removeItem(1)}>Remove</button>
+                  </>
+                ) : (
+                  <div className="popup-chosen-food">
+                    <h1>{field.day + " " + field.type + ": "}</h1>
+                    <ol>
+                      {chosenItems.map((item) => (
+                        <li>
+                          <h4>
+                            {item.name} ({item.weight * item.amount}g)
+                          </h4>
+                          <p>{item.calories * item.amount} calories</p>
+                          <p>{item.protein * item.amount} protein</p>
+                          <p>{item.carbs * item.amount} carbs</p>
+                          <p>{item.fats * item.amount} fats</p>
+                          <br />
+                          <button onClick={() => removeItem(item.id)}>
+                            Remove
+                          </button>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                ))}
+            </div> */}
           </div>
         </div>
       )}

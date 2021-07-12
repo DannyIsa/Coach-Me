@@ -1892,16 +1892,67 @@ form.sign-in-form {
   color: black;
 }
 
-.weekly-calendar > .control-div {
+.weekly-calendar > .popup-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.weekly-calendar > .control-div > .details-div {
-  margin-left: 50px;
-  text-align: left;
-  display: block;
+.weekly-calendar > .popup-background > .popup-content {
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  height: 450px;
+  margin-top: 200px;
+  max-width: 900px;
+  background-color: white;
+  color: black;
+  overflow-y: auto;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.weekly-calendar > .popup-background > .popup-content > .close-popup-button {
+  position: fixed;
+  color: #ddd;
+}
+
+.weekly-calendar > .popup-background > .popup-content > .details-div {
+  border: solid black 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 3%;
+}
+
+.weekly-calendar > .popup-background > .popup-content > .details-div > .popup-add-button {
+  padding-top: 5px;
 }
 
 .profile-container {

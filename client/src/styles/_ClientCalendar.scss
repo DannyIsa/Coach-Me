@@ -1,10 +1,46 @@
 .weekly-calendar {
-  & > .control-div {
+  & > .popup-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
     display: flex;
-    & > .details-div {
-      margin-left: 50px;
-      text-align: left;
-      display: block;
+    text-align: center;
+    justify-content: center;
+    & > .popup-content {
+      & > .close-popup-button {
+        position: fixed;
+        color: #ddd;
+      }
+      position: relative;
+      padding: 20px;
+      width: 100%;
+      height: 450px;
+      margin-top: 200px;
+      max-width: 900px;
+      // max-height: 600px;
+      // min-height: 450px;
+      background-color: white;
+      color: black;
+      overflow-y: auto;
+      border-radius: 15px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      & > .details-div {
+        border: solid black 3px;
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        height: fit-content;
+        padding: 3%;
+        & > .popup-add-button {
+          padding-top: 5px;
+        }
+      }
     }
   }
 }
