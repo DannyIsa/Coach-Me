@@ -5,7 +5,7 @@ import EditableInput from "../EditableInput";
 import { SetErrorContext } from "../../App";
 import userPic from "../../pics/user1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
+import { faFileDownload, faUpload } from "@fortawesome/free-solid-svg-icons";
 import firebase from "firebase";
 
 function TraineeProfile({ userDetails, setUserDetails }) {
@@ -161,7 +161,13 @@ function TraineeProfile({ userDetails, setUserDetails }) {
                             accept=".jpg,.jpeg,.png,"
                             onChange={(e) => setImage(e.target.files[0])}
                           />
-                          <button onClick={updateImage}>Upload Image</button>
+                          <button onClick={updateImage}>
+                            <FontAwesomeIcon
+                              icon={faUpload}
+                              color="white"
+                              className="fa-fa"
+                            />
+                          </button>
                         </>
                       ) : (
                         <progress value={uploadingImage} max={100} />

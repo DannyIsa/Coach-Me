@@ -4,8 +4,9 @@ import EditableInput from "../EditableInput";
 import { SetErrorContext } from "../../App";
 import userPic from "../../pics/user1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
+import { faFileDownload, faUpload } from "@fortawesome/free-solid-svg-icons";
 import firebase from "firebase";
+import "../../styles/CoachDashboard.css";
 
 function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
   const storage = firebase.storage();
@@ -83,8 +84,12 @@ function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
               <div className="col-md-4 mb-3">
                 <div className="card">
                   <div className="card-body">
-                    <div className="d-flex">
+                    <div className="m-flex">
+                      <div className="mt-3">
+                        <h2>{userDetails.name}</h2>
+                      </div>
                       <img
+                        className="profile-image"
                         src={
                           userDetails.image !== "" ? userDetails.image : userPic
                         }
@@ -94,7 +99,6 @@ function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
                           e.target.onError = null;
                           e.target.src = userPic;
                         }}
-                        className="profile-image"
                       />
                       <label htmlFor="image">{`Updat${
                         uploadingImage ? "ing" : "e"
@@ -107,20 +111,18 @@ function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
                             accept=".jpg,.jpeg,.png,"
                             onChange={(e) => setImage(e.target.files[0])}
                           />
-                          <button onClick={updateImage}>Upload Image</button>
+                          <button onClick={updateImage}>
+                            {" "}
+                            <FontAwesomeIcon
+                              icon={faUpload}
+                              color="white"
+                              className="fa-fa"
+                            />
+                          </button>
                         </>
                       ) : (
                         <progress value={uploadingImage} max={100} />
                       )}
-                      <div className="mt-3">
-                        <h2>{userDetails.name}</h2>
-                        {/* <p className="text-secondary mb-1">Full Stack Developer</p> */}
-                        {/* <p className="text-muted font-size-sm">
-                        Bay Area, Israel, CA
-                      </p> */}
-                        {/* <button className="btn btn-primary">Follow</button> */}
-                        {/* <button className="btn btn-outline-primary">Message</button> */}
-                      </div>
                     </div>
                   </div>
                 </div>
