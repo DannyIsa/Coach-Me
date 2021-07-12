@@ -91,7 +91,7 @@ function App() {
     if (alertMessage) {
       setTimeout(() => {
         setAlertMessage();
-      }, 7500);
+      }, 4300);
     }
   }, [alertMessage]);
 
@@ -99,7 +99,7 @@ function App() {
     if (errorMessage) {
       setTimeout(() => {
         setErrorMessage();
-      }, 7500);
+      }, 4300);
     }
   }, [errorMessage]);
 

@@ -2471,8 +2471,8 @@ a:hover {
   text-align: center;
   border: black 3px solid;
   background-color: cadetblue;
-  -webkit-animation: drop 0.5s ease forwards, raise 0.7s 7s ease forwards;
-          animation: drop 0.5s ease forwards, raise 0.7s 7s ease forwards;
+  -webkit-animation: drop 0.3s ease forwards, raise 0.3s 3s ease forwards;
+          animation: drop 0.3s ease forwards, raise 0.3s 3s ease forwards;
 }
 
 .error-message-alert {
@@ -2486,8 +2486,8 @@ a:hover {
   text-align: center;
   border: black 3px solid;
   background-color: red;
-  -webkit-animation: drop 0.5s ease forwards, raise 0.7s 7s ease forwards;
-          animation: drop 0.5s ease forwards, raise 0.7s 7s ease forwards;
+  -webkit-animation: drop 0.5s ease forwards, raise 0.5s 3s ease forwards;
+          animation: drop 0.5s ease forwards, raise 0.5s 3s ease forwards;
 }
 
 @-webkit-keyframes drop {
