@@ -65,7 +65,7 @@ function TraineeDashboard({ userDetails }) {
             ) : (
               <>
                 <h2>You Didn't Eat Today! </h2>
-                <Link to="/trainee/profile">Please Register Your Meals!</Link>
+                <Link to="/trainee/food">Please Register Your Meals!</Link>
               </>
             )}
           </div>
