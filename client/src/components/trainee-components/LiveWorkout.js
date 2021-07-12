@@ -10,6 +10,7 @@ function LiveWorkout({ userDetails }) {
   const [timeArray, setTimeArray] = useState();
   const [index, setIndex] = useState(0);
   const [ended, setEnded] = useState(false);
+  const [currentExercise, setCurrentExercise] = useState();
   const { workoutId } = useParams();
   const history = useHistory();
   const setError = useContext(SetErrorContext);
@@ -51,9 +52,18 @@ function LiveWorkout({ userDetails }) {
     setTimeArray({ restArray, idArray });
   }, [currentWorkout]);
 
+  useEffect(() => {
+    if (!timeArray || !currentWorkout) return;
+    setCurrentExercise(
+      currentWorkout.exercises.find(
+        (exercise) => exercise.id === timeArray.idArray[index]
+      )
+    );
+  }, [index, timeArray, currentWorkout]);
+
   return (
     <div className="live-workout-page">
-      <h1 className="header">LiveWorkout </h1>
+      <h1 className="header"> </h1>
 
       {timeArray && !ended ? (
         <WorkoutTimer
@@ -86,25 +96,38 @@ function LiveWorkout({ userDetails }) {
       {currentWorkout && timeArray && (
         <div className="workout-details-div">
           <h1>{currentWorkout.name}</h1>
-          {currentWorkout.exercises.map((exercise) => {
-            return (
-              <div
-                className={
-                  timeArray.idArray[index] === exercise.id
-                    ? "working exercise"
-                    : "exercise"
-                }
-              >
-                <img src={exercise.image} alt={exercise.name} />
-                <h3>{exercise.name}</h3>
-                <p>Sets: {exercise.sets}</p>
-                <p>Minimum reps: {exercise.min_reps}</p>
-                <p>Maximum reps: {exercise.max_reps}</p>
-                <p>Adeed weight: {exercise.added_weight}</p>
-                <p>Rest: {exercise.rest}</p>
-              </div>
-            );
-          })}
+          {currentExercise && (
+            <div className="current-exercise">
+              <img src={currentExercise.image} alt={currentExercise.name} />
+              <h3>{currentExercise.name}</h3>
+              <p>Sets: {currentExercise.sets}</p>
+              <p>Minimum reps: {currentExercise.min_reps}</p>
+              <p>Maximum reps: {currentExercise.max_reps}</p>
+              <p>Adeed weight: {currentExercise.added_weight}</p>
+              <p>Rest: {currentExercise.rest}</p>
+            </div>
+          )}
+
+          {currentExercise &&
+            currentWorkout.exercises.map((exercise) => {
+              return (
+                <div
+                  className={
+                    currentExercise.id === exercise.id
+                      ? "working exercise"
+                      : "exercise"
+                  }
+                >
+                  <img src={exercise.image} alt={exercise.name} />
+                  <h3>{exercise.name}</h3>
+                  <p>Sets: {exercise.sets}</p>
+                  <p>Minimum reps: {exercise.min_reps}</p>
+                  <p>Maximum reps: {exercise.max_reps}</p>
+                  <p>Adeed weight: {exercise.added_weight}</p>
+                  <p>Rest: {exercise.rest}</p>
+                </div>
+              );
+            })}
           <h3>{"X" + currentWorkout.sets}</h3>
         </div>
       )}

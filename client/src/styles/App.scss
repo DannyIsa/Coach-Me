@@ -105,33 +105,43 @@ a:hover {
   color: #ffc719;
 }
 
-.alert-message {
-  width: 120px;
-  height: fit-content;
+.alert-popup {
+  width: max-content;
+  min-width: 300px;
+  height: 60px;
   position: fixed;
   top: 5.5rem;
   right: 0;
-  text-align: center;
-  border: black 3px solid;
-  background-color: cadetblue;
-  animation: drop 0.5s ease forwards, raise 0.7s 7s ease forwards;
-}
-
-.error-message-alert {
-  width: 120px;
-  height: fit-content;
-  position: fixed;
-  top: 5.5rem;
-  right: 0;
-  text-align: center;
-  border: black 3px solid;
-  background-color: red;
-  animation: drop 0.5s ease forwards, raise 0.7s 7s ease forwards;
+  border: 4px solid;
+  border-bottom-left-radius: 7px;
+  border-top-left-radius: 7px;
+  font-size: 1.3rem;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  animation: drop 0.7s ease forwards, raise 0.7s 3s ease forwards;
+  &.error-message {
+    background-color: red;
+    border-color: black;
+  }
+  &.alert-message {
+    background-color: rgb(20, 86, 161);
+    border-color: black;
+  }
 }
 
 @keyframes drop {
   0% {
-    right: -120px;
+    right: -500px;
+  }
+  10% {
+    right: -200px;
+  }
+  40% {
+    right: 30px;
+  }
+  60% {
+    right: 0px;
   }
   100% {
     right: 0px;
@@ -141,7 +151,10 @@ a:hover {
   0% {
     right: 0px;
   }
+  30% {
+    right: -300px;
+  }
   100% {
-    right: -120px;
+    right: -500px;
   }
 }

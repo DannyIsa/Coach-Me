@@ -91,7 +91,7 @@ function App() {
     if (alertMessage) {
       setTimeout(() => {
         setAlertMessage();
-      }, 7500);
+      }, 4300);
     }
   }, [alertMessage]);
 
@@ -99,7 +99,7 @@ function App() {
     if (errorMessage) {
       setTimeout(() => {
         setErrorMessage();
-      }, 7500);
+      }, 4300);
     }
   }, [errorMessage]);
 
@@ -224,9 +224,11 @@ function App() {
           </Switch>
         </SetErrorContext.Provider>
       </Router>
-      {alertMessage && <div className="alert-message">{alertMessage}</div>}
+      {alertMessage && (
+        <div className="alert-message alert-popup">{alertMessage}</div>
+      )}
       {errorMessage && (
-        <div className="error-message-alert">{errorMessage}</div>
+        <div className="error-message alert-popup">{errorMessage}</div>
       )}
     </div>
   );

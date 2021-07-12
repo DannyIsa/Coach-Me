@@ -2436,13 +2436,13 @@ form.sign-in-form {
 
 .chat-container .chat-component > .messages-div > .message-div > .message.sent {
   float: right;
-  background-color: white;
+  background-color: PaleGreen;
   color: black;
 }
 
 .chat-container .chat-component > .messages-div > .message-div > .message.received {
   float: left;
-  background-color: PaleGreen;
+  background-color: white;
   color: black;
 }
 
@@ -2511,39 +2511,48 @@ a:hover {
   color: #ffc719;
 }
 
-.alert-message {
-  width: 120px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+.alert-popup {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 300px;
+  height: 60px;
   position: fixed;
   top: 5.5rem;
   right: 0;
-  text-align: center;
-  border: black 3px solid;
-  background-color: cadetblue;
-  -webkit-animation: drop 0.5s ease forwards, raise 0.7s 7s ease forwards;
-          animation: drop 0.5s ease forwards, raise 0.7s 7s ease forwards;
+  border: 4px solid;
+  border-bottom-left-radius: 7px;
+  border-top-left-radius: 7px;
+  font-size: 1.3rem;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  -webkit-animation: drop 0.7s ease forwards, raise 0.7s 3s ease forwards;
+          animation: drop 0.7s ease forwards, raise 0.7s 3s ease forwards;
 }
 
-.error-message-alert {
-  width: 120px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  position: fixed;
-  top: 5.5rem;
-  right: 0;
-  text-align: center;
-  border: black 3px solid;
+.alert-popup.error-message {
   background-color: red;
-  -webkit-animation: drop 0.5s ease forwards, raise 0.7s 7s ease forwards;
-          animation: drop 0.5s ease forwards, raise 0.7s 7s ease forwards;
+  border-color: black;
+}
+
+.alert-popup.alert-message {
+  background-color: #1456a1;
+  border-color: black;
 }
 
 @-webkit-keyframes drop {
   0% {
-    right: -120px;
+    right: -500px;
+  }
+  10% {
+    right: -200px;
+  }
+  40% {
+    right: 30px;
+  }
+  60% {
+    right: 0px;
   }
   100% {
     right: 0px;
@@ -2552,7 +2561,16 @@ a:hover {
 
 @keyframes drop {
   0% {
-    right: -120px;
+    right: -500px;
+  }
+  10% {
+    right: -200px;
+  }
+  40% {
+    right: 30px;
+  }
+  60% {
+    right: 0px;
   }
   100% {
     right: 0px;
@@ -2563,8 +2581,11 @@ a:hover {
   0% {
     right: 0px;
   }
+  30% {
+    right: -300px;
+  }
   100% {
-    right: -120px;
+    right: -500px;
   }
 }
 
@@ -2572,8 +2593,11 @@ a:hover {
   0% {
     right: 0px;
   }
+  30% {
+    right: -300px;
+  }
   100% {
-    right: -120px;
+    right: -500px;
   }
 }
 /*# sourceMappingURL=App.css.map */
