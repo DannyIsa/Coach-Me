@@ -54,9 +54,10 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
             if (
               obj.image.name !== "" &&
               !obj.image.name.endsWith(".jpg") &&
+              !obj.image.name.endsWith(".jpeg") &&
               !obj.image.name.endsWith(".png")
             ) {
-              setError("File Type needs to be jpg/png");
+              setError("File Type needs to be jpg/jpeg/png");
               return;
             }
             if (obj.image.name !== "") {
@@ -166,7 +167,7 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
                 type="file"
                 required="required"
                 name="image"
-                accept=".jpg,.png,"
+                accept=".jpg,.png,jpeg"
               />
             </div>
           </div>

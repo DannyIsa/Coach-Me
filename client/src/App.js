@@ -20,7 +20,6 @@ import Details from "./components/Details";
 import Chat from "./components/Chat";
 
 import TraineeDashboard from "./components/trainee-components/TraineeDashboard";
-import CoachDashboard from "./components/coach-components/CoachDashboard";
 import CoachRouter from "./components/routers/CoachRouter";
 import TraineeRouter from "./components/routers/TraineeRouter";
 import { io } from "socket.io-client";
@@ -173,6 +172,7 @@ function App() {
                       {userType === "Coach" ? (
                         <CoachProfile
                           userDetails={userDetails}
+                          setUserDetails={setUserDetails}
                           alertMessage={alertMessage}
                         />
                       ) : (

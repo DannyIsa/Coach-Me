@@ -28,9 +28,11 @@ function CoachDashboard({ userDetails }) {
                   if (
                     dataObj.image.name !== "" &&
                     !dataObj.image.name.endsWith(".jpg") &&
+                    !dataObj.image.name.endsWith(".jpeg") &&
+
                     !dataObj.image.name.endsWith(".png")
                   ) {
-                    setError("File Type needs to be jpg/png");
+                    setError("File Type needs to be jpg/jpeg/png");
                     return;
                   }
                   if (dataObj.image.name !== "") {
@@ -57,7 +59,7 @@ function CoachDashboard({ userDetails }) {
                   <h2 className="label-name" htmlFor="image">
                     Upload Your Profile Image 📷:
                   </h2>
-                  <input type="file" name="image" accept=".jpg,.png" />
+                  <input type="file" name="image" accept=".jpg,.jpeg/.png" />
                 </div>
 
                 <div className="form-block">

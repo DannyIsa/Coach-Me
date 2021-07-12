@@ -67,10 +67,12 @@ function AddExercise({ userDetails }) {
               if (
                 dataObj.image.name !== "" &&
                 !dataObj.image.name.endsWith(".jpg") &&
+                !dataObj.image.name.endsWith(".jpeg") &&
+
                 !dataObj.image.name.endsWith(".png") &&
                 !dataObj.image.name.endsWith(".gif")
               ) {
-                setError("File Type needs to be jpg/png/gif");
+                setError("File Type needs to be jpg/jpeg/png/gif");
                 return;
               }
               if (dataObj.image.name !== "") {
@@ -136,7 +138,7 @@ function AddExercise({ userDetails }) {
               <h2 className="label-name" htmlFor="image">
                 Image:
               </h2>
-              <input type="file" name="image" accept=".jpg,.png,.gif" />
+              <input type="file" name="image" accept=".jpg,.jpeg,.png,.gif" />
             </div>
 
             <div className="form-block">

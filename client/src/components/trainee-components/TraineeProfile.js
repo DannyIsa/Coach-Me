@@ -78,7 +78,9 @@ function TraineeProfile({ userDetails, setUserDetails }) {
     if (!image) return;
     if (
       image.name === "" ||
-      (!image.name.endsWith(".jpg") && !image.name.endsWith(".png"))
+      (!image.name.endsWith(".jpg") &&
+        !image.name.endsWith(".jpeg") &&
+        !image.name.endsWith(".png"))
     )
       return;
     const uploadTask = storage.ref(image.name).put(image);
@@ -137,7 +139,9 @@ function TraineeProfile({ userDetails, setUserDetails }) {
                         <h2>{userDetails.name}</h2>
                       </div>
                       <img
-                        src={userDetails.image ? userDetails.image : userPic}
+                        src={
+                          userDetails.image !== "" ? userDetails.image : userPic
+                        }
                         alt=""
                         onError={(e) => {
                           setError("Couldn't Load Image");
@@ -154,7 +158,7 @@ function TraineeProfile({ userDetails, setUserDetails }) {
                           <input
                             type="file"
                             name="image"
-                            accept=".jpg,.png,"
+                            accept=".jpg,.jpeg,.png,"
                             onChange={(e) => setImage(e.target.files[0])}
                           />
                           <button onClick={updateImage}>Upload Image</button>
