@@ -63,72 +63,80 @@ function LiveWorkout({ userDetails }) {
 
   return (
     <div className="live-workout-page">
-      <h1 className="header"> </h1>
-
-      {timeArray && !ended ? (
-        <WorkoutTimer
-          rest={timeArray.restArray[index]}
-          index={index}
-          raiseIndex={() => {
-            if (index < timeArray.restArray.length - 1) setIndex(index + 1);
-            else setEnded(true);
-          }}
-        />
-      ) : (
-        <>
-          <h1>Workout Ended</h1>
-          <button
-            onClick={() => {
-              axios
-                .post("/api/logs/workout/add/" + userDetails.id, {
-                  workoutId: currentWorkout.id,
-                })
-                .then(() => {
-                  history.push("/trainee/calendar");
-                })
-                .catch((err) => setError(err.response.data));
-            }}
-          >
-            Submit Workout
-          </button>
-        </>
-      )}
       {currentWorkout && timeArray && (
         <div className="workout-details-div">
-          <h1>{currentWorkout.name}</h1>
+          <h1 className="header">{currentWorkout.name}</h1>
           {currentExercise && (
-            <div className="current-exercise">
-              <img src={currentExercise.image} alt={currentExercise.name} />
-              <h3>{currentExercise.name}</h3>
-              <p>Sets: {currentExercise.sets}</p>
-              <p>Minimum reps: {currentExercise.min_reps}</p>
-              <p>Maximum reps: {currentExercise.max_reps}</p>
-              <p>Adeed weight: {currentExercise.added_weight}</p>
-              <p>Rest: {currentExercise.rest}</p>
+            <div className="show-div">
+              <div className="current-exercise">
+                <img src={currentExercise.image} alt={currentExercise.name} />
+                <h1 className="exercise-name">{currentExercise.name}</h1>
+                <h2 className="exercise-details">{`${
+                  currentExercise.min_reps
+                } ${
+                  currentExercise.min_reps !== currentExercise.max_reps
+                    ? "-" + currentExercise.max_reps
+                    : ""
+                } reps, rest for ${currentExercise.rest}s ${
+                  currentExercise.added_weight > 0
+                    ? "+" + currentExercise.added_weight + "kg "
+                    : ""
+                }X${currentExercise.sets}`}</h2>
+              </div>
+              {timeArray && !ended ? (
+                <WorkoutTimer
+                  rest={timeArray.restArray[index]}
+                  index={index}
+                  raiseIndex={() => {
+                    if (index < timeArray.restArray.length - 1)
+                      setIndex(index + 1);
+                    else setEnded(true);
+                  }}
+                />
+              ) : (
+                <div className="workout-ended">
+                  <h1>Workout Ended</h1>
+                  <button
+                    onClick={() => {
+                      axios
+                        .post("/api/logs/workout/add/" + userDetails.id, {
+                          workoutId: currentWorkout.id,
+                        })
+                        .then(() => {
+                          history.push("/trainee/calendar");
+                        })
+                        .catch((err) => setError(err.response.data));
+                    }}
+                  >
+                    Submit Workout
+                  </button>
+                </div>
+              )}
             </div>
           )}
-
-          {currentExercise &&
-            currentWorkout.exercises.map((exercise) => {
-              return (
-                <div
-                  className={
-                    currentExercise.id === exercise.id
-                      ? "working exercise"
-                      : "exercise"
-                  }
-                >
-                  <img src={exercise.image} alt={exercise.name} />
-                  <h3>{exercise.name}</h3>
-                  <p>Sets: {exercise.sets}</p>
-                  <p>Minimum reps: {exercise.min_reps}</p>
-                  <p>Maximum reps: {exercise.max_reps}</p>
-                  <p>Adeed weight: {exercise.added_weight}</p>
-                  <p>Rest: {exercise.rest}</p>
-                </div>
-              );
-            })}
-          <h3>{"X" + currentWorkout.sets}</h3>
+          <div className="exercises-list">
+            {currentExercise &&
+              currentWorkout.exercises.map((exercise) => {
+                return (
+                  <div
+                    className={
+                      currentExercise.id === exercise.id
+                        ? "working exercise"
+                        : "exercise"
+                    }
+                  >
+                    <img src={exercise.image} alt={exercise.name} />
+                    <h3>{exercise.name}</h3>
+                    <p>Sets: {exercise.sets}</p>
+                    <p>Minimum reps: {exercise.min_reps}</p>
+                    <p>Maximum reps: {exercise.max_reps}</p>
+                    <p>Adeed weight: {exercise.added_weight}</p>
+                    <p>Rest: {exercise.rest}</p>
+                  </div>
+                );
+              })}
+          </div>
+          <h1>{"X" + currentWorkout.sets}</h1>
         </div>
       )}
     </div>

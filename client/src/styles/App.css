@@ -2210,17 +2210,49 @@ form.sign-in-form {
   color: white;
 }
 
-.live-workout-page > .header {
-  padding-top: 90px;
+.live-workout-page {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  overflow-x: hidden;
 }
 
-.live-workout-page > .workout-details-div {
+.live-workout-page > .header {
+  padding-top: 30px;
+}
+
+.live-workout-page > .workout-details-div > .show-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.live-workout-page > .workout-details-div > .show-div > .timerContainer {
+  border: 3px solid black;
+  padding: 20px 70px 20px 70px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 7px;
+}
+
+.live-workout-page > .workout-details-div > .show-div > .current-exercise > img {
+  height: 300px;
+}
+
+.live-workout-page > .workout-details-div > .exercises-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-top: 50px;
 }
 
 .live-workout-page .exercise {
