@@ -95,13 +95,13 @@
           }
           &.sent {
             float: right;
-            background-color: white;
+            background-color: PaleGreen;
             color: black;
             // margin-right: 30px;
           }
           &.received {
             float: left;
-            background-color: PaleGreen;
+            background-color: white;
             color: black;
           }
         }

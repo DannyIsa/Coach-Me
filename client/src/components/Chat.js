@@ -56,7 +56,7 @@ export default function Chat({ userDetails, userType }) {
     });
   }, [userDetails, messages]);
 
-  const sendMessage = async () => {
+  const sendMessage = async (e) => {
     if (!messageContent || messageContent === "") return;
     try {
       const message = await axios.post(`/api/chat/${traineeId}/${coachId}`, {
@@ -93,6 +93,12 @@ export default function Chat({ userDetails, userType }) {
             value={messageContent}
             onChange={(e) => setMessageContent(e.target.value)}
             placeholder="Send Message"
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                sendMessage(e);
+                e.target.focus();
+              }
+            }}
           />
           <button onClick={sendMessage} className="send-chat-btn">
             {" "}
