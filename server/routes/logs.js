@@ -123,6 +123,7 @@ logs.get("/workout/show/:traineeId", async (req, res) => {
   const traineeWorkoutsLog = await models.WorkoutLog.findAll({
     attributes: ["workout_id", "created_at"],
     where: { trainee_id: traineeId },
+    order: [["createdAt"]],
   });
   const workouts = await Promise.all(
     traineeWorkoutsLog.map(async (log) => {
@@ -192,6 +193,7 @@ logs.get("/measure/show/:traineeId", async (req, res) => {
       [sequelize.fn("date", sequelize.col("MeasureLog.created_at")), "date"],
     ],
     where: { trainee_id: traineeId },
+    order: [["created_at"]],
   });
   if (!traineeMeasureLog) return res.status(200).send([]);
 
@@ -238,7 +240,7 @@ logs.get("/diet/show/:traineeId", async (req, res) => {
   res.status(200).send(items);
 });
 
-logs.get("/diet/show/all/:traineeId", async (req, res) => {
+logs.get("/diet/show/stats/:traineeId", async (req, res) => {
   const { traineeId } = req.params;
   if (!Number(traineeId)) return res.status(400).send("Id Required");
   const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
@@ -270,6 +272,7 @@ logs.get("/diet/show/all/:traineeId", async (req, res) => {
       attributes: ["calories", "protein", "fats", "carbs"],
     },
     group: ["date"],
+    order: [["created_at"]],
   });
   if (!dietLogs) return [];
   let dataToSend = [...dietLogs].map((log) => {
@@ -329,4 +332,51 @@ logs.get("/workout/check/:traineeId", async (req, res) => {
     workout: { ...workout.toJSON(), day: calendar[0].day },
   });
 });
+
+logs.get("/measure/check/:traineeId", async (req, res) => {
+  const { traineeId } = req.params;
+  if (!traineeId) return res.status(400).send("Id Required");
+  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
+  if (!trainee) return res.status(404).send("No Trainee Found");
+  const date = new Date().toISOString().slice(0, 10);
+  const log = await models.MeasureLog.findOne({
+    where: {
+      [Op.and]: [
+        { trainee_id: traineeId },
+        [
+          sequelize.where(
+            sequelize.fn("date", sequelize.col("created_at")),
+            "=",
+            date
+          ),
+        ],
+      ],
+    },
+  });
+  return res.status(200).send(log ? true : false);
+});
+
+logs.get("/diet/check/:traineeId", async (req, res) => {
+  const { traineeId } = req.params;
+  if (!traineeId) return res.status(400).send("Id Required");
+  const trainee = await models.Trainee.findOne({ where: { id: traineeId } });
+  if (!trainee) return res.status(404).send("No Trainee Found");
+  const date = new Date().toISOString().slice(0, 10);
+  const log = await models.EatenFood.findOne({
+    where: {
+      [Op.and]: [
+        { trainee_id: traineeId },
+        [
+          sequelize.where(
+            sequelize.fn("date", sequelize.col("created_at")),
+            "=",
+            date
+          ),
+        ],
+      ],
+    },
+  });
+  return res.status(200).send(log ? true : false);
+});
+
 module.exports = logs;

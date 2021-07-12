@@ -8,7 +8,6 @@ function TraineeLogs({ userDetails, type }) {
   const [workoutLogs, setWorkoutLogs] = useState([]);
   const [measureLogs, setMeasureLogs] = useState([]);
   const [dietLogs, setDietLogs] = useState([]);
-  const [wod, setWod] = useState({ done: false, workout: undefined });
   const setError = useContext(SetErrorContext);
 
   useEffect(async () => {
@@ -16,13 +15,10 @@ function TraineeLogs({ userDetails, type }) {
     try {
       const mLogs = await axios.get("/api/logs/measure/show/" + userDetails.id);
       const dLogs = await axios.get(
-        "/api/logs/diet/show/all/" + userDetails.id
+        "/api/logs/diet/show/stats/" + userDetails.id
       );
       const wLogs = await axios.get("/api/logs/workout/show/" + userDetails.id);
-      const todayWorkout = await axios.get(
-        "/api/logs/workout/check/" + userDetails.id
-      );
-      setWod(todayWorkout.data);
+
       setWorkoutLogs(wLogs.data);
       setDietLogs(dLogs.data);
       setMeasureLogs(mLogs.data);
@@ -157,25 +153,6 @@ function TraineeLogs({ userDetails, type }) {
                   <h3>No Previous Workouts</h3>
                 )}
               </div>
-              {type === "Trainee" && (
-                <div className="workout2">
-                  <h2>Today's Workout: </h2>
-                  {wod.workout ? (
-                    wod.done ? (
-                      <h3>
-                        No Workouts Remaining
-                        <br /> For Today!
-                      </h3>
-                    ) : (
-                      <Link to={`/trainee/workout/${wod.workout.id}`}>
-                        {wod.workout.name}
-                      </Link>
-                    )
-                  ) : (
-                    <h3>No Workouts Remaining For Today!</h3>
-                  )}
-                </div>
-              )}
             </div>
           </div>
         </>

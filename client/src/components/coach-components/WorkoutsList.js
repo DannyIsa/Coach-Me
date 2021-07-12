@@ -50,13 +50,13 @@ function WorkoutsList({ userDetails }) {
       <h1>Your Workouts:</h1>
       <div className="ticket-list">
         {workouts.map((item, index) => (
-          <div className="workout-ticket">
+          <div className="workout-ticket" key={item.name + "" + index}>
             <div className="ticket-content">
               <span className="ticket-title">{item.name}</span>
               <span className="first">
                 <ol>
                   {item.exercises.map((item) => (
-                    <li className="exercise-block">
+                    <li className="exercise-block" key={item.name + "" + index}>
                       <h2 className="exercise-name">{item.name}</h2>
                       <h3 className="exercise-details">{`${item.min_reps} ${
                         item.min_reps !== item.max_reps

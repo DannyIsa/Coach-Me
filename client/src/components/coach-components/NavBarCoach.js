@@ -195,17 +195,17 @@ function NavBarCoach({ signOut, userDetails, alertMessage }) {
             </div>
           </li>
           <li className="option mobile-option" onClick={closeMobileMenu}>
-            <Link className="sign-in link" onClick={() => signOut(history)}>
+            <a className="sign-in link" onClick={() => signOut(history)}>
               SignOut
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
       <ul className="signIn">
         <li onClick={closeMobileMenu}>
-          <Link className="signIn-btn" onClick={() => signOut(history)}>
+          <a className="signIn-btn" onClick={() => signOut(history)}>
             SignOut
-          </Link>
+          </a>
         </li>
       </ul>
       <div className="mobile-menu" onClick={handleClick}>
