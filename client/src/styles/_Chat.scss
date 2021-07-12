@@ -92,6 +92,7 @@
           & > .content {
             white-space: normal;
             font-size: 17px;
+            word-break: break-word;
           }
           &.sent {
             float: right;
