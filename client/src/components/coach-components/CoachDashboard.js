@@ -57,7 +57,7 @@ function CoachDashboard({ userDetails }) {
                   <h2 className="label-name" htmlFor="image">
                     Upload Your Profile Image 📷:
                   </h2>
-                  <input type="file" name="image" accept=".jpg,.png,.gif" />
+                  <input type="file" name="image" accept=".jpg,.png" />
                 </div>
 
                 <div className="form-block">

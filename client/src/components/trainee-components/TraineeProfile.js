@@ -4,16 +4,19 @@ import pdf from "../../documents/health_declaration.pdf";
 import EditableInput from "../EditableInput";
 import { SetErrorContext } from "../../App";
 import userPic from "../../pics/user1.png";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
+import firebase from "firebase";
 
-function TraineeProfile({ userDetails }) {
+function TraineeProfile({ userDetails, setUserDetails }) {
   const [measureLogs, setMeasureLogs] = useState({});
   const [editMode, setEditMode] = useState(false);
   const setError = useContext(SetErrorContext);
   const [coach, setCoach] = useState();
   const [leavePopup, setLeavePopup] = useState(false);
+  const [image, setImage] = useState();
+  const [uploadingImage, setUploadingImage] = useState();
+  const storage = firebase.storage();
 
   const getData = () => {
     axios
@@ -55,7 +58,6 @@ function TraineeProfile({ userDetails }) {
   };
 
   useEffect(() => {
-    console.log(userDetails);
     if (!userDetails) return;
     getData();
   }, [userDetails]);
@@ -65,10 +67,51 @@ function TraineeProfile({ userDetails }) {
       .patch(
         `/api/trainee/coach/leave/${userDetails.id}?coachId=${userDetails.coach_id}`
       )
-      .then(() => setCoach())
+      .then(() => {
+        setUserDetails({ ...userDetails, coach_id: 0 });
+      })
       .catch((err) => setError(err.response.data))
       .finally(() => setLeavePopup(false));
   };
+
+  const updateImage = async () => {
+    if (!image) return;
+    if (
+      image.name === "" ||
+      (!image.name.endsWith(".jpg") && !image.name.endsWith(".png"))
+    )
+      return;
+    const uploadTask = storage.ref(image.name).put(image);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        setUploadingImage(
+          Math.floor((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+        );
+      },
+      (err) => {
+        setError(err.message);
+        setUploadingImage();
+      },
+      () => {
+        uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) => {
+          try {
+            console.log(downloadURL);
+            const { data } = await axios.put(
+              "/api/user/image/change/" + userDetails.id,
+              { userType: "Trainee", image: downloadURL }
+            );
+            setUserDetails(data);
+            setUploadingImage();
+          } catch (err) {
+            setError(err.response.data);
+            setUploadingImage();
+          }
+        });
+      }
+    );
+  };
+
   return (
     <div className="profile-container">
       {userDetails ? (
@@ -90,14 +133,35 @@ function TraineeProfile({ userDetails }) {
                 <div className="card">
                   <div className="card-body">
                     <div className="d-flex">
-                      <img
-                        src={userDetails.image ? userDetails.image : userPic}
-                        alt="Admin"
-                        className="profile-image"
-                      />
                       <div className="mt-3">
                         <h2>{userDetails.name}</h2>
                       </div>
+                      <img
+                        src={userDetails.image ? userDetails.image : userPic}
+                        alt=""
+                        onError={(e) => {
+                          setError("Couldn't Load Image");
+                          e.target.onError = null;
+                          e.target.src = userPic;
+                        }}
+                        className="profile-image"
+                      />
+                      <label htmlFor="image">{`Updat${
+                        uploadingImage ? "ing" : "e"
+                      } Profile Picture`}</label>
+                      {!uploadingImage ? (
+                        <>
+                          <input
+                            type="file"
+                            name="image"
+                            accept=".jpg,.png,"
+                            onChange={(e) => setImage(e.target.files[0])}
+                          />
+                          <button onClick={updateImage}>Upload Image</button>
+                        </>
+                      ) : (
+                        <progress value={uploadingImage} max={100} />
+                      )}
                     </div>
                   </div>
                 </div>

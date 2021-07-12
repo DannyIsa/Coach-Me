@@ -9,12 +9,15 @@ import WeeklyCalendar from "../trainee-components/WeeklyCalendar";
 import TraineeProfile from "../trainee-components/TraineeProfile";
 import LiveWorkout from "../trainee-components/LiveWorkout";
 import CaloriesTracker from "../trainee-components/food-components/CaloriesTracker";
-function TraineeRouter({ userDetails, alertMessage }) {
+function TraineeRouter({ userDetails, setUserDetails }) {
   return (
     <Router>
       <Switch>
         <Route exact path="/trainee/profile">
-          <TraineeProfile userDetails={userDetails} />
+          <TraineeProfile
+            userDetails={userDetails}
+            setUserDetails={setUserDetails}
+          />
         </Route>
 
         <Route exact path="/trainee/calendar">

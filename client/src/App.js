@@ -194,6 +194,7 @@ function App() {
                         <TraineeRouter
                           userDetails={userDetails}
                           alertMessage={alertMessage}
+                          setUserDetails={setUserDetails}
                         />
                       ) : (
                         <Redirect to="/" />

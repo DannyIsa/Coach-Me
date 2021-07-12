@@ -136,28 +136,21 @@ user.put("/details/:id", (req, res) => {
     .catch((err) => res.status(400).send(err));
 });
 
-user.put("/image/add/:userId", async (req, res) => {
+user.put("/image/change/:userId", async (req, res) => {
   const { userId } = req.params;
-  const { image } = req.body;
-  const coach = await models.Coach.findOne({ where: { id: userId } });
-  const trainee = await models.Trainee.findOne({ where: { id: userId } });
-
-  if (coach) {
-    coach
-      .update({
-        image,
-      })
-      .then((data) => res.status(201).send(data))
-      .catch((err) => res.status(400).send(err));
-  } else if (trainee) {
-    trainee
-      .update({
-        image,
-      })
-      .then((data) => res.status(201).send(data))
-      .catch((err) => res.status(400).send(err));
-  } else if (!coach && !trainee)
-    return res.status(404).send("No Matching User");
+  const { image, userType } = req.body;
+  if (!image || image === "") return res.status(400).send("Invalid Image");
+  if (!userId) return res.status(400).send("Invalid Id");
+  if (!userType || (userType !== "Coach" && userType !== "Trainee"))
+    return res.status(400).send("Invalid User Type");
+  const user = await models[userType].findOne({ where: { id: userId } });
+  if (!user) return res.status(404).send("User Not Found");
+  user
+    .update({
+      image,
+    })
+    .then((data) => res.status(201).send(data))
+    .catch((err) => res.status(400).send(err));
 });
 
 module.exports = user;
