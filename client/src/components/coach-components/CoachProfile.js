@@ -234,10 +234,12 @@ function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
                             to={`/chat/${chat.trainee_id}/${userDetails.id}`}
                           >
                             {chat.trainee_name + "- "}
-                            Last Message:{" "}
-                            {new Date(chat.created_at).toLocaleDateString() +
-                              ", " +
-                              new Date(chat.created_at).toLocaleTimeString()}
+                            {chat.created_at
+                              ? "Last Message: " +
+                                new Date(chat.created_at).toLocaleDateString() +
+                                ", " +
+                                new Date(chat.created_at).toLocaleTimeString()
+                              : "No Messages"}
                           </Link>
                         </div>
                       ))}

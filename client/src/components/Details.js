@@ -167,7 +167,7 @@ function Details({ userDetails, userType, setRegistered, setReqDone }) {
                 type="file"
                 required="required"
                 name="image"
-                accept=".jpg,.png,jpeg"
+                accept=".jpg,.png,.jpeg"
               />
             </div>
           </div>

@@ -78,17 +78,39 @@ chat.get("/show/list/:coachId", async (req, res) => {
     group: ["trainee_id"],
     order: ["created_at"],
   });
-  if (!chats) return res.status(200).send([]);
-  const chatList = await Promise.all(
-    chats.map(async (chat) => {
-      let trainee = await models.Trainee.findOne({
-        where: { id: chat.toJSON().trainee_id },
-      });
-      if (!trainee) return;
-      return { trainee_name: trainee.toJSON().name, ...chat.toJSON() };
-    })
-  );
-  return res.status(200).send(chatList);
+  const clients = await coach.getTrainees({
+    attributes: [
+      ["name", "trainee_name"],
+      ["id", "trainee_id"],
+    ],
+  });
+
+  if (!chats && !clients) return res.status(200).send([]);
+  let combined = [];
+
+  if (chats.length === 0 && clients.length > 0) combined = clients;
+  else if (chats.length > 0) {
+    const chatList = await Promise.all(
+      chats.map(async (chat) => {
+        let trainee = await models.Trainee.findOne({
+          where: { id: chat.toJSON().trainee_id },
+        });
+        if (!trainee) return;
+        return { trainee_name: trainee.toJSON().name, ...chat.toJSON() };
+      })
+    );
+    if (clients.length === 0) combined = chatList;
+    else
+      combined = chatList.concat(
+        clients.filter((client) =>
+          chatList.find(
+            (chat) => chat.trainee_id !== client.toJSON().trainee_id
+          )
+        )
+      );
+  }
+
+  return res.status(200).send(combined);
 });
 
 module.exports = chat;
