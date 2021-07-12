@@ -53,7 +53,7 @@ function LiveWorkout({ userDetails }) {
 
   return (
     <div className="live-workout-page">
-      <h1 className="header">LiveWorkout </h1>
+      <h1 className="header"> </h1>
 
       {timeArray && !ended ? (
         <WorkoutTimer
@@ -91,15 +91,21 @@ function LiveWorkout({ userDetails }) {
               <div
                 className={
                   timeArray.idArray[index] === exercise.id
-                    ? "working exercise"
+                    ? "working-exercise"
                     : "exercise"
                 }
               >
-                <img src={exercise.image} alt={exercise.name} />
+                <img
+                  className="workout-img"
+                  src={exercise.image}
+                  alt={exercise.name}
+                />
                 <h3>{exercise.name}</h3>
                 <p>Sets: {exercise.sets}</p>
-                <p>Minimum reps: {exercise.min_reps}</p>
-                <p>Maximum reps: {exercise.max_reps}</p>
+                <p>
+                  reps: {exercise.min_reps} - {exercise.max_reps}
+                </p>
+
                 <p>Adeed weight: {exercise.added_weight}</p>
                 <p>Rest: {exercise.rest}</p>
               </div>
