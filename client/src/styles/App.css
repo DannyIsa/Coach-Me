@@ -1208,6 +1208,19 @@ form.sign-in-form {
   padding-top: 7rem;
 }
 
+.trainee-dashboard .workout2 {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #811d2e;
+  border-radius: 15px;
+  word-wrap: break-word;
+  height: 7rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: fixed;
+}
+
 .coaches-list {
   height: 100vh;
   display: -webkit-box;
@@ -2245,22 +2258,13 @@ form.sign-in-form {
       justify-content: space-around;
 }
 
-.trainee-logs .workouts-dashboard .workout1 {
+.trainee-logs .workout1 {
   text-align: center;
   padding: 0.5rem;
   background-color: #c0edff;
   border-radius: 15px;
   height: 10rem;
   word-wrap: break-word;
-}
-
-.trainee-logs .workouts-dashboard .workout2 {
-  text-align: center;
-  padding: 0.5rem;
-  background-color: #811d2e;
-  border-radius: 15px;
-  word-wrap: break-word;
-  height: 10rem;
 }
 
 .chat-container {

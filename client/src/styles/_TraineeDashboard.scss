@@ -4,4 +4,15 @@
   flex-direction: column;
   align-self: center;
   padding-top: 7rem;
+
+  .workout2 {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: rgb(129, 29, 46);
+    border-radius: 15px;
+    word-wrap: break-word;
+    height: 7rem;
+    width: fit-content;
+    position: fixed;
+  }
 }

@@ -138,22 +138,22 @@ function TraineeLogs({ userDetails, type }) {
               </div>
             </div>
 
-            <div className="workouts-dashboard">
-              <div className="workout1">
-                <h2>Previous Workouts:</h2>
-                {workoutLogs.length > 0 ? (
-                  workoutLogs.map((item, index) => (
-                    <h3 key={index}>{`[ ${new Date(
-                      item.date
-                    ).toLocaleDateString()} ${new Date(
-                      item.date
-                    ).toLocaleTimeString("IT-it")} ]:  ${item.name}`}</h3>
-                  ))
-                ) : (
-                  <h3>No Previous Workouts</h3>
-                )}
-              </div>
+            {/* <div className="workouts-dashboard"> */}
+            <div className="workout1">
+              <h2>Previous Workouts:</h2>
+              {workoutLogs.length > 0 ? (
+                workoutLogs.map((item, index) => (
+                  <h3 key={index}>{`[ ${new Date(
+                    item.date
+                  ).toLocaleDateString()} ${new Date(
+                    item.date
+                  ).toLocaleTimeString("IT-it")} ]:  ${item.name}`}</h3>
+                ))
+              ) : (
+                <h3>No Previous Workouts</h3>
+              )}
             </div>
+            {/* </div> */}
           </div>
         </>
       ) : (
