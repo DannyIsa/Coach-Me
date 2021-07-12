@@ -325,10 +325,10 @@ function ClientCalendar({ userDetails }) {
                 </button>
               </div>
             )}
-            {/* <div className="chosen-calendar-div">
-              {chosenItems &&
-                (chosenItems.exercises ? (
-                  <>
+            {chosenItems && (
+              <div className="chosen-calendar-div">
+                {chosenItems.exercises ? (
+                  <div className="popup-chosen-exercise">
                     <h1 className="workout-name">
                       {field.day + ": " + chosenItems.name}
                     </h1>
@@ -350,30 +350,34 @@ function ClientCalendar({ userDetails }) {
                     </ol>
                     <h1>{"X" + chosenItems.sets}</h1>
                     <button onClick={() => removeItem(1)}>Remove</button>
-                  </>
+                  </div>
                 ) : (
                   <div className="popup-chosen-food">
-                    <h1>{field.day + " " + field.type + ": "}</h1>
-                    <ol>
-                      {chosenItems.map((item) => (
-                        <li>
-                          <h4>
-                            {item.name} ({item.weight * item.amount}g)
-                          </h4>
-                          <p>{item.calories * item.amount} calories</p>
-                          <p>{item.protein * item.amount} protein</p>
-                          <p>{item.carbs * item.amount} carbs</p>
-                          <p>{item.fats * item.amount} fats</p>
-                          <br />
-                          <button onClick={() => removeItem(item.id)}>
-                            Remove
-                          </button>
-                        </li>
-                      ))}
-                    </ol>
+                    {chosenItems.length > 0 ? (
+                      <ol>
+                        {chosenItems.map((item) => (
+                          <li>
+                            <h4>
+                              {item.name} ({item.weight * item.amount}g)
+                            </h4>
+                            <p>{item.calories * item.amount} calories</p>
+                            <p>{item.protein * item.amount} protein</p>
+                            <p>{item.carbs * item.amount} carbs</p>
+                            <p>{item.fats * item.amount} fats</p>
+                            <br />
+                            <button onClick={() => removeItem(item.id)}>
+                              Remove
+                            </button>
+                          </li>
+                        ))}
+                      </ol>
+                    ) : (
+                      <h3>No Meals For {field.type}!</h3>
+                    )}
                   </div>
-                ))}
-            </div> */}
+                )}
+              </div>
+            )}
           </div>
         </div>
       )}

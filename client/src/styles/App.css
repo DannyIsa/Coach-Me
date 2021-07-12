@@ -2432,6 +2432,7 @@ form.sign-in-form {
 .chat-container .chat-component > .messages-div > .message-div > .message > .content {
   white-space: normal;
   font-size: 17px;
+  word-break: break-word;
 }
 
 .chat-container .chat-component > .messages-div > .message-div > .message.sent {
