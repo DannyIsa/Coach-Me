@@ -2494,6 +2494,9 @@ a:hover {
   0% {
     right: -120px;
   }
+  70% {
+    right: 20px;
+  }
   100% {
     right: 0px;
   }
@@ -2502,6 +2505,9 @@ a:hover {
 @keyframes drop {
   0% {
     right: -120px;
+  }
+  70% {
+    right: 20px;
   }
   100% {
     right: 0px;
