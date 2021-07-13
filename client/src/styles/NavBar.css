@@ -110,7 +110,7 @@
 
 .homeNav .box {
   width: 400px;
-  height: 0px;
+  height: 0rem;
   border-radius: 10px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
