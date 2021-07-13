@@ -4,10 +4,11 @@
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  background-color: rgb(158, 151, 151);
 }
 .headline {
   font-size: 1.5rem;
-  color: black;
+  color: white;
 }
 #gif {
   margin-top: 2rem;
