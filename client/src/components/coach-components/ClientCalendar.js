@@ -351,7 +351,7 @@ function ClientCalendar({ userDetails }) {
                         </li>
                       ))}
                     </ol>
-                    <h1>{"X" + chosenItems.sets}</h1>
+                    <span>{"X" + chosenItems.sets}</span>
                     <button onClick={() => removeItem(1)}>Remove</button>
                   </div>
                 ) : (
