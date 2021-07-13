@@ -32,7 +32,11 @@ chat.get("/:traineeId/:coachId", async (req, res) => {
     limit: 50,
   });
   if (!messages) return res.status(200).send([]);
-  res.status(200).send(messages);
+  res.status(200).send({
+    messages,
+    trainee_name: trainee.name,
+    coach_name: coach.name,
+  });
 });
 
 chat.post("/:traineeId/:coachId", async (req, res) => {
@@ -59,14 +63,16 @@ chat.post("/:traineeId/:coachId", async (req, res) => {
     sender,
   });
   if (!message) return res.status(400).send("Couldn't Send Message");
+  const sender_name = sender === "Coach" ? coach.name : trainee.name;
   io.emit("message received", {
     traineeId,
     coachId,
     sender,
     content,
+    sender_name,
     createdAt: message.createdAt,
   });
-  return res.status(201).send(message);
+  return res.status(201).send({ ...message.toJSON(), sender_name });
 });
 
 chat.get("/show/list/:coachId", async (req, res) => {
