@@ -21,13 +21,16 @@ trainee.use("/logs", logs);
 
 trainee.get("/trainee-name/:coachId", async (req, res) => {
   const { coachId } = req.params;
+  if (!coachId) return res.status(400).send("must send coachId");
+  const coach = await models.Coach.findOne({ where: { id: coachId } });
+  if (!coach) return res.status(404).send("No Matching Coach");
+  res.status(200).send(coach.name);
 });
 
 trainee.post("/request/send/:traineeId", (req, res) => {
   const { coachId, traineeName, content } = req.body;
   const { traineeId } = req.params;
   const io = req.app.get("socketIo");
-
   if (!Number(coachId) || !Number(traineeId)) {
     return res.status(400).send("Invalid ID");
   }
