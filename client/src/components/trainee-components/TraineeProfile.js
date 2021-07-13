@@ -164,7 +164,7 @@ function TraineeProfile({ userDetails, setUserDetails }) {
                           <button onClick={updateImage}>
                             <FontAwesomeIcon
                               icon={faUpload}
-                              color="white"
+                              color="#333"
                               className="fa-fa"
                             />
                           </button>
@@ -333,7 +333,7 @@ function TraineeProfile({ userDetails, setUserDetails }) {
                       <a href={pdf} target="_blank" className="pdf-btn">
                         <FontAwesomeIcon
                           icon={faFileDownload}
-                          color="white"
+                          color="#333"
                           className="fa-fa"
                         />
                       </a>

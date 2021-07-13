@@ -80,17 +80,17 @@ function NavBarCoach({ signOut, userDetails, alertMessage }) {
         </div>
         <ul className={click ? "nav-options active" : "nav-options-main"}>
           <li className="option" onClick={closeMobileMenu}>
-            <Link to="/dashboard" className="link">
+            <Link to="/dashboard" className="link bb">
               Profile
             </Link>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="/coach/workouts" className="link">
+            <a href="/coach/workouts" className="link bb">
               Workouts
             </a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="/coach/clients" className="link">
+            <a href="/coach/clients" className="link bb">
               Trainees
             </a>
           </li>

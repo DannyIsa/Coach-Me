@@ -214,7 +214,11 @@ function CreateWorkout({ userDetails }) {
                     setChosen(temp);
                   }}
                 >
-                  <FontAwesomeIcon icon={faTimes} />
+                  <FontAwesomeIcon
+                    icon={faTimes}
+                    color="#333"
+                    className="close-fa"
+                  />
                 </button>
               </div>
             ))

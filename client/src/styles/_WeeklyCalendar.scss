@@ -3,19 +3,21 @@
   display: flex;
   flex-direction: column;
   padding-top: 7rem;
+  background-color: #ecedef;
 
   .table {
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     height: 95%;
     width: 95%;
     border-collapse: collapse;
     table-layout: fixed;
+    box-shadow: 5px 8px 11px 6px #c0c0c0;
   }
 
   .table td {
-    border: 2px #d1d3d8 solid;
-    background-color: rgb(231, 228, 223);
+    border: 2px white solid;
     width: 12.5%;
     height: 16.6%;
     color: rgb(77, 75, 75);
@@ -31,7 +33,7 @@
   .day-title {
     font-size: 2rem;
     background-color: rgb(135, 187, 222);
-    color: black;
+    color: #333;
   }
 
   .container-title {

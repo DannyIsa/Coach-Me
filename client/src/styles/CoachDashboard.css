@@ -9,8 +9,6 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  /* height: 100vh; */
-  /* background-color: aquamarine; */
 }
 .m-flex img {
   border-radius: 10px;
@@ -33,4 +31,7 @@
   bottom: 0.5rem;
   right: 1.5rem;
   width: 12rem;
+}
+.chat-list-item a {
+  color: black;
 }

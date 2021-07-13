@@ -123,7 +123,7 @@ function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
                             {" "}
                             <FontAwesomeIcon
                               icon={faUpload}
-                              color="white"
+                              color="#333"
                               className="fa-fa"
                             />
                           </button>

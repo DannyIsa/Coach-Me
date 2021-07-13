@@ -6,6 +6,25 @@
   align-items: center;
   // flex-wrap: wrap;
   overflow: auto;
+  color: black;
+  & a {
+    color: #333;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 0.5rem;
+
+    &:hover {
+      color: white;
+      background-color: #333;
+      border: 1px solid #333;
+    }
+  }
+  & h1 {
+    // color: #333;
+    margin: 2.5rem 0;
+    font-weight: lighter;
+    font-size: 2.5em;
+  }
 
   .ticket-list {
     display: flex;
@@ -22,7 +41,8 @@
       border-radius: 0.4rem;
       margin: 2rem;
       // background-color: #3580d4;
-      background-color: #1456a1;
+      background-color: white;
+      box-shadow: 5px 8px 11px 6px #c0c0c0;
 
       .ticket-content,
       .ticket-title {
@@ -36,6 +56,7 @@
         padding: 0;
         font-size: 1.7rem;
         font-weight: bold;
+        color: #333;
       }
 
       .ticket-content {

@@ -111,7 +111,7 @@ export default function WeeklyCalendar({ userDetails }) {
                   <div className="table-one-container">
                     {item && (
                       <div onClick={() => handleExerciseClicked(item)}>
-                        <h5>{item.name}</h5>
+                        <span>{item.name}</span>
                         <h4>
                           {done.workout &&
                             item.day.startsWith(done.workout.day) &&

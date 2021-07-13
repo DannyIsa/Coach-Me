@@ -53,7 +53,7 @@ function ClientsList({ userDetails, alertMessage }) {
                 >
                   <FontAwesomeIcon
                     icon={faCalendarAlt}
-                    color="white"
+                    color="#333"
                     className="fa-fa"
                   />
                 </Link>
@@ -64,7 +64,7 @@ function ClientsList({ userDetails, alertMessage }) {
                   {" "}
                   <FontAwesomeIcon
                     icon={faEye}
-                    color="white"
+                    color="#333"
                     className="fa-fa"
                   />
                 </button>
@@ -89,7 +89,7 @@ function ClientsList({ userDetails, alertMessage }) {
                 <span className="first">
                   <FontAwesomeIcon
                     icon={faEnvelope}
-                    color="white"
+                    color="#333"
                     className="fa-fa"
                   />
                 </span>
@@ -98,7 +98,7 @@ function ClientsList({ userDetails, alertMessage }) {
                 <span className="first">
                   <FontAwesomeIcon
                     icon={faPhoneAlt}
-                    color="white"
+                    color="#333"
                     className="fa-fa"
                   />
                 </span>
@@ -123,7 +123,7 @@ function ClientsList({ userDetails, alertMessage }) {
                     {" "}
                     <FontAwesomeIcon
                       icon={faComment}
-                      color="white"
+                      color="#333"
                       className="fa-fa"
                     />
                   </button>
