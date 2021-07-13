@@ -80,17 +80,17 @@ function NavBarCoach({ signOut, userDetails, alertMessage }) {
         </div>
         <ul className={click ? "nav-options active" : "nav-options-main"}>
           <li className="option" onClick={closeMobileMenu}>
-            <Link to="/dashboard" className="link">
+            <Link to="/dashboard" className="linki">
               Profile
             </Link>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="/coach/workouts" className="link">
+            <a href="/coach/workouts" className="linki">
               Workouts
             </a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="/coach/clients" className="link">
+            <a href="/coach/clients" className="linki">
               Trainees
             </a>
           </li>
@@ -195,7 +195,7 @@ function NavBarCoach({ signOut, userDetails, alertMessage }) {
             </div>
           </li>
           <li className="option mobile-option" onClick={closeMobileMenu}>
-            <a className="sign-in link" onClick={() => signOut(history)}>
+            <a className="sign-in linki" onClick={() => signOut(history)}>
               SignOut
             </a>
           </li>
@@ -203,7 +203,7 @@ function NavBarCoach({ signOut, userDetails, alertMessage }) {
       </div>
       <ul className="signIn">
         <li onClick={closeMobileMenu}>
-          <a className="signIn-btn" onClick={() => signOut(history)}>
+          <a className="signIn-btnB" onClick={() => signOut(history)}>
             SignOut
           </a>
         </li>

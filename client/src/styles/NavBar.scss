@@ -23,10 +23,7 @@
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   // background: rgba(0, 0, 0, 0.1);
-  background: rgb(0 0 0 / 15%);
-}
-
-
+  // background: rgb(0 0 0 / 15%);
   // background: rgba(0, 0, 0, 0.7);
 
   .logo-nav {
@@ -69,11 +66,11 @@
     }
   }
 
-  .signIn-btn {
+  & .signIn-btnB {
     padding: 10px 10px;
     border-radius: 3px;
     // background: #535a3e;
-    background: #2a9d8f;
+    background-color: #333;
     // background: #0d7e65;
     color: white;
     // color: rgba(255, 255, 255, 0.5);
@@ -411,7 +408,7 @@
     border-bottom: none;
   }
 
-  .signIn-btn {
+  .signIn-btnB {
     display: none;
   }
 

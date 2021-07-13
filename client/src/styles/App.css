@@ -2494,9 +2494,10 @@ form.sign-in-form {
 body {
   width: 100vw;
   height: 100vh;
-  font-family: "Europa Bold", Sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
   color: rgba(255, 255, 255, 0.9);
   background-color: white;
+  color: black;
 }
 
 button {

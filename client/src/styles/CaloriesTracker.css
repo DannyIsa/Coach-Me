@@ -23,7 +23,6 @@
   width: 100%;
   height: 90vh;
   float: left;
-  background-color: pink;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
