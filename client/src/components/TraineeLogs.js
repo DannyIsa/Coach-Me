@@ -30,14 +30,6 @@ function TraineeLogs({ userDetails, type }) {
     <div className="trainee-logs">
       {userDetails ? (
         <>
-          {type === "Trainee" && (
-            <>
-              <h1>{`Welcome Back, ${userDetails.name} !`}</h1>
-              <Link to="/trainee/calendar" className="trainee-calendar">
-                Weekly Calendar
-              </Link>
-            </>
-          )}
           <div className="mainDiv">
             <div className="charts">
               <div className="chart">

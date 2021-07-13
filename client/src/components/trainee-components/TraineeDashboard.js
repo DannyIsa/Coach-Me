@@ -34,25 +34,28 @@ function TraineeDashboard({ userDetails }) {
     <div className="trainee-dashboard">
       {userDetails ? (
         <>
-          <TraineeLogs userDetails={userDetails} type="Trainee" />
-          <div className="workout2">
-            <h2>Today's Workout: </h2>
-            {wod.workout ? (
-              wod.done ? (
-                <h3>
-                  No Workouts Remaining
-                  <br /> For Today!
-                </h3>
+          <h1>{`Welcome Back, ${userDetails.name} !`}</h1>
+          <Link to="/trainee/calendar" className="trainee-calendar">
+            Weekly Calendar
+          </Link>
+          <div className="helpers">
+            <div className="workout2">
+              <h2>Today's Workout: </h2>
+              {wod.workout ? (
+                wod.done ? (
+                  <h3>
+                    No Workouts Remaining
+                    <br /> For Today!
+                  </h3>
+                ) : (
+                  <Link to={`/trainee/workout/${wod.workout.id}`}>
+                    {wod.workout.name}
+                  </Link>
+                )
               ) : (
-                <Link to={`/trainee/workout/${wod.workout.id}`}>
-                  {wod.workout.name}
-                </Link>
-              )
-            ) : (
-              <h3>No Workouts Remaining For Today!</h3>
-            )}
-          </div>
-          <div className="workout3">
+                <h3>No Workouts Remaining For Today!</h3>
+              )}
+            </div>
             <div className="measured1">
               {measured ? (
                 <h2>Measurements Registered!</h2>
@@ -66,11 +69,12 @@ function TraineeDashboard({ userDetails }) {
               ) : (
                 <>
                   <h2>You Didn't Eat Today! </h2>
-                  <Link to="/trainee/profile">Please Register Your Meals!</Link>
+                  <Link to="/trainee/food">Please Register Your Meals!</Link>
                 </>
               )}
             </div>
           </div>
+          <TraineeLogs userDetails={userDetails} type="Trainee" />
         </>
       ) : (
         "Loading..."

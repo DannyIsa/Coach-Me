@@ -4,7 +4,11 @@
   flex-direction: column;
   align-self: center;
   padding-top: 7rem;
-
+  .helpers {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+  }
   .workout2 {
     text-align: center;
     padding: 0.5rem;
@@ -13,6 +17,23 @@
     word-wrap: break-word;
     height: 7rem;
     width: fit-content;
-    position: fixed;
+  }
+  .measured1 {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: rgb(129, 29, 46);
+    border-radius: 15px;
+    word-wrap: break-word;
+    height: 7rem;
+    width: fit-content;
+  }
+  .diet1 {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: rgb(129, 29, 46);
+    border-radius: 15px;
+    word-wrap: break-word;
+    height: 7rem;
+    width: fit-content;
   }
 }
