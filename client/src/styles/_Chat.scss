@@ -82,7 +82,6 @@
       flex-direction: column-reverse;
       & > .message-div {
         width: 100vw;
-
         & > .message {
           margin: 10px;
           padding: 10px;
@@ -97,7 +96,6 @@
             word-break: break-word;
           }
           &.sent {
-            animation: send 0.7s ease forwards;
             float: right;
             background-color: PaleGreen;
             color: black;
@@ -110,25 +108,6 @@
           }
         }
       }
-    }
-  }
-  @keyframes send {
-    0% {
-      right: -1500px;
-    }
-    90% {
-      right: 30px;
-    }
-    100% {
-      right: 0px;
-    }
-  }
-  @keyframes receive {
-    0% {
-      right: -500px;
-    }
-    100% {
-      right: 0px;
     }
   }
 }
