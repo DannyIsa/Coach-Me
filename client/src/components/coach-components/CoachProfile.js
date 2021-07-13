@@ -1,10 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState, useContext } from "react";
-import EditableInput from "../EditableInput";
 import { SetErrorContext } from "../../App";
 import userPic from "../../pics/user1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileDownload, faUpload } from "@fortawesome/free-solid-svg-icons";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
 import firebase from "firebase";
 import { Link } from "react-router-dom";
 import "../../styles/CoachDashboard.css";
@@ -198,24 +197,8 @@ function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
               <div className="col-sm-6 mb-3">
                 <div className="card h-100">
                   <div className="card-body">
-                    <div>Number of Trainees:{clientsNumber}</div>
-                    {/* <button className="edit-button">
-                      {editMode ? "Save" : "Edit"}
-                    </button> */}
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-6 mb-3">
-                <div className="card h-100">
-                  <div className="card-body forms">
                     <div>
-                      {/* <a href={pdf} target="_blank" className="pdf-btn">
-                        <FontAwesomeIcon
-                          icon={faFileDownload}
-                          color="white"
-                          className="fa-fa"
-                        />
-                      </a> */}
+                      <h3>Number of Trainees:{clientsNumber}</h3>
                     </div>
                   </div>
                 </div>

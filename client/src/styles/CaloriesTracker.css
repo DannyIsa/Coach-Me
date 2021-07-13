@@ -98,7 +98,7 @@
   background-color: #fefbff;
   color: black;
   height: 10rem;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .calorie-tracker .meals-container .meal-container .eaten-food-container {

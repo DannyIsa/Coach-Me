@@ -67,7 +67,7 @@ export default function Chat({ userDetails, userType }) {
       <div className="chat-component">
         <h1 className="chatting-with">
           You are chatting with
-          {userType === "Trainee" ? " Coach " : " Trainee "}
+          {userType === "Trainee" ? " coach " : " trainee "}
           {contactName}
         </h1>
         <div className="messages-div">
