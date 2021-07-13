@@ -379,7 +379,7 @@ function ClientCalendar({ userDetails }) {
                     </button>
                   </div>
                 ) : (
-                  <div className="popup-chosen-food">
+                  <div className="popup-chosen food">
                     {chosenItems.length > 0 ? (
                       <ul className="oList">
                         {chosenItems.map((item) => (

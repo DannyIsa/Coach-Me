@@ -123,12 +123,14 @@ a:hover {
   padding-bottom: 20px;
   animation: drop 0.7s ease forwards, raise 0.7s 3s ease forwards;
   &.error-message {
-    background-color: red;
-    border-color: black;
+    background-color: rgb(240, 164, 164);
+    border-color: rgb(253, 64, 64);
+    color: red;
   }
   &.alert-message {
-    background-color: rgb(20, 86, 161);
-    border-color: black;
+    background-color: rgb(190, 214, 241);
+    border-color: rgb(47, 144, 255);
+    color: rgb(92, 168, 255);
   }
 }
 
