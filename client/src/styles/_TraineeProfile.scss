@@ -7,7 +7,7 @@
   .main-body {
     padding: 15px;
     display: flex;
-    background-color: rgba(255, 255, 255, 0.247);
+
     .pop-up-leave {
       position: relative;
       padding-bottom: 32px;
@@ -50,7 +50,9 @@
       padding: 15px 40px;
 
       .card {
-        background-color: #1456a1;
+        // background-color: #1456a1;
+        background-color: white;
+        box-shadow: 5px 8px 11px 6px #c0c0c0;
         width: 20rem;
       }
       .d-flex {
@@ -64,7 +66,9 @@
     .main2 {
       padding: 15px;
       .card {
-        background-color: #1456a1;
+        // background-color: #1456a1;
+        background-color: white;
+        box-shadow: 5px 8px 11px 6px #c0c0c0;
         width: 40rem;
         padding-bottom: 0.4rem;
         .next-workout {

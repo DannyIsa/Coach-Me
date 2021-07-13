@@ -187,8 +187,21 @@
     }
 
     .pop-up-selected-food {
-      border: black solid 3px;
+      // margin-top: 1rem;
+      border: #6ef15f solid 2px;
+      padding: 0.5rem;
       border-radius: 6px;
+
+      .add-food-button {
+        border: none;
+        padding: 0;
+        margin: 1rem;
+        color: #6ef15f;
+
+        &:hover {
+          color: black;
+        }
+      }
     }
     .popup-close-button {
       position: absolute;

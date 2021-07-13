@@ -535,6 +535,7 @@ form.sign-in-form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #ecedef;
 }
 
 .create-workout-page h1 {
@@ -571,13 +572,14 @@ form.sign-in-form {
 .create-workout-page .search-div .search input {
   width: 14rem;
   font-size: 1.2rem;
-  padding: 0rem 1rem;
+  padding: 0.3rem 1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: white;
-  border-radius: 15px;
+  background-color: #333;
+  border-radius: 10px;
   border: none;
   outline: none;
+  color: white;
 }
 
 .create-workout-page .search-div .tags {
@@ -646,14 +648,16 @@ form.sign-in-form {
 }
 
 .create-workout-page .search-div .add {
-  padding: 0.3rem;
-  border: 2px solid;
-  color: whitesmoke;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 0.5rem;
 }
 
 .create-workout-page .search-div .add:hover {
-  border: 2px solid #ffc719;
-  color: #ffc719;
+  color: white;
+  background-color: #333;
+  border: 1px solid #333;
 }
 
 .create-workout-page .exercises-container {
@@ -682,7 +686,9 @@ form.sign-in-form {
       flex-wrap: wrap;
   cursor: -webkit-grab;
   cursor: grab;
-  background-color: #1456a1;
+  background-color: white;
+  -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
+          box-shadow: 5px 8px 11px 6px #c0c0c0;
   border-radius: 0.4rem;
 }
 
@@ -713,7 +719,9 @@ form.sign-in-form {
   height: 35rem;
   padding: 0.5rem 2rem 2rem;
   border-radius: 0.4rem;
-  background-color: #1456a1;
+  background-color: white;
+  -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
+          box-shadow: 5px 8px 11px 6px #c0c0c0;
   cursor: no-drop;
   overflow: auto;
 }
@@ -810,7 +818,9 @@ form.sign-in-form {
 }
 
 .create-workout-page .exercises-container .exercise-right {
-  background-color: #1456a1;
+  background-color: white;
+  -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
+          box-shadow: 5px 8px 11px 6px #c0c0c0;
   width: 30rem;
   height: 35rem;
   display: -webkit-box;
@@ -856,15 +866,33 @@ form.sign-in-form {
   padding: 0.2rem 0.5rem;
   margin: 0;
   margin-bottom: 0.5rem;
+  border: 1px solid #333;
+}
+
+.create-workout-page .exercises-container .exercise-right .chosen-exercise button:hover {
+  background-color: #333;
+  border: 1px solid #333;
+}
+
+.create-workout-page .exercises-container .exercise-right .chosen-exercise button:hover .close-fa {
+  color: white;
 }
 
 .create-workout-page .exercises-container .exercise-right .next-button {
   padding: 0.3rem 0rem;
   width: 6rem;
   margin: 0;
-  margin-left: 3rem;
   position: absolute;
   bottom: 2rem;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+.create-workout-page .exercises-container .exercise-right .next-button:hover {
+  color: white;
+  background-color: #333;
+  border: 1px solid #333;
 }
 
 .workout-list-start {
@@ -881,6 +909,26 @@ form.sign-in-form {
       -ms-flex-align: center;
           align-items: center;
   overflow: auto;
+  color: black;
+}
+
+.workout-list-start a {
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.workout-list-start a:hover {
+  color: white;
+  background-color: #333;
+  border: 1px solid #333;
+}
+
+.workout-list-start h1 {
+  margin: 2.5rem 0;
+  font-weight: lighter;
+  font-size: 2.5em;
 }
 
 .workout-list-start .ticket-list {
@@ -907,7 +955,9 @@ form.sign-in-form {
   padding: 0rem 2rem;
   border-radius: 0.4rem;
   margin: 2rem;
-  background-color: #1456a1;
+  background-color: white;
+  -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
+          box-shadow: 5px 8px 11px 6px #c0c0c0;
 }
 
 .workout-list-start .ticket-list .workout-ticket .ticket-content,
@@ -922,6 +972,7 @@ form.sign-in-form {
   padding: 0;
   font-size: 1.7rem;
   font-weight: bold;
+  color: #333;
 }
 
 .workout-list-start .ticket-list .workout-ticket .ticket-content .exercise-block .exercise-name {
@@ -1029,7 +1080,9 @@ form.sign-in-form {
   padding: 0.5rem 2rem;
   border-radius: 0.4rem;
   margin: 1rem;
-  background-color: #1456a1;
+  background-color: white;
+  -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
+          box-shadow: 5px 8px 11px 6px #c0c0c0;
 }
 
 .client-list-start .ticket-list .ticket .fa-fa:hover {
@@ -1148,7 +1201,9 @@ form.sign-in-form {
   width: 100%;
   text-align: center;
   max-width: 700px;
-  background-color: #837c7c;
+  background-color: white;
+  -webkit-box-shadow: 3px 3px 15px 1px #c0c0c0;
+          box-shadow: 3px 3px 15px 1px #c0c0c0;
 }
 
 .pop-up > .pop-up-inner > table > tbody > tr > td {
@@ -1179,7 +1234,17 @@ form.sign-in-form {
 }
 
 .pop-up > .pop-up-inner .create-btn {
-  border: none;
+  color: #333;
+  border: 1px solid #333;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+}
+
+.pop-up > .pop-up-inner .create-btn:hover {
+  color: white;
+  background-color: #333;
+  border: 1px solid #333;
+  padding: 0.5rem;
 }
 
 .pop-up > .pop-up-inner .fa-fa:hover {
@@ -1191,9 +1256,16 @@ form.sign-in-form {
 }
 
 .pop-up > .pop-up-inner .popup-name {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
   margin-left: 5rem;
-  width: 12rem;
-  padding: 0rem 0.7rem;
+  width: 13rem;
+  border-radius: 5px;
+  padding: 0.2rem;
+}
+
+.pop-up > .pop-up-inner .popup-name:focus {
+  outline-color: #333;
 }
 
 .trainee-dashboard {
@@ -1210,7 +1282,6 @@ form.sign-in-form {
   padding-top: 7rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: #ecedef;
 }
 
 .trainee-dashboard .dash-con {
@@ -1247,6 +1318,7 @@ form.sign-in-form {
   line-height: 1;
   margin: 0;
   padding: 0;
+  margin-top: 0.5rem;
 }
 
 .trainee-dashboard .helpers {
@@ -1302,14 +1374,14 @@ form.sign-in-form {
 .trainee-dashboard .helpers .workout2 h3:hover,
 .trainee-dashboard .helpers .measured1 h3:hover,
 .trainee-dashboard .helpers .diet1 h3:hover {
-  color: #ffc719;
+  color: #2e70bb;
 }
 
 .trainee-dashboard .helpers span {
   font-size: 15px;
   letter-spacing: 0.0625rem;
   text-transform: uppercase !important;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1556,8 +1628,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .details-div .right-div button span {
@@ -1737,7 +1809,7 @@ form.sign-in-form {
 }
 
 .add-exercise-start .add-exercise-form form select {
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form form button {
@@ -1760,8 +1832,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .add-exercise-start .add-exercise-form form button span {
@@ -1874,7 +1946,7 @@ form.sign-in-form {
 .add-exercise-start .add-exercise-form .form-block .textarea-control {
   width: 18rem;
   height: 4.5rem;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form .form-block input {
@@ -1885,7 +1957,7 @@ form.sign-in-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .weekly-calendar {
@@ -1898,20 +1970,23 @@ form.sign-in-form {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-top: 7rem;
+  background-color: #ecedef;
 }
 
 .weekly-calendar .table {
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   height: 95%;
   width: 95%;
   border-collapse: collapse;
   table-layout: fixed;
+  -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
+          box-shadow: 5px 8px 11px 6px #c0c0c0;
 }
 
 .weekly-calendar .table td {
-  border: 2px #d1d3d8 solid;
-  background-color: #e7e4df;
+  border: 2px white solid;
   width: 12.5%;
   height: 16.6%;
   color: #4d4b4b;
@@ -1926,8 +2001,8 @@ form.sign-in-form {
 
 .weekly-calendar .day-title {
   font-size: 2rem;
-  background-color: #87bbde;
-  color: black;
+  background-color: #2e70bb;
+  color: #333;
 }
 
 .weekly-calendar .container-title {
@@ -2007,7 +2082,7 @@ form.sign-in-form {
 
 .weekly-calendar .search-div .chosen {
   width: 20rem;
-  background-color: #87bbde;
+  background-color: #2e70bb;
 }
 
 .weekly-calendar .search-div .search-input {
@@ -2018,7 +2093,7 @@ form.sign-in-form {
 }
 
 .weekly-calendar .search-div .search-input:focus {
-  outline-color: #87bbde;
+  outline-color: #2e70bb;
 }
 
 .weekly-calendar > .popup-background {
@@ -2117,6 +2192,7 @@ form.sign-in-form {
           flex-direction: row;
   margin-top: 30rem;
   height: 12rem;
+  overflow: auto;
   width: 100%;
   overflow: auto;
 }
@@ -2145,7 +2221,7 @@ form.sign-in-form {
   width: 10rem;
   margin-left: 1.2rem;
   margin-bottom: 1rem;
-  background-color: #87bbde;
+  background-color: #2e70bb;
   padding: 0.2rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -2179,7 +2255,6 @@ form.sign-in-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: rgba(255, 255, 255, 0.247);
 }
 
 .profile-container .main-body .pop-up-leave {
@@ -2226,7 +2301,9 @@ form.sign-in-form {
 }
 
 .profile-container .main-body .main1 .card {
-  background-color: #1456a1;
+  background-color: white;
+  -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
+          box-shadow: 5px 8px 11px 6px #c0c0c0;
   width: 20rem;
 }
 
@@ -2251,7 +2328,9 @@ form.sign-in-form {
 }
 
 .profile-container .main-body .main2 .card {
-  background-color: #1456a1;
+  background-color: white;
+  -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
+          box-shadow: 5px 8px 11px 6px #c0c0c0;
   width: 40rem;
   padding-bottom: 0.4rem;
 }
@@ -2598,15 +2677,11 @@ form.sign-in-form {
   color: black;
 }
 
-.trainee-logs .workout1 h3:hover {
-  color: #ffc719;
-}
-
 .trainee-logs .workout1 span {
   font-size: 15px;
   letter-spacing: 0.0625rem;
   text-transform: uppercase !important;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2763,7 +2838,7 @@ body {
   height: 100vh;
   font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
   color: rgba(255, 255, 255, 0.9);
-  background-color: white;
+  background-color: #ecedef;
   color: black;
 }
 

@@ -47,7 +47,7 @@ function WorkoutsList({ userDetails }) {
           render={() => setRender(!render)}
         />
       )}
-      <h1>Your Workouts:</h1>
+      <h1>Your Workouts</h1>
       <div className="ticket-list">
         {workouts.map((item, index) => (
           <div className="workout-ticket" key={item.name + "" + index}>
@@ -80,7 +80,7 @@ function WorkoutsList({ userDetails }) {
               >
                 <FontAwesomeIcon
                   icon={faTrashAlt}
-                  color="white"
+                  color="#333"
                   className="fas-fas"
                 />
               </button>
@@ -93,7 +93,7 @@ function WorkoutsList({ userDetails }) {
               >
                 <FontAwesomeIcon
                   icon={faPen}
-                  color="white"
+                  color="#333"
                   className="fas-fas"
                 />
               </button>

@@ -4,14 +4,14 @@
   height: 4rem;
 }
 
-.link:hover {
+.bb:hover {
   // color: white;
-  color: #ffc719;
+  color: #333;
   transition-timing-function: linear;
   transition-duration: 0.5s;
   transition-property: border;
   // border-bottom: 4px solid white;
-  border-bottom: 4px solid #ffc719;
+  border-bottom: 4px solid #333;
 }
 .bb {
   color: white;
@@ -79,6 +79,11 @@
     // color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     align-items: center;
+
+    &:hover {
+      color: #333;
+      background-color: whitesmoke;
+    }
   }
   .mobile-menu {
     display: none;

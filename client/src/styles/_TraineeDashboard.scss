@@ -5,7 +5,6 @@
   align-self: center;
   padding-top: 7rem;
   box-sizing: border-box;
-  background-color: #ecedef;
 
   .dash-con {
     display: flex;
@@ -38,6 +37,7 @@
         line-height: 1;
         margin: 0;
         padding: 0;
+        margin-top: 0.5rem;
       }
     }
   }
@@ -80,7 +80,7 @@
         color: black;
 
         &:hover {
-          color: #ffc719;
+          color: rgb(46, 112, 187);
         }
       }
     }

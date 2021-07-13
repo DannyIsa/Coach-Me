@@ -1,15 +1,15 @@
 .weekly-calendar {
+  // background-color: #ecedef;
+
   .search-div {
     position: absolute;
     left: 1rem;
-    // top: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    // margin-bottom: 5rem;
     .chosen {
       width: 20rem;
-      background-color: #87bbde;
+      background-color: rgb(46, 112, 187);
     }
     .search-input {
       margin: 0.8rem 0rem;
@@ -18,7 +18,7 @@
       padding: 0.2rem;
 
       &:focus {
-        outline-color: #87bbde;
+        outline-color: rgb(46, 112, 187);
       }
     }
   }
@@ -95,6 +95,7 @@
           flex-direction: row;
           margin-top: 30rem;
           height: 12rem;
+          overflow: auto;
           width: 100%;
           overflow: auto;
 
@@ -111,7 +112,7 @@
               width: 10rem;
               margin-left: 1.2rem;
               margin-bottom: 1rem;
-              background-color: #87bbde;
+              background-color: rgb(46, 112, 187);
               padding: 0.2rem;
               align-items: center;
             }

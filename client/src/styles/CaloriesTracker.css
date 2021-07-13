@@ -232,8 +232,20 @@
 }
 
 .calorie-tracker .popup-add-food .pop-up-selected-food {
-  border: black solid 3px;
+  border: #6ef15f solid 2px;
+  padding: 0.5rem;
   border-radius: 6px;
+}
+
+.calorie-tracker .popup-add-food .pop-up-selected-food .add-food-button {
+  border: none;
+  padding: 0;
+  margin: 1rem;
+  color: #6ef15f;
+}
+
+.calorie-tracker .popup-add-food .pop-up-selected-food .add-food-button:hover {
+  color: black;
 }
 
 .calorie-tracker .popup-add-food .popup-close-button {
