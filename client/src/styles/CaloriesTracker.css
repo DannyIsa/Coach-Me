@@ -200,7 +200,7 @@
 }
 
 .calorie-tracker .popup-add-food .search-food-input:focus {
-  outline-color: #1456a1;
+  outline-color: #3bc528;
 }
 
 .calorie-tracker .popup-add-food .searched-food-list {
@@ -244,8 +244,25 @@
 
 .calorie-tracker .day-picker > div {
   color: black;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 40rem;
+  font-size: 0.9rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.calorie-tracker .day-picker > div button {
+  font-size: 1rem;
+  color: #3bc528;
+}
+
+.calorie-tracker .day-picker > div button:hover {
+  border: none;
+  color: black;
 }
 /*# sourceMappingURL=CaloriesTracker.css.map */
