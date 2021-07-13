@@ -2744,13 +2744,15 @@ a:hover {
 }
 
 .alert-popup.error-message {
-  background-color: red;
-  border-color: black;
+  background-color: #f0a4a4;
+  border-color: #fd4040;
+  color: red;
 }
 
 .alert-popup.alert-message {
-  background-color: #1456a1;
-  border-color: black;
+  background-color: #bed6f1;
+  border-color: #2f90ff;
+  color: #5ca8ff;
 }
 
 @-webkit-keyframes drop {
