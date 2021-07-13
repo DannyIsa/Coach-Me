@@ -4,36 +4,103 @@
   flex-direction: column;
   align-self: center;
   padding-top: 7rem;
-  .helpers {
+  box-sizing: border-box;
+  background-color: #ecedef;
+
+  .dash-con {
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 2rem;
+    // flex-direction: row;
+    // width: 80%;
+    // justify-content: space-between;
+
+    .fi-fi {
+      font-size: 3rem;
+      margin-left: 2.2rem;
+      margin-top: 0.3rem;
+    }
+
+    .dash-header {
+      padding-right: 0;
+      padding-left: 0;
+      text-align: left;
+      margin-left: 11rem;
+
+      & span {
+        letter-spacing: 0.125rem;
+        color: #818ea3;
+        font-size: 0.9rem;
+        text-transform: uppercase !important;
+        box-sizing: border-box;
+      }
+      & h3 {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+      }
+    }
   }
-  .workout2 {
-    text-align: center;
-    padding: 0.5rem;
-    background-color: rgb(129, 29, 46);
-    border-radius: 15px;
-    word-wrap: break-word;
-    height: 7rem;
-    width: fit-content;
+
+  .helpers {
+    width: 75%;
+    display: flex;
+    // justify-content: space-between;
+    margin: 1.5rem 0rem 2rem 9rem;
+    // margin-left: 9rem;
+
+    // background-color: #ffc719;
+
+    .workout2,
+    .measured1,
+    .diet1 {
+      margin-left: 1.68rem;
+      text-align: center;
+      padding: 0.5rem;
+      background-color: white;
+      border-radius: 15px;
+      word-wrap: break-word;
+      height: 10rem;
+      width: 20rem;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-radius: 0.5rem;
+    }
+    .workout2,
+    .measured1,
+    .diet1 {
+      box-shadow: 5px 8px 11px 6px #c0c0c0;
+    }
+    .workout2,
+    .measured1,
+    .diet1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      & h3 {
+        color: black;
+
+        &:hover {
+          color: #ffc719;
+        }
+      }
+    }
+
+    & span {
+      font-size: 15px;
+      letter-spacing: 0.0625rem;
+      // color: #818ea3;
+      text-transform: uppercase !important;
+      // text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+        Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+        Segoe UI Symbol, Noto Color Emoji;
+      display: flex;
+      justify-content: center;
+    }
   }
-  .measured1 {
-    text-align: center;
-    padding: 0.5rem;
-    background-color: rgb(129, 29, 46);
-    border-radius: 15px;
-    word-wrap: break-word;
-    height: 7rem;
-    width: fit-content;
-  }
-  .diet1 {
-    text-align: center;
-    padding: 0.5rem;
-    background-color: rgb(129, 29, 46);
-    border-radius: 15px;
-    word-wrap: break-word;
-    height: 7rem;
-    width: fit-content;
-  }
+
+  // .measured1 {
+  // }
+  // .diet1 {
+  // }
 }

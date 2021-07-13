@@ -18,19 +18,34 @@
   }
   .charts {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     flex-direction: row;
-    align-items: center;
-    text-align: center;
+    // align-items: center;
+    // text-align: center;
+    position: absolute;
+    bottom: 5rem;
+    left: 8.5rem;
+    box-sizing: border-box;
 
-    // width: 60%;
-    // background-color: palegoldenrod;
-    // .chart {
-    //   background-color: palegoldenrod;
-    // }
+    & h2 {
+      margin-bottom: 1rem;
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+
+    .chart {
+      background-color: #fff;
+      margin-left: 2rem;
+      box-shadow: 5px 8px 11px 6px #c0c0c0;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      // border-radius: 0.2rem;
+      border-radius: 15px;
+      padding: 1rem;
+    }
 
     .line-chart {
-      // background-color: white;
+      // background-color: #333;
+      // box-shadow: 0px 8px 11px 6px #c0c0c0;
       margin-right: 2rem;
       border-radius: 15px;
     }
@@ -44,25 +59,42 @@
     justify-content: space-around;
   }
   .workout1 {
+    position: absolute;
+    right: 9rem;
+    top: 12rem;
     text-align: center;
     padding: 0.5rem;
-    background-color: rgb(192, 237, 255);
+    background-color: white;
     border-radius: 15px;
-    height: 10rem;
     word-wrap: break-word;
+    height: 10rem;
+    width: 20rem;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.5rem;
+    box-shadow: 5px 8px 11px 6px #c0c0c0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: auto;
+
+    & h3 {
+      color: black;
+      &:hover {
+        color: #ffc719;
+      }
+    }
+
+    & span {
+      font-size: 15px;
+      letter-spacing: 0.0625rem;
+      // color: #818ea3;
+      text-transform: uppercase !important;
+      // text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+        Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+        Segoe UI Symbol, Noto Color Emoji;
+      display: flex;
+      justify-content: center;
+    }
   }
-  // .workout2 {
-  //   text-align: center;
-  //   padding: 0.5rem;
-  //   background-color: rgb(129, 29, 46);
-  //   border-radius: 15px;
-  //   word-wrap: break-word;
-  //   height: 10rem;
-  // }
-  // }
-  // & > .charts {
-  //   display: flex;
-  //   justify-content: space-around;
-  //   flex-wrap: wrap;
-  // }
 }
