@@ -1,5 +1,5 @@
 .weekly-calendar {
-  & > .popup-background {
+  .popup-background {
     position: fixed;
     top: 0;
     left: 0;
@@ -9,8 +9,8 @@
     display: flex;
     text-align: center;
     justify-content: center;
-    & > .popup-content {
-      & > .close-popup-button {
+    .popup-content {
+      .close-popup-button {
         position: fixed;
         color: #ddd;
       }
@@ -27,17 +27,34 @@
       overflow-y: auto;
       border-radius: 15px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       flex-direction: column;
-
-      & > .details-div {
+      .chosen-calendar-div {
+        .popup-chosen {
+          ol {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            li {
+              margin: 5px;
+              padding: 2px;
+              border: solid;
+              width: 200px;
+            }
+          }
+        }
+      }
+      .details-div {
         border: solid black 3px;
-        display: flex;
         text-align: center;
         justify-content: space-between;
         height: fit-content;
         padding: 3%;
-        & > .popup-add-button {
+        ol {
+          display: flex;
+        }
+        .popup-add-button {
           padding-top: 5px;
         }
       }

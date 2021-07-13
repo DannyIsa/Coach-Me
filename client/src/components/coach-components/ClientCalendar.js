@@ -334,7 +334,7 @@ function ClientCalendar({ userDetails }) {
             {chosenItems && (
               <div className="chosen-calendar-div">
                 {chosenItems.exercises ? (
-                  <div className="popup-chosen-exercise">
+                  <div className="popup-chosen exercise">
                     <h1 className="workout-name">
                       {field.day + ": " + chosenItems.name}
                     </h1>
@@ -358,7 +358,7 @@ function ClientCalendar({ userDetails }) {
                     <button onClick={() => removeItem(1)}>Remove</button>
                   </div>
                 ) : (
-                  <div className="popup-chosen-food">
+                  <div className="popup-chosen food">
                     {chosenItems.length > 0 ? (
                       <ol>
                         {chosenItems.map((item) => (

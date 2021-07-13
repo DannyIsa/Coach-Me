@@ -1928,7 +1928,7 @@ form.sign-in-form {
   color: black;
 }
 
-.weekly-calendar > .popup-background {
+.weekly-calendar .popup-background {
   position: fixed;
   top: 0;
   left: 0;
@@ -1944,7 +1944,7 @@ form.sign-in-form {
           justify-content: center;
 }
 
-.weekly-calendar > .popup-background > .popup-content {
+.weekly-calendar .popup-background .popup-content {
   position: relative;
   padding: 20px;
   width: 100%;
@@ -1958,25 +1958,41 @@ form.sign-in-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-.weekly-calendar > .popup-background > .popup-content > .close-popup-button {
+.weekly-calendar .popup-background .popup-content .close-popup-button {
   position: fixed;
   color: #ddd;
 }
 
-.weekly-calendar > .popup-background > .popup-content > .details-div {
-  border: solid black 3px;
+.weekly-calendar .popup-background .popup-content .chosen-calendar-div .popup-chosen ol {
+  list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.weekly-calendar .popup-background .popup-content .chosen-calendar-div .popup-chosen ol li {
+  margin: 5px;
+  padding: 2px;
+  border: solid;
+  width: 200px;
+}
+
+.weekly-calendar .popup-background .popup-content .details-div {
+  border: solid black 3px;
   text-align: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -1987,7 +2003,13 @@ form.sign-in-form {
   padding: 3%;
 }
 
-.weekly-calendar > .popup-background > .popup-content > .details-div > .popup-add-button {
+.weekly-calendar .popup-background .popup-content .details-div ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.weekly-calendar .popup-background .popup-content .details-div .popup-add-button {
   padding-top: 5px;
 }
 
