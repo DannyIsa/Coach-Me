@@ -48,8 +48,15 @@
     padding: 0.5rem;
     background-color: rgb(192, 237, 255);
     border-radius: 15px;
-    height: 10rem;
+    height: fit-content;
+    min-height: 100px;
+    max-height: 500px;
     word-wrap: break-word;
+    overflow-y: auto;
+    
+    & > h2 {
+      margin: 0%;
+    }
   }
   // .workout2 {
   //   text-align: center;
