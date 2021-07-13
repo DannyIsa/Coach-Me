@@ -241,4 +241,11 @@
 .calorie-tracker .popup-add-food .fa-fa:hover {
   color: black;
 }
+
+.calorie-tracker .day-picker > div {
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 /*# sourceMappingURL=CaloriesTracker.css.map */

@@ -199,4 +199,10 @@
       color: black;
     }
   }
+  .day-picker {
+    & > div {
+      color: black;
+      display: flex;
+    }
+  }
 }
