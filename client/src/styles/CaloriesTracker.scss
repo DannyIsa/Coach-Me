@@ -165,7 +165,7 @@
       font-size: 1.5rem;
 
       &:focus {
-        outline-color: #1456a1;
+        outline-color: #3bc528;
         // outline-color: rgb(51, 102, 255);
       }
     }
@@ -202,7 +202,25 @@
   .day-picker {
     & > div {
       color: black;
+      align-items: center;
       display: flex;
+      width: 40rem;
+      // background-color: pink;
+      font-size: 0.9rem;
+      justify-content: space-around;
+
+      & button {
+        font-size: 1rem;
+        color: #3bc528;
+
+        &:hover {
+          border: none;
+          color: black;
+        }
+      }
     }
+    // & > {
+    //   align-self: center;
+    // }
   }
 }
