@@ -365,17 +365,30 @@ function TraineeProfile({ userDetails, setUserDetails }) {
                         Gender: <span>{coach ? coach.gender : ""}</span>
                       </p>
                       <p>
+                        Age:{" "}
+                        <span>
+                          {coach ? (
+                            <span>
+                              {" " +
+                                Math.abs(
+                                  new Date(
+                                    Date.now() -
+                                      new Date(coach.birthdate).getTime()
+                                  ).getUTCFullYear() - 1970
+                                )}
+                            </span>
+                          ) : (
+                            ""
+                          )}
+                        </span>
+                      </p>
+                      <p>
                         City: <span>{coach ? coach.city : ""} </span>
                       </p>
                       <p>
                         Expertise : <span>{coach ? coach.expertise : ""} </span>
                       </p>
-                      <p>
-                        Online Coaching :
-                        <span>
-                          {coach.online_coaching === "Yes" ? "Yes" : "No"}
-                        </span>
-                      </p>
+
                       <div className="coach-control-btn">
                         <a
                           className="chat-btn"
@@ -390,9 +403,12 @@ function TraineeProfile({ userDetails, setUserDetails }) {
                           Leave
                         </button>
                       </div>
-                      <h3>
-                        Rate Your Coach : <span>rate</span>
-                      </h3>
+                      <p>
+                        Online Coaching :
+                        <span>
+                          {coach.online_coaching === "Yes" ? "Yes" : "No"}
+                        </span>
+                      </p>
                     </div>
                   ) : (
                     <div className="coach-info">

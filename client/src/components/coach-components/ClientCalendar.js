@@ -339,7 +339,7 @@ function ClientCalendar({ userDetails }) {
                 <button className="popup-add-button-workout" onClick={addItem}>
                   <FontAwesomeIcon
                     icon={faPlus}
-                    color="#87bbde"
+                    color="rgb(46, 112, 187)"
                     className="add-fa"
                   />
                 </button>
