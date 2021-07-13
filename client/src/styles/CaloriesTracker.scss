@@ -12,8 +12,7 @@
 
     & img {
       width: 100%;
-      height: 40vh;
-      // background-size: cover;
+      height: 41vh;
     }
   }
 
@@ -48,7 +47,7 @@
         color: crimson;
       }
       .green {
-        color: seagreen;
+        color: rgb(59, 197, 40);
       }
     }
   }
@@ -74,7 +73,7 @@
       display: flex;
       height: 30vh;
       flex-direction: column;
-      background-color: #3bc528;
+      background-color: #6ef15f;
       text-align: center;
       border-radius: 10px;
       padding: 0.5rem;
@@ -106,9 +105,12 @@
         flex-direction: row;
         margin: 0.5rem 0rem;
         justify-content: space-between;
+        align-items: center;
 
         & h4 {
-          font-size: 0.9rem;
+          font-size: 0.8rem;
+          word-break: break-word;
+          width: 6.5rem;
         }
         & p {
           font-size: 0.8rem;
@@ -124,7 +126,7 @@
   }
 
   .chosen-meal {
-    border: #3bc528 solid 2px;
+    border: #6ef15f solid 2px;
   }
 
   .popup-background {
@@ -165,7 +167,7 @@
       font-size: 1.5rem;
 
       &:focus {
-        outline-color: #3bc528;
+        outline-color: #6ef15f;
         // outline-color: rgb(51, 102, 255);
       }
     }
@@ -205,13 +207,14 @@
       align-items: center;
       display: flex;
       width: 40rem;
+      // margin-right: 2.5rem;
       // background-color: pink;
       font-size: 0.9rem;
-      justify-content: space-around;
+      justify-content: space-between;
 
       & button {
         font-size: 1rem;
-        color: #3bc528;
+        color: #6ef15f;
 
         &:hover {
           border: none;
@@ -219,8 +222,5 @@
         }
       }
     }
-    // & > {
-    //   align-self: center;
-    // }
   }
 }

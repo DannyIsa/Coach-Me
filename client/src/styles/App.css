@@ -1208,52 +1208,114 @@ form.sign-in-form {
   -ms-flex-item-align: center;
       align-self: center;
   padding-top: 7rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #ecedef;
 }
 
-.trainee-dashboard .helpers {
+.trainee-dashboard .dash-con {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  margin-bottom: 2rem;
 }
 
-.trainee-dashboard .workout2 {
-  text-align: center;
-  padding: 0.5rem;
-  background-color: #811d2e;
-  border-radius: 15px;
-  word-wrap: break-word;
-  height: 7rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+.trainee-dashboard .dash-con .fi-fi {
+  font-size: 3rem;
+  margin-left: 2.2rem;
+  margin-top: 0.3rem;
 }
 
-.trainee-dashboard .measured1 {
-  text-align: center;
-  padding: 0.5rem;
-  background-color: #811d2e;
-  border-radius: 15px;
-  word-wrap: break-word;
-  height: 7rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+.trainee-dashboard .dash-con .dash-header {
+  padding-right: 0;
+  padding-left: 0;
+  text-align: left;
+  margin-left: 11rem;
 }
 
-.trainee-dashboard .diet1 {
+.trainee-dashboard .dash-con .dash-header span {
+  letter-spacing: 0.125rem;
+  color: #818ea3;
+  font-size: 0.9rem;
+  text-transform: uppercase !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.trainee-dashboard .dash-con .dash-header h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.trainee-dashboard .helpers {
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1.5rem 0rem 2rem 9rem;
+}
+
+.trainee-dashboard .helpers .workout2,
+.trainee-dashboard .helpers .measured1,
+.trainee-dashboard .helpers .diet1 {
+  margin-left: 1.68rem;
   text-align: center;
   padding: 0.5rem;
-  background-color: #811d2e;
+  background-color: white;
   border-radius: 15px;
   word-wrap: break-word;
-  height: 7rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  height: 10rem;
+  width: 20rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.5rem;
+}
+
+.trainee-dashboard .helpers .workout2,
+.trainee-dashboard .helpers .measured1,
+.trainee-dashboard .helpers .diet1 {
+  -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
+          box-shadow: 5px 8px 11px 6px #c0c0c0;
+}
+
+.trainee-dashboard .helpers .workout2,
+.trainee-dashboard .helpers .measured1,
+.trainee-dashboard .helpers .diet1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.trainee-dashboard .helpers .workout2 h3,
+.trainee-dashboard .helpers .measured1 h3,
+.trainee-dashboard .helpers .diet1 h3 {
+  color: black;
+}
+
+.trainee-dashboard .helpers .workout2 h3:hover,
+.trainee-dashboard .helpers .measured1 h3:hover,
+.trainee-dashboard .helpers .diet1 h3:hover {
+  color: #ffc719;
+}
+
+.trainee-dashboard .helpers span {
+  font-size: 15px;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase !important;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .coaches-list {
@@ -1494,8 +1556,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .details-div .right-div button span {
@@ -1675,7 +1737,7 @@ form.sign-in-form {
 }
 
 .add-exercise-start .add-exercise-form form select {
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form form button {
@@ -1698,8 +1760,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .add-exercise-start .add-exercise-form form button span {
@@ -1812,7 +1874,7 @@ form.sign-in-form {
 .add-exercise-start .add-exercise-form .form-block .textarea-control {
   width: 18rem;
   height: 4.5rem;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form .form-block input {
@@ -1823,7 +1885,7 @@ form.sign-in-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .weekly-calendar {
@@ -2371,16 +2433,31 @@ form.sign-in-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
+  position: absolute;
+  bottom: 5rem;
+  left: 8.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.trainee-logs .charts h2 {
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.trainee-logs .charts .chart {
+  background-color: #fff;
+  margin-left: 2rem;
+  -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
+          box-shadow: 5px 8px 11px 6px #c0c0c0;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 15px;
+  padding: 1rem;
 }
 
 .trainee-logs .charts .line-chart {
@@ -2403,21 +2480,51 @@ form.sign-in-form {
 }
 
 .trainee-logs .workout1 {
+  position: absolute;
+  right: 9rem;
+  top: 12rem;
   text-align: center;
   padding: 0.5rem;
-  background-color: #c0edff;
+  background-color: white;
   border-radius: 15px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  min-height: 100px;
-  max-height: 500px;
   word-wrap: break-word;
-  overflow-y: auto;
+  height: 10rem;
+  width: 20rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
+          box-shadow: 5px 8px 11px 6px #c0c0c0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  overflow: auto;
 }
 
-.trainee-logs .workout1 > h2 {
-  margin: 0%;
+.trainee-logs .workout1 h3 {
+  color: black;
+}
+
+.trainee-logs .workout1 h3:hover {
+  color: #ffc719;
+}
+
+.trainee-logs .workout1 span {
+  font-size: 15px;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase !important;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .chat-container {

@@ -35,8 +35,8 @@ function TraineeLogs({ userDetails, type }) {
               <div className="chart">
                 <h2>Diet Logs</h2>
                 <LineChart
-                  width={500}
-                  height={500}
+                  width={600}
+                  height={350}
                   data={dietLogs}
                   className="line-chart"
                 >
@@ -83,8 +83,8 @@ function TraineeLogs({ userDetails, type }) {
               <div className="chart">
                 <h2>Measure Logs</h2>
                 <LineChart
-                  width={500}
-                  height={500}
+                  width={600}
+                  height={350}
                   data={measureLogs}
                   className="line-chart"
                 >
@@ -132,7 +132,7 @@ function TraineeLogs({ userDetails, type }) {
 
             {/* <div className="workouts-dashboard"> */}
             <div className="workout1">
-              <h2>Previous Workouts:</h2>
+              <span>Previous Workouts:</span>
               {workoutLogs.length > 0 ? (
                 workoutLogs.map((item, index) => (
                   <h3 key={index}>{`[ ${new Date(
@@ -142,7 +142,7 @@ function TraineeLogs({ userDetails, type }) {
                   ).toLocaleTimeString("IT-it")} ]:  ${item.name}`}</h3>
                 ))
               ) : (
-                <h3>No Previous Workouts</h3>
+                <span>No Previous Workouts</span>
               )}
             </div>
             {/* </div> */}

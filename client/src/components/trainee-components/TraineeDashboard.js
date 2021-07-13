@@ -3,6 +3,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { SetErrorContext } from "../../App";
 import TraineeLogs from "../TraineeLogs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 
 function TraineeDashboard({ userDetails }) {
   const [wod, setWod] = useState({ done: false, workout: undefined });
@@ -34,42 +36,55 @@ function TraineeDashboard({ userDetails }) {
     <div className="trainee-dashboard">
       {userDetails ? (
         <>
-          <h1>{`Welcome Back, ${userDetails.name} !`}</h1>
-          <Link to="/trainee/calendar" className="trainee-calendar">
-            Weekly Calendar
-          </Link>
+          <div className="dash-con">
+            <div className="dash-header">
+              <span>Dashboard</span>
+              <h3>{userDetails.name}</h3>
+            </div>
+            <Link to="/trainee/calendar" className="trainee-calendar">
+              <FontAwesomeIcon
+                icon={faCalendarAlt}
+                className="fi-fi"
+                color="#252525f7"
+              />
+            </Link>
+          </div>
           <div className="helpers">
             <div className="workout2">
-              <h2>Today's Workout: </h2>
+              <span>Today's Workout</span>
               {wod.workout ? (
                 wod.done ? (
-                  <h3>
+                  <span>
                     No Workouts Remaining
                     <br /> For Today!
-                  </h3>
+                  </span>
                 ) : (
                   <Link to={`/trainee/workout/${wod.workout.id}`}>
-                    {wod.workout.name}
+                    <h3>{wod.workout.name}</h3>
                   </Link>
                 )
               ) : (
-                <h3>No Workouts Remaining For Today!</h3>
+                <span>No Workouts Remaining For Today!</span>
               )}
             </div>
             <div className="measured1">
               {measured ? (
-                <h2>Measurements Registered!</h2>
+                <span>Measurements Registered!</span>
               ) : (
-                <Link to="/trainee/profile">Measure Yourself!</Link>
+                <Link to="/trainee/profile">
+                  <h3>Measure Yourself!</h3>
+                </Link>
               )}
             </div>
             <div className="diet1">
               {eaten ? (
-                <h2>Meals Registered!</h2>
+                <span>Meals Registered!</span>
               ) : (
                 <>
-                  <h2>You Didn't Eat Today! </h2>
-                  <Link to="/trainee/food">Please Register Your Meals!</Link>
+                  <h3>You Didn't Eat Today! </h3>
+                  <Link to="/trainee/food">
+                    <h3>Please Register Your Meals!</h3>
+                  </Link>
                 </>
               )}
             </div>
