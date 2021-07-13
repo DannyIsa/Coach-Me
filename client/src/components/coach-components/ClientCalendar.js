@@ -335,9 +335,6 @@ function ClientCalendar({ userDetails }) {
               <div className="chosen-calendar-div">
                 {chosenItems.exercises ? (
                   <div className="popup-chosen exercise">
-                    <h1 className="workout-name">
-                      {field.day + ": " + chosenItems.name}
-                    </h1>
                     <ol>
                       {chosenItems.exercises.map((item, index) => (
                         <li className="exercise-block" key={index}>
