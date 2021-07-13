@@ -2163,6 +2163,10 @@ form.sign-in-form {
   top: 8rem;
 }
 
+.weekly-calendar > .popup-background > .popup-content > .details-div.workout {
+  background-color: red;
+}
+
 .weekly-calendar > .popup-background > .popup-content > .details-div .popup-amount-input {
   width: 3.5rem;
 }
@@ -2189,6 +2193,7 @@ form.sign-in-form {
   height: 12rem;
   overflow: auto;
   width: 100%;
+  overflow: auto;
 }
 
 .weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food .oList {
@@ -2217,14 +2222,20 @@ form.sign-in-form {
   margin-bottom: 1rem;
   background-color: #87bbde;
   padding: 0.2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food .remove-meal {
-  border: none;
+.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food .remove-fa {
+  font-size: 1.5rem;
+  color: royalblue;
+  bottom: 0%;
 }
 
-.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food .remove-meal .remove-fa:hover {
+.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food .remove-fa:hover {
   color: black;
+  cursor: pointer;
 }
 
 .profile-container {

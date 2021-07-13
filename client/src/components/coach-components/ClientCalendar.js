@@ -287,7 +287,7 @@ function ClientCalendar({ userDetails }) {
               </div>
             </div>
             {field.type === "Workout" && chosen && (
-              <div className="details-div">
+              <div className="details-div workout">
                 <h1 className="workout-name">{chosen.name}</h1>
                 <ol>
                   {chosen.exercises.map((item, index) => (
@@ -369,17 +369,12 @@ function ClientCalendar({ userDetails }) {
                       ))}
                     </ol>
                     <h1>{"X" + chosenItems.sets}</h1>
-                    <button
-                      className="remove-meal"
+                    <FontAwesomeIcon
                       onClick={() => removeItem(1)}
-                    >
-                      {" "}
-                      <FontAwesomeIcon
-                        icon={faTimes}
-                        color="#acacac"
-                        className="remove-fa"
-                      />
-                    </button>
+                      icon={faTimes}
+                      color="#acacac"
+                      className="remove-fa"
+                    />
                   </div>
                 ) : (
                   <div className="popup-chosen-food">
@@ -395,16 +390,12 @@ function ClientCalendar({ userDetails }) {
                             <p>{item.carbs * item.amount} carbs</p>
                             <p>{item.fats * item.amount} fats</p>
                             <br />
-                            <button
-                              className="remove-meal"
+                            <FontAwesomeIcon
                               onClick={() => removeItem(item.id)}
-                            >
-                              <FontAwesomeIcon
-                                icon={faTimes}
-                                color="#acacac"
-                                className="remove-fa"
-                              />
-                            </button>
+                              icon={faTimes}
+                              color="#acacac"
+                              className="remove-fa"
+                            />
                           </li>
                         ))}
                       </ul>
