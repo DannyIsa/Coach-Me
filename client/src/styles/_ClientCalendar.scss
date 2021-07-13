@@ -73,7 +73,9 @@
         word-wrap: break-word;
         right: 6.5rem;
         top: 8rem;
-
+        &.workout {
+          background-color: red;
+        }
         .popup-amount-input {
           width: 3.5rem;
         }
@@ -93,8 +95,8 @@
           flex-direction: row;
           margin-top: 30rem;
           height: 12rem;
-          overflow: scroll;
           width: 100%;
+          overflow: auto;
 
           .oList {
             display: flex;
@@ -111,13 +113,17 @@
               margin-bottom: 1rem;
               background-color: #87bbde;
               padding: 0.2rem;
+              align-items: center;
             }
           }
-          .remove-meal {
-            border: none;
+          .remove-fa {
+            font-size: 1.5rem;
+            color: royalblue;
+            bottom: 0%;
 
-            .remove-fa:hover {
+            &:hover {
               color: black;
+              cursor: pointer;
             }
           }
         }

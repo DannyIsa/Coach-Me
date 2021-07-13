@@ -1309,7 +1309,7 @@ form.sign-in-form {
   font-size: 15px;
   letter-spacing: 0.0625rem;
   text-transform: uppercase !important;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1556,8 +1556,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .details-div .right-div button span {
@@ -1737,7 +1737,7 @@ form.sign-in-form {
 }
 
 .add-exercise-start .add-exercise-form form select {
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form form button {
@@ -1760,8 +1760,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .add-exercise-start .add-exercise-form form button span {
@@ -1874,7 +1874,7 @@ form.sign-in-form {
 .add-exercise-start .add-exercise-form .form-block .textarea-control {
   width: 18rem;
   height: 4.5rem;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form .form-block input {
@@ -1885,7 +1885,7 @@ form.sign-in-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .weekly-calendar {
@@ -2089,6 +2089,10 @@ form.sign-in-form {
   top: 8rem;
 }
 
+.weekly-calendar > .popup-background > .popup-content > .details-div.workout {
+  background-color: red;
+}
+
 .weekly-calendar > .popup-background > .popup-content > .details-div .popup-amount-input {
   width: 3.5rem;
 }
@@ -2113,8 +2117,8 @@ form.sign-in-form {
           flex-direction: row;
   margin-top: 30rem;
   height: 12rem;
-  overflow: scroll;
   width: 100%;
+  overflow: auto;
 }
 
 .weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food .oList {
@@ -2143,14 +2147,20 @@ form.sign-in-form {
   margin-bottom: 1rem;
   background-color: #87bbde;
   padding: 0.2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food .remove-meal {
-  border: none;
+.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food .remove-fa {
+  font-size: 1.5rem;
+  color: royalblue;
+  bottom: 0%;
 }
 
-.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food .remove-meal .remove-fa:hover {
+.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food .remove-fa:hover {
   color: black;
+  cursor: pointer;
 }
 
 .profile-container {
@@ -2596,7 +2606,7 @@ form.sign-in-form {
   font-size: 15px;
   letter-spacing: 0.0625rem;
   text-transform: uppercase !important;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
