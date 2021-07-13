@@ -35,7 +35,7 @@ function TraineeLogs({ userDetails, type }) {
               <div className="chart">
                 <h2>Diet Logs</h2>
                 <LineChart
-                  width={450}
+                  width={500}
                   height={500}
                   data={dietLogs}
                   className="line-chart"

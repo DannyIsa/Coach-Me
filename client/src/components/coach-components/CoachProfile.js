@@ -205,7 +205,7 @@ function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
               </div>
               <div className="col-sm-6 mb-3">
                 <div className="card h-100">
-                  <div className="coach-info">
+                  <div className="coach-info coach">
                     <h2>Chats List:</h2>
                     <div>
                       {chats.map((chat, index) => (

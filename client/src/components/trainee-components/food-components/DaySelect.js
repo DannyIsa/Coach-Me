@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import DayPicker from "react-day-picker";
 import axios from "axios";
-// import DayPickerInput from "react-day-picker/DayPickerInput";
-import "react-day-picker/lib/style.css";
+import styles from "react-day-picker/lib/style.css";
 import { SetErrorContext } from "../../../App";
 
 export default function DaySelect({
@@ -32,6 +31,7 @@ export default function DaySelect({
         setError(err.response.data);
         setFoodOfSelectedDate([]);
       });
+    styles.wrapper = { display: "flex", border: "solid" };
   }, [selectedDay, userDetails]);
 
   const modifiers = {
@@ -47,6 +47,7 @@ export default function DaySelect({
   return (
     <div>
       <DayPicker
+        className={styles}
         showOutsideDays
         canChangeMonth={false}
         todayButton="Go to Today"
