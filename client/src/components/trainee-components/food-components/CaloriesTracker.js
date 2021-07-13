@@ -10,6 +10,7 @@ import { SetErrorContext } from "../../../App";
 import axios from "axios";
 import { debounce } from "lodash";
 import DaySelect from "./DaySelect";
+import adobe from "../../../pics/adobe.png";
 import "../../../styles/CaloriesTracker.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -95,6 +96,9 @@ export default function CaloriesTracker({ userDetails }) {
 
   return (
     <div className="calorie-tracker">
+      <div className="adobe">
+        <img width="100%" src={adobe} />
+      </div>
       <div className="meter-and-calendar">
         <div className="meter-and-title">
           <progress

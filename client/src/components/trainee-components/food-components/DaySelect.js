@@ -40,7 +40,7 @@ export default function DaySelect({
   const modifiersStyles = {
     selectedDay: {
       color: "white",
-      backgroundColor: "#3366ff",
+      backgroundColor: "#3bc528",
     },
   };
 
