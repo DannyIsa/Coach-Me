@@ -138,7 +138,6 @@ function ClientsList({ userDetails, alertMessage }) {
         <div className="pop-up">
           <div className="pop-up-inner logs">
             <button className="popup-close" onClick={() => setChosenClient()}>
-              {" "}
               <FontAwesomeIcon icon={faTimes} />
             </button>
             <TraineeLogs type="Coach" userDetails={chosenClient} />

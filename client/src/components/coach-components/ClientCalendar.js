@@ -176,9 +176,11 @@ function ClientCalendar({ userDetails }) {
       <table className="table">
         <thead>
           <tr>
+            <td className="category-td"></td>
+
             {DaysOfTheWeek.map((day, index) => (
-              <td key={index}>
-                <h2>{day}</h2>
+              <td key={index} className="table-one-container">
+                <h2 className="day-title">{day.slice(0, 3)}</h2>
               </td>
             ))}
           </tr>
@@ -186,6 +188,9 @@ function ClientCalendar({ userDetails }) {
         <tbody>
           {Meals.map((meal, mi) => (
             <tr key={mi}>
+              <td className="category-td">
+                <strong>{meal}</strong>
+              </td>
               {DaysOfTheWeek.map((day, di) => {
                 let items = needToEat.filter(
                   (foodToEat) =>
@@ -204,17 +209,18 @@ function ClientCalendar({ userDetails }) {
                       field.day === day && field.type === meal ? "chosen" : ""
                     }
                   >
-                    {meal +
-                      " " +
-                      items.map((item) =>
-                        item ? "\n" + item.name + " X" + item.amount : ""
-                      )}
+                    {items.map((item) =>
+                      item ? item.name + " X" + item.amount : ""
+                    )}
                   </td>
                 );
               })}
             </tr>
           ))}
           <tr>
+            <td className="category-td">
+              <strong>Workouts</strong>
+            </td>
             {DaysOfTheWeek.map((day, index) => {
               let item = workouts.find((workout) => workout.day === day);
               return (
@@ -232,7 +238,7 @@ function ClientCalendar({ userDetails }) {
                     setField({ type: "Workout", day });
                   }}
                 >
-                  {"Workout" + (item ? ":\n" + item.name : "")}
+                  {item ? item.name : ""}
                 </td>
               );
             })}

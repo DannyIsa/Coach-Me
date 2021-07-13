@@ -10,13 +10,14 @@
     height: 95%;
     width: 95%;
     border-collapse: collapse;
+    table-layout: fixed;
   }
 
   .table td {
     border: 2px #d1d3d8 solid;
     background-color: rgb(231, 228, 223);
-    width: 5rem;
-    height: 5.5rem;
+    width: 12.5%;
+    height: 16.6%;
     color: rgb(77, 75, 75);
     word-wrap: break-all;
   }

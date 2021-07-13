@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   padding-top: 5.8rem;
-  overflow: scroll;
+  overflow: auto;
   align-items: center;
 
   & h1 {
@@ -118,7 +118,7 @@
     .exercises-left {
       width: 30rem;
       height: 35rem;
-      overflow: scroll;
+      overflow: auto;
 
       display: flex;
       flex-wrap: wrap;
@@ -158,7 +158,7 @@
       border-radius: 0.4rem;
       background-color: #1456a1;
       cursor: no-drop;
-      overflow: scroll;
+      overflow: auto;
 
       & p {
         font-size: 1.3rem;
@@ -238,7 +238,7 @@
       background-color: #1456a1;
       width: 30rem;
       height: 35rem;
-      // overflow: scroll;
+      // overflow: auto;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -257,7 +257,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        overflow: scroll;
+        overflow: auto;
         width: 25rem;
 
         & button {
@@ -281,7 +281,7 @@
 // @media (max-height: 1500px) {
 //   .create-workout-page {
 //     padding-top: 5rem;
-//     overflow: scroll;
+//     overflow: auto;
 
 //     .exercises-container {
 //       display: flex;
@@ -289,13 +289,13 @@
 //       position: absolute;
 //       bottom: 0;
 //       flex-direction: column;
-//       overflow: scroll;
+//       overflow: auto;
 
 //       .exercises-left {
 //         float: left;
 //         width: 35rem;
 //         height: 35rem;
-//         overflow: scroll;
+//         overflow: auto;
 //         display: flex;
 //         flex-wrap: wrap;
 //         justify-content: space-around;
@@ -317,7 +317,7 @@
 //         background-color: aquamarine;
 //         width: 35rem;
 //         height: 35rem;
-//         overflow: scroll;
+//         overflow: auto;
 //         display: flex;
 //         flex-wrap: wrap;
 //         position: absolute;

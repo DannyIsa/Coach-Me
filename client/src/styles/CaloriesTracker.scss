@@ -96,8 +96,10 @@
       flex-direction: column;
       // background-color: rgb(254, 251, 255);
       color: black;
-      height: 20vh;
-      overflow: scroll;
+      // height: 20vh;
+      // overflow: scroll;
+      height: 10rem;
+      overflow: auto;
 
       .eaten-food-container {
         display: flex;
