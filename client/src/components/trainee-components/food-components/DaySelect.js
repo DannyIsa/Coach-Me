@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import DayPicker from "react-day-picker";
 import axios from "axios";
-// import DayPickerInput from "react-day-picker/DayPickerInput";
 import "react-day-picker/lib/style.css";
 import { SetErrorContext } from "../../../App";
 
@@ -40,7 +39,7 @@ export default function DaySelect({
   const modifiersStyles = {
     selectedDay: {
       color: "white",
-      backgroundColor: "#3366ff",
+      backgroundColor: "#3bc528",
     },
   };
 
@@ -48,11 +47,12 @@ export default function DaySelect({
     <div>
       <DayPicker
         showOutsideDays
+        className="day-picker"
         canChangeMonth={false}
         todayButton="Go to Today"
         modifiers={modifiers}
         modifiersStyles={modifiersStyles}
-        onTodayButtonClick={(day, modifiers) => {
+        onTodayButtonClick={(day) => {
           setSelectedDay(day);
         }}
         onDayClick={handleDayClick}

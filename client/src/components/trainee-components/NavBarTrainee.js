@@ -79,17 +79,17 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
         </div>
         <ul className={click ? "nav-options active" : "nav-options-main"}>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="/dashboard" className="link">
+            <a href="/dashboard" className="linki bb">
               Home
             </a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="/trainee/food" className="link">
+            <a href="/trainee/food" className="linki bb">
               Nutrition
             </a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <a href="/trainee/profile" className="link">
+            <a href="/trainee/profile" className="linki bb">
               Profile
             </a>
           </li>
@@ -210,7 +210,7 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
             </div>
           </li>
           <li className="option mobile-option" onClick={closeMobileMenu}>
-            <Link className="sign-in link" onClick={() => signOut(history)}>
+            <Link className="sign-in linki" onClick={() => signOut(history)}>
               Logout
             </Link>
           </li>
@@ -218,7 +218,7 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
       </div>
       <ul className="signIn">
         <li onClick={closeMobileMenu}>
-          <Link className="signIn-btn" onClick={() => signOut(history)}>
+          <Link className="signIn-btnB" onClick={() => signOut(history)}>
             Logout
           </Link>
         </li>

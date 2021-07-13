@@ -69,6 +69,7 @@ export default function WeeklyCalendar({ userDetails }) {
       <table className="table">
         <thead>
           <tr>
+            <td className="category-td"></td>
             {DaysOfTheWeek.map((day, index) => (
               <td key={index} className="table-one-container">
                 <h2 className="day-title">{day.slice(0, 3)}</h2>
@@ -79,6 +80,9 @@ export default function WeeklyCalendar({ userDetails }) {
         <tbody>
           {Meals.map((meal, mi) => (
             <tr key={mi}>
+              <td className="category-td">
+                <strong>{meal}</strong>
+              </td>
               {DaysOfTheWeek.map((day, di) => {
                 let items = needToEat.filter(
                   (foodToEat) =>
@@ -87,7 +91,6 @@ export default function WeeklyCalendar({ userDetails }) {
                 return (
                   <td key={di}>
                     <div className="table-one-container">
-                      <h3 className="container-title">{meal}</h3>
                       {items.map((item) => {
                         return <p>{item && item.name + " X" + item.amount}</p>;
                       })}
@@ -98,12 +101,14 @@ export default function WeeklyCalendar({ userDetails }) {
             </tr>
           ))}
           <tr>
+            <td className="category-td">
+              <strong>Workout</strong>
+            </td>
             {DaysOfTheWeek.map((day, index) => {
               let item = workouts.find((workout) => workout.day === day);
               return (
                 <td key={index}>
                   <div className="table-one-container">
-                    <h3 className="container-title">Workout</h3>
                     {item && (
                       <div onClick={() => handleExerciseClicked(item)}>
                         <h5>{item.name}</h5>

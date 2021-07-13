@@ -23,17 +23,18 @@
   -ms-user-select: none;
   user-select: none;
   font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  // font-family: "Europa Bold", Sans-serif;
 }
 
 body {
   width: 100vw;
   height: 100vh;
   font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
-  background-color: #bdd4e7;
-  background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+  // background-color: #bdd4e7;
+  // background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
   color: rgba(255, 255, 255, 0.9);
-  // background-color: rgb(231, 228, 223);
-  // color:black;
+  background-color: white;
+  color: black;
   // overflow: hidden;
   // height: 100vh;
   // text-transform: uppercase;
@@ -90,7 +91,8 @@ button {
 a {
   text-decoration: none;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
+  // color: rgba(255, 255, 255, 0.5);
   // font-weight: 100;
   box-sizing: border-box;
   letter-spacing: 0.1025em;
@@ -152,7 +154,7 @@ a:hover {
     right: 0px;
   }
   30% {
-    right: -300px;
+    right: -400px;
   }
   100% {
     right: -500px;

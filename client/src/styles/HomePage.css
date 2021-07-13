@@ -13,6 +13,7 @@
 
 .link {
   padding: 23px 20px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .link .link:hover {

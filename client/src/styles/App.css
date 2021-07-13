@@ -531,7 +531,7 @@ form.sign-in-form {
   -ms-flex-direction: column;
   flex-direction: column;
   padding-top: 5.8rem;
-  overflow: scroll;
+  overflow: auto;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -674,7 +674,7 @@ form.sign-in-form {
 .create-workout-page .exercises-container .exercises-left {
   width: 30rem;
   height: 35rem;
-  overflow: scroll;
+  overflow: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -715,7 +715,7 @@ form.sign-in-form {
   border-radius: 0.4rem;
   background-color: #1456a1;
   cursor: no-drop;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .create-workout-page .exercises-container .exercise-middle p {
@@ -851,7 +851,7 @@ form.sign-in-form {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  overflow: scroll;
+  overflow: auto;
   width: 25rem;
 }
 
@@ -887,7 +887,7 @@ form.sign-in-form {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .workout-list-start .ticket-list {
@@ -910,7 +910,7 @@ form.sign-in-form {
   width: -moz-fit-content;
   width: fit-content;
   height: 19rem;
-  overflow: scroll;
+  overflow: auto;
   padding: 0rem 2rem;
   border-radius: 0.4rem;
   margin: 2rem;
@@ -1005,6 +1005,8 @@ form.sign-in-form {
   -ms-flex-direction: column;
   flex-direction: column;
   height: 15rem;
+  position: absolute;
+  right: 0;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -1200,7 +1202,7 @@ form.sign-in-form {
 
 .pop-up > .pop-up-inner.logs {
   max-width: 1500px;
-  max-height: 800px;
+  max-height: 1000px;
   background-color: white;
 }
 
@@ -1245,6 +1247,16 @@ form.sign-in-form {
   padding-top: 7rem;
 }
 
+.trainee-dashboard .helpers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
+
 .trainee-dashboard .workout2 {
   text-align: center;
   padding: 0.5rem;
@@ -1255,7 +1267,30 @@ form.sign-in-form {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  position: fixed;
+}
+
+.trainee-dashboard .measured1 {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #811d2e;
+  border-radius: 15px;
+  word-wrap: break-word;
+  height: 7rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.trainee-dashboard .diet1 {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #811d2e;
+  border-radius: 15px;
+  word-wrap: break-word;
+  height: 7rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .coaches-list {
@@ -1688,7 +1723,7 @@ form.sign-in-form {
 }
 
 .add-exercise-start .add-exercise-form form {
-  overflow: scroll;
+  overflow: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1898,13 +1933,14 @@ form.sign-in-form {
   height: 95%;
   width: 95%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .weekly-calendar .table td {
   border: 2px #d1d3d8 solid;
   background-color: #e7e4df;
-  width: 5rem;
-  height: 5.5rem;
+  width: 12.5%;
+  height: 16.6%;
   color: #4d4b4b;
   word-wrap: break-all;
 }
@@ -2256,6 +2292,10 @@ form.sign-in-form {
   padding: 1rem;
 }
 
+.profile-container .main-body .coach-info.coach {
+  height: 41.8rem;
+}
+
 .profile-container .main-body .coach-info h2 {
   margin-bottom: 0.5rem;
 }
@@ -2303,17 +2343,53 @@ form.sign-in-form {
   color: white;
 }
 
-.live-workout-page > .header {
-  padding-top: 90px;
+.live-workout-page {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  overflow-x: hidden;
 }
 
-.live-workout-page > .workout-details-div {
+.live-workout-page > .header {
+  padding-top: 30px;
+}
+
+.live-workout-page > .workout-details-div > .show-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.live-workout-page > .workout-details-div > .show-div > .timerContainer {
+  border: 3px solid black;
+  padding: 20px 70px 20px 70px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 7px;
+}
+
+.live-workout-page
+  > .workout-details-div
+  > .show-div
+  > .current-exercise
+  > img {
+  height: 300px;
+}
+
+.live-workout-page > .workout-details-div > .exercises-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  margin-top: 50px;
 }
 
 .live-workout-page .exercise {
@@ -2348,7 +2424,6 @@ form.sign-in-form {
 }
 
 .trainee-logs .mainDiv {
-  position: absolute;
   bottom: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2442,7 +2517,7 @@ form.sign-in-form {
 .chat-container .chat-component .messages-div {
   position: absolute;
   bottom: 7rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   width: 100vw;
 }
@@ -2470,6 +2545,7 @@ form.sign-in-form {
 }
 
 .chat-container .chat-component > .input-and-button {
+  border-top: solid black 2px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2486,7 +2562,8 @@ form.sign-in-form {
 
 .chat-container .chat-component > .input-and-button > input {
   width: 80%;
-  height: 30px;
+  height: 40px;
+  font-size: 20px;
   border-radius: 20px;
   padding-left: 10px;
   outline: none;
@@ -2530,6 +2607,7 @@ form.sign-in-form {
   > .content {
   white-space: normal;
   font-size: 17px;
+  word-break: break-word;
 }
 
 .chat-container .chat-component > .messages-div > .message-div > .message.sent {
@@ -2564,9 +2642,9 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
-  background-color: #bdd4e7;
-  background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
   color: rgba(255, 255, 255, 0.9);
+  background-color: white;
+  color: black;
 }
 
 button {
@@ -2595,7 +2673,7 @@ button:hover {
 a {
   text-decoration: none;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   letter-spacing: 0.1025em;
@@ -2684,7 +2762,7 @@ a:hover {
     right: 0px;
   }
   30% {
-    right: -300px;
+    right: -400px;
   }
   100% {
     right: -500px;
@@ -2696,7 +2774,7 @@ a:hover {
     right: 0px;
   }
   30% {
-    right: -300px;
+    right: -400px;
   }
   100% {
     right: -500px;

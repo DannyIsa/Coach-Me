@@ -27,7 +27,6 @@
   position: fixed;
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(0, 0, 0, 0.1);
 }
 
 .homeNav .logo-nav {
@@ -90,10 +89,10 @@
   color: #3b3be2;
 }
 
-.homeNav .signIn-btn {
+.homeNav .signIn-btnB {
   padding: 10px 10px;
   border-radius: 3px;
-  background: #2a9d8f;
+  background-color: #333;
   color: white;
   cursor: pointer;
   -webkit-box-align: center;
@@ -112,7 +111,7 @@
   -webkit-transition: 0.5s;
   transition: 0.5s;
   position: absolute;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 0px;
   left: -300px;
   margin-top: 5px;
@@ -466,7 +465,7 @@
     color: #ffc719;
     border-bottom: none;
   }
-  .signIn-btn {
+  .signIn-btnB {
     display: none;
   }
   .homeNav .mobile-menu {

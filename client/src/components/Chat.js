@@ -10,38 +10,28 @@ export default function Chat({ userDetails, userType }) {
   const [messages, setMessages] = useState([]);
   const { traineeId, coachId } = useParams();
   const [messageContent, setMessageContent] = useState("");
-  const [coachName, setCoachName] = useState("");
-  const [traineeName, setTraineeName] = useState("");
+  const [contactName, setContactName] = useState("");
 
   const setError = useContext(SetErrorContext);
-
+  console.log(contactName);
   useEffect(() => {
     if (!userDetails || !traineeId) return;
     if (userType === "Trainee") {
       if (userDetails.id !== Number(traineeId)) return;
-      axios
-        .get(`http://localhost:3001/api/chat/${traineeId}/${coachId}`)
-        .then(({ data }) => setMessages(data))
-        .catch((err) => {
-          setError(err.response.data);
-        });
-      axios
-        .get(`http://localhost:3001/api/coach/coach-name/${coachId}`)
-        .then(({ data }) => setCoachName(data))
-        .catch((e) => setError(e.response.data));
     } else {
       if (userDetails.id !== Number(coachId)) return;
-      axios
-        .get(`http://localhost:3001/api/chat/${traineeId}/${coachId}`)
-        .then(({ data }) => setMessages(data))
-        .catch((err) => {
-          setError(err.response.data);
-        });
-      axios
-        .get(`http://localhost:3001/api/trainee/trainee-name/${coachId}`)
-        .then(({ data }) => setTraineeName(data))
-        .catch((e) => setError(e.response.data));
     }
+    axios
+      .get(`http://localhost:3001/api/chat/${traineeId}/${coachId}`)
+      .then(({ data }) => {
+        setMessages(data.messages);
+        setContactName(
+          userType === "Trainee" ? data.coach_name : data.trainee_name
+        );
+      })
+      .catch((err) => {
+        setError(err.response.data);
+      });
   }, [userDetails]);
 
   useEffect(() => {
@@ -51,8 +41,9 @@ export default function Chat({ userDetails, userType }) {
         traineeId === data.traineeId &&
         coachId === data.coachId &&
         data.sender !== userType
-      )
+      ) {
         setMessages([data, ...messages]);
+      }
     });
   }, [userDetails, messages]);
 
@@ -63,6 +54,7 @@ export default function Chat({ userDetails, userType }) {
         content: messageContent,
         sender: userType,
       });
+      console.log(message.data);
       setMessages([message.data, ...messages]);
       setMessageContent("");
     } catch (err) {
@@ -75,9 +67,8 @@ export default function Chat({ userDetails, userType }) {
       <div className="chat-component">
         <h1 className="chatting-with">
           You are chatting with
-          {userType === "Trainee"
-            ? " Coach " + coachName
-            : " Trainee " + traineeName}
+          {userType === "Trainee" ? " coach " : " trainee "}
+          {contactName}
         </h1>
         <div className="messages-div">
           {messages.map((message) => (

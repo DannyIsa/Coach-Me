@@ -71,11 +71,9 @@ function WorkoutsList({ userDetails }) {
                   ))}
                 </ol>
               </span>
+              <h2>{"X" + item.sets}</h2>
             </div>
             <div className="workout-ticket-right">
-              <div>
-                <span>{"X" + item.sets}</span>
-              </div>
               <button
                 onClick={() => handleRemove(item.id)}
                 className="remove-workout"

@@ -6,21 +6,35 @@
   overflow: hidden;
   // color: black;
 
+  .adobe {
+    position: absolute;
+    top: 0;
+
+    & img {
+      width: 100%;
+      height: 40vh;
+      // background-size: cover;
+    }
+  }
+
   .meter-and-calendar {
     display: flex;
-    flex-direction: column;
-    width: 40%;
+    // flex-direction: column;
+    width: 100%;
     height: 90vh;
-    float: right;
-    margin-right: 1rem;
+    float: left;
+    // margin-left: 1rem;
+    // justify-content: center;
+    // background-color: pink;
     justify-content: space-around;
     align-items: center;
 
     .meter-and-title {
       display: flex;
+      color: black;
       align-items: center;
       flex-direction: column;
-      width: 80%;
+      width: 30%;
 
       .calorie-meter {
         width: 90%;
@@ -41,14 +55,30 @@
 
   .meals-container {
     border-radius: 0.4rem;
-    width: 55%;
-    height: 89vh;
+    width: 100vw;
+    height: 30vh;
     display: flex;
-    flex-direction: column;
-    margin-left: 3rem;
+    position: absolute;
+    bottom: 1rem;
+    // left: 20rem;
+    justify-content: space-around;
+    // flex-direction: column;
+    // margin-left: 3rem;
+    align-items: center;
     // background-color: rgb(174, 0, 255);
-    background-color: #1456a1;
+    // background-color: #1456a1;
     // background-color: rgb(51, 102, 255);
+
+    .meal {
+      width: 23rem;
+      display: flex;
+      height: 30vh;
+      flex-direction: column;
+      background-color: #3bc528;
+      text-align: center;
+      border-radius: 10px;
+      padding: 0.5rem;
+    }
 
     .add-to-container {
       display: flex;
@@ -64,24 +94,25 @@
     .meal-container {
       display: flex;
       flex-direction: column;
-      background-color: rgb(254, 251, 255);
+      // background-color: rgb(254, 251, 255);
       color: black;
+      // height: 20vh;
+      // overflow: scroll;
       height: 10rem;
-      overflow: scroll;
+      overflow: auto;
 
-      // .meal {
-      //   display: flex;
-      //   // flex-direction: column;
-      //   text-align: center;
-      //   border: rgb(221, 221, 221) solid 3px;
-      //   border-radius: 5px;
-      //   // width: 300px;
-      // }
       .eaten-food-container {
         display: flex;
         flex-direction: row;
-        margin: 1rem 0.5rem;
+        margin: 0.5rem 0rem;
         justify-content: space-between;
+
+        & h4 {
+          font-size: 0.9rem;
+        }
+        & p {
+          font-size: 0.8rem;
+        }
 
         .delete-eaten-food-button {
           border: none;
@@ -93,7 +124,7 @@
   }
 
   .chosen-meal {
-    border: red solid 3px;
+    border: #3bc528 solid 2px;
   }
 
   .popup-background {
@@ -166,6 +197,12 @@
 
     .fa-fa:hover {
       color: black;
+    }
+  }
+  .day-picker {
+    & > div {
+      color: black;
+      display: flex;
     }
   }
 }

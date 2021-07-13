@@ -162,6 +162,9 @@
       min-height: 1px;
       height: 22.5rem;
       padding: 1rem;
+      &.coach {
+        height: 41.8rem;
+      }
       & h2 {
         margin-bottom: 0.5rem;
       }

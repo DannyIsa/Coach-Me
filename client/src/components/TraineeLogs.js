@@ -30,20 +30,12 @@ function TraineeLogs({ userDetails, type }) {
     <div className="trainee-logs">
       {userDetails ? (
         <>
-          {type === "Trainee" && (
-            <>
-              <h1>{`Welcome Back, ${userDetails.name} !`}</h1>
-              <Link to="/trainee/calendar" className="trainee-calendar">
-                Weekly Calendar
-              </Link>
-            </>
-          )}
           <div className="mainDiv">
             <div className="charts">
               <div className="chart">
                 <h2>Diet Logs</h2>
                 <LineChart
-                  width={450}
+                  width={500}
                   height={500}
                   data={dietLogs}
                   className="line-chart"

@@ -65,7 +65,7 @@ function App() {
               userDetails.id === Number(data.traineeId))
           ) {
             if (!window.location.href.includes("chat"))
-              setAlertMessage("New Chat Message");
+              setAlertMessage("New Chat Message from " + data.sender_name);
           }
         }
       });

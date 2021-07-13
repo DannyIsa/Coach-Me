@@ -147,7 +147,14 @@ function CreateWorkout({ userDetails }) {
                     setDraggedItem();
                     if (!snap) return;
                     let temp = [...chosen];
-                    if (temp.includes(snap.name) || temp.length === 10) return;
+                    if (temp.includes(snap.name)) {
+                      setError("Exercise Already Included");
+                      return;
+                    }
+                    if (temp.length === 10) {
+                      setError("Max Workout Size Reached");
+                      return;
+                    }
                     temp.push(snap.name);
                     setChosen(temp);
                   }}
