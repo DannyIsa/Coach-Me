@@ -15,6 +15,10 @@
   border-bottom: 4px solid #ffc719;
 }
 
+.bb {
+  color: white;
+}
+
 .homeNav {
   z-index: 1;
   height: 77px;
