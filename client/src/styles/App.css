@@ -40,7 +40,7 @@
   top: -10%;
   right: 48%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%);
   -webkit-transition: 1.8s ease-in-out;
   transition: 1.8s ease-in-out;
@@ -60,7 +60,7 @@
   position: absolute;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   left: 75%;
   width: 50%;
   -webkit-transition: 1s 0.7s ease-in-out;
@@ -68,7 +68,7 @@
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
   z-index: 5;
 }
 
@@ -77,15 +77,15 @@ form {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding: 0rem 5rem;
   -webkit-transition: all 0.2s 0.7s;
   transition: all 0.2s 0.7s;
@@ -126,15 +126,15 @@ form.sign-in-form {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 15% 85%;
-      grid-template-columns: 15% 85%;
+  grid-template-columns: 15% 85%;
   padding: 0 1.5rem;
   position: relative;
 }
 
 .input-field .fa-fa {
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -181,8 +181,8 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .social-icon {
@@ -192,11 +192,11 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 0 0.45rem;
   color: #333;
   border-radius: 50%;
@@ -240,8 +240,8 @@ form.sign-in-form {
   left: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (1fr) [2];
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .image {
@@ -251,7 +251,7 @@ form.sign-in-form {
   transition: transform 1.1s ease-in-out;
   transition: transform 1.1s ease-in-out, -webkit-transform 1.1s ease-in-out;
   -webkit-transition-delay: 0.4s;
-          transition-delay: 0.4s;
+  transition-delay: 0.4s;
 }
 
 .panel {
@@ -260,13 +260,13 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   text-align: center;
   z-index: 6;
 }
@@ -278,17 +278,17 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-transition: -webkit-transform 0.9s ease-in-out;
   transition: -webkit-transform 0.9s ease-in-out;
   transition: transform 0.9s ease-in-out;
   transition: transform 0.9s ease-in-out, -webkit-transform 0.9s ease-in-out;
   -webkit-transition-delay: 0.6s;
-          transition-delay: 0.6s;
+  transition-delay: 0.6s;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .panel h3 {
@@ -322,7 +322,7 @@ form.sign-in-form {
 .right-panel .image,
 .right-panel .content {
   -webkit-transform: translateX(800px);
-          transform: translateX(800px);
+  transform: translateX(800px);
 }
 
 .left-panel {
@@ -338,14 +338,14 @@ form.sign-in-form {
 /* ANIMATION */
 .container.sign-up-mode:before {
   -webkit-transform: translate(100%, -50%);
-          transform: translate(100%, -50%);
+  transform: translate(100%, -50%);
   right: 52%;
 }
 
 .container.sign-up-mode .left-panel .image,
 .container.sign-up-mode .left-panel .content {
   -webkit-transform: translateX(-800px);
-          transform: translateX(-800px);
+  transform: translateX(-800px);
 }
 
 .container.sign-up-mode .signin-signup {
@@ -365,7 +365,7 @@ form.sign-in-form {
 .container.sign-up-mode .right-panel .image,
 .container.sign-up-mode .right-panel .content {
   -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+  transform: translateX(0%);
 }
 
 .container.sign-up-mode .left-panel {
@@ -385,7 +385,7 @@ form.sign-in-form {
     width: 100%;
     top: 95%;
     -webkit-transform: translate(-50%, -100%);
-            transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
     -webkit-transition: 1s 0.8s ease-in-out;
     transition: 1s 0.8s ease-in-out;
   }
@@ -395,9 +395,9 @@ form.sign-in-form {
   }
   .panels-container {
     -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
     -ms-grid-rows: 1fr 2fr 1fr;
-        grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
   }
   .right-panel {
     -ms-grid-row: 3;
@@ -416,18 +416,18 @@ form.sign-in-form {
     transition: transform 0.9s ease-in-out;
     transition: transform 0.9s ease-in-out, -webkit-transform 0.9s ease-in-out;
     -webkit-transition-delay: 0.6s;
-            transition-delay: 0.6s;
+    transition-delay: 0.6s;
   }
   .panel {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     padding: 2.5rem 8%;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
@@ -440,7 +440,7 @@ form.sign-in-form {
     transition: transform 0.9s ease-in-out;
     transition: transform 0.9s ease-in-out, -webkit-transform 0.9s ease-in-out;
     -webkit-transition-delay: 0.8s;
-            transition-delay: 0.8s;
+    transition-delay: 0.8s;
   }
   .panel h3 {
     font-size: 1.2rem;
@@ -462,7 +462,7 @@ form.sign-in-form {
     width: 1500px;
     height: 1500px;
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     left: 30%;
     bottom: 68%;
     right: initial;
@@ -472,29 +472,29 @@ form.sign-in-form {
   }
   .container.sign-up-mode:before {
     -webkit-transform: translate(-50%, 100%);
-            transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%);
     bottom: 32%;
     right: initial;
   }
   .container.sign-up-mode .left-panel .image,
   .container.sign-up-mode .left-panel .content {
     -webkit-transform: translateY(-300px);
-            transform: translateY(-300px);
+    transform: translateY(-300px);
   }
   .container.sign-up-mode .right-panel .image,
   .container.sign-up-mode .right-panel .content {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
   }
   .right-panel .image,
   .right-panel .content {
     -webkit-transform: translateY(300px);
-            transform: translateY(300px);
+    transform: translateY(300px);
   }
   .container.sign-up-mode .signin-signup {
     top: 5%;
     -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
   }
 }
 
@@ -528,13 +528,13 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding-top: 5.8rem;
   overflow: scroll;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .create-workout-page h1 {
@@ -551,10 +551,10 @@ form.sign-in-form {
   display: flex;
   width: 100%;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .create-workout-page .search-div .search {
@@ -563,8 +563,8 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 14rem;
 }
 
@@ -573,7 +573,7 @@ form.sign-in-form {
   font-size: 1.2rem;
   padding: 0rem 1rem;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background-color: white;
   border-radius: 15px;
   border: none;
@@ -586,10 +586,10 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   height: 9rem;
 }
 
@@ -664,11 +664,11 @@ form.sign-in-form {
   position: absolute;
   bottom: 2rem;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .create-workout-page .exercises-container .exercises-left {
@@ -679,7 +679,7 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   cursor: -webkit-grab;
   cursor: grab;
   background-color: #1456a1;
@@ -701,14 +701,14 @@ form.sign-in-form {
   display: flex;
   text-align: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   width: 30rem;
   height: 35rem;
   padding: 0.5rem 2rem 2rem;
@@ -728,22 +728,22 @@ form.sign-in-form {
   word-wrap: break-word;
   font-size: 1.5em;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
 }
 
 .create-workout-page .exercises-container .exercise-middle .exercise-image {
   width: 20rem;
   height: 20rem;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
 }
 
 .create-workout-page .exercises-container .exercise-middle .exercise-category {
   width: 90%;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .create-workout-page .exercises-container .exercise-middle .tag {
@@ -800,10 +800,13 @@ form.sign-in-form {
 .create-workout-page .exercises-container .exercise-middle .exercise-equipment {
   width: 90%;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
-.create-workout-page .exercises-container .exercise-middle .exercise-description {
+.create-workout-page
+  .exercises-container
+  .exercise-middle
+  .exercise-description {
   width: 20rem;
   word-wrap: break-word;
   font-size: 1.2em;
@@ -817,14 +820,14 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   border-radius: 0.4rem;
 }
 
@@ -843,16 +846,20 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   overflow: scroll;
   width: 25rem;
 }
 
-.create-workout-page .exercises-container .exercise-right .chosen-exercise button {
+.create-workout-page
+  .exercises-container
+  .exercise-right
+  .chosen-exercise
+  button {
   padding: 0.2rem 0.5rem;
   margin: 0;
   margin-bottom: 0.5rem;
@@ -874,12 +881,12 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding-top: 7rem;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   overflow: scroll;
 }
 
@@ -888,7 +895,7 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .workout-list-start .ticket-list .workout-ticket {
@@ -897,8 +904,8 @@ form.sign-in-form {
   display: flex;
   position: relative;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -924,36 +931,66 @@ form.sign-in-form {
   font-weight: bold;
 }
 
-.workout-list-start .ticket-list .workout-ticket .ticket-content .exercise-block .exercise-name {
+.workout-list-start
+  .ticket-list
+  .workout-ticket
+  .ticket-content
+  .exercise-block
+  .exercise-name {
   font-size: 1.2rem;
   font-weight: lighter;
 }
 
-.workout-list-start .ticket-list .workout-ticket .ticket-content .exercise-block .exercise-details {
+.workout-list-start
+  .ticket-list
+  .workout-ticket
+  .ticket-content
+  .exercise-block
+  .exercise-details {
   font-size: 1.1rem;
   font-weight: lighter;
 }
 
-.workout-list-start .ticket-list .workout-ticket .workout-ticket-right .remove-workout {
+.workout-list-start
+  .ticket-list
+  .workout-ticket
+  .workout-ticket-right
+  .remove-workout {
   margin-top: 2rem;
   border: none;
   opacity: 0;
 }
 
-.workout-list-start .ticket-list .workout-ticket:hover .workout-ticket-right .remove-workout {
+.workout-list-start
+  .ticket-list
+  .workout-ticket:hover
+  .workout-ticket-right
+  .remove-workout {
   opacity: 1;
 }
 
-.workout-list-start .ticket-list .workout-ticket .workout-ticket-right .editable-btn {
+.workout-list-start
+  .ticket-list
+  .workout-ticket
+  .workout-ticket-right
+  .editable-btn {
   border: none;
   opacity: 0;
 }
 
-.workout-list-start .ticket-list .workout-ticket:hover .workout-ticket-right .editable-btn {
+.workout-list-start
+  .ticket-list
+  .workout-ticket:hover
+  .workout-ticket-right
+  .editable-btn {
   opacity: 1;
 }
 
-.workout-list-start .ticket-list .workout-ticket:hover .workout-ticket-right span {
+.workout-list-start
+  .ticket-list
+  .workout-ticket:hover
+  .workout-ticket-right
+  span {
   position: absolute;
   right: 4rem;
   opacity: 1;
@@ -965,12 +1002,12 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   height: 15rem;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .workout-list-start .ticket-list .workout-ticket .workout-ticket-right span {
@@ -986,12 +1023,12 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding-top: 7rem;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   overflow: scroll;
 }
 
@@ -1006,7 +1043,7 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .client-list-start .ticket-list .ticket {
@@ -1015,12 +1052,12 @@ form.sign-in-form {
   display: flex;
   position: relative;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -1133,11 +1170,11 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -1201,10 +1238,10 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
   padding-top: 7rem;
 }
 
@@ -1228,8 +1265,8 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding-top: 7rem;
 }
 
@@ -1250,13 +1287,13 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .details-div .left-div h1 {
@@ -1294,11 +1331,11 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .details-div .right-div .online-coaching input {
@@ -1319,7 +1356,7 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   padding: 1rem 1.5rem;
   position: relative;
   font-size: 0.8em;
@@ -1331,8 +1368,8 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   width: 70%;
   color: black;
 }
@@ -1348,10 +1385,10 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .details-div .right-div .num2 {
@@ -1361,7 +1398,7 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .details-div .right-div .num3 {
@@ -1371,7 +1408,7 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .details-div .right-div .num3 .selectbox {
@@ -1425,7 +1462,7 @@ form.sign-in-form {
 .details-div .right-div .inputbox input:focus ~ span,
 .details-div .right-div .inputbox input:valid ~ span {
   -webkit-transform: translateX(-13px) translateY(-35px);
-          transform: translateX(-13px) translateY(-35px);
+  transform: translateX(-13px) translateY(-35px);
   font-size: 1em;
 }
 
@@ -1459,8 +1496,10 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719,
+    0 0 100px #ffc719;
+  box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719,
+    0 0 100px #ffc719;
 }
 
 .details-div .right-div button span {
@@ -1473,10 +1512,16 @@ form.sign-in-form {
   left: -100%;
   width: 100%;
   height: 2px;
-  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#ffc719));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(transparent),
+    to(#ffc719)
+  );
   background: linear-gradient(90deg, transparent, #ffc719);
   -webkit-animation: btn-anim1 1s linear infinite;
-          animation: btn-anim1 1s linear infinite;
+  animation: btn-anim1 1s linear infinite;
 }
 
 @-webkit-keyframes btn-anim1 {
@@ -1504,12 +1549,18 @@ form.sign-in-form {
   right: 0;
   width: 2px;
   height: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#ffc719));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(transparent),
+    to(#ffc719)
+  );
   background: linear-gradient(180deg, transparent, #ffc719);
   -webkit-animation: btn-anim2 1s linear infinite;
-          animation: btn-anim2 1s linear infinite;
+  animation: btn-anim2 1s linear infinite;
   -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
+  animation-delay: 0.25s;
 }
 
 @-webkit-keyframes btn-anim2 {
@@ -1537,12 +1588,18 @@ form.sign-in-form {
   right: -100%;
   width: 100%;
   height: 2px;
-  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#ffc719));
+  background: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(transparent),
+    to(#ffc719)
+  );
   background: linear-gradient(270deg, transparent, #ffc719);
   -webkit-animation: btn-anim3 1s linear infinite;
-          animation: btn-anim3 1s linear infinite;
+  animation: btn-anim3 1s linear infinite;
   -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 @-webkit-keyframes btn-anim3 {
@@ -1570,12 +1627,18 @@ form.sign-in-form {
   left: 0;
   width: 2px;
   height: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#ffc719));
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(transparent),
+    to(#ffc719)
+  );
   background: linear-gradient(360deg, transparent, #ffc719);
   -webkit-animation: btn-anim4 1s linear infinite;
-          animation: btn-anim4 1s linear infinite;
+  animation: btn-anim4 1s linear infinite;
   -webkit-animation-delay: 0.75s;
-          animation-delay: 0.75s;
+  animation-delay: 0.75s;
 }
 
 @-webkit-keyframes btn-anim4 {
@@ -1605,11 +1668,11 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding-top: 9rem;
 }
 
@@ -1631,16 +1694,16 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   padding: 0;
   height: 70vh;
 }
 
 .add-exercise-start .add-exercise-form form select {
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form form button {
@@ -1663,8 +1726,10 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719,
+    0 0 100px #ffc719;
+  box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719,
+    0 0 100px #ffc719;
 }
 
 .add-exercise-start .add-exercise-form form button span {
@@ -1677,10 +1742,16 @@ form.sign-in-form {
   left: -100%;
   width: 100%;
   height: 2px;
-  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#ffc719));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(transparent),
+    to(#ffc719)
+  );
   background: linear-gradient(90deg, transparent, #ffc719);
   -webkit-animation: btn-anim1 1s linear infinite;
-          animation: btn-anim1 1s linear infinite;
+  animation: btn-anim1 1s linear infinite;
 }
 
 @keyframes btn-anim1 {
@@ -1698,12 +1769,18 @@ form.sign-in-form {
   right: 0;
   width: 2px;
   height: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#ffc719));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(transparent),
+    to(#ffc719)
+  );
   background: linear-gradient(180deg, transparent, #ffc719);
   -webkit-animation: btn-anim2 1s linear infinite;
-          animation: btn-anim2 1s linear infinite;
+  animation: btn-anim2 1s linear infinite;
   -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
+  animation-delay: 0.25s;
 }
 
 @keyframes btn-anim2 {
@@ -1721,12 +1798,18 @@ form.sign-in-form {
   right: -100%;
   width: 100%;
   height: 2px;
-  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#ffc719));
+  background: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(transparent),
+    to(#ffc719)
+  );
   background: linear-gradient(270deg, transparent, #ffc719);
   -webkit-animation: btn-anim3 1s linear infinite;
-          animation: btn-anim3 1s linear infinite;
+  animation: btn-anim3 1s linear infinite;
   -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 @keyframes btn-anim3 {
@@ -1744,12 +1827,18 @@ form.sign-in-form {
   left: 0;
   width: 2px;
   height: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#ffc719));
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(transparent),
+    to(#ffc719)
+  );
   background: linear-gradient(360deg, transparent, #ffc719);
   -webkit-animation: btn-anim4 1s linear infinite;
-          animation: btn-anim4 1s linear infinite;
+  animation: btn-anim4 1s linear infinite;
   -webkit-animation-delay: 0.75s;
-          animation-delay: 0.75s;
+  animation-delay: 0.75s;
 }
 
 .add-exercise-start .add-exercise-form .form-block {
@@ -1758,14 +1847,14 @@ form.sign-in-form {
   display: flex;
   position: relative;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   width: 20rem;
   height: 8rem;
   border-radius: 0.4rem;
@@ -1777,7 +1866,7 @@ form.sign-in-form {
 .add-exercise-start .add-exercise-form .form-block .textarea-control {
   width: 18rem;
   height: 4.5rem;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form .form-block input {
@@ -1786,9 +1875,9 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .weekly-calendar {
@@ -1798,8 +1887,8 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding-top: 7rem;
 }
 
@@ -1849,8 +1938,8 @@ form.sign-in-form {
   display: flex;
   text-align: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .weekly-calendar .popup-workout {
@@ -1904,8 +1993,8 @@ form.sign-in-form {
   display: flex;
   text-align: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .weekly-calendar > .popup-background > .popup-content {
@@ -1923,12 +2012,12 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .weekly-calendar > .popup-background > .popup-content > .close-popup-button {
@@ -1943,15 +2032,19 @@ form.sign-in-form {
   display: flex;
   text-align: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: 3%;
 }
 
-.weekly-calendar > .popup-background > .popup-content > .details-div > .popup-add-button {
+.weekly-calendar
+  > .popup-background
+  > .popup-content
+  > .details-div
+  > .popup-add-button {
   padding-top: 5px;
 }
 
@@ -1962,8 +2055,8 @@ form.sign-in-form {
   display: flex;
   padding-top: 6rem;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .profile-container .main-body {
@@ -2028,13 +2121,13 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   height: 100%;
 }
 
@@ -2069,10 +2162,10 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .profile-container .main-body .main2 .forms div {
@@ -2086,7 +2179,7 @@ form.sign-in-form {
 
 .profile-container .main-body .card {
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .profile-container .main-body .card {
@@ -2096,8 +2189,8 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   height: 23rem;
   min-width: 0;
   word-wrap: break-word;
@@ -2109,8 +2202,8 @@ form.sign-in-form {
 
 .profile-container .main-body .card .card-body {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   min-height: 1px;
   padding: 1rem;
 }
@@ -2156,8 +2249,8 @@ form.sign-in-form {
 
 .profile-container .main-body .coach-info {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   min-height: 1px;
   height: 22.5rem;
   padding: 1rem;
@@ -2219,7 +2312,7 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   margin-top: 50px;
 }
 
@@ -2229,8 +2322,8 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   text-align: center;
   border: black solid 3px;
   width: 200px;
@@ -2246,11 +2339,11 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: black;
 }
 
@@ -2262,8 +2355,8 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .trainee-logs h1 {
@@ -2279,14 +2372,14 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -2302,11 +2395,11 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   height: 50vh;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .trainee-logs .workout1 {
@@ -2338,8 +2431,8 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: auto;
   border-radius: 15px;
   position: fixed;
@@ -2381,11 +2474,11 @@ form.sign-in-form {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 100%;
   position: absolute;
   bottom: 2rem;
@@ -2410,8 +2503,8 @@ form.sign-in-form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 
 .chat-container .chat-component > .messages-div > .message-div {
@@ -2429,7 +2522,12 @@ form.sign-in-form {
   border-radius: 15px;
 }
 
-.chat-container .chat-component > .messages-div > .message-div > .message > .content {
+.chat-container
+  .chat-component
+  > .messages-div
+  > .message-div
+  > .message
+  > .content {
   white-space: normal;
   font-size: 17px;
 }
@@ -2440,7 +2538,11 @@ form.sign-in-form {
   color: black;
 }
 
-.chat-container .chat-component > .messages-div > .message-div > .message.received {
+.chat-container
+  .chat-component
+  > .messages-div
+  > .message-div
+  > .message.received {
   float: left;
   background-color: white;
   color: black;
@@ -2450,7 +2552,7 @@ form.sign-in-form {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -2495,13 +2597,13 @@ a {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   letter-spacing: 0.1025em;
   font-size: 1.3em;
   -webkit-transition-timing-function: linear;
-          transition-timing-function: linear;
+  transition-timing-function: linear;
   -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  transition-duration: 0.5s;
   -webkit-transition-property: color;
   transition-property: color;
   border-bottom: 4px solid transparent;
@@ -2528,7 +2630,7 @@ a:hover {
   padding-top: 10px;
   padding-bottom: 20px;
   -webkit-animation: drop 0.7s ease forwards, raise 0.7s 3s ease forwards;
-          animation: drop 0.7s ease forwards, raise 0.7s 3s ease forwards;
+  animation: drop 0.7s ease forwards, raise 0.7s 3s ease forwards;
 }
 
 .alert-popup.error-message {
