@@ -3,6 +3,9 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { SetErrorContext } from "../../App";
 import { debounce } from "lodash";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes, faPlus } from "@fortawesome/free-solid-svg-icons";
+
 function ClientCalendar({ userDetails }) {
   const [needToEat, setNeedToEat] = useState([]);
   const [workouts, setWorkouts] = useState([]);
@@ -252,7 +255,11 @@ function ClientCalendar({ userDetails }) {
               onClick={() => setField({ day: null, type: null })}
               className="close-popup-button"
             >
-              CLOSE
+              <FontAwesomeIcon
+                icon={faTimes}
+                color="#acacac"
+                className="close-fa"
+              />
             </button>
             <div className="search-div">
               <h1 className="workout-name">
@@ -300,7 +307,11 @@ function ClientCalendar({ userDetails }) {
                 </ol>
                 <h1>{"X" + chosen.sets}</h1>
                 <button className="popup-add-button-workout" onClick={addItem}>
-                  Add
+                  <FontAwesomeIcon
+                    icon={faPlus}
+                    color="#acacac"
+                    className="add-fa"
+                  />
                 </button>
               </div>
             )}
@@ -325,9 +336,12 @@ function ClientCalendar({ userDetails }) {
                     }}
                   />
                 </div>
-                <br />
-                <button className="popup-add-button" onClick={addItem}>
-                  Add
+                <button className="popup-add-button-workout" onClick={addItem}>
+                  <FontAwesomeIcon
+                    icon={faPlus}
+                    color="#87bbde"
+                    className="add-fa"
+                  />
                 </button>
               </div>
             )}
@@ -335,12 +349,9 @@ function ClientCalendar({ userDetails }) {
               <div className="chosen-calendar-div">
                 {chosenItems.exercises ? (
                   <div className="popup-chosen-exercise">
-                    <h1 className="workout-name">
-                      {field.day + ": " + chosenItems.name}
-                    </h1>
-                    <ol>
+                    <ul className="uList">
                       {chosenItems.exercises.map((item, index) => (
-                        <li className="exercise-block" key={index}>
+                        <li className="list-item" key={index}>
                           <h2 className="exercise-name">{item.name}</h2>
                           <h3 className="exercise-details">{`${item.min_reps} ${
                             item.min_reps !== item.max_reps
@@ -353,16 +364,26 @@ function ClientCalendar({ userDetails }) {
                           }X${item.sets}`}</h3>
                         </li>
                       ))}
-                    </ol>
+                    </ul>
                     <h1>{"X" + chosenItems.sets}</h1>
-                    <button onClick={() => removeItem(1)}>Remove</button>
+                    <button
+                      className="remove-meal"
+                      onClick={() => removeItem(1)}
+                    >
+                      {" "}
+                      <FontAwesomeIcon
+                        icon={faTimes}
+                        color="#acacac"
+                        className="remove-fa"
+                      />
+                    </button>
                   </div>
                 ) : (
                   <div className="popup-chosen-food">
                     {chosenItems.length > 0 ? (
-                      <ol>
+                      <ul className="oList">
                         {chosenItems.map((item) => (
-                          <li>
+                          <li className="list-item">
                             <h4>
                               {item.name} ({item.weight * item.amount}g)
                             </h4>
@@ -371,12 +392,19 @@ function ClientCalendar({ userDetails }) {
                             <p>{item.carbs * item.amount} carbs</p>
                             <p>{item.fats * item.amount} fats</p>
                             <br />
-                            <button onClick={() => removeItem(item.id)}>
-                              Remove
+                            <button
+                              className="remove-meal"
+                              onClick={() => removeItem(item.id)}
+                            >
+                              <FontAwesomeIcon
+                                icon={faTimes}
+                                color="#acacac"
+                                className="remove-fa"
+                              />
                             </button>
                           </li>
                         ))}
-                      </ol>
+                      </ul>
                     ) : (
                       <h3>No Meals For {field.type}!</h3>
                     )}
