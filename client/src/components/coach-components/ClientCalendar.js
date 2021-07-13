@@ -349,9 +349,12 @@ function ClientCalendar({ userDetails }) {
               <div className="chosen-calendar-div">
                 {chosenItems.exercises ? (
                   <div className="popup-chosen-exercise">
-                    <ul className="uList">
+                    <h1 className="workout-name">
+                      {field.day + ": " + chosenItems.name}
+                    </h1>
+                    <ol>
                       {chosenItems.exercises.map((item, index) => (
-                        <li className="list-item" key={index}>
+                        <li className="exercise-block" key={index}>
                           <h2 className="exercise-name">{item.name}</h2>
                           <h3 className="exercise-details">{`${item.min_reps} ${
                             item.min_reps !== item.max_reps
@@ -364,7 +367,7 @@ function ClientCalendar({ userDetails }) {
                           }X${item.sets}`}</h3>
                         </li>
                       ))}
-                    </ul>
+                    </ol>
                     <h1>{"X" + chosenItems.sets}</h1>
                     <button
                       className="remove-meal"
@@ -379,7 +382,7 @@ function ClientCalendar({ userDetails }) {
                     </button>
                   </div>
                 ) : (
-                  <div className="popup-chosen food">
+                  <div className="popup-chosen-food">
                     {chosenItems.length > 0 ? (
                       <ul className="oList">
                         {chosenItems.map((item) => (
