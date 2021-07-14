@@ -158,10 +158,9 @@ function NavBarCoach({ signOut, userDetails, alertMessage }) {
                                   </p>
                                   <div className="coach-card-btn">
                                     <Link
-                                      className="chat-btn"
                                       to={`/chat/${item.trainee_id}/${userDetails.id}`}
                                     >
-                                      Chat
+                                      <button className="chat-btn">Chat</button>
                                     </Link>
                                     <button
                                       className="requests-btn"
