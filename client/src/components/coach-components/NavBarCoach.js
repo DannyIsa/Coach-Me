@@ -157,7 +157,12 @@ function NavBarCoach({ signOut, userDetails, alertMessage }) {
                                       ).toLocaleTimeString("it-IT")}
                                   </p>
                                   <div className="coach-card-btn">
-                                    <button className="chat-btn">Chat</button>
+                                    <Link
+                                      className="chat-btn"
+                                      to={`/chat/${item.trainee_id}/${userDetails.id}`}
+                                    >
+                                      Chat
+                                    </Link>
                                     <button
                                       className="requests-btn"
                                       onClick={() =>
