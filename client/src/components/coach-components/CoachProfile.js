@@ -3,7 +3,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { SetErrorContext } from "../../App";
 import userPic from "../../pics/user1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUpload } from "@fortawesome/free-solid-svg-icons";
+import { faUpload, faComments } from "@fortawesome/free-solid-svg-icons";
 import firebase from "firebase";
 import { Link } from "react-router-dom";
 import "../../styles/CoachDashboard.css";
@@ -140,7 +140,7 @@ function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
             <div className="col-md-8">
               <div className="card mb-3">
                 <div className="card-body">
-                  <h2>Personal info:</h2>
+                  <h2>Personal info</h2>
                   <div className="row">
                     <div className="col-sm-3">
                       <h6 className="mb-0">Email:</h6>
@@ -206,13 +206,18 @@ function CoachProfile({ userDetails, alertMessage, setUserDetails }) {
               <div className="col-sm-6 mb-3">
                 <div className="card h-100">
                   <div className="coach-info coach">
-                    <h2>Chats List:</h2>
+                    <h2>Chats List</h2>
                     <div>
                       {chats.map((chat, index) => (
                         <div
                           key={chat.trainee_id + "" + "index"}
                           className="chat-list-item"
                         >
+                          <FontAwesomeIcon
+                            icon={faComments}
+                            color="#333"
+                            className="fa-fa"
+                          />
                           <Link
                             to={`/chat/${chat.trainee_id}/${userDetails.id}`}
                           >

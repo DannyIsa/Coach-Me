@@ -34,4 +34,10 @@
 }
 .chat-list-item a {
   color: black;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  line-height: 2.5;
+}
+.chat-list-item .fa-fa {
+  margin-right: 1rem;
 }

@@ -89,7 +89,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #6ef15f;
+  background-color: #3bc528;
   text-align: center;
   border-radius: 10px;
   padding: 0.5rem;
@@ -157,7 +157,7 @@
 }
 
 .calorie-tracker .chosen-meal {
-  border: #6ef15f solid 2px;
+  border: #3bc528 solid 2px;
 }
 
 .calorie-tracker .popup-background {
@@ -205,7 +205,7 @@
 }
 
 .calorie-tracker .popup-add-food .search-food-input:focus {
-  outline-color: #6ef15f;
+  outline-color: #3bc528;
 }
 
 .calorie-tracker .popup-add-food .searched-food-list {
@@ -232,7 +232,7 @@
 }
 
 .calorie-tracker .popup-add-food .pop-up-selected-food {
-  border: #6ef15f solid 2px;
+  border: #3bc528 solid 2px;
   padding: 0.5rem;
   border-radius: 6px;
 }
@@ -241,7 +241,7 @@
   border: none;
   padding: 0;
   margin: 1rem;
-  color: #6ef15f;
+  color: #3bc528;
 }
 
 .calorie-tracker .popup-add-food .pop-up-selected-food .add-food-button:hover {
@@ -276,7 +276,7 @@
 
 .calorie-tracker .day-picker > div button {
   font-size: 1rem;
-  color: #6ef15f;
+  color: #3bc528;
 }
 
 .calorie-tracker .day-picker > div button:hover {
