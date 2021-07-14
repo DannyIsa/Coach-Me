@@ -1293,7 +1293,7 @@ form.sign-in-form {
 .trainee-dashboard .dash-con .fi-fi {
   font-size: 3rem;
   margin-left: 2.2rem;
-  margin-top: 0.3rem;
+  margin-top: 0.5rem;
 }
 
 .trainee-dashboard .dash-con .dash-header {
@@ -1940,7 +1940,9 @@ form.sign-in-form {
   border-radius: 0.4rem;
   margin-bottom: 2rem;
   margin-left: 3rem;
-  background-color: #1456a1;
+  background-color: white;
+  -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
+          box-shadow: 5px 8px 11px 6px #c0c0c0;
 }
 
 .add-exercise-start .add-exercise-form .form-block .textarea-control {
@@ -2002,7 +2004,7 @@ form.sign-in-form {
 .weekly-calendar .day-title {
   font-size: 2rem;
   background-color: #2e70bb;
-  color: #333;
+  color: white;
 }
 
 .weekly-calendar .container-title {
@@ -2341,12 +2343,16 @@ form.sign-in-form {
 
 .profile-container .main-body .main2 .edit-button {
   float: right;
-  padding: 0.3rem;
-  border: 1px solid white;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 0.5rem;
 }
 
 .profile-container .main-body .main2 .edit-button:hover {
-  border-color: #ffc719;
+  color: white;
+  background-color: #333;
+  border: 1px solid #333;
 }
 
 .profile-container .main-body .main2 .forms {
@@ -2409,7 +2415,7 @@ form.sign-in-form {
 .profile-container .main-body .card .card-body .d-flex img {
   border-radius: 10px;
   width: 15rem;
-  height: 17rem;
+  height: 15rem;
   float: right;
   margin-bottom: 1.5rem;
 }
@@ -2649,7 +2655,7 @@ form.sign-in-form {
 .trainee-logs .workout1 {
   position: absolute;
   right: 9rem;
-  top: 12rem;
+  top: 12.4rem;
   text-align: center;
   padding: 0.5rem;
   background-color: white;
@@ -2692,7 +2698,7 @@ form.sign-in-form {
 
 .chat-container {
   height: 100vh;
-  background-color: Beige;
+  background-image: url(../../src/pics/wallpaper.png);
 }
 
 .chat-container .chat-component {
