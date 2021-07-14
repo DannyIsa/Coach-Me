@@ -84,15 +84,24 @@ function LiveWorkout({ userDetails }) {
                 }X${currentExercise.sets}`}</h2>
               </div>
               {timeArray && !ended ? (
-                <WorkoutTimer
-                  rest={timeArray.restArray[index]}
-                  index={index}
-                  raiseIndex={() => {
-                    if (index < timeArray.restArray.length - 1)
-                      setIndex(index + 1);
-                    else setEnded(true);
-                  }}
-                />
+                <div className="timer-div">
+                  <WorkoutTimer
+                    rest={timeArray.restArray[index]}
+                    index={index}
+                    raiseIndex={() => {
+                      if (index < timeArray.restArray.length - 1)
+                        setIndex(index + 1);
+                      else setEnded(true);
+                    }}
+                  />
+                  {"sets:" +
+                    Math.ceil(
+                      (timeArray.idArray.length - index) /
+                        (timeArray.idArray.length / currentWorkout.sets)
+                    ) +
+                    "/" +
+                    currentWorkout.sets}
+                </div>
               ) : (
                 <div className="workout-ended">
                   <h1>Workout Ended</h1>
@@ -136,7 +145,6 @@ function LiveWorkout({ userDetails }) {
                 );
               })}
           </div>
-          <h1>{"X" + currentWorkout.sets}</h1>
         </div>
       )}
     </div>

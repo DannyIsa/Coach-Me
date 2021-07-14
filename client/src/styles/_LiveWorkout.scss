@@ -9,12 +9,14 @@
 
   & > .workout-details-div {
     & > .show-div {
-      & > .timerContainer {
-        border: 3px solid black;
-        padding: 20px 70px 20px 70px;
-        width: fit-content;
-        height: fit-content;
-        border-radius: 7px;
+      & > .timer-div {
+        & > .timerContainer {
+          border: 3px solid black;
+          padding: 20px 70px 20px 70px;
+          width: fit-content;
+          height: fit-content;
+          border-radius: 7px;
+        }
       }
       display: flex;
       justify-content: space-evenly;
