@@ -2470,8 +2470,12 @@ form.sign-in-form {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   min-height: 1px;
-  height: 22.5rem;
+  height: 23.6rem;
   padding: 1rem;
+}
+
+.profile-container .main-body .coach-info.coach {
+  overflow-y: auto;
 }
 
 .profile-container .main-body .coach-info.coach {
