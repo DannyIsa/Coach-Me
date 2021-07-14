@@ -156,7 +156,7 @@ function SignUp({ setReqDone }) {
                 passwordRefIn.current.type = "password";
               }}
             >
-              See before you go <FontAwesomeIcon icon={faEye} />
+              Show Password <FontAwesomeIcon icon={faEye} />
             </button>
 
             <input
@@ -210,7 +210,7 @@ function SignUp({ setReqDone }) {
                 passwordRefUp.current.type = "password";
               }}
             >
-              See before you go <FontAwesomeIcon icon={faEye} />
+              Show Password <FontAwesomeIcon icon={faEye} />
             </button>
             <div className="role">
               <div

@@ -9,25 +9,45 @@
 
   & > .workout-details-div {
     & > .show-div {
-      & > .timerContainer {
-        border: 3px solid black;
-        padding: 20px 70px 20px 70px;
-        width: fit-content;
-        height: fit-content;
-        border-radius: 7px;
+      & > .timer-div {
+        & > .timerContainer {
+          border: 3px solid black;
+          padding: 20px 70px 20px 70px;
+          width: fit-content;
+          height: fit-content;
+          border-radius: 7px;
+        }
+        & > .workout-sets {
+          font-size: 30px;
+        }
+        & > .current-exercise-details {
+          display: flex;
+          justify-self: center;
+          flex-direction: column;
+          justify-content: center;
+        }
       }
       display: flex;
       justify-content: space-evenly;
       margin-top: 50px;
       & > .current-exercise {
-        & > img {
-          height: 300px;
+        display: flex;
+        width: 50%;
+        justify-content: space-evenly;
+        justify-self: center;
+        & > .current-exercise-img {
+          & > img {
+            height: 300px;
+          }
         }
       }
     }
     & > .exercises-list {
+      margin-top: 50px;
       display: flex;
       justify-content: space-around;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
     }
   }
 
@@ -37,8 +57,9 @@
     text-align: center;
     border: black solid 3px;
     width: 200px;
+    padding: 5px;
     &.working {
-      border: red solid 4px;
+      border: rgb(126, 167, 255) solid 4px;
     }
   }
 }
