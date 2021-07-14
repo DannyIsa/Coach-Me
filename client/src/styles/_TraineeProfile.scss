@@ -166,9 +166,12 @@
     }
 
     .coach-info {
+      &.coach {
+        overflow-y: auto;
+      }
       flex: 1 1 auto;
       min-height: 1px;
-      height: 22.5rem;
+      height: 23.6rem;
       padding: 1rem;
       &.coach {
         height: 41.8rem;
