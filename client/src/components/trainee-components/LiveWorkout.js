@@ -69,19 +69,23 @@ function LiveWorkout({ userDetails }) {
           {currentExercise && (
             <div className="show-div">
               <div className="current-exercise">
-                <img src={currentExercise.image} alt={currentExercise.name} />
-                <h1 className="exercise-name">{currentExercise.name}</h1>
-                <h2 className="exercise-details">{`${
-                  currentExercise.min_reps
-                } ${
-                  currentExercise.min_reps !== currentExercise.max_reps
-                    ? "-" + currentExercise.max_reps
-                    : ""
-                } reps, rest for ${currentExercise.rest}s ${
-                  currentExercise.added_weight > 0
-                    ? "+" + currentExercise.added_weight + "kg "
-                    : ""
-                }X${currentExercise.sets}`}</h2>
+                <div className="current-exercise-img">
+                  <img src={currentExercise.image} alt={currentExercise.name} />
+                </div>
+                <div className="current-exercise-details">
+                  <h1 className="exercise-name">{currentExercise.name}</h1>
+                  <h2 className="exercise-details">{`${
+                    currentExercise.min_reps
+                  } ${
+                    currentExercise.min_reps !== currentExercise.max_reps
+                      ? "-" + currentExercise.max_reps
+                      : ""
+                  } reps, rest for ${currentExercise.rest}s ${
+                    currentExercise.added_weight > 0
+                      ? "+" + currentExercise.added_weight + "kg "
+                      : ""
+                  }X${currentExercise.sets}`}</h2>
+                </div>
               </div>
               {timeArray && !ended ? (
                 <div className="timer-div">
@@ -94,13 +98,15 @@ function LiveWorkout({ userDetails }) {
                       else setEnded(true);
                     }}
                   />
-                  {"sets:" +
-                    Math.ceil(
-                      (timeArray.idArray.length - index) /
-                        (timeArray.idArray.length / currentWorkout.sets)
-                    ) +
-                    "/" +
-                    currentWorkout.sets}
+                  <p className="workout-sets">
+                    {"sets:" +
+                      Math.ceil(
+                        (timeArray.idArray.length - index) /
+                          (timeArray.idArray.length / currentWorkout.sets)
+                      ) +
+                      "/" +
+                      currentWorkout.sets}
+                  </p>
                 </div>
               ) : (
                 <div className="workout-ended">

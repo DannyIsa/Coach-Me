@@ -2534,16 +2534,49 @@ form.sign-in-form {
   border-radius: 7px;
 }
 
-.live-workout-page > .workout-details-div > .show-div > .current-exercise > img {
+.live-workout-page > .workout-details-div > .show-div > .timer-div > .workout-sets {
+  font-size: 30px;
+}
+
+.live-workout-page > .workout-details-div > .show-div > .timer-div > .current-exercise-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.live-workout-page > .workout-details-div > .show-div > .current-exercise {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  justify-self: center;
+}
+
+.live-workout-page > .workout-details-div > .show-div > .current-exercise > .current-exercise-img > img {
   height: 300px;
 }
 
 .live-workout-page > .workout-details-div > .exercises-list {
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: scroll;
 }
 
 .live-workout-page .exercise {
@@ -2557,10 +2590,11 @@ form.sign-in-form {
   text-align: center;
   border: black solid 3px;
   width: 200px;
+  padding: 5px;
 }
 
 .live-workout-page .exercise.working {
-  border: red solid 4px;
+  border: #7ea7ff solid 4px;
 }
 
 .trainee-logs {
