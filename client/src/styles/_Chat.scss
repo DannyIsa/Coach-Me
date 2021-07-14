@@ -8,17 +8,17 @@
 
     // background-color: rgb(245, 230, 220);
     & > .chatting-with {
-      color: Moccasin;
+      color: #333;
       background-color: white;
       text-align: center;
       height: 40px;
-      width: 50%;
+      width: 35%;
+      font-size: 1.5rem;
+      // font-weight: lighter;
       display: flex;
       justify-content: center;
       margin: auto;
       border-radius: 15px;
-      position: fixed;
-      left: 25%;
     }
     .messages-div {
       // position: fixed;
@@ -62,15 +62,18 @@
       bottom: 2rem;
 
       & > input {
-        width: 80%;
+        width: 60%;
         height: 40px;
         font-size: 20px;
         border-radius: 20px;
         padding-left: 10px;
         outline: none;
+        border: none;
+        margin-top: 1rem;
       }
       .send-chat-btn {
         border: none;
+        margin-top: 1rem;
 
         // & .fa-fa {
         // }
