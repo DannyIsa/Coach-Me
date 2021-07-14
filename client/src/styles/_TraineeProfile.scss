@@ -77,11 +77,15 @@
       }
       .edit-button {
         float: right;
-        padding: 0.3rem;
-        border: 1px solid white;
+        color: #333;
+        border: 1px solid #333;
+        border-radius: 5px;
+        padding: 0.5rem;
 
         &:hover {
-          border-color: #ffc719;
+          color: white;
+          background-color: #333;
+          border: 1px solid #333;
         }
       }
       .forms {
@@ -127,7 +131,7 @@
           & img {
             border-radius: 10px;
             width: 15rem;
-            height: 17rem;
+            height: 15rem;
             float: right;
             margin-bottom: 1.5rem;
           }

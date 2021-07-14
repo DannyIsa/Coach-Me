@@ -1293,7 +1293,7 @@ form.sign-in-form {
 .trainee-dashboard .dash-con .fi-fi {
   font-size: 3rem;
   margin-left: 2.2rem;
-  margin-top: 0.3rem;
+  margin-top: 0.5rem;
 }
 
 .trainee-dashboard .dash-con .dash-header {
@@ -1381,7 +1381,7 @@ form.sign-in-form {
   font-size: 15px;
   letter-spacing: 0.0625rem;
   text-transform: uppercase !important;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1628,8 +1628,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .details-div .right-div button span {
@@ -1809,7 +1809,7 @@ form.sign-in-form {
 }
 
 .add-exercise-start .add-exercise-form form select {
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form form button {
@@ -1832,8 +1832,8 @@ form.sign-in-form {
   background: #ffc719;
   color: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
-          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+  -webkit-box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
+          box-shadow: 0 0 5px #ffc719, 0 0 25px #ffc719, 0 0 50px #ffc719, 0 0 100px #ffc719;
 }
 
 .add-exercise-start .add-exercise-form form button span {
@@ -1940,13 +1940,15 @@ form.sign-in-form {
   border-radius: 0.4rem;
   margin-bottom: 2rem;
   margin-left: 3rem;
-  background-color: #1456a1;
+  background-color: white;
+  -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
+          box-shadow: 5px 8px 11px 6px #c0c0c0;
 }
 
 .add-exercise-start .add-exercise-form .form-block .textarea-control {
   width: 18rem;
   height: 4.5rem;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .add-exercise-start .add-exercise-form .form-block input {
@@ -1957,7 +1959,7 @@ form.sign-in-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Futura PT W02 Book", Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .weekly-calendar {
@@ -2002,7 +2004,7 @@ form.sign-in-form {
 .weekly-calendar .day-title {
   font-size: 2rem;
   background-color: #2e70bb;
-  color: #333;
+  color: white;
 }
 
 .weekly-calendar .container-title {
@@ -2359,12 +2361,16 @@ form.sign-in-form {
 
 .profile-container .main-body .main2 .edit-button {
   float: right;
-  padding: 0.3rem;
-  border: 1px solid white;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 0.5rem;
 }
 
 .profile-container .main-body .main2 .edit-button:hover {
-  border-color: #ffc719;
+  color: white;
+  background-color: #333;
+  border: 1px solid #333;
 }
 
 .profile-container .main-body .main2 .forms {
@@ -2427,7 +2433,7 @@ form.sign-in-form {
 .profile-container .main-body .card .card-body .d-flex img {
   border-radius: 10px;
   width: 15rem;
-  height: 17rem;
+  height: 15rem;
   float: right;
   margin-bottom: 1.5rem;
 }
@@ -2701,7 +2707,7 @@ form.sign-in-form {
 .trainee-logs .workout1 {
   position: absolute;
   right: 9rem;
-  top: 12rem;
+  top: 12.4rem;
   text-align: center;
   padding: 0.5rem;
   background-color: white;
@@ -2733,7 +2739,7 @@ form.sign-in-form {
   font-size: 15px;
   letter-spacing: 0.0625rem;
   text-transform: uppercase !important;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2744,7 +2750,7 @@ form.sign-in-form {
 
 .chat-container {
   height: 100vh;
-  background-color: Beige;
+  background-image: url(../../src/pics/wallpaper.png);
 }
 
 .chat-container .chat-component {
@@ -2753,11 +2759,12 @@ form.sign-in-form {
 }
 
 .chat-container .chat-component > .chatting-with {
-  color: Moccasin;
+  color: #333;
   background-color: white;
   text-align: center;
   height: 40px;
-  width: 50%;
+  width: 35%;
+  font-size: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2766,8 +2773,6 @@ form.sign-in-form {
           justify-content: center;
   margin: auto;
   border-radius: 15px;
-  position: fixed;
-  left: 25%;
 }
 
 .chat-container .chat-component .messages-div {
@@ -2817,16 +2822,19 @@ form.sign-in-form {
 }
 
 .chat-container .chat-component > .input-and-button > input {
-  width: 80%;
+  width: 60%;
   height: 40px;
   font-size: 20px;
   border-radius: 20px;
   padding-left: 10px;
   outline: none;
+  border: none;
+  margin-top: 1rem;
 }
 
 .chat-container .chat-component > .input-and-button .send-chat-btn {
   border: none;
+  margin-top: 1rem;
 }
 
 .chat-container .chat-component > .messages-div {
