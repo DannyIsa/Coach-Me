@@ -1318,6 +1318,7 @@ form.sign-in-form {
   line-height: 1;
   margin: 0;
   padding: 0;
+  margin-top: 0.5rem;
 }
 
 .trainee-dashboard .helpers {
@@ -1373,7 +1374,7 @@ form.sign-in-form {
 .trainee-dashboard .helpers .workout2 h3:hover,
 .trainee-dashboard .helpers .measured1 h3:hover,
 .trainee-dashboard .helpers .diet1 h3:hover {
-  color: #6ca3c7;
+  color: #2e70bb;
 }
 
 .trainee-dashboard .helpers span {
@@ -2000,7 +2001,7 @@ form.sign-in-form {
 
 .weekly-calendar .day-title {
   font-size: 2rem;
-  background-color: #87bbde;
+  background-color: #2e70bb;
   color: #333;
 }
 
@@ -2081,7 +2082,7 @@ form.sign-in-form {
 
 .weekly-calendar .search-div .chosen {
   width: 20rem;
-  background-color: #87bbde;
+  background-color: #2e70bb;
 }
 
 .weekly-calendar .search-div .search-input {
@@ -2092,7 +2093,7 @@ form.sign-in-form {
 }
 
 .weekly-calendar .search-div .search-input:focus {
-  outline-color: #87bbde;
+  outline-color: #2e70bb;
 }
 
 .weekly-calendar > .popup-background {
@@ -2220,7 +2221,7 @@ form.sign-in-form {
   width: 10rem;
   margin-left: 1.2rem;
   margin-bottom: 1rem;
-  background-color: #87bbde;
+  background-color: #2e70bb;
   padding: 0.2rem;
   -webkit-box-align: center;
       -ms-flex-align: center;

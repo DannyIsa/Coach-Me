@@ -149,7 +149,18 @@ function NavBarTrainee({ signOut, userDetails, alertMessage }) {
                                       Gender <span>{item.gender}</span>
                                     </p>
                                     <p>
-                                      Rating <span>8.3</span>
+                                      Age{" "}
+                                      <span>
+                                        {" " +
+                                          Math.abs(
+                                            new Date(
+                                              Date.now() -
+                                                new Date(
+                                                  item.birthdate
+                                                ).getTime()
+                                            ).getUTCFullYear() - 1970
+                                          )}
+                                      </span>
                                     </p>
                                     <p>
                                       Expertise <span>{item.expertise}</span>
