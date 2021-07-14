@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { SetErrorContext } from "../../App";
 import { debounce } from "lodash";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faPlus, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 function ClientCalendar({ userDetails }) {
   const [needToEat, setNeedToEat] = useState([]);
@@ -292,8 +292,8 @@ function ClientCalendar({ userDetails }) {
                 <ol>
                   {chosen.exercises.map((item, index) => (
                     <li className="exercise-block" key={index}>
-                      <h2 className="exercise-name">{item.name}</h2>
-                      <h3 className="exercise-details">{`${item.min_reps} ${
+                      <h4 className="exercise-name">{item.name}</h4>
+                      <p className="exercise-details">{`${item.min_reps} ${
                         item.min_reps !== item.max_reps
                           ? "-" + item.max_reps
                           : ""
@@ -301,11 +301,11 @@ function ClientCalendar({ userDetails }) {
                         item.added_weight > 0
                           ? "+" + item.added_weight + "kg "
                           : ""
-                      }X${item.sets}`}</h3>
+                      }X${item.sets}`}</p>
                     </li>
                   ))}
                 </ol>
-                <h1>{"X" + chosen.sets}</h1>
+                <h3>{"X" + chosen.sets}</h3>
                 <button className="popup-add-button-workout" onClick={addItem}>
                   <FontAwesomeIcon
                     icon={faPlus}
@@ -348,15 +348,13 @@ function ClientCalendar({ userDetails }) {
             {chosenItems && (
               <div className="chosen-calendar-div">
                 {chosenItems.exercises ? (
-                  <div className="popup-chosen-exercise">
-                    <h1 className="workout-name">
-                      {field.day + ": " + chosenItems.name}
-                    </h1>
-                    <ol>
+                  <div className="popup-chosen chosen-exercise">
+                    <h2 className="workout-name">{chosenItems.name}</h2>
+                    <ol className="oList">
                       {chosenItems.exercises.map((item, index) => (
-                        <li className="exercise-block" key={index}>
-                          <h2 className="exercise-name">{item.name}</h2>
-                          <h3 className="exercise-details">{`${item.min_reps} ${
+                        <li className="list-item" key={index}>
+                          <h4 className="exercise-name">{item.name}</h4>
+                          <p className="exercise-details">{`${item.min_reps} ${
                             item.min_reps !== item.max_reps
                               ? "-" + item.max_reps
                               : ""
@@ -364,20 +362,20 @@ function ClientCalendar({ userDetails }) {
                             item.added_weight > 0
                               ? "+" + item.added_weight + "kg "
                               : ""
-                          }X${item.sets}`}</h3>
+                          }X${item.sets}`}</p>
                         </li>
                       ))}
                     </ol>
-                    <h1>{"X" + chosenItems.sets}</h1>
+                    <h3>{"X" + chosenItems.sets}</h3>
                     <FontAwesomeIcon
                       onClick={() => removeItem(1)}
-                      icon={faTimes}
+                      icon={faTrashAlt}
                       color="#acacac"
-                      className="remove-fa"
+                      className="remove-fa workout"
                     />
                   </div>
                 ) : (
-                  <div className="popup-chosen-food">
+                  <div className="popup-chosen food">
                     {chosenItems.length > 0 ? (
                       <ul className="oList">
                         {chosenItems.map((item) => (
@@ -392,7 +390,7 @@ function ClientCalendar({ userDetails }) {
                             <br />
                             <FontAwesomeIcon
                               onClick={() => removeItem(item.id)}
-                              icon={faTimes}
+                              icon={faTrashAlt}
                               color="#acacac"
                               className="remove-fa"
                             />

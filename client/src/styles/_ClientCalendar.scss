@@ -74,7 +74,14 @@
         right: 6.5rem;
         top: 8rem;
         &.workout {
-          background-color: red;
+          & > ol {
+            list-style-type: none;
+          }
+          text-align: left;
+          height: fit-content;
+          max-height: 350px;
+          overflow-y: auto;
+          margin-bottom: 10px;
         }
         .popup-amount-input {
           width: 3.5rem;
@@ -90,9 +97,12 @@
         }
       }
       .chosen-calendar-div {
-        .popup-chosen-food {
+        .popup-chosen {
+          .workout-name {
+            margin-bottom: 15px;
+          }
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           margin-top: 30rem;
           height: 12rem;
           overflow: auto;
@@ -119,11 +129,15 @@
           }
           .remove-fa {
             font-size: 1.5rem;
-            color: royalblue;
-            bottom: 0%;
+            color: black;
 
+            &.workout {
+              position: absolute;
+              right: 3%;
+            }
             &:hover {
-              color: black;
+              color: rgb(125, 154, 238);
+
               cursor: pointer;
             }
           }

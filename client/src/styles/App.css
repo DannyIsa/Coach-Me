@@ -2165,7 +2165,17 @@ form.sign-in-form {
 }
 
 .weekly-calendar > .popup-background > .popup-content > .details-div.workout {
-  background-color: red;
+  text-align: left;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 350px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.weekly-calendar > .popup-background > .popup-content > .details-div.workout > ol {
+  list-style-type: none;
 }
 
 .weekly-calendar > .popup-background > .popup-content > .details-div .popup-amount-input {
@@ -2182,14 +2192,14 @@ form.sign-in-form {
   color: black;
 }
 
-.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food {
+.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-top: 30rem;
   height: 12rem;
   overflow: auto;
@@ -2197,7 +2207,11 @@ form.sign-in-form {
   overflow: auto;
 }
 
-.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food .oList {
+.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen .workout-name {
+  margin-bottom: 15px;
+}
+
+.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen .oList {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2206,7 +2220,7 @@ form.sign-in-form {
   list-style: none;
 }
 
-.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food .oList .list-item {
+.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen .oList .list-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2228,14 +2242,18 @@ form.sign-in-form {
           align-items: center;
 }
 
-.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food .remove-fa {
+.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen .remove-fa {
   font-size: 1.5rem;
-  color: royalblue;
-  bottom: 0%;
+  color: black;
 }
 
-.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen-food .remove-fa:hover {
-  color: black;
+.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen .remove-fa.workout {
+  position: absolute;
+  right: 3%;
+}
+
+.weekly-calendar > .popup-background > .popup-content .chosen-calendar-div .popup-chosen .remove-fa:hover {
+  color: #7d9aee;
   cursor: pointer;
 }
 
