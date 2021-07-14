@@ -2325,6 +2325,7 @@ form.sign-in-form {
   -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
           box-shadow: 5px 8px 11px 6px #c0c0c0;
   width: 20rem;
+  border: 2px solid #2e70bb;
 }
 
 .profile-container .main-body .main1 .d-flex {
@@ -2348,6 +2349,7 @@ form.sign-in-form {
 }
 
 .profile-container .main-body .main2 .card {
+  border: 2px solid #2e70bb;
   background-color: white;
   -webkit-box-shadow: 5px 8px 11px 6px #c0c0c0;
           box-shadow: 5px 8px 11px 6px #c0c0c0;
